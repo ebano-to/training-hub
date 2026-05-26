@@ -1,0 +1,192 @@
+// DASHBOARD — Telemetry style
+function DashboardPage() {
+  const { ATHLETE, STATIONS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, TOTALS, EF_TREND, PBS } = window.TRAINING;
+  const totalKm = TOTALS.total;
+  const totalKmAnim = useCountUp(Math.round(totalKm), 1600);
+  const efValues = EF_TREND.map(e => e.ef);
+
+  return (
+    <TelemetryChrome active="DASHBOARD">
+      {/* Title */}
+      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 12 }}>
+        <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 8 }}>
+          // METRICS_AGGREGATE · 18 WEEKS · S{ATHLETE.programWeek}/{ATHLETE.programTotal}
+        </div>
+        <div className="display" style={{ fontSize: 88, lineHeight: 0.9 }}>
+          DASH<span style={{ color: 'var(--accent)' }}>BOARD.</span>
+        </div>
+      </div>
+
+      {/* Top stats */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 12 }}>
+        <BigStat code="VOL.TOT" v={Math.round(totalKmAnim)} u="km" sub={'row ' + Math.round(TOTALS.rower) + ' · ski ' + Math.round(TOTALS.ski) + ' · run ' + Math.round(TOTALS.run)} sparkData={VOLUME} />
+        <BigStat code="EF.SKI" v={EF_TREND[EF_TREND.length - 1].ef.toFixed(2)} u="W/bpm" sub={'trend 18 sessioni Z2'} sparkData={efValues} />
+        <BigStat code="SESS.TOT" v={window.TRAINING.HISTORY.length} u="" sub="ultimi workout registrati" />
+        <BigStat code="PB.TESTS" v={'0' + PBS.length} u="" sub={PBS.map(p => p.station.split(' ')[0]).join(' · ')} highlight />
+      </div>
+
+      {/* Program weeks */}
+      <ModulePanel code="MOD.PROGRAM · week_by_week" sub={'week ' + ATHLETE.programWeek + ' of ' + ATHLETE.programTotal}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(' + ATHLETE.programTotal + ', 1fr)', gap: 4 }}>
+          {Array.from({ length: ATHLETE.programTotal }).map((_, i) => {
+            const isPast = i < ATHLETE.programWeek - 1;
+            const isCurrent = i === ATHLETE.programWeek - 1;
+            return (
+              <div key={i}>
+                <div style={{
+                  height: 40,
+                  background: isPast ? 'var(--accent)' : isCurrent ? 'transparent' : 'var(--bg-3)',
+                  border: isCurrent ? '2px solid var(--accent)' : '1px solid var(--line)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <span className="display tabular" style={{ fontSize: 11, color: isPast ? '#000' : 'var(--fg)' }}>S{i + 1}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </ModulePanel>
+
+      {/* Charts — Volume + EF Trend */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+        <ChartCard code="MOD.VOL · weekly_km" data={VOLUME} unit="km" />
+        <ChartCard code="MOD.EF · ski_z2_ef" data={efValues} unit=" W/bpm" min={1.1} max={1.5} />
+      </div>
+
+      {/* Volume breakdown by machine */}
+      <ModulePanel code="MOD.VOLUME_BREAKDOWN · rower/ski/run">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          {[
+            { label: 'ROWER', data: VOL_ROWER, total: TOTALS.rower, color: 'var(--accent)' },
+            { label: 'SKIERG', data: VOL_SKI, total: TOTALS.ski, color: 'oklch(80% 0.15 60)' },
+            { label: 'RUN', data: VOL_RUN, total: TOTALS.run, color: 'oklch(75% 0.14 220)' },
+          ].map((m) => (
+            <div key={m.label}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+                <span style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{m.label}</span>
+                <span className="display tabular" style={{ fontSize: 22 }}>{m.total.toFixed(1)}<span style={{ fontSize: 11, color: 'var(--fg-3)' }}> km</span></span>
+              </div>
+              <Sparkline data={m.data} width={300} height={32} accent={m.color} />
+            </div>
+          ))}
+        </div>
+      </ModulePanel>
+
+      {/* Stations */}
+      <ModulePanel code="MOD.STATIONS · pb_vs_target · 9 stations" accent>
+        <div>
+          {STATIONS.map((s, i) => {
+            const pbSec = parseTime3(s.pb);
+            const tgtSec = parseTime3(s.target);
+            const ratio = tgtSec / pbSec;
+            return (
+              <div key={s.code} style={{
+                display: 'grid', gridTemplateColumns: '60px 1fr 80px 80px 1fr 70px',
+                alignItems: 'center', gap: 16, padding: '12px 4px',
+                borderTop: i === 0 ? 'none' : '1px dashed var(--line-2)'
+              }}>
+                <div className="display" style={{ fontSize: 14, color: 'var(--accent)' }}>{s.code}</div>
+                <div style={{ fontSize: 13, fontWeight: 500, fontFamily: 'var(--sans)' }}>{s.name}</div>
+                <div>
+                  <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>PB</div>
+                  <div className="display tabular" style={{ fontSize: 18 }}>{s.pb}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>TARGET</div>
+                  <div className="display tabular" style={{ fontSize: 18, color: 'var(--accent)' }}>{s.target}</div>
+                </div>
+                <div style={{ height: 5, background: 'var(--bg-3)', position: 'relative', border: '1px solid var(--line)' }}>
+                  <div style={{ position: 'absolute', inset: 0, width: (ratio * 100) + '%', background: 'var(--accent)' }} />
+                  <div style={{ position: 'absolute', top: -2, bottom: -2, left: '100%', width: 2, background: 'var(--fg-3)' }} />
+                </div>
+                <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-2)', textAlign: 'right' }}>
+                  -{(((1 - ratio)) * 100).toFixed(1)}%
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </ModulePanel>
+
+      {/* Body comp / athlete stats */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+        {[
+          { code: 'BODY.WEIGHT', v: '100', u: 'kg', sub: 'peso attuale' },
+          { code: 'HEIGHT', v: '195', u: 'cm', sub: 'altezza' },
+          { code: 'FCMAX', v: '172', u: 'bpm', sub: 'frequenza cardiaca massima' },
+        ].map((s) => (
+          <ModulePanel key={s.code} code={s.code}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+              <span className="display tabular" style={{ fontSize: 48 }}>{s.v}</span>
+              <span style={{ fontSize: 12, color: 'var(--fg-3)' }}>{s.u}</span>
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--accent-2)', letterSpacing: '0.1em', marginTop: 6 }}>{s.sub}</div>
+          </ModulePanel>
+        ))}
+      </div>
+    </TelemetryChrome>
+  );
+}
+
+function parseTime3(t) {
+  if (t.includes('kg')) return 1;
+  const [m, s] = t.split(':').map(Number);
+  return m * 60 + s;
+}
+
+function BigStat({ code, v, u, sub, sparkData, highlight }) {
+  const num = parseFloat(v);
+  const animated = useCountUp(isNaN(num) ? 0 : num, 1400);
+  const display = isNaN(num) ? v : (String(v).includes('.') ? animated.toFixed(2) : Math.round(animated));
+  return (
+    <div style={{
+      border: '1px solid ' + (highlight ? 'var(--accent)' : 'var(--line)'),
+      background: highlight ? 'oklch(88% 0.20 130 / 0.06)' : 'var(--bg-2)',
+      padding: 18
+    }}>
+      <div style={{ fontSize: 11, color: highlight ? 'var(--accent)' : 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 10 }}>// {code}</div>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+        <span className="display tabular" style={{ fontSize: 48, color: highlight ? 'var(--accent)' : 'var(--fg)', lineHeight: 1 }}>{display}</span>
+        <span style={{ fontSize: 12, color: 'var(--fg-3)' }}>{u}</span>
+      </div>
+      {sparkData && <div style={{ marginTop: 8 }}><Sparkline data={sparkData} width={220} height={24} /></div>}
+      <div style={{ fontSize: 10, color: 'var(--accent-2)', letterSpacing: '0.1em', marginTop: 8 }}>{sub}</div>
+    </div>
+  );
+}
+
+function ChartCard({ code, data, unit, min, max }) {
+  const lo = min !== undefined ? min : Math.min(...data) - 4;
+  const hi = max !== undefined ? max : Math.max(...data) + 4;
+  const w = 520, h = 160;
+  const stepX = w / (data.length - 1);
+  const norm = (v) => h - ((v - lo) / (hi - lo)) * h;
+  const path = 'M' + data.map((v, i) => i * stepX + ',' + norm(v)).join(' L');
+  const area = path + ' L' + w + ',' + h + ' L0,' + h + ' Z';
+  const id = code.replace(/\W/g, '');
+  return (
+    <ModulePanel code={code}>
+      <svg viewBox={'0 0 ' + w + ' ' + h} width="100%" height={h} style={{ display: 'block' }}>
+        <defs>
+          <pattern id={'grid-' + id} width="40" height="32" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V32" fill="none" stroke="var(--line)" strokeWidth="0.5" />
+          </pattern>
+        </defs>
+        <rect width={w} height={h} fill={'url(#grid-' + id + ')'} />
+        <path d={area} fill="var(--accent)" opacity="0.12" />
+        <path d={path} stroke="var(--accent)" strokeWidth="2" fill="none" />
+        {data.map((v, i) => (
+          <circle key={i} cx={i * stepX} cy={norm(v)} r={i === data.length - 1 ? 4 : 2}
+            fill={i === data.length - 1 ? 'var(--accent)' : 'var(--fg)'} />
+        ))}
+      </svg>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10, fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.1em' }}>
+        <span>W1</span>
+        <span>CURRENT · {typeof data[data.length - 1] === 'number' ? (Number.isInteger(data[data.length - 1]) ? data[data.length - 1] : data[data.length - 1].toFixed(2)) : data[data.length - 1]}{unit}</span>
+        <span>W{data.length}</span>
+      </div>
+    </ModulePanel>
+  );
+}
+
+window.DashboardPage = DashboardPage;

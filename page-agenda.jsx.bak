@@ -1,0 +1,179 @@
+// AGENDA — Telemetry style
+function AgendaPage() {
+  const { ATHLETE, WEEK } = window.TRAINING;
+  const [selected, setSelected] = React.useState(WEEK.findIndex((w) => w.today));
+  const day = WEEK[selected];
+
+  // Dynamic day label based on current date
+  const today = new Date();
+  const todayNum = today.getDate();
+  const todayMonth = today.getMonth(); // 0-based
+  function dayLabel(w) {
+    if (w.done) return '✓ DONE';
+    var d = parseInt(w.date);
+    // Handle month boundary: dates 01-03 are May, 27-30 are April
+    var dayMonth = d <= 3 ? 4 : 3; // May=4, April=3 (0-based)
+    var wDate = new Date(2026, dayMonth, d);
+    var diff = Math.floor((wDate - today) / 86400000);
+    if (diff < -1) return '○ PASSATO';
+    if (diff === -1) return '○ IERI';
+    if (w.today || diff === 0) return '● OGGI';
+    if (diff === 1) return '○ DOMANI';
+    return '○ ' + w.day;
+  }
+
+  // Build blocks: use day.blocks if present, otherwise synthesize
+  var dayBlocks = day.blocks || [{ code: day.kind.slice(0, 3).toUpperCase(), t: day.title, d: day.sub, dur: day.duration + '\'' }];
+
+  return (
+    <TelemetryChrome active="AGENDA">
+      {/* Title */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 16, marginBottom: 12 }}>
+        <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24 }}>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 8 }}>
+            // WEEKLY_PLAN · S{ATHLETE.programWeek}/{ATHLETE.programTotal}
+          </div>
+          <div className="display" style={{ fontSize: 88, lineHeight: 0.9 }}>
+            AGENDA<span style={{ color: 'var(--accent)' }}>.</span>
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em', marginTop: 12 }}>
+            27 APR → 03 MAG 2026 · {WEEK.filter((w) => w.done).length}/7 DONE · {Math.round(WEEK.reduce((a, b) => a + b.duration, 0) / 60)}h {WEEK.reduce((a, b) => a + b.duration, 0) % 60}' planned
+          </div>
+        </div>
+        <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 20 }}>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 12 }}>// WEEK_LOAD</div>
+          <div style={{ display: 'flex', gap: 6, alignItems: 'flex-end', height: 80, marginBottom: 12 }}>
+            {WEEK.map((w, i) => (
+              <div key={i} style={{
+                flex: 1, height: (w.duration / 165) * 100 + '%',
+                background: w.done ? 'var(--accent)' : (w.today ? 'transparent' : 'var(--bg-3)'),
+                border: w.today ? '1.5px solid var(--accent)' : '1px solid var(--line)',
+              }} />
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 6, fontSize: 9, color: 'var(--fg-3)' }}>
+            {WEEK.map((w, i) => <div key={i} style={{ flex: 1, textAlign: 'center', letterSpacing: '0.1em' }}>{w.day}</div>)}
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em', marginTop: 12 }}>
+            min · {WEEK.reduce((a, b) => a + b.duration, 0)} TOT
+          </div>
+        </div>
+      </div>
+
+      {/* Day strip */}
+      <ModulePanel code="MOD.AGENDA · day_selector">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 6 }}>
+          {WEEK.map((w, i) => (
+            <button key={i} onClick={() => setSelected(i)}
+              style={{
+                background: i === selected ? 'var(--accent)' : 'var(--bg-3)',
+                color: i === selected ? '#000' : 'var(--fg)',
+                border: '1px solid ' + (i === selected ? 'var(--accent)' : 'var(--line)'),
+                padding: '14px 12px', textAlign: 'left', cursor: 'pointer',
+                fontFamily: 'var(--mono)'
+              }}>
+              <div style={{ fontSize: 10, letterSpacing: '0.18em', opacity: 0.7 }}>{w.day}</div>
+              <div className="display tabular" style={{ fontSize: 32, lineHeight: 1, marginTop: 4 }}>{w.date}</div>
+              <div style={{ fontSize: 9, marginTop: 8, letterSpacing: '0.1em' }}>
+                {dayLabel(w)}
+              </div>
+            </button>
+          ))}
+        </div>
+      </ModulePanel>
+
+      {/* Selected session */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 12 }}>
+        <div style={{ border: '1px solid var(--accent)', background: 'oklch(88% 0.20 130 / 0.04)', padding: 24 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
+            <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em' }}>
+              // SESSION_{day.day}_{day.date} · {day.kind.toUpperCase()} · {day.load} · {day.duration}'
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--fg-3)' }}>
+              {dayBlocks.length} {dayBlocks.length === 1 ? 'LAVORO' : 'LAVORI'}
+            </div>
+          </div>
+          <div className="display" style={{ fontSize: 48, lineHeight: 0.95, marginBottom: 8 }}>{day.title}</div>
+          <div style={{ fontSize: 13, color: 'var(--fg-2)', marginBottom: 20, fontFamily: 'var(--sans)' }}>{day.sub}</div>
+
+          <div style={{ borderTop: '1px dashed var(--line-2)' }}>
+            {dayBlocks.map((b, i) => (
+              <div key={i} style={{
+                padding: '16px 0', borderBottom: '1px dashed var(--line-2)',
+              }}>
+                {/* Block header */}
+                <div style={{ display: 'grid', gridTemplateColumns: '60px 1fr 60px', alignItems: 'center', gap: 16 }}>
+                  <div style={{ fontSize: 12, color: 'var(--accent)', letterSpacing: '0.15em', fontWeight: 700 }}>{b.code}</div>
+                  <div>
+                    <div style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--sans)' }}>{b.t}</div>
+                    <div style={{ fontSize: 12, color: 'var(--fg-2)', marginTop: 3 }}>{b.d}</div>
+                  </div>
+                  <div className="display tabular" style={{ fontSize: 22, textAlign: 'right' }}>{b.dur}</div>
+                </div>
+                {/* Reference + Expect */}
+                {(b.ref || b.expect) && (
+                  <div style={{ marginTop: 10, marginLeft: 76, display: 'grid', gap: 4 }}>
+                    {b.ref && (
+                      <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.05em', fontFamily: 'var(--mono)' }}>
+                        <span style={{ color: 'oklch(75% 0.14 220)' }}>REF</span> {b.ref}
+                      </div>
+                    )}
+                    {b.expect && (
+                      <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.05em', fontFamily: 'var(--mono)' }}>
+                        <span style={{ color: 'var(--accent)' }}>TGT</span> {b.expect}
+                      </div>
+                    )}
+                  </div>
+                )}
+                {/* Result */}
+                {b.result && (
+                  <div style={{ marginTop: 8, marginLeft: 76, fontSize: 11, color: 'var(--accent)', fontFamily: 'var(--mono)', letterSpacing: '0.05em', padding: '6px 10px', background: 'oklch(88% 0.20 130 / 0.08)', border: '1px solid oklch(88% 0.20 130 / 0.15)' }}>
+                    ▶ {b.result}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <ModulePanel code="MOD.SESSION_INFO">
+            {[
+              { l: 'LOAD', v: day.load },
+              { l: 'DUR_TOT', v: day.duration + '\'' },
+              { l: 'KIND', v: day.kind.toUpperCase() },
+              { l: 'LAVORI', v: dayBlocks.length },
+              { l: 'STATUS', v: dayLabel(day) },
+            ].map((s) => (
+              <div key={s.l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', padding: '8px 0', borderBottom: '1px dashed var(--line-2)' }}>
+                <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em' }}>{s.l}</div>
+                <div className="display tabular" style={{ fontSize: 18, color: 'var(--accent)' }}>{s.v}</div>
+              </div>
+            ))}
+          </ModulePanel>
+
+          <ModulePanel code="MOD.NOTE_COACH">
+            <div style={{ fontSize: 12, color: 'var(--fg-2)', lineHeight: 1.6, fontFamily: 'var(--sans)', borderLeft: '2px solid var(--accent)', padding: '4px 0 4px 12px' }}>
+              {dayBlocks.length >= 3
+                ? '"Sessione multipla. Gestisci l\'energia tra i blocchi. Priorità al primo lavoro."'
+                : dayBlocks.length === 2
+                  ? '"Due lavori — distribuisci lo sforzo. Non andare all-out sul primo."'
+                  : '"Segui il piano. Mantieni il ritmo indicato e non forzare oltre il target."'}
+            </div>
+          </ModulePanel>
+
+          <ModulePanel code="MOD.METEO · 18:30">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <div className="display tabular" style={{ fontSize: 28 }}>17°</div>
+                <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 2 }}>NUVOLOSO · 12 KM/H NW</div>
+              </div>
+              <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em' }}>STATUS_OK</div>
+            </div>
+          </ModulePanel>
+        </div>
+      </div>
+    </TelemetryChrome>
+  );
+}
+window.AgendaPage = AgendaPage;

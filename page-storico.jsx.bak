@@ -1,0 +1,192 @@
+// STORICO — Telemetry style
+function StoricoPage() {
+  const { HISTORY } = window.TRAINING;
+  const [query, setQuery] = React.useState('');
+  const [filter, setFilter] = React.useState('TUTTI');
+
+  const filtered = HISTORY.filter((h) => {
+    if (filter !== 'TUTTI' && h.kind.toUpperCase() !== filter) return false;
+    if (!query) return true;
+    return (h.title + ' ' + h.note).toLowerCase().includes(query.toLowerCase());
+  });
+
+  const kindLabel = { hyrox: 'HYROX', strength: 'STRENGTH', run: 'RUN', rest: 'REST' };
+  const kindColor = (k) => ({
+    hyrox: 'var(--accent)', strength: 'oklch(80% 0.15 60)',
+    run: 'oklch(75% 0.14 220)', rest: 'var(--fg-3)'
+  }[k] || 'var(--fg-2)');
+
+  return (
+    <TelemetryChrome active="STORICO">
+      {/* Title */}
+      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 12 }}>
+        <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 8 }}>
+          // ARCHIVE_QUERY · 184 sessions · since 04 GEN 2026
+        </div>
+        <div className="display" style={{ fontSize: 88, lineHeight: 0.9 }}>
+          STORI<span style={{ color: 'var(--accent)' }}>CO.</span>
+        </div>
+      </div>
+
+      {/* Search + filter */}
+      <ModulePanel code="MOD.QUERY · search + filter">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 12, alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, border: '1px solid var(--line-2)', padding: '10px 14px', background: 'var(--bg-3)' }}>
+            <span style={{ color: 'var(--accent)', fontSize: 13 }}>$</span>
+            <input
+              value={query} onChange={(e) => setQuery(e.target.value)}
+              placeholder="grep workout|exercise|note…"
+              style={{
+                flex: 1, background: 'transparent', border: 'none', outline: 'none',
+                color: 'var(--fg)', fontFamily: 'var(--mono)', fontSize: 13
+              }}
+            />
+            <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{filtered.length}_RES</span>
+          </div>
+          <div style={{ display: 'flex', gap: 4 }}>
+            {['TUTTI', 'HYROX', 'STRENGTH', 'RUN', 'REST'].map((f) => (
+              <button key={f} onClick={() => setFilter(f)}
+                style={{
+                  background: filter === f ? 'var(--accent)' : 'transparent',
+                  color: filter === f ? '#000' : 'var(--fg-2)',
+                  border: '1px solid ' + (filter === f ? 'var(--accent)' : 'var(--line)'),
+                  padding: '8px 12px', fontFamily: 'var(--display)', fontSize: 12, letterSpacing: '0.06em', fontWeight: 700,
+                  cursor: 'pointer'
+                }}>{f}</button>
+            ))}
+          </div>
+        </div>
+      </ModulePanel>
+
+      {/* Stats summary */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8, marginBottom: 12 }}>
+        {[
+          { l: 'TOT', v: HISTORY.length },
+          { l: 'HX', v: HISTORY.filter((h) => h.kind === 'hyrox').length },
+          { l: 'STR', v: HISTORY.filter((h) => h.kind === 'strength').length },
+          { l: 'RUN', v: HISTORY.filter((h) => h.kind === 'run').length },
+          { l: 'PB', v: HISTORY.filter((h) => h.note.includes('PB')).length, accent: true },
+        ].map((s) => (
+          <div key={s.l} style={{
+            border: '1px solid ' + (s.accent ? 'var(--accent)' : 'var(--line)'),
+            background: s.accent ? 'oklch(88% 0.20 130 / 0.06)' : 'var(--bg-2)',
+            padding: '12px 16px'
+          }}>
+            <div style={{ fontSize: 10, color: s.accent ? 'var(--accent)' : 'var(--fg-3)', letterSpacing: '0.18em' }}>// {s.l}</div>
+            <div className="display tabular" style={{ fontSize: 32, marginTop: 4, color: s.accent ? 'var(--accent)' : 'var(--fg)' }}>{s.v}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* List */}
+      <ModulePanel code="MOD.LOG · session_archive">
+        <div style={{
+          display: 'grid', gridTemplateColumns: '70px 80px 1fr 90px 70px 80px 40px',
+          padding: '8px 4px', fontSize: 10,
+          letterSpacing: '0.18em', color: 'var(--fg-3)', borderBottom: '1px solid var(--line-2)'
+        }}>
+          <span>DATE</span><span>TYPE</span><span>WORKOUT</span><span>LOAD</span><span>DUR</span><span>RPE</span><span></span>
+        </div>
+        {filtered.map((h, i) => (
+          <HistoryRow key={i} h={h} kindLabel={kindLabel} kindColor={kindColor} />
+        ))}
+        {filtered.length === 0 && (
+          <div style={{ padding: 48, textAlign: 'center', color: 'var(--fg-3)', letterSpacing: '0.15em' }}>
+            ◇ NO_RESULTS
+          </div>
+        )}
+      </ModulePanel>
+    </TelemetryChrome>
+  );
+}
+
+function HistoryRow({ h, kindLabel, kindColor }) {
+  const [hov, setHov] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const isPb = h.note.includes('PB');
+  const hasDetails = !!h.details;
+  return (
+    <div style={{ borderBottom: '1px dashed var(--line-2)' }}>
+      <div
+        onClick={() => hasDetails && setOpen(!open)}
+        onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+        style={{
+          display: 'grid', gridTemplateColumns: '70px 80px 1fr 90px 70px 80px 40px',
+          padding: '14px 4px', alignItems: 'center', gap: 10,
+          background: open ? 'var(--bg-3)' : hov ? 'oklch(18% 0 0 / 0.5)' : 'transparent',
+          transition: 'background .12s',
+          cursor: hasDetails ? 'pointer' : 'default',
+        }}>
+        <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em' }}>{h.date}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <span style={{ width: 6, height: 6, background: kindColor(h.kind) }} />
+          <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{kindLabel[h.kind]}</span>
+        </div>
+        <div>
+          <div style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--sans)', display: 'flex', alignItems: 'center', gap: 8 }}>
+            {h.title}
+            {isPb && (
+              <span style={{
+                background: 'var(--accent)', color: '#000', padding: '1px 6px',
+                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
+              }}>NEW_PB</span>
+            )}
+          </div>
+          {h.note && <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 3 }}>{h.note}</div>}
+        </div>
+        <div style={{ fontSize: 10, letterSpacing: '0.1em', color: 'var(--fg-2)' }}>{h.load}</div>
+        <div className="display tabular" style={{ fontSize: 18 }}>{h.dur}<span style={{ fontSize: 10, color: 'var(--fg-3)', marginLeft: 1 }}>'</span></div>
+        <div style={{ display: 'flex', gap: 1, alignItems: 'flex-end', height: 14 }}>
+          {Array.from({ length: 10 }).map((_, j) => (
+            <div key={j} style={{
+              width: 3, height: j < h.rpe ? 14 : 4,
+              background: j < h.rpe ? (h.rpe >= 8 ? 'var(--warn)' : 'var(--accent)') : 'var(--line)'
+            }} />
+          ))}
+        </div>
+        <div style={{ fontSize: 11, color: hasDetails ? (open ? 'var(--accent)' : 'var(--fg-3)') : 'transparent', transition: 'transform .15s', transform: open ? 'rotate(90deg)' : 'none' }}>
+          {hasDetails ? '▶' : ''}
+        </div>
+      </div>
+
+      {/* Expanded detail panel */}
+      {open && h.details && (
+        <div style={{ padding: '0 4px 16px 74px', background: 'var(--bg-3)', borderTop: '1px solid var(--line-2)' }}>
+          {/* Summary */}
+          <div style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em', padding: '12px 0 10px', fontFamily: 'var(--mono)' }}>
+            {h.details.summary}
+          </div>
+
+          {/* Blocks (if present — e.g. CR) */}
+          {h.details.blocks && h.details.blocks.map((b, bi) => (
+            <div key={bi} style={{ marginBottom: 10, padding: '10px 12px', border: '1px solid var(--line-2)', background: 'var(--bg-2)' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
+                <span style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.15em', fontWeight: 700 }}>{b.label}</span>
+                <span style={{ fontSize: 12, fontFamily: 'var(--sans)', fontWeight: 500 }}>{b.name}</span>
+              </div>
+              {b.splits.map((s, si) => (
+                <div key={si} style={{ fontSize: 11, color: 'var(--fg-2)', fontFamily: 'var(--mono)', padding: '3px 0', letterSpacing: '0.03em' }}>
+                  {s}
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* Metrics grid */}
+          {h.details.metrics && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: 6, marginTop: h.details.blocks ? 6 : 0 }}>
+              {h.details.metrics.map((m, mi) => (
+                <div key={mi} style={{ padding: '8px 10px', border: '1px solid var(--line-2)', background: 'var(--bg-2)' }}>
+                  <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 4 }}>// {m.l}</div>
+                  <div className="display tabular" style={{ fontSize: 16, color: 'var(--fg)' }}>{m.v}</div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+window.StoricoPage = StoricoPage;

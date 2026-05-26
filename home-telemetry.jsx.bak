@@ -1,0 +1,245 @@
+// Variant C — TECH TELEMETRY
+// Cockpit / dashboard feel: monospace-heavy, terminal aesthetics,
+// data-dense, gridded, real-time chrome (timestamps, system status).
+
+function HomeTelemetry() {
+  const { RACE, ATHLETE, WEEK, STATIONS, VOLUME, TOTALS, EF_TREND, HISTORY } = window.TRAINING;
+  const cd = useCountdown(RACE.date);
+  const today = WEEK.find((w) => w.today) || WEEK[0];
+  const [tick, setTick] = React.useState(0);
+  React.useEffect(() => { const id = setInterval(() => setTick((t) => t + 1), 1000); return () => clearInterval(id); }, []);
+  const efValues = EF_TREND.map(e => e.ef);
+
+  return (
+    <div className="artboard grid-bg" style={{ width: 1200, minHeight: 1600, background: 'var(--bg)', color: 'var(--fg)', fontFamily: 'var(--mono)', padding: 24 }}>
+      {/* CHROME / SYS BAR */}
+      <div style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        padding: '8px 16px', border: '1px solid var(--line)', background: 'var(--bg-2)',
+        fontSize: 11, letterSpacing: '0.1em', color: 'var(--fg-3)', marginBottom: 16
+      }}>
+        <span>FS://TRAINING.SYS · v2.6.0 · HYROX-PROTOCOL</span>
+        <span><LiveDot /> &nbsp;UPLINK · {new Date().toLocaleDateString('it-IT', { day: '2-digit', month: '2-digit', year: '2-digit' })} · {new Date().toLocaleTimeString('it-IT')}</span>
+        <span>S{ATHLETE.programWeek}/{ATHLETE.programTotal} · ROAD TO 1:10</span>
+      </div>
+
+      {/* HEADER ROW */}
+      <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 16, marginBottom: 16 }}>
+        {/* athlete card */}
+        <div style={{ border: '1px solid var(--line)', padding: 20, background: 'var(--bg-2)' }}>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', marginBottom: 14, letterSpacing: '0.15em' }}>// ATHLETE_ID</div>
+          <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 16 }}>
+            <Avatar size={56} />
+            <div>
+              <div className="display" style={{ fontSize: 22, lineHeight: 1 }}>F.SIMONDI</div>
+              <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>UID: 0x4F-2026 · {ATHLETE.category}</div>
+            </div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 11 }}>
+            <Kv k="PESO" v={ATHLETE.weight + 'kg'} />
+            <Kv k="ALT" v={ATHLETE.height + 'cm'} />
+            <Kv k="FCMAX" v={ATHLETE.hrmax + 'bpm'} />
+            <Kv k="ETÀ" v={ATHLETE.age} />
+          </div>
+        </div>
+        {/* Race target */}
+        <div style={{ border: '1px solid var(--accent)', padding: 24, background: 'oklch(88% 0.20 130 / 0.06)', position: 'relative' }}>
+          <div style={{ position: 'absolute', top: 0, right: 0, padding: '4px 10px', background: 'var(--accent)', color: '#000', fontSize: 10, letterSpacing: '0.18em', fontWeight: 700 }}>
+            ▲ TARGET
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em', marginBottom: 8 }}>
+            // RACE_TARGET · Hyrox Verona 2025 Singles: 1:17:44
+          </div>
+          <div className="display" style={{ fontSize: 56, lineHeight: 0.95, marginBottom: 8 }}>
+            ROAD TO <span style={{ color: 'var(--accent)' }}>1:10</span>
+          </div>
+          <div style={{ fontSize: 12, color: 'var(--fg-2)', marginBottom: 18 }}>
+            {ATHLETE.category} · Obiettivo -7:44 dal PB Verona
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, paddingTop: 14, borderTop: '1px dashed var(--line-2)' }}>
+            {[
+              { l: 'VERONA PB', v: '1:17:44' },
+              { l: 'TARGET', v: '1:10:00' },
+              { l: 'DELTA', v: '-7:44' },
+              { l: 'SETTIMANA', v: 'S' + ATHLETE.programWeek, live: true },
+            ].map((s) => (
+              <div key={s.l}>
+                <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{s.l}</div>
+                <div className="display tabular" style={{ fontSize: 44, color: s.live ? 'var(--accent)' : 'var(--fg)', lineHeight: 1 }}>
+                  {s.v}{s.live && <span style={{ animation: 'blink 1s infinite' }}>_</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* MODULE GRID */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 16 }}>
+        <ModuleCard
+          code="MOD.01"
+          title="AGENDA"
+          sub="weekly_plan.run"
+          metric={WEEK.filter((w) => w.done).length + '/' + WEEK.length}
+          metricLabel="DONE"
+          href="agenda.html"
+        >
+          <div style={{ display: 'flex', gap: 4, marginTop: 16 }}>
+            {WEEK.map((w, i) => (
+              <div key={i} style={{
+                flex: 1, height: 28, background: w.done ? 'var(--accent)' : (w.today ? 'transparent' : 'var(--bg-3)'),
+                border: w.today ? '1.5px solid var(--accent)' : '1px solid var(--line)',
+                color: w.done ? '#000' : (w.today ? 'var(--accent)' : 'var(--fg-3)'),
+                fontSize: 9, fontWeight: 700, letterSpacing: '0.1em',
+                display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>{w.day}</div>
+            ))}
+          </div>
+        </ModuleCard>
+        <ModuleCard
+          code="MOD.02"
+          title="DASHBOARD"
+          sub="metrics.aggregate"
+          metric={'S' + ATHLETE.programWeek + '/' + ATHLETE.programTotal}
+          metricLabel="WEEKS"
+          href="dashboard.html"
+          accent
+        >
+          <div style={{ marginTop: 16, display: 'flex', gap: 12, alignItems: 'center' }}>
+            <Sparkline data={VOLUME} width={140} height={36} />
+            <div>
+              <div style={{ fontSize: 10, color: 'var(--fg-3)' }}>VOL.18W</div>
+              <div className="display tabular" style={{ fontSize: 18 }}>{Math.round(TOTALS.total)}<span style={{ color: 'var(--fg-3)', fontSize: 11, marginLeft: 2 }}>km</span></div>
+            </div>
+          </div>
+        </ModuleCard>
+        <ModuleCard
+          code="MOD.03"
+          title="STORICO"
+          sub="archive.query"
+          metric={String(HISTORY.length)}
+          metricLabel="LOGS"
+          href="storico.html"
+        >
+          <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 3 }}>
+            {Array.from({ length: 28 }).map((_, i) => {
+              const intensity = Math.random();
+              const has = intensity > 0.25;
+              return (
+                <div key={i} style={{
+                  aspectRatio: '1', background: has ? ('oklch(88% 0.20 130 / ' + (0.2 + intensity * 0.6) + ')') : 'var(--bg-3)',
+                  border: '1px solid var(--line)'
+                }} />
+              );
+            })}
+          </div>
+        </ModuleCard>
+      </div>
+
+      {/* TODAY BAR */}
+      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 16 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
+          <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em' }}>
+            // SESSION_TODAY · {today.day} {today.date} APR · {today.kind.toUpperCase()}
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>SES_ID: {today.kind.slice(0, 2).toUpperCase()}-S{ATHLETE.programWeek}{today.date}</div>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 200px', gap: 32, alignItems: 'center' }}>
+          <div>
+            <div className="display" style={{ fontSize: 40, lineHeight: 1 }}>{today.title}</div>
+            <div style={{ fontSize: 13, color: 'var(--fg-2)', marginTop: 8 }}>{today.sub}</div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+            <Kv k="DUR" v={today.duration + '\''} big />
+            <Kv k="ZONA" v={today.load} big />
+            <Kv k="TIPO" v={today.kind.toUpperCase()} big />
+          </div>
+          <a href="agenda.html" style={{
+            background: 'var(--accent)', color: '#000', padding: '16px 20px',
+            fontFamily: 'var(--display)', fontSize: 18, letterSpacing: '0.05em', fontWeight: 700,
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center'
+          }}>
+            EXEC.RUN <Icon.arrow width="16" height="16" />
+          </a>
+        </div>
+      </div>
+
+      {/* STATION GRID */}
+      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>// HX_STATIONS · pb_vs_target · Verona 2025</div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)' }}>9 STATIONS</div>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(9, 1fr)', gap: 8 }}>
+          {STATIONS.map((s, i) => {
+            const pbSec = parseTime(s.pb);
+            const tgtSec = parseTime(s.target);
+            const pct = Math.min(100, ((tgtSec / pbSec) * 100));
+            return (
+              <div key={s.code} style={{ border: '1px solid var(--line)', padding: 12, background: 'var(--bg-3)' }}>
+                <div className="display" style={{ fontSize: 13, color: 'var(--accent)' }}>{s.code}</div>
+                <div style={{ fontSize: 9, color: 'var(--fg-3)', marginTop: 4, height: 22, lineHeight: 1.2 }}>{s.name}</div>
+                <div className="tabular" style={{ fontSize: 14, marginTop: 8, color: 'var(--fg)' }}>{s.pb}</div>
+                <div className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)' }}>tgt {s.target}</div>
+                <div style={{ height: 3, background: 'var(--line)', marginTop: 8, position: 'relative' }}>
+                  <div style={{ position: 'absolute', inset: 0, width: pct + '%', background: 'var(--accent)' }} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* FOOTER */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 16, fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>
+        <span>END_OF_FRAME · {tick} TICKS</span>
+        <span>federicosimondi.it/allenamenti · build 2026.04</span>
+        <span>{ATHLETE.weight}KG · {ATHLETE.height}CM · ● ● ●</span>
+      </div>
+    </div>
+  );
+}
+
+function parseTime(t) {
+  const [m, s] = t.split(':').map(Number);
+  return m * 60 + s;
+}
+
+function Kv({ k, v, big }) {
+  return (
+    <div>
+      <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{k}</div>
+      <div className={big ? 'display tabular' : 'tabular'} style={{ fontSize: big ? 22 : 13, color: 'var(--fg)' }}>{v}</div>
+    </div>
+  );
+}
+
+function ModuleCard({ code, title, sub, metric, metricLabel, href, accent, children }) {
+  const [hov, setHov] = React.useState(false);
+  return (
+    <a href={href} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+      style={{
+        border: hov ? '1px solid var(--accent)' : (accent ? '1px solid var(--accent)' : '1px solid var(--line)'),
+        padding: 20, background: 'var(--bg-2)', cursor: 'pointer',
+        display: 'flex', flexDirection: 'column',
+        transition: 'border-color .15s, background .15s',
+        boxShadow: hov ? '0 0 0 4px oklch(88% 0.20 130 / 0.1)' : 'none'
+      }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div>
+          <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.2em' }}>// {code}</div>
+          <div className="display" style={{ fontSize: 28, marginTop: 6 }}>{title}</div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 2 }}>{sub}</div>
+        </div>
+        <Icon.arrowDR width="16" height="16" style={{ color: 'var(--fg-3)', transition: 'transform .2s', transform: hov ? 'translate(2px,-2px)' : 'none' }} />
+      </div>
+      <div style={{ flex: 1 }}>{children}</div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 16, paddingTop: 12, borderTop: '1px dashed var(--line-2)' }}>
+        <span className="display tabular" style={{ fontSize: 26, color: accent ? 'var(--accent)' : 'var(--fg)' }}>{metric}</span>
+        <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{metricLabel}</span>
+      </div>
+    </a>
+  );
+}
+
+window.HomeTelemetry = HomeTelemetry;
