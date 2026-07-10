@@ -1,0 +1,144 @@
+// Shared hooks & small components for all Hyrox training pages
+
+// Live countdown to a date — returns { days, hours, minutes, seconds }
+function useCountdown(target) {
+  const [now, setNow] = React.useState(() => Date.now());
+  React.useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const ms = Math.max(0, target.getTime() - now);
+  const days = Math.floor(ms / 86400000);
+  const hours = Math.floor((ms % 86400000) / 3600000);
+  const minutes = Math.floor((ms % 3600000) / 60000);
+  const seconds = Math.floor((ms % 60000) / 1000);
+  return { days, hours, minutes, seconds, total: ms };
+}
+
+// Animated number that counts up from 0 to target on mount
+function useCountUp(target, duration = 1400, delay = 0) {
+  const [v, setV] = React.useState(0);
+  React.useEffect(() => {
+    let raf;
+    let start;
+    const tick = (t) => {
+      if (start == null) start = t;
+      const elapsed = t - start - delay;
+      if (elapsed < 0) { raf = requestAnimationFrame(tick); return; }
+      const p = Math.min(1, elapsed / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setV(target * eased);
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, duration, delay]);
+  return v;
+}
+
+// Format helpers
+const pad = (n) => String(Math.floor(n)).padStart(2, '0');
+const fmtInt = (n) => Math.round(n).toLocaleString('it-IT');
+
+// Tiny inline SVG icons — geometric, monoline
+const Icon = {
+  arrow: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" {...p}>
+      <path d="M5 12h14M13 5l7 7-7 7" />
+    </svg>
+  ),
+  arrowDR: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" {...p}>
+      <path d="M7 7h10v10M7 17L17 7" />
+    </svg>
+  ),
+  dot: (p) => (
+    <svg viewBox="0 0 8 8" {...p}><circle cx="4" cy="4" r="3" fill="currentColor" /></svg>
+  ),
+  check: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" {...p}>
+      <path d="M4 12l5 5L20 6" />
+    </svg>
+  ),
+  cal: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}>
+      <rect x="3" y="5" width="18" height="16" /><path d="M3 10h18M8 3v4M16 3v4" />
+    </svg>
+  ),
+  bolt: (p) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+      <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+    </svg>
+  ),
+  flame: (p) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
+      <path d="M12 2c1 4 5 5 5 10a5 5 0 11-10 0c0-3 2-4 2-7 1 1 2 2 3 2-1-2 0-4 0-5z" />
+    </svg>
+  ),
+};
+
+// Avatar — uses avatar.jpg if available, falls back to initials
+function Avatar({ size = 40, name = 'Federico Simondi' }) {
+  const [errored, setErrored] = React.useState(false);
+  const initials = name.split(' ').map((s) => s[0]).slice(0, 2).join('');
+  return (
+    <div style={{
+      width: size, height: size, borderRadius: '50%', overflow: 'hidden',
+      background: 'var(--bg-3)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+      flexShrink: 0, border: '1px solid var(--line)'
+    }}>
+      {!errored ? (
+        <img src="avatar.jpg" alt={name} onError={() => setErrored(true)}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      ) : (
+        <span style={{ fontFamily: 'var(--display)', fontSize: size * 0.4, fontWeight: 700 }}>{initials}</span>
+      )}
+    </div>
+  );
+}
+
+// Live "REC" pulse dot
+function LiveDot({ color = 'var(--accent)' }) {
+  return (
+    <span style={{
+      display: 'inline-block', width: 8, height: 8, borderRadius: 4,
+      background: color, animation: 'pulse-dot 1.6s ease-in-out infinite',
+      boxShadow: `0 0 12px ${color}`
+    }} />
+  );
+}
+
+// Sparkline (volume / intensity)
+function Sparkline({ data, height = 40, width = 160, accent = 'var(--accent)', color, fill = true }) {
+  if (color) accent = color;
+  const max = Math.max(...data);
+  const min = Math.min(...data);
+  const range = max - min || 1;
+  const stepX = width / (data.length - 1);
+  const pts = data.map((v, i) => `${i * stepX},${height - ((v - min) / range) * height}`);
+  const path = 'M' + pts.join(' L');
+  const area = path + ` L${width},${height} L0,${height} Z`;
+  return (
+    <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height} style={{ display: 'block' }}>
+      {fill && <path d={area} fill={accent} opacity="0.15" />}
+      <path d={path} fill="none" stroke={accent} strokeWidth="1.5" />
+      {data.map((v, i) => i === data.length - 1 && (
+        <circle key={i} cx={i * stepX} cy={height - ((v - min) / range) * height} r="3" fill={accent} />
+      ))}
+    </svg>
+  );
+}
+
+// Marquee strip — repeats children twice for seamless loop
+function Marquee({ children, fast = false }) {
+  return (
+    <div style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}>
+      <div className={`marquee ${fast ? 'marquee-fast' : ''}`}>
+        <div style={{ display: 'flex', flexShrink: 0 }}>{children}</div>
+        <div style={{ display: 'flex', flexShrink: 0 }} aria-hidden>{children}</div>
+      </div>
+    </div>
+  );
+}
+
+Object.assign(window, { useCountdown, useCountUp, pad, fmtInt, Icon, Avatar, LiveDot, Sparkline, Marquee });

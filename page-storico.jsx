@@ -1,0 +1,359 @@
+// STORICO — Telemetry style + responsive + expand details
+var _mesi = { GEN:0, FEB:1, MAR:2, APR:3, MAG:4, GIU:5, LUG:6, AGO:7, SET:8, OTT:9, NOV:10, DIC:11 };
+var _giorni = ['DOM','LUN','MAR','MER','GIO','VEN','SAB'];
+function dayName(dateStr) {
+  var parts = dateStr.split(' ');
+  if (parts.length !== 2 || !_mesi.hasOwnProperty(parts[1])) return '';
+  var d = new Date(2026, _mesi[parts[1]], parseInt(parts[0]));
+  return _giorni[d.getDay()];
+}
+
+function StoricoPage() {
+  const { HISTORY } = window.TRAINING;
+  const [query, setQuery] = React.useState('');
+  const [filter, setFilter] = React.useState('TUTTI');
+
+  const filtered = HISTORY.filter((h) => {
+    if (filter !== 'TUTTI' && h.kind.toUpperCase() !== filter) return false;
+    if (!query) return true;
+    return (h.title + ' ' + h.note).toLowerCase().includes(query.toLowerCase());
+  });
+
+  const kindLabel = { hyrox: 'HYROX', altro: 'ALTRO', strength: 'STRENGTH', run: 'RUN', ski: 'SKI', row: 'ROW', bike: 'BIKE', rest: 'REST' };
+  const kindColor = (k) => ({
+    hyrox: '#FCEE4F', altro: '#4ECDC4', strength: 'oklch(80% 0.15 60)',
+    run: '#39E75F', ski: '#6C68D7', row: '#58ADF7',
+    bike: '#FF6B9D', rest: 'var(--fg-3)'
+  }[k] || 'var(--fg-2)');
+
+  return (
+    <TelemetryChrome active="STORICO">
+      {/* Title */}
+      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 12 }}>
+        <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 8 }}>
+          // ARCHIVE_QUERY · {HISTORY.length} sessions · since 04 GEN 2026
+        </div>
+        <div className="display r-display-hero" style={{ fontSize: 'var(--display-hero)', lineHeight: 0.9 }}>
+          STORI<span style={{ color: 'var(--accent)' }}>CO.</span>
+        </div>
+      </div>
+
+      {/* Search + filter */}
+      <ModulePanel code="MOD.QUERY · search + filter">
+        <div className="r-storico-query" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 12, alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, border: '1px solid var(--line-2)', padding: '10px 14px', background: 'var(--bg-3)' }}>
+            <span style={{ color: 'var(--accent)', fontSize: 13 }}>$</span>
+            <input
+              value={query} onChange={(e) => setQuery(e.target.value)}
+              placeholder="grep workout|exercise|note…"
+              style={{
+                flex: 1, background: 'transparent', border: 'none', outline: 'none',
+                color: 'var(--fg)', fontFamily: 'var(--mono)', fontSize: 13, minWidth: 0
+              }}
+            />
+            <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{filtered.length}_RES</span>
+          </div>
+          <div className="r-storico-filters" style={{ display: 'flex', gap: 4 }}>
+            {['TUTTI', 'RUN', 'SKI', 'ROW', 'BIKE', 'HYROX', 'ALTRO', 'STRENGTH'].map((f) => (
+              <button key={f} onClick={() => setFilter(f)}
+                style={{
+                  background: filter === f ? 'var(--accent)' : 'transparent',
+                  color: filter === f ? '#000' : 'var(--fg-2)',
+                  border: '1px solid ' + (filter === f ? 'var(--accent)' : 'var(--line)'),
+                  padding: '8px 12px', fontFamily: 'var(--display)', fontSize: 12, letterSpacing: '0.06em', fontWeight: 700,
+                  cursor: 'pointer'
+                }}>{f}</button>
+            ))}
+          </div>
+        </div>
+      </ModulePanel>
+
+      {/* Stats summary */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))', gap: 8, marginBottom: 12 }}>
+        {[
+          { l: 'TOT', v: HISTORY.length },
+          { l: 'RUN', v: HISTORY.filter((h) => h.kind === 'run').length },
+          { l: 'SKI', v: HISTORY.filter((h) => h.kind === 'ski').length },
+          { l: 'ROW', v: HISTORY.filter((h) => h.kind === 'row').length },
+          { l: 'BIKE', v: HISTORY.filter((h) => h.kind === 'bike').length },
+          { l: 'HX', v: HISTORY.filter((h) => h.kind === 'hyrox').length },
+          { l: 'ALT', v: HISTORY.filter((h) => h.kind === 'altro').length },
+          { l: 'STR', v: HISTORY.filter((h) => h.kind === 'strength').length },
+          { l: 'PB/TEST', v: HISTORY.filter((h) => h.note.includes('PB') || h.note.includes('TEST')).length, accent: true },
+        ].map((s) => (
+          <div key={s.l} style={{
+            border: '1px solid ' + (s.accent ? 'var(--accent)' : 'var(--line)'),
+            background: s.accent ? 'oklch(88% 0.20 130 / 0.06)' : 'var(--bg-2)',
+            padding: '12px 16px'
+          }}>
+            <div style={{ fontSize: 10, color: s.accent ? 'var(--accent)' : 'var(--fg-3)', letterSpacing: '0.18em' }}>// {s.l}</div>
+            <div className="display tabular" style={{ fontSize: 32, marginTop: 4, color: s.accent ? 'var(--accent)' : 'var(--fg)' }}>{s.v}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* List */}
+      <ModulePanel code="MOD.LOG · session_archive">
+        <div className="r-history-head" style={{
+          padding: '8px 4px', fontSize: 10,
+          letterSpacing: '0.18em', color: 'var(--fg-3)', borderBottom: '1px solid var(--line-2)'
+        }}>
+          <span>DATE</span><span>TYPE</span><span>WORKOUT</span><span>LOAD</span><span>DUR</span><span>RPE</span><span></span>
+        </div>
+        {filtered.map((h, i) => (
+          <HistoryRow key={i} h={h} kindLabel={kindLabel} kindColor={kindColor} />
+        ))}
+        {filtered.length === 0 && (
+          <div style={{ padding: 48, textAlign: 'center', color: 'var(--fg-3)', letterSpacing: '0.15em' }}>
+            ◇ NO_RESULTS
+          </div>
+        )}
+      </ModulePanel>
+    </TelemetryChrome>
+  );
+}
+
+function HistoryRow({ h, kindLabel, kindColor }) {
+  const [hov, setHov] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const isPb = h.note.includes('PB');
+  const isTest = h.note.includes('TEST') || h.title.toLowerCase().includes('test');
+  const hasDetails = !!h.details;
+  return (
+    <div style={{ borderBottom: '1px dashed var(--line-2)' }}>
+      <div
+        className="r-history-row"
+        onClick={() => hasDetails && setOpen(!open)}
+        onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+        style={{
+          padding: '14px 4px',
+          background: open ? 'var(--bg-3)' : hov ? 'oklch(18% 0 0 / 0.5)' : 'transparent',
+          cursor: hasDetails ? 'pointer' : 'default',
+          transition: 'background .12s',
+        }}>
+        <div className="rh-date tabular" style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em' }}><span style={{ color: 'var(--fg-3)' }}>{dayName(h.date)}</span> {h.date}</div>
+        <div className="rh-type">
+          <span style={{
+            display: 'inline-block', background: kindColor(h.kind), color: '#000',
+            padding: '4px 10px', fontSize: 11, fontFamily: 'var(--display)',
+            letterSpacing: '0.12em', fontWeight: 700, minWidth: 60, textAlign: 'center'
+          }}>{kindLabel[h.kind]}</span>
+        </div>
+        <div className="rh-title">
+          <div style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--sans)', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+            {h.title}
+            {isPb && (
+              <span style={{
+                background: 'var(--accent)', color: '#000', padding: '1px 6px',
+                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
+              }}>NEW_PB</span>
+            )}
+            {isTest && !isPb && (
+              <span style={{
+                background: 'oklch(70% 0.18 280)', color: '#fff', padding: '1px 6px',
+                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
+              }}>TEST</span>
+            )}
+            {isTest && isPb && (
+              <span style={{
+                background: 'oklch(65% 0.20 30)', color: '#fff', padding: '1px 6px',
+                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
+              }}>PR_TEST</span>
+            )}
+          </div>
+          {h.note && <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 3 }}>{h.note}</div>}
+        </div>
+        <div className="rh-load" style={{ fontSize: 10, letterSpacing: '0.1em', color: 'var(--fg-2)' }}>{h.load}</div>
+        <div className="rh-dur display tabular" style={{ fontSize: 18 }}>{h.dur}<span style={{ fontSize: 10, color: 'var(--fg-3)', marginLeft: 1 }}>'</span></div>
+        <div className="rh-rpe" style={{ display: 'flex', gap: 1, alignItems: 'flex-end', height: 14 }}>
+          {Array.from({ length: 10 }).map((_, j) => (
+            <div key={j} style={{
+              width: 3, height: j < h.rpe ? 14 : 4,
+              background: j < h.rpe ? (h.rpe >= 8 ? 'var(--warn)' : 'var(--accent)') : 'var(--line)'
+            }} />
+          ))}
+        </div>
+        {/* Mobile-only meta row */}
+        <div className="rh-meta r-only-sm">
+          <span className="tabular" style={{ letterSpacing: '0.05em' }}>{dayName(h.date)} {h.date}</span>
+          <span className="display tabular" style={{ fontSize: 14 }}>{h.dur}'</span>
+          <span style={{ fontSize: 10, letterSpacing: '0.1em' }}>{h.load}</span>
+          <span style={{ fontSize: 10, letterSpacing: '0.1em', color: h.rpe >= 8 ? 'var(--warn)' : 'var(--accent)' }}>RPE {h.rpe}</span>
+        </div>
+        <div className="rh-arrow" style={{ textAlign: 'right' }}>
+          {hasDetails ? (
+            <span style={{
+              display: 'inline-block', fontSize: 11,
+              color: open ? 'var(--accent)' : hov ? 'var(--accent)' : 'var(--fg-3)',
+              transition: 'transform .15s, color .15s',
+              transform: open ? 'rotate(90deg)' : 'none'
+            }}>▶</span>
+          ) : (
+            <Icon.arrow width="12" height="12" style={{
+              color: 'var(--line)', opacity: 0.3
+            }} />
+          )}
+        </div>
+      </div>
+
+      {/* Expanded detail panel */}
+      {open && h.details && (
+        <div style={{ padding: '0 4px 16px 16px', background: 'var(--bg-3)', borderTop: '1px solid var(--line-2)' }}>
+          {/* Summary */}
+          <div style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em', padding: '12px 0 10px', fontFamily: 'var(--mono)' }}>
+            {h.details.summary}
+          </div>
+
+          {/* Blocks (if present — e.g. CR) */}
+          {h.details.blocks && h.details.blocks.map((b, bi) => (
+            <div key={bi} style={{ marginBottom: 10, padding: '10px 12px', border: '1px solid var(--line-2)', background: 'var(--bg-2)' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
+                <span style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.15em', fontWeight: 700 }}>{b.label}</span>
+                <span style={{ fontSize: 12, fontFamily: 'var(--sans)', fontWeight: 500 }}>{b.name}</span>
+              </div>
+              {b.splits.map((s, si) => (
+                <div key={si} style={{ fontSize: 11, color: 'var(--fg-2)', fontFamily: 'var(--mono)', padding: '3px 0', letterSpacing: '0.03em' }}>
+                  {typeof s === 'string' ? s : (s.label + ' · ' + (s.pace || '') + (s.watts ? ' · ' + s.watts : '') + (s.hr ? ' · HR ' + s.hr : ''))}
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* Metrics grid */}
+          {h.details.metrics && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: 6, marginTop: h.details.blocks ? 6 : 0 }}>
+              {h.details.metrics.map((m, mi) => (
+                <div key={mi} style={{ padding: '8px 10px', border: '1px solid var(--line-2)', background: 'var(--bg-2)' }}>
+                  <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 4 }}>// {m.l || m.k || m.label || ''}</div>
+                  <div className="display tabular" style={{ fontSize: 16, color: 'var(--fg)' }}>{m.v || m.value || ''}</div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Data Table */}
+          {h.details.table && (
+            <div style={{ marginTop: 10, overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--mono)', fontSize: 11 }}>
+                <thead>
+                  <tr>
+                    {h.details.table.headers.map((th, ti) => (
+                      <th key={ti} style={{ padding: '6px 8px', borderBottom: '1px solid var(--line-2)', color: 'var(--fg-3)', fontSize: 9, letterSpacing: '0.15em', textAlign: ti === 0 ? 'left' : 'center', fontWeight: 600 }}>{th}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {h.details.table.rows.map((row, ri) => (
+                    <tr key={ri}>
+                      {row.map((cell, ci) => (
+                        <td key={ci} style={{
+                          padding: '5px 8px',
+                          borderBottom: '1px solid var(--line-2)',
+                          textAlign: ci === 0 ? 'left' : 'center',
+                          color: ci === 0 ? 'var(--accent)' : (h.details.table.highlight && ci === h.details.table.highlight ? '#fff' : 'var(--fg-2)'),
+                          fontWeight: (ci === 0 || (h.details.table.highlight && ci === h.details.table.highlight)) ? 700 : 400,
+                          background: h.details.table.highlight && ci === h.details.table.highlight ? 'rgba(184,255,87,0.08)' : 'transparent',
+                        }}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {/* GPS Map */}
+          {h.details.gps && h.details.gps.length > 0 && (
+            <RunMap gps={h.details.gps} title={h.title} date={h.date} />
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function RunMap({ gps, title, date }) {
+  var mapRef = React.useRef(null);
+  var containerRef = React.useRef(null);
+
+  React.useEffect(function() {
+    if (!containerRef.current || !window.L || mapRef.current) return;
+
+    // Calculate bounds
+    var lats = gps.map(function(p) { return p[0]; });
+    var lons = gps.map(function(p) { return p[1]; });
+    var bounds = [[Math.min.apply(null, lats), Math.min.apply(null, lons)],
+                  [Math.max.apply(null, lats), Math.max.apply(null, lons)]];
+
+    var map = L.map(containerRef.current, {
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: false,
+    });
+
+    // Dark tile layer matching site theme
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Route polyline — accent green
+    var routeLine = L.polyline(gps, {
+      color: '#B8FF57',
+      weight: 3,
+      opacity: 0.9,
+      lineCap: 'round',
+      lineJoin: 'round',
+    }).addTo(map);
+
+    // Start marker
+    L.circleMarker(gps[0], {
+      radius: 6, fillColor: '#B8FF57', fillOpacity: 1,
+      color: '#000', weight: 2,
+    }).addTo(map).bindTooltip('START', {
+      permanent: true, direction: 'right',
+      className: 'map-tooltip',
+      offset: [8, 0],
+    });
+
+    // End marker
+    L.circleMarker(gps[gps.length - 1], {
+      radius: 6, fillColor: '#ff5757', fillOpacity: 1,
+      color: '#000', weight: 2,
+    }).addTo(map).bindTooltip('FINISH', {
+      permanent: true, direction: 'right',
+      className: 'map-tooltip',
+      offset: [8, 0],
+    });
+
+    map.fitBounds(bounds, { padding: [30, 30] });
+    mapRef.current = map;
+
+    return function() {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, [gps]);
+
+  return (
+    <div style={{ marginTop: 12, border: '1px solid var(--line)', overflow: 'hidden' }}>
+      <div style={{
+        padding: '8px 12px', background: 'var(--bg-2)',
+        borderBottom: '1px solid var(--line-2)',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+      }}>
+        <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.18em', fontWeight: 700 }}>
+          // ROUTE_MAP · GPS
+        </div>
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.1em' }}>
+          {gps.length} pts
+        </div>
+      </div>
+      <div ref={containerRef} style={{ height: 320, width: '100%', background: '#1a1a2e' }} />
+      <style>{'.map-tooltip{background:rgba(0,0,0,0.85)!important;color:#B8FF57!important;border:1px solid #B8FF57!important;font-family:var(--mono)!important;font-size:9px!important;letter-spacing:0.15em!important;padding:3px 8px!important;border-radius:0!important;box-shadow:none!important}.map-tooltip:before{display:none!important}'}</style>
+    </div>
+  );
+}
+
+window.StoricoPage = StoricoPage;
