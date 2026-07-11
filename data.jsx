@@ -843,7 +843,7 @@ const WEEK = [
         result: 'Su TAPIS (stesso lavoro del gruppo in pista) · WU 1.198km @10:17 + 4×1200m @4:06/km rec ~2:30 jog · tot 6.626km · HR 141/167 · reps FC 145→150→153→154 (Z4-Z5, pbp) max 167 · cad 174-178 spm · pace costantissimo 4:06-4:07' },
     ]
   },
-  { day: 'VEN', date: '10', title: '8:00 palestra DEADLIFT+PANCA · 18:00 casa ROW', sub: 'mattina forza (personal) · sera row', load: 'HEAVY+Z2', duration: 130, kind: 'hyrox', done: false,
+  { day: 'VEN', date: '10', title: '8:00 palestra DEADLIFT+PANCA · 18:00 casa ROW', sub: 'mattina forza (personal) · sera row', load: 'HEAVY+Z2', duration: 130, kind: 'hyrox', done: true,
     blocks: [
       { code: 'STRENGTH', t: '8:00 · palestra · Deadlift 7×4 @72,5% (114,2kg → barra 115kg)', d: '7×4 @72,5% 1RM (157,5kg → 114,2kg, caricabile 115kg) · recupero completo\nDischi per lato: 20 + 20 + 5 + 2,5 (bilanciere 20kg)\nTempo: 2" negativa · 1" fermo in buca · 1" positiva · qb in cima\nFocus: lat attivi, barra a contatto gambe, bracing ogni rep · no rimbalzo', dur: '30\'',
         ref: '1RM 157.5kg (11 GIU) · 72,5% = 114,2kg · barra reale 115kg (+0,8kg)',
@@ -854,7 +854,8 @@ const WEEK = [
         result: 'FATTO Panca piana 4×4 @65kg (dischi 20+2,5/lato) · in superset con Curl bicipite 10 rep @12kg (manubri) tra le serie' },
       { code: 'ROW', t: '18:00 · casa · Row Wave Fartlek 11×(3\' Z2 / 2\' Z1)', d: '10\' riscaldamento Z1\n11×(3\' Z2 / 2\' Z1) · oscilla tra Z1 basso (110-119) e Z2 alto (fino a 135) in onde regolari\n10\' defaticamento Z1', dur: '75\'',
         ref: 'S27 29/06: 16.092m 192W Z2 HR128 · 10×(3\'Z2/2\'Z1)',
-        expect: 'HR media Z2 (120-135) con variazioni ritmiche · +1 round vs S27 (11 vs 10)' },
+        expect: 'HR media Z2 (120-135) con variazioni ritmiche · +1 round vs S27 (11 vs 10)',
+        result: '17.695m · 75\'00" · 170W avg · DF88 · HR 118.7/138 · 1128cal · Z2 11×3\' avg 215W HR127 EF~1.70 · Z1 11×2\' recovery · EF 1.71→1.68 Dec 2.1% (stabilità ottima) · 11 round (+1 vs S27) · potenza Z2 +23W vs S27 · HR pbp' },
     ]
   },
   { day: 'SAB', date: '11', title: 'HYROX EMOM 48\' · casa', sub: 'EMOM aerobico a casa', load: 'Z2-Z4', duration: 48, kind: 'hyrox', done: false,
@@ -887,7 +888,7 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,23.354];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0];
@@ -895,11 +896,11 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 
 // Totals (real)
 const TOTALS = {
-  rower: 592.675,
+  rower: 610.370,
   ski: 562.401,
   run: 554.410,
   bike: 200.823,
-  total: 1888.143,
+  total: 1905.838,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -928,6 +929,39 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '11 LUG', title: 'Row Wave Fartlek · 17.695m · 11×(3\'Z2 / 2\'Z1)', kind: 'row', dur: 75, load: 'Z2', rpe: 5, note: '17.695m · 75\'00" · 170W avg · DF88 · HR 118.7/138 · 1128cal · Z2 11×3\' avg 215W HR127 · EF 1.71→1.68 Dec 2.1% · 11 round (+1 vs S27, +23W Z2)',
+    details: {
+      summary: 'Row Wave Fartlek S28 VEN (16:39) — 10\' WU Z1 + 11×(3\' Z2 / 2\' Z1) + 10\' defa Z1. DF88. HR ricostruita point-by-point. Z2 molto costante sui 204-226W (avg 215W) con HR 125-128, Z1 recovery efficaci. EF prima metà 1.71, seconda metà 1.68, decoupling solo 2.1% — stabilità aerobica eccellente su 11 round. Rispetto S27 29/06 (10 round, Z2 192W): +1 round e potenza Z2 più alta (+23W) con lo stesso controllo cardiaco. Nota file: il FIT originale Concept2 e quello estratto da Garmin sono identici (entrambi con HR + potenza) — basta caricare l\'originale C2.',
+      metrics: [
+        { l: 'DISTANZA', v: '17.695 m' },
+        { l: 'TEMPO', v: '75\'00"' },
+        { l: 'AVG POWER', v: '170 W' },
+        { l: 'DRAG FACTOR', v: '88' },
+        { l: 'HR AVG (pt-pt)', v: '118.7 bpm' },
+        { l: 'HR MAX', v: '138 bpm' },
+        { l: 'Z2 avg', v: '215 W · HR 127' },
+        { l: 'EF Z2 1st→2nd', v: '1.71 → 1.68' },
+        { l: 'DECOUPLING', v: '2.1%' },
+        { l: 'CALORIE', v: '1128 kcal' },
+      ],
+      table: {
+        headers: ['Round Z2 (3\')', 'Watt', 'SPM', 'HR avg (pt-pt)', 'EF'],
+        rows: [
+          ['1', '214', '25', '126.5', '1.69'],
+          ['2', '226', '25', '128.1', '1.76'],
+          ['3', '218', '25', '126.0', '1.73'],
+          ['4', '214', '25', '125.0', '1.71'],
+          ['5', '209', '26', '125.6', '1.66'],
+          ['6', '223', '26', '127.6', '1.75'],
+          ['7', '218', '25', '127.5', '1.71'],
+          ['8', '214', '26', '127.9', '1.67'],
+          ['9', '218', '26', '128.2', '1.70'],
+          ['10', '204', '25', '125.0', '1.63'],
+          ['11', '214', '25', '128.3', '1.67'],
+        ],
+      },
+    }
+  },
   { date: '09 LUG', title: 'Forza · Back Squat 6×5 + Panca 4×4 + Curl', kind: 'strength', dur: 45, load: 'HEAVY', rpe: 6, note: 'Back Squat 6×5 @75kg rec 2\' · Panca piana 4×4 @65kg in superset con Curl bicipite 10×12kg tra le serie',
     details: {
       summary: 'Seduta forza in palestra S28 (personal). Back Squat 6 serie da 5 a 75kg con recupero 2\' (al posto del deadlift programmato). Poi Panca piana 4 serie da 4 a 65kg, con Curl bicipite 10 rep a 12kg (manubri) intercalato tra una serie e l\'altra (superset antagonista). Dischi: squat 20+5+2,5/lato (75kg), panca 20+2,5/lato (65kg).',
