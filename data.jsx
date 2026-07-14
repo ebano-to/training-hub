@@ -1,5 +1,5 @@
 // Shared training data for Federico Simondi — Hyrox training hub
-// Real data — S28 week (06 - 12 Jul 2026)
+// Real data — S29 week (13 - 19 Jul 2026)
 
 const RACE = {
   name: 'HYROX ROMA',
@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 28,
+  programWeek: 29,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -802,10 +802,7 @@ const WEEK_ARCHIVE = [
     blocks: []
   },
   ]},
-];
-
-// Current week — S28 (06 - 12 LUG 2026)
-const WEEK = [
+  { id: 'S28', label: 'S28 · 06 LUG → 12 LUG', range: '06 LUG → 12 LUG 2026', programWeek: 28, days: [
   { day: 'LUN', date: '06', title: 'mattina palestra ASSAULT BIKE PYRAMID · 18:00 casa TAPIS PENDENZA', sub: 'mattina assault (al posto del row) · sera tapis', load: 'Z2-Z3', duration: 125, kind: 'hyrox', done: true,
     blocks: [
       { code: 'BIKE', t: 'mattina · palestra · Assault Bike Intra-Session Pyramid 75\'', d: '5\' rampa Z1→Z2 (fino a 120 bpm)\n10\' Z2 low (120-125 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 top (130-135 bpm)\n15\' Z2 mid (125-130 bpm)\n10\' Z2 low (120-125 bpm)\n5\' rampa Z2→Z1 (verso 115 bpm)\nBPM da zone lattato reali (Z2 120-135)', dur: '75\'',
@@ -829,10 +826,11 @@ const WEEK = [
         result: '11.168km · 78\'08" · 7:00/km avg · D+233m (tapis Technogym, percorso collinare simulato) · HR 123/147 · cad 84 · 995cal · Z2 69% Z1 27% · finale ~3 allunghi (57-76m, fino a 18.6km/h = 3:13/km, HR 141) invece dei 6×80m' },
     ]
   },
-  { day: 'MER', date: '08', title: 'BIKE SALITA 3×8\' @135 BPM · esterna', sub: 'bici salita a intervalli in esterna', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
+  { day: 'MER', date: '08', title: 'BIKE SALITA 3×8\' @135 BPM · esterna', sub: 'bici salita a intervalli in esterna', load: 'Z2-Z3', duration: 90, kind: 'bike', done: true,
     blocks: [
       { code: 'BIKE', t: 'esterna · Bike salita 3×(8\' a 135 bpm) rec a scendere', d: '30\' riscaldamento\nin salita: 3×(8\' tenendo 135 bpm · recupero nella discesa)\n30\' defaticamento', dur: '~90\'',
-        expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa' },
+        expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa',
+        result: 'NON SVOLTO in S28 → recuperato in S29' },
     ]
   },
   { day: 'GIO', date: '09', title: '10:15 pista RUN QUALITÀ RUFFINI', sub: 'qualità (fatta su tapis)', load: 'Z3-Z5', duration: 42, kind: 'run', done: true,
@@ -858,11 +856,12 @@ const WEEK = [
         result: '17.695m · 75\'00" · 170W avg · DF88 · HR 118.7/138 · 1128cal · Z2 11×3\' avg 215W HR127 EF~1.70 · Z1 11×2\' recovery · EF 1.71→1.68 Dec 2.1% (stabilità ottima) · 11 round (+1 vs S27) · potenza Z2 +23W vs S27 · HR pbp' },
     ]
   },
-  { day: 'SAB', date: '11', title: 'HYROX EMOM 48\' · casa', sub: 'EMOM aerobico a casa', load: 'Z2-Z4', duration: 48, kind: 'hyrox', done: false,
+  { day: 'SAB', date: '11', title: 'HYROX EMOM 48\' · casa', sub: 'EMOM aerobico a casa', load: 'Z2-Z4', duration: 48, kind: 'hyrox', done: true,
     blocks: [
       { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\'', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
         ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
-        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round' },
+        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round',
+        result: 'NON SVOLTO in S28 → recuperato in S29' },
     ]
   },
   { day: 'DOM', date: '12', title: '8:30 esterna RUN TRAIL BOSCHI 1H10\' + ALLUNGHI', sub: 'mattina trail piano nei boschi', load: 'Z2', duration: 72, kind: 'run', done: true,
@@ -873,6 +872,29 @@ const WEEK = [
         result: '10.549km · 72\'03" · trail 10km @6:42/km (D+26m, piano) + 5×~100m allunghi (3:45-4:26/km) · HR 120/141 · cad 170 (allunghi 186) · 952cal · Z1 48% Z2 51% · fatti 5 allunghi dei 8 previsti' },
     ]
   },
+  ]},
+];
+
+// Current week — S29 (13 - 19 LUG 2026)
+const WEEK = [
+  { day: 'LUN', date: '13', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MAR', date: '14', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MER', date: '15', title: 'BIKE SALITA 3×8\' @135 BPM · esterna', sub: 'recupero S28 · bici salita a intervalli', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'esterna · Bike salita 3×(8\' a 135 bpm) rec a scendere', d: '30\' riscaldamento\nin salita: 3×(8\' tenendo 135 bpm · recupero nella discesa)\n30\' defaticamento', dur: '~90\'',
+        expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa · RECUPERO da S28' },
+    ]
+  },
+  { day: 'GIO', date: '16', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'VEN', date: '17', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' · casa', sub: 'recupero S28 · EMOM aerobico a casa', load: 'Z2-Z4', duration: 48, kind: 'hyrox', done: false,
+    blocks: [
+      { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\'', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
+        ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
+        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round · RECUPERO da S28' },
+    ]
+  },
+  { day: 'DOM', date: '19', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
 ];
 
 // Real Personal Bests
@@ -889,10 +911,10 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
