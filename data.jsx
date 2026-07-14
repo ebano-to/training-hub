@@ -884,7 +884,8 @@ const WEEK = [
         expect: 'HR media Z2 (120-135) · alternanza ski/row · +1 round vs S28 (12 vs 11)' },
       { code: 'RUN', t: 'casa · Tapis 15\' risc + 27\' pendenza 8% a 142 bpm + 10\' defa bike 140W', d: '15\' riscaldamento\n27\' a pendenza 8% tenendo 142 bpm costanti (Z3)\n10\' defaticamento in bike a 140W', dur: '~52\'',
         ref: 'S28 06/07: tapis 25\' @8% 142bpm centrato (141.9) · 5.560km D+281m',
-        expect: '27\' in salita 8% a 142 bpm (Z3) · +2\' vs S28 · defa bike 140W' },
+        expect: '27\' in salita 8% a 142 bpm (Z3) · +2\' vs S28 · defa bike 140W',
+        result: '6.542km · 47\'00" · WU 15\' @6:26/km + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' @7:08 · HR 131/149 · cad 170 · 676cal · D+104m (FIT sotto-registra; reale ~281m per 27\'@8%) · vs 06/07: stesso target e pace 7:42/km, +2\' durata · svolto 14/07 · defa bike non svolta' },
     ]
   },
   { day: 'MAR', date: '14', title: 'esterna BIKE SALITA 3×8\' @135 BPM (recupero)', sub: 'bici salita a intervalli · recupero S28', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
@@ -948,7 +949,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,0];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,6.542];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
@@ -956,9 +957,9 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 610.370,
   ski: 562.401,
-  run: 564.959,
+  run: 571.501,
   bike: 200.823,
-  total: 1916.387,
+  total: 1922.929,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -987,6 +988,30 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '14 LUG', title: 'Tapis Pendenza 8% \u00b7 27\' a 142 bpm \u00b7 6.542km', kind: 'run', dur: 47, load: 'Z3', rpe: 6, note: '6.542km \u00b7 47\'00" \u00b7 WU 15\' @6:26 + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' \u00b7 HR 131/149 \u00b7 cad 170 \u00b7 676cal \u00b7 D+104m (FIT sotto-registra, reale ~281m)',
+    details: {
+      summary: 'Tapis in pendenza S29 LUN (svolto 14/07 16:34). 15\' riscaldamento (pi\u00f9 veloce del solito, 6:26/km, HR 109) + 27\' a pendenza 8% tenendo 142 bpm + 5\' defaticamento (la parte bike 10\' @140W non svolta). Blocco centrale eseguito ancora sul target: FC media point-by-point 142.6 su 142, molto stabile (range 119-149), pace 7:42/km identico alla volta precedente. Nota dislivello: il FIT registra solo D+104m ma per 27\' all\'8% il valore fisico \u00e8 ~281m \u2014 questo tapis ha sotto-registrato l\'elevazione (il 06/07 registr\u00f2 correttamente 281m per 25\').',
+      metrics: [
+        { l: 'DISTANZA', v: '6.542 km' },
+        { l: 'TEMPO', v: '47\'00"' },
+        { l: 'BLOCCO 27\' @8%', v: '142.6 bpm (target 142)' },
+        { l: 'PACE 27\'', v: '7:42/km' },
+        { l: 'HR AVG', v: '131 bpm' },
+        { l: 'HR MAX', v: '149 bpm' },
+        { l: 'CADENZA', v: '170 spm' },
+        { l: 'D+ (FIT / reale)', v: '104 m / ~281 m' },
+        { l: 'CALORIE', v: '676 kcal' },
+      ],
+      table: {
+        headers: ['Blocco', 'Durata', 'Pace', 'FC media (pt-pt)', 'FC max'],
+        rows: [
+          ['WU', '15\'', '6:26/km', '109.4', '128'],
+          ['Pendenza 8%', '27\'', '7:42/km', '142.6', '149'],
+          ['CD', '5\'', '7:08/km', '129.4', '144'],
+        ],
+      },
+    }
+  },
   { date: '12 LUG', title: 'Run Trail Boschi (piano) \u00b7 10.549km + allunghi', kind: 'run', dur: 72, load: 'Z2', rpe: 5, note: '10.549km \u00b7 72\'03" \u00b7 trail 10km @6:42/km (piano, D+26m) + 5\u00d7~100m allunghi (3:45-4:26/km) \u00b7 HR 120/141 \u00b7 cad 170 \u00b7 952cal \u00b7 Z1 48% Z2 51%',
     details: {
       summary: 'Run trail nei boschi in piano S28 DOM (06:37). 10km di corsa su terreno piano (D+26m) a 6:42/km medio, HR molto bassa e controllata (Z1 48%, Z2 51%) \u2014 endurance aerobica pura. In coda 5 allunghi da ~100m (3:45-4:26/km, cadenza 186) sui 8 previsti. Cadenza corsa 170 spm sul fondo. Bella seduta di scarico attivo/fondo lento.',
