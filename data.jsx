@@ -918,10 +918,8 @@ const WEEK = [
         expect: 'Gara · non contata nei volumi di allenamento' },
     ]
   },
-  { day: 'SAB', date: '18', title: 'RUN LUNGA + HYROX EMOM 48\' + BIKE PIANURA', sub: 'lunga + EMOM + bici easy · giornata piena post-gara', load: 'Z2-Z4', duration: 200, kind: 'hyrox', done: false,
+  { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' + BIKE 1H30\' PIANURA', sub: 'EMOM + bici easy post-gara', load: 'Z1-Z4', duration: 140, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'RUN', t: 'esterna · Run lunga', d: 'Lunga aerobica · dettaglio in loco', dur: '~60\'',
-        expect: 'Lunga aerobica Z2' },
       { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (include recupero S28)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
         ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
         expect: 'Aerobico Hyrox 4 stazioni · questo EMOM copre anche il recupero di S28' },
