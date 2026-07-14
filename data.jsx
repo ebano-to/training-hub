@@ -877,15 +877,16 @@ const WEEK_ARCHIVE = [
 
 // Current week — S29 (13 - 19 LUG 2026)
 const WEEK = [
-  { day: 'LUN', date: '13', title: 'casa ROW+SKI WAVE 12× · casa TAPIS 27\' PENDENZA @142', sub: 'wave fartlek + tapis in pendenza', load: 'Z2-Z3', duration: 130, kind: 'hyrox', done: false,
+  { day: 'LUN', date: '13', title: 'casa ROW+SKI WAVE 12× · casa TAPIS 27\' PENDENZA @142', sub: 'wave fartlek + tapis in pendenza', load: 'Z2-Z3', duration: 130, kind: 'hyrox', done: true,
     blocks: [
       { code: 'ROW', t: 'casa · Row+Ski Wave Fartlek 12×(3\' Z2 / 2\' Z1) · alterna 2 ski / 2 row', d: '10\' riscaldamento Z1\n12×(3\' Z2 / 2\' Z1) alternando 2 waves su SkiErg e 2 waves su Row · Z2 alto (fino a 135) / Z1 basso (110-119)\n10\' defaticamento Z1', dur: '75\'',
         ref: 'S28 11/07: Row Wave 11× 215W Z2 EF 1.71→1.68 Dec 2.1%',
-        expect: 'HR media Z2 (120-135) · alternanza ski/row · +1 round vs S28 (12 vs 11)' },
+        expect: 'HR media Z2 (120-135) · alternanza ski/row · +1 round vs S28 (12 vs 11)',
+        result: '82\'36" (Garmin) · 12×(3\'Z2/2\'Z1) alterna 2row/2ski · HR 121/137 · Z2 waves tutte in Z2 (FC 124-130 ✓) · Z1 rec 117-124 (un po\' alte, rec 2\' breve) · Row 9.118km waves 188-220W · Ski 8.632km waves 166-186W · 12 round completati · qualche ritardo nelle transizioni (svolto 14/07)' },
       { code: 'RUN', t: 'casa · Tapis 15\' risc + 27\' pendenza 8% a 142 bpm + 10\' defa bike 140W', d: '15\' riscaldamento\n27\' a pendenza 8% tenendo 142 bpm costanti (Z3)\n10\' defaticamento in bike a 140W', dur: '~52\'',
         ref: 'S28 06/07: tapis 25\' @8% 142bpm centrato (141.9) · 5.560km D+281m',
         expect: '27\' in salita 8% a 142 bpm (Z3) · +2\' vs S28 · defa bike 140W',
-        result: '6.542km · 47\'00" · WU 15\' @6:26/km + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' @7:08 · HR 131/149 · cad 170 · 676cal · D+104m (FIT sotto-registra; reale ~281m per 27\'@8%) · vs 06/07: stesso target e pace 7:42/km, +2\' durata · svolto 14/07 · defa bike non svolta' },
+        result: '6.542km · 47\'00" · WU 15\' @6:26/km + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' @7:08 · HR 131/149 · cad 170 · 676cal · D+~279m reale (27\'@8%; il tapis registrò solo 104m, mal tarato) · vs 06/07: stesso target e pace 7:42/km, +2\' durata · svolto 14/07 · defa bike non svolta' },
     ]
   },
   { day: 'MAR', date: '14', title: 'esterna BIKE SALITA 3×8\' @135 BPM (recupero)', sub: 'bici salita a intervalli · recupero S28', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
@@ -947,19 +948,19 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,9.118];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,8.632];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,6.542];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 610.370,
-  ski: 562.401,
+  rower: 619.488,
+  ski: 571.033,
   run: 571.501,
   bike: 200.823,
-  total: 1922.929,
+  total: 1940.679,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -988,6 +989,38 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '14 LUG', title: 'Row+Ski Wave Fartlek \u00b7 12\u00d7(3\'Z2/2\'Z1) alterna 2row/2ski', kind: 'row', dur: 83, load: 'Z2', rpe: 5, note: '82\'36" (Garmin) \u00b7 Row 9.118km + Ski 8.632km \u00b7 HR 121/137 \u00b7 Z2 waves tutte in Z2 (FC 124-130) \u00b7 Z1 rec 117-124 \u00b7 12 round \u00b7 ricostruito da 3 file C2 + Garmin filone',
+    details: {
+      summary: 'Row+Ski Wave Fartlek S29 LUN (svolto 14/07). 10\' WU (row) + 12\u00d7(3\' Z2 / 2\' Z1) alternando 2 waves row e 2 waves ski + 10\' defa (ski). Ricostruito unendo 3 file Concept2 (i due erg hanno PM5 con orologi non sincronizzati) + il file Garmin come filone unico per la FC (82.6\' continui, HR avg 120.5 max 137). Sequenza confermata a perfetta alternanza 2 row / 2 ski (i "buchi" da 292s e 76s nel file ski sono le transizioni verso il row). VERIFICA COERENZA: tutte le 12 waves Z2 hanno FC point-by-point in Z2 (124-130 bpm) \u2014 target rispettato. I recuperi Z1 (2\') restano per\u00f2 un po\' alti (117-124), cio\u00e8 al confine Z1/Z2: con solo 2\' e le transizioni la FC non scende in Z1 basso, quindi l\'oscillazione dell\'onda \u00e8 pi\u00f9 stretta del previsto (banda ~117-130). Potenza: sul row spinge di pi\u00f9 (188-220W) che sullo ski (166-186W) a pari FC. Anomalia W9 row a 93W (probabile pasticcio in transizione). Rispetto S28 11/07 (Row Wave 11\u00d7, 215W): stesso controllo Z2, qui aggiunta l\'alternanza ski.',
+      metrics: [
+        { l: 'TEMPO (Garmin)', v: '82\'36"' },
+        { l: 'ROW', v: '9.118 km \u00b7 188-220W' },
+        { l: 'SKI', v: '8.632 km \u00b7 166-186W' },
+        { l: 'HR AVG', v: '120.5 bpm' },
+        { l: 'HR MAX', v: '137 bpm' },
+        { l: 'Z2 WAVES', v: 'FC 124-130 (tutte in Z2)' },
+        { l: 'Z1 REC', v: 'FC 117-124 (alte)' },
+        { l: 'ROUND', v: '12 (2R-2S \u00d73)' },
+      ],
+      table: {
+        headers: ['Wave', 'Macchina', 'Watt', 'FC media (pt-pt)', 'FC max'],
+        rows: [
+          ['1', 'ROW', '203', '127.0', '132'],
+          ['2', 'ROW', '220', '128.2', '136'],
+          ['3', 'SKI', '186', '124.6', '135'],
+          ['4', 'SKI', '166', '127.9', '136'],
+          ['5', 'ROW', '196', '124.6', '133'],
+          ['6', 'ROW', '204', '130.2', '135'],
+          ['7', 'SKI', '175', '127.8', '136'],
+          ['8', 'SKI', '170', '127.4', '134'],
+          ['9', 'ROW', '93*', '123.8', '130'],
+          ['10', 'ROW', '188', '124.4', '131'],
+          ['11', 'SKI', '173', '125.1', '133'],
+          ['12', 'SKI', '170', '129.3', '135'],
+        ],
+      },
+    }
+  },
   { date: '14 LUG', title: 'Tapis Pendenza 8% \u00b7 27\' a 142 bpm \u00b7 6.542km', kind: 'run', dur: 47, load: 'Z3', rpe: 6, note: '6.542km \u00b7 47\'00" \u00b7 WU 15\' @6:26 + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' \u00b7 HR 131/149 \u00b7 cad 170 \u00b7 676cal \u00b7 D+104m (FIT sotto-registra, reale ~281m)',
     details: {
       summary: 'Tapis in pendenza S29 LUN (svolto 14/07 16:34). 15\' riscaldamento (pi\u00f9 veloce del solito, 6:26/km, HR 109) + 27\' a pendenza 8% tenendo 142 bpm + 5\' defaticamento (la parte bike 10\' @140W non svolta). Blocco centrale eseguito ancora sul target: FC media point-by-point 142.6 su 142, molto stabile (range 119-149), pace 7:42/km identico alla volta precedente. Nota dislivello: il FIT registra solo D+104m ma per 27\' all\'8% il valore fisico \u00e8 ~281m \u2014 questo tapis ha sotto-registrato l\'elevazione (il 06/07 registr\u00f2 correttamente 281m per 25\').',
@@ -999,7 +1032,7 @@ const HISTORY = [
         { l: 'HR AVG', v: '131 bpm' },
         { l: 'HR MAX', v: '149 bpm' },
         { l: 'CADENZA', v: '170 spm' },
-        { l: 'D+ (FIT / reale)', v: '104 m / ~281 m' },
+        { l: 'D+ reale (FIT sballato)', v: '~279 m (FIT 104)' },
         { l: 'CALORIE', v: '676 kcal' },
       ],
       table: {
