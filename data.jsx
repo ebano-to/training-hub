@@ -877,24 +877,61 @@ const WEEK_ARCHIVE = [
 
 // Current week — S29 (13 - 19 LUG 2026)
 const WEEK = [
-  { day: 'LUN', date: '13', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MAR', date: '14', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MER', date: '15', title: 'BIKE SALITA 3×8\' @135 BPM · esterna', sub: 'recupero S28 · bici salita a intervalli', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
+  { day: 'LUN', date: '13', title: 'casa ROW+SKI WAVE 12× · casa TAPIS 27\' PENDENZA @142', sub: 'wave fartlek + tapis in pendenza', load: 'Z2-Z3', duration: 130, kind: 'hyrox', done: false,
+    blocks: [
+      { code: 'ROW', t: 'casa · Row+Ski Wave Fartlek 12×(3\' Z2 / 2\' Z1) · alterna 2 ski / 2 row', d: '10\' riscaldamento Z1\n12×(3\' Z2 / 2\' Z1) alternando 2 waves su SkiErg e 2 waves su Row · Z2 alto (fino a 135) / Z1 basso (110-119)\n10\' defaticamento Z1', dur: '75\'',
+        ref: 'S28 11/07: Row Wave 11× 215W Z2 EF 1.71→1.68 Dec 2.1%',
+        expect: 'HR media Z2 (120-135) · alternanza ski/row · +1 round vs S28 (12 vs 11)' },
+      { code: 'RUN', t: 'casa · Tapis 15\' risc + 27\' pendenza 8% a 142 bpm + 10\' defa bike 140W', d: '15\' riscaldamento\n27\' a pendenza 8% tenendo 142 bpm costanti (Z3)\n10\' defaticamento in bike a 140W', dur: '~52\'',
+        ref: 'S28 06/07: tapis 25\' @8% 142bpm centrato (141.9) · 5.560km D+281m',
+        expect: '27\' in salita 8% a 142 bpm (Z3) · +2\' vs S28 · defa bike 140W' },
+    ]
+  },
+  { day: 'MAR', date: '14', title: 'esterna BIKE SALITA 3×8\' @135 BPM (recupero)', sub: 'bici salita a intervalli · recupero S28', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
     blocks: [
       { code: 'BIKE', t: 'esterna · Bike salita 3×(8\' a 135 bpm) rec a scendere', d: '30\' riscaldamento\nin salita: 3×(8\' tenendo 135 bpm · recupero nella discesa)\n30\' defaticamento', dur: '~90\'',
         expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa · RECUPERO da S28' },
     ]
   },
-  { day: 'GIO', date: '16', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'VEN', date: '17', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' · casa', sub: 'recupero S28 · EMOM aerobico a casa', load: 'Z2-Z4', duration: 48, kind: 'hyrox', done: false,
+  { day: 'MER', date: '15', title: 'ASSAULT BIKE PYRAMID 85\' + DEADLIFT 4×4 + PANCA 4×3', sub: 'bike + forza (palestra)', load: 'Z2+HEAVY', duration: 130, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\'', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
-        ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
-        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round · RECUPERO da S28' },
+      { code: 'BIKE', t: 'Assault Bike Intra-Session Pyramid 85\'', d: '5\' rampa Z1→Z2 (fino a 120 bpm)\n15\' Z2 low (120-125 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 top (130-135 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 low (120-125 bpm)\n5\' rampa Z2→Z1 (verso 115 bpm)\nBPM da zone lattato reali (Z2 120-135)', dur: '85\'',
+        ref: 'S28 06/07: 256W avg HR 121/139 · target Z2 centrati',
+        expect: 'Piramide progressiva Z2 · picco 130-135 nel blocco top · 3 blocchi da 15\' per lato' },
+      { code: 'STRENGTH', t: 'Deadlift 4×4 @75% (118,1kg → barra 117,5kg)', d: '4×4 @75% 1RM (157,5kg → 118,1kg, caricabile 117,5kg) · recupero completo\nDischi per lato: 20 + 20 + 5 + 2,5 + 1,25 (bilanciere 20kg)\nTempo: 2" negativa · 1" fermo in buca · 1" positiva · qb in cima\nFocus: lat attivi, barra a contatto gambe, bracing ogni rep · no rimbalzo', dur: '25\'',
+        ref: '1RM 157.5kg (11 GIU) · 75% = 118,1kg · barra reale 117,5kg (−0,6kg)',
+        expect: 'Qualità trasmissione di forza · ogni rep identica · SNC' },
+      { code: 'STRENGTH', t: 'Pause Bench Press 4×3 @77,5% 1RM', d: '4×3 @77,5% 1RM · recupero completo · pausa al petto\n⚠️ 1RM panca non ancora testato — serve il test per calcolare kg e dischi', dur: '20\'',
+        expect: 'Panca con pausa al petto · 77,5% controllato' },
     ]
   },
-  { day: 'DOM', date: '19', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'GIO', date: '16', title: '10:15 pista RUN QUALITÀ RUFFINI', sub: 'mattina · qualità in pista', load: 'Z3-Z5', duration: 60, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: '10:15 · pista · Run qualità Ruffini', d: 'Sessione qualità in pista Ruffini · ritrovo h10:15', dur: '~60\'',
+        ref: 'S28 09/07: 4×1200m @4:06/km HR 141/167',
+        expect: 'Qualità in pista · programma specifico in loco' },
+    ]
+  },
+  { day: 'VEN', date: '17', title: 'SUMMER TRI · gara', sub: 'triathlon estivo', load: 'RACE', duration: 0, kind: 'race', done: false,
+    blocks: [
+      { code: 'RACE', t: 'Summer Tri', d: 'Summer Triathlon · distanze e dettagli da definire', dur: '—',
+        expect: 'Gara · non contata nei volumi di allenamento' },
+    ]
+  },
+  { day: 'SAB', date: '18', title: 'RUN LUNGA + HYROX EMOM 48\' + BIKE PIANURA', sub: 'lunga + EMOM + bici easy · giornata piena post-gara', load: 'Z2-Z4', duration: 200, kind: 'hyrox', done: false,
+    blocks: [
+      { code: 'RUN', t: 'esterna · Run lunga', d: 'Lunga aerobica · dettaglio in loco', dur: '~60\'',
+        expect: 'Lunga aerobica Z2' },
+      { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (include recupero S28)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
+        ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
+        expect: 'Aerobico Hyrox 4 stazioni · questo EMOM copre anche il recupero di S28' },
+      { code: 'BIKE', t: 'esterna · Bike 1h30\' pianura 90 rpm bassa intensità', d: '1h30\' bike in pianura · cadenza 90 rpm · bassa intensità (Z1-Z2)', dur: '90\'',
+        expect: 'Fondo lento in pianura · 90 rpm · scarico post-gara' },
+    ]
+  },
+  { day: 'DOM', date: '19', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
 ];
 
 // Real Personal Bests
