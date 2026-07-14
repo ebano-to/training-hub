@@ -991,7 +991,7 @@ const EF_TREND = [
 const HISTORY = [
   { date: '14 LUG', title: 'Row+Ski Wave Fartlek \u00b7 12\u00d7(3\'Z2/2\'Z1) alterna 2row/2ski', kind: 'row', dur: 83, load: 'Z2', rpe: 5, note: '82\'36" (Garmin) \u00b7 Row 9.118km + Ski 8.632km \u00b7 HR 121/137 \u00b7 Z2 waves tutte in Z2 (FC 124-130) \u00b7 Z1 rec 117-124 \u00b7 12 round \u00b7 ricostruito da 3 file C2 + Garmin filone',
     details: {
-      summary: 'Row+Ski Wave Fartlek S29 LUN (svolto 14/07). 10\' WU (row) + 12\u00d7(3\' Z2 / 2\' Z1) alternando 2 waves row e 2 waves ski + 10\' defa (ski). Ricostruito unendo 3 file Concept2 (i due erg hanno PM5 con orologi non sincronizzati) + il file Garmin come filone unico per la FC (82.6\' continui, HR avg 120.5 max 137). Sequenza confermata a perfetta alternanza 2 row / 2 ski (i "buchi" da 292s e 76s nel file ski sono le transizioni verso il row). VERIFICA COERENZA: tutte le 12 waves Z2 hanno FC point-by-point in Z2 (124-130 bpm) \u2014 target rispettato. I recuperi Z1 (2\') restano per\u00f2 un po\' alti (117-124), cio\u00e8 al confine Z1/Z2: con solo 2\' e le transizioni la FC non scende in Z1 basso, quindi l\'oscillazione dell\'onda \u00e8 pi\u00f9 stretta del previsto (banda ~117-130). Potenza: sul row spinge di pi\u00f9 (188-220W) che sullo ski (166-186W) a pari FC. Anomalia W9 row a 93W (probabile pasticcio in transizione). Rispetto S28 11/07 (Row Wave 11\u00d7, 215W): stesso controllo Z2, qui aggiunta l\'alternanza ski.',
+      summary: 'Row+Ski Wave Fartlek S29 LUN (svolto 14/07). 10\' WU (row) + 12\u00d7(3\' Z2 / 2\' Z1) alternando 2 waves row e 2 waves ski + 10\' defa (ski). Ricostruito unendo 3 file Concept2 (i due erg hanno PM5 con orologi non sincronizzati) + il file Garmin come filone unico per la FC (82.6\' continui, HR avg 120.5 max 137). Sequenza confermata a perfetta alternanza 2 row / 2 ski (i "buchi" da 292s e 76s nel file ski sono le transizioni verso il row). VERIFICA COERENZA: tutte le 12 waves Z2 hanno FC point-by-point in Z2 (124-130 bpm) \u2014 target rispettato. I recuperi Z1 (2\') restano per\u00f2 un po\' alti (117-124), cio\u00e8 al confine Z1/Z2: con solo 2\' e le transizioni la FC non scende in Z1 basso, quindi l\'oscillazione dell\'onda \u00e8 pi\u00f9 stretta del previsto (banda ~117-130). Potenza: sul row spinge di pi\u00f9 (188-220W) che sullo ski (166-186W) a pari FC. La W9 row NON \u00e8 debole: potenza reale ~194W (in linea con le altre), ma il Concept2 ha contato ~39s di tempo morto (pausa in transizione) dentro i 3\' \u2192 solo 578m invece di ~750m, e il lap-average PM5 di 93W \u00e8 fuorviante perch\u00e9 divide il lavoro sui 180s inclusa la pausa. Rispetto S28 11/07 (Row Wave 11\u00d7, 215W): stesso controllo Z2, qui aggiunta l\'alternanza ski.',
       metrics: [
         { l: 'TEMPO (Garmin)', v: '82\'36"' },
         { l: 'ROW', v: '9.118 km \u00b7 188-220W' },
@@ -1013,7 +1013,7 @@ const HISTORY = [
           ['6', 'ROW', '204', '130.2', '135'],
           ['7', 'SKI', '175', '127.8', '136'],
           ['8', 'SKI', '170', '127.4', '134'],
-          ['9', 'ROW', '93*', '123.8', '130'],
+          ['9', 'ROW', '194 (−39s)', '123.8', '130'],
           ['10', 'ROW', '188', '124.4', '131'],
           ['11', 'SKI', '173', '125.1', '133'],
           ['12', 'SKI', '170', '129.3', '135'],
