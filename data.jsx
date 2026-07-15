@@ -898,11 +898,12 @@ const WEEK = [
         expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round · RECUPERO da S28 · ⚠️ giornata doppia coi due recuperi' },
     ]
   },
-  { day: 'MER', date: '15', title: 'ASSAULT BIKE PYRAMID 85\' + DEADLIFT 4×4 + PANCA 4×3', sub: 'bike + forza (palestra)', load: 'Z2+HEAVY', duration: 130, kind: 'hyrox', done: false,
+  { day: 'MER', date: '15', title: 'ASSAULT BIKE PYRAMID 85\' + DEADLIFT 4×4 + PANCA 4×3', sub: 'bike + forza (palestra)', load: 'Z2+HEAVY', duration: 130, kind: 'hyrox', done: true,
     blocks: [
       { code: 'BIKE', t: 'Assault Bike Intra-Session Pyramid 85\'', d: '5\' rampa Z1→Z2 (fino a 120 bpm)\n15\' Z2 low (120-125 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 top (130-135 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 low (120-125 bpm)\n5\' rampa Z2→Z1 (verso 115 bpm)\nBPM da zone lattato reali (Z2 120-135)', dur: '85\'',
         ref: 'S28 06/07: 256W avg HR 121/139 · target Z2 centrati',
-        expect: 'Piramide progressiva Z2 · picco 130-135 nel blocco top · 3 blocchi da 15\' per lato' },
+        expect: 'Piramide progressiva Z2 · picco 130-135 nel blocco top · 3 blocchi da 15\' per lato',
+        result: '85\'00" · HR 121.7/139 · FC pbp/blocco: WU 94 · low 122 · mid 127 · top 133.3 · mid 126 · low 123 · CD 106 · TUTTI i target Z2 centrati · no foto display (niente watt/km) · svolto 15/07' },
       { code: 'STRENGTH', t: 'Deadlift 4×4 @75% (118,1kg → barra 117,5kg)', d: '4×4 @75% 1RM (157,5kg → 118,1kg, caricabile 117,5kg) · recupero completo\nDischi per lato: 20 + 20 + 5 + 2,5 + 1,25 (bilanciere 20kg)\nTempo: 2" negativa · 1" fermo in buca · 1" positiva · qb in cima\nFocus: lat attivi, barra a contatto gambe, bracing ogni rep · no rimbalzo', dur: '25\'',
         ref: '1RM 157.5kg (11 GIU) · 75% = 118,1kg · barra reale 117,5kg (−0,6kg)',
         expect: 'Qualità trasmissione di forza · ogni rep identica · SNC',
@@ -997,6 +998,31 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '15 LUG', title: 'Assault Bike Pyramid 85\' · target Z2 tutti centrati', kind: 'bike', dur: 85, load: 'Z2', rpe: 6, note: '85\'00" · HR 121.7/139 · FC pbp/blocco WU94 low122 mid127 top133.3 mid126 low123 CD106 · tutti i target Z2 centrati · no dati console · km non contati',
+    details: {
+      summary: 'Assault Bike Pyramid S29 MER (svolto 15/07). Piramide 85\': 5\' rampa + 5 blocchi da 15\' (low/mid/top/mid/low) + 5\' rampa (+10\' vs la versione da 75\' del 06/07, i blocchi low passano da 10\' a 15\'). FC point-by-point: ogni blocco Z2 centrato nel target — low 122 (120-125), mid 127 (125-130), top 133.3 (130-135, centro esatto), mid 126, low 123. Simmetria perfetta. Nessuna foto del display stavolta → niente watt/distanza (solo HR/tempo dal Garmin). Confronto col 06/07 (75\'): top block quasi identico (133.3 vs 132.9), media complessiva un filo più alta (121.7 vs 119.8) per via dei 10\' in più nei blocchi Z2 medi, stesso max 139.',
+      metrics: [
+        { l: 'TEMPO', v: '85\'00"' },
+        { l: 'FC AVG (pt-pt)', v: '121.7 bpm' },
+        { l: 'FC MAX', v: '139 bpm' },
+        { l: 'TOP block', v: '133.3 (target 130-135)' },
+        { l: 'vs 06/07 (75\')', v: 'top 132.9 · +10\' durata' },
+        { l: 'WATT/KM', v: 'n.d. (no foto console)' },
+      ],
+      table: {
+        headers: ['Blocco', 'Durata', 'Target', 'FC media (pt-pt)', 'FC max'],
+        rows: [
+          ['rampa WU', '5\'', '→120', '93.8', '114'],
+          ['Z2 low', '15\'', '120-125', '122.0', '132'],
+          ['Z2 mid', '15\'', '125-130', '127.0', '135'],
+          ['Z2 top', '15\'', '130-135', '133.3', '139'],
+          ['Z2 mid', '15\'', '125-130', '126.3', '136'],
+          ['Z2 low', '15\'', '120-125', '122.7', '132'],
+          ['rampa CD', '5\'', '→115', '106.4', '122'],
+        ],
+      },
+    }
+  },
   { date: '15 LUG', title: 'Forza · Deadlift 5×5 @120kg + Incline DB Press + Curl', kind: 'strength', dur: 45, load: 'HEAVY', rpe: 7, note: 'Deadlift 5×5 @120kg (dischi 20+20+10/lato) · Dumbbell Incline Press 12-10-8-8 @14/16/20/20kg superset Curl bicipite 12-10-8-8 @12/14/16/16kg',
     details: {
       summary: 'Seduta forza in palestra S29 MER (personal Mattia). Deadlift 5 serie da 5 a 120kg (più volume del 4×4 prescritto, e +2,5kg sul carico). Poi Dumbbell Incline Press a piramide inversa (reps 12-10-8-8 con manubri da 14→16→20→20kg) in superset con Curl bicipite (12-10-8-8 con 12→14→16→16kg). Dischi deadlift: 20+20+10 per lato.',
