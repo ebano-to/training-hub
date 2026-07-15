@@ -889,10 +889,13 @@ const WEEK = [
         result: '6.542km · 47\'00" · WU 15\' @6:26/km + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' @7:08 · HR 131/149 · cad 170 · 676cal · D+~279m reale (27\'@8%; il tapis registrò solo 104m, mal tarato) · vs 06/07: stesso target e pace 7:42/km, +2\' durata · svolto 14/07 · defa bike non svolta' },
     ]
   },
-  { day: 'MAR', date: '14', title: 'esterna BIKE SALITA 3×8\' @135 BPM (recupero)', sub: 'bici salita a intervalli · recupero S28', load: 'Z2-Z3', duration: 90, kind: 'bike', done: false,
+  { day: 'MAR', date: '14', title: 'BIKE SALITA 3×8\' + HYROX EMOM 48\' (recuperi S28)', sub: 'bici salita + EMOM · recuperi S28', load: 'Z2-Z4', duration: 138, kind: 'hyrox', done: false,
     blocks: [
       { code: 'BIKE', t: 'esterna · Bike salita 3×(8\' a 135 bpm) rec a scendere', d: '30\' riscaldamento\nin salita: 3×(8\' tenendo 135 bpm · recupero nella discesa)\n30\' defaticamento', dur: '~90\'',
         expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa · RECUPERO da S28' },
+      { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (recupero S28)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
+        ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
+        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round · RECUPERO da S28 · ⚠️ giornata doppia coi due recuperi' },
     ]
   },
   { day: 'MER', date: '15', title: 'ASSAULT BIKE PYRAMID 85\' + DEADLIFT 4×4 + PANCA 4×3', sub: 'bike + forza (palestra)', load: 'Z2+HEAVY', duration: 130, kind: 'hyrox', done: false,
@@ -927,9 +930,9 @@ const WEEK = [
   },
   { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' + BIKE 1H30\' PIANURA', sub: 'EMOM + bici easy post-gara', load: 'Z1-Z4', duration: 140, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (include recupero S28)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
+      { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (Mattia F)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
         ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
-        expect: 'Aerobico Hyrox 4 stazioni · questo EMOM copre anche il recupero di S28' },
+        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round' },
       { code: 'BIKE', t: 'esterna · Bike 1h30\' pianura 90 rpm bassa intensità', d: '1h30\' bike in pianura · cadenza 90 rpm · bassa intensità (Z1-Z2)', dur: '90\'',
         expect: 'Fondo lento in pianura · 90 rpm · scarico post-gara' },
     ]
