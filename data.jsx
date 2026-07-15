@@ -903,7 +903,7 @@ const WEEK = [
       { code: 'BIKE', t: 'Assault Bike Intra-Session Pyramid 85\'', d: '5\' rampa Z1→Z2 (fino a 120 bpm)\n15\' Z2 low (120-125 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 top (130-135 bpm)\n15\' Z2 mid (125-130 bpm)\n15\' Z2 low (120-125 bpm)\n5\' rampa Z2→Z1 (verso 115 bpm)\nBPM da zone lattato reali (Z2 120-135)', dur: '85\'',
         ref: 'S28 06/07: 256W avg HR 121/139 · target Z2 centrati',
         expect: 'Piramide progressiva Z2 · picco 130-135 nel blocco top · 3 blocchi da 15\' per lato',
-        result: '1:26:06 · 49982.5m · 946.3cal · 253W avg (425 max) · 35.1km/h avg (42.5 max) · 56rpm avg (69 max) · HR 121.7/139 · FC pbp/blocco: WU94 low122 mid127 top133.3 mid126 low123 CD106 · TUTTI i target Z2 centrati · svolto 15/07' },
+        result: '1:25:06 · 49982.5m · 946.3cal · 253W avg (425 max) · 35.1km/h avg (42.5 max) · 56rpm avg (69 max) · HR 121.7/139 · FC pbp/blocco: WU94 low122 mid127 top133.3 mid126 low123 CD106 · TUTTI i target Z2 centrati · svolto 15/07' },
       { code: 'STRENGTH', t: 'Deadlift 4×4 @75% (118,1kg → barra 117,5kg)', d: '4×4 @75% 1RM (157,5kg → 118,1kg, caricabile 117,5kg) · recupero completo\nDischi per lato: 20 + 20 + 5 + 2,5 + 1,25 (bilanciere 20kg)\nTempo: 2" negativa · 1" fermo in buca · 1" positiva · qb in cima\nFocus: lat attivi, barra a contatto gambe, bracing ogni rep · no rimbalzo', dur: '25\'',
         ref: '1RM 157.5kg (11 GIU) · 75% = 118,1kg · barra reale 117,5kg (−0,6kg)',
         expect: 'Qualità trasmissione di forza · ogni rep identica · SNC',
@@ -998,11 +998,11 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
-  { date: '15 LUG', title: 'Assault Bike Pyramid 85\' · 253W avg · target Z2 centrati', kind: 'bike', dur: 85, load: 'Z2', rpe: 6, note: '1:26:06 · 49982.5m · 946.3cal · 253W avg (425 max) · 35.1km/h · 56rpm · HR 121.7/139 · FC pbp/blocco WU94 low122 mid127 top133.3 mid126 low123 CD106 · tutti i target Z2 centrati · km non contati',
+  { date: '15 LUG', title: 'Assault Bike Pyramid 85\' · 253W avg · target Z2 centrati', kind: 'bike', dur: 85, load: 'Z2', rpe: 6, note: '1:25:06 · 49982.5m · 946.3cal · 253W avg (425 max) · 35.1km/h · 56rpm · HR 121.7/139 · FC pbp/blocco WU94 low122 mid127 top133.3 mid126 low123 CD106 · tutti i target Z2 centrati · km non contati',
     details: {
       summary: 'Assault Bike Pyramid S29 MER (svolto 15/07). Piramide 85\': 5\' rampa + 5 blocchi da 15\' (low/mid/top/mid/low) + 5\' rampa (+10\' vs la versione da 75\' del 06/07, i blocchi low da 10\'→15\'). FC point-by-point: ogni blocco Z2 centrato nel target — low 122, mid 127, top 133.3 (centro esatto di 130-135), mid 126, low 123. Simmetria perfetta. Console: 253W avg, picco 425W, 35.1 km/h avg, 56 rpm, 49.982m, 946.3 kcal. Confronto col 06/07 (75\'): stessa potenza media sostenuta (253 vs 256W) su 11\' in più, ma PICCO più alto (425W vs 376W, max speed 42.5 vs 40.7) — stesso controllo aerobico (top 133.3 vs 132.9) con una punta di potenza superiore.',
       metrics: [
-        { l: 'TEMPO', v: '1:26:06' },
+        { l: 'TEMPO', v: '1:25:06' },
         { l: 'DISTANZA', v: '49982.5 m' },
         { l: 'WATT AVG', v: '253 W' },
         { l: 'WATT MAX', v: '425 W' },
