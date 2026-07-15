@@ -916,10 +916,13 @@ const WEEK = [
         expect: 'Qualità in pista · programma specifico in loco' },
     ]
   },
-  { day: 'VEN', date: '17', title: 'SUMMER TRI · gara', sub: 'triathlon estivo', load: 'RACE', duration: 0, kind: 'race', done: false,
+  { day: 'VEN', date: '17', title: 'SUMMER TRI · gara + SKI+ROW TEMPO BLOCS 85\'', sub: 'gara + tempo blocs erg (da valutare con la gara)', load: 'RACE+Z2', duration: 85, kind: 'race', done: false,
     blocks: [
       { code: 'RACE', t: 'Summer Tri', d: 'Summer Triathlon · distanze e dettagli da definire', dur: '—',
         expect: 'Gara · non contata nei volumi di allenamento' },
+      { code: 'SKI', t: 'Ski+Row Z2 Tempo Blocs 85\' · 4×15\' Z2 alterna ski/row', d: '5\' Z1 warm-up Ski\n15\' Z2 Ski\n5\' Z1 Ski\n15\' Z2 Row\n5\' Z1 Row\n15\' Z2 Ski\n5\' Z1 Ski (il programma scrive "Z2" ma è recupero, Z2 effettivo 60\')\n15\' Z2 Row\n5\' Z1 cool-down Row\nZ2 effettivo 60\' · HR 120-135', dur: '85\'',
+        ref: 'S29 14/07: Wave ski/row Z2 124-130 bpm',
+        expect: 'HR stabile Z2 (120-135) nei 4 blocchi · alterna ski/row · Z2 60\' · ⚠️ da valutare vista la gara di venerdì' },
     ]
   },
   { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' + BIKE 1H30\' PIANURA', sub: 'EMOM + bici easy post-gara', load: 'Z1-Z4', duration: 140, kind: 'hyrox', done: false,
