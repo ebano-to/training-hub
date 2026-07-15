@@ -902,9 +902,11 @@ const WEEK = [
         expect: 'Piramide progressiva Z2 · picco 130-135 nel blocco top · 3 blocchi da 15\' per lato' },
       { code: 'STRENGTH', t: 'Deadlift 4×4 @75% (118,1kg → barra 117,5kg)', d: '4×4 @75% 1RM (157,5kg → 118,1kg, caricabile 117,5kg) · recupero completo\nDischi per lato: 20 + 20 + 5 + 2,5 + 1,25 (bilanciere 20kg)\nTempo: 2" negativa · 1" fermo in buca · 1" positiva · qb in cima\nFocus: lat attivi, barra a contatto gambe, bracing ogni rep · no rimbalzo', dur: '25\'',
         ref: '1RM 157.5kg (11 GIU) · 75% = 118,1kg · barra reale 117,5kg (−0,6kg)',
-        expect: 'Qualità trasmissione di forza · ogni rep identica · SNC' },
+        expect: 'Qualità trasmissione di forza · ogni rep identica · SNC',
+        result: 'FATTO 5×5 @120kg (dischi 20+20+10/lato) · più volume (5×5) e +2,5kg vs prescritto' },
       { code: 'STRENGTH', t: 'Pause Bench Press 4×3 @77,5% 1RM', d: '4×3 @77,5% 1RM · recupero completo · pausa al petto\n⚠️ 1RM panca non ancora testato — serve il test per calcolare kg e dischi', dur: '20\'',
-        expect: 'Panca con pausa al petto · 77,5% controllato' },
+        expect: 'Panca con pausa al petto · 77,5% controllato',
+        result: 'SOSTITUITA con Dumbbell Incline Press 12-10-8-8 @14/16/20/20kg (manubri) in superset con Curl bicipite 12-10-8-8 @12/14/16/16kg' },
     ]
   },
   { day: 'GIO', date: '16', title: '10:15 pista RUN QUALITÀ RUFFINI', sub: 'mattina · qualità in pista', load: 'Z3-Z5', duration: 60, kind: 'run', done: false,
@@ -989,6 +991,29 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '15 LUG', title: 'Forza · Deadlift 5×5 @120kg + Incline DB Press + Curl', kind: 'strength', dur: 45, load: 'HEAVY', rpe: 7, note: 'Deadlift 5×5 @120kg (dischi 20+20+10/lato) · Dumbbell Incline Press 12-10-8-8 @14/16/20/20kg superset Curl bicipite 12-10-8-8 @12/14/16/16kg',
+    details: {
+      summary: 'Seduta forza in palestra S29 MER (personal Mattia). Deadlift 5 serie da 5 a 120kg (più volume del 4×4 prescritto, e +2,5kg sul carico). Poi Dumbbell Incline Press a piramide inversa (reps 12-10-8-8 con manubri da 14→16→20→20kg) in superset con Curl bicipite (12-10-8-8 con 12→14→16→16kg). Dischi deadlift: 20+20+10 per lato.',
+      metrics: [
+        { l: 'DEADLIFT', v: '5×5 @120kg' },
+        { l: 'DEADLIFT dischi/lato', v: '20+20+10' },
+        { l: 'INCLINE DB PRESS', v: '12-10-8-8 @14/16/20/20kg' },
+        { l: 'CURL BICIPITE', v: '12-10-8-8 @12/14/16/16kg' },
+      ],
+      table: {
+        headers: ['Esercizio', 'Serie', 'Reps', 'Carico'],
+        rows: [
+          ['Deadlift', '5', '5', '120 kg'],
+          ['Incline DB Press', '1', '12', '14 kg (manubri)'],
+          ['Incline DB Press', '2', '10', '16 kg'],
+          ['Incline DB Press', '3-4', '8', '20 kg'],
+          ['Curl bicipite', '1', '12', '12 kg'],
+          ['Curl bicipite', '2', '10', '14 kg'],
+          ['Curl bicipite', '3-4', '8', '16 kg'],
+        ],
+      },
+    }
+  },
   { date: '14 LUG', title: 'Row+Ski Wave Fartlek \u00b7 12\u00d7(3\'Z2/2\'Z1) alterna 2row/2ski', kind: 'row', dur: 83, load: 'Z2', rpe: 5, note: '82\'36" (Garmin) \u00b7 Row 9.118km + Ski 8.632km \u00b7 HR 121/137 \u00b7 Z2 waves tutte in Z2 (FC 124-130) \u00b7 Z1 rec 117-124 \u00b7 12 round \u00b7 ricostruito da 3 file C2 + Garmin filone',
     details: {
       summary: 'Row+Ski Wave Fartlek S29 LUN (svolto 14/07). 10\' WU (row) + 12\u00d7(3\' Z2 / 2\' Z1) alternando 2 waves row e 2 waves ski + 10\' defa (ski). Ricostruito unendo 3 file Concept2 (i due erg hanno PM5 con orologi non sincronizzati) + il file Garmin come filone unico per la FC (82.6\' continui, HR avg 120.5 max 137). Sequenza confermata a perfetta alternanza 2 row / 2 ski (i "buchi" da 292s e 76s nel file ski sono le transizioni verso il row). VERIFICA COERENZA: tutte le 12 waves Z2 hanno FC point-by-point in Z2 (124-130 bpm) \u2014 target rispettato. I recuperi Z1 (2\') restano per\u00f2 un po\' alti (117-124), cio\u00e8 al confine Z1/Z2: con solo 2\' e le transizioni la FC non scende in Z1 basso, quindi l\'oscillazione dell\'onda \u00e8 pi\u00f9 stretta del previsto (banda ~117-130). Potenza: sul row spinge di pi\u00f9 (188-220W) che sullo ski (166-186W) a pari FC. La W9 row NON \u00e8 debole: potenza reale ~194W (in linea con le altre), ma il Concept2 ha contato ~39s di tempo morto (pausa in transizione) dentro i 3\' \u2192 solo 578m invece di ~750m, e il lap-average PM5 di 93W \u00e8 fuorviante perch\u00e9 divide il lavoro sui 180s inclusa la pausa. Rispetto S28 11/07 (Row Wave 11\u00d7, 215W): stesso controllo Z2, qui aggiunta l\'alternanza ski.',
