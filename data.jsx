@@ -918,7 +918,7 @@ const WEEK = [
       { code: 'RUN', t: '10:15 · pista · Run qualità Ruffini', d: 'Sessione qualità in pista Ruffini · ritrovo h10:15', dur: '~60\'',
         ref: 'S28 09/07: 4×1200m @4:06/km HR 141/167',
         expect: 'Qualità in pista · programma specifico in loco',
-        result: '4×(300m + 300m + 600m) rec 100/100/200m · tot 6.217km · 300m @3:30-3:52/km · 600m @3:43-3:56/km · FC dai 133 (1°) fino a 164/175 (Z4-Z5, vicino FCmax) · cad 186-188 · i primi due 300 su file separato (uniti) · svolto 16/07' },
+        result: '4×(300m + 300m + 600m) rec 100/100/200m · tot 6.217km · 300m @3:30-3:52/km · 600m @3:43-3:56/km · FC dai 133 (1°) fino a 164/175 (Z4-Z5, vicino FCmax) · cad 186-188 · ritmo reale ~3:40/km costante (i pace del file "pista" sono meno precisi, snappano le distanze) · i primi due 300 su file GPS separato · svolto 16/07' },
     ]
   },
   { day: 'VEN', date: '17', title: 'SUMMER TRI · gara + SKI+ROW TEMPO BLOCS 85\'', sub: 'gara + tempo blocs erg (da valutare con la gara)', load: 'RACE+Z2', duration: 85, kind: 'race', done: false,
@@ -1001,7 +1001,7 @@ const EF_TREND = [
 const HISTORY = [
   { date: '16 LUG', title: 'Run Qualità Ruffini · 4×(300+300+600) · 6.217km', kind: 'run', dur: 33, load: 'Z5', rpe: 9, note: '4×(300m + 300m + 600m) rec 100/100/200m · tot 6.217km · 300m @3:30-3:52/km · 600m @3:43-3:56/km · FC 133→164 (Z4-Z5) max 175 · cad 186-188',
     details: {
-      summary: 'Run qualità in pista al Ruffini S29 GIO (08:44). Struttura: 4 set da (300m + 100m rec + 300m + 100m rec + 600m + 200m rec). I primi due 300m (set 1) erano su un file separato — uniti al resto. Ritmi molto veloci e costanti: 300m a 3:30-3:52/km, 600m a 3:43-3:56/km. FC point-by-point in Z4-Z5 con progressione netta set su set: il 1° 300 a 133 (freddo), poi i 600m salgono da 157 (set1) a 164/175 (set3-4), praticamente al tetto (FCmax 177). Cadenza altissima 186-188. Sessione tosta di ritmo-gara/soglia alta.',
+      summary: 'Run qualità in pista al Ruffini S29 GIO (08:44). Struttura: 4 set da (300m + 100m rec + 300m + 100m rec + 600m + 200m rec). I primi due 300m (set 1) erano su un file separato — uniti al resto. Ritmi molto veloci e costanti: 300m a 3:30-3:52/km, 600m a 3:43-3:56/km. FC point-by-point in Z4-Z5 con progressione netta set su set: il 1° 300 a 133 (freddo), poi i 600m salgono da 157 (set1) a 164/175 (set3-4), praticamente al tetto (FCmax 177). Cadenza altissima 186-188. Sessione tosta di ritmo-gara/soglia alta. NB PRECISIONE: i primi due 300m (modalità GPS normale, distanze 316/322m) sono i dati affidabili; dal 600m in poi Federico ha usato la modalità "corsa in pista" che snappa le distanze ai valori standard (300/600m esatti) e risulta MENO precisa sul pace. Il ritmo reale è stato ~3:40/km costante su tutte le ripetute (i pace 3:43-3:56 del file pista vanno letti con questa cautela).',
       metrics: [
         { l: 'DIST TOTALE', v: '6.217 km' },
         { l: 'STRUTTURA', v: '4×(300+300+600)' },
