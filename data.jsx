@@ -913,11 +913,12 @@ const WEEK = [
         result: 'SOSTITUITA con Dumbbell Incline Press 12-10-8-8 @14/16/20/20kg (manubri) in superset con Curl bicipite 12-10-8-8 @12/14/16/16kg' },
     ]
   },
-  { day: 'GIO', date: '16', title: '10:15 pista RUN QUALITÀ RUFFINI', sub: 'mattina · qualità in pista', load: 'Z3-Z5', duration: 60, kind: 'run', done: false,
+  { day: 'GIO', date: '16', title: '10:15 pista RUN QUALITÀ RUFFINI', sub: 'mattina · qualità in pista', load: 'Z4-Z5', duration: 33, kind: 'run', done: true,
     blocks: [
       { code: 'RUN', t: '10:15 · pista · Run qualità Ruffini', d: 'Sessione qualità in pista Ruffini · ritrovo h10:15', dur: '~60\'',
         ref: 'S28 09/07: 4×1200m @4:06/km HR 141/167',
-        expect: 'Qualità in pista · programma specifico in loco' },
+        expect: 'Qualità in pista · programma specifico in loco',
+        result: '4×600m + 6×300m (+ 2×300 partenza sbagliata) · tot 6.217km · 600m @3:43-3:56/km FC 157-164 · 300m @3:44-3:52/km FC 152-156 · HR fino a 175 (Z5, vicino FCmax) · cad 186-188 · progressione: gli ultimi 600 i più forti (3:43-3:56, FC164/175) · svolto 16/07' },
     ]
   },
   { day: 'VEN', date: '17', title: 'SUMMER TRI · gara + SKI+ROW TEMPO BLOCS 85\'', sub: 'gara + tempo blocs erg (da valutare con la gara)', load: 'RACE+Z2', duration: 85, kind: 'race', done: false,
@@ -959,7 +960,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,9.118];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,8.632];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,6.542];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
@@ -967,9 +968,9 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 619.488,
   ski: 571.033,
-  run: 571.501,
+  run: 577.718,
   bike: 200.823,
-  total: 1940.679,
+  total: 1946.896,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -998,6 +999,37 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '16 LUG', title: 'Run Qualità Ruffini · 4×600m + 6×300m · 6.217km', kind: 'run', dur: 33, load: 'Z5', rpe: 9, note: '4×600m + 6×300m (+2×300 partenza sbagliata) · tot 6.217km · 600m @3:43-3:56/km FC 157-164 · 300m @3:44-3:52/km FC 152-156 · HR fino a 175 (Z5) · cad 186-188',
+    details: {
+      summary: 'Run qualità in pista al Ruffini S29 GIO (08:44). Sessione ricostruita da 2 file: aveva fatto partire il programma sbagliato (2×~300m) poi corretto. Lavoro vero: 4×600m alternati a 3 coppie di 300m (600+300+300 ×3, poi 600 finale) — totale 4×600m + 6×300m, più i 2×300 iniziali. Ritmi molto veloci e costanti: 600m a 3:43-3:56/km, 300m a 3:44-3:52/km. FC point-by-point in Z4-Z5 con progressione netta: i 600m salgono da 157 (1°) a 164 (3° e 4°), con picco 175 (vicinissimo alla FCmax 177). Cadenza altissima 186-188. Sessione tosta di ritmo-gara/soglia alta.',
+      metrics: [
+        { l: 'DIST TOTALE', v: '6.217 km' },
+        { l: 'STRUTTURA', v: '4×600m + 6×300m' },
+        { l: 'PACE 600m', v: '3:43-3:56/km' },
+        { l: 'PACE 300m', v: '3:44-3:52/km' },
+        { l: 'HR MAX', v: '175 (Z5)' },
+        { l: 'CADENZA', v: '186-188 spm' },
+        { l: 'PARTENZA SBAGLIATA', v: '2×300m (uniti)' },
+      ],
+      table: {
+        headers: ['Rep', 'Dist', 'Pace', 'FC media (pt-pt)', 'FC max'],
+        rows: [
+          ['ws1', '316m', '3:30', '133.3', '153'],
+          ['ws2', '322m', '3:41', '146.8', '158'],
+          ['1', '600m', '3:52', '156.9', '169'],
+          ['2', '300m', '3:49', '152.7', '164'],
+          ['3', '300m', '3:50', '153.3', '164'],
+          ['4', '610m', '3:54', '159.9', '171'],
+          ['5', '300m', '3:52', '153.4', '165'],
+          ['6', '300m', '3:46', '152.7', '164'],
+          ['7', '610m', '3:43', '164.0', '175'],
+          ['8', '300m', '3:44', '155.2', '168'],
+          ['9', '300m', '3:45', '155.9', '170'],
+          ['10', '600m', '3:56', '163.6', '174'],
+        ],
+      },
+    }
+  },
   { date: '15 LUG', title: 'Assault Bike Pyramid 85\' · 253W avg · target Z2 centrati', kind: 'bike', dur: 85, load: 'Z2', rpe: 6, note: '1:25:06 · 49982.5m · 946.3cal · 253W avg (425 max) · 35.1km/h · 56rpm · HR 121.7/139 · FC pbp/blocco WU94 low122 mid127 top133.3 mid126 low123 CD106 · tutti i target Z2 centrati · km non contati',
     details: {
       summary: 'Assault Bike Pyramid S29 MER (svolto 15/07). Piramide 85\': 5\' rampa + 5 blocchi da 15\' (low/mid/top/mid/low) + 5\' rampa (+10\' vs la versione da 75\' del 06/07, i blocchi low da 10\'→15\'). FC point-by-point: ogni blocco Z2 centrato nel target — low 122, mid 127, top 133.3 (centro esatto di 130-135), mid 126, low 123. Simmetria perfetta. Console: 253W avg, picco 425W, 35.1 km/h avg, 56 rpm, 49.982m, 946.3 kcal. Confronto col 06/07 (75\'): stessa potenza media sostenuta (253 vs 256W) su ~10\' in più, ma PICCO più alto (425W vs 376W, max speed 42.5 vs 40.7) — stesso controllo aerobico (top 133.3 vs 132.9) con una punta di potenza superiore.',
