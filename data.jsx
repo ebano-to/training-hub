@@ -889,13 +889,15 @@ const WEEK = [
         result: '6.542km · 47\'00" · WU 15\' @6:26/km + 27\' pendenza 8% @142.6 bpm (target centrato) + CD 5\' @7:08 · HR 131/149 · cad 170 · 676cal · D+~279m reale (27\'@8%; il tapis registrò solo 104m, mal tarato) · vs 06/07: stesso target e pace 7:42/km, +2\' durata · svolto 14/07 · defa bike non svolta' },
     ]
   },
-  { day: 'MAR', date: '14', title: 'BIKE SALITA 3×8\' + HYROX EMOM 48\' (recuperi S28)', sub: 'bici salita + EMOM · recuperi S28', load: 'Z2-Z4', duration: 138, kind: 'hyrox', done: false,
+  { day: 'MAR', date: '14', title: 'BIKE SALITA 3×8\' + HYROX EMOM 48\' (recuperi S28)', sub: 'recuperi S28 · entrambi saltati', load: 'Z2-Z4', duration: 138, kind: 'hyrox', done: true,
     blocks: [
       { code: 'BIKE', t: 'esterna · Bike salita 3×(8\' a 135 bpm) rec a scendere', d: '30\' riscaldamento\nin salita: 3×(8\' tenendo 135 bpm · recupero nella discesa)\n30\' defaticamento', dur: '~90\'',
-        expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa · RECUPERO da S28' },
+        expect: '3 ripetute da 8\' in salita a 135 bpm (Z2 alta) · recupero in discesa · RECUPERO da S28',
+        result: 'SALTATO', skipped: true },
       { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (recupero S28)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
         ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
-        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round · RECUPERO da S28 · ⚠️ giornata doppia coi due recuperi' },
+        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round · RECUPERO da S28',
+        result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'MER', date: '15', title: 'ASSAULT BIKE PYRAMID 85\' + DEADLIFT 4×4 + PANCA 4×3', sub: 'bike + forza (palestra)', load: 'Z2+HEAVY', duration: 130, kind: 'hyrox', done: true,
@@ -921,10 +923,11 @@ const WEEK = [
         result: '4×(300m + 300m + 600m) rec 100/100/200m · tot 6.217km · 300m @3:30-3:52/km · 600m @3:43-3:56/km · FC dai 133 (1°) fino a 164/175 (Z4-Z5, vicino FCmax) · cad 186-188 · ritmo reale ~3:40/km costante (i pace del file "pista" sono meno precisi, snappano le distanze) · i primi due 300 su file GPS separato · svolto 16/07' },
     ]
   },
-  { day: 'VEN', date: '17', title: 'SUMMER TRI · gara + SKI+ROW TEMPO BLOCS 85\'', sub: 'gara + tempo blocs erg (da valutare con la gara)', load: 'RACE+Z2', duration: 85, kind: 'race', done: false,
+  { day: 'VEN', date: '17', title: 'SUMMER TRI · gara + SKI+ROW TEMPO BLOCS 85\'', sub: 'tempo blocs fatto (18/07) · gara saltata', load: 'Z2', duration: 85, kind: 'race', done: true,
     blocks: [
       { code: 'RACE', t: 'Summer Tri · 3×(200m nuoto + 5\' spin bike + 1km run) rec 10\'', d: '3 round di:\n200m nuoto\n5\' spin bike\n1km run\nrecupero 10\' tra i round', dur: '~55\'',
-        expect: 'Gara triathlon a round · nuoto→bike→run ×3 · non contata nei volumi di allenamento' },
+        expect: 'Gara triathlon a round · nuoto→bike→run ×3 · non contata nei volumi di allenamento',
+        result: 'SALTATO', skipped: true },
       { code: 'SKI', t: 'Ski+Row Z2 Tempo Blocs 85\' · 4×15\' Z2 alterna ski/row', d: '5\' Z1 warm-up Ski\n15\' Z2 Ski\n5\' Z1 Ski\n15\' Z2 Row\n5\' Z1 Row\n15\' Z2 Ski\n5\' Z1 Ski (il programma scrive "Z2" ma è recupero, Z2 effettivo 60\')\n15\' Z2 Row\n5\' Z1 cool-down Row\nZ2 effettivo 60\' · HR 120-135', dur: '85\'',
         ref: 'S29 14/07: Wave ski/row Z2 124-130 bpm',
         expect: 'HR stabile Z2 (120-135) nei 4 blocchi · alterna ski/row · Z2 60\'',
