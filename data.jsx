@@ -950,13 +950,46 @@ const WEEK_ARCHIVE = [
 
 // Current week — S30 (20 - 26 LUG 2026)
 const WEEK = [
-  { day: 'LUN', date: '20', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MAR', date: '21', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MER', date: '22', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'GIO', date: '23', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'VEN', date: '24', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'SAB', date: '25', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'DOM', date: '26', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'LUN', date: '20', title: 'BIKE TEST · 4×(30"@260W/45"@140W) + 2×8\' MAX', sub: 'test bici a potenza', load: 'Z2-Z5', duration: 60, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Bike test · sprint + 2×8\' al max wattaggio', d: '15\' riscaldamento\n4×(30" a 260W + 45" a 140W)\n2×(8\' al max wattaggio regolare · rec 8\' a 140W)\n10\' defaticamento', dur: '~60\'',
+        expect: 'Test: 4 sprint 30"@260W · poi 2×8\' al massimo wattaggio sostenibile · trovare la potenza di soglia' },
+    ]
+  },
+  { day: 'MAR', date: '21', title: 'casa TAPIS 25\' PENDENZA 10% @152 BPM', sub: 'run indoor pendenza (Z4)', load: 'Z4', duration: 50, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'casa · Tapis 15\' risc + 25\' pendenza 10% a 152 bpm + 10\' defa', d: '15\' riscaldamento\n25\' a pendenza 10% tenendo 152 bpm (Z4)\n10\' defaticamento', dur: '~50\'',
+        ref: 'S29 14/07: tapis 27\' @8% 142bpm (Z3) centrato',
+        expect: '25\' in salita 10% a 152 bpm = Z4 (più duro: +2% pendenza e +10 bpm vs S29)' },
+    ]
+  },
+  { day: 'MER', date: '22', title: 'RUN 3KM RISC + 10KM @5\'/KM', sub: 'esterna · medio', load: 'Z2-Z3', duration: 70, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'esterna · Run 3km risc + 10km @5\'/km', d: '3km riscaldamento\n10km @5\'/km', dur: '~70\'',
+        ref: 'S29 collinare/medi · S28 10km @5:46/km',
+        expect: '10km a 5\'/km costante = ritmo medio (più veloce del solito 5:30-5:40)' },
+    ]
+  },
+  { day: 'GIO', date: '23', title: '10:00 pista RUN QUALITÀ RUFFINI', sub: 'mattina · qualità in pista', load: 'Z4-Z5', duration: 60, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: '10:00 · pista · Run qualità Ruffini', d: 'Sessione qualità in pista Ruffini · ritrovo h10', dur: '~60\'',
+        ref: 'S29 16/07: 4×(300+300+600) ~3:45/km HR fino a 175',
+        expect: 'Qualità in pista · programma specifico in loco · (usa GPS normale, non Track Run)' },
+    ]
+  },
+  { day: 'VEN', date: '24', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'SAB', date: '25', title: 'esterna RUN COLLINARE 1H20\' PRECOLLINA', sub: 'collinare no stress', load: 'Z2', duration: 80, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress', dur: '80\'',
+        ref: 'S27 30/06: collinare 11.642km 6:23/km D+151m HR 129/145',
+        expect: 'Endurance collinare Z2 · precollina · andatura rilassata' },
+    ]
+  },
+  { day: 'DOM', date: '26', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
 ];
 
 // Real Personal Bests
