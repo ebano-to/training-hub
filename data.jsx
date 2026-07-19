@@ -980,10 +980,10 @@ const WEEK = [
   { day: 'VEN', date: '24', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
     blocks: []
   },
-  { day: 'SAB', date: '25', title: 'esterna RUN COLLINARE 1H20\' PRECOLLINA · ~13 km', sub: 'collinare no stress · ~13 km', load: 'Z2', duration: 80, kind: 'run', runKm: 13, done: false,
+  { day: 'SAB', date: '25', title: 'esterna RUN COLLINARE 1H20\' PRECOLLINA · ~12 km', sub: 'collinare no stress · ~12 km', load: 'Z2', duration: 80, kind: 'run', runKm: 12, done: false,
     blocks: [
-      { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress · ~13 km', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress\n~13 km totali (indicativi, ~6:20/km collinare)', dur: '80\'',
-        ref: 'S27 30/06: collinare 11.642km 6:23/km D+151m HR 129/145',
+      { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress · ~12 km', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress\n~12 km totali (media ultime collinari ~6:50/km su 1h20\')', dur: '80\'',
+        ref: 'Media collinari: 30/06 11.642km 6:23/km · 08/07 11.168km 7:00/km · 16/05 10.789km 7:12/km',
         expect: 'Endurance collinare Z2 · precollina · andatura rilassata' },
     ]
   },
