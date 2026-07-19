@@ -63,7 +63,7 @@ function AgendaPage() {
             AGENDA<span style={{ color: 'var(--accent)' }}>.</span>
           </div>
           <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em', marginTop: 12 }}>
-            {allWeeks[weekIdx].range} · {currentWeekDays.filter((w) => w.done).length}/7 DONE · {Math.floor(currentWeekDays.reduce((a, b) => a + b.duration, 0) / 60)}h {currentWeekDays.reduce((a, b) => a + b.duration, 0) % 60}' planned
+            {allWeeks[weekIdx].range} · {currentWeekDays.filter((w) => w.done).length}/7 DONE · {Math.floor(currentWeekDays.reduce((a, b) => a + b.duration, 0) / 60)}h {currentWeekDays.reduce((a, b) => a + b.duration, 0) % 60}' planned{currentWeekDays.reduce((a, b) => a + (b.runKm || 0), 0) > 0 ? ` · ~${currentWeekDays.reduce((a, b) => a + (b.runKm || 0), 0)} km run` : ''}
           </div>
         </div>
         <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 20 }}>

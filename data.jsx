@@ -956,23 +956,23 @@ const WEEK = [
         expect: 'Test: 4 sprint 30"@260W · poi 2×8\' al massimo wattaggio sostenibile · trovare la potenza di soglia' },
     ]
   },
-  { day: 'MAR', date: '21', title: 'casa TAPIS 25\' PENDENZA 10% @152 BPM', sub: 'run indoor pendenza (Z4)', load: 'Z4', duration: 50, kind: 'run', done: false,
+  { day: 'MAR', date: '21', title: 'casa TAPIS 25\' PENDENZA 10% @152 BPM · ~6 km', sub: 'run indoor pendenza (Z4) · ~6 km', load: 'Z4', duration: 50, kind: 'run', runKm: 6, done: false,
     blocks: [
-      { code: 'RUN', t: 'casa · Tapis 15\' risc + 25\' pendenza 10% a 152 bpm + 10\' defa', d: '15\' riscaldamento\n25\' a pendenza 10% tenendo 152 bpm (Z4)\n10\' defaticamento', dur: '~50\'',
+      { code: 'RUN', t: 'casa · Tapis 15\' risc + 25\' pendenza 10% a 152 bpm + 10\' defa · ~6 km', d: '15\' riscaldamento\n25\' a pendenza 10% tenendo 152 bpm (Z4)\n10\' defaticamento\n~6 km totali (indicativi, 10% pendenza = passo lento)', dur: '~50\'',
         ref: 'S29 14/07: tapis 27\' @8% 142bpm (Z3) centrato',
         expect: '25\' in salita 10% a 152 bpm = Z4 (più duro: +2% pendenza e +10 bpm vs S29)' },
     ]
   },
-  { day: 'MER', date: '22', title: 'RUN 3KM RISC + 10KM @5\'/KM', sub: 'esterna · medio', load: 'Z2-Z3', duration: 70, kind: 'run', done: false,
+  { day: 'MER', date: '22', title: 'RUN 3KM RISC + 10KM @5\'/KM · 13 km', sub: 'esterna · medio · 13 km', load: 'Z2-Z3', duration: 70, kind: 'run', runKm: 13, done: false,
     blocks: [
-      { code: 'RUN', t: 'esterna · Run 3km risc + 10km @5\'/km', d: '3km riscaldamento\n10km @5\'/km', dur: '~70\'',
+      { code: 'RUN', t: 'esterna · Run 3km risc + 10km @5\'/km · 13 km', d: '3km riscaldamento\n10km @5\'/km\n13 km totali', dur: '~70\'',
         ref: 'S29 collinare/medi · S28 10km @5:46/km',
         expect: '10km a 5\'/km costante = ritmo medio (più veloce del solito 5:30-5:40)' },
     ]
   },
-  { day: 'GIO', date: '23', title: '10:00 pista RUN QUALITÀ RUFFINI', sub: 'mattina · qualità in pista', load: 'Z4-Z5', duration: 60, kind: 'run', done: false,
+  { day: 'GIO', date: '23', title: '10:00 pista RUN QUALITÀ RUFFINI · ~6 km', sub: 'mattina · qualità in pista · ~6 km', load: 'Z4-Z5', duration: 60, kind: 'run', runKm: 6, done: false,
     blocks: [
-      { code: 'RUN', t: '10:00 · pista · Run qualità Ruffini', d: 'Sessione qualità in pista Ruffini · ritrovo h10', dur: '~60\'',
+      { code: 'RUN', t: '10:00 · pista · Run qualità Ruffini · ~6 km', d: 'Sessione qualità in pista Ruffini · ritrovo h10\n~6 km totali (indicativi, media pista)', dur: '~60\'',
         ref: 'S29 16/07: 4×(300+300+600) ~3:45/km HR fino a 175',
         expect: 'Qualità in pista · programma specifico in loco · (usa GPS normale, non Track Run)' },
     ]
@@ -980,9 +980,9 @@ const WEEK = [
   { day: 'VEN', date: '24', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
     blocks: []
   },
-  { day: 'SAB', date: '25', title: 'esterna RUN COLLINARE 1H20\' PRECOLLINA', sub: 'collinare no stress', load: 'Z2', duration: 80, kind: 'run', done: false,
+  { day: 'SAB', date: '25', title: 'esterna RUN COLLINARE 1H20\' PRECOLLINA · ~13 km', sub: 'collinare no stress · ~13 km', load: 'Z2', duration: 80, kind: 'run', runKm: 13, done: false,
     blocks: [
-      { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress', dur: '80\'',
+      { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress · ~13 km', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress\n~13 km totali (indicativi, ~6:20/km collinare)', dur: '80\'',
         ref: 'S27 30/06: collinare 11.642km 6:23/km D+151m HR 129/145',
         expect: 'Endurance collinare Z2 · precollina · andatura rilassata' },
     ]
