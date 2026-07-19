@@ -927,7 +927,8 @@ const WEEK = [
         expect: 'Gara triathlon a round · nuoto→bike→run ×3 · non contata nei volumi di allenamento' },
       { code: 'SKI', t: 'Ski+Row Z2 Tempo Blocs 85\' · 4×15\' Z2 alterna ski/row', d: '5\' Z1 warm-up Ski\n15\' Z2 Ski\n5\' Z1 Ski\n15\' Z2 Row\n5\' Z1 Row\n15\' Z2 Ski\n5\' Z1 Ski (il programma scrive "Z2" ma è recupero, Z2 effettivo 60\')\n15\' Z2 Row\n5\' Z1 cool-down Row\nZ2 effettivo 60\' · HR 120-135', dur: '85\'',
         ref: 'S29 14/07: Wave ski/row Z2 124-130 bpm',
-        expect: 'HR stabile Z2 (120-135) nei 4 blocchi · alterna ski/row · Z2 60\' · ⚠️ da valutare vista la gara di venerdì' },
+        expect: 'HR stabile Z2 (120-135) nei 4 blocchi · alterna ski/row · Z2 60\'',
+        result: '~85\' · SKI 10.269km + ROW 9.473km · HR 125-130 nei 4 blocchi (tutti Z2 ✓, zero drift) · Z2: Ski#1 176W FC127 EF1.39 · Row#2 194W FC130 EF1.49 · Ski#3 155W FC125 EF1.24 · Row#4 191W FC125 EF1.52 · sul ROW +40W a pari FC (molto più efficiente dello ski) · ricostruito da 4 file (macchine scollegate) · svolto 18/07' },
     ]
   },
   { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' + BIKE 1H30\' PIANURA', sub: 'EMOM + bici easy post-gara', load: 'Z1-Z4', duration: 140, kind: 'hyrox', done: false,
@@ -958,19 +959,19 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,9.118];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,8.632];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,18.591];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,18.901];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 619.488,
-  ski: 571.033,
+  rower: 628.961,
+  ski: 581.302,
   run: 577.718,
   bike: 200.823,
-  total: 1946.896,
+  total: 1966.638,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -999,6 +1000,34 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '18 LUG', title: 'Ski+Row Z2 Tempo Blocs · 4×15\' Z2 alterna ski/row', kind: 'ski', dur: 85, load: 'Z2', rpe: 5, note: '~85\' · Ski 10.269km + Row 9.473km · HR 125-130 nei 4 blocchi (tutti Z2, no drift) · Z2 Ski 176/155W · Row 194/191W · EF row 1.49-1.52 vs ski 1.24-1.39 · ricostruito da 4 file',
+    details: {
+      summary: 'Ski+Row Z2 Tempo Blocs S29 VEN (svolto 18/07 17:26). Struttura: 5\' WU Ski + 15\' Z2 Ski + 5\' Z1 + 15\' Z2 Row + 5\' Z1 + 15\' Z2 Ski + 5\' Z1 + 15\' Z2 Row + 5\' Z1 CD (Z2 effettivo 60\'). Ricostruito da 4 file separati perché le due macchine si scollegavano (i tratti a 0 tra un blocco e l\'altro sono le transizioni, ignorati). FC point-by-point stabilissima 125-130 in tutti e 4 i blocchi Z2 — zero cardiac drift, controllo aerobico ottimo. DIFFERENZA SKI vs ROW: sul row spinge molto di più a pari FC — Row 194W/191W (EF 1.49-1.52) contro Ski 176W/155W (EF 1.39-1.24), cioè ~40W in più con lo stesso costo cardiaco. Sullo ski la potenza cala dal 1° al 2° blocco (176→155W), sul row resta stabile (194→191W).',
+      metrics: [
+        { l: 'SKI totale', v: '10.269 km' },
+        { l: 'ROW totale', v: '9.473 km' },
+        { l: 'Z2 SKI', v: '176 / 155 W · EF 1.39/1.24' },
+        { l: 'Z2 ROW', v: '194 / 191 W · EF 1.49/1.52' },
+        { l: 'HR blocchi', v: '125-130 (tutti Z2)' },
+        { l: 'Z2 EFFETTIVO', v: '60\' (4×15\')' },
+        { l: 'DRIFT', v: 'nullo' },
+      ],
+      table: {
+        headers: ['Blocco', 'Macchina', 'Watt', 'FC media (pt-pt)', 'FC max', 'EF'],
+        rows: [
+          ['WU 5\'', 'Ski', '155', '97.9', '115', '—'],
+          ['Z2 #1 15\'', 'Ski', '176', '126.7', '134', '1.39'],
+          ['rec 5\'', 'Ski', '127', '117.1', '129', '—'],
+          ['Z2 #2 15\'', 'Row', '194', '129.8', '137', '1.49'],
+          ['rec 5\'', 'Row', '118', '119.1', '134', '—'],
+          ['Z2 #3 15\'', 'Ski', '155', '125.5', '135', '1.24'],
+          ['rec 5\'', 'Ski', '109', '113.6', '130', '—'],
+          ['Z2 #4 15\'', 'Row', '191', '125.5', '133', '1.52'],
+          ['CD 5\'', 'Row', '125', '112.8', '133', '—'],
+        ],
+      },
+    }
+  },
   { date: '16 LUG', title: 'Run Qualità Ruffini · 4×(300+300+600) · 6.217km', kind: 'run', dur: 33, load: 'Z5', rpe: 9, note: '4×(300m + 300m + 600m) rec 100/100/200m · tot 6.217km · 300m @3:30-3:52/km · 600m @3:43-3:56/km · FC 133→164 (Z4-Z5) max 175 · cad 186-188',
     details: {
       summary: 'Run qualità in pista al Ruffini S29 GIO (08:44). Struttura: 4 set da (300m + 100m rec + 300m + 100m rec + 600m + 200m rec). I primi due 300m (set 1) erano su un file separato — uniti al resto. Ritmi molto veloci e costanti: 300m a 3:30-3:52/km, 600m a 3:43-3:56/km. FC point-by-point in Z4-Z5 con progressione netta set su set: il 1° 300 a 133 (freddo), poi i 600m salgono da 157 (set1) a 164/175 (set3-4), praticamente al tetto (FCmax 177). Cadenza altissima 186-188. Sessione tosta di ritmo-gara/soglia alta. NB PRECISIONE: i primi due 300m (modalità GPS normale, distanze 316/322m) sono i dati affidabili; dal 600m in poi Federico ha usato la modalità "corsa in pista" che snappa le distanze ai valori standard (300/600m esatti) e risulta MENO precisa sul pace. Il ritmo reale è stato ~3:40/km costante su tutte le ripetute (i pace 3:43-3:56 del file pista vanno letti con questa cautela).',
