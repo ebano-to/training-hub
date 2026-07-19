@@ -938,7 +938,8 @@ const WEEK = [
     blocks: [
       { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (Mattia F)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
         ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
-        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round' },
+        expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round',
+        result: 'EMOM 48\' con Maura · versione casa: erg 15cal (miei) + 20 crunch nei minuti pari · ROWER 12× avg 358W (302-426) FC123 2.090km, potenza tenuta · SKI 12× avg 292W (380→216, −43%) FC125 2.314km, grosso calo 2ª metà · Garmin filone HR 121/149 · EF row 2.98→2.69, ski 3.08→1.77 · svolto 18/07' },
       { code: 'BIKE', t: 'esterna · Bike 1h30\' pianura 90 rpm bassa intensità', d: '1h30\' bike in pianura · cadenza 90 rpm · bassa intensità (Z1-Z2)', dur: '90\'',
         expect: 'Fondo lento in pianura · 90 rpm · scarico post-gara' },
     ]
@@ -962,19 +963,19 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,18.591];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,18.901];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 628.961,
-  ski: 581.302,
+  rower: 631.051,
+  ski: 583.616,
   run: 577.718,
   bike: 200.823,
-  total: 1966.638,
+  total: 1971.042,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -1003,6 +1004,38 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '18 LUG', title: 'EMOM 48\' Hyrox (con Maura) · 12 row + 12 ski da 15cal', kind: 'hyrox', dur: 48, load: 'Z3-Z5', rpe: 8, note: 'EMOM 48\' versione casa con Maura · miei split 15cal: ROWER 12× avg 358W FC123 (tenuti) · SKI 12× avg 292W FC125 (380→216, calo −43%) · 20 crunch nei minuti pari · Garmin HR 121/149',
+    details: {
+      summary: 'EMOM 48\' Hyrox Aerobic S29 SAB (svolto 18/07) fatto a casa con Maura. Versione adattata: rotazione erg 15cal (miei sprint) + 20 crunch addominali nei minuti pari (niente wall balls/assault/lunges, no attrezzi). Rower ai minuti 1,5,9… e SkiErg ai 3,7,11… Isolati i MIEI split da 15cal (quelli ad alta potenza), ignorati i 10cal di Maura, e ricomposti sul filone Garmin da 48\'. LETTURA: sul ROWER potenza gestita alla grande — 12 sprint da 302 a 426W (avg 358), addirittura in crescendo a metà (426W), FC 123. Sullo SKI invece parti fortissimo (380W) ma cali in modo netto fino a 216W (−43%), col tempo per sprint che sale da 33" a 51" — è lì che è arrivata la fatica. Nota EF: sono sprint da 30-50s, la FC è "in ritardo" quindi il valore W/FC è gonfiato; ma il trend conta — sullo ski l\'EF crolla (3.08→1.77), sul rower tiene (2.98→2.69).',
+      metrics: [
+        { l: 'ROWER 12 sprint', v: '358W avg (302-426)' },
+        { l: 'SKI 12 sprint', v: '292W avg (380→216)' },
+        { l: 'ROW dist / FC', v: '2.090km · FC 123' },
+        { l: 'SKI dist / FC', v: '2.314km · FC 125' },
+        { l: 'EF row (primi→ultimi)', v: '2.98 → 2.69' },
+        { l: 'EF ski (primi→ultimi)', v: '3.08 → 1.77' },
+        { l: 'crunch', v: '20 × minuti pari' },
+        { l: 'Garmin 48\'', v: 'HR 121/149 · 582cal' },
+      ],
+      table: {
+        headers: ['#', 'ROW W', 'ROW FC', 'SKI W', 'SKI FC'],
+        rows: [
+          ['1', '347', '104', '380', '115'],
+          ['2', '325', '118', '339', '118'],
+          ['3', '350', '122', '376', '123'],
+          ['4', '362', '123', '369', '124'],
+          ['5', '426', '127', '330', '126'],
+          ['6', '425', '128', '290', '129'],
+          ['7', '426', '128', '265', '130'],
+          ['8', '336', '127', '236', '126'],
+          ['9', '302', '124', '249', '122'],
+          ['10', '325', '123', '230', '122'],
+          ['11', '330', '122', '230', '132'],
+          ['12', '344', '127', '216', '128'],
+        ],
+      },
+    }
+  },
   { date: '18 LUG', title: 'Ski+Row Z2 Tempo Blocs · 4×15\' Z2 alterna ski/row', kind: 'ski', dur: 85, load: 'Z2', rpe: 5, note: '~85\' · Ski 10.269km + Row 9.473km · HR 125-130 nei 4 blocchi (tutti Z2, no drift) · Z2 Ski 176/155W · Row 194/191W · EF row 1.49-1.52 vs ski 1.24-1.39 · ricostruito da 4 file',
     details: {
       summary: 'Ski+Row Z2 Tempo Blocs S29 VEN (svolto 18/07 17:26). Struttura: 5\' WU Ski + 15\' Z2 Ski + 5\' Z1 + 15\' Z2 Row + 5\' Z1 + 15\' Z2 Ski + 5\' Z1 + 15\' Z2 Row + 5\' Z1 CD (Z2 effettivo 60\'). Ricostruito da 4 file separati perché le due macchine si scollegavano (i tratti a 0 tra un blocco e l\'altro sono le transizioni, ignorati). FC point-by-point stabilissima 125-130 in tutti e 4 i blocchi Z2 — zero cardiac drift, controllo aerobico ottimo. DIFFERENZA SKI vs ROW: sul row spinge molto di più a pari FC — Row 194W/191W (EF 1.49-1.52) contro Ski 176W/155W (EF 1.39-1.24), cioè ~40W in più con lo stesso costo cardiaco. Sullo ski la potenza cala dal 1° al 2° blocco (176→155W), sul row resta stabile (194→191W).',
