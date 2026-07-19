@@ -1,5 +1,5 @@
 // Shared training data for Federico Simondi — Hyrox training hub
-// Real data — S29 week (13 - 19 Jul 2026)
+// Real data — S30 week (20 - 26 Jul 2026)
 
 const RACE = {
   name: 'HYROX ROMA',
@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 29,
+  programWeek: 30,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -873,10 +873,7 @@ const WEEK_ARCHIVE = [
     ]
   },
   ]},
-];
-
-// Current week — S29 (13 - 19 LUG 2026)
-const WEEK = [
+  { id: 'S29', label: 'S29 · 13 LUG → 19 LUG', range: '13 LUG → 19 LUG 2026', programWeek: 29, days: [
   { day: 'LUN', date: '13', title: 'casa ROW+SKI WAVE 12× · casa TAPIS 27\' PENDENZA @142', sub: 'wave fartlek + tapis in pendenza', load: 'Z2-Z3', duration: 130, kind: 'hyrox', done: true,
     blocks: [
       { code: 'ROW', t: 'casa · Row+Ski Wave Fartlek 12×(3\' Z2 / 2\' Z1) · alterna 2 ski / 2 row', d: '10\' riscaldamento Z1\n12×(3\' Z2 / 2\' Z1) alternando 2 waves su SkiErg e 2 waves su Row · Z2 alto (fino a 135) / Z1 basso (110-119)\n10\' defaticamento Z1', dur: '75\'',
@@ -948,6 +945,18 @@ const WEEK = [
   { day: 'DOM', date: '19', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
     blocks: []
   },
+  ]},
+];
+
+// Current week — S30 (20 - 26 LUG 2026)
+const WEEK = [
+  { day: 'LUN', date: '20', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MAR', date: '21', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MER', date: '22', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'GIO', date: '23', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'VEN', date: '24', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'SAB', date: '25', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'DOM', date: '26', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
 ];
 
 // Real Personal Bests
@@ -964,10 +973,10 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
