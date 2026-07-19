@@ -934,14 +934,15 @@ const WEEK = [
         result: '~85\' · SKI 10.269km + ROW 9.473km · HR 125-130 nei 4 blocchi (tutti Z2 ✓, zero drift) · Z2: Ski#1 176W FC127 EF1.39 · Row#2 194W FC130 EF1.49 · Ski#3 155W FC125 EF1.24 · Row#4 191W FC125 EF1.52 · sul ROW +40W a pari FC (molto più efficiente dello ski) · ricostruito da 4 file (macchine scollegate) · svolto 18/07' },
     ]
   },
-  { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' + BIKE 1H30\' PIANURA', sub: 'EMOM + bici easy post-gara', load: 'Z1-Z4', duration: 140, kind: 'hyrox', done: false,
+  { day: 'SAB', date: '18', title: 'HYROX EMOM 48\' + BIKE 1H30\' PIANURA', sub: 'EMOM fatto (con Maura) · bici pianura saltata', load: 'Z1-Z4', duration: 48, kind: 'hyrox', done: true,
     blocks: [
       { code: 'HYROX', t: 'casa · Hyrox Aerobic EMOM 48\' (Mattia F)', d: 'Ogni minuto (rotazione da 4\', 12 round):\nI: 15/12 kCal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kCal Assault Bike (max 45")\nIV: 20m Sandbag Lunges', dur: '48\'',
         ref: 'S24 13/06: EMOM 44\' 721cal HR 139/152',
         expect: 'Aerobico Hyrox 4 stazioni · tenere erg sotto 45" · 12 round',
         result: 'EMOM 48\' con Maura · versione casa: erg 15cal (miei) + 20 crunch nei minuti pari · ROWER 12× avg 358W (302-426) FC123 2.090km, potenza tenuta · SKI 12× avg 292W (380→216, −43%) FC125 2.314km, grosso calo 2ª metà · Garmin filone HR 121/149 · EF row 2.98→2.69, ski 3.08→1.77 · svolto 18/07' },
       { code: 'BIKE', t: 'esterna · Bike 1h30\' pianura 90 rpm bassa intensità', d: '1h30\' bike in pianura · cadenza 90 rpm · bassa intensità (Z1-Z2)', dur: '90\'',
-        expect: 'Fondo lento in pianura · 90 rpm · scarico post-gara' },
+        expect: 'Fondo lento in pianura · 90 rpm · scarico post-gara',
+        result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'DOM', date: '19', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
