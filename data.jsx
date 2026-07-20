@@ -1019,6 +1019,7 @@ const PBS = [
   { station: 'Back Squat 1RM', value: '105kg', delta: '', date: '20 MAR' },
   { station: 'Strict Press 1RM', value: '65kg', delta: '', date: '11 GIU' },
   { station: 'Deadlift 1RM', value: '157.5kg', delta: '+7.5kg', date: '11 GIU' },
+  { station: 'FTP Bike (test 2×8\')', value: '237W', delta: '90% di 263W', date: '20 LUG', sub: '2×8\' max 265/262W · HR 129/140 max152 · cad 79rpm · Technogym Ride' },
   { station: 'Hyrox Verona Singles', value: '1:17:44', delta: 'PB Singles', date: '2025' },
   { station: 'Hyrox Torino Singles', value: '1:18:33', delta: '+49s', date: '31 GEN' },
   { station: 'Hyrox Bologna Doubles', value: '1:03:27', delta: 'PB Doubles', date: '04 APR' },
