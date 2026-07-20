@@ -950,10 +950,13 @@ const WEEK_ARCHIVE = [
 
 // Current week — S30 (20 - 26 LUG 2026)
 const WEEK = [
-  { day: 'LUN', date: '20', title: 'BIKE TEST · 4×(30"@260W/45"@140W) + 2×8\' MAX', sub: 'test bici a potenza', load: 'Z2-Z5', duration: 60, kind: 'bike', done: false,
+  { day: 'LUN', date: '20', title: 'BIKE TEST (Gabri) + ROW/SKI WAVE FARTLEK (Mattia)', sub: 'test bici a potenza + wave fartlek erg', load: 'Z1-Z5', duration: 145, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'BIKE', t: 'Bike test · sprint + 2×8\' al max wattaggio', d: '15\' riscaldamento\n4×(30" a 260W + 45" a 140W)\n2×(8\' al max wattaggio regolare · rec 8\' a 140W)\n10\' defaticamento', dur: '~60\'',
+      { code: 'BIKE', t: 'mattino · Bike test · sprint + 2×8\' al max wattaggio', d: '15\' riscaldamento\n4×(30" a 260W + 45" a 140W)\n2×(8\' al max wattaggio regolare · rec 8\' a 140W)\n10\' defaticamento', dur: '~60\'',
         expect: 'Test: 4 sprint 30"@260W · poi 2×8\' al massimo wattaggio sostenibile · trovare la potenza di soglia' },
+      { code: 'ROW', t: 'casa · Row+Ski Wave Fartlek · 13×(3\'Z2/2\'Z1)', d: '10\' risc Z1\n13×(3\' Z2 / 2\' Z1) in onde regolari\nALTERNA 2 waves Ski, 2 waves Row\n10\' defa Z1\nZ1 110-119 bpm · Z2 120-135 bpm (lattato)', dur: '~85\'',
+        ref: 'S28 Row Wave Fartlek 60\'',
+        expect: 'HR media Z2 con variazioni ritmiche · alterna 2 wave Ski / 2 wave Row' },
     ]
   },
   { day: 'MAR', date: '21', title: 'casa TAPIS 25\' PENDENZA 10% @152 BPM · ~6 km', sub: 'run indoor pendenza (Z4) · ~6 km', load: 'Z4', duration: 50, kind: 'run', runKm: 6, done: false,
@@ -963,11 +966,20 @@ const WEEK = [
         expect: '25\' in salita 10% a 152 bpm = Z4 (più duro: +2% pendenza e +10 bpm vs S29)' },
     ]
   },
-  { day: 'MER', date: '22', title: 'RUN 3KM RISC + 10KM @5\'/KM · 13 km', sub: 'esterna · medio · 13 km', load: 'Z2-Z3', duration: 70, kind: 'run', runKm: 13, done: false,
+  { day: 'MER', date: '22', title: 'RUN 13KM (Gabri) + ASSAULT 85\' + DEADLIFT + PANCA (Mattia)', sub: '⚠️ giornata carica: medio 13km + assault pyramid + forza', load: 'Z2-HEAVY', duration: 200, kind: 'hyrox', runKm: 13, done: false,
     blocks: [
       { code: 'RUN', t: 'esterna · Run 3km risc + 10km @5\'/km · 13 km', d: '3km riscaldamento\n10km @5\'/km\n13 km totali', dur: '~70\'',
         ref: 'S29 collinare/medi · S28 10km @5:46/km',
         expect: '10km a 5\'/km costante = ritmo medio (più veloce del solito 5:30-5:40)' },
+      { code: 'BIKE', t: 'casa · Assault Bike Intra-Session Pyramid · 85\'', d: '5\' rampa Z1→Z2\n15\' Z2 low (63-65% = 112-115 bpm)\n15\' Z2 mid (65-68% = 115-120 bpm)\n20\' Z2 top (68-70% = 120-124 bpm)\n15\' Z2 mid (115-120 bpm)\n15\' Z2 low (112-115 bpm)\nkm non contati', dur: '~85\'',
+        ref: 'S28 06/07 Assault Pyramid 75\' 256W',
+        expect: 'Profilo piramidale Z2, media Z2 · picco 20\' a Z2 top 120-124 bpm' },
+      { code: 'STRENGTH', t: 'palestra · Deadlift 5×4 @117,5kg (75% 1RM)', d: '5×4 @117,5kg (75% di 1RM 157,5kg) · rec completo\nTempo: 2" negativa · 1" fermo in buca · 1" positiva\nDischi/lato: 20+20+5+2,5+1,25', dur: '~25\'',
+        ref: 'S26 19/06 DL 5×3 @117,5kg',
+        expect: 'Qualità trasmissione forza · ogni rep identica · no rimbalzo a terra' },
+      { code: 'STRENGTH', t: 'palestra · Pause Bench Press 5×3 @77,5% 1RM', d: '5×3 @77,5% 1RM · rec completo · pausa al petto\n⚠️ 1RM panca non testato → carico da definire (se 1RM ~75kg ≈ 57,5-60kg)', dur: '~20\'',
+        ref: 'S28 02/07 Bench top 65kg×5',
+        expect: 'Pausa controllata al petto · definire carico sul 1RM reale' },
     ]
   },
   { day: 'GIO', date: '23', title: '10:00 pista RUN QUALITÀ RUFFINI · ~6 km', sub: 'mattina · qualità in pista · ~6 km', load: 'Z4-Z5', duration: 60, kind: 'run', runKm: 6, done: false,
@@ -977,14 +989,21 @@ const WEEK = [
         expect: 'Qualità in pista · programma specifico in loco · (usa GPS normale, non Track Run)' },
     ]
   },
-  { day: 'VEN', date: '24', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'VEN', date: '24', title: 'casa SKI+ROW Z2 TEMPO BLOCS 90\' (Mattia)', sub: 'ski+row a blocchi · 60\' Z2 effettivi', load: 'Z2', duration: 90, kind: 'ski', done: false,
+    blocks: [
+      { code: 'SKI', t: 'casa · Ski+Row Z2 Tempo Blocs · 90\'', d: '5\' Z1 WU Ski\n10\' Z2 Ski / 5\' Z1 Ski\n10\' Z2 Row / 5\' Z1 Row\n10\' Z2 Ski / 5\' Z2 Ski\n10\' Z2 Row / 5\' Z1 Row\n10\' Z2 Ski / 5\' Z1 Ski\n10\' Z2 Row\nZ1 110-119 · Z2 120-135 bpm · 60\' Z2 effettivi', dur: '90\'',
+        ref: 'S28 01/07 Ski Tempo Blocs 16.838m EF1.40',
+        expect: 'HR stabile su tutti i blocchi · recupero attivo Z1 evita il cardiac drift' },
+    ]
   },
-  { day: 'SAB', date: '25', title: 'esterna RUN COLLINARE 1H20\' PRECOLLINA · ~12 km', sub: 'collinare no stress · ~12 km', load: 'Z2', duration: 80, kind: 'run', runKm: 12, done: false,
+  { day: 'SAB', date: '25', title: 'RUN COLLINARE 1H20\' ~12km (Gabri) + EMOM 55\' HYROX (Mattia)', sub: '⚠️ giornata carica: collinare + EMOM aerobico', load: 'Z2-Z4', duration: 135, kind: 'hyrox', runKm: 12, done: false,
     blocks: [
       { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress · ~12 km', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress\n~12 km totali (media ultime collinari ~6:50/km su 1h20\')', dur: '80\'',
         ref: 'Media collinari: 30/06 11.642km 6:23/km · 08/07 11.168km 7:00/km · 16/05 10.789km 7:12/km',
         expect: 'Endurance collinare Z2 · precollina · andatura rilassata' },
+      { code: 'HYROX', t: 'palestra · EMOM 55\' Hyrox Aerobic', d: 'EMOM 55\' (ciclo da 5\', ×11):\nI: 15/12 kcal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kcal Assault Bike (max 45")\nIV: 20m Sandbag Lunges\nV: Rest', dur: '55\'',
+        ref: 'S27 EMOM 48\' Hyrox aerobico',
+        expect: 'Aerobico Hyrox · 11 round · ski/wall balls/assault/lunges/rest · km non contati' },
     ]
   },
   { day: 'DOM', date: '26', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
