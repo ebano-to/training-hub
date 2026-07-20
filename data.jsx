@@ -953,7 +953,8 @@ const WEEK = [
   { day: 'LUN', date: '20', title: 'BIKE TEST (Gabri) + ROW/SKI WAVE FARTLEK (Mattia)', sub: 'test bici a potenza + wave fartlek erg', load: 'Z1-Z5', duration: 145, kind: 'hyrox', done: false,
     blocks: [
       { code: 'BIKE', t: 'mattino · Bike test · sprint + 2×8\' al max wattaggio', d: '15\' riscaldamento\n4×(30" a 260W + 45" a 140W)\n2×(8\' al max wattaggio regolare · rec 8\' a 140W)\n10\' defaticamento', dur: '~60\'',
-        expect: 'Test: 4 sprint 30"@260W · poi 2×8\' al massimo wattaggio sostenibile · trovare la potenza di soglia' },
+        expect: 'Test: 4 sprint 30"@260W · poi 2×8\' al massimo wattaggio sostenibile · trovare la potenza di soglia',
+        result: 'FATTO · 25.074km · ~50\' (2 file: warmup Technogym Ride 18:01 8.19km + 2×8\' TCX 32\' 16.884km) · warmup 134W avg + 4×30" sprint fino a 319W (HR 96/115) · 2×8\' MAX: B1 265W HR129/145 EF2.05 · B2 262W HR140/152 EF1.88 · media 263W = soglia stimata 8\' · cad 79rpm · rec 138W · stesso W nei 2 blocchi, +11bpm nel 2° a parità di potenza' },
       { code: 'ROW', t: 'casa · Row+Ski Wave Fartlek · 13×(3\'Z2/2\'Z1)', d: '10\' risc Z1\n13×(3\' Z2 / 2\' Z1) in onde regolari\nALTERNA 2 waves Ski, 2 waves Row\n10\' defa Z1\nZ1 110-119 bpm · Z2 120-135 bpm (lattato)', dur: '~85\'',
         ref: 'S28 Row Wave Fartlek 60\'',
         expect: 'HR media Z2 con variazioni ritmiche · alterna 2 wave Ski / 2 wave Row' },
@@ -1028,7 +1029,7 @@ const PBS = [
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,0];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,0];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,0];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
@@ -1036,8 +1037,8 @@ const TOTALS = {
   rower: 631.051,
   ski: 583.616,
   run: 577.718,
-  bike: 200.823,
-  total: 1971.042,
+  bike: 225.897,
+  total: 1996.116,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -1066,6 +1067,7 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '20 LUG', title: 'Bike Test · 2×8\' max wattaggio · 263W media · 25.074km', kind: 'bike', dur: 50, load: 'Z2-Z5', rpe: 8, note: '25.074km · ~50\' (2 file: warmup Technogym Ride 18:01 8.19km 134W + 2×8\' TCX 32\' 16.884km) · warmup 4×30" sprint fino a 319W (HR 96/115) · 2×8\' MAX: B1 265W HR129/145 EF2.05 · B2 262W HR140/152 EF1.88 · media 263W (soglia stimata 8\') · cad 79rpm · rec 138W · pacing pulito (scarto 3W) ma +11bpm nel 2° blocco a parità di potenza' },
   { date: '18 LUG', title: 'EMOM 48\' Hyrox (con Maura) · 12 row + 12 ski da 15cal', kind: 'hyrox', dur: 48, load: 'Z3-Z5', rpe: 8, note: 'EMOM 48\' versione casa con Maura · miei split 15cal: ROWER 12× avg 358W FC123 (tenuti) · SKI 12× avg 292W FC125 (380→216, calo −43%) · 20 crunch nei minuti pari · Garmin HR 121/149',
     details: {
       summary: 'EMOM 48\' Hyrox Aerobic S29 SAB (svolto 18/07) fatto a casa con Maura. Versione adattata: rotazione erg 15cal (miei sprint) + 20 crunch addominali nei minuti pari (niente wall balls/assault/lunges, no attrezzi). Rower ai minuti 1,5,9… e SkiErg ai 3,7,11… Isolati i MIEI split da 15cal (quelli ad alta potenza), ignorati i 10cal di Maura, e ricomposti sul filone Garmin da 48\'. LETTURA: sul ROWER potenza gestita alla grande — 12 sprint da 302 a 426W (avg 358), addirittura in crescendo a metà (426W), FC 123. Sullo SKI invece parti fortissimo (380W) ma cali in modo netto fino a 216W (−43%), col tempo per sprint che sale da 33" a 51" — è lì che è arrivata la fatica. Nota EF: sono sprint da 30-50s, la FC è "in ritardo" quindi il valore W/FC è gonfiato; ma il trend conta — sullo ski l\'EF crolla (3.08→1.77), sul rower tiene (2.98→2.69).',
