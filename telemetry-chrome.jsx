@@ -35,7 +35,7 @@ function TelemetryChrome({ active, children }) {
           </div>
         </a>
         <nav className="r-nav-tabs" style={{ display: 'flex', gap: 4 }}>
-          {[['HUB', 'index.html'], ['AGENDA', 'agenda.html'], ['DASHBOARD', 'dashboard.html'], ['STORICO', 'storico.html'], ['HYDRATION', 'hydration.html']].map(([l, h]) => (
+          {[['HUB', 'index.html'], ['AGENDA', 'agenda.html'], ['DASHBOARD', 'dashboard.html'], ['STORICO', 'storico.html'], ['RECUPERO', 'recupero.html'], ['HYDRATION', 'hydration.html']].map(([l, h]) => (
             <a key={l} href={h}
               style={{
                 padding: '8px 14px',

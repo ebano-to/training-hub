@@ -171,6 +171,23 @@ function HomeTelemetry() {
         </ModuleCard>
       </div>
 
+      {/* SECONDARY LINK — RECUPERO */}
+      <a href="recupero.html" style={{
+        border: '1px solid var(--line)', background: 'var(--bg-2)', padding: '16px 20px',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        transition: 'border-color .15s', textDecoration: 'none', marginBottom: 12
+      }}
+        onMouseEnter={function(e) { e.currentTarget.style.borderColor = 'var(--accent)'; }}
+        onMouseLeave={function(e) { e.currentTarget.style.borderColor = 'var(--line)'; }}
+      >
+        <div>
+          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>// RECOVERY · GARMIN</div>
+          <div className="display" style={{ fontSize: 20, color: 'var(--fg)', marginTop: 4 }}>RECUPERO</div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>readiness {window.TRAINING.RECOVERY.today.readiness} · HRV {window.TRAINING.RECOVERY.today.hrv} · FC riposo {window.TRAINING.RECOVERY.today.rhr} · aggiornato ogni mattina</div>
+        </div>
+        <Icon.arrow width="16" height="16" style={{ color: 'var(--fg-3)' }} />
+      </a>
+
       {/* SECONDARY LINK — HYDRATION */}
       <a href="hydration.html" style={{
         border: '1px solid var(--line)', background: 'var(--bg-2)', padding: '16px 20px',
