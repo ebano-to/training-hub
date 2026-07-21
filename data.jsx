@@ -965,7 +965,7 @@ const WEEK = [
       { code: 'RUN', t: 'casa · Tapis 15\' risc + 25\' pendenza 10% a 152 bpm + 10\' defa · 6.26 km', d: '15\' riscaldamento\n25\' a pendenza 10% tenendo 152 bpm (Z4)\n10\' defaticamento', dur: '49\'21"',
         ref: 'S29 14/07: tapis 27\' @8% 142bpm (Z3) centrato',
         expect: '25\' in salita 10% a 152 bpm = Z4 (più duro: +2% pendenza e +10 bpm vs S29)',
-        result: 'FATTO · 6.261km · 49\'21" · HR 133/158 · cad 167spm · run power 306W (NP316) · TE 3.3 · TARGET CENTRATO: blocco lavoro 24\'59" a pendenza 10% HR media ESATTA 152 (max 158, sale 133→157 e tiene) · WU 14\'18" 8:15/km incline 0.5→6% HR101/122 · defa 10\'03" 7:06/km flat HR132. Dati da Garmin API (no upload)' },
+        result: 'FATTO · 6.261km · 49\'21" · HR 133/158 · run power 306W/NP316 · TE 3.3 · da FIT 1Hz (2962 pt) · BLOCCO LAVORO 24\'59" pendenza 10%: HR media 152.1 (118→158) · cad 169spm · 306W · decoupling +9.6% (EF 2.11→1.91) · WU 14\'18" 8:14/km HR101 cad160 incline 0→6.5% · defa 10\'03" 7:06/km HR132 · Zone(tue): Z4 44% · Z2 21% · Z1 8% · Z3 6% · Z5 2% · target 152 centrato' },
     ]
   },
   { day: 'MER', date: '22', title: 'RUN 13KM (Gabri) + ASSAULT 85\' + DEADLIFT + PANCA (Mattia)', sub: '⚠️ giornata carica: medio 13km + assault pyramid + forza', load: 'Z2-HEAVY', duration: 200, kind: 'hyrox', runKm: 13, done: false,
@@ -1069,7 +1069,7 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
-  { date: '21 LUG', title: 'Tapis 25\' pendenza 10% @152bpm · 6.261km', kind: 'run', dur: 49, load: 'Z4', rpe: 7, note: '6.261km · 49\'21" · HR 133/158 · cad 167spm · run power 306W (NP316) · TE 3.3 aerobico · Gabriele: 15\' risc + 25\' salita 10% target 152bpm + 10\' defa · BLOCCO LAVORO 24\'59" a pendenza 10%: HR media ESATTA 152 (max 158), sale 133→157 poi tiene 153-157 · WU 14\'18" 8:15/km incline 0.5→6% HR101/122 · defa 10\'03" 7:06/km flat HR132/155 · dati Garmin API (no upload FIT)' },
+  { date: '21 LUG', title: 'Tapis 25\' pendenza 10% @152bpm · 6.261km', kind: 'run', dur: 49, load: 'Z4', rpe: 7, note: '6.261km · 49\'21" · HR 133/158 · cad 167spm · run power 306W (NP316) · TE 3.3 aerobico · Gabriele: 15\' risc + 25\' salita 10% target 152bpm + 10\' defa · BLOCCO LAVORO 24\'59" pendenza 10%: HR media 152.1 (118→158), cad 169spm, 306W, decoupling +9.6% (EF 2.11→1.91) · WU 14\'18" 8:14/km HR101 cad160 incline 0→6.5% · defa 10\'03" 7:06/km HR132 · Zone(tue): Z4 44% Z2 21% Z1 8% Z3 6% Z5 2% · da FIT 1Hz 2962pt' },
   { date: '20 LUG', title: 'Bike Test · 2×8\' max wattaggio · 263W media · 25.074km', kind: 'bike', dur: 50, load: 'Z2-Z5', rpe: 8, note: '25.074km · ~50\' (2 file: warmup Technogym Ride 18:01 8.19km 134W + 2×8\' TCX 32\' 16.884km) · warmup 4×30" sprint fino a 319W (HR 96/115) · 2×8\' MAX: B1 265W HR129/145 EF2.05 · B2 262W HR140/152 EF1.88 · media 263W (soglia stimata 8\') · cad 79rpm · rec 138W · pacing pulito (scarto 3W) ma +11bpm nel 2° blocco a parità di potenza' },
   { date: '18 LUG', title: 'EMOM 48\' Hyrox (con Maura) · 12 row + 12 ski da 15cal', kind: 'hyrox', dur: 48, load: 'Z3-Z5', rpe: 8, note: 'EMOM 48\' versione casa con Maura · miei split 15cal: ROWER 12× avg 358W FC123 (tenuti) · SKI 12× avg 292W FC125 (380→216, calo −43%) · 20 crunch nei minuti pari · Garmin HR 121/149',
     details: {
