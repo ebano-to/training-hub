@@ -950,14 +950,15 @@ const WEEK_ARCHIVE = [
 
 // Current week — S30 (20 - 26 LUG 2026)
 const WEEK = [
-  { day: 'LUN', date: '20', title: 'BIKE TEST (Gabri) + ROW/SKI WAVE FARTLEK (Mattia)', sub: 'test bici a potenza + wave fartlek erg', load: 'Z1-Z5', duration: 145, kind: 'hyrox', done: false,
+  { day: 'LUN', date: '20', title: 'BIKE TEST (Gabri) + ROW/SKI WAVE FARTLEK (Mattia)', sub: 'test bici (20/07) + wave fartlek erg (21/07)', load: 'Z1-Z5', duration: 145, kind: 'hyrox', done: true,
     blocks: [
       { code: 'BIKE', t: 'mattino · Bike test · sprint + 2×8\' al max wattaggio', d: '15\' riscaldamento\n4×(30" a 260W + 45" a 140W)\n2×(8\' al max wattaggio regolare · rec 8\' a 140W)\n10\' defaticamento', dur: '~60\'',
         expect: 'Test: 4 sprint 30"@260W · poi 2×8\' al massimo wattaggio sostenibile · trovare la potenza di soglia',
         result: 'FATTO · 25.074km · ~50\' (2 file: warmup Technogym Ride 18:01 8.19km + 2×8\' TCX 32\' 16.884km) · warmup 134W avg + 4×30" sprint fino a 319W (HR 96/115) · 2×8\' MAX: B1 265W HR129/145 EF2.05 · B2 262W HR140/152 EF1.88 · media 263W = soglia stimata 8\' · cad 79rpm · rec 138W · stesso W nei 2 blocchi, +11bpm nel 2° a parità di potenza' },
       { code: 'ROW', t: 'casa · Row+Ski Wave Fartlek · 13×(3\'Z2/2\'Z1)', d: '10\' risc Z1\n13×(3\' Z2 / 2\' Z1) in onde regolari\nALTERNA 2 waves Ski, 2 waves Row\n10\' defa Z1\nZ1 110-119 bpm · Z2 120-135 bpm (lattato)', dur: '~85\'',
-        ref: 'S28 Row Wave Fartlek 60\'',
-        expect: 'HR media Z2 con variazioni ritmiche · alterna 2 wave Ski / 2 wave Row' },
+        ref: 'S28 Row Wave Fartlek 60\' · S29 14/07 wave row+ski HR121',
+        expect: 'HR media Z2 con variazioni ritmiche · alterna 2 wave Ski / 2 wave Row',
+        result: 'FATTO (21/07) · 15.892km in 70\' · ROW 9.223km + SKI 6.669km · a blocchi: 5\' row WU + 6×10\' (2row/2ski alternati) + 5\' row fine, ~13 onde · HR 121/144 tutte Z1-Z2 (medie blocco 118-124) · ONDE Z2 (split 3\'): ROW 194-207W · SKI 164-178W · EF onde row ~1.62 · ski ~1.42 · SKI in calo nel finale (178→164W a pari FC = decoupling ski) · ROW in tenuta · watt PM5 + HR pbp da 8 FIT ordinati 17:10-18:24 · vs 14/07: stesso controllo Z2 (HR 121 identica), row uguale, ski un filo più basso e calante; -12\' e -1.9km ma con rec tra blocchi' },
     ]
   },
   { day: 'MAR', date: '21', title: 'casa TAPIS 25\' PENDENZA 10% @152 BPM · 6.26 km', sub: 'run indoor pendenza (Z4) · fatto', load: 'Z4', duration: 49, kind: 'run', runKm: 6.261, done: true,
@@ -1028,19 +1029,19 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,9.223];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,6.669];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,6.261];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 631.051,
-  ski: 583.616,
+  rower: 640.274,
+  ski: 590.285,
   run: 583.979,
   bike: 225.897,
-  total: 2002.377,
+  total: 2018.269,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -1069,6 +1070,7 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '21 LUG', title: 'Row+Ski Wave Fartlek · 15.892m · ~13×(3\'Z2/2\'Z1) alterna 2row/2ski', kind: 'row', dur: 70, load: 'Z2', rpe: 5, note: '15.892km in 70\' · ROW 9.223km + SKI 6.669km · svolto a blocchi singoli: 5\' row WU + 6×10\' (2row/2ski alternati) + 5\' row fine (~13 onde) · ordinati per orario 17:10→18:24 da 8 FIT · HR 121/144, tutte Z1-Z2 (medie blocco 118-124) · ONDE Z2 (lap 3\' dai FIT = watt PM5): ROW 194-207W · SKI 164-178W · recuperi Z1 (lap 2\') ~76-105W · EF onde row ~1.62 · ski ~1.42 · SKI cala nel finale (178→170→164W a pari FC = decoupling ski) · ROW in tenuta · watt letti dai lap FIT, confermati dal webarchive PM5 · vs 14/07 (stesso wave): HR 121 identica, row uguale (~198W), ski un filo più basso e calante; oggi -12\' e -1.9km ma con recupero tra i blocchi' },
   { date: '21 LUG', title: 'Tapis 25\' pendenza 10% @152bpm · 6.261km', kind: 'run', dur: 49, load: 'Z4', rpe: 7, note: '6.261km · 49\'21" · HR 133/158 · cad 167spm · run power 306W (NP316) · TE 3.3 aerobico · Gabriele: 15\' risc + 25\' salita 10% target 152bpm + 10\' defa · BLOCCO LAVORO 24\'59" pendenza 10%: HR media 152.1 (118→158), cad 169spm, 306W, decoupling +9.6% (EF 2.11→1.91) · WU 14\'18" 8:14/km HR101 cad160 incline 0→6.5% · defa 10\'03" 7:06/km HR132 · Zone(tue): Z4 44% Z2 21% Z1 8% Z3 6% Z5 2% · da FIT 1Hz 2962pt' },
   { date: '20 LUG', title: 'Bike Test · 2×8\' max wattaggio · 263W media · 25.074km', kind: 'bike', dur: 50, load: 'Z2-Z5', rpe: 8, note: '25.074km · ~50\' (2 file: warmup Technogym Ride 18:01 8.19km 134W + 2×8\' TCX 32\' 16.884km) · warmup 4×30" sprint fino a 319W (HR 96/115) · 2×8\' MAX: B1 265W HR129/145 EF2.05 · B2 262W HR140/152 EF1.88 · media 263W (soglia stimata 8\') · cad 79rpm · rec 138W · pacing pulito (scarto 3W) ma +11bpm nel 2° blocco a parità di potenza' },
   { date: '18 LUG', title: 'EMOM 48\' Hyrox (con Maura) · 12 row + 12 ski da 15cal', kind: 'hyrox', dur: 48, load: 'Z3-Z5', rpe: 8, note: 'EMOM 48\' versione casa con Maura · miei split 15cal: ROWER 12× avg 358W FC123 (tenuti) · SKI 12× avg 292W FC125 (380→216, calo −43%) · 20 crunch nei minuti pari · Garmin HR 121/149',
