@@ -969,7 +969,7 @@ const WEEK = [
         result: 'FATTO · 6.261km · 49\'21" · HR 133/158 · run power 306W/NP316 · TE 3.3 · da FIT 1Hz (2962 pt) · BLOCCO LAVORO 24\'59" pendenza 10%: HR media 152.1 (118→158) · cad 169spm · 306W · decoupling +9.6% (EF 2.11→1.91) · WU 14\'18" 8:14/km HR101 cad160 incline 0→6.5% · defa 10\'03" 7:06/km HR132 · Zone(tue): Z4 44% · Z2 21% · Z1 8% · Z3 6% · Z5 2% · target 152 centrato' },
     ]
   },
-  { day: 'MER', date: '22', title: 'RUN 13KM (Gabri) + ASSAULT 85\' + DEADLIFT + PANCA (Mattia)', sub: '⚠️ giornata carica: medio 13km + assault pyramid + forza', load: 'Z2-HEAVY', duration: 200, kind: 'hyrox', runKm: 13, done: false,
+  { day: 'MER', date: '22', title: 'RUN 13KM (Gabri) + ASSAULT 85\' (Mattia)', sub: 'medio 13km + assault pyramid · pesi spostati a VEN 24', load: 'Z2', duration: 155, kind: 'hyrox', runKm: 13, done: false,
     blocks: [
       { code: 'RUN', t: 'esterna · Run 3km risc + 10km @5\'/km · 13 km', d: '3km riscaldamento\n10km @5\'/km\n13 km totali', dur: '~70\'',
         ref: 'S29 collinare/medi · S28 10km @5:46/km',
@@ -978,12 +978,6 @@ const WEEK = [
         ref: 'S29 15/07 Assault Pyramid 85\' 253W HR121.7/139 EF2.08',
         expect: 'Profilo piramidale Z2 · picco 20\' a Z2 top 130-135 bpm',
         result: 'FATTO (22/07) · 1:24:59 · 50798m · 268W avg (392 max) · 58rpm · 35.9km/h · 987cal · HR 123.4/139 (display segnava max 199 = artefatto sensore, max reale 139) · km non contati · BLOCCHI HR pbp vs target: rampa96 · low121.7 (t.120-125 ✓) · mid127.8 (t.125-130 ✓) · TOP132.5 (t.130-135 ✓) · mid127.7 ✓ · low120.5 ✓ · TUTTI I TARGET CENTRATI · Z2 76% Z1 12% · EF 2.17 · vs 15/07 (253W HR121.7 EF2.08): stesso profilo FC ma +15W +2rpm +816m a pari cuore = guadagno di efficienza · potenza da console, HR pbp da FIT' },
-      { code: 'STRENGTH', t: 'palestra · Deadlift 5×4 @117,5kg (75% 1RM)', d: '5×4 @117,5kg (75% di 1RM 157,5kg) · rec completo\nTempo: 2" negativa · 1" fermo in buca · 1" positiva\nDischi/lato: 20+20+5+2,5+1,25', dur: '~25\'',
-        ref: 'S26 19/06 DL 5×3 @117,5kg',
-        expect: 'Qualità trasmissione forza · ogni rep identica · no rimbalzo a terra' },
-      { code: 'STRENGTH', t: 'palestra · Pause Bench Press 5×3 @77,5% 1RM', d: '5×3 @77,5% 1RM · rec completo · pausa al petto\n⚠️ 1RM panca non testato → carico da definire (se 1RM ~75kg ≈ 57,5-60kg)', dur: '~20\'',
-        ref: 'S28 02/07 Bench top 65kg×5',
-        expect: 'Pausa controllata al petto · definire carico sul 1RM reale' },
     ]
   },
   { day: 'GIO', date: '23', title: '10:00 pista RUN QUALITÀ RUFFINI · ~6 km', sub: 'mattina · qualità in pista · ~6 km', load: 'Z4-Z5', duration: 60, kind: 'run', runKm: 6, done: false,
@@ -993,11 +987,17 @@ const WEEK = [
         expect: 'Qualità in pista · programma specifico in loco · (usa GPS normale, non Track Run)' },
     ]
   },
-  { day: 'VEN', date: '24', title: 'casa SKI+ROW Z2 TEMPO BLOCS 90\' (Mattia)', sub: 'ski+row a blocchi · 60\' Z2 effettivi', load: 'Z2', duration: 90, kind: 'ski', done: false,
+  { day: 'VEN', date: '24', title: 'SKI+ROW TEMPO BLOCS 90\' + DEADLIFT + PANCA (Mattia)', sub: 'ski+row 60\' Z2 + forza (spostata da MER 22)', load: 'Z2+HEAVY', duration: 135, kind: 'hyrox', done: false,
     blocks: [
       { code: 'SKI', t: 'casa · Ski+Row Z2 Tempo Blocs · 90\'', d: '5\' Z1 WU Ski\n10\' Z2 Ski / 5\' Z1 Ski\n10\' Z2 Row / 5\' Z1 Row\n10\' Z2 Ski / 5\' Z2 Ski\n10\' Z2 Row / 5\' Z1 Row\n10\' Z2 Ski / 5\' Z1 Ski\n10\' Z2 Row\nZ1 110-119 · Z2 120-135 bpm · 60\' Z2 effettivi', dur: '90\'',
         ref: 'S28 01/07 Ski Tempo Blocs 16.838m EF1.40',
         expect: 'HR stabile su tutti i blocchi · recupero attivo Z1 evita il cardiac drift' },
+      { code: 'STRENGTH', t: 'palestra · Deadlift 5×4 @117,5kg (75% 1RM)', d: '5×4 @117,5kg (75% di 1RM 157,5kg) · rec completo\nTempo: 2" negativa · 1" fermo in buca · 1" positiva\nDischi/lato: 20+20+5+2,5+1,25', dur: '~25\'',
+        ref: 'S26 19/06 DL 5×3 @117,5kg · spostato da MER 22',
+        expect: 'Qualità trasmissione forza · ogni rep identica · no rimbalzo a terra' },
+      { code: 'STRENGTH', t: 'palestra · Pause Bench Press 5×3 @77,5% 1RM', d: '5×3 @77,5% 1RM · rec completo · pausa al petto\n⚠️ 1RM panca non testato → carico da definire (se 1RM ~75kg ≈ 57,5-60kg)', dur: '~20\'',
+        ref: 'S28 02/07 Bench top 65kg×5 · spostato da MER 22',
+        expect: 'Pausa controllata al petto · definire carico sul 1RM reale' },
     ]
   },
   { day: 'SAB', date: '25', title: 'RUN COLLINARE 1H20\' ~12km (Gabri) + EMOM 55\' HYROX (Mattia)', sub: '⚠️ giornata carica: collinare + EMOM aerobico', load: 'Z2-Z4', duration: 135, kind: 'hyrox', runKm: 12, done: false,
