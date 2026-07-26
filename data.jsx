@@ -1008,14 +1008,16 @@ const WEEK = [
         result: '⚠️ FASTIDIO ADDUTTORE durante i back squat → interrotti · NON conteggiati nel volume (annotato per monitorare)', skipped: true },
     ]
   },
-  { day: 'SAB', date: '25', title: 'RUN COLLINARE 1H20\' ~12km (Gabri) + EMOM 55\' HYROX (Mattia)', sub: '⚠️ giornata carica: collinare + EMOM aerobico', load: 'Z2-Z4', duration: 135, kind: 'hyrox', runKm: 12, done: false,
+  { day: 'SAB', date: '25', title: 'RUN COLLINARE 1H20\' (Gabri) + EMOM 55\' HYROX (Mattia)', sub: 'collinare + EMOM · entrambi saltati', load: 'Z2-Z4', duration: 0, kind: 'hyrox', runKm: 0, done: true,
     blocks: [
       { code: 'RUN', t: 'esterna · Run collinare 1h20\' in precollina · no stress · ~12 km', d: '1h20\' corsa collinare in precollina · ritmo tranquillo, no stress\n~12 km totali (media ultime collinari ~6:50/km su 1h20\')', dur: '80\'',
         ref: 'Media collinari: 30/06 11.642km 6:23/km · 08/07 11.168km 7:00/km · 16/05 10.789km 7:12/km',
-        expect: 'Endurance collinare Z2 · precollina · andatura rilassata' },
+        expect: 'Endurance collinare Z2 · precollina · andatura rilassata',
+        result: 'SALTATO', skipped: true },
       { code: 'HYROX', t: 'palestra · EMOM 55\' Hyrox Aerobic', d: 'EMOM 55\' (ciclo da 5\', ×11):\nI: 15/12 kcal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kcal Assault Bike (max 45")\nIV: 20m Sandbag Lunges\nV: Rest', dur: '55\'',
         ref: 'S27 EMOM 48\' Hyrox aerobico',
-        expect: 'Aerobico Hyrox · 11 round · ski/wall balls/assault/lunges/rest · km non contati' },
+        expect: 'Aerobico Hyrox · 11 round · ski/wall balls/assault/lunges/rest · km non contati',
+        result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'DOM', date: '26', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
