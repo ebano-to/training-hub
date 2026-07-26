@@ -116,7 +116,7 @@ function StoricoPage() {
 
 function ErgTable({ d }) {
   var rgb = { SKI: '108,104,215', ROW: '88,173,247' };
-  var cols = ['TEMPO', 'METRI', 'PACE', 'WATT', 'CAL/H', 'S/M', 'EF', 'FC med', 'FC max'];
+  var cols = ['TEMPO', 'METRI', 'PACE', 'WATT', 'CAL/H', 'S/M', 'EF', 'FC med', 'FC max', 'ZONA'];
   function renderRow(r, i) {
     var isTot = r.m === 'TOT';
     var work = r.t === 1;
@@ -139,6 +139,7 @@ function ErgTable({ d }) {
         {td(r.ef, { fontWeight: 600 })}
         {td(r.fcmed, { color: '#E0857E', fontWeight: 700 })}
         {td(r.fcmax, { color: '#C99' })}
+        {td(r.zona || '—', { color: 'var(--fg-3)', fontSize: 10, letterSpacing: '0.06em' })}
       </tr>
     );
   }
