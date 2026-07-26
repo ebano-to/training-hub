@@ -114,6 +114,59 @@ function StoricoPage() {
   );
 }
 
+function ErgTable({ d }) {
+  var rgb = { SKI: '108,104,215', ROW: '88,173,247' };
+  var cols = ['TEMPO', 'METRI', 'PACE', 'WATT', 'CAL/H', 'S/M', 'EF', 'FC med', 'FC max'];
+  function renderRow(r, i) {
+    var isTot = r.m === 'TOT';
+    var work = r.t === 1;
+    var bg, op = '1', bd = '1px solid var(--line-2)';
+    if (isTot) { bg = 'rgba(57,231,95,0.08)'; bd = '1px solid rgba(57,231,95,0.3)'; }
+    else { bg = 'rgba(' + rgb[r.m] + ',' + (work ? 0.13 : 0.05) + ')'; if (!work) op = '0.66'; }
+    var wattCol = isTot ? 'var(--fg)' : (work ? '#39E75F' : '#C7CCD4');
+    var dot = isTot ? null : <span style={{ display: 'inline-block', width: 7, height: 7, borderRadius: 7, background: 'rgb(' + rgb[r.m] + ')', marginRight: 7 }} />;
+    var label = isTot ? <b>SESSIONE</b> : <span>{r.m} <span style={{ color: 'var(--fg-3)' }}>{r.split}</span></span>;
+    var td = (v, extra) => <td style={Object.assign({ textAlign: 'right', padding: '7px 5px' }, extra || {})}>{v}</td>;
+    return (
+      <tr key={i} style={{ borderBottom: bd, background: bg, opacity: op }}>
+        <td style={{ padding: '7px 5px', whiteSpace: 'nowrap' }}>{dot}{label}</td>
+        {td(r.tempo, { color: 'var(--fg-3)' })}
+        {td(r.metri)}
+        {td(r.pace)}
+        {td(r.watt, { fontWeight: 700, color: wattCol })}
+        {td(r.calh, { color: 'var(--fg-3)' })}
+        {td(r.sm, { color: 'var(--fg-3)' })}
+        {td(r.ef, { fontWeight: 600 })}
+        {td(r.fcmed, { color: '#E0857E', fontWeight: 700 })}
+        {td(r.fcmax, { color: '#C99' })}
+      </tr>
+    );
+  }
+  var all = [Object.assign({ m: 'TOT' }, d.total)].concat(d.rows);
+  return (
+    <div style={{ marginTop: 12 }}>
+      <div style={{ fontSize: 11, color: 'var(--fg-3)', marginBottom: 8, fontFamily: 'var(--mono)' }}>
+        FC <span style={{ color: '#E0857E' }}>{d.fcMed} / {d.fcMax}</span> · EF tot {d.efTot}
+        {d.dec && d.dec.length ? ' · Decoupling ' + d.dec.map(function (x) { return x.m + ' ' + x.v; }).join(' · ') : ''}
+      </div>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--mono)', fontSize: 11.5 }}>
+          <thead>
+            <tr style={{ borderBottom: '2px solid #39E75F' }}>
+              <th style={{ textAlign: 'left', padding: '6px 5px', color: 'var(--fg-3)', fontSize: 9, letterSpacing: '0.1em' }}>SPLIT</th>
+              {cols.map(function (c, ci) { return <th key={ci} style={{ textAlign: 'right', padding: '6px 5px', color: c.indexOf('FC') === 0 ? '#E0857E' : 'var(--fg-3)', fontSize: 9, letterSpacing: '0.1em' }}>{c}</th>; })}
+            </tr>
+          </thead>
+          <tbody>{all.map(renderRow)}</tbody>
+        </table>
+      </div>
+      <div style={{ marginTop: 10, fontSize: 9.5, color: 'var(--fg-3)', lineHeight: 1.5 }}>
+        FC med/max calcolate al secondo dal FIT dentro ogni split · EF = watt/FC med · watt e pace = PM5
+      </div>
+    </div>
+  );
+}
+
 function HistoryRow({ h, kindLabel, kindColor }) {
   const [hov, setHov] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -262,6 +315,9 @@ function HistoryRow({ h, kindLabel, kindColor }) {
               </table>
             </div>
           )}
+
+          {/* Erg standard table */}
+          {h.details.ergTable && <ErgTable d={h.details.ergTable} />}
 
           {/* GPS Map */}
           {h.details.gps && h.details.gps.length > 0 && (
