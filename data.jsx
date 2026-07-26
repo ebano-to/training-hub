@@ -1025,13 +1025,47 @@ const WEEK_ARCHIVE = [
 
 // Current week — S31 (27 LUG - 02 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '27', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MAR', date: '28', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MER', date: '29', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'GIO', date: '30', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'VEN', date: '31', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'SAB', date: '01', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'DOM', date: '02', title: 'DA DEFINIRE', sub: 'Programma in attesa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'LUN', date: '27', title: 'BIKE 4×(6×20"@340W + 5\'@180W) · ~61\' · ~30 km', sub: 'intervalli brevi ad alta potenza · ~61\'', load: 'Z2-Z5', duration: 61, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Bike intervalli · 4×(6×20"@340W/20"@130W + 5\'@180W) · ~61\' · ~30 km', d: '15\' riscaldamento\n4 round di:\n  6×(20" a 340W + 20" a 130W) = 4\'\n  5\' a 180W\n10\' defaticamento\nTempo totale ~61\' · ~30 km indicativi', dur: '~61\'',
+        ref: 'FTP 237W (test 2×8\' 20/07, media 263W) · bike test 25.074km in ~50\' a 30km/h',
+        expect: '340W = +43% sopra FTP → sprint anaerobici da 20" · 180W = sotto FTP, tenuta · 24 sprint totali' },
+    ]
+  },
+  { day: 'MAR', date: '28', title: 'casa TAPIS 12\' @10% a 155 bpm · ~45\' · ~6 km', sub: 'run indoor pendenza (Z4) · ~45\'', load: 'Z4', duration: 45, kind: 'run', runKm: 6, done: false,
+    blocks: [
+      { code: 'RUN', t: 'casa · Tapis 15\' risc + 12\' @10% a 155 bpm + 8\' corsetta pianura + 10\' defa · ~45\' · ~6 km', d: '15\' riscaldamento\n12\' a pendenza 10% tenendo 155 bpm (Z4)\nrecupero 8\' corsetta in pianura\n10\' defaticamento\nTempo totale ~45\' · ~6 km indicativi', dur: '~45\'',
+        ref: 'S30 21/07: 25\' @10% a 152 bpm centrato (media 152.1) · 6.261km in 49\'21"',
+        expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa · poi 8\' di recupero in piano' },
+    ]
+  },
+  { day: 'MER', date: '29', title: 'RUN 3KM RISC + 12KM @5\'/KM · ~84\' · 15 km', sub: 'medio · 15 km · ~84\'', load: 'Z3-Z4', duration: 84, kind: 'run', runKm: 15, done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run 3km risc + 12km @5\'/km · ~84\' · 15 km', d: '3km riscaldamento\n12km @5\'/km\n15 km totali · tempo ~84\' (risc ~24\' + 60\' di medio)', dur: '~84\'',
+        ref: 'S30 25/07: 10km @5:02/km centrato, HR 148/154 steady',
+        expect: '+2 km di medio vs settimana scorsa (12 vs 10) allo stesso passo 5\'/km' },
+    ]
+  },
+  { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI · ~40\' · ~6 km', sub: 'mattina · qualità in pista · ~40\'', load: 'Z4-Z5', duration: 40, kind: 'run', runKm: 6, done: false,
+    blocks: [
+      { code: 'RUN', t: '10:00 · pista Ruffini · Run qualità · ~40\' · ~6 km', d: 'Sessione qualità in pista Ruffini · ritrovo h10\nProgramma specifico in loco\nTempo totale ~40\' · ~6 km indicativi', dur: '~40\'',
+        ref: 'S30 23/07: 12×(300/400m) 6.360km in 36\' · HR 149/172 · Z5 35%',
+        expect: 'Qualità in pista · ripetute veloci · HR Z4-Z5' },
+    ]
+  },
+  { day: 'VEN', date: '31', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'SAB', date: '01', title: 'esterna RUN COLLINARE 1H30\' PRECOLLINA · 90\' · ~13 km', sub: 'collinare no stress · 90\'', load: 'Z2', duration: 90, kind: 'run', runKm: 13, done: false,
+    blocks: [
+      { code: 'RUN', t: 'esterna · Run collinare 1h30\' in precollina · no stress · 90\' · ~13 km', d: '1h30\' corsa collinare in precollina · ritmo tranquillo, no stress\nTempo totale 90\' · ~13 km indicativi (media collinari ~6:50/km)', dur: '90\'',
+        ref: 'Media collinari: 30/06 11.642km 6:23/km · 08/07 11.168km 7:00/km · 16/05 10.789km 7:12/km',
+        expect: 'Endurance collinare Z2 · +10\' vs settimana scorsa (90\' vs 80\')' },
+    ]
+  },
+  { day: 'DOM', date: '02', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
 ];
 
 // Real Personal Bests
