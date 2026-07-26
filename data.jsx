@@ -1005,7 +1005,7 @@ const WEEK = [
         expect: 'Pausa controllata al petto · definire carico sul 1RM reale',
         result: 'FATTO (24/07) · Panca piana @80kg: 2 serie piene da 3 (+ 2 tentativi da 2 racked a 0:04") · @80kg ben oltre il 77,5% che avevo stimato → 1RM panca ora stimabile ~87-90kg (da 80kg×3), NON più "da testare" · vol ~800kg' },
       { code: 'STRENGTH', t: 'palestra · Back Squat (extra)', d: 'Qualche serie di back squat oltre al programma', dur: '—',
-        result: '⚠️ FASTIDIO ADDUTTORE durante i back squat → interrotti · NON conteggiati nel volume (annotato per monitorare)', skipped: true },
+        result: 'FATTO · ⚠️ fastidio adduttore durante i back squat → NON conteggiati nel volume (annotato per monitorare)' },
     ]
   },
   { day: 'SAB', date: '25', title: 'RUN COLLINARE 1H20\' (Gabri) + EMOM 55\' HYROX (Mattia)', sub: 'collinare + EMOM · entrambi saltati', load: 'Z2-Z4', duration: 0, kind: 'hyrox', runKm: 0, done: true,
