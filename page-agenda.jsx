@@ -21,7 +21,7 @@ function AgendaPage() {
   const kindColor = (k) => ({
     hyrox: '#FCEE4F', altro: '#4ECDC4', strength: 'oklch(80% 0.15 60)',
     run: '#39E75F', ski: '#6C68D7', row: '#58ADF7',
-    bike: '#FF6B9D', rest: 'var(--fg-3)'
+    bike: '#FF6B9D', multierg: '#B388FF', rest: 'var(--fg-3)'
   }[k] || 'var(--fg-2)');
 
   function dayLabel(w) {
