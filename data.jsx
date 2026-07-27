@@ -1025,25 +1025,40 @@ const WEEK_ARCHIVE = [
 
 // Current week — S31 (27 LUG - 02 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '27', title: 'BIKE 4×(6×20"@340W + 5\'@180W) · ~61\' · ~30 km', sub: 'intervalli brevi ad alta potenza · ~61\'', load: 'Z2-Z5', duration: 61, kind: 'bike', done: false,
+  { day: 'LUN', date: '27', title: 'BIKE INTERVALLI (Gabri) + ROW TEST 30\' + SKI PIRAMIDE (Mattia)', sub: '⚠️ giornata carica: bike ~61\' + test row 30\' + ski 30\'', load: 'Z2-Z5', duration: 131, kind: 'hyrox', done: false,
     blocks: [
       { code: 'BIKE', t: 'Bike intervalli · 4×(6×20"@340W/20"@130W + 5\'@180W) · ~61\' · ~30 km', d: '15\' riscaldamento\n4 round di:\n  6×(20" a 340W + 20" a 130W) = 4\'\n  5\' a 180W\n10\' defaticamento\nTempo totale ~61\' · ~30 km indicativi', dur: '~61\'',
-        ref: 'FTP 237W (test 2×8\' 20/07, media 263W) · bike test 25.074km in ~50\' a 30km/h',
-        expect: '340W = +43% sopra FTP → sprint anaerobici da 20" · 180W = sotto FTP, tenuta · 24 sprint totali' },
+        ref: 'FTP 237W (test 2×8\' 20/07, media 263W) · bike test 25.074km a 30km/h',
+        expect: '340W = +43% sopra FTP → 24 sprint anaerobici da 20" · 180W sotto FTP' },
+      { code: 'ROW', t: 'casa · ROW TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · ~40\' · ~7.9 km', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nRemata uniforme, gestire la cadenza, evitare picchi di FC\nTempo totale ~40\' con risc/defa · ~7.9 km attesi', dur: '30\' + risc/defa',
+        ref: 'TEST PRECEDENTE 02/06: 7.871m · 145 bpm = Z3 (136-149)',
+        expect: 'Baseline off-season: battere o eguagliare 7.871m a pari FC · si ripete tra 4 settimane' },
+      { code: 'SKI', t: 'casa · Ski piramide Z2 · 5/5/10/5/5 · 30\' · ~6.5 km', d: '5\' Z2 low (120-125 bpm)\n5\' Z2 mid (125-130 bpm)\n10\' Z2 top (130-135 bpm)\n5\' Z2 mid (125-130 bpm)\n5\' Z2 low (120-125 bpm)\nZone lattato reali · tempo totale 30\' · ~6.5 km indicativi', dur: '30\'',
+        ref: 'Ski Z2 tempo blocs: 174-184W a FC 126-129',
+        expect: 'Piramide Z2 dopo il test row · profilo progressivo poi a scendere' },
     ]
   },
   { day: 'MAR', date: '28', title: 'casa TAPIS 12\' @10% a 155 bpm · ~45\' · ~6 km', sub: 'run indoor pendenza (Z4) · ~45\'', load: 'Z4', duration: 45, kind: 'run', runKm: 6, done: false,
     blocks: [
       { code: 'RUN', t: 'casa · Tapis 15\' risc + 12\' @10% a 155 bpm + 8\' corsetta pianura + 10\' defa · ~45\' · ~6 km', d: '15\' riscaldamento\n12\' a pendenza 10% tenendo 155 bpm (Z4)\nrecupero 8\' corsetta in pianura\n10\' defaticamento\nTempo totale ~45\' · ~6 km indicativi', dur: '~45\'',
         ref: 'S30 21/07: 25\' @10% a 152 bpm centrato (media 152.1) · 6.261km in 49\'21"',
-        expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa · poi 8\' di recupero in piano' },
+        expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa' },
     ]
   },
-  { day: 'MER', date: '29', title: 'RUN 3KM RISC + 12KM @5\'/KM · ~84\' · 15 km', sub: 'medio · 15 km · ~84\'', load: 'Z3-Z4', duration: 84, kind: 'run', runKm: 15, done: false,
+  { day: 'MER', date: '29', title: 'RUN 15KM (Gabri) + ASSAULT TEST 30\' + DEADLIFT + PANCA (Mattia)', sub: '⚠️ giornata molto carica: medio 15km + test assault + forza', load: 'Z2-HEAVY', duration: 159, kind: 'hyrox', runKm: 15, done: false,
     blocks: [
       { code: 'RUN', t: 'Run 3km risc + 12km @5\'/km · ~84\' · 15 km', d: '3km riscaldamento\n12km @5\'/km\n15 km totali · tempo ~84\' (risc ~24\' + 60\' di medio)', dur: '~84\'',
         ref: 'S30 25/07: 10km @5:02/km centrato, HR 148/154 steady',
-        expect: '+2 km di medio vs settimana scorsa (12 vs 10) allo stesso passo 5\'/km' },
+        expect: '+2 km di medio vs settimana scorsa (12 vs 10) allo stesso passo' },
+      { code: 'BIKE', t: 'casa · ASSAULT BIKE TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · 30\'', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nkm NON contati nei volumi (assault)', dur: '30\'',
+        ref: 'Primo test 30\' su assault · 145 bpm = Z3 (136-149) · piramidi assault: 253-268W a FC 121-123',
+        expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane' },
+      { code: 'STRENGTH', t: 'palestra · Deadlift 6×4 @117,5kg (75% 1RM)', d: '6×4 @117,5kg (75% di 1RM 157,5kg) · rec completo\nTempo: 2" negativa · 1" fermo in buca · 1" positiva\nDischi/lato: 20+20+5+2,5+1,25', dur: '~30\'',
+        ref: 'S30 24/07: ramping 2×5@100 + 3×4@120kg · +1 serie vs settimana scorsa (6 vs 5)',
+        expect: 'Qualità trasmissione forza · ogni rep identica · no rimbalzo a terra' },
+      { code: 'STRENGTH', t: 'palestra · Pause Bench Press 6×3 @77,5% 1RM (~68 kg)', d: '6×3 @77,5% 1RM · rec completo · pausa al petto\n1RM stimato ~88kg (da 80kg×3 del 24/07) → 77,5% ≈ 68 kg\nDischi/lato: 20+2,5 + bilanciere 20kg = 65kg, oppure 20+4 = 68kg', dur: '~25\'',
+        ref: 'S30 24/07: 80kg×3 fatte → 1RM stimabile 87-90kg',
+        expect: 'Pausa controllata al petto · +1 serie vs settimana scorsa (6 vs 5)' },
     ]
   },
   { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI · ~40\' · ~6 km', sub: 'mattina · qualità in pista · ~40\'', load: 'Z4-Z5', duration: 40, kind: 'run', runKm: 6, done: false,
@@ -1053,14 +1068,24 @@ const WEEK = [
         expect: 'Qualità in pista · ripetute veloci · HR Z4-Z5' },
     ]
   },
-  { day: 'VEN', date: '31', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'VEN', date: '31', title: 'SKI TEST 30\' + ROW PIRAMIDE (Mattia)', sub: 'test ski + piramide row · Gabri riposo', load: 'Z2-Z3', duration: 70, kind: 'ski', done: false,
+    blocks: [
+      { code: 'SKI', t: 'casa · SKI TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · ~40\' · ~7.5 km', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nTempo totale ~40\' con risc/defa · ~7.5 km attesi', dur: '30\' + risc/defa',
+        ref: 'TEST PRECEDENTE 03/06: 7.500m · 145 bpm = Z3 (136-149)',
+        expect: 'Terzo test della settimana · battere o eguagliare 7.500m a pari FC' },
+      { code: 'ROW', t: 'casa · Row piramide Z2 · 5/5/10/5/5 · 30\' · ~6.8 km', d: '5\' Z2 low (120-125 bpm)\n5\' Z2 mid (125-130 bpm)\n10\' Z2 top (130-135 bpm)\n5\' Z2 mid (125-130 bpm)\n5\' Z2 low (120-125 bpm)\nZone lattato reali · tempo totale 30\' · ~6.8 km indicativi', dur: '30\'',
+        ref: 'Row Z2: 199-214W a FC 128-132 · piramide speculare a quella ski di lunedì',
+        expect: 'Piramide Z2 dopo il test ski · profilo progressivo poi a scendere' },
+    ]
   },
-  { day: 'SAB', date: '01', title: 'esterna RUN COLLINARE 1H30\' PRECOLLINA · 90\' · ~13 km', sub: 'collinare no stress · 90\'', load: 'Z2', duration: 90, kind: 'run', runKm: 13, done: false,
+  { day: 'SAB', date: '01', title: 'RUN COLLINARE 1H30\' (Gabri) + EMOM 52\' HYROX (Mattia)', sub: '⚠️ giornata carica: collinare 90\' + EMOM 52\'', load: 'Z2-Z4', duration: 142, kind: 'hyrox', runKm: 13, done: false,
     blocks: [
       { code: 'RUN', t: 'esterna · Run collinare 1h30\' in precollina · no stress · 90\' · ~13 km', d: '1h30\' corsa collinare in precollina · ritmo tranquillo, no stress\nTempo totale 90\' · ~13 km indicativi (media collinari ~6:50/km)', dur: '90\'',
-        ref: 'Media collinari: 30/06 11.642km 6:23/km · 08/07 11.168km 7:00/km · 16/05 10.789km 7:12/km',
-        expect: 'Endurance collinare Z2 · +10\' vs settimana scorsa (90\' vs 80\')' },
+        ref: 'Media collinari: 30/06 11.642km 6:23/km · 08/07 11.168km 7:00/km',
+        expect: 'Endurance collinare Z2 · +10\' vs settimana scorsa' },
+      { code: 'HYROX', t: 'palestra · EMOM 52\' Hyrox Aerobic', d: 'EMOM 52\' (ciclo da 4\', ×13):\nI: 15/12 kcal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kcal Assault Bike (max 45")\nIV: 20m Sandbag Lunges\nTempo totale 52\' · km non contati', dur: '52\'',
+        ref: 'S30 EMOM 55 min saltato · S29 18/07 EMOM 48 min: row 358W ski 292W, HR 121/149',
+        expect: 'Aerobico Hyrox · 13 round · niente rest station stavolta (ciclo da 4\' invece di 5\')' },
     ]
   },
   { day: 'DOM', date: '02', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
