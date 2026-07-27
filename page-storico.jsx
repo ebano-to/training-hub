@@ -161,6 +161,13 @@ function ErgTable({ d }) {
           <tbody>{all.map(renderRow)}</tbody>
         </table>
       </div>
+      {(d.total.cal || d.total.colpi || d.total.maxpw) ? (
+        <div style={{ marginTop: 8, display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 10.5, color: 'var(--fg-2)', fontFamily: 'var(--mono)' }}>
+          {d.total.cal ? <span><span style={{ color: 'var(--fg-3)' }}>CALORIE</span> {d.total.cal}</span> : null}
+          {d.total.colpi ? <span><span style={{ color: 'var(--fg-3)' }}>COLPI</span> {d.total.colpi}</span> : null}
+          {d.total.maxpw ? <span><span style={{ color: 'var(--fg-3)' }}>WATT MAX</span> {d.total.maxpw}</span> : null}
+        </div>
+      ) : null}
       <div style={{ marginTop: 10, fontSize: 9.5, color: 'var(--fg-3)', lineHeight: 1.5 }}>
         FC med/max calcolate al secondo dal FIT dentro ogni split · EF = watt/FC med · watt e pace = PM5
       </div>
