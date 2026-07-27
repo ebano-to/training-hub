@@ -1025,17 +1025,19 @@ const WEEK_ARCHIVE = [
 
 // Current week — S31 (27 LUG - 02 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '27', title: 'BIKE INTERVALLI (Gabri) + ROW TEST 30\' + SKI PIRAMIDE (Mattia)', sub: '⚠️ giornata carica: bike ~61\' + test row 30\' + ski 30\'', load: 'Z2-Z5', duration: 131, kind: 'hyrox', done: false,
+  { day: 'LUN', date: '27', title: 'BIKE INTERVALLI (Gabri) + ROW TEST 30\' + SKI PIRAMIDE (Mattia)', sub: 'test row 7.901m + ski piramide fatti · bike da fare', load: 'Z2-Z5', duration: 131, kind: 'hyrox', done: false,
     blocks: [
       { code: 'BIKE', t: 'Bike intervalli · 4×(6×20"@340W/20"@130W + 5\'@180W) · ~61\' · ~30 km', d: '15\' riscaldamento\n4 round di:\n  6×(20" a 340W + 20" a 130W) = 4\'\n  5\' a 180W\n10\' defaticamento\nTempo totale ~61\' · ~30 km indicativi', dur: '~61\'',
         ref: 'FTP 237W (test 2×8\' 20/07, media 263W) · bike test 25.074km a 30km/h',
         expect: '340W = +43% sopra FTP → 24 sprint anaerobici da 20" · 180W sotto FTP' },
       { code: 'ROW', t: 'casa · ROW TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · ~40\' · ~7.9 km', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nRemata uniforme, gestire la cadenza, evitare picchi di FC\nTempo totale ~40\' con risc/defa · ~7.9 km attesi', dur: '30\' + risc/defa',
         ref: 'TEST PRECEDENTE 02/06: 7.871m · 145 bpm = Z3 (136-149)',
-        expect: 'Baseline off-season: battere o eguagliare 7.871m a pari FC · si ripete tra 4 settimane' },
+        expect: 'Baseline off-season: battere o eguagliare 7.871m a pari FC · si ripete tra 4 settimane',
+        result: 'FATTO · 7.901m in 30:00 (+30m vs 7.871m del 02/06) · 237W avg · 1:53.9/500 · FC 145.4/150 (target 145 centrato) · 26,3 s/m · 563cal · WU 10\' 2.285m prima · blocchi 6\': 263W→239→228→228→227 (fading iniziale poi stabile) · vedi analisi comparata' },
       { code: 'SKI', t: 'casa · Ski piramide Z2 · 5/5/10/5/5 · 30\' · ~6.5 km', d: '5\' Z2 low (120-125 bpm)\n5\' Z2 mid (125-130 bpm)\n10\' Z2 top (130-135 bpm)\n5\' Z2 mid (125-130 bpm)\n5\' Z2 low (120-125 bpm)\nZone lattato reali · tempo totale 30\' · ~6.5 km indicativi', dur: '30\'',
         ref: 'Ski Z2 tempo blocs: 174-184W a FC 126-129',
-        expect: 'Piramide Z2 dopo il test row · profilo progressivo poi a scendere' },
+        expect: 'Piramide Z2 dopo il test row · profilo progressivo poi a scendere',
+        result: 'FATTO · 7.038m in 30:00 · 167W avg · 2:07.9/500 · FC 127/137 · 438cal · 1282 colpi · TUTTI I TARGET CENTRATI: low 120 (t.120-125) → mid 127 (t.125-130) → top 132 (t.130-135) → mid 127 → low 122 · watt 167/171/178/163/150 (calo nella seconda metà, EF 1.39→1.23) · fatto dopo il test row' },
     ]
   },
   { day: 'MAR', date: '28', title: 'casa TAPIS 12\' @10% a 155 bpm · ~45\' · ~6 km', sub: 'run indoor pendenza (Z4) · ~45\'', load: 'Z4', duration: 45, kind: 'run', runKm: 6, done: false,
@@ -1108,19 +1110,19 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,7.038];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,0];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 650.032,
-  ski: 601.955,
+  rower: 660.218,
+  ski: 608.993,
   run: 603.460,
   bike: 225.897,
-  total: 2059.178,
+  total: 2076.402,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -1149,6 +1151,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '27 LUG', title: 'Row TEST Aerobic 30\' @145bpm · 7.901m (PB test)', kind: 'row', dur: 30, load: 'Z3', rpe: 8, note: '7.901m in 30:00 a 145 bpm · +30m vs test 02/06 (7.871m) · 237W avg · 1:53.9/500 · FC 145.4/150 · 26,3 s/m · 563cal · 788 colpi · WU 10\' 2.285m · blocchi 6\': 263→239→228→228→227W', details: { ergTable: { fcMed: 145, fcMax: 150, efTot: '1.63', dec: [{ m: 'ROW', v: '+16.6%' }], total: { tempo: '30:00', metri: '7,901', pace: '1:53.9', watt: 237, calh: 1115, sm: '—', ef: '1.63', fcmed: 145, fcmax: 150, zona: 'Z3', cal: 563, colpi: 788, maxpw: 325 }, rows: [{ m: 'ROW', split: 'blocco 1', tempo: '6:00', metri: '1,637', pace: '1:50.0', watt: 263, calh: 1205, sm: 28, ef: '1.87', fcmed: 141, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 2', tempo: '6:00', metri: '1,584', pace: '1:53.6', watt: 239, calh: 1123, sm: 26, ef: '1.63', fcmed: 147, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 3', tempo: '6:00', metri: '1,561', pace: '1:55.3', watt: 228, calh: 1085, sm: 25, ef: '1.56', fcmed: 146, fcmax: 149, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 4', tempo: '6:00', metri: '1,561', pace: '1:55.3', watt: 228, calh: 1085, sm: 26, ef: '1.56', fcmed: 146, fcmax: 148, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 5', tempo: '6:00', metri: '1,559', pace: '1:55.5', watt: 227, calh: 1081, sm: 27, ef: '1.55', fcmed: 146, fcmax: 150, zona: 'Z3', t: 1 }] } } },
+  { date: '27 LUG', title: 'Ski Piramide Z2 · 7.038m · 5/5/10/5/5', kind: 'ski', dur: 30, load: 'Z2', rpe: 5, note: '7.038m in 30:00 · 167W avg · 2:07.9/500 · FC 127/137 · 438cal · 1282 colpi · target FC tutti centrati (120→127→132→127→122) · watt 167/171/178/163/150, EF 1.39→1.23 · dopo il test row', details: { ergTable: { fcMed: 127, fcMax: 137, efTot: '—', dec: [{ m: 'SKI', v: '+11.7%' }], total: { tempo: '30:00', metri: '7,038', pace: '2:07.9', watt: 167, calh: 876, sm: '—', ef: '—', fcmed: 127, fcmax: 137, zona: 'Z2', cal: 438, colpi: 1282, maxpw: 207 }, rows: [{ m: 'SKI', split: 'rep 1', tempo: '5:00', metri: '1,172', pace: '2:08.0', watt: 167, calh: 875, sm: 46, ef: '1.39', fcmed: 120, fcmax: 129, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rep 2', tempo: '5:00', metri: '1,182', pace: '2:06.9', watt: 171, calh: 889, sm: 43, ef: '1.35', fcmed: 127, fcmax: 130, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rec', tempo: '0:00', metri: '1', pace: '—', watt: '—', calh: '—', sm: 0, ef: '—', fcmed: '—', fcmax: '—', zona: '—', t: 0 }, { m: 'SKI', split: 'rep 3', tempo: '10:00', metri: '2,393', pace: '2:05.4', watt: 178, calh: 913, sm: 43, ef: '1.35', fcmed: 132, fcmax: 137, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rep 4', tempo: '5:00', metri: '1,162', pace: '2:09.1', watt: 163, calh: 861, sm: 41, ef: '1.28', fcmed: 127, fcmax: 130, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rec', tempo: '0:00', metri: '1,126', pace: '—', watt: 0, calh: 0, sm: 0, ef: '—', fcmed: '—', fcmax: '—', zona: '—', t: 0 }, { m: 'SKI', split: 'rep 5', tempo: '5:00', metri: '1,131', pace: '2:12.6', watt: 150, calh: 816, sm: 40, ef: '1.23', fcmed: 122, fcmax: 130, zona: 'Z2', t: 1 }] } } },
   { date: '26 LUG', title: 'Ski+Row Tempo Blocs (ErgZone) · 21.428m · 6×(10\'Z2/5\'Z1)', kind: 'multierg', dur: 91, load: 'Z2', rpe: 5, note: '21.428m in 91\' via ErgZone multi-erg (un file, dati granulari 1Hz) · SKI 11.670km + ROW 9.758km · 6 blocchi alterni: L1 20\'(5\'WU+10\'Z2+5\'Z1) + 4×15\'(10\'Z2/5\'Z1) + 10\'Z2 · onde Z2: SKI 176-184W HR126-129 EF~1.40 · ROW 199-214W HR128-132 EF~1.58 (row +25W a pari FC) · tutti i Z2 centrati, rec Z1 giù su ski (114) alti su row (118-120) · HR 124/139 zero drift · su C2 = MultiErg (non conta al milione singolo)', details: { ergTable: { fcMed: 124, fcMax: 139, efTot: '1.36', dec: [{ m: 'SKI', v: '+2.9%' }, { m: 'ROW', v: '+4.3%' }], total: { tempo: '91:07', metri: '21,428', pace: '2:07.6', watt: 169, calh: 882, sm: '—', ef: '1.36', fcmed: 124, fcmax: 139 }, rows: [{ m: 'SKI', split: 'WU 5\'', tempo: '5:00', metri: '1,199', pace: '2:05.1', watt: 179, calh: 916, sm: 45, ef: '1.68', fcmed: 107, fcmax: 122, t: 0 }, { m: 'SKI', split: 'Z2 10\'', tempo: '10:00', metri: '2,423', pace: '2:03.8', watt: 184, calh: 935, sm: 46, ef: '1.43', fcmed: 129, fcmax: 136, t: 1 }, { m: 'SKI', split: 'Z1 5\'', tempo: '5:00', metri: '1,101', pace: '2:14.1', watt: 145, calh: 800, sm: 43, ef: '1.22', fcmed: 119, fcmax: 132, t: 0 }, { m: 'ROW', split: 'Z2 10\'', tempo: '10:00', metri: '2,540', pace: '1:57.9', watt: 214, calh: 1036, sm: 25, ef: '1.62', fcmed: 132, fcmax: 139, t: 1 }, { m: 'ROW', split: 'Z1 5\'', tempo: '5:00', metri: '1,067', pace: '2:12.4', watt: 151, calh: 818, sm: 25, ef: '1.26', fcmed: 120, fcmax: 126, t: 0 }, { m: 'SKI', split: 'Z2 10\'', tempo: '10:00', metri: '2,380', pace: '2:06.3', watt: 174, calh: 897, sm: 44, ef: '1.38', fcmed: 126, fcmax: 133, t: 1 }, { m: 'SKI', split: 'Z1 5\'', tempo: '5:00', metri: '1,054', pace: '2:18.2', watt: 132, calh: 756, sm: 39, ef: '1.16', fcmed: 114, fcmax: 130, t: 0 }, { m: 'ROW', split: 'Z2 10\'', tempo: '10:00', metri: '2,502', pace: '2:00.2', watt: 201, calh: 993, sm: 25, ef: '1.57', fcmed: 128, fcmax: 134, t: 1 }, { m: 'ROW', split: 'Z1 5\'', tempo: '5:00', metri: '1,101', pace: '2:12.9', watt: 149, calh: 813, sm: 25, ef: '1.26', fcmed: 118, fcmax: 128, t: 0 }, { m: 'SKI', split: 'Z2 10\'', tempo: '10:00', metri: '2,390', pace: '2:05.8', watt: 176, calh: 905, sm: 45, ef: '1.40', fcmed: 126, fcmax: 133, t: 1 }, { m: 'SKI', split: 'Z1 5\'', tempo: '5:00', metri: '1,056', pace: '2:18.4', watt: 132, calh: 754, sm: 42, ef: '1.16', fcmed: 114, fcmax: 126, t: 0 }, { m: 'ROW', split: 'Z2 10\'', tempo: '10:00', metri: '2,476', pace: '2:00.6', watt: 199, calh: 987, sm: 25, ef: '1.54', fcmed: 129, fcmax: 136, t: 1 }] } }, gps: null },
   { date: '25 LUG', title: 'Run Medio (tapis) · 10km @5:02/km · target centrato', kind: 'run', dur: 74, load: 'Z3-Z4', rpe: 6, note: '13.121km tot tapis · medio di MER 22 recuperato 25/07 · WU ~2.98km facile (23\'38" ~7:55/km, HR103) + 10km @5:02/km (split 5:01/5:00/5:02 → TARGET 5:00 CENTRATO) · HR 148/154 steady, cad 176spm · Z3-Z4 costante, NON progressivo · D+209m', gps: null },
   { date: '24 LUG', title: 'Forza · Deadlift ramping + Panca @80kg', kind: 'strength', dur: 43, load: 'HEAVY', rpe: 6, note: 'Deadlift a salire: 2×5 @100kg + 3×4 @120kg (top 120kg×4, vol 2.440kg) · Panca piana @80kg: 2×3 piene + 2 tentativi da 2 → 1RM panca stimabile ~87-90kg (non più da testare) · back squat extra INTERROTTI per fastidio adduttore (non conteggiati, da monitorare) · HR 84/112 · 43\' · FIT Garmin' },
