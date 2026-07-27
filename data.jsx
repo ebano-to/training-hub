@@ -1045,7 +1045,7 @@ const WEEK = [
         expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa' },
     ]
   },
-  { day: 'MER', date: '29', title: 'RUN 15KM (Gabri) + ASSAULT TEST 30\' + DEADLIFT + PANCA (Mattia)', sub: '⚠️ giornata molto carica: medio 15km + test assault + forza', load: 'Z2-HEAVY', duration: 159, kind: 'hyrox', runKm: 15, done: false,
+  { day: 'MER', date: '29', title: 'RUN 15KM (Gabri) + ASSAULT TEST 30\' (Mattia)', sub: 'medio 15km + test assault · forza spostata a VEN 08:30', load: 'Z2-Z3', duration: 114, kind: 'hyrox', runKm: 15, done: false,
     blocks: [
       { code: 'RUN', t: 'Run 3km risc + 12km @5\'/km · ~84\' · 15 km', d: '3km riscaldamento\n12km @5\'/km\n15 km totali · tempo ~84\' (risc ~24\' + 60\' di medio)', dur: '~84\'',
         ref: 'S30 25/07: 10km @5:02/km centrato, HR 148/154 steady',
@@ -1053,12 +1053,6 @@ const WEEK = [
       { code: 'BIKE', t: 'casa · ASSAULT BIKE TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · 30\'', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nkm NON contati nei volumi (assault)', dur: '30\'',
         ref: 'Primo test 30\' su assault · 145 bpm = Z3 (136-149) · piramidi assault: 253-268W a FC 121-123',
         expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane' },
-      { code: 'STRENGTH', t: 'palestra · Deadlift 6×4 @117,5kg (75% 1RM)', d: '6×4 @117,5kg (75% di 1RM 157,5kg) · rec completo\nTempo: 2" negativa · 1" fermo in buca · 1" positiva\nDischi/lato: 20+20+5+2,5+1,25', dur: '~30\'',
-        ref: 'S30 24/07: ramping 2×5@100 + 3×4@120kg · +1 serie vs settimana scorsa (6 vs 5)',
-        expect: 'Qualità trasmissione forza · ogni rep identica · no rimbalzo a terra' },
-      { code: 'STRENGTH', t: 'palestra · Pause Bench Press 6×3 @77,5% 1RM (~68 kg)', d: '6×3 @77,5% 1RM · rec completo · pausa al petto\n1RM stimato ~88kg (da 80kg×3 del 24/07) → 77,5% ≈ 68 kg\nDischi/lato: 20+2,5 + bilanciere 20kg = 65kg, oppure 20+4 = 68kg', dur: '~25\'',
-        ref: 'S30 24/07: 80kg×3 fatte → 1RM stimabile 87-90kg',
-        expect: 'Pausa controllata al petto · +1 serie vs settimana scorsa (6 vs 5)' },
     ]
   },
   { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI · ~40\' · ~6 km', sub: 'mattina · qualità in pista · ~40\'', load: 'Z4-Z5', duration: 40, kind: 'run', runKm: 6, done: false,
@@ -1068,7 +1062,7 @@ const WEEK = [
         expect: 'Qualità in pista · ripetute veloci · HR Z4-Z5' },
     ]
   },
-  { day: 'VEN', date: '31', title: 'SKI TEST 30\' + ROW PIRAMIDE (Mattia)', sub: 'test ski + piramide row · Gabri riposo', load: 'Z2-Z3', duration: 70, kind: 'ski', done: false,
+  { day: 'VEN', date: '31', title: '08:30 FORZA + SKI TEST 30\' + ROW PIRAMIDE (Mattia)', sub: 'forza in presenza con Mattia + test ski + piramide row', load: 'Z2-HEAVY', duration: 125, kind: 'ski', done: false,
     blocks: [
       { code: 'SKI', t: 'casa · SKI TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · ~40\' · ~7.5 km', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nTempo totale ~40\' con risc/defa · ~7.5 km attesi', dur: '30\' + risc/defa',
         ref: 'TEST PRECEDENTE 03/06: 7.500m · 145 bpm = Z3 (136-149)',
@@ -1076,6 +1070,12 @@ const WEEK = [
       { code: 'ROW', t: 'casa · Row piramide Z2 · 5/5/10/5/5 · 30\' · ~6.8 km', d: '5\' Z2 low (120-125 bpm)\n5\' Z2 mid (125-130 bpm)\n10\' Z2 top (130-135 bpm)\n5\' Z2 mid (125-130 bpm)\n5\' Z2 low (120-125 bpm)\nZone lattato reali · tempo totale 30\' · ~6.8 km indicativi', dur: '30\'',
         ref: 'Row Z2: 199-214W a FC 128-132 · piramide speculare a quella ski di lunedì',
         expect: 'Piramide Z2 dopo il test ski · profilo progressivo poi a scendere' },
+      { code: 'STRENGTH', t: '08:30 · palestra con Mattia (in presenza) · Deadlift 6×4 @117,5kg (75% 1RM)', d: '6×4 @117,5kg (75% di 1RM 157,5kg) · rec completo\nTempo: 2" negativa · 1" fermo in buca · 1" positiva\nDischi/lato: 20+20+5+2,5+1,25', dur: '~30\'',
+        ref: 'S30 24/07: ramping 2×5@100 + 3×4@120kg · +1 serie vs settimana scorsa (6 vs 5)',
+        expect: 'Qualità trasmissione forza · ogni rep identica · no rimbalzo a terra · seduta in presenza con Mattia' },
+      { code: 'STRENGTH', t: '08:30 · palestra con Mattia (in presenza) · Pause Bench Press 6×3 @77,5% 1RM (~68 kg)', d: '6×3 @77,5% 1RM · rec completo · pausa al petto\n1RM stimato ~88kg (da 80kg×3 del 24/07) → 77,5% ≈ 68 kg\nDischi/lato: 20+4 (bilanciere 20kg)', dur: '~25\'',
+        ref: 'S30 24/07: 80kg×3 fatte → 1RM stimabile 87-90kg',
+        expect: 'Pausa controllata al petto · +1 serie vs settimana scorsa (6 vs 5)' },
     ]
   },
   { day: 'SAB', date: '01', title: 'RUN COLLINARE 1H30\' (Gabri) + EMOM 52\' HYROX (Mattia)', sub: '⚠️ giornata carica: collinare 90\' + EMOM 52\'', load: 'Z2-Z4', duration: 142, kind: 'hyrox', runKm: 13, done: false,
