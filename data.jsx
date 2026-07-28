@@ -1122,9 +1122,9 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 660.218,
   ski: 608.993,
-  run: 603.460,
+  run: 618.344,
   bike: 244.673,
-  total: 2110.062,
+  total: 2132.228,
 };
 
 // EF Trend — real Z2 SkiErg data
