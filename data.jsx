@@ -1041,19 +1041,18 @@ const WEEK = [
         result: 'FATTO · 7.038m in 30:00 · 167W avg · 2:07.9/500 · FC 127/137 · 438cal · 1282 colpi · DF 51 · TUTTI I TARGET CENTRATI: low 120 (t.120-125) → mid 127 (t.125-130) → top 132 (t.130-135) → mid 127 → low 122 · watt 167/171/178/163/150 (calo nella seconda metà, EF 1.39→1.23) · fatto dopo il test row' },
     ]
   },
-  { day: 'MAR', date: '28', title: 'casa TAPIS 12\' @10% a 155 bpm · ~45\' · ~6 km', sub: 'run indoor pendenza (Z4) · ~45\'', load: 'Z4', duration: 45, kind: 'run', runKm: 6, done: false,
+  { day: 'MAR', date: '28', title: 'RUN MEDIO 3KM + 12KM @5\'/KM · 15.00 km · 1h24\'43"', sub: 'medio di Gabri (anticipato) · target 5:00/km centrato', load: 'Z3-Z4', duration: 85, kind: 'run', runKm: 15.0, done: true,
     blocks: [
-      { code: 'RUN', t: 'casa · Tapis 15\' risc + 12\' @10% a 155 bpm + 8\' corsetta pianura + 10\' defa · ~45\' · ~6 km', d: '15\' riscaldamento\n12\' a pendenza 10% tenendo 155 bpm (Z4)\nrecupero 8\' corsetta in pianura\n10\' defaticamento\nTempo totale ~45\' · ~6 km indicativi', dur: '~45\'',
-        ref: 'S30 21/07: 25\' @10% a 152 bpm centrato (media 152.1) · 6.261km in 49\'21"',
-        expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa' },
+      { code: 'RUN', t: 'tapis Technogym · Run 3km risc + 12km @5\'/km · 15.00 km · 1h24\'43"', d: '3km riscaldamento\n12km @5\'/km\n15 km totali', dur: '1h24\'43"',
+        ref: 'S30 25/07: 10km @5:02/km · programma di MER 29 anticipato a martedì',
+        result: 'FATTO (28/07 · dati Technogym MyRun, autoritativi) · 15.00 km in 1:24:43 · D+ 135m · 1532 kcal · FC 140/158 · velocità media 10.6 km/h (max 12.0) · pendenza 0.9% (max 1.0%) · WU 3 km in 24\'42" (8:56 / 8:08 / 7:38 al km) · 12 KM IN 60:00 ESATTI = 5:00/km: split 5:01 · 4:59 · poi DIECI km consecutivi a 5:00 netti · FC blocco 150.7/157 · cad 174 spm · zone Z4 75% Z3 22% · drift +5.5 bpm a passo costante (148.0 → 153.5)' },
     ]
   },
-  { day: 'MER', date: '29', title: 'RUN 15KM (Gabri) + ASSAULT TEST 30\' (Mattia)', sub: 'medio 15km fatto (28/07) · test assault da fare', load: 'Z2-Z3', duration: 114, kind: 'hyrox', runKm: 14.884, done: false,
+  { day: 'MER', date: '29', title: 'TAPIS 12\' @10% a 155 BPM + ASSAULT TEST 30\'', sub: 'run in pendenza (spostata da MAR) + test assault', load: 'Z3-Z4', duration: 75, kind: 'hyrox', runKm: 6, done: false,
     blocks: [
-      { code: 'RUN', t: 'Run 3km risc + 12km @5\'/km · ~84\' · 15 km', d: '3km riscaldamento\n12km @5\'/km\n15 km totali · tempo ~84\' (risc ~24\' + 60\' di medio)', dur: '~84\'',
-        ref: 'S30 25/07: 10km @5:02/km centrato, HR 148/154 steady',
-        expect: '+2 km di medio vs settimana scorsa (12 vs 10) allo stesso passo',
-        result: 'FATTO su tapis (28/07, anticipato) · 14.884km tot · 1h23\'23" · WU 2.884km 23\'23" 8:06/km FC103 · BLOCCO 12km in 60:00 = 5:00.0/km ESATTI, target centrato al secondo (distanza corretta a mano: sensore Runn/Garmin sottostima, dava 11.727m = -2.3%) · FC blocco 150.7/157 · cad 174spm · pendenza tapis 1.96% · zone: Z4 75% Z3 22% · DRIFT +5.5 bpm a passo costante (1a metà 148.0 → 2a 153.5), progressione per 10\': 143→149→151→153→153→155 · 1286cal' },
+      { code: 'RUN', t: 'casa · Tapis 15\' risc + 12\' @10% a 155 bpm + 8\' corsetta pianura + 10\' defa · ~45\' · ~6 km', d: '15\' riscaldamento\n12\' a pendenza 10% tenendo 155 bpm (Z4)\nrecupero 8\' corsetta in pianura\n10\' defaticamento\nTempo totale ~45\' · ~6 km indicativi', dur: '~45\'',
+        ref: 'S30 21/07: 25\' @10% a 152 bpm centrato (media 152.1) · spostata da MAR 28',
+        expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa' },
       { code: 'BIKE', t: 'casa · ASSAULT BIKE TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · 30\'', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nkm NON contati nei volumi (assault)', dur: '30\'',
         ref: 'Primo test 30\' su assault · 145 bpm = Z3 (136-149) · piramidi assault: 253-268W a FC 121-123',
         expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane' },
@@ -1114,7 +1113,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,7.038];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,14.884];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,15.0];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,18.776];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
@@ -1122,9 +1121,9 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 660.218,
   ski: 608.993,
-  run: 618.344,
+  run: 618.460,
   bike: 244.673,
-  total: 2132.228,
+  total: 2132.344,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -1153,7 +1152,7 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
-  { date: '28 LUG', title: 'Run Medio (tapis) · 12km @5:00/km · target esatto', kind: 'run', dur: 83, load: 'Z4', rpe: 7, note: '14.884km tot · 1h23\'23" · WU 2.884km @8:06/km FC103 + 12km in 60:00 = 5:00.0/km ESATTI (distanza corretta a mano: il sensore Runn dava 11.727m, -2.3%) · FC blocco 150.7/157 · cad 174spm · pendenza tapis 1.96% · zone Z4 75% Z3 22% · drift +5.5 bpm a passo costante (148.0→153.5) · 1286cal · medio di MER 29 anticipato a martedì', gps: null },
+    { date: '28 LUG', title: 'Run Medio (tapis) · 15.00km · 12km @5:00/km esatti', kind: 'run', dur: 85, load: 'Z4', rpe: 7, note: '15.00 km in 1:24:43 (dati Technogym MyRun) · D+135m · 1532 kcal · FC 140/158 · pendenza 0.9% · WU 3km in 24\'42" (8:56/8:08/7:38) + 12 KM IN 60:00 ESATTI = 5:00/km (split 5:01 · 4:59 · poi 10 km filati a 5:00 netti) · FC blocco 150.7/157 · cad 174spm · zone Z4 75% Z3 22% · drift +5.5 bpm a passo costante (148.0→153.5) · NB il sensore Runn/Garmin sottostimava (14.611 km, -2.6%), Technogym autoritativo', gps: null },
   { date: '27 LUG', title: 'Bike Intervalli 4×(6×20") + 4×5\' · 18.776km · D+307m', kind: 'bike', dur: 54, load: 'Z2-Z5', rpe: 8, note: '18.776km (WU 3.718 + 15.058) · 45\'29" · D+307m salita simulata · 24 sprint 20": 308W medi (picchi 349W, max 387W) vs target 340W, costantissimi (min 294W) · pendenza crescente: R1 piano 310W FC130.5 → R4 al 6% 309W FC142.2 = stessa potenza, +11.7bpm · 4 blocchi 5\' target 180W tutti centrati (181/191/190/189W), cadenza 97→61-69rpm · recuperi 159W vs 130W target, FC recuperi 141.4 > sprint 138.4 · FC 130/150 · 589cal · struttura da 54 lap Garmin + potenza/quota da TCX Technogym' },
   { date: '27 LUG', title: 'Row TEST Aerobic 30\' @145bpm · 7.901m (PB test)', kind: 'row', dur: 30, load: 'Z3', rpe: 8, note: '7.901m in 30:00 a 145 bpm · +30m vs test 02/06 (7.871m) · 237W avg · 1:53.9/500 · FC 145.4/150 · 26,3 s/m · 563cal · 788 colpi · DF 85 (vs 75 il 02/06) · decoupling 8.9% vs 13.8% · WU 10\' 2.285m · blocchi 6\': 263→239→228→228→227W · ⚠️ DF diverso: prossimo test a DF 75', details: { ergTable: { fcMed: 145, fcMax: 150, efTot: '1.63', dec: [{ m: 'ROW', v: '+16.6%' }], total: { tempo: '30:00', metri: '7,901', pace: '1:53.9', watt: 237, calh: 1115, sm: '—', ef: '1.63', fcmed: 145, fcmax: 150, zona: 'Z3', cal: 563, colpi: 788, maxpw: 325 }, rows: [{ m: 'ROW', split: 'blocco 1', tempo: '6:00', metri: '1,637', pace: '1:50.0', watt: 263, calh: 1205, sm: 28, ef: '1.87', fcmed: 141, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 2', tempo: '6:00', metri: '1,584', pace: '1:53.6', watt: 239, calh: 1123, sm: 26, ef: '1.63', fcmed: 147, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 3', tempo: '6:00', metri: '1,561', pace: '1:55.3', watt: 228, calh: 1085, sm: 25, ef: '1.56', fcmed: 146, fcmax: 149, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 4', tempo: '6:00', metri: '1,561', pace: '1:55.3', watt: 228, calh: 1085, sm: 26, ef: '1.56', fcmed: 146, fcmax: 148, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'blocco 5', tempo: '6:00', metri: '1,559', pace: '1:55.5', watt: 227, calh: 1081, sm: 27, ef: '1.55', fcmed: 146, fcmax: 150, zona: 'Z3', t: 1 }] } } },
   { date: '27 LUG', title: 'Ski Piramide · 7.038m · 5/5/10/5/5', kind: 'ski', dur: 30, load: 'Z2', rpe: 5, note: '7.038m in 30:00 · 167W avg · 2:07.9/500 · FC 127/137 · 438cal · 1282 colpi · DF 51 · target FC tutti centrati (120→127→132→127→122) · watt 167/171/178/163/150, EF 1.39→1.23 · dopo il test row', details: { ergTable: { fcMed: 127, fcMax: 137, efTot: '—', dec: [{ m: 'SKI', v: '+11.7%' }], total: { tempo: '30:00', metri: '7,038', pace: '2:07.9', watt: 167, calh: 876, sm: '—', ef: '—', fcmed: 127, fcmax: 137, zona: 'Z2', cal: 438, colpi: 1282, maxpw: 207 }, rows: [{ m: 'SKI', split: 'rep 1', tempo: '5:00', metri: '1,172', pace: '2:08.0', watt: 167, calh: 875, sm: 46, ef: '1.39', fcmed: 120, fcmax: 129, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rep 2', tempo: '5:00', metri: '1,182', pace: '2:06.9', watt: 171, calh: 889, sm: 43, ef: '1.35', fcmed: 127, fcmax: 130, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rec', tempo: '0:00', metri: '1', pace: '—', watt: '—', calh: '—', sm: 0, ef: '—', fcmed: '—', fcmax: '—', zona: '—', t: 0 }, { m: 'SKI', split: 'rep 3', tempo: '10:00', metri: '2,393', pace: '2:05.4', watt: 178, calh: 913, sm: 43, ef: '1.35', fcmed: 132, fcmax: 137, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rep 4', tempo: '5:00', metri: '1,162', pace: '2:09.1', watt: 163, calh: 861, sm: 41, ef: '1.28', fcmed: 127, fcmax: 130, zona: 'Z2', t: 1 }, { m: 'SKI', split: 'rec', tempo: '0:00', metri: '1,126', pace: '—', watt: 0, calh: 0, sm: 0, ef: '—', fcmed: '—', fcmax: '—', zona: '—', t: 0 }, { m: 'SKI', split: 'rep 5', tempo: '5:00', metri: '1,131', pace: '2:12.6', watt: 150, calh: 816, sm: 40, ef: '1.23', fcmed: 122, fcmax: 130, zona: 'Z2', t: 1 }] } } },
