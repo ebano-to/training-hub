@@ -1048,22 +1048,22 @@ const WEEK = [
         result: 'FATTO (28/07 · dati Technogym MyRun, autoritativi) · 15.00 km in 1:24:43 · D+ 135m · 1532 kcal · FC 140/158 · velocità media 10.6 km/h (max 12.0) · pendenza 0.9% (max 1.0%) · WU 3 km in 24\'42" (8:56 / 8:08 / 7:38 al km) · 12 KM IN 60:00 ESATTI = 5:00/km fisso DAL 4° KM: tutti e 12 gli split a 5:00 (il 5:01 e il 4:59 iniziali sono ±1s di arrotondamento che si compensano), poi 10 km filati a 5:00 netti · FC blocco 150.7/157 · cad 174 spm · zone Z4 75% Z3 22% · drift +5.5 bpm a passo costante (148.0 → 153.5)' },
     ]
   },
-  { day: 'MER', date: '29', title: 'TAPIS 12\' @10% a 155 BPM + ASSAULT TEST 30\'', sub: 'run in pendenza (spostata da MAR) + test assault', load: 'Z3-Z4', duration: 75, kind: 'hyrox', runKm: 6, done: false,
+  { day: 'MER', date: '29', title: 'TAPIS 12\' @10% a 155 BPM · 5.129 km · 36\'01"', sub: 'run in pendenza (spostata da MAR) · test assault spostato a GIO 30', load: 'Z4-Z5', duration: 36, kind: 'run', runKm: 5.129, done: true,
     blocks: [
       { code: 'RUN', t: 'casa · Tapis 15\' risc + 12\' @10% a 155 bpm + 8\' corsetta pianura + 10\' defa · ~45\' · ~6 km', d: '15\' riscaldamento\n12\' a pendenza 10% tenendo 155 bpm (Z4)\nrecupero 8\' corsetta in pianura\n10\' defaticamento\nTempo totale ~45\' · ~6 km indicativi', dur: '~45\'',
         ref: 'S30 21/07: 25\' @10% a 152 bpm centrato (media 152.1) · spostata da MAR 28',
         expect: '155 bpm = Z4 (150-156) · blocco più corto ma +3 bpm vs settimana scorsa',
         result: 'FATTO · 5.129 km in 36:01 · FC 136.5/164 · 550 cal · Garmin collegato direttamente al Technogym MyRun (passo esatto dal tappeto) · WU 11:01 · 1.376km · 8:00/km · FC 107.3/128 · cad 167spm · BLOCCO 12:00 al 10%: 1.595km · 7:31/km (8,0 km/h) · FC media 153.3/163 (target 155) — la rampa pesa su un blocco corto: dal 4° minuto in poi media 157.7, da 148 a 162, chiude a 161-163 · zone blocco Z5 49% Z4 25% Z3 21% Z2 5% · cad 169spm · decoupling a regime +4.0% (vs +9.6% sui 25\' del 21/07) · RECUPERO pianura 8:40 · 1.550km · 5:35/km (10,7 km/h) · FC 152.5/164 · Z4 80% Z5 11% — di fatto un secondo blocco Z4, non un recupero · defa 4:18 · 607m · 7:05/km · FC 143→130 · WU e defa più corti del prescritto (11\' vs 15\', 4\' vs 10\'), parte centrale rispettata · ⚠️ pendenza non presente nel file: il MyRun non la trasmette a Garmin, il 10% è quello prescritto da Gabriele' },
-      { code: 'BIKE', t: 'casa · ASSAULT BIKE TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · 30\'', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nkm NON contati nei volumi (assault)', dur: '30\'',
-        ref: 'Primo test 30\' su assault · 145 bpm = Z3 (136-149) · piramidi assault: 253-268W a FC 121-123',
-        expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane' },
     ]
   },
-  { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI · ~40\' · ~6 km', sub: 'mattina · qualità in pista · ~40\'', load: 'Z4-Z5', duration: 40, kind: 'run', runKm: 6, done: false,
+  { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI + ASSAULT TEST 30\' · ~6 km', sub: 'mattina qualità in pista + test assault 30\' (spostato da MER)', load: 'Z3-Z5', duration: 70, kind: 'hyrox', runKm: 6, done: false,
     blocks: [
       { code: 'RUN', t: '10:00 · pista Ruffini · Run qualità · ~40\' · ~6 km', d: 'Sessione qualità in pista Ruffini · ritrovo h10\nProgramma specifico in loco\nTempo totale ~40\' · ~6 km indicativi', dur: '~40\'',
         ref: 'S30 23/07: 12×(300/400m) 6.360km in 36\' · HR 149/172 · Z5 35%',
         expect: 'Qualità in pista · ripetute veloci · HR Z4-Z5' },
+      { code: 'BIKE', t: 'casa · ASSAULT BIKE TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · 30\'', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nkm NON contati nei volumi (assault)', dur: '30\'',
+        ref: 'Primo test 30\' su assault · 145 bpm = Z3 (136-149) · piramidi assault: 253-268W a FC 121-123 · spostato da MER 29',
+        expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane' },
     ]
   },
   { day: 'VEN', date: '31', title: '08:30 FORZA + SKI TEST 30\' + ROW PIRAMIDE (Mattia)', sub: 'forza in presenza con Mattia + test ski + piramide row', load: 'Z2-HEAVY', duration: 125, kind: 'ski', done: false,
