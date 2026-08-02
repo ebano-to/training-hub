@@ -300,7 +300,7 @@ function HistoryRow({ h, kindLabel, kindColor }) {
       {open && h.details && (
         <div style={{ padding: '0 4px 16px 16px', background: 'var(--bg-3)', borderTop: '1px solid var(--line-2)' }}>
           {/* Summary */}
-          <div style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em', padding: '12px 0 10px', fontFamily: 'var(--mono)' }}>
+          <div style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em', padding: '12px 0 10px', fontFamily: 'var(--mono)', whiteSpace: 'pre-line', lineHeight: 1.7, maxWidth: 860 }}>
             {h.details.summary}
           </div>
           {m && h.note && (
