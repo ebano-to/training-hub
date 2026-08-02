@@ -4155,6 +4155,142 @@ const HISTORY = [
   }
 ];
 
+// ── GARMIN BADGE CHALLENGES ─ AGOSTO 2026 ──────────────────
+// 34 challenge mensili attive + 3 stage trimestrali.
+// Fonti incrociate: badgehero.io (20/07 + agg. 30/07) e garminbadges.com.
+// st: 'auto' = il programma normale lo copre · 'plan' = serve piazzarlo in un giorno preciso
+//     'push' = serve volume oltre l'attuale · 'off' = sport fuori dal tuo programma
+//     'check' = il progresso si legge solo dall'app Garmin
+const BADGES = {
+  month: 'AGOSTO 2026',
+  monthStart: '2026-08-01',
+  monthEnd: '2026-08-31',
+  updated: '02 AGO 2026',
+  sources: ['badgehero.io/post/2026-07-20-garmin-august-2026-badges', 'garminbadges.com/blog/august-2026-challenges-and-badges'],
+  items: [
+    // ── RUNNING
+    { n: 'August Weekend 5K', cat: 'RUN', req: 'Una corsa da 5 km', win: '14 → 16 AGO', d1: '2026-08-14', d2: '2026-08-16', st: 'plan',
+      why: 'A luglio 13 corse, la più corta 4,190 km: la distanza non è il problema, il giorno sì.',
+      go: 'Se la corsa della settimana cade infrasettimanale, spostala a SAB 15 o DOM 16 e prendi il badge senza aggiungere nulla.' },
+    { n: 'August Weekend 10K', cat: 'RUN', req: 'Una corsa da 10 km', win: '28 → 30 AGO', d1: '2026-08-28', d2: '2026-08-30', st: 'plan',
+      why: 'Il medio da 10 km lo fai già (25 LUG, 10 km @5:02/km).',
+      go: 'Metti il medio lungo di quella settimana a SAB 29 invece che infrasettimanale.' },
+    { n: 'August 15K', cat: 'RUN', req: 'Una singola corsa da 15 km', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'Il 28 LUG hai fatto esattamente 15,00 km sul tapis: sei al limite giusto.',
+      go: 'Serve una singola attività da almeno 15 km. Va bene anche il lungo del weekend del 10K: falla da 15 km e prendi due badge con una corsa.' },
+    { n: 'August Rundown', cat: 'RUN', req: '50 miglia (80,5 km) di corsa in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto',
+      why: 'A luglio hai corso 99,774 km in 13 uscite.',
+      go: 'Nessuna modifica: col volume attuale ci arrivi intorno al 25 AGO.' },
+    { n: 'August Running Descents', cat: 'RUN', req: '500 m di dislivello negativo correndo', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'A luglio 1.196 m di dislivello positivo correndo, ma quasi tutto da tapis in pendenza: in discesa il tapis non conta.',
+      go: 'Serve corsa in discesa vera. Una collinare esterna con 2-3 discese lunghe copre i 500 m.' },
+    { n: 'PacePro August', cat: 'RUN', req: 'Corsa ≥ 1 km guidata da PacePro entro ±00:15/km', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'Badge nuovo di agosto, mai fatto prima.',
+      go: 'Crea una strategia PacePro su Connect, mandala all\'orologio e usala su un medio: il passo costante lo tieni già (10 km @5:02/km).' },
+    // ── CAMMINATA E HIKING
+    { n: 'August Weekend Walking', cat: 'WALK', req: 'Una camminata da 3 miglia (4,828 km)', win: '21 → 23 AGO', d1: '2026-08-21', d2: '2026-08-23', st: 'plan',
+      why: 'Nello storico non c\'è nessuna attività registrata come camminata.',
+      go: 'Basta avviare l\'attività Camminata sull\'orologio per ~50 minuti in un giorno di quel weekend. Zero costo sul carico.' },
+    { n: 'August Time to Walk', cat: 'WALK', req: '15 ore di camminata in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push',
+      why: 'Sono ~30 minuti al giorno da registrare come attività, tutti i giorni.',
+      go: 'Fattibile solo se registri sistematicamente gli spostamenti a piedi.' },
+    { n: 'August Heart Walks', cat: 'WALK', req: '3 ore di camminata in zona FC 2-3 (120-149 bpm)', win: 'tutto agosto', d1: null, d2: null, st: 'push',
+      why: 'Serve camminata veloce o in salita per stare sopra i 120 bpm.',
+      go: 'Si aggancia a Time to Walk: se cammini in salita, le stesse ore valgono per entrambi.' },
+    { n: 'August Speed Walking', cat: 'WALK', req: '3 ore di camminata a passo ≤ 10:30/km', win: 'tutto agosto', d1: null, d2: null, st: 'push',
+      why: '10:30/km è camminata sostenuta, non passeggiata.',
+      go: 'Come sopra: stesse camminate, ma tenendo il passo.' },
+    { n: 'August Epic Hikes', cat: 'WALK', req: '1.000 m di dislivello positivo in hiking', win: 'tutto agosto', d1: null, d2: null, st: 'push',
+      why: 'Serve attività registrata come Escursionismo, non come corsa o bici.',
+      go: 'Una giornata in montagna lo chiude tutto in una volta.' },
+    // ── BICI
+    { n: 'August Weekend 40K', cat: 'BIKE', req: 'Un\'uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'plan',
+      why: 'Il 01 AGO hai fatto 42,001 km in MTB: la distanza è esattamente nel tuo range.',
+      go: 'Prima finestra utile del mese, cade su VEN 07 / SAB 08 / DOM 09. Se in quel weekend esce una lunga in bici, il badge arriva da solo.' },
+    { n: 'August Ride to 100', cat: 'BIKE', req: '100 km di bici', win: '23 → 29 AGO', d1: '2026-08-23', d2: '2026-08-29', st: 'push',
+      why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
+      go: '100 km in 7 giorni significa un\'uscita lunga più due medie nella stessa settimana.' },
+    { n: 'August Tour', cat: 'BIKE', req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push',
+      why: 'Il massimo mensile recente è stato molto sotto questa soglia.',
+      go: 'Richiederebbe di riscrivere il mese attorno alla bici, in piena preparazione Hyrox.' },
+    { n: 'August Time to Ride', cat: 'BIKE', req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push',
+      why: 'Sono ~5 ore a settimana in sella.',
+      go: 'Si avvicina solo contando anche le sedute indoor lunghe.' },
+    { n: 'August Power Cycling', cat: 'BIKE', req: '4 ore di bici in zona di potenza 3', win: 'tutto agosto', d1: null, d2: null, st: 'check',
+      why: 'FTP bici 237 W dal test del 20/07: la zona 3 dipende da come sono impostate le zone di potenza sull\'orologio.',
+      go: 'Controlla le zone di potenza su Connect prima di puntarci.' },
+    // ── FORZA, CARDIO, INTENSITÀ
+    { n: 'August Gains', cat: 'FIT', req: '4 ore di attività di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'A luglio 5 sedute di forza per 3h43\' totali: sotto di 17 minuti.',
+      go: 'Basta una sesta seduta, o allungare di 5 minuti ciascuna. Registrala come Forza, non come Cardio.' },
+    { n: 'Active August', cat: 'FIT', req: '20 attività da almeno 20 minuti', win: 'tutto agosto', d1: null, d2: null, st: 'auto',
+      why: 'A luglio 37 attività registrate per 35,1 ore.',
+      go: 'Nessuna modifica.' },
+    { n: 'August Calorie Burn', cat: 'FIT', req: '8.000 calorie attive in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto',
+      why: 'Solo le sedute di luglio valgono 16.189 kcal, il doppio della soglia.',
+      go: 'Nessuna modifica.' },
+    { n: 'Intense August', cat: 'FIT', req: 'Obiettivo minuti di intensità in 2 settimane diverse', win: '03 → 30 AGO', d1: '2026-08-03', d2: '2026-08-30', st: 'auto',
+      why: 'Con 35 ore mensili di allenamento l\'obiettivo settimanale standard è ampiamente coperto.',
+      go: 'Nessuna modifica.' },
+    { n: 'August Intense Cardio', cat: 'FIT', req: '3 ore di cardio in zona FC 3 (136-149 bpm)', win: 'tutto agosto', d1: null, d2: null, st: 'check',
+      why: 'I lavori di soglia e i medi stanno in quella fascia, ma il conteggio esatto lo tiene solo Garmin.',
+      go: 'Segui la barra di avanzamento nell\'app dopo la prima settimana.' },
+    { n: 'August Connect IQ Exploration', cat: 'FIT', req: 'Scaricare un quadrante o una app dallo store Connect IQ', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'Non serve allenarsi.',
+      go: 'Un minuto sullo store Connect IQ e il badge è preso.' },
+    // ── PASSI
+    { n: 'Step into August', cat: 'STEP', req: '100.000 passi', win: '01 → 14 AGO', d1: '2026-08-01', d2: '2026-08-14', st: 'auto',
+      why: 'Sono ~7.150 passi al giorno, sotto la media di chi corre 100 km al mese.',
+      go: 'Nessuna modifica, ma va fatta l\'iscrizione entro il 14.' },
+    { n: 'August Step Month', cat: 'STEP', req: '300.000 passi in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto',
+      why: '~9.700 passi al giorno.',
+      go: 'Nessuna modifica.' },
+    { n: 'August Steps Podium', cat: 'STEP', req: 'Arrivare nei primi 3 di una sfida passi settimanale', win: '03 → 30 AGO', d1: '2026-08-03', d2: '2026-08-30', st: 'plan',
+      why: 'Dipende dall\'iscrizione a una sfida passi settimanale, non dal volume.',
+      go: 'Iscriviti a una weekly steps challenge con pochi partecipanti.' },
+    // ── RECUPERO
+    { n: 'Balanced HRV August', cat: 'REC', req: 'Stato HRV bilanciato per 14 giorni consecutivi', win: 'tutto agosto', d1: null, d2: null, st: 'check',
+      why: 'Badge nuovo di agosto. 14 giorni consecutivi è il vincolo duro.',
+      go: 'Indossa l\'orologio anche di notte per tutto il periodo.' },
+    { n: 'August Battery Booster', cat: 'REC', req: 'Body Battery ≥ 76 per 7 giorni', win: 'tutto agosto', d1: null, d2: null, st: 'check',
+      why: 'Dipende da sonno e carico, non da un allenamento specifico.',
+      go: 'Segui il valore nell\'app.' },
+    { n: 'Low Stress August', cat: 'REC', req: 'Stress medio giornaliero ≤ 50 per 7 giorni', win: 'tutto agosto', d1: null, d2: null, st: 'check',
+      why: 'Metrica passiva Garmin.',
+      go: 'Segui il valore nell\'app.' },
+    { n: 'August Meditations', cat: 'REC', req: 'Attività di meditazione per 7 giorni', win: 'tutto agosto', d1: null, d2: null, st: 'off',
+      why: 'Sport fuori dal programma attuale.',
+      go: 'Servirebbero 7 sessioni registrate come Respirazione/Meditazione.' },
+    // ── SOCIAL
+    { n: 'August Likes', cat: 'SOC', req: '25 like su attività, post o commenti', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'Dipende dalla visibilità delle attività, non dall\'allenamento.',
+      go: 'Rendi pubbliche le attività e iscriviti a un gruppo Connect.' },
+    { n: 'August Photo Share', cat: 'SOC', req: 'Foto su almeno 3 attività visibili', win: 'tutto agosto', d1: null, d2: null, st: 'plan',
+      why: 'Dipende dalla visibilità delle attività, non dall\'allenamento.',
+      go: 'Tre foto su tre uscite diverse.' },
+    // ── NUOTO
+    { n: 'August Swim Week', cat: 'SWIM', req: '1.000 m di nuoto', win: '02 → 08 AGO', d1: '2026-08-02', d2: '2026-08-08', st: 'off',
+      why: 'Sport fuori dal programma attuale.',
+      go: '1.000 m in una vasca chiudono il badge in una sola seduta.' },
+    { n: 'August Swim', cat: 'SWIM', req: '4.000 m di nuoto in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'off',
+      why: 'Sport fuori dal programma attuale.',
+      go: 'Quattro sedute da 1.000 m.' },
+    // ── YOGA
+    { n: 'August Warrior', cat: 'FIT', req: '4 ore di yoga in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'off',
+      why: 'Sport fuori dal programma attuale.',
+      go: 'Servirebbero 4 ore registrate come Yoga.' },
+  ],
+  // Stage trimestrali 2026 ─ terza tappa
+  stages: [
+    { n: '2026 Running ─ Stage 3', req: '300 km di corsa', win: '01 LUG → 30 SET', st: 'auto',
+      why: 'A luglio 99,774 km. Con lo stesso ritmo chiudi i 300 km entro fine settembre.' },
+    { n: '2026 Cycling ─ Stage 3', req: '675 km di bici', win: '01 LUG → 30 SET', st: 'push',
+      why: 'A luglio 70,659 km di bici outdoor: servirebbero ~300 km al mese ad agosto e settembre.' },
+    { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push',
+      why: 'Serve registrare le camminate come attività: ~25 km a settimana per due mesi.' },
+  ],
+};
+
 // ── HYDRATION LOG ──────────────────────────────────────────
 // Sweat loss tracking — all fluid values in ml, sweatRate in ml/h
 const HYDRATION = [
@@ -4172,4 +4308,4 @@ const HYDRATION = [
     sweatTotal: 4150, sweatRate: 1556, rehydTarget: 6225, rehydRemaining: 3975 },
 ];
 
-window.TRAINING = { RACE, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, TOTALS, EF_TREND, HISTORY, HYDRATION };
+window.TRAINING = { RACE, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };

@@ -1,6 +1,6 @@
 // AGENDA — Telemetry style + week archive navigation
 function AgendaPage() {
-  const { ATHLETE, WEEK, WEEK_ARCHIVE } = window.TRAINING;
+  const { ATHLETE, WEEK, WEEK_ARCHIVE, BADGES } = window.TRAINING;
   const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '11 → 17 MAG 2026', programWeek: ATHLETE.programWeek, days: WEEK }]);
   const [weekIdx, setWeekIdx] = React.useState(allWeeks.length - 1);
   const currentWeekDays = allWeeks[weekIdx].days;
@@ -28,6 +28,23 @@ function AgendaPage() {
     if (w.done) return '✓ DONE';
     if (parseInt(w.date, 10) === todayNum) return '● OGGI';
     return '';
+  }
+
+  // ── Badge Garmin aperti in un dato giorno della settimana corrente ──
+  const badgeCat = { RUN: '#39E75F', BIKE: '#FF6B9D', WALK: '#B388FF', SWIM: '#58ADF7', FIT: 'oklch(80% 0.15 60)', STEP: '#FCEE4F', REC: '#6C68D7', SOC: 'var(--fg-3)' };
+  function isoForDay(dayStr) {
+    // ricostruisce la data ISO dal numero del giorno, gestendo il cambio mese a cavallo di settimana
+    var n = parseInt(dayStr, 10);
+    var now = new Date();
+    var y = now.getFullYear(), m = now.getMonth();
+    if (n > 20 && todayNum < 10) { m -= 1; if (m < 0) { m = 11; y -= 1; } }
+    else if (n < 10 && todayNum > 20) { m += 1; if (m > 11) { m = 0; y += 1; } }
+    return y + '-' + String(m + 1).padStart(2, '0') + '-' + String(n).padStart(2, '0');
+  }
+  function badgesForDay(w) {
+    if (!isCurrentWeek || !BADGES) return [];
+    var d = isoForDay(w.date);
+    return BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off'; });
   }
 
   return (
@@ -125,6 +142,18 @@ function AgendaPage() {
               <div style={{ fontSize: 9, marginTop: 8, letterSpacing: '0.1em' }}>
                 {dayLabel(w)}
               </div>
+              {(function () {
+                var bs = badgesForDay(w);
+                if (!bs.length) return null;
+                return (
+                  <div style={{ display: 'flex', gap: 3, marginTop: 6, flexWrap: 'wrap' }}>
+                    {bs.map(function (b, bi) {
+                      return <span key={bi} title={b.n + ' — ' + b.req}
+                        style={{ width: 6, height: 6, background: i === selected ? '#000' : (badgeCat[b.cat] || 'var(--fg-2)'), display: 'inline-block' }} />;
+                    })}
+                  </div>
+                );
+              })()}
             </button>
           ))}
         </div>
@@ -146,6 +175,31 @@ function AgendaPage() {
               </div>
               <div className="display r-display-mega" style={{ fontSize: 'var(--display-mega)', lineHeight: 0.95, marginBottom: 8 }}>{day.title}</div>
               <div style={{ fontSize: 13, color: 'var(--fg-2)', marginBottom: 20, fontFamily: 'var(--sans)' }}>{day.sub}</div>
+
+              {(function () {
+                var bs = badgesForDay(day);
+                if (!bs.length) return null;
+                return (
+                  <div style={{ marginBottom: 20, border: '1px dashed var(--line-2)', padding: '12px 14px', background: 'var(--bg-3)' }}>
+                    <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.16em', marginBottom: 10 }}>
+                      // BADGE_GARMIN_APERTI · {bs.length}
+                    </div>
+                    {bs.map(function (b, bi) {
+                      var c = badgeCat[b.cat] || 'var(--fg-2)';
+                      return (
+                        <div key={bi} style={{ borderLeft: '3px solid ' + c, paddingLeft: 10, marginBottom: bi === bs.length - 1 ? 0 : 10 }}>
+                          <div style={{ fontSize: 12, fontWeight: 700, fontFamily: 'var(--sans)', color: c }}>{b.n}</div>
+                          <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 2 }}>{b.req} · finestra {b.win}</div>
+                          <div style={{ fontSize: 10, color: 'var(--accent)', marginTop: 4, fontFamily: 'var(--mono)', letterSpacing: '0.04em' }}>PROPOSTA {b.go}</div>
+                        </div>
+                      );
+                    })}
+                    <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 10, borderTop: '1px dashed var(--line-2)', paddingTop: 8 }}>
+                      SOLO PROPOSTE · IL PROGRAMMA RESTA QUELLO DEI COACH · <a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE SFIDE →</a>
+                    </div>
+                  </div>
+                );
+              })()}
 
               <div style={{ borderTop: '1px dashed var(--line-2)' }}>
                 {dayBlocks.map((b, i) => {
