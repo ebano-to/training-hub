@@ -4,11 +4,11 @@ function BadgePage() {
   const [filter, setFilter] = React.useState('ALL');
 
   const ST = {
-    auto:  { l: 'ARRIVA DA SOLO', c: 'var(--accent)',          d: 'Il programma normale lo copre' },
-    plan:  { l: 'DA PIAZZARE',    c: 'oklch(82% 0.16 85)',     d: 'Serve metterlo in un giorno preciso' },
-    push:  { l: 'SERVE VOLUME',   c: 'oklch(70% 0.15 30)',     d: 'Oltre i volumi attuali' },
-    check: { l: 'DA APP',         c: 'oklch(72% 0.13 250)',    d: 'Il progresso lo tiene Garmin' },
-    off:   { l: 'ALTRO SPORT',    c: 'var(--fg-3)',            d: 'Fuori dal programma attuale' },
+    done:  { l: 'PRESA', c: 'oklch(72% 0.13 250)' },
+    auto:  { l: 'ARRIVA DA SOLO', c: 'var(--accent)' },
+    plan:  { l: 'DA PIAZZARE', c: 'oklch(82% 0.16 85)' },
+    push:  { l: 'SERVE VOLUME', c: 'oklch(70% 0.15 30)' },
+    off:   { l: 'ALTRO SPORT', c: 'var(--fg-3)' },
   };
   const CAT = {
     RUN: '#39E75F', BIKE: '#FF6B9D', WALK: '#B388FF', SWIM: '#58ADF7',
@@ -50,12 +50,12 @@ function BadgePage() {
             BADGE<span style={{ color: 'var(--accent)' }}>.</span>
           </div>
           <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em', marginTop: 12 }}>
-            {BADGES.items.length} CHALLENGE · {BADGES.stages.length} STAGE · {daysLeft} GIORNI ALLA CHIUSURA
+            {BADGES.items.length} SFIDE ISCRITTE · {daysLeft} GIORNI ALLA CHIUSURA · PROGRESSI AL {BADGES.snapshot}
           </div>
         </div>
         <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 20 }}>
           <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 14 }}>// COPERTURA</div>
-          {['auto', 'plan', 'push', 'check', 'off'].map((k) => (
+          {['plan', 'auto', 'push', 'off', 'done'].map((k) => (
             <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
               <span style={{ width: 8, height: 8, background: ST[k].c, flexShrink: 0 }} />
               <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', flex: 1 }}>{ST[k].l}</span>
@@ -89,7 +89,7 @@ function BadgePage() {
                       fontSize: 8, letterSpacing: '0.04em', lineHeight: 1.25,
                       color: CAT[b.cat] || 'var(--fg-2)', borderLeft: '2px solid ' + (CAT[b.cat] || 'var(--fg-2)'),
                       paddingLeft: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                    }}>{b.n.replace('August ', '').replace('Weekend ', 'WE ')}</div>
+                    }}>{b.en.replace('August ', '').replace('Weekend ', 'WE ')}</div>
                   ))}
                 </div>
               </div>
@@ -121,7 +121,7 @@ function BadgePage() {
                 <div className="display tabular" style={{ fontSize: 15, color: col }}>{b.win}</div>
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--sans)' }}>{b.n}</div>
-                  <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 2 }}>{b.req}</div>
+                  <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 2 }}>{b.req}{b.tipo === 'singola' ? ' · una sola attività' : ''}</div>
                 </div>
                 <div style={{ fontSize: 9, letterSpacing: '0.12em', textAlign: 'right', color: col }}>
                   {w === 'now' ? '● APERTA' : w === 'past' ? 'CHIUSA' : ST[b.st].l}
@@ -134,7 +134,7 @@ function BadgePage() {
 
       {/* Filtri */}
       <div style={{ display: 'flex', gap: 4, marginBottom: 12, flexWrap: 'wrap' }}>
-        {[['ALL', 'TUTTE'], ['plan', ST.plan.l], ['auto', ST.auto.l], ['push', ST.push.l], ['check', ST.check.l], ['off', ST.off.l]].map(([k, l]) => {
+        {[['ALL', 'TUTTE'], ['plan', ST.plan.l], ['auto', ST.auto.l], ['push', ST.push.l], ['off', ST.off.l], ['done', ST.done.l]].map(([k, l]) => {
           const sel = filter === k;
           const c = k === 'ALL' ? 'var(--accent)' : ST[k].c;
           return (
@@ -162,14 +162,30 @@ function BadgePage() {
                     fontSize: 9, letterSpacing: '0.14em', fontWeight: 700, padding: '2px 6px',
                     color: CAT[b.cat] || 'var(--fg-2)', border: '1px solid ' + (CAT[b.cat] || 'var(--fg-2)'),
                   }}>{b.cat}</span>
-                  <span style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--sans)' }}>{b.n}</span>
+                  <div>
+                    <span style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--sans)' }}>{b.n}</span>
+                    <span style={{ fontSize: 10, color: 'var(--fg-3)', marginLeft: 8, fontFamily: 'var(--mono)' }}>{b.en}</span>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span className="display tabular" style={{ fontSize: 13, color: 'var(--fg-3)' }}>{b.win}</span>
                   <span style={{ fontSize: 9, letterSpacing: '0.12em', color: ST[b.st].c, border: '1px solid ' + ST[b.st].c, padding: '2px 6px' }}>{ST[b.st].l}</span>
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: 'var(--fg-2)', marginTop: 8, fontFamily: 'var(--sans)' }}>{b.req}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 8, flexWrap: 'wrap' }}>
+                <span style={{
+                  fontSize: 9, letterSpacing: '0.12em', padding: '2px 6px', fontWeight: 700,
+                  color: b.tipo === 'singola' ? 'oklch(82% 0.16 85)' : 'var(--fg-3)',
+                  border: '1px solid ' + (b.tipo === 'singola' ? 'oklch(82% 0.16 85)' : 'var(--line-2)'),
+                }}>{b.tipo === 'singola' ? 'UNA SOLA ATTIVITÀ' : 'SI SOMMA'}</span>
+                <span style={{ fontSize: 12, color: 'var(--fg-2)', fontFamily: 'var(--sans)' }}>{b.req}</span>
+              </div>
+              {b.prog && (
+                <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.14em' }}>AL {BADGES.snapshot.slice(0, 6)}</span>
+                  <span className="display tabular" style={{ fontSize: 16, color: b.st === 'done' ? ST.done.c : 'var(--fg)' }}>{b.prog}</span>
+                </div>
+              )}
               <div style={{ marginTop: 10, display: 'grid', gap: 5 }}>
                 <div style={{ fontSize: 10, color: 'var(--fg-3)', fontFamily: 'var(--mono)', letterSpacing: '0.04em' }}>
                   <span style={{ color: 'oklch(75% 0.14 220)' }}>DATI</span> {b.why}
