@@ -178,9 +178,16 @@ function ErgTable({ d }) {
 function HistoryRow({ h, kindLabel, kindColor }) {
   const [hov, setHov] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const isPb = h.note.includes('PB');
-  const isTest = h.note.includes('TEST') || h.title.toLowerCase().includes('test');
+  const isPb = h.pb === true || h.note.includes('PB');
+  const isTest = (h.filone || '').indexOf('test') >= 0 || h.title.toLowerCase().indexOf('test') >= 0;
   const hasDetails = !!h.details;
+  const m = h.m;
+  // quarto slot: parola fissa per tipo
+  const slot4 = m && (m.watt ? { l: 'WATT', v: m.watt, s: '' }
+    : m.hrr60 ? { l: 'RECUPERO 60″', v: m.hrr60.replace(' bpm', ''), s: ' bpm' }
+    : m.drift ? { l: 'DRIFT FC', v: m.drift.replace('%', ''), s: '%' }
+    : m.asc ? { l: 'DISLIVELLO', v: String(m.asc).indexOf('+') === 0 ? String(m.asc).replace(' m', '') : '+' + String(m.asc).replace(' m', ''), s: ' m' }
+    : null);
   return (
     <div style={{ borderBottom: '1px dashed var(--line-2)' }}>
       <div
@@ -204,26 +211,57 @@ function HistoryRow({ h, kindLabel, kindColor }) {
         <div className="rh-title">
           <div style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--sans)', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
             {h.title}
+            {isTest && (
+              <span style={{
+                border: '1px solid ' + kindColor(h.kind), color: kindColor(h.kind), padding: '1px 6px',
+                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
+              }}>TEST</span>
+            )}
             {isPb && (
               <span style={{
                 background: 'var(--accent)', color: '#000', padding: '1px 6px',
                 fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
-              }}>NEW_PB</span>
-            )}
-            {isTest && !isPb && (
-              <span style={{
-                background: 'oklch(70% 0.18 280)', color: '#fff', padding: '1px 6px',
-                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
-              }}>TEST</span>
-            )}
-            {isTest && isPb && (
-              <span style={{
-                background: 'oklch(65% 0.20 30)', color: '#fff', padding: '1px 6px',
-                fontSize: 9, fontFamily: 'var(--display)', letterSpacing: '0.12em', fontWeight: 700
-              }}>PR_TEST</span>
+              }}>PB</span>
             )}
           </div>
-          {h.note && <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 3 }}>{h.note}</div>}
+          {m ? (
+            <div>
+              <div className="r-mslots" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(90px, 1fr))', gap: 10, marginTop: 8, maxWidth: 560 }}>
+                <div>
+                  <div style={{ fontSize: 8.5, color: 'var(--fg-3)', letterSpacing: '0.14em' }}>LAVORO</div>
+                  <div className="display tabular" style={{ fontSize: 19, lineHeight: 1.15 }}>{m.lavoro || m.dist || '—'}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 8.5, color: 'var(--fg-3)', letterSpacing: '0.14em' }}>PACE {m.unit || ''}</div>
+                  <div className="display tabular" style={{ fontSize: 19, lineHeight: 1.15, color: 'var(--accent)' }}>
+                    {m.pace || '—'}{m.unif && <span style={{ fontSize: 10, color: 'var(--fg-3)', fontWeight: 400 }}> · {m.unif}</span>}
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 8.5, color: 'var(--fg-3)', letterSpacing: '0.14em' }}>FC MEDIA</div>
+                  <div className="display tabular" style={{ fontSize: 19, lineHeight: 1.15 }}>
+                    {m.fcMed || '—'}<span style={{ fontSize: 11, color: 'var(--fg-3)' }}>{m.fcMax ? '/' + m.fcMax : ''}{m.tgt ? ' · tgt ' + m.tgt : ''}</span>
+                  </div>
+                </div>
+                {slot4 && (
+                  <div>
+                    <div style={{ fontSize: 8.5, color: 'var(--fg-3)', letterSpacing: '0.14em' }}>{slot4.l}</div>
+                    <div className="display tabular" style={{ fontSize: 19, lineHeight: 1.15 }}>{slot4.v}<span style={{ fontSize: 11, color: 'var(--fg-3)' }}>{slot4.s}</span></div>
+                  </div>
+                )}
+              </div>
+              {h.vs && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 8, fontSize: 10.5, fontFamily: 'var(--mono)' }}>
+                  <span style={{ color: 'var(--fg-3)' }}>vs {h.vs.d} · {h.vs.tag}</span>
+                  {h.vs.items.map((it, ii) => (
+                    <span key={ii} style={{ color: it.g ? 'var(--accent)' : 'var(--warn)' }}>{it.v}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            h.note && <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 3 }}>{h.note}</div>
+          )}
         </div>
         <div className="rh-load" style={{ fontSize: 10, letterSpacing: '0.1em', color: 'var(--fg-2)' }}>{h.load}</div>
         <div className="rh-dur display tabular" style={{ fontSize: 18 }}>{h.dur}<span style={{ fontSize: 10, color: 'var(--fg-3)', marginLeft: 1 }}>'</span></div>
@@ -265,6 +303,11 @@ function HistoryRow({ h, kindLabel, kindColor }) {
           <div style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em', padding: '12px 0 10px', fontFamily: 'var(--mono)' }}>
             {h.details.summary}
           </div>
+          {m && h.note && (
+            <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.03em', padding: '0 0 10px', fontFamily: 'var(--mono)', whiteSpace: 'pre-line' }}>
+              {h.note}
+            </div>
+          )}
 
           {/* Blocks (if present — e.g. CR) */}
           {h.details.blocks && h.details.blocks.map((b, bi) => (
