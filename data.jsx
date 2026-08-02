@@ -1,5 +1,5 @@
 // Shared training data for Federico Simondi — Hyrox training hub
-// Real data — S31 week (27 Jul - 02 Aug 2026)
+// Real data — S32 week (03 Aug - 09 Aug 2026)
 
 const RACE = {
   name: 'HYROX ROMA',
@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 31,
+  programWeek: 32,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -1021,10 +1021,7 @@ const WEEK_ARCHIVE = [
     blocks: []
   },
   ]},
-];
-
-// Current week — S31 (27 LUG - 02 AGO 2026)
-const WEEK = [
+  { id: 'S31', label: 'S31 · 27 LUG → 02 AGO', range: '27 LUG → 02 AGO 2026', programWeek: 31, days: [
   { day: 'LUN', date: '27', title: 'BIKE INTERVALLI (Gabri) + ROW TEST 30\' + SKI PIRAMIDE (Mattia)', sub: 'tutto fatto: bike 18.8km D+307m · test row 7.901m · ski piramide', load: 'Z2-Z5', duration: 131, kind: 'hyrox', done: true,
     blocks: [
       { code: 'BIKE', t: 'Bike intervalli · 4×(6×20"@340W/20"@130W + 5\'@180W) · ~61\' · ~30 km', d: '15\' riscaldamento\n4 round di:\n  6×(20" a 340W + 20" a 130W) = 4\'\n  5\' a 180W\n10\' defaticamento\nTempo totale ~61\' · ~30 km indicativi', dur: '~61\'',
@@ -1056,7 +1053,7 @@ const WEEK = [
         result: 'FATTO · 5.129 km in 36:01 · FC 136.5/164 · 550 cal · Garmin collegato direttamente al Technogym MyRun (passo esatto dal tappeto) · WU 11:01 · 1.376km · 8:00/km · FC 107.3/128 · cad 167spm · BLOCCO 12:00 al 10%: 1.595km · 7:31/km (8,0 km/h) · FC media 153.3/163 (target 155) — la rampa pesa su un blocco corto: dal 4° minuto in poi media 157.7, da 148 a 162, chiude a 161-163 · zone blocco Z5 49% Z4 25% Z3 21% Z2 5% · cad 169spm · decoupling a regime +4.0% (vs +9.6% sui 25\' del 21/07) · RECUPERO pianura 8:40 · 1.550km · 5:35/km (10,7 km/h) · FC 152.5/164 · Z4 80% Z5 11% — di fatto un secondo blocco Z4, non un recupero · defa 4:18 · 607m · 7:05/km · FC 143→130 · WU e defa più corti del prescritto (11\' vs 15\', 4\' vs 10\'), parte centrale rispettata · ⚠️ pendenza non presente nel file: il MyRun non la trasmette a Garmin, il 10% è quello prescritto da Gabriele' },
     ]
   },
-  { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI + ASSAULT TEST 30\' · ~6 km', sub: 'mattina qualità in pista + test assault 30\' (spostato da MER)', load: 'Z3-Z5', duration: 70, kind: 'hyrox', runKm: 6, done: false,
+  { day: 'GIO', date: '30', title: '10:00 pista RUN QUALITÀ RUFFINI + ASSAULT TEST 30\' · ~6 km', sub: 'Ruffini fatta · assault test SALTATO, spostato a S32 con nuovo allenamento casa', load: 'Z3-Z5', duration: 70, kind: 'hyrox', runKm: 6, done: true,
     blocks: [
       { code: 'RUN', t: '10:00 · pista Ruffini · Run qualità · ~40\' · ~6 km', d: 'Sessione qualità in pista Ruffini · ritrovo h10\nProgramma specifico in loco\nTempo totale ~40\' · ~6 km indicativi', dur: '~40\'',
         ref: 'S30 23/07: 12×(300/400m) 6.360km in 36\' · HR 149/172 · Z5 35%',
@@ -1064,10 +1061,11 @@ const WEEK = [
         result: 'FATTO · 6.172 km tot in 33:01 (WU 1.070km + MAIN 5.103km) · 12 RIPETUTE da ~263m (257-273m) in 54,5-59,8" · passo ripetute 3:29-3:46/km (media 3:35.6) · costantissime: 11 su 12 tra 3:29 e 3:39, solo la 6ª a 3:46 · recuperi in corsa ~72" · 160m (6:59-9:16/km) · FC 147.7/170 · cad 189 spm sulle ripetute (166 di sessione) · run power 613W medi · WU 1.070km 6:37 a 6:12/km FC 114.6 · FC IN SALITA COSTANTE: 1ª rip 129.6 → ultima 157.1 (+27.5 bpm) a passo praticamente identico (3:31.8 → 3:33.6) · decoupling +7.8% (1e 6: 3:34.6/km a 145.1 bpm · ultime 6: 3:36.6/km a 155.9 bpm) · recuperi: la FC scende sempre (-17/-35 bpm) ma la base sale — 1° rec chiude a 121, ultimo a 135 · zone MAIN Z3 35% Z5 26% Z4 23% Z2 14% · zone sulle sole ripetute Z3 32% Z5 31% Z4 30% (91% in Z3-Z5) · cadenza 188-192 spm ferma su tutte e 12 · recupero FC dai battiti R-R su finestra fissa 60": HRR60 medio 29,8 bpm, piatto (28,3 primi 6 · 31,3 ultimi 6) = capacità di recupero costante col picco che sale da 150 a 176 · recovery_hr 111 bpm · training effect 3.3 aerobico / 3.3 anaerobico · falcata esclusa: il campo step_length non chiude con distanza e cadenza' },
       { code: 'BIKE', t: 'casa · ASSAULT BIKE TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · 30\'', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nkm NON contati nei volumi (assault)', dur: '30\'',
         ref: 'Primo test 30\' su assault · 145 bpm = Z3 (136-149) · piramidi assault: 253-268W a FC 121-123 · spostato da MER 29',
-        expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane' },
+        expect: 'Baseline off-season, non è una gara · si ripete tra 4 settimane',
+        result: 'SALTATO', skipped: true },
     ]
   },
-  { day: 'VEN', date: '31', title: '08:30 FORZA + SKI TEST 30\' + ROW PIRAMIDE (Mattia)', sub: 'forza in presenza con Mattia + test ski + piramide row', load: 'Z2-HEAVY', duration: 125, kind: 'ski', done: false,
+  { day: 'VEN', date: '31', title: '08:30 FORZA + SKI TEST 30\' + ROW PIRAMIDE (Mattia)', sub: 'forza sostituita + test ski fatto · row piramide SALTATO, non recuperato', load: 'Z2-HEAVY', duration: 125, kind: 'ski', done: true,
     blocks: [
       { code: 'SKI', t: 'casa · SKI TEST AEROBIC CAPACITY · max metri in 30\' a 145 bpm · ~40\' · ~7.5 km', d: 'TEST: massima distanza in 30\' tenendo 145 bpm (Z3)\nGestire la cadenza, evitare picchi di FC\nTempo totale ~40\' con risc/defa · ~7.5 km attesi', dur: '30\' + risc/defa',
         ref: 'TEST PRECEDENTE 03/06: 7.500m a DF 61 · 145 bpm = Z3 (136-149)',
@@ -1075,7 +1073,8 @@ const WEEK = [
         result: 'FATTO · 7.602m in 30:00 (+102m vs 7.500m del 03/06, +8W medi) · m/colpo IDENTICO (5,967 vs 5,971) — la distanza extra viene da più forza per colpo, non da palata più lunga · pacing più uniforme (fade -15,8% vs -21,2%) · decoupling stesso metodo +8,4% vs +8,7% (leggermente meglio) · costo: FC steady +1,8bpm, FCmax +3 · ⚠️ DF 60 non 61 come prescritto' },
       { code: 'ROW', t: 'casa · Row piramide Z2 · 5/5/10/5/5 · 30\' · ~6.8 km', d: '5\' Z2 low (120-125 bpm)\n5\' Z2 mid (125-130 bpm)\n10\' Z2 top (130-135 bpm)\n5\' Z2 mid (125-130 bpm)\n5\' Z2 low (120-125 bpm)\nZone lattato reali · tempo totale 30\' · ~6.8 km indicativi', dur: '30\'',
         ref: 'Row Z2: 199-214W a FC 128-132 · piramide speculare a quella ski di lunedì',
-        expect: 'Piramide Z2 dopo il test ski · profilo progressivo poi a scendere' },
+        expect: 'Piramide Z2 dopo il test ski · profilo progressivo poi a scendere',
+        result: 'SALTATO', skipped: true },
             { code: 'STRENGTH', t: 'palestra \u00b7 Back Squat 4\u00d74 @60kg \u00b7 pausa lunga in buca, focus tecnica', d: 'PROGRAMMA CAMBIATO da Mattia: via Deadlift/Pause Bench, dentro lavoro tecnico \u00b7 4\u00d74 @60kg con pausa lunga in buca, focus sulla tecnica\nDischi/lato: 20kg (bilanciere 20kg)', dur: '~20\'',
         result: 'FATTO \u00b7 4\u00d74 @60kg \u00b7 pausa lunga in buca \u00b7 focus tecnica, non forza massimale' },
       { code: 'STRENGTH', t: 'palestra \u00b7 Split Jerk \u00b7 lavoro tecnico', d: 'PROGRAMMA CAMBIATO: tecnica Split Jerk', dur: '~15\'',
@@ -1084,7 +1083,7 @@ const WEEK = [
         result: 'FATTO \u00b7 4 giri completati \u00b7 6 curl @25kg + 8 triceps extension @17,5kg per giro (24 curl + 32 triceps extension totali)' },
     ]
   },
-  { day: 'SAB', date: '01', title: 'ENJOYERS CAMP Bike 42km + Run 6,78km + EMOM 52\' HYROX (Mattia)', sub: 'camp Enjoy Triathlon (Enjoy) · EMOM in sospeso', load: 'Z2-Z4', duration: 142, kind: 'hyrox', runKm: 6.776, done: false,
+  { day: 'SAB', date: '01', title: 'ENJOYERS CAMP Bike 42km + Run 6,78km', sub: 'camp Enjoy Triathlon fatto · EMOM 52\' SALTATO, non recuperato', load: 'Z2-Z4', duration: 142, kind: 'hyrox', runKm: 6.776, done: true,
     blocks: [
       { code: 'BIKE', t: 'esterna · Enjoyers Camp (Enjoy Triathlon) · MTB 42,001km · D+418m', d: 'Enjoyers Camp (Enjoy Triathlon) \u00b7 percorso bike+run \u00b7 MTB su percorso del camp', dur: '1h34\'50"',
         result: 'FATTO \u00b7 42,001km in 1:34:50 \u00b7 1120cal \u00b7 HR 127,9/147 \u00b7 D+418m \u00b7 zone Z2 73% Z3 17% Z1 6% <Z1 4% \u00b7 1a met\u00e0 23,00km 27,50km/h HR128,8 (D+175m) \u2192 2a met\u00e0 19,00km 22,72km/h HR127,2 (D+321m): il calo di velocit\u00e0 \u00e8 spiegato dal dislivello quasi doppio nella 2a met\u00e0, non da un calo di forma \u2014 la FC infatti \u00e8 rimasta uguale (anzi leggermente pi\u00f9 bassa)' },
@@ -1092,10 +1091,37 @@ const WEEK = [
         result: 'FATTO \u00b7 6,776km tot (2,867 + 3,909) in 49\'08" \u00b7 707cal \u00b7 D+134m \u00b7 PARTE 1 (16\'39", progressiva a split di 1km): 1000m 6:23,0/km HR138 \u2192 1000m 5:25,3/km HR147 \u2192 867m 5:35,3/km HR148 \u00b7 PARTE 2 (32\'28", fartlek/drills a 26 lap manuali): 6 allunghi da 12-17\" (429-547W, HR105-131) alternati a jog di recupero 50-100\", pi\u00f9 5 tratti pi\u00f9 lunghi in progressione \u2014 429m 5:34,5/km \u00b7 443m 5:08,8/km \u00b7 425m 4:12,3/km \u00b7 1000m 4:55,1/km \u00b7 chiusura 516m 4:34,6/km HR147/149 \u00b7 zone: parte1 Z3 61% Z4 26% \u00b7 parte2 Z3 34% Z2 32% <Z1 15%' },
       { code: 'HYROX', t: 'palestra · EMOM 52\' Hyrox Aerobic', d: 'EMOM 52\' (ciclo da 4\', ×13):\nI: 15/12 kcal SkiErg (max 45")\nII: 15 Wall Balls\nIII: 15/12 kcal Assault Bike (max 45")\nIV: 20m Sandbag Lunges\nTempo totale 52\' · km non contati', dur: '52\'',
         ref: 'S30 EMOM 55 min saltato · S29 18/07 EMOM 48 min: row 358W ski 292W, HR 121/149',
-        expect: 'Aerobico Hyrox · 13 round · niente rest station stavolta (ciclo da 4\' invece di 5\')' },
+        expect: 'Aerobico Hyrox · 13 round · niente rest station stavolta (ciclo da 4\' invece di 5\')',
+        result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'DOM', date: '02', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+]},
+];
+
+// Current week — S32 (03 AGO - 09 AGO 2026)
+const WEEK = [
+  { day: 'LUN', date: '03', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'MAR', date: '04', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'MER', date: '05', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'GIO', date: '06', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'VEN', date: '07', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'SAB', date: '08', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'DOM', date: '09', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
     blocks: []
   },
 ];
@@ -1115,10 +1141,10 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,16.899];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 0.0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,16.899, 0.0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 0.0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 0.0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
