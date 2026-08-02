@@ -4247,7 +4247,7 @@ const BADGES = {
       go: 'Iscriviti a una weekly steps challenge con pochi partecipanti.' },
     // ── FORZA E ATTIVITA'
     { n: 'Piu\' forza ad agosto', en: 'August Gains', cat: 'FIT', tipo: 'cumulativa',
-      req: '4 ore di attivita\' di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: '0 / 4h',
+      req: '4 ore di attivita\' di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: '0 / 4h (sito, 02/08)',
       why: 'A luglio 5 sedute di forza per 3h43\' totali: mancavano 17 minuti.',
       go: 'Serve una sesta seduta, o 5 minuti in piu\' a testa. Registrala come Forza, non come Cardio.' },
     { n: 'Attivita\' ad agosto', en: 'Active August', cat: 'FIT', tipo: 'cumulativa',
