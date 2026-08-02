@@ -299,15 +299,16 @@ function HistoryRow({ h, kindLabel, kindColor }) {
       {/* Expanded detail panel */}
       {open && h.details && (
         <div style={{ padding: '0 4px 16px 16px', background: 'var(--bg-3)', borderTop: '1px solid var(--line-2)' }}>
+          {/* Nota (avvertimenti/contesto) PRIMA del summary */}
+          {m && h.note && (
+            <div style={{ fontSize: 11, color: h.note.indexOf('⚠') >= 0 ? 'var(--warn)' : 'var(--fg-3)', letterSpacing: '0.03em', padding: '12px 0 0', fontFamily: 'var(--mono)', whiteSpace: 'pre-line', lineHeight: 1.6 }}>
+              {h.note}
+            </div>
+          )}
           {/* Summary */}
           <div style={{ fontSize: 11, color: 'var(--fg-2)', letterSpacing: '0.05em', padding: '12px 0 10px', fontFamily: 'var(--mono)', whiteSpace: 'pre-line', lineHeight: 1.7, maxWidth: 860 }}>
             {h.details.summary}
           </div>
-          {m && h.note && (
-            <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.03em', padding: '0 0 10px', fontFamily: 'var(--mono)', whiteSpace: 'pre-line' }}>
-              {h.note}
-            </div>
-          )}
 
           {/* Blocks (if present — e.g. CR) */}
           {h.details.blocks && h.details.blocks.map((b, bi) => (
