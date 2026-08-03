@@ -1145,7 +1145,7 @@ const WEEK = [
   },
   { day: 'DOM', date: '09', title: 'REST · TEST ASSAULT IN SOSPESO', sub: 'Ultimo giorno finestra Weekend 40K', load: '—', duration: 30, kind: 'rest', done: false,
     blocks: [
-      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: '⚠️ CONFLITTO: il nuovo ciclo di Mattia non prevede il test (LUN c\'è Assault 30\' Z2 di allenamento) e i retest "tra 4 settimane" cadono a fine agosto · conferma con Mattia se farlo qui o lasciarlo al retest di fine blocco', dur: '30\'', result: 'da fare' },
+      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: '⚠️ CONFLITTO: il nuovo ciclo di Mattia non prevede il test (MER c\'è Assault 30\' Z2 di allenamento) e i retest "tra 4 settimane" cadono a fine agosto · conferma con Mattia se farlo qui o lasciarlo al retest di fine blocco', dur: '30\'', result: 'da fare' },
     ]
   },
 ];
