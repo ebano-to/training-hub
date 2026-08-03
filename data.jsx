@@ -1126,9 +1126,10 @@ const WEEK = [
       { code: 'SP', t: 'Split Jerk 8×2 @70%', d: 'Mattia · spostato da LUN: si fa con Mattia in presenza · ⚠️ 1RM split jerk non testato (31/07 solo tecnica): carico dal vivo', dur: '15\'', result: 'da fare' }
     ]
   },
-  { day: 'GIO', date: '06', title: 'PISTA 10×600 @3\'50"/KM', sub: 'Lavoro centrale 6 km · rec 1\' cammino + 20\' defa', load: 'Z4-Z5', duration: 55, kind: 'run', runKm: 6, done: false,
+  { day: 'GIO', date: '06', title: 'PISTA 10×600 + TEST ASSAULT', sub: 'Lavoro centrale 6 km · rec 1\' cammino + 20\' defa · poi test aerobico 30\' @145', load: 'Z3-Z5', duration: 85, kind: 'multierg', runKm: 6, done: false,
     blocks: [
       { code: 'RUN', t: 'Pista · 10×600 m @3\'50"/km · rec 1\' cammino', d: 'Gabriele · lavoro centrale 6.000 m + 20\' defa · target 2\'18" a ripetuta · recupero da fermo (cammino): RECUPERO 60" confrontabile solo con sedute a recupero uguale, non con le Ruffini in corsa', dur: '55\'', result: 'da fare' },
+      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: 'Il nuovo ciclo di Mattia non lo prevedeva: deciso di farlo qui · stesso protocollo dei test row/ski · dopo le 10×600 le gambe non sono fresche: tienine conto nel confronto col prossimo', dur: '30\'', result: 'da fare' },
     ]
   },
   { day: 'VEN', date: '07', title: 'SKI+ROW AEROBIC 60\' + STAIRMASTER', sub: 'Base aerobica W1 · si apre la finestra badge Weekend 40K (7-9)', load: 'Z2', duration: 90, kind: 'multierg', done: false,
@@ -1143,10 +1144,8 @@ const WEEK = [
       { code: 'CR', t: 'Hyrox Aerobic · EMOM 60\' · 5 stazioni', d: 'Mattia · I: 15/12 kCal SkiErg (max 45") · II: 15 Wall Balls · III: 15/12 kCal Assault (max 45") · IV: 20 m Sandbag Lunges · V: Rest · 12 giri da 5\' · vs EMOM 52\' saltato in S31: torna la stazione di rest', dur: '60\'', result: 'da fare' }
     ]
   },
-  { day: 'DOM', date: '09', title: 'REST · TEST ASSAULT IN SOSPESO', sub: 'Ultimo giorno finestra Weekend 40K', load: '—', duration: 30, kind: 'rest', done: false,
-    blocks: [
-      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: '⚠️ CONFLITTO: il nuovo ciclo di Mattia non prevede il test (MER c\'è Assault 30\' Z2 di allenamento) e i retest "tra 4 settimane" cadono a fine agosto · conferma con Mattia se farlo qui o lasciarlo al retest di fine blocco', dur: '30\'', result: 'da fare' },
-    ]
+  { day: 'DOM', date: '09', title: 'REST', sub: 'Ultimo giorno finestra Weekend 40K', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
   },
 ];
 
