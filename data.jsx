@@ -1110,18 +1110,18 @@ const WEEK = [
       { code: 'ASSAULT', t: 'Assault Bike 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm) · allenamento, non il test', dur: '30\'', result: 'da fare' },
     ]
   },
-  { day: 'MAR', date: '04', title: 'TAPIS 15\' @10% A 155 BPM', sub: 'Progressione: blocco da 12\' → 15\' allo stesso target', load: 'Z4', duration: 48, kind: 'run', done: false,
+  { day: 'MAR', date: '04', title: 'TAPIS 15\' @10% + BIKE Z2 + FORZA', sub: 'Progressione: blocco da 12\' → 15\' allo stesso target · Bike spinning, Deadlift e Push Press spostati da MER', load: 'Z2-Z4', duration: 115, kind: 'multierg', done: false,
     blocks: [
       { code: 'RUN', t: 'Tapis · 15\' pendenza 10% a 155 bpm', d: 'Gabriele · 15\' risc + 15\' @10% a 155 bpm (Z4) + rec 8\' corsetta in pianura + 10\' defa · vs 29/07: +3\' di blocco, stesso target', dur: '48\'', result: 'da fare' },
-    ]
-  },
-  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro · forza ×4: BSQ e Split Jerk spostati qui, Mattia in presenza', load: 'Z2-Z4', duration: 225, kind: 'multierg', runKm: 16, done: false,
-    blocks: [
-      { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: 'da fare' },
-      { code: 'SKI', t: 'Ski Soglia W1 · 4×(5:00 @soglia / 1:00 rec attivo)', d: 'Mattia · WU 10\' + 3×30" progressivi/60" · soglia = RPE 7 · coach: 85-88% FCmax → con la tua FCmax 177 sono 150-156 bpm (Z4), "confortevolmente duro": frase breve sì, conversazione no · soglia totale 20\' · defa 10\'', dur: '45\'', result: 'da fare' },
       { code: 'BIKE', t: 'Bike Erg (spinning) 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: 'da fare' },
       { code: 'DL', t: 'Deadlift 5×3 @70% (110 kg)', d: 'Mattia · 70% di 1RM 157,5 = 110,25 → barra 110 kg · dischi/lato: 20+20+5', dur: '20\'', result: 'da fare' },
       { code: 'PUSH', t: 'Push Press 6×3 @70%', d: 'Mattia · ⚠️ 1RM push press non testato (14/05 MAV 3×3 @50 kg, strict press 1RM 65): carico da definire con Mattia', dur: '15\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro · BSQ e Split Jerk con Mattia in presenza', load: 'Z2-Z4', duration: 160, kind: 'multierg', runKm: 16, done: false,
+    blocks: [
+      { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski Soglia W1 · 4×(5:00 @soglia / 1:00 rec attivo)', d: 'Mattia · WU 10\' + 3×30" progressivi/60" · soglia = RPE 7 · coach: 85-88% FCmax → con la tua FCmax 177 sono 150-156 bpm (Z4), "confortevolmente duro": frase breve sì, conversazione no · soglia totale 20\' · defa 10\'', dur: '45\'', result: 'da fare' },
       { code: 'BSQ', t: 'Back Squat 5×3 @70%', d: 'Mattia · spostato da LUN: si fa con Mattia in presenza · 1RM 105 kg (20/03) → 70% = 73,5 kg: in pratica 72,5 (dischi/lato 20+5+1,25) o 75 (20+5+2,5) · riferimento datato, squat fermo da giugno: carico dal vivo', dur: '20\'', result: 'da fare' },
       { code: 'SP', t: 'Split Jerk 8×2 @70%', d: 'Mattia · spostato da LUN: si fa con Mattia in presenza · ⚠️ 1RM split jerk non testato (31/07 solo tecnica): carico dal vivo', dur: '15\'', result: 'da fare' }
     ]
