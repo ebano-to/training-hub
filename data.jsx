@@ -1103,23 +1103,35 @@ const WEEK_ARCHIVE = [
 
 // Current week — S32 (03 AGO - 09 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '03', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'LUN', date: '03', title: 'BIKE INTERVALLI 4×(7×20") + 4×5\'', sub: 'Sprint 340 W / 20" facili + blocchi 5\' @180 W', load: 'Z2-Z5', duration: 65, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Bike intervalli · 4×(7×(20" @340 W / 20" @130 W)) + 5\' @180 W', d: 'Gabriele · 15\' risc + 4 round + 10\' defa · stessa struttura del 27/07 (308 W medi sugli sprint, target 340)', dur: '65\'', result: 'da fare' },
+    ]
   },
-  { day: 'MAR', date: '04', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'MAR', date: '04', title: 'TAPIS 15\' @10% A 155 BPM', sub: 'Progressione: blocco da 12\' → 15\' allo stesso target', load: 'Z4', duration: 48, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Tapis · 15\' pendenza 10% a 155 bpm', d: 'Gabriele · 15\' risc + 15\' @10% a 155 bpm (Z4) + rec 8\' corsetta in pianura + 10\' defa · vs 29/07: +3\' di blocco, stesso target', dur: '48\'', result: 'da fare' },
+    ]
   },
-  { day: 'MER', date: '05', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'MER', date: '05', title: 'MEDIO 3+13 KM @5:00/KM · 16 KM', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro', load: 'Z3-Z4', duration: 83, kind: 'run', runKm: 16, done: false,
+    blocks: [
+      { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: 'da fare' },
+    ]
   },
-  { day: 'GIO', date: '06', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'GIO', date: '06', title: 'PISTA 10×600 @3\'50"/KM', sub: 'Lavoro centrale 6 km · rec 1\' cammino + 20\' defa', load: 'Z4-Z5', duration: 55, kind: 'run', runKm: 6, done: false,
+    blocks: [
+      { code: 'RUN', t: 'Pista · 10×600 m @3\'50"/km · rec 1\' cammino', d: 'Gabriele · lavoro centrale 6.000 m + 20\' defa · target 2\'18" a ripetuta · recupero da fermo (cammino): RECUPERO 60" confrontabile solo con sedute a recupero uguale, non con le Ruffini in corsa', dur: '55\'', result: 'da fare' },
+    ]
   },
-  { day: 'VEN', date: '07', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'VEN', date: '07', title: 'LIBERO (GABRIELE) · TEST ASSAULT DA COLLOCARE', sub: 'Si apre la finestra badge Weekend 40K (7-9): il programma non ha bici nel weekend', load: '—', duration: 30, kind: 'bike', done: false,
+    blocks: [
+      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: 'Test saltato in S31, da fare questa settimana · collocazione da confermare quando arriva il programma di Mattia: spostalo pure sul giorno giusto', dur: '30\'', result: 'da fare' },
+    ]
   },
-  { day: 'SAB', date: '08', title: 'DA DEFINIRE', sub: 'in attesa programma S32', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'SAB', date: '08', title: 'COLLINARE 1H35\' PRECOLLINA', sub: 'No stress · ritmo naturale sul saliscendi', load: 'Z2', duration: 95, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Collinare · 1h35\' in precollina', d: 'Gabriele · no stress · riferimento filone: 16/05 precollina 10,8 km @7:12 FC 123 e 30/06 collinare 11,6 km @6:23', dur: '95\'', result: 'da fare' },
+    ]
   },
   { day: 'DOM', date: '09', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
     blocks: []
@@ -4228,9 +4240,9 @@ const BADGES = {
       why: 'Il medio da 10 km lo fai gia\' (25 LUG, 10 km @5:02/km).',
       go: 'Metti il medio lungo di quella settimana a SAB 29. Se la fai da 15 km prendi anche il 15K con la stessa corsa.' },
     { n: '15K di agosto', en: 'August 15K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 15 km', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: null,
-      why: 'Il 28 LUG hai fatto esattamente 15,00 km sul tapis: sei al limite giusto.',
-      go: 'Accoppiala al weekend del 10K (28-30 AGO) e chiudi due sfide con una corsa sola.' },
+      req: 'Una singola corsa da 15 km', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: null,
+      why: 'MER 05 il programma prescrive 3+13 km = 16 km in una seduta.',
+      go: 'MER 05: registra risc + medio come UNA sola attività e il badge arriva col programma.' },
     { n: 'Corsa ad agosto', en: 'August Rundown', cat: 'RUN', tipo: 'cumulativa',
       req: '80,5 km di corsa (50 miglia)', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '6,776 / 80,5 km (sito, 02/08)',
       why: 'A luglio hai corso 99,774 km in 13 uscite.',
@@ -4238,12 +4250,12 @@ const BADGES = {
     { n: 'PacePro ad agosto', en: 'PacePro August', cat: 'RUN', tipo: 'singola',
       req: 'Corsa ≥ 1 km guidata da PacePro, entro ±00:15/km dal passo obiettivo', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: null,
       why: 'Sfida nuova di agosto, mai fatta prima.',
-      go: 'Crea la strategia su Connect, mandala all\'orologio e usala su un medio: il passo costante lo tieni gia\' (10 km @5:02/km).' },
+      go: 'MER 05 e\' la giornata perfetta: 13 km a 5:00/km fissi. Crea la strategia su Connect, mandala all\'orologio e seguila entro ±15"/km.' },
     // ── BICI
     { n: 'Weekend 40K di agosto', en: 'August Weekend 40K', cat: 'BIKE', tipo: 'singola',
-      req: 'Una singola uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'plan', prog: null,
-      why: 'Il 01 AGO hai fatto 42,001 km in MTB: la distanza e\' esattamente nel tuo range.',
-      go: 'Prima finestra utile del mese, VEN 07 / SAB 08 / DOM 09. Deve essere un\'uscita sola, non la somma di due.' },
+      req: 'Una singola uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'push', prog: null,
+      why: 'Il programma S32 non ha bici nella finestra: la seduta bike e\' LUN 03, VEN e DOM sono liberi e SAB c\'e\' la collinare.',
+      go: 'Si prende solo aggiungendo un giro da 40 km in un giorno libero (VEN 07 o DOM 09). La distanza e\' nel tuo range (42 km il 01/08), ma e\' volume extra: scelta tua.' },
     { n: 'Pedala 100 km ad agosto', en: 'August Ride to 100', cat: 'BIKE', tipo: 'cumulativa',
       req: '100 km di bici sommati nel periodo', win: '23 → 29 AGO', d1: '2026-08-23', d2: '2026-08-29', st: 'push', prog: '0,0 / 100,0 km',
       why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
