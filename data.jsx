@@ -1105,7 +1105,7 @@ const WEEK_ARCHIVE = [
 const WEEK = [
   { day: 'LUN', date: '03', title: 'BIKE INTERVALLI + ROW VO2 + FORZA', sub: 'Gabriele: sprint 340 W · Mattia: primo VO2 del blocco W1 + Assault Z2 + Back Squat e Split Jerk @70%', load: 'Z2-Z5', duration: 180, kind: 'multierg', done: false,
     blocks: [
-      { code: 'BIKE', t: 'Bike intervalli · 4×(7×(20" @340 W / 20" @130 W)) + 5\' @180 W', d: 'Gabriele · 15\' risc + 4 round + 10\' defa · stessa struttura del 27/07 (308 W medi sugli sprint, target 340)', dur: '65\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Bike intervalli · 4×(7×(20" @340 W / 20" @130 W)) + 5\' @180 W', d: 'Gabriele · 15\' risc + 4 round + 10\' defa · stessa struttura del 27/07 (308 W medi sugli sprint, target 340)', dur: '65\'', result: 'risc 13:55 + lavoro 41:42 · 15,214 km · 709 cal · sprint 308 W (target 340) · blocchi 5\' 181-186 W · rec 153 W (target 130) · HR 122/138' },
       { code: 'ROW', t: 'Row VO2 Max W1 · 4×(4:00 @ritmo 2k +3-4"/500 / 3:00 rec attivo)', d: 'Mattia · WU 10\' Z1→Z2 + 3×20" @ritmo 2k / 40" rec · intensità totale 16\' · defa 10\' · prima rep "troppo tranquilla", negative split, SPM costanti · riferimenti ritmo 2k: singolo 7:49.2 (1:57.3/500) del 04/10/2025, datato · recenti: 3×2000 @1:46.8/500 (26/03) e 5K PR 1:47.2/500 (10/05) → 2k attuale stimato 1:43-1:44/500 · TARGET REP: 1:46-1:48/500 = 278-294 W (~1.110-1.130 m a rep), parti a 1:48 e chiudi a 1:46 se regge · stima da confermare con Mattia', dur: '48\'', result: 'da fare' },
       { code: 'ASSAULT', t: 'Assault Bike 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm) · allenamento, non il test', dur: '30\'', result: 'da fare' },
       { code: 'BSQ', t: 'Back Squat 5×3 @70%', d: 'Mattia · 1RM 105 kg (20/03) → 70% = 73,5 kg: in pratica 72,5 (dischi/lato 20+5+1,25) o 75 (20+5+2,5) · riferimento datato, squat fermo da giugno: conferma con Mattia', dur: '20\'', result: 'da fare' },
@@ -1168,7 +1168,7 @@ const PBS = [
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 0.0];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,16.899, 0.0];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 0.0];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 0.0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 15.214];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
@@ -1176,8 +1176,8 @@ const TOTALS = {
   rower: 660.218,
   ski: 618.854,
   run: 636.537,
-  bike: 286.674,
-  total: 2202.283,
+  bike: 301.888,
+  total: 2217.497,
 };
 
 // EF Trend — real Z2 SkiErg data
@@ -1206,6 +1206,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '03 AGO', title: 'Bike · Intervalli · 4×(7×20") + 4×5\'', kind: 'bike', filone: 'bike-intervalli', filoneLabel: 'Bike Intervalli', m: { fcMed: '122', fcMax: '138', asc: '350', dec: '+4.6%', cad: '82', dist: '10,204 km', dur: '41:42' }, vs: { d: '27 LUG', tag: 'struttura diversa (lì 4×6×20", pendenza inversa) · stessi 308 W sugli sprint', items: [{ v: 'FC −9', g: 1 }, { v: 'rec −6 W', g: 1 }, { v: 'dec +2,9 pt', g: 0 }] }, dur: 56, load: 'Z2-Z3', rpe: 7, note: 'Sprint sotto target anche stavolta: 308 su 340 W\nStessi watt del 27/07 ma FC −9: costo cardiaco in netto calo\nPendenza stavolta calante (5,9% → 1,7%), il 27/07 saliva',
+    details: { summary: '28 sprint da 20″: 308 W medi (lap max 328, picco 392) vs target 340 — primi due morbidi (268, 263), poi 284-328.\nFC sprint 123 media contro 138 del 27/07 a pari potenza · picco di giornata 138 (era 150).\n4 blocchi da 5′ target 180 W: 186 · 181 · 182 · 183 — tutti centrati.\nRecuperi a 153 W contro 130 di target (il 27/07: 159).\nPendenza per round: 5,3 · 5,9 · 4,2 · 1,7% — profilo inverso vs 27/07 (piano → 6%).\nCadenza uniforme: sprint 83 rpm, blocchi 80-84 (il 27/07: sprint 97, blocchi 61-69).\nDecoupling +4,6% (era +1,7%) · EF 1,70 → 1,62.\nWU 5,010 km @149 W (FC 97/114) · defa 2:46 · totale 15,214 km · D+407 m · 709 cal.\nStruttura dai 62 lap Garmin; potenza dal Technogym, FIT e TCX concordi (Δ medio 7,9 W/lap).' } },
   { date: '01 AGO', title: 'Bike · MTB · Enjoyers Camp 42,001 km', kind: 'bike', filone: 'bike-mtb', filoneLabel: 'MTB', m: { fcMed: '128', fcMax: '147', asc: '418', dist: '42,001 km', dur: '94:49' }, dur: 95, load: 'Z2-Z3', rpe: 6, note: 'Seconda metà più lenta ma è il terreno: D+ quasi raddoppiato\nFC identica tra le due metà, nessun drift',
     details: { summary: 'MTB del camp, prevista.\n1ª metà: 23,00 km a 27,50 km/h · FC 128,8 · D+175 m.\n2ª metà: 19,00 km a 22,72 km/h · FC 127,2 · D+321 m.\nIl calo di velocità è tutto del terreno: EF grezzo −16,4% ma la FC non sale.\nZone: Z2 73% · Z3 17% · Z1 6% · 1.120 cal · D+418 m totali.',
       metrics: [ { l: 'DISTANZA', v: '42,001 km' }, { l: 'TEMPO', v: '1:34:50' }, { l: 'FC MEDIA/MAX', v: '127,9 / 147' }, { l: 'DISLIVELLO', v: 'D+418m' }, { l: 'CALORIE', v: '1120' } ],
@@ -1237,7 +1239,7 @@ const HISTORY = [
     }, gps: null },
     { date: '28 LUG', title: 'Run · Tapis · Medio 15,00 km', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Medio su tapis', surf: 'tapis', m: { fcMed: '138', fcMax: '157', asc: '253', cad: '170', dist: '15,000 km', dur: '83:23', pace: '5:33', unit: '/km' }, dur: 85, load: 'Z4', rpe: 7, note: '12 km centrali a 5:00/km esatti, tutti gli split\n⚠️ Il Runn sottostimava (−2,6%): dati Technogym',
     details: { summary: 'WU 3 km in 24′42″ (8:56 · 8:08 · 7:38) + 12 km in 60:00 esatti a 5:00/km fisso dal 4° km. Totale 15,00 km in 1:24:43 · FC sessione 140/158 · i primi split 5:01 e 4:59 = ±1″ di arrotondamento.\nFC blocco 150,7/157 · cad 174 spm · zone Z4 75% · Z3 22%.\nDrift +5,5 bpm a passo costante (148,0 → 153,5).\nD+135 m · 1.532 kcal · pendenza 0,9%.\n⚠️ Runn/Garmin misurava 14,611 km (−2,6%): Technogym autoritativo.' }, gps: null },
-  { date: '27 LUG', title: 'Bike · Intervalli · 4×(6×20") + 4×5\'', kind: 'bike', filone: 'bike-intervalli', filoneLabel: 'Bike Intervalli', m: { fcMed: '131', fcMax: '150', asc: '0', dec: '+1.7%', cad: '158', dist: '15,014 km', dur: '45:28' }, dur: 54, load: 'Z2-Z5', rpe: 8, note: 'Sprint costanti ma sotto target: 308 su 340 W\nStessa potenza a pendenza crescente: +11,7 bpm',
+  { date: '27 LUG', title: 'Bike · Intervalli · 4×(6×20") + 4×5\'', kind: 'bike', filone: 'bike-intervalli', filoneLabel: 'Bike Intervalli', m: { fcMed: '131', fcMax: '150', asc: '307', dec: '+1.7%', cad: '78', dist: '15,014 km', dur: '45:28' }, dur: 54, load: 'Z2-Z5', rpe: 8, note: 'Sprint costanti ma sotto target: 308 su 340 W\nStessa potenza a pendenza crescente: +11,7 bpm',
     details: { summary: '24 sprint da 20″: 308 W medi (picchi 349, max 387) vs target 340 — costantissimi, minimo 294 W.\nPendenza crescente: R1 in piano 310 W FC 130,5 → R4 al 6% 309 W FC 142,2.\n4 blocchi da 5′ target 180 W tutti centrati: 181 · 191 · 190 · 189 W · cadenza 97 → 61-69 rpm.\nRecuperi a 159 W contro 130 di target: FC nei recuperi 141,4, più alta che negli sprint (138,4).\nWU 3,718 km + lavoro 15,058 km (18,776 km totali) · D+307 m · 589 cal · FC 130/150.\nStruttura dai 54 lap Garmin, potenza e quota dal TCX Technogym.' } },
   { date: '27 LUG', title: 'Row · Test Aerobico · 30\' @145 bpm', kind: 'row', filone: 'row-test30', filoneLabel: 'Row Test Aerobic 30 min', m: { lavoro: '7.901 m', dur: '30:00', pace: '1:53.9', unit: '/500m', watt: '237', fcMed: '145,5', fcMax: '150', df: '85', src: 'fit' }, pb: true, vs: { d: '02 GIU', tag: 'stesso test', items: [{ v: '+30 m', g: 1 }, { v: 'pace \u22120,4\u2033', g: 1 }, { v: '+3 W', g: 1 }, { v: 'FC +2,8', g: 0 }] }, dur: 30, load: 'Z3', rpe: 8, note: '⚠️ DF 85, non 75 come il baseline: prossimo test a DF 75\nDecoupling 8,9%, era 13,8% a giugno', details: { summary: '+30 m sul baseline di giugno (7.871 m), test a target 145.\nBlocchi da 6′: 263 → 239 → 228 → 228 → 227 W.\nDecoupling 8,9% contro 13,8% del 02/06.\nWU 10′ 2.285 m · 563 cal · 788 colpi. 26,3 colpi/min medi.\n⚠️ DF 85 contro il 75 del baseline: pace↔watt restano validi, il prossimo test va fatto a DF 75.',
       ergTable: { fcMed: 145, fcMax: 150, efTot: '1.63', dec: [], total: { tempo: '30:00', metri: '7,901', pace: '1:53.9', watt: 237, calh: 1115, sm: '—', ef: '1.63', fcmed: 145, fcmax: 150, zona: 'Z3', cal: 563, colpi: 788, maxpw: 325 }, rows: [{ m: 'ROW', split: 'TEST 6\' 1', tempo: '6:00', metri: '1,637', pace: '1:50.0', watt: 263, calh: 1205, sm: 28, ef: '1.87', fcmed: 141, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'TEST 6\' 2', tempo: '6:00', metri: '1,584', pace: '1:53.6', watt: 239, calh: 1123, sm: 26, ef: '1.63', fcmed: 147, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'TEST 6\' 3', tempo: '6:00', metri: '1,561', pace: '1:55.3', watt: 228, calh: 1085, sm: 25, ef: '1.56', fcmed: 146, fcmax: 149, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'TEST 6\' 4', tempo: '6:00', metri: '1,561', pace: '1:55.3', watt: 228, calh: 1085, sm: 26, ef: '1.56', fcmed: 146, fcmax: 148, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'TEST 6\' 5', tempo: '6:00', metri: '1,559', pace: '1:55.5', watt: 227, calh: 1081, sm: 27, ef: '1.55', fcmed: 146, fcmax: 150, zona: 'Z3', t: 1 }] } } },
@@ -4239,7 +4241,7 @@ const BADGES = {
   monthStart: '2026-08-01',
   monthEnd: '2026-08-31',
   updated: '03 AGO 2026',
-  snapshot: '03 AGO 2026 h.11:28',
+  snapshot: '03 AGO 2026 h.15:29',
   sources: ['app Garmin Connect (screenshot 01 AGO · passi/camminata/foto riferiti da Federico 03 AGO)', 'badgehero.io/post/2026-07-20-garmin-august-2026-badges'],
   items: [
     // ── CORSA
@@ -4273,12 +4275,12 @@ const BADGES = {
       why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
       go: '100 km in 7 giorni vogliono un\'uscita lunga piu\' due medie nella stessa settimana.' },
     { n: 'Tour di agosto', en: 'August Tour', cat: 'BIKE', tipo: 'cumulativa',
-      req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '42,001 / 400,0 km (sito, 03/08)',
-      why: 'Restano 358 km su 30 giorni = 11,9 km al giorno, tutti i giorni.',
+      req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '57,215 / 400,0 km (sito, 03/08)',
+      why: 'Restano 342,8 km su 28 giorni = 12,2 km al giorno, tutti i giorni.',
       go: 'Vorrebbe dire riscrivere il mese attorno alla bici in piena preparazione Hyrox.' },
     { n: 'Bici ad agosto', en: 'August Time to Ride', cat: 'BIKE', tipo: 'cumulativa',
-      req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '1h34m / 20h (sito, 03/08)',
-      why: 'Restano 18h26m su 30 giorni = circa 4h20m a settimana in sella.',
+      req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '2h30m / 20h (sito, 03/08)',
+      why: 'Restano 17h30m su 28 giorni = circa 4h20m a settimana in sella.',
       go: 'Si avvicina solo contando anche le sedute indoor lunghe.' },
     // ── CAMMINATA
     { n: 'Weekend di camminata ad agosto', en: 'August Weekend Walking', cat: 'WALK', tipo: 'singola',
