@@ -21,7 +21,12 @@ def check(path):
 
     # 1) conversione %FCmax scritta alla lettera: deve avere "bpm" subito dopo il valore
     #    (es. "63-65% = 112-115 bpm"). NON matcha i carichi tipo "75% = 118kg".
+    #    AMMESSA solo se il contesto dichiara la FCmax reale (177): la conversione
+    #    calcolata sulla FCmax da test lattato è corretta, il divieto è per il 220-età.
     for m in re.finditer(r'\d{1,3}\s*[-–]?\s*\d{0,3}\s*%\s*=\s*\d{2,3}(?:\s*[-–]\s*\d{2,3})?\s*bpm', s):
+        ctx_win = s[max(0, m.start()-100):m.end()+60]
+        if re.search(r'FCmax\s*177|177\s*\(FCmax\)', ctx_win):
+            continue
         ctx = m.group(0).replace('\n', ' ')
         violations.append(f"conversione %FCmax alla lettera vietata: «{ctx}»")
 

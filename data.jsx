@@ -1103,9 +1103,13 @@ const WEEK_ARCHIVE = [
 
 // Current week — S32 (03 AGO - 09 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '03', title: 'BIKE INTERVALLI 4×(7×20") + 4×5\'', sub: 'Sprint 340 W / 20" facili + blocchi 5\' @180 W', load: 'Z2-Z5', duration: 65, kind: 'bike', done: false,
+  { day: 'LUN', date: '03', title: 'BIKE INTERVALLI + ROW VO2 + FORZA', sub: 'Gabriele: sprint 340 W · Mattia: primo VO2 del blocco W1 + Assault Z2 + Back Squat e Split Jerk @70%', load: 'Z2-Z5', duration: 180, kind: 'multierg', done: false,
     blocks: [
       { code: 'BIKE', t: 'Bike intervalli · 4×(7×(20" @340 W / 20" @130 W)) + 5\' @180 W', d: 'Gabriele · 15\' risc + 4 round + 10\' defa · stessa struttura del 27/07 (308 W medi sugli sprint, target 340)', dur: '65\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row VO2 Max W1 · 4×(4:00 @ritmo 2k +3-4"/500 / 3:00 rec attivo)', d: 'Mattia · WU 10\' Z1→Z2 + 3×20" @ritmo 2k / 40" rec · intensità totale 16\' · defa 10\' · prima rep "troppo tranquilla", negative split, SPM costanti · riferimento ritmo 2k: mai testato il 2k row (5K PR 1:47.2/500), da definire con Mattia', dur: '48\'', result: 'da fare' },
+      { code: 'ASSAULT', t: 'Assault Bike 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm) · allenamento, non il test', dur: '30\'', result: 'da fare' },
+      { code: 'BSQ', t: 'Back Squat 5×3 @70%', d: 'Mattia · ⚠️ 1RM back squat mai testato (uscito dal programma l\'11/06, MAV top single 100 kg il 14/05): carico da definire con Mattia', dur: '20\'', result: 'da fare' },
+      { code: 'SP', t: 'Split Jerk 8×2 @70%', d: 'Mattia · ⚠️ 1RM split jerk non testato (31/07 solo tecnica): carico da definire con Mattia', dur: '15\'', result: 'da fare' }
     ]
   },
   { day: 'MAR', date: '04', title: 'TAPIS 15\' @10% A 155 BPM', sub: 'Progressione: blocco da 12\' → 15\' allo stesso target', load: 'Z4', duration: 48, kind: 'run', done: false,
@@ -1113,9 +1117,13 @@ const WEEK = [
       { code: 'RUN', t: 'Tapis · 15\' pendenza 10% a 155 bpm', d: 'Gabriele · 15\' risc + 15\' @10% a 155 bpm (Z4) + rec 8\' corsetta in pianura + 10\' defa · vs 29/07: +3\' di blocco, stesso target', dur: '48\'', result: 'da fare' },
     ]
   },
-  { day: 'MER', date: '05', title: 'MEDIO 3+13 KM @5:00/KM · 16 KM', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro', load: 'Z3-Z4', duration: 83, kind: 'run', runKm: 16, done: false,
+  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro', load: 'Z2-Z4', duration: 190, kind: 'multierg', runKm: 16, done: false,
     blocks: [
       { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski Soglia W1 · 4×(5:00 @soglia / 1:00 rec attivo)', d: 'Mattia · WU 10\' + 3×30" progressivi/60" · soglia = RPE 7 · coach: 85-88% FCmax → con la tua FCmax 177 sono 150-156 bpm (Z4), "confortevolmente duro": frase breve sì, conversazione no · soglia totale 20\' · defa 10\'', dur: '45\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Bike Erg (spinning) 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: 'da fare' },
+      { code: 'DL', t: 'Deadlift 5×3 @70% (110 kg)', d: 'Mattia · 70% di 1RM 157,5 = 110,25 → barra 110 kg · dischi/lato: 20+20+5', dur: '20\'', result: 'da fare' },
+      { code: 'PUSH', t: 'Push Press 6×3 @70%', d: 'Mattia · ⚠️ 1RM push press non testato (14/05 MAV 3×3 @50 kg, strict press 1RM 65): carico da definire con Mattia', dur: '15\'', result: 'da fare' }
     ]
   },
   { day: 'GIO', date: '06', title: 'PISTA 10×600 @3\'50"/KM', sub: 'Lavoro centrale 6 km · rec 1\' cammino + 20\' defa', load: 'Z4-Z5', duration: 55, kind: 'run', runKm: 6, done: false,
@@ -1123,18 +1131,22 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · 10×600 m @3\'50"/km · rec 1\' cammino', d: 'Gabriele · lavoro centrale 6.000 m + 20\' defa · target 2\'18" a ripetuta · recupero da fermo (cammino): RECUPERO 60" confrontabile solo con sedute a recupero uguale, non con le Ruffini in corsa', dur: '55\'', result: 'da fare' },
     ]
   },
-  { day: 'VEN', date: '07', title: 'LIBERO (GABRIELE) · TEST ASSAULT DA COLLOCARE', sub: 'Si apre la finestra badge Weekend 40K (7-9): il programma non ha bici nel weekend', load: '—', duration: 30, kind: 'bike', done: false,
+  { day: 'VEN', date: '07', title: 'SKI+ROW AEROBIC 60\' + STAIRMASTER', sub: 'Base aerobica W1 · si apre la finestra badge Weekend 40K (7-9)', load: 'Z2', duration: 90, kind: 'multierg', done: false,
     blocks: [
-      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: 'Test saltato in S31, da fare questa settimana · collocazione da confermare quando arriva il programma di Mattia: spostalo pure sul giorno giusto', dur: '30\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski+Row Aerobic W1 · 6×10\' alternati Z2 · 60\'', d: 'Mattia · 10\' row / 10\' ski × 3 giri, nessuna sosta ai cambi macchina · Z2 = 120-135 bpm · "capillari, mitocondri e uso dei grassi: DEVE restare facile"', dur: '60\'', result: 'da fare' },
+      { code: 'ALTRO', t: 'Stairmaster 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: 'da fare' },
     ]
   },
-  { day: 'SAB', date: '08', title: 'COLLINARE 1H35\' PRECOLLINA', sub: 'No stress · ritmo naturale sul saliscendi', load: 'Z2', duration: 95, kind: 'run', done: false,
+  { day: 'SAB', date: '08', title: 'COLLINARE 1H35\' + EMOM 60\'', sub: 'No stress · ritmo naturale sul saliscendi', load: 'Z2-Z3', duration: 155, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Collinare · 1h35\' in precollina', d: 'Gabriele · no stress · riferimento filone: 16/05 precollina 10,8 km @7:12 FC 123 e 30/06 collinare 11,6 km @6:23', dur: '95\'', result: 'da fare' },
+      { code: 'CR', t: 'Hyrox Aerobic · EMOM 60\' · 5 stazioni', d: 'Mattia · I: 15/12 kCal SkiErg (max 45") · II: 15 Wall Balls · III: 15/12 kCal Assault (max 45") · IV: 20 m Sandbag Lunges · V: Rest · 12 giri da 5\' · vs EMOM 52\' saltato in S31: torna la stazione di rest', dur: '60\'', result: 'da fare' }
     ]
   },
-  { day: 'DOM', date: '09', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'DOM', date: '09', title: 'REST · TEST ASSAULT IN SOSPESO', sub: 'Ultimo giorno finestra Weekend 40K', load: '—', duration: 30, kind: 'rest', done: false,
+    blocks: [
+      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: '⚠️ CONFLITTO: il nuovo ciclo di Mattia non prevede il test (LUN c\'è Assault 30\' Z2 di allenamento) e i retest "tra 4 settimane" cadono a fine agosto · conferma con Mattia se farlo qui o lasciarlo al retest di fine blocco', dur: '30\'', result: 'da fare' },
+    ]
   },
 ];
 
@@ -4255,7 +4267,7 @@ const BADGES = {
     { n: 'Weekend 40K di agosto', en: 'August Weekend 40K', cat: 'BIKE', tipo: 'singola',
       req: 'Una singola uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'push', prog: null,
       why: 'Il programma S32 non ha bici nella finestra: la seduta bike e\' LUN 03, VEN e DOM sono liberi e SAB c\'e\' la collinare.',
-      go: 'Si prende solo aggiungendo un giro da 40 km in un giorno libero (VEN 07 o DOM 09). La distanza e\' nel tuo range (42 km il 01/08), ma e\' volume extra: scelta tua.' },
+      go: 'VEN ora e\' pieno (60\' erg + stairmaster): resta DOM 09 per un giro extra da 40 km. Nel tuo range (42 km il 01/08), ma e\' volume aggiunto e domenica c\'e\' anche il nodo test: scelta tua.' },
     { n: 'Pedala 100 km ad agosto', en: 'August Ride to 100', cat: 'BIKE', tipo: 'cumulativa',
       req: '100 km di bici sommati nel periodo', win: '23 → 29 AGO', d1: '2026-08-23', d2: '2026-08-29', st: 'push', prog: '0,0 / 100,0 km (sito, 03/08)',
       why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
@@ -4292,9 +4304,9 @@ const BADGES = {
       go: 'Iscriviti a una weekly steps challenge con pochi partecipanti.' },
     // ── FORZA E ATTIVITA'
     { n: 'Piu\' forza ad agosto', en: 'August Gains', cat: 'FIT', tipo: 'cumulativa',
-      req: '4 ore di attivita\' di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: '0 / 4h (sito, 03/08)',
-      why: 'A luglio 5 sedute di forza per 3h43\' totali: mancavano 17 minuti.',
-      go: 'Serve una sesta seduta, o 5 minuti in piu\' a testa. Registrala come Forza, non come Cardio.' },
+      req: '4 ore di attivita\' di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '0 / 4h (sito, 03/08)',
+      why: 'Il nuovo ciclo di Mattia ha 2 sedute di forza a settimana (LUN e MER): ~35\' l\'una fanno oltre 4 ore nel mese.',
+      go: 'Registra i blocchi forza come attivita\' Forza separata, non dentro il cardio.' },
     { n: 'Attivita\' ad agosto', en: 'Active August', cat: 'FIT', tipo: 'cumulativa',
       req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '2 / 20 (sito, 03/08)',
       why: 'A luglio 37 attivita\' registrate per 35,1 ore.',
