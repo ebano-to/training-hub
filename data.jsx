@@ -1103,13 +1103,11 @@ const WEEK_ARCHIVE = [
 
 // Current week — S32 (03 AGO - 09 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '03', title: 'BIKE INTERVALLI + ROW VO2 + FORZA', sub: 'Gabriele: sprint 340 W · Mattia: primo VO2 del blocco W1 + Assault Z2 + Back Squat e Split Jerk @70%', load: 'Z2-Z5', duration: 180, kind: 'multierg', done: false,
+  { day: 'LUN', date: '03', title: 'BIKE INTERVALLI + ROW VO2 + ASSAULT', sub: 'Gabriele: sprint 340 W · Mattia: primo VO2 del blocco W1 + Assault Z2 · forza spostata a MER: Mattia in presenza', load: 'Z2-Z5', duration: 145, kind: 'multierg', done: false,
     blocks: [
       { code: 'BIKE', t: 'Bike intervalli · 4×(7×(20" @340 W / 20" @130 W)) + 5\' @180 W', d: 'Gabriele · 15\' risc + 4 round + 10\' defa · stessa struttura del 27/07 (308 W medi sugli sprint, target 340)', dur: '65\'', result: 'risc 13:55 + lavoro 41:42 · 15,214 km · 709 cal · sprint 308 W (target 340) · blocchi 5\' 181-186 W · rec 153 W (target 130) · HR 122/138' },
       { code: 'ROW', t: 'Row VO2 Max W1 · 4×(4:00 @ritmo 2k +3-4"/500 / 3:00 rec attivo)', d: 'Mattia · WU 10\' Z1→Z2 + 3×20" @ritmo 2k / 40" rec · intensità totale 16\' · defa 10\' · prima rep "troppo tranquilla", negative split, SPM costanti · riferimenti ritmo 2k: singolo 7:49.2 (1:57.3/500) del 04/10/2025, datato · recenti: 3×2000 @1:46.8/500 (26/03) e 5K PR 1:47.2/500 (10/05) → 2k attuale stimato 1:43-1:44/500 · TARGET REP: 1:46-1:48/500 = 278-294 W (~1.110-1.130 m a rep), parti a 1:48 e chiudi a 1:46 se regge · stima da confermare con Mattia', dur: '48\'', result: 'da fare' },
       { code: 'ASSAULT', t: 'Assault Bike 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm) · allenamento, non il test', dur: '30\'', result: 'da fare' },
-      { code: 'BSQ', t: 'Back Squat 5×3 @70%', d: 'Mattia · 1RM 105 kg (20/03) → 70% = 73,5 kg: in pratica 72,5 (dischi/lato 20+5+1,25) o 75 (20+5+2,5) · riferimento datato, squat fermo da giugno: conferma con Mattia', dur: '20\'', result: 'da fare' },
-      { code: 'SP', t: 'Split Jerk 8×2 @70%', d: 'Mattia · ⚠️ 1RM split jerk non testato (31/07 solo tecnica): carico da definire con Mattia', dur: '15\'', result: 'da fare' }
     ]
   },
   { day: 'MAR', date: '04', title: 'TAPIS 15\' @10% A 155 BPM', sub: 'Progressione: blocco da 12\' → 15\' allo stesso target', load: 'Z4', duration: 48, kind: 'run', done: false,
@@ -1117,13 +1115,15 @@ const WEEK = [
       { code: 'RUN', t: 'Tapis · 15\' pendenza 10% a 155 bpm', d: 'Gabriele · 15\' risc + 15\' @10% a 155 bpm (Z4) + rec 8\' corsetta in pianura + 10\' defa · vs 29/07: +3\' di blocco, stesso target', dur: '48\'', result: 'da fare' },
     ]
   },
-  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro', load: 'Z2-Z4', duration: 190, kind: 'multierg', runKm: 16, done: false,
+  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro · forza ×4: BSQ e Split Jerk spostati qui, Mattia in presenza', load: 'Z2-Z4', duration: 225, kind: 'multierg', runKm: 16, done: false,
     blocks: [
       { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: 'da fare' },
       { code: 'SKI', t: 'Ski Soglia W1 · 4×(5:00 @soglia / 1:00 rec attivo)', d: 'Mattia · WU 10\' + 3×30" progressivi/60" · soglia = RPE 7 · coach: 85-88% FCmax → con la tua FCmax 177 sono 150-156 bpm (Z4), "confortevolmente duro": frase breve sì, conversazione no · soglia totale 20\' · defa 10\'', dur: '45\'', result: 'da fare' },
       { code: 'BIKE', t: 'Bike Erg (spinning) 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: 'da fare' },
       { code: 'DL', t: 'Deadlift 5×3 @70% (110 kg)', d: 'Mattia · 70% di 1RM 157,5 = 110,25 → barra 110 kg · dischi/lato: 20+20+5', dur: '20\'', result: 'da fare' },
-      { code: 'PUSH', t: 'Push Press 6×3 @70%', d: 'Mattia · ⚠️ 1RM push press non testato (14/05 MAV 3×3 @50 kg, strict press 1RM 65): carico da definire con Mattia', dur: '15\'', result: 'da fare' }
+      { code: 'PUSH', t: 'Push Press 6×3 @70%', d: 'Mattia · ⚠️ 1RM push press non testato (14/05 MAV 3×3 @50 kg, strict press 1RM 65): carico da definire con Mattia', dur: '15\'', result: 'da fare' },
+      { code: 'BSQ', t: 'Back Squat 5×3 @70%', d: 'Mattia · spostato da LUN: si fa con Mattia in presenza · 1RM 105 kg (20/03) → 70% = 73,5 kg: in pratica 72,5 (dischi/lato 20+5+1,25) o 75 (20+5+2,5) · riferimento datato, squat fermo da giugno: carico dal vivo', dur: '20\'', result: 'da fare' },
+      { code: 'SP', t: 'Split Jerk 8×2 @70%', d: 'Mattia · spostato da LUN: si fa con Mattia in presenza · ⚠️ 1RM split jerk non testato (31/07 solo tecnica): carico dal vivo', dur: '15\'', result: 'da fare' }
     ]
   },
   { day: 'GIO', date: '06', title: 'PISTA 10×600 @3\'50"/KM', sub: 'Lavoro centrale 6 km · rec 1\' cammino + 20\' defa', load: 'Z4-Z5', duration: 55, kind: 'run', runKm: 6, done: false,
