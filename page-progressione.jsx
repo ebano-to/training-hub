@@ -27,6 +27,7 @@ function ProgressionePage() {
             <tr style={{ color: 'var(--fg-3)', fontSize: 8.5, letterSpacing: '0.12em', textAlign: 'right' }}>
               <th style={{ textAlign: 'left', padding: '2px 4px' }}>DATA</th>
               <th style={{ textAlign: 'left', padding: '2px 4px' }}>{second}</th>
+              <th style={{ padding: '2px 4px' }}>METRI</th>
               <th style={{ padding: '2px 4px' }}>WATT</th>
               <th style={{ padding: '2px 4px' }}>PACE /500m</th>
               <th style={{ padding: '2px 4px' }}>S/M</th>
@@ -39,6 +40,7 @@ function ProgressionePage() {
               <tr key={i} style={{ borderTop: '1px dashed var(--line-2)', background: r.cur ? 'oklch(88% 0.20 130 / 0.13)' : r.pb ? PB_BG : 'transparent', textAlign: 'right' }}>
                 <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-3)' }}>{r.d}</td>
                 <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-2)' }}>{r.struttura || r.pezzo}</td>
+                <td style={{ padding: '3px 4px', color: 'var(--fg-2)' }}>{r.dist ? r.dist.toLocaleString('it-IT') : '—'}</td>
                 <td style={{ padding: '3px 4px', color: r.pb ? 'var(--accent)' : 'var(--fg)', fontWeight: r.pb ? 700 : 400 }}>{r.w}</td>
                 <td style={{ padding: '3px 4px', color: 'var(--fg-2)' }}>{r.pace}</td>
                 <td style={{ padding: '3px 4px', color: 'var(--fg-3)' }}>{r.spm || '—'}</td>
