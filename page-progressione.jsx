@@ -4,9 +4,47 @@ function ProgressionePage() {
   const [mach, setMach] = React.useState('row');
   const P = PROG[mach];
 
+  const [dim, setDim] = React.useState('dur');
   const BAND_COL = { Z2: 'var(--accent)', Z3: 'oklch(75% 0.15 60)' };
   const PB_BG = 'oklch(88% 0.20 130 / 0.07)';
   const nTot = P.pd.reduce((a, r) => a + r.tot, 0);
+
+  // ---- bucket e raggruppamento client-side ----
+  const CONT_DUR = [['PEZZI 4-10\u2032', 240, 600], ['PEZZI 10-20\u2032', 600, 1200], ['PEZZI 20-30\u2032', 1200, 1800], ['PEZZI 30-45\u2032', 1800, 2700], ['PEZZI 45\u2032+', 2700, 1e9]];
+  const CONT_DIST = [['PEZZI < 3 KM', 0, 3000], ['PEZZI 3-5 KM', 3000, 5000], ['PEZZI 5-7 KM', 5000, 7000], ['PEZZI 7-10 KM', 7000, 10000], ['PEZZI \u2265 10 KM', 10000, 1e9]];
+  const INT_DUR = [['SPRINT \u22641\u2032', 0, 75], ['RIPETUTE 1-3\u2032', 75, 180], ['RIPETUTE 3-8\u2032', 180, 480], ['BLOCCHI \u22658\u2032', 480, 1e9]];
+  const INT_DIST = [['REP < 500 M', 0, 500], ['REP 500-999 M', 500, 1000], ['REP 1.000-1.999 M', 1000, 2000], ['REP \u2265 2.000 M', 2000, 1e9]];
+
+  const group = (rows, buckets, key) => buckets.map(([name, lo, hi]) => {
+    const rs = rows.filter(r => r[key] >= lo && r[key] < hi).map(r => Object.assign({}, r));
+    let best = null;
+    rs.forEach(r => { r.pb = best !== null && r.w > best; best = best === null ? r.w : Math.max(best, r.w); });
+    if (rs.length) {
+      const mx = Math.max.apply(null, rs.map(r => r.w));
+      for (const r of rs) { if (r.w === mx) { r.cur = true; break; } }
+    }
+    return { cls: name, rows: rs };
+  });
+  const contGroups = group(P.sess.cont, dim === 'dur' ? CONT_DUR : CONT_DIST, dim === 'dur' ? 'dur_s' : 'dist');
+  const intGroups = group(P.sess.ints, dim === 'dur' ? INT_DUR : INT_DIST, dim === 'dur' ? 'rep_s' : 'rep_m');
+
+  const DimToggle = () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+      <span style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>VISTA PER</span>
+      {[['dur', 'DURATA'], ['dist', 'DISTANZA']].map(([k, l]) => (
+        <button key={k} onClick={() => setDim(k)} style={{
+          padding: '5px 12px', cursor: 'pointer',
+          background: dim === k ? 'var(--accent)' : 'transparent',
+          color: dim === k ? '#000' : 'var(--fg-2)',
+          border: '1px solid ' + (dim === k ? 'var(--accent)' : 'var(--line)'),
+          fontFamily: 'var(--display)', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em',
+        }}>{l}</button>
+      ))}
+      <span style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.08em' }}>
+        {dim === 'dur' ? 'continui per durata del pezzo · intervalli per durata della ripetuta' : 'continui per distanza del pezzo · intervalli per distanza della ripetuta'}
+      </span>
+    </div>
+  );
 
   // ---- tabella di classe (continui e intervalli) ----
   const ClsTable = ({ cls, rows, second }) => {
@@ -153,8 +191,9 @@ function ProgressionePage() {
           dicono quando hai alzato l'asticella di quella durata; <span style={{ color: 'var(--accent)' }}>● BEST ATTUALE</span> è il detentore di oggi. La prima riga è solo il punto di partenza, mai un record. Watt e pace dal logbook C2 · le date con * sono lette
           dal FIT appena registrato, in attesa di controprova col prossimo riepilogo stagione.
         </div>
+        <DimToggle />
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
-          {P.cls.map((c, i) => <ClsTable key={i} cls={'PEZZI ' + c.cls} rows={c.rows} second="PEZZO" />)}
+          {contGroups.map((c, i) => <ClsTable key={dim + i} cls={c.cls} rows={c.rows} second="PEZZO" />)}
         </div>
       </ModulePanel>
 
@@ -165,7 +204,7 @@ function ProgressionePage() {
           La struttura è scritta riga per riga: confronta strutture simili — a parità di watt, meno recupero = più forte. La colonna S/M dice a che colpi: stessi watt a colpi più bassi = colpo più potente.
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
-          {P.ints.map((c, i) => <ClsTable key={i} cls={c.cls} rows={c.rows} second="STRUTTURA" />)}
+          {intGroups.map((c, i) => <ClsTable key={dim + i} cls={c.cls} rows={c.rows} second="STRUTTURA" />)}
         </div>
       </ModulePanel>
 
