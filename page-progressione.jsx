@@ -4,7 +4,7 @@ function ProgressionePage() {
   const [mach, setMach] = React.useState('row');
   const P = PROG[mach];
 
-  const ERA_COL = ['oklch(50% 0.02 260)', 'var(--fg-3)', 'oklch(72% 0.10 250)', 'var(--accent)'];
+  const ERA_COL = ['oklch(45% 0.06 300)', 'oklch(50% 0.02 260)', 'var(--fg-3)', 'oklch(72% 0.10 250)', 'var(--accent)'];
   const BAND_COL = { Z2: 'var(--accent)', Z3: 'oklch(75% 0.15 60)' };
   const nTot = P.pd.reduce((a, r) => a + r.tot, 0);
 
@@ -33,11 +33,11 @@ function ProgressionePage() {
         const path = pts.map((p, k) => (k ? 'L' : 'M') + p[0] + ' ' + p[1]).join(' ');
         return (
           <g key={e}>
-            <path d={path} fill="none" stroke={ERA_COL[e]} strokeWidth={e === 3 ? 2.5 : 1.5} opacity={e === 3 ? 1 : 0.85} />
+            <path d={path} fill="none" stroke={ERA_COL[e]} strokeWidth={e === 4 ? 2.5 : 1.5} opacity={e === 4 ? 1 : 0.85} />
             {pts.map(p => (
               <g key={p[3]}>
-                <circle cx={p[0]} cy={p[1]} r={e === 3 ? 4 : 2.5} fill={ERA_COL[e]} />
-                {(e === 3 || e === 1) && <text x={p[0]} y={p[1] + (e === 3 ? -8 : 14)} textAnchor="middle" fontSize="10"
+                <circle cx={p[0]} cy={p[1]} r={e === 4 ? 4 : 2.5} fill={ERA_COL[e]} />
+                {(e === 4 || e === 2) && <text x={p[0]} y={p[1] + (e === 4 ? -8 : 14)} textAnchor="middle" fontSize="10"
                   fill={ERA_COL[e]} fontFamily="var(--display)" fontWeight="700">{p[2]}</text>}
               </g>
             ))}
@@ -51,10 +51,10 @@ function ProgressionePage() {
   const pdRows = DURS.map((D, i) => {
     const cells = P.pd.map(era => era.vals[i]);
     const firstIdx = cells.findIndex(c => c && c.w);
-    const last = cells[3];
+    const last = cells[cells.length - 1];
     const first = firstIdx >= 0 ? cells[firstIdx] : null;
     let delta = null;
-    if (first && first.w && last && last.w && firstIdx < 3)
+    if (first && first.w && last && last.w && firstIdx < cells.length - 1)
       delta = { v: last.w - first.w, p: (last.w - first.w) / first.w * 100 };
     return { D, cells, delta, firstIdx };
   });
@@ -174,7 +174,7 @@ function ProgressionePage() {
               <tr key={r.D} style={{ borderTop: '1px dashed var(--line-2)' }}>
                 <td style={{ padding: '6px 6px', color: 'var(--fg-2)' }}>≥{r.D}′</td>
                 {r.cells.map((c, e) => (
-                  <td key={e} style={{ textAlign: 'right', padding: '6px 6px', color: e === 3 ? 'var(--fg)' : 'var(--fg-2)' }}>
+                  <td key={e} style={{ textAlign: 'right', padding: '6px 6px', color: e === P.pd.length - 1 ? 'var(--fg)' : 'var(--fg-2)' }}>
                     {c && c.w ? <span>{c.w} W <span style={{ color: 'var(--fg-3)', fontSize: 9 }}>{c.pace}</span></span> : <span style={{ color: 'var(--fg-3)' }}>—</span>}
                   </td>
                 ))}

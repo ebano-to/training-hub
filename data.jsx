@@ -1182,9 +1182,40 @@ const TOTALS = {
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
  "built": "04/08/2026",
- "firstDate": "08/05/2025",
+ "firstDate": "01/01/2025",
  "ski": {
   "pd": [
+   {
+    "era": "GEN-APR 25",
+    "n": 0,
+    "tot": 0,
+    "vals": [
+     {
+      "min": 4,
+      "w": null
+     },
+     {
+      "min": 10,
+      "w": null
+     },
+     {
+      "min": 20,
+      "w": null
+     },
+     {
+      "min": 30,
+      "w": null
+     },
+     {
+      "min": 45,
+      "w": null
+     },
+     {
+      "min": 60,
+      "w": null
+     }
+    ]
+   },
    {
     "era": "MAG-AGO 25",
     "n": 0,
@@ -1464,6 +1495,49 @@ const PROG = {
  },
  "row": {
   "pd": [
+   {
+    "era": "GEN-APR 25",
+    "n": 14,
+    "tot": 26,
+    "vals": [
+     {
+      "min": 4,
+      "w": 228,
+      "pace": "1:55.4",
+      "d": "25/04/25",
+      "dur": 20,
+      "desc": "v20:00/r...1 row"
+     },
+     {
+      "min": 10,
+      "w": 228,
+      "pace": "1:55.4",
+      "d": "25/04/25",
+      "dur": 20,
+      "desc": "v20:00/r...1 row"
+     },
+     {
+      "min": 20,
+      "w": 228,
+      "pace": "1:55.4",
+      "d": "25/04/25",
+      "dur": 20,
+      "desc": "v20:00/r...1 row"
+     },
+     {
+      "min": 30,
+      "w": null
+     },
+     {
+      "min": 45,
+      "w": null
+     },
+     {
+      "min": 60,
+      "w": null
+     }
+    ]
+   },
    {
     "era": "MAG-AGO 25",
     "n": 1,
