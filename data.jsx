@@ -1112,7 +1112,7 @@ const WEEK = [
   { day: 'MAR', date: '04', title: 'TAPIS 15\' @10% + BIKE Z2 + FORZA', sub: 'Progressione: blocco da 12\' → 15\' allo stesso target · Bike spinning, Deadlift e Push Press spostati da MER', load: 'Z2-Z4', duration: 115, kind: 'multierg', done: false,
     blocks: [
       { code: 'RUN', t: 'Tapis · 15\' pendenza 10% a 155 bpm', d: 'Gabriele · 15\' risc + 15\' @10% a 155 bpm (Z4) + rec 8\' corsetta in pianura + 10\' defa · vs 29/07: +3\' di blocco, stesso target', dur: '48\'', result: 'da fare' },
-      { code: 'BIKE', t: 'Bike Erg (spinning) 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Bike Erg (spinning) 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: '30:00 · 17,530 km · 257 W avg · 35,1 km/h · 90 rpm · HR 123/136 · Z2 84% · dec +1,2%' },
       { code: 'DL', t: 'Deadlift 5×3 @70% (110 kg)', d: 'Mattia · 70% di 1RM 157,5 = 110,25 → barra 110 kg · dischi/lato: 20+20+5', dur: '20\'', result: 'da fare' },
       { code: 'PUSH', t: 'Push Press 6×3 @70%', d: 'Mattia · ⚠️ 1RM push press non testato (14/05 MAV 3×3 @50 kg, strict press 1RM 65): carico da definire con Mattia', dur: '15\'', result: 'da fare' },
     ]
@@ -1167,7 +1167,7 @@ const PBS = [
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 11.627];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,16.899, 0.0];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 0.0];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 15.214];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
 // Totals (real)
@@ -1175,8 +1175,8 @@ const TOTALS = {
   rower: 671.845,
   ski: 618.854,
   run: 636.537,
-  bike: 301.888,
-  total: 2229.124,
+  bike: 319.418,
+  total: 2246.654,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -6986,6 +6986,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '04 AGO', title: 'Bike \u00b7 Spinning \u00b7 30\u2032 Z2', kind: 'bike', filone: 'bike-spinning', filoneLabel: 'Spinning', m: { fcMed: '123', fcMax: '136', dec: '+1.2%', cad: '90', dist: '17,530 km', dur: '30:00', watt: '257' }, dur: 30, load: 'Z2', rpe: 3, note: 'Z2 centrata: 84% del tempo in banda, mai sopra 136\nOcchio ai watt: il group cycle misura a modo suo (257 W in Z2)\nnon confrontarli con la Ride n\u00e9 con l\u2019FTP 237',
+    details: { summary: '30:00 continui @257 W \u00b7 17,530 km \u00b7 90 rpm costanti.\nFC 123/136: 84% del tempo in Z2 (120-135), 16% sotto, mai sopra 136 \u2014 prescrizione centrata.\nSeconda met\u00e0 +12 W (251\u2192263) con FC +7 (119,5\u2192126,8): decoupling +1,2%.\nEF 2,10\u21922,07 su potenza del group cycle: scala diversa da Ride e FTP, confronti solo spinning-vs-spinning.\nDati dal TCX Technogym, fascia FC collegata.' } },
   { date: '03 AGO', title: 'Row · VO2 Max W1 · 4×4:00', kind: 'row', filone: 'row-vo2', filoneLabel: 'Row VO2 Max', m: { lavoro: '4×4:00', dist: '4.518 m', dur: '16:00', pace: '1:46.2', unit: '/500m', watt: '292', fcMed: '144,5', fcMax: '162', df: '88', src: 'fit' }, dur: 54, load: 'Z3-Z5', rpe: 8, note: 'Target 1:46-1:48 centrato, negative split: chiusa a 1:45.5\nDecoupling +0,5%: tenuta piena a fine set\nRichiami 2k in WU sopra la stima (1:43-1:44): 340-361 W',
     details: { summary: '4×4:00 tutte nel target 278-294 W: 288 · 288 · 295 · 298 — negative split come chiesto da Mattia.\nPace 1:46.7 · 1:46.7 · 1:45.9 · 1:45.5 — l\'ultima sotto il floor.\nFC per rep 140 · 144 · 146 · 148 (picchi 153→162), ma EF stabile: 2,06 → 2,02.\nSPM 28-27-27-27, costanti come richiesto.\nRec attivo pagaiato: 474-507 m a giro (~2:58-3:11/500), FC giù a 116-125.\nRichiami 2k in WU: 3×20″ @340 · 361 · 350 W (1:41.0 · 1:39.0 · 1:40.0).\nWU 2.350 m @168 W · defa 2.179 m @134 W · totale 11.627 m · 651 cal · 1.193 colpi.\nLavoro complessivo 37:00 per 9.345 m @209 W · DF 88.',
       ergTable: { fcMed: 144, fcMax: 162, efTot: '2.02', dec: [{ m: 'ROW', v: '+0.5%' }], total: { tempo: '53:37', metri: '11,627', pace: '—', watt: '—', calh: '—', sm: 25, ef: '—', fcmed: 127, fcmax: 163, zona: 'Z2', cal: 651, colpi: 1193, maxpw: 382 }, rows: [{ m: 'ROW', split: 'WU 10\'', tempo: '10:00', metri: '2,350', pace: '2:07.6', watt: 168, calh: 900, sm: 23, ef: '1.47', fcmed: 114, fcmax: 127, zona: 'Z1', t: 0 }, { m: 'ROW', split: 'WU 20" 1', tempo: '0:20', metri: '99', pace: '1:41.0', watt: 340, calh: 1440, sm: 30, ef: '2.61', fcmed: 130, fcmax: 134, zona: 'Z2', t: 0 }, { m: 'ROW', split: 'WU 20" 2', tempo: '0:20', metri: '101', pace: '1:39.0', watt: 361, calh: 1440, sm: 33, ef: '2.83', fcmed: 128, fcmax: 133, zona: 'Z2', t: 0 }, { m: 'ROW', split: 'WU 20" 3', tempo: '0:20', metri: '100', pace: '1:40.0', watt: 350, calh: 1440, sm: 33, ef: '2.82', fcmed: 124, fcmax: 131, zona: 'Z2', t: 0 }, { m: 'ROW', split: 'rec', tempo: '3:12', metri: '42', pace: '—', watt: '—', calh: '—', sm: 0, ef: '—', fcmed: '—', fcmax: '—', zona: '—', t: 0 }, { m: 'ROW', split: 'rep 1', tempo: '4:00', metri: '1,124', pace: '1:46.7', watt: 288, calh: 1290, sm: 28, ef: '2.06', fcmed: 140, fcmax: 153, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'rec 1', tempo: '3:01', metri: '507', pace: '2:58.5', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 116, fcmax: 152, zona: 'Z1', t: 0 }, { m: 'ROW', split: 'rep 2', tempo: '4:00', metri: '1,124', pace: '1:46.7', watt: 288, calh: 1290, sm: 27, ef: '2.00', fcmed: 144, fcmax: 155, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'rec 2', tempo: '3:01', metri: '474', pace: '3:10.9', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 119, fcmax: 154, zona: 'Z1', t: 0 }, { m: 'ROW', split: 'rep 3', tempo: '4:00', metri: '1,133', pace: '1:45.9', watt: 295, calh: 1320, sm: 27, ef: '2.02', fcmed: 146, fcmax: 160, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'rec 3', tempo: '3:00', metri: '494', pace: '3:02.2', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 120, fcmax: 160, zona: 'Z2', t: 0 }, { m: 'ROW', split: 'rep 4', tempo: '4:00', metri: '1,137', pace: '1:45.5', watt: 298, calh: 1335, sm: 27, ef: '2.02', fcmed: 148, fcmax: 162, zona: 'Z3', t: 1 }, { m: 'ROW', split: 'rec 4', tempo: '3:01', metri: '495', pace: '3:02.8', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 125, fcmax: 163, zona: 'Z2', t: 0 }, { m: 'ROW', split: 'DEFA 10\'', tempo: '10:00', metri: '2,179', pace: '2:17.6', watt: 134, calh: 768, sm: 24, ef: '1.15', fcmed: 117, fcmax: 123, zona: 'Z1', t: 0 }] } } },
@@ -10058,12 +10060,12 @@ const BADGES = {
       why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
       go: '100 km in 7 giorni vogliono un\'uscita lunga piu\' due medie nella stessa settimana.' },
     { n: 'Tour di agosto', en: 'August Tour', cat: 'BIKE', tipo: 'cumulativa',
-      req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '57,215 / 400,0 km (sito, 03/08)',
-      why: 'Restano 342,8 km su 28 giorni = 12,2 km al giorno, tutti i giorni.',
+      req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '74,745 / 400,0 km (sito, 04/08)',
+      why: 'Restano 325,3 km su 27 giorni = 12 km al giorno, tutti i giorni.',
       go: 'Vorrebbe dire riscrivere il mese attorno alla bici in piena preparazione Hyrox.' },
     { n: 'Bici ad agosto', en: 'August Time to Ride', cat: 'BIKE', tipo: 'cumulativa',
-      req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '2h30m / 20h (sito, 03/08)',
-      why: 'Restano 17h30m su 28 giorni = circa 4h20m a settimana in sella.',
+      req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '3h00m / 20h (sito, 04/08)',
+      why: 'Restano 17h su 27 giorni = circa 4h25m a settimana in sella.',
       go: 'Si avvicina solo contando anche le sedute indoor lunghe.' },
     // ── CAMMINATA
     { n: 'Weekend di camminata ad agosto', en: 'August Weekend Walking', cat: 'WALK', tipo: 'singola',
