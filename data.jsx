@@ -1179,6 +1179,556 @@ const TOTALS = {
   total: 2229.124,
 };
 
+// PROG_START — generato da scripts/build_progressione.py, non editare a mano
+const PROG = {
+ "built": "04/08/2026",
+ "firstDate": "08/05/2025",
+ "ski": {
+  "pd": [
+   {
+    "era": "MAG-AGO 25",
+    "n": 0,
+    "tot": 0,
+    "vals": [
+     {
+      "min": 4,
+      "w": null
+     },
+     {
+      "min": 10,
+      "w": null
+     },
+     {
+      "min": 20,
+      "w": null
+     },
+     {
+      "min": 30,
+      "w": null
+     },
+     {
+      "min": 45,
+      "w": null
+     },
+     {
+      "min": 60,
+      "w": null
+     }
+    ]
+   },
+   {
+    "era": "SET-DIC 25",
+    "n": 7,
+    "tot": 20,
+    "vals": [
+     {
+      "min": 4,
+      "w": 191,
+      "pace": "2:02.4",
+      "d": "04/10/25",
+      "dur": 8,
+      "desc": "2000m SkiErg"
+     },
+     {
+      "min": 10,
+      "w": 169,
+      "pace": "2:07.5",
+      "d": "27/11/25",
+      "dur": 21,
+      "desc": "5000m SkiErg"
+     },
+     {
+      "min": 20,
+      "w": 169,
+      "pace": "2:07.5",
+      "d": "27/11/25",
+      "dur": 21,
+      "desc": "5000m SkiErg"
+     },
+     {
+      "min": 30,
+      "w": 168,
+      "pace": "2:07.7",
+      "d": "22/10/25",
+      "dur": 43,
+      "desc": "10000m SkiErg"
+     },
+     {
+      "min": 45,
+      "w": null
+     },
+     {
+      "min": 60,
+      "w": null
+     }
+    ]
+   },
+   {
+    "era": "GEN-APR 26",
+    "n": 61,
+    "tot": 81,
+    "vals": [
+     {
+      "min": 4,
+      "w": 288,
+      "pace": "1:46.7",
+      "d": "24/04/26",
+      "dur": 7,
+      "desc": "2000m SkiErg"
+     },
+     {
+      "min": 10,
+      "w": 211,
+      "pace": "1:58.4",
+      "d": "23/02/26",
+      "dur": 28,
+      "desc": "7000m SkiErg"
+     },
+     {
+      "min": 20,
+      "w": 211,
+      "pace": "1:58.4",
+      "d": "23/02/26",
+      "dur": 28,
+      "desc": "7000m SkiErg"
+     },
+     {
+      "min": 30,
+      "w": 171,
+      "pace": "2:07.0",
+      "d": "09/03/26",
+      "dur": 34,
+      "desc": "8000m SkiErg"
+     },
+     {
+      "min": 45,
+      "w": 168,
+      "pace": "2:07.7",
+      "d": "23/03/26",
+      "dur": 55,
+      "desc": "55:00 SkiErg"
+     },
+     {
+      "min": 60,
+      "w": 165,
+      "pace": "2:08.5",
+      "d": "27/04/26",
+      "dur": 60,
+      "desc": "1:00:00 SkiErg"
+     }
+    ]
+   },
+   {
+    "era": "MAG-AGO 26",
+    "n": 21,
+    "tot": 34,
+    "vals": [
+     {
+      "min": 4,
+      "w": 211,
+      "pace": "1:58.4",
+      "d": "31/07/26",
+      "dur": 30,
+      "desc": "30:00 SkiErg"
+     },
+     {
+      "min": 10,
+      "w": 211,
+      "pace": "1:58.4",
+      "d": "31/07/26",
+      "dur": 30,
+      "desc": "30:00 SkiErg"
+     },
+     {
+      "min": 20,
+      "w": 211,
+      "pace": "1:58.4",
+      "d": "31/07/26",
+      "dur": 30,
+      "desc": "30:00 SkiErg"
+     },
+     {
+      "min": 30,
+      "w": 211,
+      "pace": "1:58.4",
+      "d": "31/07/26",
+      "dur": 30,
+      "desc": "30:00 SkiErg"
+     },
+     {
+      "min": 45,
+      "w": 174,
+      "pace": "2:06.2",
+      "d": "03/05/26",
+      "dur": 60,
+      "desc": "1:00:00 SkiErg"
+     },
+     {
+      "min": 60,
+      "w": 174,
+      "pace": "2:06.2",
+      "d": "03/05/26",
+      "dur": 60,
+      "desc": "1:00:00 SkiErg"
+     }
+    ]
+   }
+  ],
+  "ef": {
+   "Z2": [
+    {
+     "mth": "2025-10",
+     "ef": 1.333,
+     "n": 1
+    },
+    {
+     "mth": "2025-11",
+     "ef": 1.363,
+     "n": 1
+    },
+    {
+     "mth": "2025-12",
+     "ef": 1.219,
+     "n": 1
+    },
+    {
+     "mth": "2026-01",
+     "ef": 1.258,
+     "n": 5
+    },
+    {
+     "mth": "2026-02",
+     "ef": 1.285,
+     "n": 4
+    },
+    {
+     "mth": "2026-03",
+     "ef": 1.341,
+     "n": 7
+    },
+    {
+     "mth": "2026-04",
+     "ef": 1.29,
+     "n": 4
+    },
+    {
+     "mth": "2026-05",
+     "ef": 1.302,
+     "n": 2
+    },
+    {
+     "mth": "2026-06",
+     "ef": 1.317,
+     "n": 1
+    },
+    {
+     "mth": "2026-07",
+     "ef": 1.183,
+     "n": 1
+    }
+   ],
+   "Z3": [
+    {
+     "mth": "2026-02",
+     "ef": 1.459,
+     "n": 2
+    },
+    {
+     "mth": "2026-06",
+     "ef": 1.4,
+     "n": 1
+    },
+    {
+     "mth": "2026-07",
+     "ef": 1.455,
+     "n": 1
+    }
+   ]
+  },
+  "anchors": [
+   {
+    "name": "Test Aerobico 30′ @145 bpm",
+    "base": "03/06/26 · 7.500 m",
+    "last": "31/07/26 · 7.602 m",
+    "delta": "+102 m (+1.4%)",
+    "note": "DF 60 vs 61 del baseline"
+   },
+   {
+    "name": "2K all-out",
+    "base": "—",
+    "last": "24/04/26 · 7:06.7 (1:46.7/500)",
+    "delta": "primo test dedicato",
+    "note": "riferimenti precedenti non confrontabili: il 2.000 m del 07/02 (7:14.2) è il 5×400 sommato, non un 2k continuo; i 2k del 04/10/25 erano blandi (2:02-2:04/500)"
+   }
+  ]
+ },
+ "row": {
+  "pd": [
+   {
+    "era": "MAG-AGO 25",
+    "n": 1,
+    "tot": 4,
+    "vals": [
+     {
+      "min": 4,
+      "w": null
+     },
+     {
+      "min": 10,
+      "w": null
+     },
+     {
+      "min": 20,
+      "w": null
+     },
+     {
+      "min": 30,
+      "w": null
+     },
+     {
+      "min": 45,
+      "w": null
+     },
+     {
+      "min": 60,
+      "w": null
+     }
+    ]
+   },
+   {
+    "era": "SET-DIC 25",
+    "n": 6,
+    "tot": 23,
+    "vals": [
+     {
+      "min": 4,
+      "w": 218,
+      "pace": "1:57.1",
+      "d": "04/10/25",
+      "dur": 8,
+      "desc": "7:53 row"
+     },
+     {
+      "min": 10,
+      "w": 204,
+      "pace": "1:59.7",
+      "d": "21/10/25",
+      "dur": 40,
+      "desc": "10000m row"
+     },
+     {
+      "min": 20,
+      "w": 204,
+      "pace": "1:59.7",
+      "d": "21/10/25",
+      "dur": 40,
+      "desc": "10000m row"
+     },
+     {
+      "min": 30,
+      "w": 204,
+      "pace": "1:59.7",
+      "d": "21/10/25",
+      "dur": 40,
+      "desc": "10000m row"
+     },
+     {
+      "min": 45,
+      "w": null
+     },
+     {
+      "min": 60,
+      "w": null
+     }
+    ]
+   },
+   {
+    "era": "GEN-APR 26",
+    "n": 53,
+    "tot": 70,
+    "vals": [
+     {
+      "min": 4,
+      "w": 259,
+      "pace": "1:50.6",
+      "d": "04/02/26",
+      "dur": 18,
+      "desc": "5000m row"
+     },
+     {
+      "min": 10,
+      "w": 259,
+      "pace": "1:50.6",
+      "d": "04/02/26",
+      "dur": 18,
+      "desc": "5000m row"
+     },
+     {
+      "min": 20,
+      "w": 214,
+      "pace": "1:57.8",
+      "d": "21/02/26",
+      "dur": 43,
+      "desc": "11000m row"
+     },
+     {
+      "min": 30,
+      "w": 214,
+      "pace": "1:57.8",
+      "d": "21/02/26",
+      "dur": 43,
+      "desc": "11000m row"
+     },
+     {
+      "min": 45,
+      "w": 199,
+      "pace": "2:00.7",
+      "d": "28/02/26",
+      "dur": 48,
+      "desc": "12000m row"
+     },
+     {
+      "min": 60,
+      "w": 175,
+      "pace": "2:06.0",
+      "d": "11/04/26",
+      "dur": 75,
+      "desc": "1:15:00 row"
+     }
+    ]
+   },
+   {
+    "era": "MAG-AGO 26",
+    "n": 17,
+    "tot": 34,
+    "vals": [
+     {
+      "min": 4,
+      "w": 284,
+      "pace": "1:47.2",
+      "d": "10/05/26",
+      "dur": 18,
+      "desc": "5000m row"
+     },
+     {
+      "min": 10,
+      "w": 284,
+      "pace": "1:47.2",
+      "d": "10/05/26",
+      "dur": 18,
+      "desc": "5000m row"
+     },
+     {
+      "min": 20,
+      "w": 237,
+      "pace": "1:53.9",
+      "d": "27/07/26",
+      "dur": 30,
+      "desc": "30:00 row"
+     },
+     {
+      "min": 30,
+      "w": 237,
+      "pace": "1:53.9",
+      "d": "27/07/26",
+      "dur": 30,
+      "desc": "30:00 row"
+     },
+     {
+      "min": 45,
+      "w": 182,
+      "pace": "2:04.4",
+      "d": "04/05/26",
+      "dur": 60,
+      "desc": "1:00:00 row"
+     },
+     {
+      "min": 60,
+      "w": 182,
+      "pace": "2:04.4",
+      "d": "04/05/26",
+      "dur": 60,
+      "desc": "1:00:00 row"
+     }
+    ]
+   }
+  ],
+  "ef": {
+   "Z2": [
+    {
+     "mth": "2025-10",
+     "ef": 1.545,
+     "n": 1
+    },
+    {
+     "mth": "2025-12",
+     "ef": 1.361,
+     "n": 1
+    },
+    {
+     "mth": "2026-01",
+     "ef": 1.399,
+     "n": 8
+    },
+    {
+     "mth": "2026-02",
+     "ef": 1.462,
+     "n": 4
+    },
+    {
+     "mth": "2026-03",
+     "ef": 1.379,
+     "n": 4
+    },
+    {
+     "mth": "2026-04",
+     "ef": 1.352,
+     "n": 3
+    },
+    {
+     "mth": "2026-06",
+     "ef": 1.46,
+     "n": 1
+    }
+   ],
+   "Z3": [
+    {
+     "mth": "2026-02",
+     "ef": 1.562,
+     "n": 2
+    },
+    {
+     "mth": "2026-06",
+     "ef": 1.625,
+     "n": 1
+    },
+    {
+     "mth": "2026-07",
+     "ef": 1.612,
+     "n": 1
+    }
+   ]
+  },
+  "anchors": [
+   {
+    "name": "Test Aerobico 30′ @145 bpm",
+    "base": "02/06/26 · 7.871 m",
+    "last": "27/07/26 · 7.901 m",
+    "delta": "+30 m (+0,4%)",
+    "note": "DF 85 vs 75 del baseline: prossimo retest a DF 75"
+   },
+   {
+    "name": "5K all-out",
+    "base": "04/02/26 · 18:25.0 (1:50.5/500)",
+    "last": "10/05/26 · 17:52.0 (1:47.2/500)",
+    "delta": "−33,0 s (−3,0%)",
+    "note": "PR test ufficiale"
+   }
+  ]
+ }
+};
+// PROG_END
+
 // EF Trend — real Z2 SkiErg data
 const EF_TREND = [
   { date: '03/01', ef: 1.27, power: 155, hr: 122 },
@@ -4370,4 +4920,5 @@ const HYDRATION = [
     sweatTotal: 4150, sweatRate: 1556, rehydTarget: 6225, rehydRemaining: 3975 },
 ];
 
-window.TRAINING = { RACE, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };
+window.TRAINING = {
+  PROG, RACE, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };
