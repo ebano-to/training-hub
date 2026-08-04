@@ -1,65 +1,57 @@
-// PROGRESSIONE — ski/row: curva potenza-durata per epoca, EF, ancore Tier 1
+// PROGRESSIONE — ski/row: ancore Tier 1, tabelle per durata, intervalli, EF
 function ProgressionePage() {
   const { PROG } = window.TRAINING;
   const [mach, setMach] = React.useState('row');
   const P = PROG[mach];
 
-  const ERA_COL = ['oklch(45% 0.06 300)', 'oklch(50% 0.02 260)', 'var(--fg-3)', 'oklch(72% 0.10 250)', 'var(--accent)'];
   const BAND_COL = { Z2: 'var(--accent)', Z3: 'oklch(75% 0.15 60)' };
+  const PB_BG = 'oklch(88% 0.20 130 / 0.07)';
   const nTot = P.pd.reduce((a, r) => a + r.tot, 0);
 
-  // ---- chart potenza-durata ----
-  const DURS = P.pd[0].vals.map(v => v.min);
-  const allW = P.pd.flatMap(r => r.vals.filter(v => v.w).map(v => v.w));
-  const wMin = Math.floor((Math.min(...allW) - 15) / 20) * 20, wMax = Math.ceil((Math.max(...allW) + 15) / 20) * 20;
-  const CW = 760, CH = 300, padL = 46, padR = 16, padT = 14, padB = 30;
-  const x = i => padL + i * (CW - padL - padR) / (DURS.length - 1);
-  const y = w => padT + (wMax - w) * (CH - padT - padB) / (wMax - wMin);
-
-  const pdChart = (
-    <svg viewBox={'0 0 ' + CW + ' ' + CH} width="100%" style={{ display: 'block' }}>
-      {Array.from({ length: (wMax - wMin) / 20 + 1 }, (_, k) => wMin + k * 20).map(w => (
-        <g key={w}>
-          <line x1={padL} x2={CW - padR} y1={y(w)} y2={y(w)} stroke="var(--line)" strokeWidth="0.5" />
-          <text x={padL - 6} y={y(w) + 3} textAnchor="end" fontSize="9" fill="var(--fg-3)" fontFamily="var(--mono)">{w}</text>
-        </g>
-      ))}
-      {DURS.map((d, i) => (
-        <text key={d} x={x(i)} y={CH - 10} textAnchor="middle" fontSize="10" fill="var(--fg-3)" fontFamily="var(--mono)">{d}′</text>
-      ))}
-      {P.pd.map((era, e) => {
-        const pts = era.vals.map((v, i) => v.w ? [x(i), y(v.w), v.w, i] : null).filter(Boolean);
-        if (!pts.length) return null;
-        const path = pts.map((p, k) => (k ? 'L' : 'M') + p[0] + ' ' + p[1]).join(' ');
-        return (
-          <g key={e}>
-            <path d={path} fill="none" stroke={ERA_COL[e]} strokeWidth={e === 4 ? 2.5 : 1.5} opacity={e === 4 ? 1 : 0.85} />
-            {pts.map(p => (
-              <g key={p[3]}>
-                <circle cx={p[0]} cy={p[1]} r={e === 4 ? 4 : 2.5} fill={ERA_COL[e]} />
-                {(e === 4 || e === 2) && <text x={p[0]} y={p[1] + (e === 4 ? -8 : 14)} textAnchor="middle" fontSize="10"
-                  fill={ERA_COL[e]} fontFamily="var(--display)" fontWeight="700">{p[2]}</text>}
-              </g>
+  // ---- tabella di classe (continui e intervalli) ----
+  const ClsTable = ({ cls, rows, second }) => {
+    if (!rows.length) return null;
+    const best = Math.max(...rows.map(r => r.w));
+    const first = rows[0].w;
+    return (
+      <div style={{ border: '1px solid var(--line-2)', background: 'var(--bg-3)', padding: '12px 14px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+          <span className="display" style={{ fontSize: 16, letterSpacing: '0.04em' }}>{cls}</span>
+          <span style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--fg-3)' }}>
+            primo {first} W → best <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{best} W</span>
+            {best > first ? <span style={{ color: 'var(--accent)' }}> (+{Math.round((best - first) / first * 100)}%)</span> : null}
+          </span>
+        </div>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 10.5, fontFamily: 'var(--mono)' }}>
+          <thead>
+            <tr style={{ color: 'var(--fg-3)', fontSize: 8.5, letterSpacing: '0.12em', textAlign: 'right' }}>
+              <th style={{ textAlign: 'left', padding: '2px 4px' }}>DATA</th>
+              <th style={{ textAlign: 'left', padding: '2px 4px' }}>{second}</th>
+              <th style={{ padding: '2px 4px' }}>WATT</th>
+              <th style={{ padding: '2px 4px' }}>PACE /500m</th>
+              <th style={{ padding: '2px 4px' }}>FC</th>
+              <th style={{ padding: '2px 4px' }}></th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i} style={{ borderTop: '1px dashed var(--line-2)', background: r.pb ? PB_BG : 'transparent', textAlign: 'right' }}>
+                <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-3)' }}>{r.d}</td>
+                <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-2)' }}>{r.struttura || r.pezzo}</td>
+                <td style={{ padding: '3px 4px', color: r.pb ? 'var(--accent)' : 'var(--fg)', fontWeight: r.pb ? 700 : 400 }}>{r.w}</td>
+                <td style={{ padding: '3px 4px', color: 'var(--fg-2)' }}>{r.pace}</td>
+                <td style={{ padding: '3px 4px', color: r.hr ? '#E0857E' : 'var(--fg-3)' }}>{r.hr || '—'}</td>
+                <td style={{ padding: '3px 4px', fontSize: 8.5, letterSpacing: '0.1em', color: 'var(--accent)' }}>{r.pb ? '▲ BEST' : ''}</td>
+              </tr>
             ))}
-          </g>
-        );
-      })}
-    </svg>
-  );
-
-  // tabella delta: primo dato documentato vs epoca corrente
-  const pdRows = DURS.map((D, i) => {
-    const cells = P.pd.map(era => era.vals[i]);
-    const firstIdx = cells.findIndex(c => c && c.w);
-    const last = cells[cells.length - 1];
-    const first = firstIdx >= 0 ? cells[firstIdx] : null;
-    let delta = null;
-    if (first && first.w && last && last.w && firstIdx < cells.length - 1)
-      delta = { v: last.w - first.w, p: (last.w - first.w) / first.w * 100 };
-    return { D, cells, delta, firstIdx };
-  });
+          </tbody>
+        </table>
+      </div>
+    );
+  };
 
   // ---- chart EF ----
+  const CW = 760, padL = 46, padR = 16, padT = 14;
   const MONTHS = [];
   for (let yy = 2025, mm = 5; yy < 2027 && !(yy === 2026 && mm > 8); mm === 12 ? (yy++, mm = 1) : mm++)
     MONTHS.push(yy + '-' + String(mm).padStart(2, '0'));
@@ -150,46 +142,25 @@ function ProgressionePage() {
         </div>
       </ModulePanel>
 
-      {/* Curva potenza-durata */}
-      <ModulePanel code="MOD.PD · watt_su_durata_per_epoca">
-        <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 10, fontSize: 10, letterSpacing: '0.1em' }}>
-          {P.pd.map((era, e) => (
-            <span key={e} style={{ display: 'flex', alignItems: 'center', gap: 6, color: ERA_COL[e] }}>
-              <span style={{ width: 14, height: 3, background: ERA_COL[e] }} />
-              {era.era} · {era.n} continui / {era.tot}
-            </span>
-          ))}
+      {/* Continui, una tabella per durata */}
+      <ModulePanel code="MOD.CONTINUI · una_tabella_per_durata">
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', marginBottom: 12, lineHeight: 1.6 }}>
+          Solo pezzi CONTINUI, in ordine di tempo: leggi dall'alto in basso e i <span style={{ color: 'var(--accent)' }}>▲ BEST</span> ti
+          dicono quando hai alzato l'asticella di quella durata. Watt e pace dal logbook C2, stessa fonte per tutto.
         </div>
-        {pdChart}
-        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: 14, fontSize: 11, fontFamily: 'var(--mono)' }}>
-          <thead>
-            <tr style={{ color: 'var(--fg-3)', fontSize: 9, letterSpacing: '0.12em' }}>
-              <th style={{ textAlign: 'left', padding: '4px 6px' }}>DURATA</th>
-              {P.pd.map((era, e) => <th key={e} style={{ textAlign: 'right', padding: '4px 6px', color: ERA_COL[e] }}>{era.era}</th>)}
-              <th style={{ textAlign: 'right', padding: '4px 6px' }}>Δ VS PRIMO DATO</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pdRows.map(r => (
-              <tr key={r.D} style={{ borderTop: '1px dashed var(--line-2)' }}>
-                <td style={{ padding: '6px 6px', color: 'var(--fg-2)' }}>≥{r.D}′</td>
-                {r.cells.map((c, e) => (
-                  <td key={e} style={{ textAlign: 'right', padding: '6px 6px', color: e === P.pd.length - 1 ? 'var(--fg)' : 'var(--fg-2)' }}>
-                    {c && c.w ? <span>{c.w} W <span style={{ color: 'var(--fg-3)', fontSize: 9 }}>{c.pace}</span></span> : <span style={{ color: 'var(--fg-3)' }}>—</span>}
-                  </td>
-                ))}
-                <td style={{ textAlign: 'right', padding: '6px 6px' }}>
-                  {r.delta ? <span style={{ color: r.delta.v >= 0 ? 'var(--accent)' : 'oklch(70% 0.15 30)', fontWeight: 600 }}>
-                    {(r.delta.v >= 0 ? '+' : '−') + Math.abs(r.delta.v)} W ({(r.delta.v >= 0 ? '+' : '−') + Math.abs(r.delta.p).toFixed(0)}%)
-                  </span> : <span style={{ color: 'var(--fg-3)' }}>—</span>}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 10, lineHeight: 1.6 }}>
-          Solo pezzi continui del logbook C2 (intervalli esclusi) · inviluppo: miglior seduta con durata ≥ soglia ·
-          una casella più bassa della precedente significa «non provato in quell'epoca», non «peggiorato».
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
+          {P.cls.map((c, i) => <ClsTable key={i} cls={'PEZZI ' + c.cls} rows={c.rows} second="PEZZO" />)}
+        </div>
+      </ModulePanel>
+
+      {/* Intervalli, una tabella per durata di ripetuta */}
+      <ModulePanel code="MOD.INTERVALLI · per_durata_della_ripetuta">
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', marginBottom: 12, lineHeight: 1.6 }}>
+          Sedute a intervalli, raggruppate per durata della SINGOLA ripetuta. I watt sono la media del solo lavoro (i recuperi non contano).
+          La struttura è scritta riga per riga: confronta strutture simili — a parità di watt, meno recupero = più forte.
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
+          {P.ints.map((c, i) => <ClsTable key={i} cls={c.cls} rows={c.rows} second="STRUTTURA" />)}
         </div>
       </ModulePanel>
 
@@ -205,8 +176,8 @@ function ProgressionePage() {
         </div>
         {efChart || <div style={{ fontSize: 11, color: 'var(--fg-3)' }}>Nessun continuo ≥20′ in banda con FC registrata.</div>}
         <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 10, lineHeight: 1.6 }}>
-          EF = watt medi ÷ FC media, solo continui ≥20′ con fascia · n = sedute nel mese: con n così piccoli il trend è
-          indicativo — il giudizio vero sta nelle ancore qui sopra · il caldo estivo alza la FC: i mesi recenti partono svantaggiati.
+          EF = watt medi ÷ FC media, solo continui ≥20′ con fascia (la fascia c'è dal 30/09/25) · n = sedute nel mese: con n così
+          piccoli il trend è indicativo — il giudizio vero sta nelle ancore · il caldo estivo alza la FC: i mesi recenti partono svantaggiati.
         </div>
       </ModulePanel>
 
@@ -215,9 +186,10 @@ function ProgressionePage() {
         <div style={{ fontSize: 11, color: 'var(--fg-2)', lineHeight: 1.9, whiteSpace: 'pre-line' }}>
           {'Fonte unica: logbook Concept2 dal ' + PROG.firstDate + ' — stesso metro per 2025 e 2026, niente confronti tra metodi diversi.\n' +
            'Ancore Tier 1 = test identici ripetuti: sono le uniche righe da cui leggere «sono migliorato di X».\n' +
-           'Curva potenza-durata: solo sforzi continui — esclusi gli intervalli e gli aggregati mascherati (il «2k» ski del 07/02 era il 5×400 sommato).\n' +
-           'Pace↔watt è una relazione fisica fissa (indipendente dal drag factor): i watt qui sono confrontabili sempre.\n' +
-           'EF su banda FC: sensibile a caldo, sonno e drift — trend, mai verdetti da singola seduta.\n' +
+           'Continui e intervalli stanno in tabelle separate e non si confrontano mai tra loro.\n' +
+           'Pace↔watt è una relazione fisica fissa (indipendente dal drag factor): i watt sono confrontabili sempre.\n' +
+           'Aggregati mascherati esclusi: il «2k» ski del 07/02 era il 5×400 sommato.\n' +
+           'EF sensibile a caldo, sonno e drift — trend, mai verdetti da singola seduta.\n' +
            'Prossime ancore: retest di fine blocco a fine agosto (row a DF 75, ski a DF 61).'}
         </div>
       </ModulePanel>
