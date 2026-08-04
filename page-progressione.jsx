@@ -36,14 +36,14 @@ function ProgressionePage() {
           </thead>
           <tbody>
             {rows.map((r, i) => (
-              <tr key={i} style={{ borderTop: '1px dashed var(--line-2)', background: r.pb ? PB_BG : 'transparent', textAlign: 'right' }}>
+              <tr key={i} style={{ borderTop: '1px dashed var(--line-2)', background: r.cur ? 'oklch(88% 0.20 130 / 0.13)' : r.pb ? PB_BG : 'transparent', textAlign: 'right' }}>
                 <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-3)' }}>{r.d}</td>
                 <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-2)' }}>{r.struttura || r.pezzo}</td>
                 <td style={{ padding: '3px 4px', color: r.pb ? 'var(--accent)' : 'var(--fg)', fontWeight: r.pb ? 700 : 400 }}>{r.w}</td>
                 <td style={{ padding: '3px 4px', color: 'var(--fg-2)' }}>{r.pace}</td>
                 <td style={{ padding: '3px 4px', color: 'var(--fg-3)' }}>{r.spm || '—'}</td>
                 <td style={{ padding: '3px 4px', color: r.hr ? '#E0857E' : 'var(--fg-3)' }}>{r.hr || '—'}</td>
-                <td style={{ padding: '3px 4px', fontSize: 8.5, letterSpacing: '0.1em', color: 'var(--accent)' }}>{r.pb ? '▲ BEST' : ''}</td>
+                <td style={{ padding: '3px 4px', fontSize: 8.5, letterSpacing: '0.1em', color: 'var(--accent)', whiteSpace: 'nowrap' }}>{r.cur ? '● BEST ATTUALE' : r.pb ? '▲' : ''}</td>
               </tr>
             ))}
           </tbody>
@@ -148,7 +148,7 @@ function ProgressionePage() {
       <ModulePanel code="MOD.CONTINUI · una_tabella_per_durata">
         <div style={{ fontSize: 10, color: 'var(--fg-3)', marginBottom: 12, lineHeight: 1.6 }}>
           Solo pezzi CONTINUI, in ordine di tempo: leggi dall'alto in basso e i <span style={{ color: 'var(--accent)' }}>▲ BEST</span> ti
-          dicono quando hai alzato l'asticella di quella durata. Watt e pace dal logbook C2 · le date con * sono lette
+          dicono quando hai alzato l'asticella di quella durata; <span style={{ color: 'var(--accent)' }}>● BEST ATTUALE</span> è il detentore di oggi. La prima riga è solo il punto di partenza, mai un record. Watt e pace dal logbook C2 · le date con * sono lette
           dal FIT appena registrato, in attesa di controprova col prossimo riepilogo stagione.
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
