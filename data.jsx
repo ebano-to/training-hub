@@ -2747,7 +2747,7 @@ const PROG = {
    {
     "era": "MAG-AGO 26",
     "n": 17,
-    "tot": 34,
+    "tot": 35,
     "vals": [
      {
       "min": 4,
@@ -4045,6 +4045,14 @@ const PROG = {
       "w": 176,
       "pace": "2:05.8",
       "hr": 122,
+      "pb": false
+     },
+     {
+      "d": "03/08/26*",
+      "struttura": "4×4:00 +5",
+      "w": 209,
+      "pace": "1:58.8",
+      "hr": 128,
       "pb": false
      }
     ]

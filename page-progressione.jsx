@@ -146,7 +146,8 @@ function ProgressionePage() {
       <ModulePanel code="MOD.CONTINUI · una_tabella_per_durata">
         <div style={{ fontSize: 10, color: 'var(--fg-3)', marginBottom: 12, lineHeight: 1.6 }}>
           Solo pezzi CONTINUI, in ordine di tempo: leggi dall'alto in basso e i <span style={{ color: 'var(--accent)' }}>▲ BEST</span> ti
-          dicono quando hai alzato l'asticella di quella durata. Watt e pace dal logbook C2, stessa fonte per tutto.
+          dicono quando hai alzato l'asticella di quella durata. Watt e pace dal logbook C2 · le date con * sono lette
+          dal FIT appena registrato, in attesa di controprova col prossimo riepilogo stagione.
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
           {P.cls.map((c, i) => <ClsTable key={i} cls={'PEZZI ' + c.cls} rows={c.rows} second="PEZZO" />)}
@@ -184,7 +185,8 @@ function ProgressionePage() {
       {/* Metodo */}
       <ModulePanel code="MOD.METODO · cosa_conta_e_cosa_no">
         <div style={{ fontSize: 11, color: 'var(--fg-2)', lineHeight: 1.9, whiteSpace: 'pre-line' }}>
-          {'Fonte unica: logbook Concept2 dal ' + PROG.firstDate + ' — stesso metro per 2025 e 2026, niente confronti tra metodi diversi.\n' +
+          {'Fonte primaria: logbook Concept2 dal ' + PROG.firstDate + '; le sedute registrate dopo l\u2019ultimo export entrano SUBITO dai FIT (righe *) e il riepilogo successivo fa da controprova.\n' +
+           'Impianto: profilo potenza-durata (best per classe di durata) + benchmark submassimali a FC fissa + test identici ripetuti — gli stessi tre strumenti del monitoraggio endurance standard.\n' +
            'Ancore Tier 1 = test identici ripetuti: sono le uniche righe da cui leggere «sono migliorato di X».\n' +
            'Continui e intervalli stanno in tabelle separate e non si confrontano mai tra loro.\n' +
            'Pace↔watt è una relazione fisica fissa (indipendente dal drag factor): i watt sono confrontabili sempre.\n' +
