@@ -1504,6 +1504,7 @@ const PROG = {
       "w": 183,
       "pace": "2:04.1",
       "hr": 135,
+      "spm": 32,
       "pb": true
      },
      {
@@ -1514,6 +1515,7 @@ const PROG = {
       "w": 191,
       "pace": "2:02.4",
       "hr": 128,
+      "spm": 33,
       "pb": true
      },
      {
@@ -1524,6 +1526,7 @@ const PROG = {
       "w": 141,
       "pace": "2:15.4",
       "hr": 118,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1534,6 +1537,7 @@ const PROG = {
       "w": 145,
       "pace": "2:14.1",
       "hr": 112,
+      "spm": 30,
       "pb": false
      },
      {
@@ -1544,6 +1548,7 @@ const PROG = {
       "w": 121,
       "pace": "2:22.5",
       "hr": 103,
+      "spm": 34,
       "pb": false
      },
      {
@@ -1554,6 +1559,7 @@ const PROG = {
       "w": 148,
       "pace": "2:13.2",
       "hr": 121,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1564,6 +1570,7 @@ const PROG = {
       "w": 144,
       "pace": "2:14.5",
       "hr": 127,
+      "spm": 38,
       "pb": false
      },
      {
@@ -1574,6 +1581,7 @@ const PROG = {
       "w": 129,
       "pace": "2:19.5",
       "hr": 116,
+      "spm": 36,
       "pb": false
      },
      {
@@ -1584,6 +1592,7 @@ const PROG = {
       "w": 172,
       "pace": "2:06.7",
       "hr": null,
+      "spm": 38,
       "pb": false
      },
      {
@@ -1594,6 +1603,7 @@ const PROG = {
       "w": 193,
       "pace": "2:01.9",
       "hr": 154,
+      "spm": 40,
       "pb": true
      },
      {
@@ -1604,6 +1614,7 @@ const PROG = {
       "w": 288,
       "pace": "1:46.7",
       "hr": 160,
+      "spm": 46,
       "pb": true
      },
      {
@@ -1614,6 +1625,7 @@ const PROG = {
       "w": 142,
       "pace": "2:15.1",
       "hr": 117,
+      "spm": 36,
       "pb": false
      },
      {
@@ -1624,6 +1636,7 @@ const PROG = {
       "w": 143,
       "pace": "2:14.8",
       "hr": 106,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1634,6 +1647,7 @@ const PROG = {
       "w": 54,
       "pace": "3:06.4",
       "hr": null,
+      "spm": 31,
       "pb": false
      },
      {
@@ -1644,6 +1658,7 @@ const PROG = {
       "w": 164,
       "pace": "2:08.7",
       "hr": 118,
+      "spm": 40,
       "pb": false
      },
      {
@@ -1654,6 +1669,7 @@ const PROG = {
       "w": 45,
       "pace": "3:18.1",
       "hr": null,
+      "spm": 32,
       "pb": false
      },
      {
@@ -1664,6 +1680,7 @@ const PROG = {
       "w": 81,
       "pace": "2:42.9",
       "hr": null,
+      "spm": 28,
       "pb": false
      },
      {
@@ -1674,6 +1691,7 @@ const PROG = {
       "w": 19,
       "pace": "4:24.1",
       "hr": null,
+      "spm": 21,
       "pb": false
      },
      {
@@ -1684,6 +1702,7 @@ const PROG = {
       "w": 28,
       "pace": "3:52.1",
       "hr": null,
+      "spm": 22,
       "pb": false
      }
     ]
@@ -1699,6 +1718,7 @@ const PROG = {
       "w": 155,
       "pace": "2:11.2",
       "hr": 127,
+      "spm": 37,
       "pb": true
      },
      {
@@ -1709,6 +1729,7 @@ const PROG = {
       "w": 203,
       "pace": "1:59.9",
       "hr": 149,
+      "spm": 36,
       "pb": true
      },
      {
@@ -1719,6 +1740,7 @@ const PROG = {
       "w": 151,
       "pace": "2:12.3",
       "hr": 111,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1729,6 +1751,7 @@ const PROG = {
       "w": 153,
       "pace": "2:11.8",
       "hr": 110,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1739,6 +1762,7 @@ const PROG = {
       "w": 150,
       "pace": "2:12.6",
       "hr": 113,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1749,6 +1773,7 @@ const PROG = {
       "w": 130,
       "pace": "2:19.1",
       "hr": 102,
+      "spm": 34,
       "pb": false
      },
      {
@@ -1759,6 +1784,7 @@ const PROG = {
       "w": 128,
       "pace": "2:19.8",
       "hr": 107,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1769,6 +1795,7 @@ const PROG = {
       "w": 181,
       "pace": "2:04.6",
       "hr": 127,
+      "spm": 37,
       "pb": false
      },
      {
@@ -1779,6 +1806,7 @@ const PROG = {
       "w": 153,
       "pace": "2:11.8",
       "hr": 124,
+      "spm": 36,
       "pb": false
      },
      {
@@ -1789,6 +1817,7 @@ const PROG = {
       "w": 161,
       "pace": "2:09.5",
       "hr": 114,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1799,6 +1828,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 124,
+      "spm": 38,
       "pb": false
      },
      {
@@ -1809,6 +1839,7 @@ const PROG = {
       "w": 136,
       "pace": "2:17.0",
       "hr": 104,
+      "spm": 28,
       "pb": false
      },
      {
@@ -1819,6 +1850,7 @@ const PROG = {
       "w": 152,
       "pace": "2:12.1",
       "hr": 119,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1829,6 +1861,7 @@ const PROG = {
       "w": 149,
       "pace": "2:12.9",
       "hr": 111,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1839,6 +1872,7 @@ const PROG = {
       "w": 140,
       "pace": "2:15.7",
       "hr": 110,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1849,6 +1883,7 @@ const PROG = {
       "w": 143,
       "pace": "2:14.8",
       "hr": 106,
+      "spm": 36,
       "pb": false
      },
      {
@@ -1859,6 +1894,7 @@ const PROG = {
       "w": 48,
       "pace": "3:13.9",
       "hr": null,
+      "spm": 29,
       "pb": false
      },
      {
@@ -1869,6 +1905,7 @@ const PROG = {
       "w": 46,
       "pace": "3:16.7",
       "hr": null,
+      "spm": 24,
       "pb": false
      },
      {
@@ -1879,6 +1916,7 @@ const PROG = {
       "w": 152,
       "pace": "2:12.1",
       "hr": 118,
+      "spm": 37,
       "pb": false
      },
      {
@@ -1889,6 +1927,7 @@ const PROG = {
       "w": 157,
       "pace": "2:10.6",
       "hr": 109,
+      "spm": 38,
       "pb": false
      },
      {
@@ -1899,6 +1938,7 @@ const PROG = {
       "w": 129,
       "pace": "2:19.5",
       "hr": 103,
+      "spm": 40,
       "pb": false
      },
      {
@@ -1909,6 +1949,7 @@ const PROG = {
       "w": 149,
       "pace": "2:12.9",
       "hr": 105,
+      "spm": 37,
       "pb": false
      }
     ]
@@ -1924,6 +1965,7 @@ const PROG = {
       "w": 169,
       "pace": "2:07.5",
       "hr": 124,
+      "spm": 35,
       "pb": true
      },
      {
@@ -1934,6 +1976,7 @@ const PROG = {
       "w": 154,
       "pace": "2:11.5",
       "hr": 122,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1944,6 +1987,7 @@ const PROG = {
       "w": 163,
       "pace": "2:09.0",
       "hr": 127,
+      "spm": 33,
       "pb": false
      },
      {
@@ -1954,6 +1998,7 @@ const PROG = {
       "w": 209,
       "pace": "1:58.8",
       "hr": 146,
+      "spm": 36,
       "pb": true
      },
      {
@@ -1964,6 +2009,7 @@ const PROG = {
       "w": 211,
       "pace": "1:58.4",
       "hr": 142,
+      "spm": 40,
       "pb": true
      },
      {
@@ -1974,6 +2020,7 @@ const PROG = {
       "w": 129,
       "pace": "2:19.5",
       "hr": 123,
+      "spm": 34,
       "pb": false
      },
      {
@@ -1984,6 +2031,7 @@ const PROG = {
       "w": 134,
       "pace": "2:17.7",
       "hr": 112,
+      "spm": 35,
       "pb": false
      },
      {
@@ -1994,6 +2042,7 @@ const PROG = {
       "w": 142,
       "pace": "2:15.1",
       "hr": 120,
+      "spm": 42,
       "pb": false
      }
     ]
@@ -2009,6 +2058,7 @@ const PROG = {
       "w": 168,
       "pace": "2:07.7",
       "hr": 126,
+      "spm": 33,
       "pb": true
      },
      {
@@ -2019,6 +2069,7 @@ const PROG = {
       "w": 156,
       "pace": "2:10.9",
       "hr": 128,
+      "spm": 30,
       "pb": false
      },
      {
@@ -2029,6 +2080,7 @@ const PROG = {
       "w": 155,
       "pace": "2:11.2",
       "hr": 121,
+      "spm": 38,
       "pb": false
      },
      {
@@ -2039,6 +2091,7 @@ const PROG = {
       "w": 150,
       "pace": "2:12.6",
       "hr": 129,
+      "spm": 34,
       "pb": false
      },
      {
@@ -2049,6 +2102,7 @@ const PROG = {
       "w": 155,
       "pace": "2:11.2",
       "hr": 117,
+      "spm": 33,
       "pb": false
      },
      {
@@ -2059,6 +2113,7 @@ const PROG = {
       "w": 152,
       "pace": "2:12.1",
       "hr": 121,
+      "spm": 35,
       "pb": false
      },
      {
@@ -2069,6 +2124,7 @@ const PROG = {
       "w": 154,
       "pace": "2:11.5",
       "hr": 120,
+      "spm": 33,
       "pb": false
      },
      {
@@ -2079,6 +2135,7 @@ const PROG = {
       "w": 162,
       "pace": "2:09.3",
       "hr": 126,
+      "spm": 37,
       "pb": false
      },
      {
@@ -2089,6 +2146,7 @@ const PROG = {
       "w": 164,
       "pace": "2:08.7",
       "hr": 120,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2099,6 +2157,7 @@ const PROG = {
       "w": 165,
       "pace": "2:08.5",
       "hr": 124,
+      "spm": 37,
       "pb": false
      },
      {
@@ -2109,6 +2168,7 @@ const PROG = {
       "w": 171,
       "pace": "2:07.0",
       "hr": 128,
+      "spm": 37,
       "pb": true
      },
      {
@@ -2119,6 +2179,7 @@ const PROG = {
       "w": 152,
       "pace": "2:12.1",
       "hr": 111,
+      "spm": 37,
       "pb": false
      },
      {
@@ -2129,6 +2190,7 @@ const PROG = {
       "w": 165,
       "pace": "2:08.5",
       "hr": 123,
+      "spm": 38,
       "pb": false
      },
      {
@@ -2139,6 +2201,7 @@ const PROG = {
       "w": 166,
       "pace": "2:08.2",
       "hr": 126,
+      "spm": 35,
       "pb": false
      },
      {
@@ -2149,6 +2212,7 @@ const PROG = {
       "w": 203,
       "pace": "1:59.9",
       "hr": 145,
+      "spm": 41,
       "pb": true
      },
      {
@@ -2159,6 +2223,7 @@ const PROG = {
       "w": 211,
       "pace": "1:58.4",
       "hr": 145,
+      "spm": 42,
       "pb": true
      }
     ]
@@ -2174,6 +2239,7 @@ const PROG = {
       "w": 156,
       "pace": "2:10.9",
       "hr": 124,
+      "spm": 38,
       "pb": true
      },
      {
@@ -2184,6 +2250,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 126,
+      "spm": 35,
       "pb": true
      },
      {
@@ -2194,6 +2261,7 @@ const PROG = {
       "w": 166,
       "pace": "2:08.2",
       "hr": 123,
+      "spm": 33,
       "pb": false
      },
      {
@@ -2204,6 +2272,7 @@ const PROG = {
       "w": 168,
       "pace": "2:07.7",
       "hr": 120,
+      "spm": 33,
       "pb": true
      },
      {
@@ -2214,6 +2283,7 @@ const PROG = {
       "w": 165,
       "pace": "2:08.5",
       "hr": 120,
+      "spm": 33,
       "pb": false
      },
      {
@@ -2224,6 +2294,7 @@ const PROG = {
       "w": 146,
       "pace": "2:13.8",
       "hr": 125,
+      "spm": 32,
       "pb": false
      },
      {
@@ -2234,6 +2305,7 @@ const PROG = {
       "w": 145,
       "pace": "2:14.1",
       "hr": 113,
+      "spm": 32,
       "pb": false
      },
      {
@@ -2244,6 +2316,7 @@ const PROG = {
       "w": 160,
       "pace": "2:09.8",
       "hr": 125,
+      "spm": 32,
       "pb": false
      },
      {
@@ -2254,6 +2327,7 @@ const PROG = {
       "w": 165,
       "pace": "2:08.5",
       "hr": 127,
+      "spm": 32,
       "pb": false
      },
      {
@@ -2264,6 +2338,7 @@ const PROG = {
       "w": 174,
       "pace": "2:06.2",
       "hr": 127,
+      "spm": 34,
       "pb": true
      },
      {
@@ -2274,6 +2349,7 @@ const PROG = {
       "w": 158,
       "pace": "2:10.4",
       "hr": 128,
+      "spm": 33,
       "pb": false
      }
     ]
@@ -2289,6 +2365,7 @@ const PROG = {
       "w": 247,
       "pace": "1:52.3",
       "hr": null,
+      "spm": 50,
       "pb": true
      },
      {
@@ -2297,6 +2374,7 @@ const PROG = {
       "w": 205,
       "pace": "1:59.5",
       "hr": 139,
+      "spm": 49,
       "pb": false
      }
     ]
@@ -2310,6 +2388,7 @@ const PROG = {
       "w": 222,
       "pace": "1:56.4",
       "hr": 148,
+      "spm": 38,
       "pb": true
      },
      {
@@ -2318,6 +2397,7 @@ const PROG = {
       "w": 201,
       "pace": "2:00.3",
       "hr": 139,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2326,6 +2406,7 @@ const PROG = {
       "w": 219,
       "pace": "1:56.9",
       "hr": 147,
+      "spm": 33,
       "pb": false
      },
      {
@@ -2334,6 +2415,7 @@ const PROG = {
       "w": 192,
       "pace": "2:02.2",
       "hr": 143,
+      "spm": 39,
       "pb": false
      },
      {
@@ -2342,6 +2424,7 @@ const PROG = {
       "w": 137,
       "pace": "2:16.7",
       "hr": 120,
+      "spm": 42,
       "pb": false
      },
      {
@@ -2350,6 +2433,7 @@ const PROG = {
       "w": 144,
       "pace": "2:14.5",
       "hr": 122,
+      "spm": 42,
       "pb": false
      },
      {
@@ -2358,6 +2442,7 @@ const PROG = {
       "w": 146,
       "pace": "2:13.8",
       "hr": 119,
+      "spm": 42,
       "pb": false
      }
     ]
@@ -2371,6 +2456,7 @@ const PROG = {
       "w": 174,
       "pace": "2:06.2",
       "hr": 128,
+      "spm": 36,
       "pb": true
      },
      {
@@ -2379,6 +2465,7 @@ const PROG = {
       "w": 210,
       "pace": "1:58.6",
       "hr": 143,
+      "spm": 34,
       "pb": true
      },
      {
@@ -2387,6 +2474,7 @@ const PROG = {
       "w": 143,
       "pace": "2:14.8",
       "hr": 127,
+      "spm": 32,
       "pb": false
      },
      {
@@ -2395,6 +2483,7 @@ const PROG = {
       "w": 147,
       "pace": "2:13.5",
       "hr": 123,
+      "spm": 33,
       "pb": false
      },
      {
@@ -2403,6 +2492,7 @@ const PROG = {
       "w": 199,
       "pace": "2:00.7",
       "hr": null,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2411,6 +2501,7 @@ const PROG = {
       "w": 202,
       "pace": "2:00.1",
       "hr": 139,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2419,6 +2510,7 @@ const PROG = {
       "w": 196,
       "pace": "2:01.3",
       "hr": 139,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2427,6 +2519,7 @@ const PROG = {
       "w": 204,
       "pace": "1:59.7",
       "hr": 154,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2435,6 +2528,7 @@ const PROG = {
       "w": 185,
       "pace": "2:03.7",
       "hr": 150,
+      "spm": 35,
       "pb": false
      },
      {
@@ -2443,6 +2537,7 @@ const PROG = {
       "w": 161,
       "pace": "2:09.5",
       "hr": 141,
+      "spm": 34,
       "pb": false
      },
      {
@@ -2451,6 +2546,7 @@ const PROG = {
       "w": 231,
       "pace": "1:54.9",
       "hr": 150,
+      "spm": 42,
       "pb": true
      },
      {
@@ -2459,6 +2555,7 @@ const PROG = {
       "w": 160,
       "pace": "2:09.8",
       "hr": 118,
+      "spm": 35,
       "pb": false
      },
      {
@@ -2467,6 +2564,7 @@ const PROG = {
       "w": 200,
       "pace": "2:00.5",
       "hr": 140,
+      "spm": 39,
       "pb": false
      },
      {
@@ -2475,6 +2573,7 @@ const PROG = {
       "w": 206,
       "pace": "1:59.3",
       "hr": 150,
+      "spm": 40,
       "pb": false
      },
      {
@@ -2483,6 +2582,7 @@ const PROG = {
       "w": 181,
       "pace": "2:04.6",
       "hr": 142,
+      "spm": 40,
       "pb": false
      },
      {
@@ -2491,6 +2591,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 133,
+      "spm": 36,
       "pb": false
      },
      {
@@ -2499,6 +2600,7 @@ const PROG = {
       "w": 234,
       "pace": "1:54.4",
       "hr": 150,
+      "spm": 42,
       "pb": true
      },
      {
@@ -2507,6 +2609,7 @@ const PROG = {
       "w": 130,
       "pace": "2:19.1",
       "hr": 122,
+      "spm": 39,
       "pb": false
      },
      {
@@ -2515,6 +2618,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 125,
+      "spm": 43,
       "pb": false
      }
     ]
@@ -2528,6 +2632,7 @@ const PROG = {
       "w": 154,
       "pace": "2:11.5",
       "hr": 120,
+      "spm": 40,
       "pb": true
      },
      {
@@ -2536,6 +2641,7 @@ const PROG = {
       "w": 145,
       "pace": "2:14.1",
       "hr": 119,
+      "spm": 41,
       "pb": false
      },
      {
@@ -2544,6 +2650,7 @@ const PROG = {
       "w": 147,
       "pace": "2:13.5",
       "hr": 114,
+      "spm": 41,
       "pb": false
      },
      {
@@ -2552,6 +2659,7 @@ const PROG = {
       "w": 135,
       "pace": "2:17.4",
       "hr": 121,
+      "spm": 39,
       "pb": false
      },
      {
@@ -2560,6 +2668,7 @@ const PROG = {
       "w": 161,
       "pace": "2:09.5",
       "hr": 119,
+      "spm": 40,
       "pb": true
      }
     ]
@@ -2884,6 +2993,7 @@ const PROG = {
       "w": 22,
       "pace": "4:11.5",
       "hr": null,
+      "spm": 23,
       "pb": true
      },
      {
@@ -2894,6 +3004,7 @@ const PROG = {
       "w": 190,
       "pace": "2:02.6",
       "hr": null,
+      "spm": 27,
       "pb": true
      },
      {
@@ -2904,6 +3015,7 @@ const PROG = {
       "w": 149,
       "pace": "2:12.9",
       "hr": null,
+      "spm": 23,
       "pb": false
      },
      {
@@ -2914,6 +3026,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": null,
+      "spm": 28,
       "pb": false
      },
      {
@@ -2924,6 +3037,7 @@ const PROG = {
       "w": 119,
       "pace": "2:23.3",
       "hr": null,
+      "spm": 23,
       "pb": false
      },
      {
@@ -2934,6 +3048,7 @@ const PROG = {
       "w": 102,
       "pace": "2:30.8",
       "hr": null,
+      "spm": 31,
       "pb": false
      },
      {
@@ -2944,6 +3059,7 @@ const PROG = {
       "w": 217,
       "pace": "1:57.3",
       "hr": null,
+      "spm": 24,
       "pb": true
      },
      {
@@ -2954,6 +3070,7 @@ const PROG = {
       "w": 218,
       "pace": "1:57.1",
       "hr": 134,
+      "spm": 23,
       "pb": true
      },
      {
@@ -2964,6 +3081,7 @@ const PROG = {
       "w": 174,
       "pace": "2:06.2",
       "hr": 113,
+      "spm": 23,
       "pb": false
      },
      {
@@ -2974,6 +3092,7 @@ const PROG = {
       "w": 168,
       "pace": "2:07.7",
       "hr": 116,
+      "spm": 23,
       "pb": false
      },
      {
@@ -2984,6 +3103,7 @@ const PROG = {
       "w": 113,
       "pace": "2:25.8",
       "hr": 111,
+      "spm": 23,
       "pb": false
      },
      {
@@ -2994,6 +3114,7 @@ const PROG = {
       "w": 115,
       "pace": "2:24.9",
       "hr": 114,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3004,6 +3125,7 @@ const PROG = {
       "w": 102,
       "pace": "2:30.8",
       "hr": 112,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3014,6 +3136,7 @@ const PROG = {
       "w": 136,
       "pace": "2:17.0",
       "hr": null,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3024,6 +3147,7 @@ const PROG = {
       "w": 136,
       "pace": "2:17.0",
       "hr": 107,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3034,6 +3158,7 @@ const PROG = {
       "w": 201,
       "pace": "2:00.3",
       "hr": 126,
+      "spm": 26,
       "pb": false
      },
      {
@@ -3044,6 +3169,7 @@ const PROG = {
       "w": 152,
       "pace": "2:12.1",
       "hr": 110,
+      "spm": 24,
       "pb": false
      }
     ]
@@ -3059,6 +3185,7 @@ const PROG = {
       "w": 191,
       "pace": "2:02.4",
       "hr": 123,
+      "spm": 24,
       "pb": true
      },
      {
@@ -3069,6 +3196,7 @@ const PROG = {
       "w": 136,
       "pace": "2:17.0",
       "hr": 119,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3079,6 +3207,7 @@ const PROG = {
       "w": 259,
       "pace": "1:50.6",
       "hr": 155,
+      "spm": 26,
       "pb": true
      },
      {
@@ -3089,6 +3218,7 @@ const PROG = {
       "w": 156,
       "pace": "2:10.9",
       "hr": 113,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3099,6 +3229,7 @@ const PROG = {
       "w": 137,
       "pace": "2:16.7",
       "hr": 107,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3109,6 +3240,7 @@ const PROG = {
       "w": 145,
       "pace": "2:14.1",
       "hr": 103,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3119,6 +3251,7 @@ const PROG = {
       "w": 146,
       "pace": "2:13.8",
       "hr": 109,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3129,6 +3262,7 @@ const PROG = {
       "w": 155,
       "pace": "2:11.2",
       "hr": 107,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3139,6 +3273,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 108,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3149,6 +3284,7 @@ const PROG = {
       "w": 31,
       "pace": "3:44.3",
       "hr": 105,
+      "spm": 14,
       "pb": false
      },
      {
@@ -3159,6 +3295,7 @@ const PROG = {
       "w": 135,
       "pace": "2:17.4",
       "hr": 111,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3169,6 +3306,7 @@ const PROG = {
       "w": 162,
       "pace": "2:09.3",
       "hr": 108,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3179,6 +3317,7 @@ const PROG = {
       "w": 156,
       "pace": "2:10.9",
       "hr": 107,
+      "spm": 21,
       "pb": false
      },
      {
@@ -3189,6 +3328,7 @@ const PROG = {
       "w": 128,
       "pace": "2:19.8",
       "hr": 115,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3199,6 +3339,7 @@ const PROG = {
       "w": 153,
       "pace": "2:11.8",
       "hr": 105,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3209,6 +3350,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 114,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3219,6 +3361,7 @@ const PROG = {
       "w": 172,
       "pace": "2:06.7",
       "hr": 114,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3229,6 +3372,7 @@ const PROG = {
       "w": 173,
       "pace": "2:06.5",
       "hr": 113,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3239,6 +3383,7 @@ const PROG = {
       "w": 138,
       "pace": "2:16.4",
       "hr": 104,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3249,6 +3394,7 @@ const PROG = {
       "w": 129,
       "pace": "2:19.5",
       "hr": 104,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3259,6 +3405,7 @@ const PROG = {
       "w": 284,
       "pace": "1:47.2",
       "hr": 161,
+      "spm": 26,
       "pb": true
      },
      {
@@ -3269,6 +3416,7 @@ const PROG = {
       "w": 161,
       "pace": "2:09.5",
       "hr": 117,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3279,6 +3427,7 @@ const PROG = {
       "w": 153,
       "pace": "2:11.8",
       "hr": 106,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3289,6 +3438,7 @@ const PROG = {
       "w": 173,
       "pace": "2:06.5",
       "hr": 124,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3299,6 +3449,7 @@ const PROG = {
       "w": 155,
       "pace": "2:11.2",
       "hr": 118,
+      "spm": 24,
       "pb": false
      }
     ]
@@ -3314,6 +3465,7 @@ const PROG = {
       "w": 228,
       "pace": "1:55.4",
       "hr": null,
+      "spm": 23,
       "pb": true
      },
      {
@@ -3324,6 +3476,7 @@ const PROG = {
       "w": 181,
       "pace": "2:04.6",
       "hr": 133,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3334,6 +3487,7 @@ const PROG = {
       "w": 171,
       "pace": "2:07.0",
       "hr": 117,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3344,6 +3498,7 @@ const PROG = {
       "w": 173,
       "pace": "2:06.5",
       "hr": 113,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3354,6 +3509,7 @@ const PROG = {
       "w": 183,
       "pace": "2:04.1",
       "hr": 121,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3364,6 +3520,7 @@ const PROG = {
       "w": 149,
       "pace": "2:12.9",
       "hr": 112,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3374,6 +3531,7 @@ const PROG = {
       "w": 72,
       "pace": "2:49.4",
       "hr": 105,
+      "spm": 18,
       "pb": false
      },
      {
@@ -3384,6 +3542,7 @@ const PROG = {
       "w": 159,
       "pace": "2:10.1",
       "hr": 122,
+      "spm": 22,
       "pb": false
      }
     ]
@@ -3399,6 +3558,7 @@ const PROG = {
       "w": 204,
       "pace": "1:59.7",
       "hr": 132,
+      "spm": 23,
       "pb": true
      },
      {
@@ -3409,6 +3569,7 @@ const PROG = {
       "w": 182,
       "pace": "2:04.4",
       "hr": 127,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3419,6 +3580,7 @@ const PROG = {
       "w": 171,
       "pace": "2:07.0",
       "hr": 125,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3429,6 +3591,7 @@ const PROG = {
       "w": 182,
       "pace": "2:04.4",
       "hr": 131,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3439,6 +3602,7 @@ const PROG = {
       "w": 179,
       "pace": "2:05.0",
       "hr": 120,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3449,6 +3613,7 @@ const PROG = {
       "w": 180,
       "pace": "2:04.8",
       "hr": 127,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3459,6 +3624,7 @@ const PROG = {
       "w": 176,
       "pace": "2:05.8",
       "hr": 125,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3469,6 +3635,7 @@ const PROG = {
       "w": 214,
       "pace": "1:57.8",
       "hr": 138,
+      "spm": 24,
       "pb": true
      },
      {
@@ -3479,6 +3646,7 @@ const PROG = {
       "w": 214,
       "pace": "1:57.8",
       "hr": 136,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3489,6 +3657,7 @@ const PROG = {
       "w": 169,
       "pace": "2:07.5",
       "hr": 125,
+      "spm": 20,
       "pb": false
      },
      {
@@ -3499,6 +3668,7 @@ const PROG = {
       "w": 234,
       "pace": "1:54.4",
       "hr": 144,
+      "spm": 26,
       "pb": true
      },
      {
@@ -3509,6 +3679,7 @@ const PROG = {
       "w": 184,
       "pace": "2:03.9",
       "hr": 126,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3519,6 +3690,7 @@ const PROG = {
       "w": 237,
       "pace": "1:53.9",
       "hr": 147,
+      "spm": 26,
       "pb": true
      }
     ]
@@ -3534,6 +3706,7 @@ const PROG = {
       "w": 164,
       "pace": "2:08.7",
       "hr": 128,
+      "spm": 22,
       "pb": true
      },
      {
@@ -3544,6 +3717,7 @@ const PROG = {
       "w": 155,
       "pace": "2:11.2",
       "hr": 126,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3554,6 +3728,7 @@ const PROG = {
       "w": 177,
       "pace": "2:05.5",
       "hr": 128,
+      "spm": 23,
       "pb": true
      },
      {
@@ -3564,6 +3739,7 @@ const PROG = {
       "w": 175,
       "pace": "2:06.0",
       "hr": 124,
+      "spm": 23,
       "pb": false
      },
      {
@@ -3574,6 +3750,7 @@ const PROG = {
       "w": 199,
       "pace": "2:00.7",
       "hr": 131,
+      "spm": 26,
       "pb": true
      },
      {
@@ -3584,6 +3761,7 @@ const PROG = {
       "w": 184,
       "pace": "2:03.9",
       "hr": 126,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3594,6 +3772,7 @@ const PROG = {
       "w": 176,
       "pace": "2:05.8",
       "hr": 128,
+      "spm": 19,
       "pb": false
      },
      {
@@ -3604,6 +3783,7 @@ const PROG = {
       "w": 158,
       "pace": "2:10.4",
       "hr": 122,
+      "spm": 20,
       "pb": false
      },
      {
@@ -3614,6 +3794,7 @@ const PROG = {
       "w": 173,
       "pace": "2:06.5",
       "hr": 125,
+      "spm": 21,
       "pb": false
      },
      {
@@ -3624,6 +3805,7 @@ const PROG = {
       "w": 175,
       "pace": "2:06.0",
       "hr": 121,
+      "spm": 21,
       "pb": false
      },
      {
@@ -3634,6 +3816,7 @@ const PROG = {
       "w": 158,
       "pace": "2:10.4",
       "hr": 112,
+      "spm": 21,
       "pb": false
      },
      {
@@ -3644,6 +3827,7 @@ const PROG = {
       "w": 182,
       "pace": "2:04.4",
       "hr": 118,
+      "spm": 22,
       "pb": false
      }
     ]
@@ -3659,6 +3843,7 @@ const PROG = {
       "w": 296,
       "pace": "1:45.7",
       "hr": null,
+      "spm": 28,
       "pb": true
      },
      {
@@ -3667,6 +3852,7 @@ const PROG = {
       "w": 246,
       "pace": "1:52.5",
       "hr": null,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3675,6 +3861,7 @@ const PROG = {
       "w": 226,
       "pace": "1:55.7",
       "hr": null,
+      "spm": 26,
       "pb": false
      },
      {
@@ -3683,6 +3870,7 @@ const PROG = {
       "w": 200,
       "pace": "2:00.5",
       "hr": 128,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3691,6 +3879,7 @@ const PROG = {
       "w": 266,
       "pace": "1:49.6",
       "hr": 141,
+      "spm": 32,
       "pb": false
      },
      {
@@ -3699,6 +3888,7 @@ const PROG = {
       "w": 234,
       "pace": "1:54.4",
       "hr": 138,
+      "spm": 33,
       "pb": false
      }
     ]
@@ -3712,6 +3902,7 @@ const PROG = {
       "w": 245,
       "pace": "1:52.6",
       "hr": null,
+      "spm": 27,
       "pb": true
      },
      {
@@ -3720,6 +3911,7 @@ const PROG = {
       "w": 259,
       "pace": "1:50.6",
       "hr": null,
+      "spm": 26,
       "pb": true
      },
      {
@@ -3728,6 +3920,7 @@ const PROG = {
       "w": 244,
       "pace": "1:52.8",
       "hr": null,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3736,6 +3929,7 @@ const PROG = {
       "w": 297,
       "pace": "1:45.6",
       "hr": null,
+      "spm": 24,
       "pb": true
      },
      {
@@ -3744,6 +3938,7 @@ const PROG = {
       "w": 152,
       "pace": "2:12.1",
       "hr": null,
+      "spm": null,
       "pb": false
      },
      {
@@ -3752,6 +3947,7 @@ const PROG = {
       "w": 258,
       "pace": "1:50.7",
       "hr": null,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3760,6 +3956,7 @@ const PROG = {
       "w": 263,
       "pace": "1:50.0",
       "hr": null,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3768,6 +3965,7 @@ const PROG = {
       "w": 216,
       "pace": "1:57.5",
       "hr": null,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3776,6 +3974,7 @@ const PROG = {
       "w": 269,
       "pace": "1:49.2",
       "hr": 149,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3784,6 +3983,7 @@ const PROG = {
       "w": 277,
       "pace": "1:48.1",
       "hr": 148,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3792,6 +3992,7 @@ const PROG = {
       "w": 289,
       "pace": "1:46.6",
       "hr": 146,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3800,6 +4001,7 @@ const PROG = {
       "w": 360,
       "pace": "1:39.1",
       "hr": 158,
+      "spm": 31,
       "pb": true
      },
      {
@@ -3808,6 +4010,7 @@ const PROG = {
       "w": 250,
       "pace": "1:51.9",
       "hr": 154,
+      "spm": 27,
       "pb": false
      },
      {
@@ -3816,6 +4019,7 @@ const PROG = {
       "w": 158,
       "pace": "2:10.4",
       "hr": 121,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3824,6 +4028,7 @@ const PROG = {
       "w": 167,
       "pace": "2:08.0",
       "hr": 119,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3832,6 +4037,7 @@ const PROG = {
       "w": 132,
       "pace": "2:18.4",
       "hr": 124,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3840,6 +4046,7 @@ const PROG = {
       "w": 150,
       "pace": "2:12.6",
       "hr": 117,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3848,6 +4055,7 @@ const PROG = {
       "w": 166,
       "pace": "2:08.2",
       "hr": 121,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3856,6 +4064,7 @@ const PROG = {
       "w": 168,
       "pace": "2:07.7",
       "hr": 121,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3864,6 +4073,7 @@ const PROG = {
       "w": 151,
       "pace": "2:12.3",
       "hr": 121,
+      "spm": 23,
       "pb": false
      }
     ]
@@ -3877,6 +4087,7 @@ const PROG = {
       "w": 236,
       "pace": "1:54.0",
       "hr": null,
+      "spm": 26,
       "pb": true
      },
      {
@@ -3885,6 +4096,7 @@ const PROG = {
       "w": 171,
       "pace": "2:07.0",
       "hr": null,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3893,6 +4105,7 @@ const PROG = {
       "w": 229,
       "pace": "1:55.2",
       "hr": 150,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3901,6 +4114,7 @@ const PROG = {
       "w": 156,
       "pace": "2:10.9",
       "hr": null,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3909,6 +4123,7 @@ const PROG = {
       "w": 243,
       "pace": "1:52.9",
       "hr": 147,
+      "spm": 24,
       "pb": true
      },
      {
@@ -3917,6 +4132,7 @@ const PROG = {
       "w": 188,
       "pace": "2:03.0",
       "hr": 133,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3925,6 +4141,7 @@ const PROG = {
       "w": 157,
       "pace": "2:10.6",
       "hr": 127,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3933,6 +4150,7 @@ const PROG = {
       "w": 244,
       "pace": "1:52.8",
       "hr": 142,
+      "spm": 25,
       "pb": true
      },
      {
@@ -3941,6 +4159,7 @@ const PROG = {
       "w": 234,
       "pace": "1:54.4",
       "hr": 144,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3949,6 +4168,7 @@ const PROG = {
       "w": 249,
       "pace": "1:52.0",
       "hr": 147,
+      "spm": 25,
       "pb": true
      },
      {
@@ -3957,6 +4177,7 @@ const PROG = {
       "w": 245,
       "pace": "1:52.6",
       "hr": 142,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3965,6 +4186,7 @@ const PROG = {
       "w": 238,
       "pace": "1:53.7",
       "hr": 151,
+      "spm": 22,
       "pb": false
      },
      {
@@ -3973,6 +4195,7 @@ const PROG = {
       "w": 216,
       "pace": "1:57.5",
       "hr": 139,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3981,6 +4204,7 @@ const PROG = {
       "w": 233,
       "pace": "1:54.5",
       "hr": 146,
+      "spm": 25,
       "pb": false
      },
      {
@@ -3989,6 +4213,7 @@ const PROG = {
       "w": 173,
       "pace": "2:06.5",
       "hr": 137,
+      "spm": 24,
       "pb": false
      },
      {
@@ -3997,6 +4222,7 @@ const PROG = {
       "w": 172,
       "pace": "2:06.7",
       "hr": 138,
+      "spm": 24,
       "pb": false
      },
      {
@@ -4005,6 +4231,7 @@ const PROG = {
       "w": 224,
       "pace": "1:56.0",
       "hr": 146,
+      "spm": 25,
       "pb": false
      },
      {
@@ -4013,6 +4240,7 @@ const PROG = {
       "w": 227,
       "pace": "1:55.5",
       "hr": 147,
+      "spm": 24,
       "pb": false
      },
      {
@@ -4021,6 +4249,7 @@ const PROG = {
       "w": 229,
       "pace": "1:55.2",
       "hr": 137,
+      "spm": 23,
       "pb": false
      },
      {
@@ -4029,6 +4258,7 @@ const PROG = {
       "w": 157,
       "pace": "2:10.6",
       "hr": 122,
+      "spm": 23,
       "pb": false
      },
      {
@@ -4037,6 +4267,7 @@ const PROG = {
       "w": 170,
       "pace": "2:07.2",
       "hr": 120,
+      "spm": 24,
       "pb": false
      },
      {
@@ -4045,6 +4276,7 @@ const PROG = {
       "w": 176,
       "pace": "2:05.8",
       "hr": 122,
+      "spm": 23,
       "pb": false
      },
      {
@@ -4053,6 +4285,7 @@ const PROG = {
       "w": 209,
       "pace": "1:58.8",
       "hr": 128,
+      "spm": 25,
       "pb": false
      }
     ]
@@ -4066,6 +4299,7 @@ const PROG = {
       "w": 234,
       "pace": "1:54.4",
       "hr": null,
+      "spm": 23,
       "pb": true
      },
      {
@@ -4074,6 +4308,7 @@ const PROG = {
       "w": 218,
       "pace": "1:57.1",
       "hr": null,
+      "spm": 23,
       "pb": false
      },
      {
@@ -4082,6 +4317,7 @@ const PROG = {
       "w": 202,
       "pace": "2:00.1",
       "hr": 135,
+      "spm": 22,
       "pb": false
      },
      {
@@ -4090,6 +4326,7 @@ const PROG = {
       "w": 194,
       "pace": "2:01.7",
       "hr": 135,
+      "spm": 22,
       "pb": false
      },
      {
@@ -4098,6 +4335,7 @@ const PROG = {
       "w": 170,
       "pace": "2:07.2",
       "hr": 126,
+      "spm": 24,
       "pb": false
      },
      {
@@ -4106,6 +4344,7 @@ const PROG = {
       "w": 172,
       "pace": "2:06.7",
       "hr": 122,
+      "spm": 23,
       "pb": false
      }
     ]

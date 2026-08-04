@@ -29,6 +29,7 @@ function ProgressionePage() {
               <th style={{ textAlign: 'left', padding: '2px 4px' }}>{second}</th>
               <th style={{ padding: '2px 4px' }}>WATT</th>
               <th style={{ padding: '2px 4px' }}>PACE /500m</th>
+              <th style={{ padding: '2px 4px' }}>S/M</th>
               <th style={{ padding: '2px 4px' }}>FC</th>
               <th style={{ padding: '2px 4px' }}></th>
             </tr>
@@ -40,6 +41,7 @@ function ProgressionePage() {
                 <td style={{ textAlign: 'left', padding: '3px 4px', color: 'var(--fg-2)' }}>{r.struttura || r.pezzo}</td>
                 <td style={{ padding: '3px 4px', color: r.pb ? 'var(--accent)' : 'var(--fg)', fontWeight: r.pb ? 700 : 400 }}>{r.w}</td>
                 <td style={{ padding: '3px 4px', color: 'var(--fg-2)' }}>{r.pace}</td>
+                <td style={{ padding: '3px 4px', color: 'var(--fg-3)' }}>{r.spm || '—'}</td>
                 <td style={{ padding: '3px 4px', color: r.hr ? '#E0857E' : 'var(--fg-3)' }}>{r.hr || '—'}</td>
                 <td style={{ padding: '3px 4px', fontSize: 8.5, letterSpacing: '0.1em', color: 'var(--accent)' }}>{r.pb ? '▲ BEST' : ''}</td>
               </tr>
@@ -158,7 +160,7 @@ function ProgressionePage() {
       <ModulePanel code="MOD.INTERVALLI · per_durata_della_ripetuta">
         <div style={{ fontSize: 10, color: 'var(--fg-3)', marginBottom: 12, lineHeight: 1.6 }}>
           Sedute a intervalli, raggruppate per durata della SINGOLA ripetuta. I watt sono la media del solo lavoro (i recuperi non contano).
-          La struttura è scritta riga per riga: confronta strutture simili — a parità di watt, meno recupero = più forte.
+          La struttura è scritta riga per riga: confronta strutture simili — a parità di watt, meno recupero = più forte. La colonna S/M dice a che colpi: stessi watt a colpi più bassi = colpo più potente.
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, alignItems: 'start' }}>
           {P.ints.map((c, i) => <ClsTable key={i} cls={c.cls} rows={c.rows} second="STRUTTURA" />)}
