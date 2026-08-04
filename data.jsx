@@ -10029,9 +10029,9 @@ const BADGES = {
   month: 'AGOSTO 2026',
   monthStart: '2026-08-01',
   monthEnd: '2026-08-31',
-  updated: '03 AGO 2026',
-  snapshot: '03 AGO 2026 h.15:29',
-  sources: ['app Garmin Connect (screenshot 01 AGO · passi/camminata/foto riferiti da Federico 03 AGO)', 'badgehero.io/post/2026-07-20-garmin-august-2026-badges'],
+  updated: '04 AGO 2026',
+  snapshot: '04 AGO 2026 h.20:57',
+  sources: ['app Garmin Connect (screenshot 01 AGO · passi/camminata/foto riferiti da Federico, data sul singolo prog)', 'badgehero.io/post/2026-07-20-garmin-august-2026-badges'],
   items: [
     // ── CORSA
     { n: 'Weekend 5K di agosto', en: 'August Weekend 5K', cat: 'RUN', tipo: 'singola',
