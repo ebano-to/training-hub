@@ -6986,7 +6986,7 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
-  { date: '04 AGO', title: 'Bike \u00b7 Spinning \u00b7 30\u2032 Z2', kind: 'bike', filone: 'bike-spinning', filoneLabel: 'Spinning', m: { fcMed: '123', fcMax: '136', dec: '+1.2%', cad: '90', dist: '17,530 km', dur: '30:00', watt: '257' }, dur: 30, load: 'Z2', rpe: 3, note: 'Z2 centrata: 84% del tempo in banda, mai sopra 136\nOcchio ai watt: il group cycle misura a modo suo (257 W in Z2)\nnon confrontarli con la Ride n\u00e9 con l\u2019FTP 237',
+  { date: '04 AGO', title: 'Bike \u00b7 Spinning \u00b7 30\u2032 Z2', kind: 'bike', filone: 'bike-spinning', filoneLabel: 'Spinning', noGarmin: true, m: { fcMed: '123', fcMax: '136', dec: '+1.2%', cad: '90', dist: '17,530 km', dur: '30:00', watt: '257' }, dur: 30, load: 'Z2', rpe: 3, note: 'Z2 centrata: 84% del tempo in banda, mai sopra 136\nOcchio ai watt: il group cycle misura a modo suo (257 W in Z2)\nnon confrontarli con la Ride n\u00e9 con l\u2019FTP 237',
     details: { summary: '30:00 continui @257 W \u00b7 17,530 km \u00b7 90 rpm costanti.\nFC 123/136: 84% del tempo in Z2 (120-135), 16% sotto, mai sopra 136 \u2014 prescrizione centrata.\nSeconda met\u00e0 +12 W (251\u2192263) con FC +7 (119,5\u2192126,8): decoupling +1,2%.\nEF 2,10\u21922,07 su potenza del group cycle: scala diversa da Ride e FTP, confronti solo spinning-vs-spinning.\nDati dal TCX Technogym, fascia FC collegata.' } },
   { date: '03 AGO', title: 'Row · VO2 Max W1 · 4×4:00', kind: 'row', filone: 'row-vo2', filoneLabel: 'Row VO2 Max', m: { lavoro: '4×4:00', dist: '4.518 m', dur: '16:00', pace: '1:46.2', unit: '/500m', watt: '292', fcMed: '144,5', fcMax: '162', df: '88', src: 'fit' }, dur: 54, load: 'Z3-Z5', rpe: 8, note: 'Target 1:46-1:48 centrato, negative split: chiusa a 1:45.5\nDecoupling +0,5%: tenuta piena a fine set\nRichiami 2k in WU sopra la stima (1:43-1:44): 340-361 W',
     details: { summary: '4×4:00 tutte nel target 278-294 W: 288 · 288 · 295 · 298 — negative split come chiesto da Mattia.\nPace 1:46.7 · 1:46.7 · 1:45.9 · 1:45.5 — l\'ultima sotto il floor.\nFC per rep 140 · 144 · 146 · 148 (picchi 153→162), ma EF stabile: 2,06 → 2,02.\nSPM 28-27-27-27, costanti come richiesto.\nRec attivo pagaiato: 474-507 m a giro (~2:58-3:11/500), FC giù a 116-125.\nRichiami 2k in WU: 3×20″ @340 · 361 · 350 W (1:41.0 · 1:39.0 · 1:40.0).\nWU 2.350 m @168 W · defa 2.179 m @134 W · totale 11.627 m · 651 cal · 1.193 colpi.\nLavoro complessivo 37:00 per 9.345 m @209 W · DF 88.',
@@ -10060,12 +10060,12 @@ const BADGES = {
       why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
       go: '100 km in 7 giorni vogliono un\'uscita lunga piu\' due medie nella stessa settimana.' },
     { n: 'Tour di agosto', en: 'August Tour', cat: 'BIKE', tipo: 'cumulativa',
-      req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '74,745 / 400,0 km (sito, 04/08)',
-      why: 'Restano 325,3 km su 27 giorni = 12 km al giorno, tutti i giorni.',
+      req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '57,215 / 400,0 km (sito, 04/08)',
+      why: 'Restano 342,8 km su 27 giorni = 12,7 km al giorno, tutti i giorni.',
       go: 'Vorrebbe dire riscrivere il mese attorno alla bici in piena preparazione Hyrox.' },
     { n: 'Bici ad agosto', en: 'August Time to Ride', cat: 'BIKE', tipo: 'cumulativa',
-      req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '3h00m / 20h (sito, 04/08)',
-      why: 'Restano 17h su 27 giorni = circa 4h25m a settimana in sella.',
+      req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '2h30m / 20h (sito, 04/08)',
+      why: 'Restano 17h30m su 27 giorni = circa 4h30m a settimana in sella.',
       go: 'Si avvicina solo contando anche le sedute indoor lunghe.' },
     // ── CAMMINATA
     { n: 'Weekend di camminata ad agosto', en: 'August Weekend Walking', cat: 'WALK', tipo: 'singola',
