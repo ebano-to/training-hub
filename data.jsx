@@ -1116,9 +1116,9 @@ const WEEK = [
       { code: 'PUSH', t: 'Push Press 6×3 @70%', d: 'Mattia · ⚠️ 1RM push press non testato (14/05 MAV 3×3 @50 kg, strict press 1RM 65): carico da definire con Mattia', dur: '15\'', result: 'Push press 55 kg · ramp 20-30-30-40 · 6 serie (3-5-3-3-3-3) · dischi/lato 10+5+2,5 · 18:43 · FC 82/115' },
     ]
   },
-  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro · Assault Z2 spostata qui · BSQ e Romanian DL con Mattia in presenza', load: 'Z2-Z4', duration: 195, kind: 'multierg', runKm: 16, done: false,
+  { day: 'MER', date: '05', title: 'MEDIO 16 KM + SKI SOGLIA + FORZA', sub: 'Con questa, se la registri come UNA attività, ottieni il badge August 15K — e a 5:00 fissi ci sta anche PacePro · Assault Z2 spostata qui · BSQ e Romanian DL con Mattia in presenza', load: 'Z2-Z4', duration: 195, kind: 'multierg', runKm: 16, done: true,
     blocks: [
-      { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: 'da fare' },
+      { code: 'RUN', t: 'Medio · 3 km risc + 13 km @5:00/km', d: 'Gabriele · 16 km totali · il blocco è il gemello lungo del 28/07 (12 km @5:00 esatti, FC blocco 150,7) · registra tutto in UN\'unica attività: ≥15 km = badge August 15K · pace fisso 5:00: giornata ideale per la strategia PacePro (±15"/km)', dur: '83\'', result: '15,962 km · 88:41 · 5:33.4/km · risc 3,006 @7:55 + blocco 13 km @5:00.4 (tgt 5:00 ✓) · FC blocco 150/158 · cad 166 · micropause 10" per bere' },
       { code: 'SKI', t: 'Ski Soglia W1 · 4×(5:00 @soglia / 1:00 rec attivo)', d: 'Mattia · WU 10\' + 3×30" progressivi/60" · soglia = RPE 7 · coach: 85-88% FCmax → con la tua FCmax 177 sono 150-156 bpm (Z4), "confortevolmente duro": frase breve sì, conversazione no · soglia totale 20\' · defa 10\'', dur: '45\'', result: '4×5:00 · 5.234 m · 232 W avg · 1:54.6/500 · 263-228-223-216 W · FC 140/150 (fine rep 148-150, tgt 150-156) · 47 spm · DF 57 · WU 10:00 2.246 m' },
       { code: 'ASSAULT', t: 'Assault Bike 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm) · allenamento, non il test', dur: '30\'', result: '30:55 · 377,9 cal · 277 W avg / 359 max (scala Assault) · 58 rpm · HR 125/134: Z2 piena ✓' },
       { code: 'BSQ', t: 'Back Squat 5×3 @70%', d: 'Mattia · spostato da LUN: si fa con Mattia in presenza · 1RM 105 kg (20/03) → 70% = 73,5 kg: in pratica 72,5 (dischi/lato 20+5+1,25) o 75 (20+5+2,5) · riferimento datato, squat fermo da giugno: carico dal vivo', dur: '20\'', result: 'Back Squat con Mattia · ramp 20-40-60 · doppie 2×80 · 2×85 · singola 1×90 · back-off 3×2×80' },
@@ -1139,7 +1139,7 @@ const WEEK = [
   },
   { day: 'SAB', date: '08', title: 'COLLINARE 1H35\' + EMOM 60\'', sub: 'No stress · ritmo naturale sul saliscendi', load: 'Z2-Z3', duration: 155, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'Collinare · 1h35\' in precollina', d: 'Gabriele · no stress · riferimento filone: 16/05 precollina 10,8 km @7:12 FC 123 e 30/06 collinare 11,6 km @6:23', dur: '95\'', result: 'da fare' },
+      { code: 'RUN', t: 'Collinare · 1h35\' in precollina · occasione PacePro', d: 'Gabriele · no stress · riferimento filone: 16/05 precollina 10,8 km @7:12 FC 123 e 30/06 collinare 11,6 km @6:23', dur: '95\'', result: 'da fare' },
       { code: 'CR', t: 'Hyrox Aerobic · EMOM 60\' · 5 stazioni', d: 'Mattia · I: 15/12 kCal SkiErg (max 45") · II: 15 Wall Balls · III: 15/12 kCal Assault (max 45") · IV: 20 m Sandbag Lunges · V: Rest · 12 giri da 5\' · vs EMOM 52\' saltato in S31: torna la stazione di rest', dur: '60\'', result: 'da fare' }
     ]
   },
@@ -1165,7 +1165,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 11.627];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,16.899, 7.685];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 6.153];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 22.115];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i]).toFixed(1));
 
@@ -1173,9 +1173,9 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 671.845,
   ski: 626.539,
-  run: 642.690,
+  run: 658.652,
   bike: 319.418,
-  total: 2260.492,
+  total: 2276.454,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7006,6 +7006,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '05 AGO', title: 'Run \u00b7 Tapis \u00b7 Medio 16 km', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Medio su tapis', surf: 'tapis', m: { lavoro: '13 km @5:00', dur: '88:41', dist: '15,962 km', pace: '5:33.4', unit: '/km', fcMed: '139', fcMax: '158', drift: '+0,8%', ef: '0,0798', cad: '166', src: 'fit' }, vs: { d: '28 LUG', tag: 'struttura diversa (blocco 12\u219213 km)', items: [{ v: 'EF +2,6%', g: 1 }, { v: 'drift \u22122,8 pt', g: 1 }, { v: 'FC \u22120,5', g: 1 }] }, dur: 89, load: 'Z4', rpe: 8, note: 'Blocco @5:00.4 su target 5:00 a fine giornata piena: drift +0,8%\nMeglio del 28/07 su tutto: EF +2,6%, drift \u22122,8 pt\nQualche micropausa da 10\u2033 per bere \u00b7 badge 15K preso qui',
+    details: { summary: 'Blocco 13 km @5:00.4/km (target 5:00): FC 150,2/158, drift +0,8% (149,7 \u2192 150,7) \u2014 piatto.\nRisc 3,006 km @7:55.5 (FC 107/126).\nFresco vs 28/07 (blocco 12 km): EF 0,0798 contro 0,0778 (+2,6%), drift +0,8% contro +3,6%.\nFatta alle 20:59, dopo forza + assault + ski soglia: quarta seduta del giorno.\nCad blocco 166 spm \u00b7 TE aerobico 4,1 \u00b7 1.336 cal (Garmin).\nMyRun: 16,00 km \u00b7 1.615 kcal \u00b7 pendenza media 0,4% (max 1,0) \u00b7 D+ 67 m simulato.' } },
   { date: '05 AGO', title: 'Ski \u00b7 Soglia W1 \u00b7 4\u00d75:00', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', m: { lavoro: '4\u00d75:00', dist: '5.234 m', dur: '20:00', pace: '1:54.6', unit: '/500m', watt: '232', fcMed: '140,5', fcMax: '150', tgt: '150-156', df: '57', src: 'fit' }, dur: 34, load: 'Z3-Z4', rpe: 7, note: '\u26a0\ufe0f FC sotto banda: media rep 140, fine rep 148-150 su target 150-156\nPrima rep bruciata a 263 W (1:49.9), poi 228\u2192216: dec +11%\nRichiami 3\u00d730\u2033 del WU non eseguiti \u00b7 PM5 del WU non caricato',
     details: { summary: '4\u00d75:00 con 1:00 di rec: 263 \u00b7 228 \u00b7 223 \u00b7 216 W (1:49.9 \u2192 1:57.4/500).\nFC per rep 139 \u00b7 141 \u00b7 141 \u00b7 140 di media, picco 150: sotto la banda 150-156 \u2014 a fine rep 148-150, appena sotto il floor.\nPrima rep 35-47 W sopra le altre: partenza fuori ritmo, EF 1,89 \u2192 1,54 e decoupling +11,0%.\nWU 10:00 @147 W (2.246 m, 40 spm) \u2014 senza i 3\u00d730\u2033 progressivi previsti.\nLavoro 5.234 m @232 W \u00b7 47 spm \u00b7 DF 57 \u00b7 953 colpi + 402 WU \u00b7 501 cal totali.\nMet\u00e0-rep: prime met\u00e0 a FC 130-135 (Z2), seconde a 147-149 \u2014 met\u00e0 di ogni rep se ne va a rincorrere la zona.\nFC del WU non calcolabile: il file PM5 del 10:00 non \u00e8 stato caricato (webarchive s\u00ec).',
       ergTable: { fcMed: 140, fcMax: 150, efTot: '1.65', dec: [{ m: 'SKI', v: '+11.0%' }], total: { tempo: '34:00', metri: '7,685', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 140, fcmax: 150, zona: 'Z3', cal: 501, colpi: 1355, maxpw: 372 }, rows: [{ m: 'SKI', split: 'WU 2\u2032 1', tempo: '2:00', metri: '445', pace: '2:14.8', watt: 143, calh: 780, sm: 40, ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'WU 2\u2032 2', tempo: '2:00', metri: '450', pace: '2:13.3', watt: 148, calh: 810, sm: 39, ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'WU 2\u2032 3', tempo: '2:00', metri: '446', pace: '2:14.5', watt: 144, calh: 780, sm: 40, ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'WU 2\u2032 4', tempo: '2:00', metri: '445', pace: '2:14.8', watt: 143, calh: 810, sm: 41, ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'WU 2\u2032 5', tempo: '2:00', metri: '460', pace: '2:10.4', watt: 158, calh: 840, sm: 41, ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'rep 1', tempo: '5:00', metri: '1,364', pace: '1:49.9', watt: 263, calh: 1212, sm: 48, ef: '1.89', fcmed: 139, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'SKI', split: 'rec 1', tempo: '1:00', metri: '46', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'rep 2', tempo: '5:00', metri: '1,301', pace: '1:55.2', watt: 228, calh: 1080, sm: 46, ef: '1.62', fcmed: 141, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'SKI', split: 'rec 2', tempo: '1:00', metri: '30', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'rep 3', tempo: '5:00', metri: '1,290', pace: '1:56.2', watt: 223, calh: 1068, sm: 45, ef: '1.58', fcmed: 141, fcmax: 150, zona: 'Z3', t: 1 }, { m: 'SKI', split: 'rec 3', tempo: '1:00', metri: '31', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }, { m: 'SKI', split: 'rep 4', tempo: '5:00', metri: '1,277', pace: '1:57.4', watt: 216, calh: 1035, sm: 45, ef: '1.54', fcmed: 140, fcmax: 149, zona: 'Z3', t: 1 }, { m: 'SKI', split: 'rec 4', tempo: '1:00', metri: '68', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 }] } } },
@@ -10070,17 +10072,17 @@ const BADGES = {
       why: 'Il medio da 10 km lo fai gia\' (25 LUG, 10 km @5:02/km).',
       go: 'Metti il medio lungo di quella settimana a SAB 29. Se la fai da 15 km prendi anche il 15K con la stessa corsa.' },
     { n: '15K di agosto', en: 'August 15K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 15 km', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: null,
-      why: 'MER 05 il programma prescrive 3+13 km = 16 km in una seduta.',
-      go: 'MER 05: registra risc + medio come UNA sola attività e il badge arriva col programma.' },
+      req: 'Una singola corsa da 15 km', win: 'tutto agosto', d1: null, d2: null, st: 'done', prog: 'completata: 16 km in una attività (Federico, 05/08)',
+      why: 'MER 05 il programma prescriveva 3+13 km = 16 km in una seduta.',
+      go: 'Presa col medio del 05/08.' },
     { n: 'Corsa ad agosto', en: 'August Rundown', cat: 'RUN', tipo: 'cumulativa',
-      req: '80,5 km di corsa (50 miglia)', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '12,929 / 80,5 km (sito, 04/08)',
+      req: '80,5 km di corsa (50 miglia)', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '28,891 / 80,5 km (sito, 05/08)',
       why: 'A luglio hai corso 99,774 km in 13 uscite.',
       go: 'Nessuna modifica: col volume attuale ci arrivi intorno al 25 AGO.' },
     { n: 'PacePro ad agosto', en: 'PacePro August', cat: 'RUN', tipo: 'singola',
       req: 'Corsa ≥ 1 km guidata da PacePro, entro ±00:15/km dal passo obiettivo', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: null,
       why: 'Sfida nuova di agosto, mai fatta prima.',
-      go: 'MER 05 e\' la giornata perfetta: 13 km a 5:00/km fissi. Crea la strategia su Connect, mandala all\'orologio e seguila entro ±15"/km.' },
+      go: 'Il tapis NON attiva PacePro (verificato il 05/08): serve una corsa outdoor. Prossima occasione: SAB 08 collinare in precollina — crea la strategia su Connect, mandala all\'orologio, ±15"/km su ≥1 km.' },
     // ── BICI
     { n: 'Weekend 40K di agosto', en: 'August Weekend 40K', cat: 'BIKE', tipo: 'singola',
       req: 'Una singola uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'push', prog: null,
@@ -10126,7 +10128,7 @@ const BADGES = {
       why: 'Il nuovo ciclo di Mattia ha 2 sedute di forza a settimana (LUN e MER): ~35\' l\'una fanno oltre 4 ore nel mese.',
       go: 'Registra i blocchi forza come attivita\' Forza separata, non dentro il cardio.' },
     { n: 'Attivita\' ad agosto', en: 'Active August', cat: 'FIT', tipo: 'cumulativa',
-      req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '7 / 20 (sito, 05/08)',
+      req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '8 / 20 (sito, 05/08)',
       why: 'A luglio 37 attivita\' registrate per 35,1 ore.',
       go: 'Nessuna modifica.' },
     { n: 'Asana ad agosto', en: 'August Warrior', cat: 'FIT', tipo: 'cumulativa',
@@ -10144,9 +10146,9 @@ const BADGES = {
       go: 'Quattro sedute da 1.000 m.' },
     // ── SOCIAL
     { n: 'Condivisione foto di agosto', en: 'August Photo Share', cat: 'SOC', tipo: 'cumulativa',
-      req: 'Foto su almeno 3 attivita\' visibili ad altri', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: '1 / 3 (Federico, 04/08)',
+      req: 'Foto su almeno 3 attivita\' visibili ad altri', win: 'tutto agosto', d1: null, d2: null, st: 'done', prog: 'completata (Federico, 05/08)',
       why: 'Dipende dalla visibilita\' delle attivita\', non dall\'allenamento.',
-      go: 'Tre foto su tre uscite diverse.' },
+      go: 'Presa: tre foto condivise.' },
     { n: 'Mi piace ad agosto', en: 'August Likes', cat: 'SOC', tipo: 'cumulativa',
       req: '25 "mi piace" su attivita\', post o commenti', win: 'tutto agosto', d1: null, d2: null, st: 'done', prog: 'completata',
       why: 'Risultava gia\' completata nell\'app il 01 AGO.',
