@@ -10128,7 +10128,7 @@ const BADGES = {
       why: 'Il nuovo ciclo di Mattia ha 2 sedute di forza a settimana (LUN e MER): ~35\' l\'una fanno oltre 4 ore nel mese.',
       go: 'Registra i blocchi forza come attivita\' Forza separata, non dentro il cardio.' },
     { n: 'Attivita\' ad agosto', en: 'Active August', cat: 'FIT', tipo: 'cumulativa',
-      req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '8 / 20 (sito, 05/08)',
+      req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '7 / 20 (Federico, 05/08)',
       why: 'A luglio 37 attivita\' registrate per 35,1 ore.',
       go: 'Nessuna modifica.' },
     { n: 'Asana ad agosto', en: 'August Warrior', cat: 'FIT', tipo: 'cumulativa',
