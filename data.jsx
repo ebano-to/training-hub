@@ -10058,8 +10058,8 @@ const BADGES = {
   month: 'AGOSTO 2026',
   monthStart: '2026-08-01',
   monthEnd: '2026-08-31',
-  updated: '04 AGO 2026',
-  snapshot: '04 AGO 2026 h.20:57',
+  updated: '06 AGO 2026',
+  snapshot: '06 AGO 2026 h.11:55',
   sources: ['app Garmin Connect (screenshot 01 AGO · passi/camminata/foto riferiti da Federico, data sul singolo prog)', 'badgehero.io/post/2026-07-20-garmin-august-2026-badges'],
   items: [
     // ── CORSA
@@ -10076,7 +10076,7 @@ const BADGES = {
       why: 'MER 05 il programma prescriveva 3+13 km = 16 km in una seduta.',
       go: 'Presa col medio del 05/08.' },
     { n: 'Corsa ad agosto', en: 'August Rundown', cat: 'RUN', tipo: 'cumulativa',
-      req: '80,5 km di corsa (50 miglia)', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '28,891 / 80,5 km (sito, 05/08)',
+      req: '80,5 km di corsa (50 miglia)', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '28,891 / 80,5 km (sito, 06/08)',
       why: 'A luglio hai corso 99,774 km in 13 uscite.',
       go: 'Nessuna modifica: col volume attuale ci arrivi intorno al 25 AGO.' },
     { n: 'PacePro ad agosto', en: 'PacePro August', cat: 'RUN', tipo: 'singola',
@@ -10124,11 +10124,11 @@ const BADGES = {
       go: 'Iscriviti a una weekly steps challenge con pochi partecipanti.' },
     // ── FORZA E ATTIVITA'
     { n: 'Piu\' forza ad agosto', en: 'August Gains', cat: 'FIT', tipo: 'cumulativa',
-      req: '4 ore di attivita\' di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '1h02m / 4h (sito, 05/08)',
+      req: '4 ore di attivita\' di forza in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '1h02m / 4h (sito, 06/08)',
       why: 'Il nuovo ciclo di Mattia ha 2 sedute di forza a settimana (LUN e MER): ~35\' l\'una fanno oltre 4 ore nel mese.',
       go: 'Registra i blocchi forza come attivita\' Forza separata, non dentro il cardio.' },
     { n: 'Attivita\' ad agosto', en: 'Active August', cat: 'FIT', tipo: 'cumulativa',
-      req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '7 / 20 (Federico, 05/08)',
+      req: '20 attivita\' da almeno 20 minuti ciascuna', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '9 / 20 (sito, 06/08)',
       why: 'A luglio 37 attivita\' registrate per 35,1 ore.',
       go: 'Nessuna modifica.' },
     { n: 'Asana ad agosto', en: 'August Warrior', cat: 'FIT', tipo: 'cumulativa',
