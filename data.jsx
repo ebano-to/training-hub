@@ -1143,10 +1143,37 @@ const WEEK = [
       { code: 'CR', t: 'Hyrox Aerobic · EMOM 60\' · 5 stazioni', d: 'Mattia · I: 15/12 kCal SkiErg (max 45") · II: 15 Wall Balls · III: 15/12 kCal Assault (max 45") · IV: 20 m Sandbag Lunges · V: Rest · 12 giri da 5\' · vs EMOM 52\' saltato in S31: torna la stazione di rest', dur: '60\'', result: 'da fare' }
     ]
   },
-  { day: 'DOM', date: '09', title: 'REST', sub: 'Ultimo giorno finestra Weekend 40K', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'DOM', date: '09', title: 'BIKE S33 ANTICIPATA · VIRGIN', sub: 'Mattina prima della partenza · allunga il defa: obiettivo 40 km per il badge Weekend 40K', load: 'Z2-Z5', duration: 70, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + defa lungo', d: 'Gabriele (LUN 10 anticipata) · al Virgin · struttura base ~46\': per i 40 km totali servono ~60-70\' in sella, allunga il defa fin dove arrivi · ⚠️ salvala con Garmin: il badge conta solo attività Garmin', dur: '70\'', result: 'da fare' },
+    ]
   },
 ];
+
+// Prossima settimana — S33 (10-16 AGO 2026) · FERIE, piano ristrutturato con Federico il 06/08
+const NEXTWEEK = [
+  { day: 'LUN', date: '10', title: 'VIAGGIO · FERIE', sub: 'Bike di Gabriele anticipata a DOM 09', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MAR', date: '11', title: 'FERIE', sub: 'Tapis di Gabriele spostato a VEN 14', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MER', date: '12', title: 'CORSA AL LAGO D\u2019ORTA', sub: 'Pomeriggio · outdoor a passo fisso: occasione PacePro', load: 'Z3-Z4', duration: 48, kind: 'run', runKm: 9, done: false,
+    blocks: [
+      { code: 'RUN', t: 'Corsa · 3 km risc + 6 km @5:00/km', d: 'Gabriele · al lago d\u2019Orta, pomeriggio · 9 km totali · outdoor a passo fisso: crea la strategia PacePro su Connect PRIMA di partire, \u00b115"/km su \u22651 km e il badge arriva', dur: '48\'', result: 'da fare' },
+    ]
+  },
+  { day: 'GIO', date: '13', title: 'FERIE', sub: 'Pista 8\u00d7400 di Gabriele esclusa: pista chiusa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'VEN', date: '14', title: 'RIENTRO · TAPIS 20\' @148 + ERG', sub: 'Pomeriggio a casa · progressione: blocco 15\'\u219220\', target 155\u2192148', load: 'Z3', duration: 75, kind: 'multierg', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Tapis · 20\' pendenza 10% a 148 bpm', d: 'Gabriele (spostato da MAR 11) · 15\' risc + 20\' @148 bpm (Z3) @10% + rec 8\' corsetta in pianura + 5\' defa · vs 04/08: blocco +5\', target \u22127 bpm', dur: '48\'', result: 'da fare' },
+      { code: 'ERG', t: 'Erg a casa · programma di Mattia (da definire)', d: 'Segnaposto: chiedere a Mattia un lavoro ski/row da abbinare al tapis, visto che a casa ci sono skierg e rower', dur: '\u2014', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '15', title: 'COLLINARE 45\' + ALLUNGHI', sub: 'Mattina presto · il badge Weekend 5K (14-16) arriva da solo', load: 'Z2-Z3', duration: 55, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Collinare · 45\' in precollina no stress + 8\u00d7100 m allunghi r40"', d: 'Gabriele · mattina presto · no stress · finestra Weekend 5K 14-16: \u22655 km in una corsa e il badge arriva · PacePro qui se non fatto MER', dur: '55\'', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '16', title: 'REST', sub: 'Ultimo giorno di ferie', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+];
+
 
 // Real Personal Bests
 const PBS = [
@@ -10087,9 +10114,9 @@ const BADGES = {
       go: 'Il tapis NON attiva PacePro (verificato il 05/08): serve una corsa outdoor. Prossima occasione: SAB 08 collinare in precollina — crea la strategia su Connect, mandala all\'orologio, ±15"/km su ≥1 km.' },
     // ── BICI
     { n: 'Weekend 40K di agosto', en: 'August Weekend 40K', cat: 'BIKE', tipo: 'singola',
-      req: 'Una singola uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'push', prog: null,
-      why: 'Il programma S32 non ha bici nella finestra: la seduta bike e\' LUN 03, VEN e DOM sono liberi e SAB c\'e\' la collinare.',
-      go: 'VEN ora e\' pieno (60\' erg + stairmaster): resta DOM 09 per un giro extra da 40 km. Nel tuo range (42 km il 01/08), ma e\' volume aggiunto e domenica c\'e\' anche il nodo test: scelta tua.' },
+      req: 'Una singola uscita in bici da 40 km', win: '07 → 09 AGO', d1: '2026-08-07', d2: '2026-08-09', st: 'plan', prog: null,
+      why: 'La bike S33 anticipata a DOM 09 mette una seduta bici dentro la finestra: basta allungarla.',
+      go: 'DOM 09 mattina al Virgin: dopo gli intervalli allunga il defa fino a ~40 km totali (~60-70 minuti in sella) e salva con Garmin.' },
     { n: 'Pedala 100 km ad agosto', en: 'August Ride to 100', cat: 'BIKE', tipo: 'cumulativa',
       req: '100 km di bici sommati nel periodo', win: '23 → 29 AGO', d1: '2026-08-23', d2: '2026-08-29', st: 'push', prog: '0,0 / 100,0 km (sito, 04/08)',
       why: 'A luglio 70,659 km di bici outdoor in tutto il mese.',
@@ -10189,4 +10216,5 @@ const HYDRATION = [
 ];
 
 window.TRAINING = {
+  NEXTWEEK,
   PROG, RACE, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };

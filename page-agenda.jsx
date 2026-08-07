@@ -1,10 +1,12 @@
 // AGENDA — Telemetry style + week archive navigation
 function AgendaPage() {
-  const { ATHLETE, WEEK, WEEK_ARCHIVE, BADGES } = window.TRAINING;
-  const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '11 → 17 MAG 2026', programWeek: ATHLETE.programWeek, days: WEEK }]);
-  const [weekIdx, setWeekIdx] = React.useState(allWeeks.length - 1);
+  const { ATHLETE, WEEK, WEEK_ARCHIVE, NEXTWEEK, BADGES } = window.TRAINING;
+  const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '03 → 09 AGO 2026', programWeek: ATHLETE.programWeek, days: WEEK }]).concat(NEXTWEEK && NEXTWEEK.length ? [{ id: 'S' + (ATHLETE.programWeek + 1), label: 'S' + (ATHLETE.programWeek + 1) + ' · FERIE', range: '10 → 16 AGO 2026', programWeek: ATHLETE.programWeek + 1, days: NEXTWEEK }] : []);
+  const curIdx = NEXTWEEK && NEXTWEEK.length ? allWeeks.length - 2 : allWeeks.length - 1;
+  const [weekIdx, setWeekIdx] = React.useState(curIdx);
   const currentWeekDays = allWeeks[weekIdx].days;
-  const isCurrentWeek = weekIdx === allWeeks.length - 1;
+  const isCurrentWeek = weekIdx === curIdx;
+  const isNextWeek = NEXTWEEK && NEXTWEEK.length > 0 && weekIdx === allWeeks.length - 1;
   const todayNum = new Date().getDate();
   const todayDate = todayNum.toString();
   const todayIdx = isCurrentWeek ? currentWeekDays.findIndex((w) => parseInt(w.date, 10) === todayNum) : -1;
@@ -42,7 +44,7 @@ function AgendaPage() {
     return y + '-' + String(m + 1).padStart(2, '0') + '-' + String(n).padStart(2, '0');
   }
   function badgesForDay(w) {
-    if (!isCurrentWeek || !BADGES) return [];
+    if ((!isCurrentWeek && !isNextWeek) || !BADGES) return [];
     var d = isoForDay(w.date);
     return BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off'; });
   }
