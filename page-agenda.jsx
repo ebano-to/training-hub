@@ -46,7 +46,7 @@ function AgendaPage() {
   function badgesForDay(w) {
     if ((!isCurrentWeek && !isNextWeek) || !BADGES) return [];
     var d = isoForDay(w.date);
-    return BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off'; });
+    return BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off' && b.st !== 'done' && b.st !== 'miss'; });
   }
 
   return (
