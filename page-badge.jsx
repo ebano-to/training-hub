@@ -213,6 +213,7 @@ function BadgePage() {
                 <span style={{ fontSize: 9, letterSpacing: '0.12em', color: ST[s.st].c, border: '1px solid ' + ST[s.st].c, padding: '2px 6px' }}>{ST[s.st].l}</span>
               </div>
               <div style={{ fontSize: 12, color: 'var(--fg-2)', marginTop: 6, fontFamily: 'var(--sans)' }}>{s.req}</div>
+              {s.prog && <div className="display tabular" style={{ fontSize: 16, marginTop: 6 }}>{s.prog}</div>}
               <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 6, fontFamily: 'var(--mono)' }}>
                 <span style={{ color: 'oklch(75% 0.14 220)' }}>DATI</span> {s.why}
               </div>

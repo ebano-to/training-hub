@@ -10208,10 +10208,6 @@ const BADGES = {
       req: '80,5 km di corsa (50 miglia)', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '60,928 / 80,5 km (sito, 14/08)',
       why: 'A luglio hai corso 99,774 km in 13 uscite.',
       go: 'Nessuna modifica: col volume attuale ci arrivi intorno al 25 AGO.' },
-    { n: 'Corsa 2026 · Parte 3', en: '2026 Running Stage 3', cat: 'RUN', tipo: 'cumulativa',
-      req: '300 km di corsa nel trimestre luglio-settembre', win: 'LUG → SET', d1: '2026-07-01', d2: '2026-09-30', st: 'auto', prog: '167,6 / 300,0 km (Federico, 14/08)',
-      why: 'A meta\' trimestre sei al 56%: servono ~132 km in 47 giorni, sotto il tuo ritmo abituale (~100 km/mese).',
-      go: 'Nessuna modifica: arriva col volume del programma.' },
     { n: 'PacePro ad agosto', en: 'PacePro August', cat: 'RUN', tipo: 'singola',
       req: 'Corsa ≥ 1 km guidata da PacePro, entro ±00:15/km dal passo obiettivo', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: null,
       why: 'Sfida nuova di agosto, mai fatta prima.',
@@ -10293,8 +10289,8 @@ const BADGES = {
   ],
   // Stage trimestrali 2026 ─ terza tappa. Adesione non risultante dagli screenshot.
   stages: [
-    { n: '2026 Running ─ Stage 3', req: '300 km di corsa', win: '01 LUG → 30 SET', st: 'auto',
-      why: 'A luglio 99,774 km. Con lo stesso ritmo chiudi i 300 km entro fine settembre.' },
+    { n: '2026 Running ─ Stage 3', req: '300 km di corsa', win: '01 LUG → 30 SET', st: 'auto', prog: '167,6 / 300,0 km (Federico, 14/08)',
+      why: 'Al 56% a meta\' trimestre: mancano ~132 km in 47 giorni, sotto il tuo ritmo abituale.' },
     { n: '2026 Cycling ─ Stage 3', req: '675 km di bici', win: '01 LUG → 30 SET', st: 'push',
       why: 'A luglio 70,659 km di bici outdoor: servirebbero circa 300 km al mese ad agosto e settembre.' },
     { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push',
