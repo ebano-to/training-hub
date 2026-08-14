@@ -1162,11 +1162,7 @@ const WEEK = [
       { code: 'RUN', t: 'Tapis · Ripetute 8×400 m @4:00/km · rec 100 m corsetta', d: 'Gabriele · 4:00/km = 1:36 a ripetuta (pace dal PDF, tempo derivato) + 20\' defa · lavoro separato, dopo il blocco pendenza', dur: '42\'', result: '8×400 m @4:00 governati dal tapis · FC rep 142→156 (plateau Z4), max 167 · rec ~45″ corsetta, FC non scende · defa 5:31 su 20\' prescritti' },
     ]
   },
-  { day: 'SAB', date: '15', title: 'BIKE INTERVALLI · VIRGIN', sub: 'Gabriele · sprint 340 W + blocchi @180 W', load: 'Z2-Z5', duration: 46, kind: 'bike', done: false,
-    blocks: [
-      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: 'da fare' },
-    ]
-  },
+  { day: 'SAB', date: '15', title: 'REST', sub: 'Ferragosto · Virgin chiusa', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
   { day: 'DOM', date: '16', title: 'COLLINARE 45\' + ALLUNGHI', sub: 'Occasione PacePro', load: 'Z2-Z3', duration: 55, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Collinare · 45\' no stress + 8×100 m allunghi r40"', d: 'Gabriele · no stress · PacePro: crea la strategia su Connect prima di partire, ±15"/km su ≥1 km, il tapis non lo attiva', dur: '55\'', result: 'da fare' },
@@ -1186,7 +1182,11 @@ const NEXTWEEK = [
       { code: 'RUN', t: 'Ripetute · 3×7\' @4:50/km · rec 4\' corsetta', d: 'Gabriele · scaldati bene · 4:50/km = ~1.448 m a ripetuta (pace dal PDF, distanza derivata) · lavoro 21\' + rec 8\' + 20\' defa', dur: '65\'', result: 'da fare' },
     ]
   },
-  { day: 'MER', date: '19', title: 'RECOVERY', sub: 'Riposo (da programma)', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MER', date: '19', title: 'BIKE INTERVALLI · VIRGIN', sub: 'Recuperata da SAB 15 (Ferragosto) · nel giorno recovery, da confermare', load: 'Z2-Z5', duration: 46, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: 'da fare' },
+    ]
+  },
   { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: 'No stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40"', dur: '85\'', result: 'da fare' },
