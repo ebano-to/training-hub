@@ -10240,9 +10240,9 @@ const BADGES = {
       go: 'Fattibile solo registrando sistematicamente gli spostamenti a piedi.' },
     // ── PASSI
     { n: 'Agosto a piedi', en: 'Step into August', cat: 'STEP', tipo: 'cumulativa',
-      req: '100.000 passi', win: '01 → 14 AGO', d1: '2026-08-01', d2: '2026-08-14', st: 'auto', prog: '50.830 / 100.000 (Federico, 04/08)',
+      req: '100.000 passi', win: '01 → 14 AGO', d1: '2026-08-01', d2: '2026-08-14', st: 'done', prog: 'completata: 100.000 passi (Federico, 14/08)',
       why: 'Restano 49.170 passi in 10 giorni = 4.917 al giorno.',
-      go: 'Nessuna modifica: e\' sotto la media di chi corre 100 km al mese.' },
+      go: 'Presa.' },
     { n: 'Passi ad agosto', en: 'August Step Month', cat: 'STEP', tipo: 'cumulativa',
       req: '300.000 passi in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '50.830 / 300.000 (Federico, 04/08)',
       why: 'Restano 249.170 passi su 27 giorni = 9.229 al giorno.',
