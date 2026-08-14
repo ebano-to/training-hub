@@ -135,7 +135,7 @@ function BadgePage() {
 
       {/* Filtri */}
       <div style={{ display: 'flex', gap: 4, marginBottom: 12, flexWrap: 'wrap' }}>
-        {[['ALL', 'TUTTE'], ['plan', ST.plan.l], ['auto', ST.auto.l], ['push', ST.push.l], ['off', ST.off.l], ['done', ST.done.l]].map(([k, l]) => {
+        {[['ALL', 'TUTTE'], ['plan', ST.plan.l], ['auto', ST.auto.l], ['push', ST.push.l], ['off', ST.off.l], ['miss', ST.miss.l], ['done', ST.done.l]].map(([k, l]) => {
           const sel = filter === k;
           const c = k === 'ALL' ? 'var(--accent)' : ST[k].c;
           return (

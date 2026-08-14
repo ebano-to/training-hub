@@ -10244,7 +10244,7 @@ const BADGES = {
       why: 'Restano 49.170 passi in 10 giorni = 4.917 al giorno.',
       go: 'Presa.' },
     { n: 'Passi ad agosto', en: 'August Step Month', cat: 'STEP', tipo: 'cumulativa',
-      req: '300.000 passi in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '50.830 / 300.000 (Federico, 04/08)',
+      req: '300.000 passi in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '≥100.000 / 300.000 (Federico, 14/08)',
       why: 'Restano 249.170 passi su 27 giorni = 9.229 al giorno.',
       go: 'Nessuna modifica.' },
     { n: 'Podio per i passi ad agosto', en: 'August Steps Podium', cat: 'STEP', tipo: 'singola',
