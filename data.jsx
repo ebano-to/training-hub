@@ -1162,9 +1162,9 @@ const WEEK = [
       { code: 'RUN', t: 'Tapis · Ripetute 8×400 m @4:00/km · rec 100 m corsetta', d: 'Gabriele · 4:00/km = 1:36 a ripetuta (pace dal PDF, tempo derivato) + 20\' defa · lavoro separato, dopo il blocco pendenza', dur: '42\'', result: 'da fare' },
     ]
   },
-  { day: 'SAB', date: '15', title: 'BIKE INTERVALLI · VIRGIN', sub: 'Gabriele · sprint 340 W + blocchi @180 W', load: 'Z2-Z5', duration: 56, kind: 'bike', done: false,
+  { day: 'SAB', date: '15', title: 'BIKE INTERVALLI · VIRGIN', sub: 'Gabriele · sprint 340 W + blocchi @180 W', load: 'Z2-Z5', duration: 46, kind: 'bike', done: false,
     blocks: [
-      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '56\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: 'da fare' },
     ]
   },
   { day: 'DOM', date: '16', title: 'COLLINARE 45\' + ALLUNGHI', sub: 'Ultimo giorno di ferie · Weekend 5K: ≥5 km e arriva da solo · occasione PacePro', load: 'Z2-Z3', duration: 55, kind: 'run', done: false,
