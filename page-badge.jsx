@@ -9,6 +9,7 @@ function BadgePage() {
     plan:  { l: 'DA PIAZZARE', c: 'oklch(82% 0.16 85)' },
     push:  { l: 'SERVE VOLUME', c: 'oklch(70% 0.15 30)' },
     off:   { l: 'ALTRO SPORT', c: 'var(--fg-3)' },
+    miss:  { l: 'MANCATA', c: 'oklch(60% 0.12 25)' },
   };
   const CAT = {
     RUN: '#39E75F', BIKE: '#FF6B9D', WALK: '#B388FF', SWIM: '#58ADF7',
