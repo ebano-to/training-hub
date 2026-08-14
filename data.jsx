@@ -1133,9 +1133,9 @@ const WEEK_ARCHIVE = [
       { code: 'ALTRO', t: 'Stairmaster 30\' Z2', d: 'Mattia · zona 2 (120-135 bpm)', dur: '30\'', result: 'SALTATO', skipped: true },
     ]
   },
-  { day: 'SAB', date: '08', title: 'EMOM 60\'', sub: 'Mattia · 5 stazioni', load: '—', duration: 60, kind: 'hyrox', done: true,
+  { day: 'SAB', date: '08', title: 'EMOM 60\'', sub: 'Mattia · 5 stazioni · saltato in pieno', load: '—', duration: 60, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'CR', t: 'Hyrox Aerobic · EMOM 60\' · 5 stazioni', d: 'Mattia · I: 15/12 kCal SkiErg (max 45") · II: 15 Wall Balls · III: 15/12 kCal Assault (max 45") · IV: 20 m Sandbag Lunges · V: Rest · 12 giri da 5\' · vs EMOM 52\' saltato in S31: torna la stazione di rest', dur: '60\'', result: 'SALTATO in pieno', skipped: true }
+      { code: 'CR', t: 'Hyrox Aerobic · EMOM 60\' · 5 stazioni', d: 'Mattia · I: 15/12 kCal SkiErg (max 45") · II: 15 Wall Balls · III: 15/12 kCal Assault (max 45") · IV: 20 m Sandbag Lunges · V: Rest · 12 giri da 5\' · vs EMOM 52\' saltato in S31: torna la stazione di rest', dur: '60\'', result: 'SALTATO', skipped: true }
     ]
   },
   { day: 'DOM', date: '09', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
@@ -1174,19 +1174,35 @@ const WEEK = [
   },
 ];
 
-// Prossima settimana — S34 (17-23 AGO 2026) · test assault recuperato, programmi S34 in arrivo
+// Prossima settimana — S34 (17-23 AGO 2026) · Gabriele caricato (LUN corretto in run), Mattia in arrivo
 const NEXTWEEK = [
-  { day: 'LUN', date: '17', title: 'TEST ASSAULT 30\' @145', sub: 'Giorno da confermare quando arrivano i programmi S34', load: 'Z3', duration: 30, kind: 'bike', done: false,
+  { day: 'LUN', date: '17', title: 'COLLINARE 50\' + ALLUNGHI', sub: 'Mentone · Gabri l\'ha segnata CYCLING per errore: è run', load: 'Z2-Z3', duration: 60, kind: 'run', done: false,
     blocks: [
-      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: 'Il nuovo ciclo di Mattia non lo prevedeva: deciso di farlo · stesso protocollo dei test row/ski · giorno da definire coi programmi S34', dur: '30\'', result: 'da fare' },
+      { code: 'RUN', t: 'Collinare · 50\' + 8×100 m allunghi r40"', d: 'Gabriele · mentone · 50\' collinari no stress + 8 allunghi da 100 m r40"', dur: '60\'', result: 'da fare' },
     ]
   },
-  { day: 'MAR', date: '18', title: 'DA DEFINIRE', sub: 'In attesa dei programmi', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MER', date: '19', title: 'DA DEFINIRE', sub: 'In attesa dei programmi', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'GIO', date: '20', title: 'DA DEFINIRE', sub: 'In attesa dei programmi', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'VEN', date: '21', title: 'DA DEFINIRE', sub: 'In attesa dei programmi', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'SAB', date: '22', title: 'DA DEFINIRE', sub: 'In attesa dei programmi', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'DOM', date: '23', title: 'DA DEFINIRE', sub: 'In attesa dei programmi', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MAR', date: '18', title: 'RIPETUTE 3×7\' @4\'50"/KM', sub: 'Scaldati bene · rec 4\' corsetta · 20\' defa', load: 'Z3-Z4', duration: 65, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Ripetute · 3×7\' @4:50/km · rec 4\' corsetta', d: 'Gabriele · scaldati bene · 4:50/km = ~1.448 m a ripetuta (pace dal PDF, distanza derivata) · lavoro 21\' + rec 8\' + 20\' defa', dur: '65\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '19', title: 'RECOVERY', sub: 'Riposo (da programma)', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: 'No stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40"', dur: '85\'', result: 'da fare' },
+    ]
+  },
+  { day: 'VEN', date: '21', title: 'TEST ASSAULT 30\' @145', sub: 'Giorno da confermare · nel programma di Gabriele è libero', load: 'Z3', duration: 30, kind: 'bike', done: false,
+    blocks: [
+      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: 'Il nuovo ciclo di Mattia non lo prevedeva: deciso di farlo · stesso protocollo dei test row/ski · giorno da confermare coi programmi di Mattia S34', dur: '30\'', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '22', title: 'RIPETUTE 16×200 @4\'/KM', sub: 'Scaldati bene · rec 1\'20" corsetta · 20\' defa', load: 'Z3-Z4', duration: 70, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Ripetute · 16×200 m @4:00/km · rec 1\'20" corsetta', d: 'Gabriele · scaldati bene · 4:00/km = 48" a ripetuta (pace dal PDF, tempo derivato) · lavoro 12\'48" + rec 20\' + 20\' defa', dur: '70\'', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '23', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
 ];
 
 
