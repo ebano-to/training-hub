@@ -1186,9 +1186,9 @@ const WEEK = [
       { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: 'da fare' },
     ]
   },
-  { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: 'No stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
+  { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: '⚠️ PACEPRO: creala PRIMA di uscire · no stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40"', dur: '85\'', result: 'da fare' },
+      { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40" · PACEPRO (badge 2pt): su Connect → Allenam. e pianificaz. → Strategie dell\'andatura PacePro → crea su un percorso ≥1 km a passo comodo (±15"/km di margine) → invia all\'orologio → avviala col lavoro', dur: '85\'', result: 'da fare' },
     ]
   },
   { day: 'VEN', date: '21', title: 'TEST ASSAULT 30\' @145', sub: 'Giorno da confermare · nel programma di Gabriele è libero', load: 'Z3', duration: 30, kind: 'bike', done: false,
