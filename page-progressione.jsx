@@ -225,6 +225,60 @@ function ProgressionePage() {
         </div>
       </ModulePanel>
 
+      {/* NUOTO — progressione piscina per classi di distanza */}
+      <ModulePanel code="MOD.PROG · nuoto_piscina" title="NUOTO · PISCINA" sub="Classi di distanza · ▲ = giorno che batte il best di pace/100 m precedente · ● = best attuale · cronologico dal 2023">
+        {(() => {
+          const swims = (window.TRAINING.HISTORY || []).filter((h) => h.kind === 'swim' && h.filone === 'swim-piscina').slice().reverse();
+          const dm = (d) => parseFloat((d || '0').replace(/\./g, '').replace(' m', ''));
+          const ps = (x) => { if (!x) return null; const a = x.split(':'); return parseInt(a[0], 10) * 60 + parseFloat(a[1]); };
+          const CLS = [['400-800 m', 400, 800], ['800-1.200 m', 800, 1200], ['1.200 m+', 1200, 99999]];
+          return CLS.map(([name, lo, hi], ci) => {
+            const rows = swims.filter((h) => dm(h.m.dist) >= lo && dm(h.m.dist) < hi && ps(h.m.pace));
+            if (!rows.length) return null;
+            let best = null;
+            const marked = rows.map((h, i) => {
+              const v = ps(h.m.pace);
+              const pb = i > 0 && best !== null && v < best;
+              if (best === null || v < best) best = v;
+              return { h, pb };
+            });
+            const curBest = rows.reduce((a, h) => (ps(h.m.pace) < ps(a.m.pace) ? h : a), rows[0]);
+            return (
+              <div key={ci} style={{ marginBottom: 18 }}>
+                <div style={{ fontSize: 10, letterSpacing: '0.14em', color: 'var(--fg-3)', margin: '6px 0' }}>PISCINA · {name} · {rows.length} sedute</div>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+                  <thead><tr style={{ color: 'var(--fg-3)', fontSize: 9, letterSpacing: '0.12em', textAlign: 'left' }}>
+                    {['DATA', 'VASCHE', 'METRI', 'TEMPO', 'PACE /100M', 'FC', ''].map((c, k) => <th key={k} style={{ padding: '5px 10px', borderBottom: '1px solid var(--line)' }}>{c}</th>)}
+                  </tr></thead>
+                  <tbody>
+                    {marked.map(({ h, pb }, k) => {
+                      const cur = h === curBest;
+                      return (
+                        <tr key={k} style={{ borderBottom: '1px dashed var(--line-2)', background: cur ? 'oklch(88% 0.20 130 / 0.07)' : 'transparent' }}>
+                          <td className="display tabular" style={{ padding: '6px 10px', whiteSpace: 'nowrap' }}>{h.date}</td>
+                          <td style={{ padding: '6px 10px', color: 'var(--fg-2)' }}>{h.m.lavoro}</td>
+                          <td className="display tabular" style={{ padding: '6px 10px' }}>{h.m.dist}</td>
+                          <td className="display tabular" style={{ padding: '6px 10px' }}>{h.m.dur}</td>
+                          <td className="display tabular" style={{ padding: '6px 10px', color: pb || cur ? 'var(--accent)' : 'inherit', fontWeight: pb || cur ? 700 : 400 }}>{h.m.pace}</td>
+                          <td className="display tabular" style={{ padding: '6px 10px', color: 'var(--fg-2)' }}>{h.m.fcMed ? h.m.fcMed + '/' + h.m.fcMax : '—'}</td>
+                          <td style={{ padding: '6px 10px', fontSize: 10, whiteSpace: 'nowrap' }}>
+                            {pb && <span style={{ color: 'var(--accent)' }}>▲</span>}
+                            {cur && <span style={{ color: 'var(--accent)', marginLeft: 5 }}>● BEST ATTUALE</span>}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            );
+          });
+        })()}
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', fontFamily: 'var(--mono)', marginTop: 4 }}>
+          Pace = tempo in movimento / 100 m (soste escluse) · vasche diverse (20/50 m) non del tutto equivalenti: la virata da 20 m aiuta il pace · acque libere fuori dalle progressioni (correnti e GPS): restano descrittive nella pagina NUOTO.
+        </div>
+      </ModulePanel>
+
       {/* Metodo */}
       <ModulePanel code="MOD.METODO · cosa_conta_e_cosa_no">
         <div style={{ fontSize: 11, color: 'var(--fg-2)', lineHeight: 1.9, whiteSpace: 'pre-line' }}>
