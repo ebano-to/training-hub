@@ -10410,66 +10410,64 @@ const BADGES = {
   // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili, con requisito e suggerimento.
   // '(da verificare)' = requisito non confermato su badgehero: verificarlo prima di proporre l'azione.
   garmin: [
-    { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi ma ogni ripetizione ridà i punti', items: [
-      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 85, req: 'Dormi con l\'orologio per notti consecutive', tip: 'Gira da solo: sei a quota 85, non toccare nulla' },
+    // Fonte: tab Disponibile di Federico (badges_disponibili_20260817.docx) — nomi ITALIANI e requisiti ESATTI di Garmin. ♻ = RIPETIBILE dichiarato da Garmin.
+    { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi, ogni ripetizione ridà i punti: incassano da soli', items: [
+      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 85, req: 'Notti consecutive con sonno registrato', tip: 'A quota 85: non toccare nulla' },
       { n: 'Esperto del sonno', pt: 1, rep: 31, req: 'Notti con punteggio sonno alto', tip: 'Incassa da solo' },
-      { n: 'Sei il numero uno', pt: 2, rep: 29, req: 'Vinci una sfida qualunque', tip: 'Iscriviti ogni lunedì alla weekly steps: la vinci spesso' },
-      { n: 'Podio per i passi', pt: 2, rep: 7, req: 'Podio in una sfida passi', tip: 'Preso ogni mese del 2026: basta iscriversi' },
+      { n: 'Sei il numero uno', pt: 2, rep: 29, req: 'Vinci una sfida qualunque', tip: 'Weekly steps ogni lunedì: la vinci spesso' },
+      { n: 'Podio per i passi', pt: 2, rep: 7, req: 'Podio in una sfida passi settimanale', tip: 'Routine: iscriviti e basta' },
+    ]},
+    { cat: 'COLPI FACILI', note: 'poco sforzo, punti subito', items: [
+      { n: 'Respirazione profonda 2', pt: 1, req: '5 esercizi di respirazione registrati', tip: '5 sessioni da 3′ dall\'orologio: fatto in una settimana' },
+      { n: 'Prendi una decisione', pt: 1, req: 'Una nuotata in iarde e una in metri', tip: 'Cambia unità per una vasca e rimettila: il più facile del catalogo' },
+      { n: 'La bilancia del giorno ♻', pt: 2, rep: 0, req: 'Pesati ogni giorno per 30 giorni consecutivi', tip: 'Hai la Index S2: sali sulla bilancia ogni mattina per un mese' },
+      { n: '30 per 30 ♻', pt: 2, rep: 0, req: 'Attività di almeno 30′ ogni giorno per 30 giorni consecutivi', tip: 'Quasi la tua vita normale: il nemico sono i giorni di viaggio' },
+      { n: 'Per monti e valli', pt: 1, req: 'Fai un percorso gravel', tip: 'Una MTB su sterrato salvata come gravel' },
+      { n: 'Climber 1', pt: 1, req: '150 m di dislivello in una uscita bici', tip: 'Prima MTB in collina' },
+      { n: 'Freddoloso', pt: 2, req: 'Attività con temperatura ≥38 °C (nome fuorviante!)', tip: 'Un\'uscita in canicola e scatta' },
+    ]},
+    { cat: 'PASSI & CAMMINATE', items: [
+      { n: '10K: la sfida di un giorno ♻', pt: 4, rep: 0, req: '10.000 passi al giorno per 30 giorni consecutivi', tip: 'Media attuale 14.400: parte quando vuoi, attento solo a viaggi e gare' },
+      { n: 'Cammina come un maratoneta ♻', pt: 1, rep: 0, req: '1 miglio camminato in attività singola ogni giorno per 30 gg', tip: 'Più vincolante di quanto sembri: serve l\'ATTIVITÀ registrata ogni giorno' },
+      { n: 'Più fatti e meno parole 4 · 5', pt: 8, req: '100 e 200 attività di camminata totali', tip: 'Contatori: avanzano da soli ora che registri le camminate' },
+    ]},
+    { cat: 'EXPEDITION (piani saliti)', note: 'contano i PIANI SALITI giornalieri (barometro EPIX), non i km', items: [
+      { n: 'Everest · K2', pt: 16, req: 'Sali 8.848 / 8.611 m di piani cumulativi', tip: '~3.000 piani l\'uno: partono da soli, scale sempre a piedi' },
+      { n: 'Elbrus · Kilimanjaro · Monte Bianco · Vinson · Ararat · Grossglockner', pt: 24, req: '3.800-5.900 m di piani cumulativi l\'uno', tip: 'Idem, arrivano prima dei due grandi' },
+      { n: 'Olimpo', pt: 2, req: '2.917 m di piani', tip: 'Il primo a cadere' },
+    ]},
+    { cat: 'FORZA & BENESSERE (contatori lunghi)', items: [
+      { n: 'Forza estrema 5', pt: 4, req: '200 attività di forza totali (non è dietro l\'angolo)', tip: 'Avanza con le sedute di Mattia: salvale SEMPRE come Forza separata' },
+      { n: 'Zen Master 5', pt: 4, req: '200 attività di yoga totali', tip: 'Solo se lo yoga entra davvero in routine: 200 sessioni sono anni' },
+      { n: 'Respirazione profonda 3 · 4 · 5', pt: 10, req: '25 · 50 · 100 esercizi totali', tip: 'Se prendi il vizio dei 3′ serali, la scala si fa da sola' },
+      { n: 'Migliora le tue prestazioni ♻', pt: 2, rep: 0, req: 'Attività tra le 4:00 e le 7:00 per 7 giorni consecutivi', tip: 'Una settimana di allenamenti all\'alba: dura, ma sei mattiniero' },
     ]},
     { cat: 'NUOTO', items: [
-      { n: 'Swim Streak', pt: 4, req: 'Una nuotata AL GIORNO per 30 giorni consecutivi (verificato su badgehero: rarità Epic)', tip: 'Lascialo perdere: 30 giorni di fila in acqua per 4 punti non valgono il tuo programma' },
-      { n: 'Fins On', pt: 2, req: 'Nuotata con le pinne', tip: 'Una nuotata tecnica con pinne, anche al mare' },
-      { n: 'Arctic Swim', pt: 1, req: 'Nuotata in acqua fredda', tip: 'Bagno invernale, se ti va di fare il vichingo' },
+      { n: 'Nuota come un delfino ♻', pt: 4, rep: 0, req: 'Nuotata OGNI giorno per 30 giorni consecutivi', tip: 'Lascialo perdere: un mese in acqua per 4 punti non vale il programma' },
+      { n: 'Tempo di nuotare', pt: 2, req: 'Nuotata a pace medio ≤2:00/100 m', tip: 'Oggi sei a 2:33 di best: è un obiettivo tecnico vero, non un badge facile' },
+      { n: 'Nuoto in acque gelate', pt: 1, req: 'Acque libere con temperatura ≤16 °C', tip: 'Un tuffo a ottobre e ci scappa il punto' },
     ]},
-    { cat: 'FORZA & FITNESS', items: [
-      { n: 'Super Strength 5', pt: 4, req: 'Ultima soglia della serie: sessioni Forza registrate', tip: 'Sei a 4/5: arriva con le sedute di Mattia, salvale sempre come Forza' },
-      { n: 'Hone Your Strength', pt: 4, req: 'Serie forza (da verificare)', tip: 'Probabile arrivi col precedente' },
-      { n: '30 for 30', pt: 2, req: '30 minuti al giorno per 30 giorni (da verificare)', tip: 'Con la tua costanza è probabilmente solo questione di registrare' },
-      { n: 'Rise and Grind', pt: 2, req: 'Allenamenti mattutini ripetuti (da verificare)', tip: 'Le sedute delle 8 con Mattia ci vanno vicine' },
-    ]},
-    { cat: 'BENESSERE', items: [
-      { n: 'Zen Master 5', pt: 4, req: 'Completa la serie di sessioni Yoga', tip: '10′ di yoga nei giorni rest: 4 punti quasi gratis' },
-      { n: 'Deep Breathing 2→5', pt: 11, req: 'Serie di sessioni Respirazione guidata', tip: '5′ di breathwork nei defa: chiudi la scala in 2 settimane' },
-      { n: 'On Fire', pt: 2, req: 'Streak obiettivo calorie (da verificare)', tip: 'Probabilmente già vicino' },
-    ]},
-    { cat: 'CORSA', items: [
-      { n: '50K Ultra', pt: 8, req: 'Corsa singola da 50 km', tip: 'Non ora: semmai dopo Hyrox Roma, come progetto dedicato' },
-      { n: 'Run Streak', pt: 1, req: 'Corri 7 giorni consecutivi', tip: 'Sconsigliato: il programma alterna per un motivo' },
-      { n: 'New Heights', pt: 2, req: 'Dislivello in corsa (da verificare)', tip: 'I collinari potrebbero già bastare' },
+    { cat: 'SALTO CORDA', note: 'hai la corda', items: [
+      { n: 'Jumping Bean', pt: 1, req: '10 attività di salto alla corda', tip: '10 warm-up da 5-10′: si fa in un mese di richiami' },
+      { n: 'Saltatore alla corda impegnato', pt: 2, req: '30 minuti in una singola attività di corda', tip: 'Mezz\'ora filata di corda: tosta ma fattibile a blocchi da EMOM' },
+      { n: 'Serie lunga (100 attività · 15.000 salti)', pt: 4, req: '100 sessioni totali · 15.000 ripetute in una attività', tip: 'Fuori scala: ignorali' },
     ]},
     { cat: 'BICI', items: [
-      { n: '50-Mile Ride', pt: 4, req: 'Uscita bici da 80,5 km', tip: 'MTB lunga in una settimana scarica post-gara' },
-      { n: 'Climber 1', pt: 1, req: 'Salita in bici, soglia base', tip: 'Strano ti manchi avendo 2 e 3: arriva con qualsiasi salita' },
-      { n: 'Indoor 50K Ride', pt: 2, req: 'Bici indoor singola da 50 km', tip: 'Al Virgin: Technogym allungata a 50 km, ~75-80′' },
-      { n: 'Indoor 20-Mile Ride', pt: 1, req: 'Bici indoor da 32,2 km', tip: 'Lo prendi per strada verso il 50K' },
+      { n: 'Pedalata di 50 miglia ♻', pt: 4, rep: 0, req: '80,5 km in una singola uscita', tip: 'MTB lunga in una settimana scarica post-gara' },
+      { n: 'Pedalata di 50K indoor', pt: 2, req: '50 km in una attività indoor', tip: 'Al Virgin: Technogym allungata, ~75-80′' },
+      { n: 'Pedalata di 20 miglia indoor', pt: 1, req: '32,2 km indoor', tip: 'Cade da solo andando verso il 50K' },
+      { n: 'Monta in sella (GroupRide)', pt: 1, req: 'Prima attività GroupRide', tip: 'Se esci con amici garminizzati, attivate GroupRide' },
+      { n: 'Pedalata 50 mi indoor · 4 ore indoor ♻', pt: 12, req: '80,5 km · 4 ore al chiuso', tip: 'Solo in un eventuale blocco bike invernale' },
     ]},
-    { cat: 'CAMMINATE & EXPEDITION', note: 'avanzano da soli con le camminate registrate', items: [
-      { n: 'Everest · K2', pt: 16, req: 'Percorsi virtuali lunghi: sommano le camminate registrate', tip: 'Maturano da soli: continua solo a registrare' },
-      { n: 'Elbrus → Grossglockner (6 vette)', pt: 24, req: 'Percorsi medi, stesso meccanismo', tip: 'Zero sforzo extra' },
-      { n: 'Olympus · Expeditioner', pt: 4, req: 'Percorsi brevi', tip: 'Arrivano per primi' },
-      { n: 'Walk the Walk 1→5', pt: 12, req: 'Serie: numero crescente di camminate', tip: 'Cammini già 14k passi/giorno: parte da sola registrando' },
-      { n: '10K a Day Challenge', pt: 4, req: '10.000 passi/giorno per un periodo (da verificare)', tip: 'Con la tua media è probabilmente già in corso' },
-      { n: 'Walk Streak', pt: 1, req: 'Camminate in giorni consecutivi', tip: 'Gratis con la routine attuale' },
+    { cat: 'TRAIL & PARCHI', note: 'dipendono dai voti/like degli altri utenti: lenti', items: [
+      { n: 'Guardiaparco → Ranger eccezionale', pt: 9, req: 'Recensioni Garmin Trails con ≥5 valutazioni utili (1·5·10·25 recensioni)', tip: 'Recensisci i percorsi dei collinari; i voti arrivano col tempo' },
+      { n: 'Nuove prospettive → Fotografo impeccabile', pt: 9, req: 'Foto alle recensioni con 5 Mi piace (1·5·10·25 foto)', tip: 'Stessa uscita, foto al percorso: due serie in parallelo' },
     ]},
-    { cat: 'TRAIL & PARCHI', items: [
-      { n: 'Park Ranger → All-Star', pt: 9, req: 'Recensisci percorsi su Garmin Trails (serie)', tip: 'Ai collinari: salva il percorso su Trails e recensiscilo' },
-      { n: 'Serie foto trail', pt: 9, req: 'Aggiungi foto ai percorsi Trails', tip: 'Stessa uscita, una foto: due serie in parallelo' },
-    ]},
-    { cat: 'SALTO CORDA', note: 'hai la corda · uno della serie gia\' preso', items: [
-      { n: 'Serie Jumping (4 rimasti)', pt: 7, req: 'Sessioni registrate come Salto con la corda', tip: '3-4 warm-up da 10′ con la corda: serie chiusa' },
-    ]},
-    { cat: 'VARIE & CONDIZIONI', items: [
-      { n: 'Brick', pt: 2, req: 'Bici e corsa nello stesso giorno (da verificare se back-to-back)', tip: 'Sabato al Virgin: bike + 10′ di corsetta salvata a parte' },
-      { n: 'Frosty', pt: 2, req: 'Attività sotto zero', tip: 'Automatica alla prima uscita invernale' },
-      { n: 'Challenge Champ', pt: 2, req: 'Vinci più sfide (soglia da verificare)', tip: 'Con 29 vittorie forse è questione di poco' },
-      { n: 'Giri di gruppo (Cyclo Squad ecc.)', pt: 10, req: 'Uscite bici con GroupTrack (da verificare)', tip: 'Se esci in MTB con amici garminizzati' },
-    ]},
-    { cat: 'AMBIZIONI FUTURE', note: 'tenute su tua richiesta, nessuna azione prevista', items: [
-      { n: 'Ultra corsa (50mi/100K/Insanity)', pt: 24, req: 'Ultramaratone', tip: '—' },
-      { n: '100-Mile Ride · Speedy Century', pt: 16, req: '161 km in bici (e versione veloce)', tip: '—' },
-      { n: 'Indoor 50-Mile · 4-Hour', pt: 12, req: 'Indoor lunghe', tip: 'Solo in un blocco bike invernale' },
-      { n: 'Virtual Climb (×4)', pt: 14, req: 'Salite virtuali (meccanismo da verificare)', tip: 'Da verificare compatibilità col MyRun' },
-      { n: 'Nutrizione (8 badge)', pt: 12, req: 'Log pasti in Connect', tip: 'Ignora finché non ti interessa il food logging' },
+    { cat: 'AMBIZIONI FUTURE', note: 'nessuna azione prevista', items: [
+      { n: 'Ultra corsa (50K/50mi/100K/Sana follia) ♻', pt: 32, req: '50-160 km di corsa in attività singola', tip: '—' },
+      { n: 'Pedalata di 100 miglia ♻ · Lascia la scia', pt: 12, req: '161 km · 40 km a 40 km/h di media', tip: '—' },
+      { n: 'Corri come una saetta ♻', pt: 1, req: '1 miglio di corsa al giorno ×30 gg', tip: 'Sconsigliato: il programma alterna per un motivo' },
+      { n: 'Nutrizione (serie)', pt: 12, req: 'Log pasti/proteine in Connect', tip: 'Ignora finché non ti interessa il food logging' },
     ]},
   ],
 };
