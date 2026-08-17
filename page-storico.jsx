@@ -19,11 +19,11 @@ function StoricoPage() {
     return (h.title + ' ' + h.note).toLowerCase().includes(query.toLowerCase());
   });
 
-  const kindLabel = { hyrox: 'HYROX', altro: 'ALTRO', strength: 'STRENGTH', run: 'RUN', ski: 'SKI', row: 'ROW', bike: 'BIKE', multierg: 'MULTIERG', rest: 'REST' };
+  const kindLabel = { hyrox: 'HYROX', altro: 'ALTRO', strength: 'STRENGTH', run: 'RUN', ski: 'SKI', row: 'ROW', bike: 'BIKE', multierg: 'MULTIERG', rest: 'REST', swim: 'NUOTO' };
   const kindColor = (k) => ({
     hyrox: '#FCEE4F', altro: '#4ECDC4', strength: 'oklch(80% 0.15 60)',
     run: '#39E75F', ski: '#6C68D7', row: '#58ADF7',
-    bike: '#FF6B9D', multierg: '#B388FF', rest: 'var(--fg-3)'
+    bike: '#FF6B9D', multierg: '#B388FF', rest: 'var(--fg-3)', swim: '#00E5FF'
   }[k] || 'var(--fg-2)');
 
   return (
@@ -80,6 +80,7 @@ function StoricoPage() {
           { l: 'HX', v: HISTORY.filter((h) => h.kind === 'hyrox').length },
           { l: 'ALT', v: HISTORY.filter((h) => h.kind === 'altro').length },
           { l: 'STR', v: HISTORY.filter((h) => h.kind === 'strength').length },
+          { l: 'SWIM', v: HISTORY.filter((h) => h.kind === 'swim').length },
           { l: 'PB/TEST', v: HISTORY.filter((h) => h.note.includes('PB') || h.note.includes('TEST')).length, accent: true },
         ].map((s) => (
           <div key={s.l} style={{

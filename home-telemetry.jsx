@@ -119,6 +119,7 @@ function HomeTelemetry() {
               { l: 'SKIERG', d: window.TRAINING.VOL_SKI, c: '#6C68D7', v: Math.round(window.TRAINING.TOTALS.ski) },
               { l: 'RUN', d: window.TRAINING.VOL_RUN, c: '#39E75F', v: Math.round(window.TRAINING.TOTALS.run) },
               { l: 'BIKE', d: window.TRAINING.VOL_BIKE, c: '#FF6B9D', v: Math.round(window.TRAINING.TOTALS.bike) },
+              { l: 'NUOTO', d: window.TRAINING.VOL_SWIM, c: '#00E5FF', v: Math.round(window.TRAINING.TOTALS.swim) },
             ].map(function(item) {
               return (
                 <div key={item.l} style={{ padding: '6px 0' }}>

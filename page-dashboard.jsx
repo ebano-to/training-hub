@@ -18,7 +18,7 @@ function DashboardPage() {
 
       {/* Top stats */}
       <div className="r-grid r-grid-3" style={{ gap: 12, marginBottom: 12 }}>
-        <BigStat code="VOL.TOT" v={Math.round(totalKmAnim)} u="km" sub={'row ' + Math.round(TOTALS.rower) + ' · ski ' + Math.round(TOTALS.ski) + ' · run ' + Math.round(TOTALS.run) + ' · bike ' + Math.round(TOTALS.bike)} sparkData={VOLUME} />
+        <BigStat code="VOL.TOT" v={Math.round(totalKmAnim)} u="km" sub={'row ' + Math.round(TOTALS.rower) + ' · ski ' + Math.round(TOTALS.ski) + ' · run ' + Math.round(TOTALS.run) + ' · bike ' + Math.round(TOTALS.bike) + ' · swim ' + Math.round(TOTALS.swim)} sparkData={VOLUME} />
         <BigStat code="SESS.TOT" v={window.TRAINING.HISTORY.length} u="" sub="ultimi workout registrati" />
         <BigStat code="PB.TESTS" v={'0' + PBS.length} u="" sub={PBS.map(p => p.station.split(' ')[0]).join(' · ')} highlight />
       </div>
@@ -55,7 +55,7 @@ function DashboardPage() {
       {/* Volume breakdown — stacked bar chart */}
       <ModulePanel code="MOD.VOLUME_BREAKDOWN · rower/ski/run/bike">
         {(() => {
-          var colors = { rower: '#58ADF7', ski: '#6C68D7', run: '#39E75F', bike: '#FF6B9D' };
+          var colors = { rower: '#58ADF7', ski: '#6C68D7', run: '#39E75F', bike: '#FF6B9D', swim: '#00E5FF' };
           var weeks = VOL_ROWER.length;
           var maxW = 0;
           for (var wi = 0; wi < weeks; wi++) {
@@ -71,6 +71,7 @@ function DashboardPage() {
                   { l: 'SKIERG', c: colors.ski, v: TOTALS.ski.toFixed(1) },
                   { l: 'RUN', c: colors.run, v: TOTALS.run.toFixed(1) },
                   { l: 'BIKE', c: colors.bike, v: TOTALS.bike.toFixed(1) },
+                  { l: 'NUOTO', c: colors.swim, v: TOTALS.swim.toFixed(1) },
                 ].map(function(item) {
                   return (
                     <div key={item.l} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
