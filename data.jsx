@@ -10467,7 +10467,7 @@ const BADGES = {
       { n: 'Ultra corsa (50K/50mi/100K/Sana follia) ♻', pt: 32, req: '50-160 km di corsa in attività singola', tip: '—' },
       { n: 'Pedalata di 100 miglia ♻ · Lascia la scia', pt: 12, req: '161 km · 40 km a 40 km/h di media', tip: '—' },
       { n: 'Corri come una saetta ♻', pt: 1, req: '1 miglio di corsa al giorno ×30 gg', tip: 'Sconsigliato: il programma alterna per un motivo' },
-      { n: 'Nutrizione (serie)', pt: 12, req: 'Log pasti/proteine in Connect', tip: 'Ignora finché non ti interessa il food logging' },
+      { n: 'Nutrizione (serie)', pt: 12, req: 'Log pasti/proteine in Connect (probabile funzione Connect+)', tip: 'Fuori gioco: non sei abbonato Connect+' },
     ]},
   ],
 };
