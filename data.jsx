@@ -10407,44 +10407,69 @@ const BADGES = {
     { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push',
       why: 'Le camminate sono ora registrate: servono circa 25 km a settimana fino a fine settembre.' },
   ],
-  // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili.
-  // Fonte ricevuti: dati/badges_ricevuti_20260817.webarchive · dettagli in dati/GARMIN_BADGES_CATALOGO.md
+  // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili, con requisito e suggerimento.
+  // '(da verificare)' = requisito non confermato su badgehero: verificarlo prima di proporre l'azione.
   garmin: [
-    { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi ma ogni ripetizione ridà i punti: incassano da soli', items: [
-      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 85 }, { n: 'Esperto del sonno', pt: 1, rep: 31 }, { n: 'Sei il numero uno (vinci una sfida)', pt: 2, rep: 29 }, { n: 'Podio per i passi (mensile)', pt: 2, rep: 7 },
+    { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi ma ogni ripetizione ridà i punti', items: [
+      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 85, req: 'Dormi con l\'orologio per notti consecutive', tip: 'Gira da solo: sei a quota 85, non toccare nulla' },
+      { n: 'Esperto del sonno', pt: 1, rep: 31, req: 'Notti con punteggio sonno alto', tip: 'Incassa da solo' },
+      { n: 'Sei il numero uno', pt: 2, rep: 29, req: 'Vinci una sfida qualunque', tip: 'Iscriviti ogni lunedì alla weekly steps: la vinci spesso' },
+      { n: 'Podio per i passi', pt: 2, rep: 7, req: 'Podio in una sfida passi', tip: 'Preso ogni mese del 2026: basta iscriversi' },
     ]},
     { cat: 'NUOTO', items: [
-      { n: 'Swim Streak', pt: 4 }, { n: 'Fins On (nuotata con pinne)', pt: 2 }, { n: 'Arctic Swim (acqua fredda)', pt: 1 },
+      { n: 'Swim Streak', pt: 4, req: 'Nuota più giorni consecutivi (soglia da verificare)', tip: 'Quando torni in vasca: 2-3 mattine di fila' },
+      { n: 'Fins On', pt: 2, req: 'Nuotata con le pinne', tip: 'Una nuotata tecnica con pinne, anche al mare' },
+      { n: 'Arctic Swim', pt: 1, req: 'Nuotata in acqua fredda', tip: 'Bagno invernale, se ti va di fare il vichingo' },
     ]},
     { cat: 'FORZA & FITNESS', items: [
-      { n: 'Super Strength 5', pt: 4 }, { n: 'Hone Your Strength', pt: 4 }, { n: 'Pilates 5', pt: 4 }, { n: 'Pilates 4', pt: 4 }, { n: 'Pilates 3', pt: 2 }, { n: 'Pilates 2', pt: 1 }, { n: '30 for 30', pt: 2 }, { n: 'Rise and Grind', pt: 2 },
+      { n: 'Super Strength 5', pt: 4, req: 'Ultima soglia della serie: sessioni Forza registrate', tip: 'Sei a 4/5: arriva con le sedute di Mattia, salvale sempre come Forza' },
+      { n: 'Hone Your Strength', pt: 4, req: 'Serie forza (da verificare)', tip: 'Probabile arrivi col precedente' },
+      { n: '30 for 30', pt: 2, req: '30 minuti al giorno per 30 giorni (da verificare)', tip: 'Con la tua costanza è probabilmente solo questione di registrare' },
+      { n: 'Rise and Grind', pt: 2, req: 'Allenamenti mattutini ripetuti (da verificare)', tip: 'Le sedute delle 8 con Mattia ci vanno vicine' },
     ]},
     { cat: 'BENESSERE', items: [
-      { n: 'Zen Master 5', pt: 4 }, { n: 'Deep Breathing 5', pt: 4 }, { n: 'Deep Breathing 4', pt: 4 }, { n: 'Deep Breathing 3', pt: 2 }, { n: 'Deep Breathing 2', pt: 1 }, { n: 'Daily Balance', pt: 2 }, { n: 'On Fire', pt: 2 },
+      { n: 'Zen Master 5', pt: 4, req: 'Completa la serie di sessioni Yoga', tip: '10′ di yoga nei giorni rest: 4 punti quasi gratis' },
+      { n: 'Deep Breathing 2→5', pt: 11, req: 'Serie di sessioni Respirazione guidata', tip: '5′ di breathwork nei defa: chiudi la scala in 2 settimane' },
+      { n: 'On Fire', pt: 2, req: 'Streak obiettivo calorie (da verificare)', tip: 'Probabilmente già vicino' },
     ]},
     { cat: 'CORSA', items: [
-      { n: '50K Ultra', pt: 8 }, { n: '50-Mile Ultra', pt: 8 }, { n: '100K Ultra', pt: 8 }, { n: 'Insanity', pt: 8 }, { n: 'Runner Graduate (Garmin Coach)', pt: 2 }, { n: 'New Heights', pt: 2 }, { n: 'Run Streak (7 gg)', pt: 1 },
+      { n: '50K Ultra', pt: 8, req: 'Corsa singola da 50 km', tip: 'Non ora: semmai dopo Hyrox Roma, come progetto dedicato' },
+      { n: 'Run Streak', pt: 1, req: 'Corri 7 giorni consecutivi', tip: 'Sconsigliato: il programma alterna per un motivo' },
+      { n: 'New Heights', pt: 2, req: 'Dislivello in corsa (da verificare)', tip: 'I collinari potrebbero già bastare' },
     ]},
     { cat: 'BICI', items: [
-      { n: '100-Mile Ride', pt: 8 }, { n: 'Speedy Century', pt: 8 }, { n: '50-Mile Ride (80,5 km)', pt: 4 }, { n: 'Slipstream', pt: 4 }, { n: 'Climber 1', pt: 1 },
+      { n: '50-Mile Ride', pt: 4, req: 'Uscita bici da 80,5 km', tip: 'MTB lunga in una settimana scarica post-gara' },
+      { n: 'Climber 1', pt: 1, req: 'Salita in bici, soglia base', tip: 'Strano ti manchi avendo 2 e 3: arriva con qualsiasi salita' },
+      { n: 'Indoor 50K Ride', pt: 2, req: 'Bici indoor singola da 50 km', tip: 'Al Virgin: Technogym allungata a 50 km, ~75-80′' },
+      { n: 'Indoor 20-Mile Ride', pt: 1, req: 'Bici indoor da 32,2 km', tip: 'Lo prendi per strada verso il 50K' },
     ]},
-    { cat: 'BICI INDOOR', items: [
-      { n: 'Indoor 4-Hour Ride', pt: 8 }, { n: 'Indoor 50-Mile Ride', pt: 4 }, { n: 'Indoor 50K Ride', pt: 2 }, { n: 'Indoor 20-Mile Ride', pt: 1 }, { n: 'Virtual Climb: Angels Landing', pt: 4 }, { n: 'Virtual Climb: Mist Trail', pt: 4 }, { n: 'Virtual Climb: Druid Arch', pt: 4 }, { n: 'Virtual Climb: The Narrows', pt: 2 },
-    ]},
-    { cat: 'CAMMINATE & EXPEDITION', note: 'avanzano da sole con le camminate registrate', items: [
-      { n: 'Everest', pt: 8 }, { n: 'K2', pt: 8 }, { n: 'Elbrus', pt: 4 }, { n: 'Kilimanjaro', pt: 4 }, { n: 'Mont Blanc', pt: 4 }, { n: 'Vinson', pt: 4 }, { n: 'Ararat', pt: 4 }, { n: 'Grossglockner', pt: 4 }, { n: 'Olympus', pt: 2 }, { n: 'Expeditioner', pt: 2 }, { n: 'Walk the Walk 5', pt: 4 }, { n: 'Walk the Walk 4', pt: 4 }, { n: 'Walk the Walk 3', pt: 2 }, { n: 'Walk the Walk 1-2', pt: 2 }, { n: '10K a Day Challenge', pt: 4 }, { n: 'Walk Streak', pt: 1 },
+    { cat: 'CAMMINATE & EXPEDITION', note: 'avanzano da soli con le camminate registrate', items: [
+      { n: 'Everest · K2', pt: 16, req: 'Percorsi virtuali lunghi: sommano le camminate registrate', tip: 'Maturano da soli: continua solo a registrare' },
+      { n: 'Elbrus → Grossglockner (6 vette)', pt: 24, req: 'Percorsi medi, stesso meccanismo', tip: 'Zero sforzo extra' },
+      { n: 'Olympus · Expeditioner', pt: 4, req: 'Percorsi brevi', tip: 'Arrivano per primi' },
+      { n: 'Walk the Walk 1→5', pt: 12, req: 'Serie: numero crescente di camminate', tip: 'Cammini già 14k passi/giorno: parte da sola registrando' },
+      { n: '10K a Day Challenge', pt: 4, req: '10.000 passi/giorno per un periodo (da verificare)', tip: 'Con la tua media è probabilmente già in corso' },
+      { n: 'Walk Streak', pt: 1, req: 'Camminate in giorni consecutivi', tip: 'Gratis con la routine attuale' },
     ]},
     { cat: 'TRAIL & PARCHI', items: [
-      { n: 'All-Star Ranger', pt: 4 }, { n: 'Chief Ranger', pt: 2 }, { n: 'Five-Star Ranger', pt: 2 }, { n: 'Park Ranger', pt: 1 }, { n: 'Picture Perfect (foto trail)', pt: 4 }, { n: 'Scene Setter', pt: 2 }, { n: 'Find Your Light', pt: 2 }, { n: 'New Point of View', pt: 1 },
+      { n: 'Park Ranger → All-Star', pt: 9, req: 'Recensisci percorsi su Garmin Trails (serie)', tip: 'Ai collinari: salva il percorso su Trails e recensiscilo' },
+      { n: 'Serie foto trail', pt: 9, req: 'Aggiungi foto ai percorsi Trails', tip: 'Stessa uscita, una foto: due serie in parallelo' },
     ]},
-    { cat: 'SALTO CORDA', note: 'hai la corda — uno della serie e\' gia\' preso', items: [
-      { n: 'Committed Jumper', pt: 2 }, { n: 'Jump to It', pt: 2 }, { n: 'Long Jumper', pt: 2 }, { n: 'Now We\'re Jumping', pt: 1 }, { n: 'Jumping Bean', pt: 1 },
+    { cat: 'SALTO CORDA', note: 'hai la corda · uno della serie gia\' preso', items: [
+      { n: 'Serie Jumping (4 rimasti)', pt: 7, req: 'Sessioni registrate come Salto con la corda', tip: '3-4 warm-up da 10′ con la corda: serie chiusa' },
     ]},
     { cat: 'VARIE & CONDIZIONI', items: [
-      { n: 'Brick (bici+corsa back-to-back)', pt: 2 }, { n: 'Frosty (freddo)', pt: 2 }, { n: 'Flying Squirrel', pt: 2 }, { n: 'Bird\'s Eye View', pt: 2 }, { n: 'Cyclo Squad (giri in gruppo)', pt: 4 }, { n: 'In the Peloton', pt: 4 }, { n: 'Group Effort', pt: 2 }, { n: 'Challenge Champ', pt: 2 }, { n: 'Shred the Gnar', pt: 1 }, { n: 'On the Rocks', pt: 1 },
+      { n: 'Brick', pt: 2, req: 'Bici e corsa nello stesso giorno (da verificare se back-to-back)', tip: 'Sabato al Virgin: bike + 10′ di corsetta salvata a parte' },
+      { n: 'Frosty', pt: 2, req: 'Attività sotto zero', tip: 'Automatica alla prima uscita invernale' },
+      { n: 'Challenge Champ', pt: 2, req: 'Vinci più sfide (soglia da verificare)', tip: 'Con 29 vittorie forse è questione di poco' },
+      { n: 'Giri di gruppo (Cyclo Squad ecc.)', pt: 10, req: 'Uscite bici con GroupTrack (da verificare)', tip: 'Se esci in MTB con amici garminizzati' },
     ]},
-    { cat: 'NUTRIZIONE (se un giorno logghi i pasti)', items: [
-      { n: 'Protein Pro', pt: 4 }, { n: 'Weight Warrior', pt: 2 }, { n: 'Logging Legend', pt: 2 }, { n: 'Breakfast Club', pt: 1 }, { n: 'Daily Dish', pt: 1 }, { n: 'Photo Foodie', pt: 1 }, { n: 'Now We\'re Cooking', pt: 1 }, { n: 'Watch What You Eat', pt: 1 },
+    { cat: 'AMBIZIONI FUTURE', note: 'tenute su tua richiesta, nessuna azione prevista', items: [
+      { n: 'Ultra corsa (50mi/100K/Insanity)', pt: 24, req: 'Ultramaratone', tip: '—' },
+      { n: '100-Mile Ride · Speedy Century', pt: 16, req: '161 km in bici (e versione veloce)', tip: '—' },
+      { n: 'Indoor 50-Mile · 4-Hour', pt: 12, req: 'Indoor lunghe', tip: 'Solo in un blocco bike invernale' },
+      { n: 'Virtual Climb (×4)', pt: 14, req: 'Salite virtuali (meccanismo da verificare)', tip: 'Da verificare compatibilità col MyRun' },
+      { n: 'Nutrizione (8 badge)', pt: 12, req: 'Log pasti in Connect', tip: 'Ignora finché non ti interessa il food logging' },
     ]},
   ],
 };

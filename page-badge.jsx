@@ -2,6 +2,7 @@
 function BadgePage() {
   const { BADGES } = window.TRAINING;
   const [filter, setFilter] = React.useState('ALL');
+  const [sez, setSez] = React.useState('MENSILI');
 
   const ST = {
     done:  { l: 'PRESA', c: 'oklch(72% 0.13 250)' },
@@ -41,8 +42,19 @@ function BadgePage() {
 
   return (
     <TelemetryChrome active="BADGE">
-      {/* ══ SOTTOSEZIONE: BADGE MENSILI ══ */}
-      <div style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--fg-3)', margin: '2px 0 8px', fontFamily: 'var(--mono)' }}>■ BADGE MENSILI</div>
+      {/* ══ TAB: MENSILI / GARMIN ══ */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
+        {[['MENSILI', 'BADGE MENSILI'], ['GARMIN', 'BADGE GARMIN']].map(([k, l]) => (
+          <button key={k} onClick={() => setSez(k)} style={{
+            flex: 1, padding: '13px 18px', cursor: 'pointer',
+            fontFamily: 'var(--display)', fontSize: 17, letterSpacing: '0.06em',
+            background: sez === k ? 'var(--accent)' : 'var(--bg-2)',
+            color: sez === k ? '#000' : 'var(--fg-2)',
+            border: '1px solid ' + (sez === k ? 'var(--accent)' : 'var(--line)'),
+          }}>{l}</button>
+        ))}
+      </div>
+      <div style={{ display: sez === 'MENSILI' ? 'block' : 'none' }}>
       {/* Titolo */}
       <div className="r-agenda-title" style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 16, marginBottom: 12 }}>
         <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24 }}>
@@ -225,37 +237,40 @@ function BadgePage() {
         </div>
       </ModulePanel>
 
-      {/* ══ SOTTOSEZIONE: BADGE GARMIN (catalogo permanente) ══ */}
-      <div style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--fg-3)', margin: '18px 0 8px', fontFamily: 'var(--mono)' }}>■ BADGE GARMIN · CATALOGO PERMANENTE</div>
-      <ModulePanel code="MOD.BADGE · garmin_permanenti" title="DA PRENDERE + RIPETIBILI" sub="Senza scadenza · solo quelli che mancano · ♻ = ripetibile, ogni ripetizione ridà i punti · fonte badgehero.io, incrocio ricevuti 17/08">
-        <div style={{ display: 'grid', gap: 14 }}>
-          {(BADGES.garmin || []).map((g, gi) => (
-            <div key={gi}>
-              <div style={{ fontSize: 10, letterSpacing: '0.14em', color: 'var(--fg-2)', marginBottom: 6 }}>
-                {g.cat}
-                {g.note && <span style={{ color: 'var(--fg-3)', letterSpacing: 0, marginLeft: 8, textTransform: 'none' }}>· {g.note}</span>}
+      </div>
+
+      {/* ══ SEZIONE BADGE GARMIN (catalogo permanente) ══ */}
+      {sez === 'GARMIN' && (
+        <ModulePanel code="MOD.BADGE · garmin_permanenti" title="CATALOGO PERMANENTE" sub="Senza scadenza · solo da prendere + ripetibili · ♻ ogni ripetizione ridà i punti · '(da verificare)' = requisito da confermare prima di agire">
+          <div style={{ display: 'grid', gap: 18 }}>
+            {(BADGES.garmin || []).map((g, gi) => (
+              <div key={gi}>
+                <div style={{ fontSize: 11, letterSpacing: '0.16em', fontWeight: 700, color: 'var(--fg)', borderBottom: '1px solid var(--line)', paddingBottom: 6, marginBottom: 8 }}>
+                  {g.cat}
+                  {g.note && <span style={{ fontWeight: 400, fontSize: 10, color: 'var(--fg-3)', letterSpacing: 0, marginLeft: 10, textTransform: 'none' }}>{g.note}</span>}
+                </div>
+                <div style={{ display: 'grid', gap: 6 }}>
+                  {g.items.map((b, bi) => (
+                    <div key={bi} style={{
+                      display: 'grid', gridTemplateColumns: '230px 54px 1fr 1fr', gap: 12, alignItems: 'baseline',
+                      padding: '8px 10px', background: b.rep ? 'oklch(88% 0.20 130 / 0.06)' : 'var(--bg-3)',
+                      borderLeft: '3px solid ' + (b.rep ? 'var(--accent)' : b.pt >= 8 ? 'oklch(82% 0.16 85)' : 'var(--line)'),
+                    }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--sans)' }}>
+                        {b.rep ? '♻ ' : ''}{b.n}
+                        {b.rep ? <span style={{ fontSize: 9, color: 'var(--fg-3)', fontWeight: 400 }}> ×{b.rep}</span> : null}
+                      </div>
+                      <div className="display tabular" style={{ fontSize: 14, fontWeight: 700, color: b.pt >= 8 ? 'var(--accent)' : 'var(--fg)' }}>{b.pt}pt</div>
+                      <div style={{ fontSize: 11, color: 'var(--fg-2)', lineHeight: 1.5 }}>{b.req}</div>
+                      <div style={{ fontSize: 11, color: b.tip === '—' ? 'var(--fg-3)' : 'var(--accent)', lineHeight: 1.5 }}>{b.tip}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                {g.items.map((b, bi) => (
-                  <span key={bi} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 7,
-                    border: '1px solid ' + (b.rep ? 'var(--accent)' : 'var(--line)'),
-                    background: b.rep ? 'oklch(88% 0.20 130 / 0.06)' : 'var(--bg-3)',
-                    padding: '5px 10px', fontSize: 12, fontFamily: 'var(--sans)',
-                  }}>
-                    {b.rep ? '♻ ' : ''}{b.n}
-                    {b.rep ? <span style={{ fontSize: 9, color: 'var(--fg-3)' }}>×{b.rep}</span> : null}
-                    <span className="display tabular" style={{
-                      fontSize: 11, color: b.pt >= 8 ? 'var(--accent)' : b.pt >= 4 ? 'oklch(82% 0.16 85)' : 'var(--fg-2)',
-                      fontWeight: 700,
-                    }}>{b.pt}pt</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </ModulePanel>
+            ))}
+          </div>
+        </ModulePanel>
+      )}
 
       <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', padding: '0 4px 8px' }}>
         AGGIORNATO {BADGES.updated} · FONTI: {BADGES.sources.join(' · ')}
