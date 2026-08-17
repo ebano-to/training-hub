@@ -10407,6 +10407,46 @@ const BADGES = {
     { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push',
       why: 'Le camminate sono ora registrate: servono circa 25 km a settimana fino a fine settembre.' },
   ],
+  // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili.
+  // Fonte ricevuti: dati/badges_ricevuti_20260817.webarchive · dettagli in dati/GARMIN_BADGES_CATALOGO.md
+  garmin: [
+    { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi ma ogni ripetizione ridà i punti: incassano da soli', items: [
+      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 85 }, { n: 'Esperto del sonno', pt: 1, rep: 31 }, { n: 'Sei il numero uno (vinci una sfida)', pt: 2, rep: 29 }, { n: 'Podio per i passi (mensile)', pt: 2, rep: 7 },
+    ]},
+    { cat: 'NUOTO', items: [
+      { n: 'Swim Streak', pt: 4 }, { n: 'Fins On (nuotata con pinne)', pt: 2 }, { n: 'Arctic Swim (acqua fredda)', pt: 1 },
+    ]},
+    { cat: 'FORZA & FITNESS', items: [
+      { n: 'Super Strength 5', pt: 4 }, { n: 'Hone Your Strength', pt: 4 }, { n: 'Pilates 5', pt: 4 }, { n: 'Pilates 4', pt: 4 }, { n: 'Pilates 3', pt: 2 }, { n: 'Pilates 2', pt: 1 }, { n: '30 for 30', pt: 2 }, { n: 'Rise and Grind', pt: 2 },
+    ]},
+    { cat: 'BENESSERE', items: [
+      { n: 'Zen Master 5', pt: 4 }, { n: 'Deep Breathing 5', pt: 4 }, { n: 'Deep Breathing 4', pt: 4 }, { n: 'Deep Breathing 3', pt: 2 }, { n: 'Deep Breathing 2', pt: 1 }, { n: 'Daily Balance', pt: 2 }, { n: 'On Fire', pt: 2 },
+    ]},
+    { cat: 'CORSA', items: [
+      { n: '50K Ultra', pt: 8 }, { n: '50-Mile Ultra', pt: 8 }, { n: '100K Ultra', pt: 8 }, { n: 'Insanity', pt: 8 }, { n: 'Runner Graduate (Garmin Coach)', pt: 2 }, { n: 'New Heights', pt: 2 }, { n: 'Run Streak (7 gg)', pt: 1 },
+    ]},
+    { cat: 'BICI', items: [
+      { n: '100-Mile Ride', pt: 8 }, { n: 'Speedy Century', pt: 8 }, { n: '50-Mile Ride (80,5 km)', pt: 4 }, { n: 'Slipstream', pt: 4 }, { n: 'Climber 1', pt: 1 },
+    ]},
+    { cat: 'BICI INDOOR', items: [
+      { n: 'Indoor 4-Hour Ride', pt: 8 }, { n: 'Indoor 50-Mile Ride', pt: 4 }, { n: 'Indoor 50K Ride', pt: 2 }, { n: 'Indoor 20-Mile Ride', pt: 1 }, { n: 'Virtual Climb: Angels Landing', pt: 4 }, { n: 'Virtual Climb: Mist Trail', pt: 4 }, { n: 'Virtual Climb: Druid Arch', pt: 4 }, { n: 'Virtual Climb: The Narrows', pt: 2 },
+    ]},
+    { cat: 'CAMMINATE & EXPEDITION', note: 'avanzano da sole con le camminate registrate', items: [
+      { n: 'Everest', pt: 8 }, { n: 'K2', pt: 8 }, { n: 'Elbrus', pt: 4 }, { n: 'Kilimanjaro', pt: 4 }, { n: 'Mont Blanc', pt: 4 }, { n: 'Vinson', pt: 4 }, { n: 'Ararat', pt: 4 }, { n: 'Grossglockner', pt: 4 }, { n: 'Olympus', pt: 2 }, { n: 'Expeditioner', pt: 2 }, { n: 'Walk the Walk 5', pt: 4 }, { n: 'Walk the Walk 4', pt: 4 }, { n: 'Walk the Walk 3', pt: 2 }, { n: 'Walk the Walk 1-2', pt: 2 }, { n: '10K a Day Challenge', pt: 4 }, { n: 'Walk Streak', pt: 1 },
+    ]},
+    { cat: 'TRAIL & PARCHI', items: [
+      { n: 'All-Star Ranger', pt: 4 }, { n: 'Chief Ranger', pt: 2 }, { n: 'Five-Star Ranger', pt: 2 }, { n: 'Park Ranger', pt: 1 }, { n: 'Picture Perfect (foto trail)', pt: 4 }, { n: 'Scene Setter', pt: 2 }, { n: 'Find Your Light', pt: 2 }, { n: 'New Point of View', pt: 1 },
+    ]},
+    { cat: 'SALTO CORDA', note: 'hai la corda — uno della serie e\' gia\' preso', items: [
+      { n: 'Committed Jumper', pt: 2 }, { n: 'Jump to It', pt: 2 }, { n: 'Long Jumper', pt: 2 }, { n: 'Now We\'re Jumping', pt: 1 }, { n: 'Jumping Bean', pt: 1 },
+    ]},
+    { cat: 'VARIE & CONDIZIONI', items: [
+      { n: 'Brick (bici+corsa back-to-back)', pt: 2 }, { n: 'Frosty (freddo)', pt: 2 }, { n: 'Flying Squirrel', pt: 2 }, { n: 'Bird\'s Eye View', pt: 2 }, { n: 'Cyclo Squad (giri in gruppo)', pt: 4 }, { n: 'In the Peloton', pt: 4 }, { n: 'Group Effort', pt: 2 }, { n: 'Challenge Champ', pt: 2 }, { n: 'Shred the Gnar', pt: 1 }, { n: 'On the Rocks', pt: 1 },
+    ]},
+    { cat: 'NUTRIZIONE (se un giorno logghi i pasti)', items: [
+      { n: 'Protein Pro', pt: 4 }, { n: 'Weight Warrior', pt: 2 }, { n: 'Logging Legend', pt: 2 }, { n: 'Breakfast Club', pt: 1 }, { n: 'Daily Dish', pt: 1 }, { n: 'Photo Foodie', pt: 1 }, { n: 'Now We\'re Cooking', pt: 1 }, { n: 'Watch What You Eat', pt: 1 },
+    ]},
+  ],
 };
 
 // ── HYDRATION LOG ──────────────────────────────────────────
