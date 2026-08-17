@@ -51,7 +51,7 @@ function DashboardPage() {
         <ChartCard code="MOD.VOL · rower_km" data={VOL_ROWER} unit="km" color="#58ADF7" />
         <ChartCard code="MOD.VOL · run_km" data={VOL_RUN} unit="km" color="#39E75F" />
         <ChartCard code="MOD.VOL · bike_km" data={VOL_BIKE} unit="km" color="#FF6B9D" />
-        <ChartCard code="MOD.VOL · nuoto_km" data={VOL_SWIM} unit="km" color="#00E5FF" />
+        <ChartCard code="MOD.VOL · nuoto_km" data={VOL_SWIM} unit="km" color="#00E5FF" min={0} max={Math.max(...VOL_SWIM) + 1} />
       </div>
       {/* Volume breakdown — stacked bar chart */}
       <ModulePanel code="MOD.VOLUME_BREAKDOWN · rower/ski/run/bike/swim">
