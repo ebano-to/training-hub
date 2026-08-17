@@ -1239,7 +1239,7 @@ const TOTALS = {
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "07/08/2026",
+ "built": "17/08/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
