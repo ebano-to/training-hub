@@ -41,6 +41,8 @@ function BadgePage() {
 
   return (
     <TelemetryChrome active="BADGE">
+      {/* ══ SOTTOSEZIONE: BADGE MENSILI ══ */}
+      <div style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--fg-3)', margin: '2px 0 8px', fontFamily: 'var(--mono)' }}>■ BADGE MENSILI</div>
       {/* Titolo */}
       <div className="r-agenda-title" style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 16, marginBottom: 12 }}>
         <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24 }}>
@@ -220,6 +222,41 @@ function BadgePage() {
               </div>
             </div>
           ))}
+        </div>
+      </ModulePanel>
+
+      {/* ══ SOTTOSEZIONE: BADGE GARMIN (catalogo permanente) ══ */}
+      <div style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--fg-3)', margin: '18px 0 8px', fontFamily: 'var(--mono)' }}>■ BADGE GARMIN · CATALOGO PERMANENTE</div>
+      <ModulePanel code="MOD.BADGE · garmin_permanenti" title="DA PRENDERE + RIPETIBILI" sub="Senza scadenza · solo quelli che mancano · ♻ = ripetibile, ogni ripetizione ridà i punti · fonte badgehero.io, incrocio ricevuti 17/08">
+        <div style={{ display: 'grid', gap: 14 }}>
+          {(BADGES.garmin || []).map((g, gi) => (
+            <div key={gi}>
+              <div style={{ fontSize: 10, letterSpacing: '0.14em', color: 'var(--fg-2)', marginBottom: 6 }}>
+                {g.cat}
+                {g.note && <span style={{ color: 'var(--fg-3)', letterSpacing: 0, marginLeft: 8, textTransform: 'none' }}>· {g.note}</span>}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {g.items.map((b, bi) => (
+                  <span key={bi} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 7,
+                    border: '1px solid ' + (b.rep ? 'var(--accent)' : 'var(--line)'),
+                    background: b.rep ? 'oklch(88% 0.20 130 / 0.06)' : 'var(--bg-3)',
+                    padding: '5px 10px', fontSize: 12, fontFamily: 'var(--sans)',
+                  }}>
+                    {b.rep ? '♻ ' : ''}{b.n}
+                    {b.rep ? <span style={{ fontSize: 9, color: 'var(--fg-3)' }}>×{b.rep}</span> : null}
+                    <span className="display tabular" style={{
+                      fontSize: 11, color: b.pt >= 8 ? 'var(--accent)' : b.pt >= 4 ? 'oklch(82% 0.16 85)' : 'var(--fg-2)',
+                      fontWeight: 700,
+                    }}>{b.pt}pt</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', fontFamily: 'var(--mono)', marginTop: 12 }}>
+          Classifica amici: 2° a 1.021 punti, −80 dal 1°. Dettagli e già presi in dati/GARMIN_BADGES_CATALOGO.md.
         </div>
       </ModulePanel>
 
