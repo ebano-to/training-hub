@@ -1,6 +1,6 @@
 // DASHBOARD — Telemetry style + responsive
 function DashboardPage() {
-  const { ATHLETE, STATIONS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, TOTALS, PBS } = window.TRAINING;
+  const { ATHLETE, STATIONS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, PBS } = window.TRAINING;
   const totalKm = TOTALS.total;
   const totalKmAnim = useCountUp(Math.round(totalKm), 1600);
 
@@ -51,15 +51,16 @@ function DashboardPage() {
         <ChartCard code="MOD.VOL · rower_km" data={VOL_ROWER} unit="km" color="#58ADF7" />
         <ChartCard code="MOD.VOL · run_km" data={VOL_RUN} unit="km" color="#39E75F" />
         <ChartCard code="MOD.VOL · bike_km" data={VOL_BIKE} unit="km" color="#FF6B9D" />
+        <ChartCard code="MOD.VOL · nuoto_km" data={VOL_SWIM} unit="km" color="#00E5FF" />
       </div>
       {/* Volume breakdown — stacked bar chart */}
-      <ModulePanel code="MOD.VOLUME_BREAKDOWN · rower/ski/run/bike">
+      <ModulePanel code="MOD.VOLUME_BREAKDOWN · rower/ski/run/bike/swim">
         {(() => {
           var colors = { rower: '#58ADF7', ski: '#6C68D7', run: '#39E75F', bike: '#FF6B9D', swim: '#00E5FF' };
           var weeks = VOL_ROWER.length;
           var maxW = 0;
           for (var wi = 0; wi < weeks; wi++) {
-            var tot = VOL_ROWER[wi] + VOL_SKI[wi] + VOL_RUN[wi] + VOL_BIKE[wi];
+            var tot = VOL_ROWER[wi] + VOL_SKI[wi] + VOL_RUN[wi] + VOL_BIKE[wi] + VOL_SWIM[wi];
             if (tot > maxW) maxW = tot;
           }
           return (
@@ -85,21 +86,23 @@ function DashboardPage() {
               {/* Bars */}
               <div style={{ display: 'flex', gap: 3, alignItems: 'flex-end', height: 180, position: 'relative' }}>
                 {VOL_ROWER.map(function(_, i) {
-                  var r = VOL_ROWER[i], s = VOL_SKI[i], n = VOL_RUN[i], bk = VOL_BIKE[i];
-                  var tot = r + s + n + bk;
+                  var r = VOL_ROWER[i], s = VOL_SKI[i], n = VOL_RUN[i], bk = VOL_BIKE[i], sw = VOL_SWIM[i];
+                  var tot = r + s + n + bk + sw;
                   var pct = maxW > 0 ? (tot / maxW) * 100 : 0;
                   var rPct = tot > 0 ? (r / tot) * 100 : 0;
                   var sPct = tot > 0 ? (s / tot) * 100 : 0;
                   var nPct = tot > 0 ? (n / tot) * 100 : 0;
                   var bPct = tot > 0 ? (bk / tot) * 100 : 0;
+                  var swPct = tot > 0 ? (sw / tot) * 100 : 0;
                   var isCurrent = i === weeks - 1;
-                  var tip = 'S' + (i + 1) + ' · ' + tot.toFixed(1) + 'km\nRow ' + r.toFixed(1) + ' · Ski ' + s.toFixed(1) + ' · Run ' + n.toFixed(1) + ' · Bike ' + bk.toFixed(1);
+                  var tip = 'S' + (i + 1) + ' · ' + tot.toFixed(1) + 'km\nRow ' + r.toFixed(1) + ' · Ski ' + s.toFixed(1) + ' · Run ' + n.toFixed(1) + ' · Bike ' + bk.toFixed(1) + (sw > 0 ? ' · Nuoto ' + sw.toFixed(1) : '');
                   return (
                     <div key={i} title={tip} style={{
                       flex: 1, height: pct + '%', display: 'flex', flexDirection: 'column',
                       border: 'none',
                       minWidth: 0, cursor: 'pointer',
                     }}>
+                      <div style={{ height: swPct + '%', background: colors.swim, minHeight: sw > 0 ? 2 : 0 }} />
                       <div style={{ height: bPct + '%', background: colors.bike, minHeight: bk > 0 ? 2 : 0 }} />
                       <div style={{ height: nPct + '%', background: colors.run, minHeight: n > 0 ? 2 : 0 }} />
                       <div style={{ height: sPct + '%', background: colors.ski, minHeight: s > 0 ? 2 : 0 }} />
