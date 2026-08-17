@@ -54,7 +54,7 @@ function StoricoPage() {
             <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{filtered.length}_RES</span>
           </div>
           <div className="r-storico-filters" style={{ display: 'flex', gap: 4 }}>
-            {['TUTTI', 'RUN', 'SKI', 'ROW', 'MULTIERG', 'BIKE', 'HYROX', 'ALTRO', 'STRENGTH'].map((f) => (
+            {['TUTTI', 'RUN', 'SKI', 'ROW', 'MULTIERG', 'BIKE', 'SWIM', 'HYROX', 'ALTRO', 'STRENGTH'].map((f) => (
               <button key={f} onClick={() => setFilter(f)}
                 style={{
                   background: filter === f ? 'var(--accent)' : 'transparent',
