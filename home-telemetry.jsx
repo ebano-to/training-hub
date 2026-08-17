@@ -172,22 +172,32 @@ function HomeTelemetry() {
         </ModuleCard>
       </div>
 
-      {/* SECONDARY LINK — HYDRATION */}
-      <a href="hydration.html" style={{
-        border: '1px solid var(--line)', background: 'var(--bg-2)', padding: '16px 20px',
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        transition: 'border-color .15s', textDecoration: 'none', marginBottom: 16
-      }}
-        onMouseEnter={function(e) { e.currentTarget.style.borderColor = 'var(--accent)'; }}
-        onMouseLeave={function(e) { e.currentTarget.style.borderColor = 'var(--line)'; }}
-      >
-        <div>
-          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>// SWEAT_TRACKING</div>
-          <div className="display" style={{ fontSize: 20, color: 'var(--fg)', marginTop: 4 }}>HYDRATION</div>
-          <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{window.TRAINING.HYDRATION.length} sessioni · sweat rate & reintegro</div>
-        </div>
-        <Icon.arrow width="16" height="16" style={{ color: 'var(--fg-3)' }} />
-      </a>
+      {/* SECONDARY LINKS — BADGE / PROGRESSI / HYDRATION */}
+      <div className="r-grid r-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 16 }}>
+        {[
+          ['badge.html', '// GARMIN_CHALLENGES', 'BADGE', window.TRAINING.BADGES.items.filter(function(b) { return b.st === 'done'; }).length + ' prese · mensili + catalogo'],
+          ['progressione.html', '// SEI_MIGLIORATO?', 'PROGRESSI', 'erg dal 2025 · nuoto dal 2023'],
+          ['hydration.html', '// SWEAT_TRACKING', 'HYDRATION', window.TRAINING.HYDRATION.length + ' sessioni · sweat rate'],
+        ].map(function(item) {
+          return (
+            <a key={item[0]} href={item[0]} style={{
+              border: '1px solid var(--line)', background: 'var(--bg-2)', padding: '16px 20px',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+              transition: 'border-color .15s', textDecoration: 'none',
+            }}
+              onMouseEnter={function(e) { e.currentTarget.style.borderColor = 'var(--accent)'; }}
+              onMouseLeave={function(e) { e.currentTarget.style.borderColor = 'var(--line)'; }}
+            >
+              <div>
+                <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{item[1]}</div>
+                <div className="display" style={{ fontSize: 20, color: 'var(--fg)', marginTop: 4 }}>{item[2]}</div>
+                <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{item[3]}</div>
+              </div>
+              <div style={{ fontSize: 18, color: 'var(--fg-3)' }}>→</div>
+            </a>
+          );
+        })}
+      </div>
 
       {/* NUTRITION — SPESA + RICETTARIO (separati dal training) */}
       <div style={{ border: '1px solid #2D6A4F', padding: 16, marginBottom: 16 }}>
