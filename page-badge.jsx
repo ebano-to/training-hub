@@ -255,9 +255,6 @@ function BadgePage() {
             </div>
           ))}
         </div>
-        <div style={{ fontSize: 10, color: 'var(--fg-3)', fontFamily: 'var(--mono)', marginTop: 12 }}>
-          Classifica amici: 2° a 1.021 punti, −80 dal 1°. Dettagli e già presi in dati/GARMIN_BADGES_CATALOGO.md.
-        </div>
       </ModulePanel>
 
       <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', padding: '0 4px 8px' }}>
