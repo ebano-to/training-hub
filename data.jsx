@@ -10425,7 +10425,7 @@ const BADGES = {
       { n: 'La bilancia del giorno ♻', pt: 2, rep: 0, req: 'Pesati ogni giorno per 30 giorni consecutivi', tip: 'Hai la Index S2: sali sulla bilancia ogni mattina per un mese' },
       { n: '30 per 30 ♻', pt: 2, rep: 0, req: 'Attività di almeno 30′ ogni giorno per 30 giorni consecutivi', tip: 'Quasi la tua vita normale: il nemico sono i giorni di viaggio' },
       { n: 'Per monti e valli', pt: 1, req: 'Fai un percorso gravel', tip: 'Una MTB su sterrato salvata come gravel' },
-      { n: 'Climber 1', pt: 1, req: '150 m di dislivello in una uscita bici', tip: 'Prima MTB in collina' },
+      { n: 'Scalatore 1', pt: 1, req: 'Pedala su un dislivello di 500 piedi (152,4 m) in una attività di ciclismo', tip: 'Strano ti manchi avendo Scalatore 2 e 3: arriva con qualsiasi salita vera' },
       { n: 'Freddoloso', pt: 2, req: 'Attività con temperatura ≥38 °C (nome fuorviante!)', tip: 'Un\'uscita in canicola e scatta' },
     ]},
     { cat: 'PASSI & CAMMINATE', items: [
