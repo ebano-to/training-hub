@@ -241,7 +241,7 @@ function BadgePage() {
 
       {/* ══ SEZIONE BADGE GARMIN (catalogo permanente) ══ */}
       {sez === 'GARMIN' && (
-        <ModulePanel code="MOD.BADGE · garmin_permanenti" title="CATALOGO PERMANENTE" sub="Senza scadenza · solo da prendere + ripetibili · ♻ ogni ripetizione ridà i punti · '(da verificare)' = requisito da confermare prima di agire">
+        <ModulePanel code="MOD.BADGE · garmin_permanenti" title="CATALOGO PERMANENTE" sub="Senza scadenza · solo da prendere + ripetibili · ♻ ogni ripetizione ridà i punti · nomi in inglese: sul tuo Garmin appaiono tradotti · '(da verificare)' = requisito da confermare">
           <div style={{ display: 'grid', gap: 18 }}>
             {(BADGES.garmin || []).map((g, gi) => (
               <div key={gi}>

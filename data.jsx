@@ -10417,7 +10417,7 @@ const BADGES = {
       { n: 'Podio per i passi', pt: 2, rep: 7, req: 'Podio in una sfida passi', tip: 'Preso ogni mese del 2026: basta iscriversi' },
     ]},
     { cat: 'NUOTO', items: [
-      { n: 'Swim Streak', pt: 4, req: 'Nuota più giorni consecutivi (soglia da verificare)', tip: 'Quando torni in vasca: 2-3 mattine di fila' },
+      { n: 'Swim Streak', pt: 4, req: 'Una nuotata AL GIORNO per 30 giorni consecutivi (verificato su badgehero: rarità Epic)', tip: 'Lascialo perdere: 30 giorni di fila in acqua per 4 punti non valgono il tuo programma' },
       { n: 'Fins On', pt: 2, req: 'Nuotata con le pinne', tip: 'Una nuotata tecnica con pinne, anche al mare' },
       { n: 'Arctic Swim', pt: 1, req: 'Nuotata in acqua fredda', tip: 'Bagno invernale, se ti va di fare il vichingo' },
     ]},
