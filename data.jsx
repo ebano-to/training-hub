@@ -10418,7 +10418,7 @@ const BADGES = {
       { n: 'Podio per i passi', pt: 2, rep: 7, req: 'Podio in una sfida passi settimanale', tip: 'Routine: iscriviti e basta' },
     ]},
     { cat: 'COLPI FACILI', note: 'poco sforzo, punti subito', items: [
-      { n: 'Respirazione profonda 2', pt: 1, req: '5 esercizi di respirazione registrati', tip: '5 sessioni da 3′ dall\'orologio: fatto in una settimana' },
+      { n: 'Respirazione profonda 2', pt: 1, req: '5 esercizi di respirazione registrati', tip: 'EPIX: START → Altro → Breathwork (se manca: Aggiungi attività) · tecnica a scelta, durata libera, salva: 5 volte e il badge è tuo' },
       { n: 'Prendi una decisione', pt: 1, req: 'Una nuotata in iarde e una in metri', tip: 'Cambia unità per una vasca e rimettila: il più facile del catalogo' },
       { n: 'La bilancia del giorno ♻', pt: 2, rep: 0, req: 'Pesati ogni giorno per 30 giorni consecutivi', tip: 'Hai la Index S2: sali sulla bilancia ogni mattina per un mese' },
       { n: '30 per 30 ♻', pt: 2, rep: 0, req: 'Attività di almeno 30′ ogni giorno per 30 giorni consecutivi', tip: 'Quasi la tua vita normale: il nemico sono i giorni di viaggio' },
@@ -10439,7 +10439,7 @@ const BADGES = {
     { cat: 'FORZA & BENESSERE (contatori lunghi)', items: [
       { n: 'Forza estrema 5', pt: 4, req: '200 attività di forza totali (non è dietro l\'angolo)', tip: 'Avanza con le sedute di Mattia: salvale SEMPRE come Forza separata' },
       { n: 'Zen Master 5', pt: 4, req: '200 attività di yoga totali', tip: 'Solo se lo yoga entra davvero in routine: 200 sessioni sono anni' },
-      { n: 'Respirazione profonda 3 · 4 · 5', pt: 10, req: '25 · 50 · 100 esercizi totali', tip: 'Se prendi il vizio dei 3′ serali, la scala si fa da sola' },
+      { n: 'Respirazione profonda 3 · 4 · 5', pt: 10, req: '25 · 50 · 100 esercizi totali', tip: 'Se il breathwork serale ti prende, la scala si fa da sola' },
       { n: 'Migliora le tue prestazioni ♻', pt: 2, rep: 0, req: 'Attività tra le 4:00 e le 7:00 per 7 giorni consecutivi', tip: 'Una settimana di allenamenti all\'alba: dura, ma sei mattiniero' },
     ]},
     { cat: 'NUOTO', items: [
