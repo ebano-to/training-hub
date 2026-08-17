@@ -1171,7 +1171,7 @@ const WEEK_ARCHIVE = [
 
 // Current week — S34 (17 AGO - 23 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '17', title: 'COLLINARE 50\' + ALLUNGHI', sub: 'Mentone · Gabri l\'ha segnata CYCLING per errore: è run', load: 'Z2-Z3', duration: 60, kind: 'run', done: false,
+  { day: 'LUN', date: '17', title: 'COLLINARE 50\' + ALLUNGHI', sub: 'Mentone · no stress', load: 'Z2-Z3', duration: 60, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Collinare · 50\' + 8×100 m allunghi r40"', d: 'Gabriele · mentone · 50\' collinari no stress + 8 allunghi da 100 m r40"', dur: '60\'', result: 'da fare' },
     ]
