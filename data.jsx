@@ -10299,7 +10299,7 @@ const BADGES = {
   monthStart: '2026-08-01',
   monthEnd: '2026-08-31',
   updated: '17 AGO 2026',
-  snapshot: '17 AGO 2026 h.11:45',
+  snapshot: '17 AGO 2026 h.11:50',
   sources: ['app Garmin Connect (screenshot 01 AGO · passi/camminata/foto riferiti da Federico, data sul singolo prog)', 'badgehero.io/post/2026-07-20-garmin-august-2026-badges'],
   items: [
     // ── CORSA
@@ -10343,11 +10343,11 @@ const BADGES = {
     // ── CAMMINATA
     { n: 'Weekend di camminata ad agosto', en: 'August Weekend Walking', cat: 'WALK', tipo: 'singola',
       req: 'Una singola camminata da 4,828 km (3 miglia)', win: '21 → 23 AGO', d1: '2026-08-21', d2: '2026-08-23', st: 'plan', prog: null,
-      why: 'Nello storico non c\'e\' nessuna attivita\' registrata come camminata.',
+      why: 'Le camminate ora le registri (3h39m ad agosto): resta solo da farne una da 4,8 km nella finestra.',
       go: 'Basta avviare l\'attivita\' Camminata per circa 50 minuti in un giorno di quel weekend. Costo zero sul carico.' },
     { n: 'Camminata ad agosto', en: 'August Time to Walk', cat: 'WALK', tipo: 'cumulativa',
-      req: '15 ore di camminata in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '0 / 15h (Federico, 03/08)',
-      why: 'Da zero al 17/08: servirebbero ~64 minuti al giorno da qui a fine mese.',
+      req: '15 ore di camminata in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '3h39m / 15h (Federico, 17/08)',
+      why: 'Al 17/08 restano 11h21m = ~49 minuti al giorno da registrare fino a fine mese.',
       go: 'Fattibile solo registrando sistematicamente gli spostamenti a piedi.' },
     // ── PASSI
     { n: 'Agosto a piedi', en: 'Step into August', cat: 'STEP', tipo: 'cumulativa',
@@ -10405,7 +10405,7 @@ const BADGES = {
     { n: '2026 Cycling ─ Stage 3', req: '675 km di bici', win: '01 LUG → 30 SET', st: 'push',
       why: 'A luglio 70,659 km di bici outdoor: servirebbero circa 300 km al mese ad agosto e settembre.' },
     { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push',
-      why: 'Serve registrare le camminate come attivita\': circa 25 km a settimana per due mesi.' },
+      why: 'Le camminate sono ora registrate: servono circa 25 km a settimana fino a fine settembre.' },
   ],
 };
 
