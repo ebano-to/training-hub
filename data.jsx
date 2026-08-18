@@ -10420,7 +10420,6 @@ const BADGES = {
       { n: 'Podio per i passi (mensile)', pt: 2, rep: 7, req: 'Podio in una sfida passi settimanale', tip: 'Routine: iscriviti e basta' },
     ]},
     { cat: 'COLPI FACILI', note: 'poco sforzo, punti subito', items: [
-      { n: 'Respirazione profonda 2', pt: 1, req: 'Registra 5 esercizi di respirazione.', tip: 'EPIX: START → Altro → Breathwork (se manca: Aggiungi attività) · durata libera, 5 salvataggi' },
       { n: 'Prendi una decisione', pt: 1, req: 'Registra un\'attività di nuoto in iarde e un\'altra in metri.', tip: 'Cambia unità per una vasca e rimettila: il più facile del catalogo' },
       { n: 'La bilancia del giorno', pt: 2, rep: 0, req: 'Annota il peso ogni giorno per 30 giorni consecutivi.', tip: 'Hai la Index S2: sali sulla bilancia ogni mattina per un mese' },
       { n: '30 per 30', pt: 2, rep: 0, req: 'Registra un\'attività di almeno 30 minuti ogni giorno per 30 giorni consecutivi.', tip: 'Quasi la tua vita normale: il nemico sono i giorni di viaggio' },
@@ -10448,7 +10447,7 @@ const BADGES = {
     { cat: 'FORZA & BENESSERE', items: [
       { n: 'Forza estrema 5', pt: 4, req: 'Registra 200 attività di allenamento della forza.', tip: 'Contatore lungo: avanza con le sedute di Mattia, salvale SEMPRE come Forza' },
       { n: 'Zen Master 5', pt: 4, req: 'Registra 200 attività di yoga.', tip: '200 sessioni yoga: solo se lo yoga entra davvero in routine' },
-      { n: 'Respirazione profonda 3', pt: 2, req: 'Registra 25 esercizi di respirazione.', tip: 'Se prendi il vizio del breathwork serale, la scala si fa da sola' },
+      { n: 'Respirazione profonda 3', pt: 2, req: 'Registra 25 esercizi di respirazione.', tip: 'Sei a 5+ dopo il badge di stasera: altri ~20 e cade anche questo' },
       { n: 'Respirazione profonda 4', pt: 4, req: 'Registra 50 esercizi di respirazione.', tip: 'Idem' },
       { n: 'Respirazione profonda 5', pt: 4, req: 'Registra 100 esercizi di respirazione.', tip: 'Idem' },
       { n: 'Migliora le tue prestazioni', pt: 2, rep: 0, req: 'Registra un\'attività tra le 4:00 e le 7:00 ogni giorno per 7 giorni consecutivi', tip: 'Una settimana di allenamenti all\'alba: dura, ma sei mattiniero' },
