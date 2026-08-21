@@ -14,7 +14,7 @@ function StoricoPage() {
   const [filter, setFilter] = React.useState('TUTTI');
 
   const filtered = HISTORY.filter((h) => {
-    if (filter === 'TEST') { if (h.badge !== 'TEST') return false; } else if (filter !== 'TUTTI' && h.kind.toUpperCase() !== filter) return false;
+    if (filter !== 'TUTTI' && h.kind.toUpperCase() !== filter) return false;
     if (!query) return true;
     return (h.title + ' ' + h.note).toLowerCase().includes(query.toLowerCase());
   });
@@ -54,7 +54,7 @@ function StoricoPage() {
             <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{filtered.length}_RES</span>
           </div>
           <div className="r-storico-filters" style={{ display: 'flex', gap: 4 }}>
-            {['TUTTI', 'TEST', 'RUN', 'SKI', 'ROW', 'MULTIERG', 'BIKE', 'SWIM', 'HYROX', 'ALTRO', 'STRENGTH'].map((f) => (
+            {['TUTTI', 'RUN', 'SKI', 'ROW', 'MULTIERG', 'BIKE', 'SWIM', 'HYROX', 'ALTRO', 'STRENGTH'].map((f) => (
               <button key={f} onClick={() => setFilter(f)}
                 style={{
                   background: filter === f ? 'var(--accent)' : 'transparent',
