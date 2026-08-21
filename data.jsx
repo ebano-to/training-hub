@@ -10304,8 +10304,8 @@ const BADGES = {
   month: 'AGOSTO 2026',
   monthStart: '2026-08-01',
   monthEnd: '2026-08-31',
-  updated: '19 AGO 2026',
-  snapshot: '19 AGO 2026 h.22:55',
+  updated: '20 AGO 2026',
+  snapshot: '20 AGO 2026 h.23:15',
   sources: ['app Garmin Connect (screenshot 01 AGO · passi/camminata/foto riferiti da Federico, data sul singolo prog)', 'badgehero.io/post/2026-07-20-garmin-august-2026-badges'],
   items: [
     // ── CORSA
@@ -10361,9 +10361,9 @@ const BADGES = {
       why: 'Chiusa il 14/08, ultimo giorno della finestra: 100.000 passi in 14 giorni.',
       go: 'Presa.' },
     { n: 'Passi ad agosto', en: 'August Step Month', cat: 'STEP', tipo: 'cumulativa',
-      req: '300.000 passi in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'auto', prog: '245.521 / 300.000 (Federico, 17/08)',
-      why: 'Al 17/08 restano 54.479 passi = ~3.900 al giorno, contro i ~14.400 che tieni.',
-      go: 'Nessuna modifica: arriva intorno al 21-22 AGO.' },
+      req: '300.000 passi in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'done', prog: 'completata: 300.000 passi (Garmin, 20/08)',
+      why: 'Al 17/08 restavano 54.479 passi: chiusi in tre giorni.',
+      go: 'Presa in anticipo sul previsto.' },
     { n: 'Podio per i passi ad agosto', en: 'August Steps Podium', cat: 'STEP', tipo: 'singola',
       req: 'Arrivare nei primi 3 di almeno una sfida passi settimanale', win: '03 → 30 AGO', d1: '2026-08-03', d2: '2026-08-30', st: 'plan', prog: null,
       why: 'Dipende da quale sfida passi scegli, non dal volume.',
