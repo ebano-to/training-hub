@@ -1191,9 +1191,9 @@ const WEEK = [
       { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40" · ⚠️ occasione PacePro', dur: '85\'', result: 'da fare' },
     ]
   },
-  { day: 'VEN', date: '21', title: 'TEST ASSAULT 30\' @145', sub: 'Giorno da confermare · nel programma di Gabriele è libero', load: 'Z3', duration: 30, kind: 'bike', done: false,
+  { day: 'VEN', date: '21', title: 'TEST ASSAULT 30\' @145 MEDIA', sub: 'Baseline del filone · recupero da S31', load: 'Z3', duration: 30, kind: 'bike', done: true,
     blocks: [
-      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 bpm (recupero da S31)', d: 'Il nuovo ciclo di Mattia non lo prevedeva: deciso di farlo · stesso protocollo dei test row/ski · giorno da confermare coi programmi di Mattia S34', dur: '30\'', result: 'da fare' },
+      { code: 'ASSAULT', t: 'Assault Bike Test Aerobico 30\' @145 media (recupero da S31)', d: 'Mattia S31 · max metri in 30\' a FC MEDIA 145 · stesso protocollo dei test row/ski su altro attrezzo', dur: '30\'', result: '19.272,5 m in 30:00 · FC media 145,0 ESATTA (quarti 140,9→146,3→146,8→145,4), max 151 · 429,3 cal · 326 W avg · 62 rpm (scala Assault) · Z3 92%' },
     ]
   },
   { day: 'SAB', date: '22', title: 'RIPETUTE 16×200 @4\'/KM', sub: 'Scaldati bene · rec 1\'20" corsetta · 20\' defa', load: 'Z3-Z4', duration: 70, kind: 'run', done: false,
@@ -1216,6 +1216,7 @@ const PBS = [
   { station: 'Strict Press 1RM', value: '65kg', delta: '', date: '11 GIU' },
   { station: 'Deadlift 1RM', value: '157.5kg', delta: '+7.5kg', date: '11 GIU' },
   { station: 'Nuoto pace/100m', value: '2:33.2', delta: 'media sessione', date: '17 LUG 2025', sub: 'migliore su sedute ≥500 m (1.780 m, vasca 20) · il singolo 100 più veloce non è misurabile: vasche frammentate dal rilevamento muro' },
+  { station: 'Assault 30′ @145 media', value: '19.272,5 m', delta: 'baseline', date: '21 AGO 2026', sub: 'test aerobico Mattia · FC 145,0 esatta / max 151 · 429,3 cal · 326 W · 62 rpm (scala Assault)' },
   { station: 'FTP Bike (test 2×8\')', value: '237W', delta: '90% di 263W', date: '20 LUG', sub: '2×8\' max 265/262W · HR 129/140 max152 · cad 79rpm · Technogym Ride' },
   { station: 'Hyrox Verona Singles', value: '1:17:44', delta: 'PB Singles', date: '2025' },
   { station: 'Hyrox Torino Singles', value: '1:18:33', delta: '+49s', date: '31 GEN' },
@@ -7132,6 +7133,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '21 AGO', title: 'Assault · TEST Aerobico 30′ @145 media', kind: 'bike', filone: 'bike-test', filoneLabel: 'Bike Test', badge: 'TEST', m: { lavoro: 'max metri in 30:00', dur: '30:00', dist: '19.272,5 m', watt: '326 (Assault)', fcMed: '145,0', fcMax: '151', src: 'display+fit' }, dur: 30, load: 'Z3', rpe: 8, note: 'BASELINE del filone: primo test aerobico 30′ sull\'Assault — scolpito in PBS\nFC media 145,0 esatta sul target: partenza controllata 140,9 poi regime 146-147\nMetri su scala Assault: mai nei km del sito, confrontabili solo con futuri test identici',
+    details: { summary: 'Protocollo Mattia S31 (test rimandato 3 volte, chiuso oggi): max metri in 30 minuti a FC MEDIA 145 — non cap.\nRisultato: 19.272,5 m · 429,3 cal · 326 W medi / 480 max · 38,5 km/h medi / 45,0 max · 62 rpm medi / 72 max (display Assault).\nGestione FC per quarti: 140,9 → 146,3 → 146,8 → 145,4 — media finale 145,0 esatta, picco 151.\nZone: Z3 92%, sconfinamenti minimi (Z4 2%).\nSerie test 30′ @145 (ultimi): Row 7.901 m (27/07) · Ski 7.602 m (31/07) · Assault 19.272,5 m — metri NON confrontabili tra attrezzi, ogni attrezzo fa filone a sé.\nProssimo retest: stesso protocollo, stessa media 145.', gps: null } },
   { date: '19 AGO', title: 'Bike · Intervalli · 2×(8×20″ + 5′)', kind: 'bike', filone: 'bike-intervalli', filoneLabel: 'Bike Intervalli', m: { fcMed: '127', fcMax: '147', watt: '187', cad: '82', dist: '22,006 km', dur: '40:25', src: 'fit' }, dur: 40, load: 'Z2-Z3', rpe: 6, note: 'Watt FIT con dropout (17% dei campioni sprint a 0 W): puliti ~324/325 W, giri identici — provvisori, fa fede il TCX Technogym in arrivo\nIn ERG i 340 W sono comandati dal workout: nessun sotto-target reale\nDefa 10′ completo — primo della settimana · risc 9:40 sui 15′ prescritti',
     details: { summary: 'Virgin, Technogym Ride in ERG (watt comandati dal workout Garmin), sera (18:21) · 20″/20″ esatti.\n⚠️ Il FIT Garmin legge i watt a intermittenza: 17% dei campioni sprint a 0 W. Valori PULITI dagli zeri, provvisori fino al TCX Technogym.\nGiro 1: 8×20″ ~324 W puliti · 5′ @178 W · Giro 2: 8×20″ ~325 W puliti · 5′ @177 W — giri sovrapponibili.\nBlocchi 5′ = 75% della FTP (237 W).\nFC 127/147 · zone: Z2 53% · Z3 25% · Z1 18% — mai sopra Z3.\nRisc 9:40 @197 W (prescritti 15′) · defa 10:00 @134 W completo.\nConfronto col 03/08 rinviato: anche quei 308 W venivano dal FIT Garmin, va rifatto TCX contro TCX.', gps: null } },
   { date: '18 AGO', title: 'Run · Fuori · Ripetute 3×7′ @4:50', kind: 'run', filone: 'run-fuori-ripetute', filoneLabel: 'Ripetute fuori', surf: 'fuori', m: { lavoro: '3×7:00', dur: '61:25', dist: '10,206 km', pace: '4:45.1', unit: '/km', unif: '−3″/−3″/−8″ vs tgt', fcMed: '159,1', fcMax: '171', hrr60: '−18,3', src: 'rep' }, dur: 61, load: 'Z3-Z5', rpe: 7, note: 'Target 4:50 battuto su tutte e tre: 4:46.9 · 4:46.7 · 4:41.7, negative split\nFC rep 152,2 → 159,9 → 165,3 (picco 171): la terza spinta costa — EF −6,3% da rep 1 a 3\nDefa 8:46 sui 20′ prescritti · rec 4:00 esatti in corsetta',
