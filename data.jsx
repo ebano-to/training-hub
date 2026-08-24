@@ -1240,8 +1240,11 @@ const WEEK = [
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h10\' usando bene i piedi in salita', d: 'Gabriele · ⚠️ occasione PacePro · finestra Weekend 10K (28-30)', dur: '80\'', result: 'da fare' },
     ]
   },
-  { day: 'DOM', date: '30', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'DOM', date: '30', title: 'ROW VO2 4×4:00 + ASSAULT Z2', sub: 'Palestra · VO2 W1 Fondamenta', load: 'Z4-Z5', duration: 75, kind: 'row', done: false,
+    blocks: [
+      { code: 'ROW', t: 'Row · VO2 Max W1 · 4×4:00 @ritmo 2k +3-4″/500 · r3:00 attivo', d: 'Mattia · niente numeri da record, prima rep tranquilla · negative split = dosaggio giusto · SPM costanti · totale intensità 16\'', dur: '45\'', result: 'da fare' },
+      { code: 'ASSAULT', t: 'Assault Bike · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
+    ]
   },
 ];
 
