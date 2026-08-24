@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 34,
+  programWeek: 35,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -1167,10 +1167,7 @@ const WEEK_ARCHIVE = [
     ]
   },
   ]},
-];
-
-// Current week — S34 (17 AGO - 23 AGO 2026)
-const WEEK = [
+  { id: 'S34', label: 'S34 · 17 AGO → 23 AGO', range: '17 AGO → 23 AGO 2026', programWeek: 34, days: [
   { day: 'LUN', date: '17', title: 'COLLINARE 50\' + ALLUNGHI', sub: 'Mentone · no stress', load: 'Z2-Z3', duration: 60, kind: 'run', runKm: 9, done: true,
     blocks: [
       { code: 'RUN', t: 'Collinare · 50\' + 8×100 m allunghi r40"', d: 'Gabriele · mentone · 50\' collinari no stress + 8 allunghi da 100 m r40"', dur: '60\'', result: '8,830 km in 58:21 · collinare 7,535 km in 50:03 @6:38.5 FC 122,3 · 8×100 fatti, rec 40″ esatti · best 3:24.3/km, media 4:01.4 · FC 125/154' },
@@ -1186,9 +1183,9 @@ const WEEK = [
       { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: '22,006 km in 40:25 · sprint ~324/325 W puliti (FIT con 17% di campioni a 0 W: dropout, TCX in arrivo) · 5\' @178/177 W (tgt 180) · defa 10\' fatto · risc 9:40 su 15\' · FC 127/147' },
     ]
   },
-  { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: '⚠️ PACEPRO: creala PRIMA di uscire · no stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
+  { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: 'No stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40" · ⚠️ occasione PacePro', dur: '85\'', result: 'da fare' },
+      { code: 'RUN', t: 'Collinare · 1h15\' + 6×100 m allunghi r40"', d: 'Gabriele · 1h15\' collinari no stress + 6 allunghi da 100 m r40"', dur: '85\'', result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'VEN', date: '21', title: 'TEST ASSAULT 30\' @145 MEDIA', sub: 'Baseline del filone · recupero da S31', load: 'Z3', duration: 30, kind: 'bike', done: true,
@@ -1202,6 +1199,42 @@ const WEEK = [
     ]
   },
   { day: 'DOM', date: '23', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+] },
+];
+
+// Current week — S34 (17 AGO - 23 AGO 2026)
+const WEEK = [
+  { day: 'LUN', date: '24', title: 'RULLI 50\' @180W · 90-100 RPM', sub: 'Casa · endurance in cadenza alta', load: 'Z2', duration: 50, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Rulli · 50\' @180 W · 90-100 rpm', d: 'Gabriele · 180 W = 76% FTP (237 W, derivato) · cadenza 90-100 rpm', dur: '50\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MAR', date: '25', title: 'COMPROMISE 6× STAZIONE + 400', sub: 'Palestra · rec 3\' camminando', load: 'CR', duration: 60, kind: 'hyrox', done: false,
+    blocks: [
+      { code: 'HYROX', t: 'Compromise · 6×(stazione per te più tosta + 400 m @3\'45"/km) · rec 3\' walk', d: 'Gabriele · scaldati bene · 400 m @3\'45"/km = 1:30 a rep (derivato) · rec 3\' camminando', dur: '60\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '26', title: 'RECOVERY', sub: 'Recupero', load: 'REST', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
+  { day: 'GIO', date: '27', title: 'PISTA 3×2000 @4\'30"/KM', sub: '⚠️ PACEPRO: creala PRIMA di uscire · rec 3\' cammino + 20\' defa', load: 'Z3', duration: 70, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Pista · 3×2000 m @4\'30"/km · rec 3\' cammino', d: 'Gabriele · scaldarsi bene · 4\'30"/km = 9:00 a rep (derivato) · rec 3\' cammino + 20\' defa · ⚠️ occasione PacePro', dur: '70\'', result: 'da fare' },
+    ]
+  },
+  { day: 'VEN', date: '28', title: 'RULLI 45\' RECUPERO @170W', sub: 'Casa · scarico dal giorno prima', load: 'Z1-Z2', duration: 45, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · recupero da giovedì · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '29', title: 'COLLINARE 1H10\' + 10\' RISC', sub: '⚠️ PACEPRO: creala PRIMA di uscire · piedi in salita · ≥10 km per il Weekend 10K', load: 'Z2-Z3', duration: 80, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Collinare · 10\' risc + 1h10\' usando bene i piedi in salita', d: 'Gabriele · ⚠️ occasione PacePro · finestra Weekend 10K (28-30)', dur: '80\'', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '30', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: []
+  },
 ];
 
 // Prossima settimana — S35: programmi non ancora arrivati
@@ -1225,11 +1258,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
@@ -10345,20 +10378,20 @@ const BADGES = {
       go: '100 km in 7 giorni vogliono un\'uscita lunga piu\' due medie nella stessa settimana.' },
     { n: 'Tour di agosto', en: 'August Tour', cat: 'BIKE', tipo: 'cumulativa',
       req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '79,221 / 400,0 km (sito, 19/08)',
-      why: 'Al 17/08 restano 342,8 km = 24,5 al giorno, tutti i giorni.',
+      why: 'Al 17/08 restavano 342,8 km: sugli 8 giorni dal 24/08 sono ~42,9 km al giorno, al netto di quanto pedalato dopo il 17.',
       go: 'Vorrebbe dire riscrivere il mese attorno alla bici in piena preparazione Hyrox.' },
     { n: 'Bici ad agosto', en: 'August Time to Ride', cat: 'BIKE', tipo: 'cumulativa',
       req: '20 ore di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '3h10m / 20h (sito, 19/08)',
-      why: 'Al 17/08 restano 17h30m = 1h15m al giorno in sella.',
+      why: 'Al 17/08 restavano 17h30m: sugli 8 giorni dal 24/08 sono ~2h11m al giorno in sella, al netto delle uscite dopo il 17.',
       go: 'Si avvicina solo contando anche le sedute indoor lunghe.' },
     // ── CAMMINATA
     { n: 'Weekend di camminata ad agosto', en: 'August Weekend Walking', cat: 'WALK', tipo: 'singola',
-      req: 'Una singola camminata da 4,828 km (3 miglia)', win: '21 → 23 AGO', d1: '2026-08-21', d2: '2026-08-23', st: 'plan', prog: null,
+      req: 'Una singola camminata da 4,828 km (3 miglia)', win: '21 → 23 AGO', d1: '2026-08-21', d2: '2026-08-23', st: 'miss', prog: null,
       why: 'Le camminate ora le registri (3h39m ad agosto): resta solo da farne una da 4,8 km nella finestra.',
       go: 'Basta avviare l\'attivita\' Camminata per circa 50 minuti in un giorno di quel weekend. Costo zero sul carico.' },
     { n: 'Camminata ad agosto', en: 'August Time to Walk', cat: 'WALK', tipo: 'cumulativa',
       req: '15 ore di camminata in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '3h39m / 15h (Federico, 17/08)',
-      why: 'Al 17/08 restano 11h21m = ~49 minuti al giorno da registrare fino a fine mese.',
+      why: 'Al 17/08 restavano 11h21m: sugli 8 giorni dal 24/08 sono ~1h25m di camminata al giorno, al netto di quanto registrato dopo il 17.',
       go: 'Fattibile solo registrando sistematicamente gli spostamenti a piedi.' },
     // ── PASSI
     { n: 'Agosto a piedi', en: 'Step into August', cat: 'STEP', tipo: 'cumulativa',
