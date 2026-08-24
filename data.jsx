@@ -1209,9 +1209,10 @@ const WEEK = [
       { code: 'BIKE', t: 'Rulli · 50\' @180 W · 90-100 rpm', d: 'Gabriele · 180 W = 76% FTP (237 W, derivato) · cadenza 90-100 rpm', dur: '50\'', result: '66:19 in tre pezzi (avvio 15:13): 10:23 @135 W + 12:56 @101,8 W + lavoro 43:00 @177,1 W (target 180) · cad lavoro 88 su 90-100 richiesti · 31,749 km' },
     ]
   },
-  { day: 'MAR', date: '25', title: 'COMPROMISE 6× STAZIONE + 400', sub: 'Palestra · rec 3\' camminando', load: 'CR', duration: 60, kind: 'hyrox', done: false,
+  { day: 'MAR', date: '25', title: 'COMPROMISED RUN · 2 OPZIONI', sub: 'Palestra · scegli una delle due', load: 'CR', duration: 60, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'HYROX', t: 'Compromise · 6×(stazione per te più tosta + 400 m @3\'45"/km) · rec 3\' walk', d: 'Gabriele · scaldati bene · 400 m @3\'45"/km = 1:30 a rep (derivato) · rec 3\' camminando', dur: '60\'', result: 'da fare' },
+      { code: 'OPZ 1', t: 'Compromise · 6×(stazione per te più tosta + 400 m @3\'45"/km) · rec 3\' walk', d: 'Gabriele · scaldati bene · 400 m @3\'45"/km = 1:30 a rep (derivato) · rec 3\' camminando · corsa tot 2,4 km', dur: '60\'', result: 'da fare' },
+      { code: 'OPZ 2', t: 'Compromise · 4 round: 20 Dual DB Front Squat @heavy + 15 Burpees + max Wall Balls unbroken @9 kg · 30" rest · 500 m run @cannone · 3\' rest', d: 'Mattia · passo run libero, a tutta · corsa tot 2 km', dur: '60\'', result: 'da fare' },
     ]
   },
   { day: 'MER', date: '26', title: 'RECOVERY', sub: 'Recupero', load: 'REST', duration: 0, kind: 'rest', done: false,
