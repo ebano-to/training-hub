@@ -1215,17 +1215,24 @@ const WEEK = [
       { code: 'OPZ 2', t: 'Compromise · 4 round: 20 Dual DB Front Squat @heavy + 15 Burpees + max Wall Balls unbroken @9 kg · 30" rest · 500 m run @cannone · 3\' rest', d: 'Mattia · passo run libero, a tutta · corsa tot 2 km', dur: '60\'', result: 'da fare' },
     ]
   },
-  { day: 'MER', date: '26', title: 'RECOVERY', sub: 'Recupero', load: 'REST', duration: 0, kind: 'rest', done: false,
-    blocks: []
+  { day: 'MER', date: '26', title: 'SKI SOGLIA 4×5\' + BIKE Z2', sub: 'Palestra · soglia W1 + 30\' spinning', load: 'Z4', duration: 75, kind: 'ski', done: false,
+    blocks: [
+      { code: 'SKI', t: 'Ski · Soglia W1 · 4×5:00 @ritmo soglia · r1:00 attivo', d: 'Mattia · RPE 7 · FC target 150-156 bpm (Z4) · "confortevolmente duro": frase breve sì, conversazione no · totale soglia 20\'', dur: '45\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Bike Erg · 30\' @Z2 (spinning)', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
+    ]
   },
   { day: 'GIO', date: '27', title: 'PISTA 3×2000 @4\'30"/KM', sub: '⚠️ PACEPRO: creala PRIMA di uscire · rec 3\' cammino + 20\' defa', load: 'Z3', duration: 70, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Pista · 3×2000 m @4\'30"/km · rec 3\' cammino', d: 'Gabriele · scaldarsi bene · 4\'30"/km = 9:00 a rep (derivato) · rec 3\' cammino + 20\' defa · ⚠️ occasione PacePro', dur: '70\'', result: 'da fare' },
     ]
   },
-  { day: 'VEN', date: '28', title: 'RULLI 45\' RECUPERO @170W', sub: 'Casa · scarico dal giorno prima', load: 'Z1-Z2', duration: 45, kind: 'bike', done: false,
+  { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 210, kind: 'strength', done: false,
     blocks: [
-      { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · recupero da giovedì · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Back Squat 5×3 @70% (73,5 kg → 72,5: 20+5+1,25/lato) + Deadlift 5×3 @70% (110 kg: 20+20+5/lato)', d: 'Mattia, 10:30 Virgin · spostati da LUN e MER su tua decisione', dur: '30\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Split Jerk 8×2 @70% + Push Press 6×3 @70% + Pause Bench 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, 10:30 Virgin · carichi 70% da definire con Mattia (1RM non testati)', dur: '45\'', result: 'da fare' },
+      { code: 'ERG', t: 'Ski+Row Aerobic · 6×10\' alternati Row/Ski @Z2 · nessuna sosta ai cambi', d: 'Mattia · 60\' totali Z2 = 120-135 bpm · "DEVE restare facile"', dur: '60\'', result: 'da fare' },
+      { code: 'CARDIO', t: 'Stairmaster · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'da fare' },
     ]
   },
   { day: 'SAB', date: '29', title: 'COLLINARE 1H10\' + 10\' RISC', sub: '⚠️ PACEPRO: creala PRIMA di uscire · piedi in salita · ≥10 km per il Weekend 10K', load: 'Z2-Z3', duration: 80, kind: 'run', done: false,
