@@ -1217,7 +1217,7 @@ const WEEK = [
   },
   { day: 'MER', date: '26', title: 'SKI SOGLIA 4×5\' + BIKE Z2', sub: 'Palestra · soglia W1 + 30\' spinning', load: 'Z4', duration: 75, kind: 'ski', done: false,
     blocks: [
-      { code: 'SKI', t: 'Ski · Soglia W1 · 4×5:00 @ritmo soglia · r1:00 attivo', d: 'Mattia · RPE 7 · FC target 150-156 bpm (Z4) · "confortevolmente duro": frase breve sì, conversazione no · totale soglia 20\'', dur: '45\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · Soglia W1 · 4×5:00 @ritmo soglia · r1:00 attivo', d: 'Mattia · RPE 7 · FC target 150-156 bpm (Z4) · rif. 05/08: parti a 216-228 W (1:55-1:57/500) fisso dalla prima — non a 263 come l\'altra volta (dec +11%, FC mai in banda) · non saltare i 3×30" progressivi del WU', dur: '45\'', result: 'da fare' },
       { code: 'BIKE', t: 'Bike Erg · 30\' @Z2 (spinning)', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
     ]
   },
