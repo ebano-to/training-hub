@@ -10526,7 +10526,7 @@ const BADGES = {
   garmin: [
     // Nomi e requisiti ESATTI dal docx della tab Disponibile di Federico (dati/badges_disponibili_20260817) · ♻ ripetibile
     { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi, ogni ripetizione ridà i punti: incassano da soli', items: [
-      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 86, req: 'Notti consecutive con sonno registrato', tip: 'A quota 85: non toccare nulla' },
+      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 87, req: 'Notti consecutive con sonno registrato', tip: 'A quota 85: non toccare nulla' },
       { n: 'Esperto del sonno', pt: 1, rep: 32, req: 'Notti con punteggio sonno alto', tip: 'Incassa da solo' },
       { n: 'Sei il numero uno', pt: 2, rep: 30, req: 'Vinci una sfida qualunque', tip: 'Weekly steps ogni lunedì: la vinci spesso' },
       { n: 'Podio per i passi (mensile)', pt: 2, rep: 7, req: 'Podio in una sfida passi settimanale', tip: 'Routine: iscriviti e basta' },
