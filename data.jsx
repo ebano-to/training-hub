@@ -1217,7 +1217,7 @@ const WEEK = [
   },
   { day: 'MER', date: '26', title: 'SKI SOGLIA 4×5\' + BIKE Z2', sub: 'Palestra · soglia W1 + 30\' spinning', load: 'Z4', duration: 75, kind: 'ski', done: false,
     blocks: [
-      { code: 'SKI', t: 'Ski · Soglia W1 · 4×5:00 @ritmo soglia · r1:00 attivo', d: 'Mattia · RPE 7 · FC target 150-156 bpm (Z4) · rif. 05/08: parti a 216-228 W (1:55-1:57/500) fisso dalla prima — non a 263 come l\'altra volta (dec +11%, FC mai in banda) · non saltare i 3×30" progressivi del WU', dur: '45\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · Soglia W1 · 4×5:00 @ritmo soglia · r1:00 attivo', d: 'Mattia · RPE 7 · FC target 150-156 bpm (Z4) · rif. 05/08: parti a 216-228 W (1:55-1:57/500) fisso dalla prima — non a 263 come l\'altra volta (dec +11%, FC mai in banda) · non saltare i 3×30" progressivi del WU', dur: '45\'', result: '5.121 m in 20:00 @218 W (1:57.1) · rep 236-215-211-209 W · FC fine rep 149-150: in banda · DF 59 · 3×30" del WU fatti (228-244-291 W) · WU 6:30 e defa 5:00 sui 10\' prescritti' },
       { code: 'BIKE', t: 'Bike Erg · 30\' @Z2 (spinning)', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
     ]
   },
@@ -1270,7 +1270,7 @@ const PBS = [
 
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 8.604];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 0];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 31.749];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0];
@@ -1279,16 +1279,16 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 // Totals (real)
 const TOTALS = {
   rower: 679.176,
-  ski: 633.476,
+  ski: 642.080,
   run: 738.129,
   bike: 373.173,
   swim: 57.003,
-  total: 2480.957,
+  total: 2489.561,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "17/08/2026",
+ "built": "26/08/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -1459,7 +1459,7 @@ const PROG = {
    {
     "era": "MAG-AGO 26",
     "n": 24,
-    "tot": 38,
+    "tot": 40,
     "vals": [
      {
       "min": 4,
@@ -2600,6 +2600,16 @@ const PROG = {
       "hr": 119,
       "spm": 42,
       "pb": false
+     },
+     {
+      "d": "26/08/26*",
+      "struttura": "3×0:30 +1",
+      "dist": 1582,
+      "w": 187,
+      "pace": "2:03.3",
+      "hr": 117,
+      "spm": 42,
+      "pb": false
      }
     ]
    },
@@ -2804,6 +2814,16 @@ const PROG = {
       "w": 232,
       "pace": "1:54.7",
       "hr": 140,
+      "spm": 46,
+      "pb": false
+     },
+     {
+      "d": "26/08/26*",
+      "struttura": "4×5:00",
+      "dist": 5121,
+      "w": 218,
+      "pace": "1:57.2",
+      "hr": 142,
       "spm": 46,
       "pb": false
      }
@@ -4033,6 +4053,28 @@ const PROG = {
      "struttura": "4×5:00",
      "rep_s": 300,
      "rep_m": 1308
+    },
+    {
+     "d": "26/08/26*",
+     "dist": 5121,
+     "w": 218,
+     "pace": "1:57.2",
+     "spm": 46,
+     "hr": 142,
+     "struttura": "4×5:00",
+     "rep_s": 300,
+     "rep_m": 1280
+    },
+    {
+     "d": "26/08/26*",
+     "dist": 1582,
+     "w": 187,
+     "pace": "2:03.3",
+     "spm": 42,
+     "hr": 117,
+     "struttura": "3×0:30 +1",
+     "rep_s": 97,
+     "rep_m": 395
     }
    ]
   }
@@ -7177,6 +7219,19 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '26 AGO', title: 'Ski · Soglia W1 · 4×5:00', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', noGarmin: true, m: { lavoro: '4×5:00', dist: '5.121 m', dur: '20:00', pace: '1:57.1', unit: '/500m', watt: '218', fcMed: '142,2', fcMax: '152', tgt: '150-156', df: '59', src: 'pm5+web' }, vs: { d: '05 AGO', tag: 'struttura identica · orario diverso (13:49 vs 09:01): confronto con cautela', items: [{ v: 'FC fine rep in banda (era sotto)', g: 1 }, { v: 'rep1 +27 W sull\'ultima (era +47)', g: 1 }, { v: 'watt −14', g: 0 }] }, dur: 39, load: 'Z3-Z4', rpe: 7, note: 'FC a fine rep 150-148-150-149: in banda 150-156, l\'obiettivo mancato il 05/08\nPrima rep ancora sopra (236 W) ma scarto dimezzato: poi 215-211-209 regolari\nEF 1,53 contro 1,65 del 05/08: −14 W a pari costo cardiaco (primo pomeriggio vs mattina)',
+    details: { summary: '4×5:00 r1:00: 236 · 215 · 211 · 209 W (1:53.9 → 1:58.7/500) · media 218 W @1:57.1.\nFC tw per rep 137,7 · 144,7 · 143,6 · 142,7 · fine rep 150-148-150-149 · picco 152.\nEF per rep 1,71 · 1,49 · 1,47 · 1,46 — a FC stabilizzata (rep 2→4) −2,0%.\nZone nelle rep: Z3 54% · Z4 23% · Z2 19%.\nSPM 48-45-45-46 · DF 59 · rec attivo 450 m in 4:00.\nWU 6:30: 5:00 @170 W + 3×30″ progressivi 228 · 244 · 291 W r60″ (prescritti 10′ di base).\nDefa 5:00 @96 W (2:33.6) sui 10′ prescritti.\nTotale seduta 8.604 m · 502 cal · 1.530 colpi.\nvs 05/08 (stessa struttura): 218 vs 232 W · FC tw 142,2 vs 140,5 · EF 1,53 vs 1,65 — meno potenza a pari costo cardiaco, ma pacing uniforme e FC in banda, che era la consegna.',
+      ergTable: { fcMed: 142, fcMax: 152, efTot: '1.53', dec: [{ m: 'SKI', v: '−2.0% (EF rep2→4)' }], total: { tempo: '38:38', metri: '8,604', pace: '—', watt: '—', calh: '—', sm: 44, ef: '—', fcmed: 133, fcmax: 152, zona: 'Z2', cal: 502, colpi: 1530, maxpw: 291 }, rows: [
+        { m: 'SKI', split: 'WU 5\'', tempo: '5:00', metri: '1,178', pace: '2:07.3', watt: 170, calh: 876, sm: 40, ef: '1.48', fcmed: 115, fcmax: 126, zona: 'Z1', t: 0 },
+        { m: 'SKI', split: '30″ prog 1', tempo: '0:30', metri: '130', pace: '1:55.3', watt: 228, calh: 960, sm: 50, ef: '1.80', fcmed: 127, fcmax: 130, zona: 'Z2', t: 0 },
+        { m: 'SKI', split: '30″ prog 2', tempo: '0:30', metri: '133', pace: '1:52.7', watt: 244, calh: 1080, sm: 50, ef: '1.98', fcmed: 123, fcmax: 128, zona: 'Z2', t: 0 },
+        { m: 'SKI', split: '30″ prog 3', tempo: '0:30', metri: '141', pace: '1:46.3', watt: 291, calh: 1200, sm: 52, ef: '2.28', fcmed: 128, fcmax: 137, zona: 'Z2', t: 0 },
+        { m: 'SKI', split: 'Rep 1', tempo: '5:00', metri: '1,316', pace: '1:53.9', watt: 236, calh: 1116, sm: 48, ef: '1.71', fcmed: 138, fcmax: 152, zona: 'Z3', t: 1 },
+        { m: 'SKI', split: 'Rep 2', tempo: '5:00', metri: '1,275', pace: '1:57.6', watt: 215, calh: 1032, sm: 45, ef: '1.49', fcmed: 145, fcmax: 152, zona: 'Z3', t: 1 },
+        { m: 'SKI', split: 'Rep 3', tempo: '5:00', metri: '1,267', pace: '1:58.3', watt: 211, calh: 1020, sm: 45, ef: '1.47', fcmed: 144, fcmax: 151, zona: 'Z3', t: 1 },
+        { m: 'SKI', split: 'Rep 4', tempo: '5:00', metri: '1,263', pace: '1:58.7', watt: 209, calh: 1020, sm: 46, ef: '1.46', fcmed: 143, fcmax: 151, zona: 'Z3', t: 1 },
+        { m: 'SKI', split: 'Defa 5\'', tempo: '5:00', metri: '976', pace: '2:33.6', watt: 96, calh: 636, sm: 40, ef: '0.86', fcmed: 111, fcmax: 118, zona: 'Z1', t: 0 },
+      ] }, gps: null } },
   { date: '24 AGO', title: 'Bike · Rulli · Z2 66′', kind: 'bike', filone: 'bike-rulli', filoneLabel: 'Bike Rulli', noGarmin: true, m: { watt: '177,1', dec: '+3,7%', fcMed: '112,1', fcMax: '123', cad: '88', dist: '31,749 km', dur: '66:19', src: 'tcx' }, dur: 66, load: 'Z1-Z2', rpe: 4, note: 'Lavoro 43:00 @177,1 W: target 180 centrato\nCadenza lavoro 88 rpm sui 90-100 richiesti\nCarico blando: 72% del lavoro in Z1, mai oltre 123 bpm',
     details: { summary: 'Rulli di casa, avvio 15:13, tre pezzi Technogym in sequenza (ordine dalla continuità FC, orologi dei file inaffidabili).\n1) Avvio 10:23 @135,0 W (max 208) · FC 91,4/112 da freddo (61) · cad 88.\n2) Blando 12:56 @101,8 W (max 182) · FC 95,0/114 · cad 75.\n3) Lavoro 43:00 @177,1 W (max 217) · FC 112,1/123 · cad 88 (richiesti 90-100).\nLavoro: zone Z1 72% · Z2 2% · sotto Z1 26% · EF 1,61 → 1,55 · decoupling +3,7% (watt stabili 175,5 → 178,7).\nB continuo e pulito: nessun buco temporale, 2 soli campioni a 0 W.\nTotale 31.749,2 m in 66:19.', gps: null } },
   { date: '22 AGO', title: 'Run · Fuori · Ripetute 16×200 m @4:00', kind: 'run', filone: 'run-fuori-ripetute', filoneLabel: 'Ripetute fuori', surf: 'fuori', m: { lavoro: '16×200 m', dur: '63:30', dist: '11,302 km', pace: '3:45.7', unit: '/km', unif: '±3,4″', fcMed: '146,4', fcMax: '164', hrr60: '−17,4 (corsetta)', src: 'rep' }, dur: 64, load: 'Z3-Z4', rpe: 7, note: 'Tutte e 16 sotto il target 48″: media 3:45.7/km, −14″ dal richiesto\nFC rep in salita 127→155 con plateau da metà serie · picco 164\nDefa 14:15 sui 20′ prescritti · risc 17:13',
