@@ -1226,12 +1226,13 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · 3×2000 m @4\'30"/km · rec 3\' cammino', d: 'Gabriele · scaldarsi bene · 4\'30"/km = 9:00 a rep (derivato) · rec 3\' cammino + 20\' defa · ⚠️ occasione PacePro', dur: '70\'', result: 'da fare' },
     ]
   },
-  { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 210, kind: 'strength', done: false,
+  { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 240, kind: 'strength', done: false,
     blocks: [
       { code: 'FORZA', t: 'Back Squat 5×3 @70% (73,5 kg → 72,5: 20+5+1,25/lato) + Deadlift 5×3 @70% (110 kg: 20+20+5/lato)', d: 'Mattia, 10:30 Virgin · spostati da LUN e MER su tua decisione', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Split Jerk 8×2 @70% + Push Press 6×3 @70% + Pause Bench 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, 10:30 Virgin · carichi 70% da definire con Mattia (1RM non testati)', dur: '45\'', result: 'da fare' },
       { code: 'ERG', t: 'Ski+Row Aerobic · 6×10\' alternati Row/Ski @Z2 · nessuna sosta ai cambi', d: 'Mattia · 60\' totali Z2 = 120-135 bpm · "DEVE restare facile"', dur: '60\'', result: 'da fare' },
       { code: 'CARDIO', t: 'Stairmaster · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
+      { code: 'ASSAULT', t: 'Assault Bike · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm · blocco di DOM 30 fatto oggi', dur: '30\'', result: '18.209 m in 30:00 @282 W (scala Assault) · 59 rpm · FC 128/152, Z2 81% · 373 cal display' },
       { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'da fare' },
     ]
   },
@@ -1240,10 +1241,9 @@ const WEEK = [
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h10\' usando bene i piedi in salita', d: 'Gabriele · ⚠️ occasione PacePro · finestra Weekend 10K (28-30)', dur: '80\'', result: 'da fare' },
     ]
   },
-  { day: 'DOM', date: '30', title: 'ROW VO2 4×4:00 + ASSAULT Z2', sub: 'Palestra · VO2 W1 Fondamenta', load: 'Z4-Z5', duration: 75, kind: 'row', done: false,
+  { day: 'DOM', date: '30', title: 'ROW VO2 4×4:00', sub: 'Palestra · VO2 W1 Fondamenta', load: 'Z4-Z5', duration: 45, kind: 'row', done: false,
     blocks: [
       { code: 'ROW', t: 'Row · VO2 Max W1 · 4×4:00 @ritmo 2k +3-4″/500 · r3:00 attivo', d: 'Mattia · niente numeri da record, prima rep tranquilla · negative split = dosaggio giusto · SPM costanti · totale intensità 16\'', dur: '45\'', result: 'da fare' },
-      { code: 'ASSAULT', t: 'Assault Bike · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
     ]
   },
 ];
@@ -7219,6 +7219,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '28 AGO', title: 'Bike · Assault · Z2 30′', kind: 'bike', filone: 'bike-assault', filoneLabel: 'Assault', m: { fcMed: '128', fcMax: '152', cad: '59', dur: '30:00', watt: '282' }, dur: 30, load: 'Z2', rpe: 4, note: 'Z2 per l\'81% del tempo, una puntata a 152\nWatt e km sono scala Assault: confronti solo Assault-vs-Assault\nBlocco di DOM 30 eseguito in anticipo',
+    details: { summary: '30:00 · 373 cal display (424 Garmin) · 282 W medi / 1.043 max (scala Assault).\n59 rpm medi / 95 max · 36,4 km/h medi / 58,5 max.\nFC 128/152 dal Garmin · zone: Z2 81% · Z3 6% · Z4 1% · sotto Z2 13% (avvio da 63).\nDrift metà1 123,8 → metà2 129,4.\n18.209 m sul display: distanza Assault, esclusa da volumi e km come da regola.' } },
   { date: '26 AGO', title: 'Ski · Soglia W1 · 4×5:00', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', noGarmin: true, m: { lavoro: '4×5:00', dist: '5.121 m', dur: '20:00', pace: '1:57.1', unit: '/500m', watt: '218', fcMed: '142,2', fcMax: '152', tgt: '150-156', df: '59', src: 'pm5+web' }, vs: { d: '05 AGO', tag: 'struttura identica · orario diverso (13:49 vs 09:01): confronto con cautela', items: [{ v: 'FC fine rep in banda (era sotto)', g: 1 }, { v: 'rep1 +27 W sull\'ultima (era +47)', g: 1 }, { v: 'watt −14', g: 0 }] }, dur: 39, load: 'Z3-Z4', rpe: 7, note: 'FC a fine rep 150-148-150-149: in banda 150-156, l\'obiettivo mancato il 05/08\nPrima rep ancora sopra (236 W) ma scarto dimezzato: poi 215-211-209 regolari\nEF 1,53 contro 1,65 del 05/08: −14 W a pari costo cardiaco (pomeriggio vs mattina, dopo 30′ di bike Z2)',
     details: { summary: '4×5:00 r1:00: 236 · 215 · 211 · 209 W (1:53.9 → 1:58.7/500) · media 218 W @1:57.1.\nFC tw per rep 137,7 · 144,7 · 143,6 · 142,7 · fine rep 150-148-150-149 · picco 152.\nEF per rep 1,71 · 1,49 · 1,47 · 1,46 — a FC stabilizzata (rep 2→4) −2,0%.\nZone nelle rep: Z3 54% · Z4 23% · Z2 19%.\nSPM 48-45-45-46 · DF 59 · rec attivo 450 m in 4:00.\nWU 6:30: 5:00 @170 W + 3×30″ progressivi 228 · 244 · 291 W r60″ (prescritti 10′ di base).\nDefa 5:00 @96 W (2:33.6) sui 10′ prescritti.\nTotale seduta 8.604 m · 502 cal · 1.530 colpi.\nvs 05/08 (stessa struttura): 218 vs 232 W · FC tw 142,2 vs 140,5 · EF 1,53 vs 1,65 — meno potenza a pari costo cardiaco, ma pacing uniforme e FC in banda, che era la consegna.',
       ergTable: { fcMed: 142, fcMax: 152, efTot: '1.53', dec: [{ m: 'SKI', v: '−2.0% (EF rep2→4)' }], total: { tempo: '38:38', metri: '8,604', pace: '—', watt: '—', calh: '—', sm: 44, ef: '—', fcmed: 133, fcmax: 152, zona: 'Z2', cal: 502, colpi: 1530, maxpw: 291 }, rows: [
