@@ -1226,8 +1226,8 @@ const WEEK = [
   },
   { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 240, kind: 'strength', done: false,
     blocks: [
-      { code: 'FORZA', t: 'Back Squat 5×3 @70% (73,5 kg → 72,5: 20+5+1,25/lato) + Deadlift 5×3 @70% (110 kg: 20+20+5/lato)', d: 'Mattia, 10:30 Virgin · spostati da LUN e MER su tua decisione', dur: '30\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Split Jerk 8×2 @70% + Push Press 6×3 @70% + Pause Bench 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, 10:30 Virgin · carichi 70% da definire con Mattia (1RM non testati)', dur: '45\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Back Squat 5×3 @70% + Deadlift 5×3 @70%', d: 'Mattia, 10:30 Virgin · spostati da LUN e MER su tua decisione', dur: '30\'', result: 'Back Squat 3×3 @70 kg (20+5/lato) · Romanian DL 3×6 @70 kg — carichi e varianti decisi dal vivo con Mattia (prescritti BSQ 5×3 @72,5 · DL classico 5×3 @110)' },
+      { code: 'FORZA', t: 'Split Jerk 8×2 @70% + Push Press 6×3 @70% + Pause Bench 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, 10:30 Virgin', dur: '45\'', result: 'Panca SALTATA: fastidio alla spalla sinistra · Jerk e Push Press non eseguiti · al loro posto rematore doppio 4×8 @26 kg in circuito con estensioni tricipiti su panca piana 3×10 @6 kg + 1×10 @8 kg' },
       { code: 'ERG', t: 'Ski+Row Aerobic · 6×10\' alternati Row/Ski @Z2 · nessuna sosta ai cambi', d: 'Mattia · 60\' totali Z2 = 120-135 bpm · "DEVE restare facile"', dur: '60\'', result: 'da fare' },
       { code: 'CARDIO', t: 'Stairmaster · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
       { code: 'ASSAULT', t: 'Assault Bike · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm · blocco di DOM 30 fatto oggi', dur: '30\'', result: '18.209 m in 30:00 @282 W (scala Assault) · 59 rpm · FC 128/152, Z2 81% · 373 cal display' },
