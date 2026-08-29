@@ -1221,7 +1221,7 @@ const WEEK = [
       { code: 'BIKE', t: 'Bike Erg · 30\' @Z2 (spinning)', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: '16,276 km in 30:00 @209,6 W · FC 119,4/134, Z2 65% · cad 87 · watt in progressione 202→217' },
     ]
   },
-  { day: 'GIO', date: '27', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+  { day: 'GIO', date: '27', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: true,
     blocks: []
   },
   { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 240, kind: 'strength', done: false,
