@@ -1238,6 +1238,7 @@ const WEEK = [
     blocks: [
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h10\' usando bene i piedi in salita', d: 'Gabriele · ⚠️ occasione PacePro · finestra Weekend 10K (28-30)', dur: '80\'', result: 'da fare' },
       { code: 'ERG', t: 'Ski+Row Aerobic · 6×10\' alternati Row/Ski @Z2', d: 'Mattia · blocco di VEN fatto oggi · Z2 = 120-135 bpm', dur: '62\'', result: '14.158 m in 62:04 (60:00 di lavoro) · Row C2 2.455-2.390-2.333 m @192-177-165 W · Ski 2.364-2.309-2.307 m @171-160-159 W · FC 120,2/134, mai sopra Z2' },
+      { code: 'EXTRA', t: 'Corsetta · Tapis · 30\' @Z2', d: 'Aggiunta di Federico, subito dopo lo ski+row', dur: '30\'', result: '4,621 km in 30:01 @6:29.8/km · FC 122/132' },
     ]
   },
   { day: 'DOM', date: '30', title: 'ROW VO2 4×4:00', sub: 'Palestra · VO2 W1 Fondamenta', load: 'Z4-Z5', duration: 45, kind: 'row', done: false,
@@ -1270,7 +1271,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 8.519];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1279,10 +1280,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 686.354,
   ski: 649.060,
-  run: 746.648,
+  run: 751.269,
   bike: 389.449,
   swim: 57.003,
-  total: 2528.514,
+  total: 2533.135,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7218,6 +7219,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '29 AGO', title: 'Run · Tapis · Corsetta Z2 30′', kind: 'run', filone: 'run-tapis-easy', filoneLabel: 'Corsetta tapis', surf: 'tapis', m: { dist: '4,621 km', dur: '30:01', pace: '6:29.8', unit: '/km', fcMed: '122', fcMax: '132', cad: '168', src: 'fit' }, dur: 30, load: 'Z2', rpe: 3, note: 'Extra fuori programma, 15′ dopo la fine dello ski+row\nZ2 piena dal primo all\'ultimo minuto: mai sopra 132',
+    details: { summary: 'Tapis, 30:01 continui subito dopo i 60′ di ski+row (terza attivita\' del giorno).\n4.620,7 m @6:29.8/km · cad 168 · FC 122/132.', gps: null } },
   { date: '29 AGO', title: 'Ski+Row · Aerobic W1 · 6×10′ alternati Z2', kind: 'multierg', filone: 'multi-aerobic', filoneLabel: 'Ski+Row Aerobic', m: { dist: '14.158 m', dur: '60:00', pace: '2:07.1', unit: '/500m', watt: '171', fcMed: '120,2', fcMax: '134', src: 'lavoro' }, dur: 62, load: 'Z2', rpe: 4, note: 'Mai sopra banda Z2 (max 134): consegna "DEVE restare facile" rispettata\nWatt in calo a FC ferma su entrambe: row 192 → 165, ski 171 → 159\nStavolta tutto su Concept2: watt confrontabili con lo storico',
     details: { summary: '3 giri row→ski da 10:00, cambi in 10-53″: 62:04 di orologio.\nROW (C2): 2.455 → 2.390 → 2.333 m (2:02.2 → 2:08.6/500) · 192/177/165 W · FC tw 118,1 → 123,2 → 119,2.\nSKI (C2): 2.364 → 2.309 → 2.307 m (2:06.9 → 2:10.0/500) · 171/160/159 W · FC tw 122,1 → 122,3 → 117,4.\nEF row 1,63 → 1,38 · EF ski 1,40 → 1,35: potenza in scalata deliberata a parità di battiti.\nZone: Z2 69% · Z1 28% · sotto Z1 4% · picco di giornata 134.\nSeduta il giorno dopo la tripletta di VEN (forza + assault + 3×2000).\nvs 07/08: solo lo ski è confrontabile (il row era su altra macchina): 163,3 vs 160,3 W medi a FC +4,5 — differenze sotto soglia.', ergTable: { fcMed: 120, fcMax: 134, efTot: '1.42', dec: [{ m: 'ROW', v: '−15.3% (EF G1→G3)' }, { m: 'SKI', v: '−3.6% (EF G1→G3)' }], total: { tempo: '62:04', metri: '14,158', pace: '2:07.1', watt: '—', calh: '—', sm: 34, ef: '—', fcmed: 120, fcmax: 134, zona: 'Z2', cal: null, colpi: null, maxpw: null }, rows: [
         { m: 'ROW', split: 'Giro 1', tempo: '10:00', metri: '2,455', pace: '2:02.2', watt: 192, calh: 961, sm: 26, ef: '1.63', fcmed: 118, fcmax: 127, zona: 'Z1', t: 1 },
