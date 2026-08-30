@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 35,
+  programWeek: 36,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -1200,10 +1200,7 @@ const WEEK_ARCHIVE = [
   },
   { day: 'DOM', date: '23', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
 ] },
-];
-
-// Current week — S34 (17 AGO - 23 AGO 2026)
-const WEEK = [
+  { id: 'S35', label: 'S35 · 24 AGO → 30 AGO', range: '24 AGO → 30 AGO 2026', programWeek: 35, days: [
   { day: 'LUN', date: '24', title: 'RULLI 50\' @180W · 90-100 RPM', sub: 'Casa · endurance in cadenza alta', load: 'Z2', duration: 50, kind: 'bike', done: true,
     blocks: [
       { code: 'BIKE', t: 'Rulli · 50\' @180 W · 90-100 rpm', d: 'Gabriele · 180 W = 76% FTP (237 W, derivato) · cadenza 90-100 rpm', dur: '50\'', result: '66:19 in tre pezzi (avvio 15:13): 10:23 @135 W + 12:56 @101,8 W + lavoro 43:00 @177,1 W (target 180) · cad lavoro 88 su 90-100 richiesti · 31,749 km' },
@@ -1211,8 +1208,8 @@ const WEEK = [
   },
   { day: 'MAR', date: '25', title: 'COMPROMISED RUN · 2 OPZIONI', sub: 'Palestra · scegli una delle due', load: 'CR', duration: 60, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'OPZ 1', t: 'Compromise · 6×(stazione per te più tosta + 400 m @3\'45"/km) · rec 3\' walk', d: 'Gabriele · scaldati bene · 400 m @3\'45"/km = 1:30 a rep (derivato) · rec 3\' camminando · corsa tot 2,4 km', dur: '60\'', result: 'da fare' },
-      { code: 'OPZ 2', t: 'Compromise · 4 round: 20 Dual DB Front Squat @heavy + 15 Burpees + max Wall Balls unbroken @9 kg · 30" rest · 500 m run @cannone · 3\' rest', d: 'Mattia · passo run libero, a tutta · corsa tot 2 km', dur: '60\'', result: 'da fare' },
+      { code: 'OPZ 1', t: 'Compromise · 6×(stazione per te più tosta + 400 m @3\'45"/km) · rec 3\' walk', d: 'Gabriele · scaldati bene · 400 m @3\'45"/km = 1:30 a rep (derivato) · rec 3\' camminando · corsa tot 2,4 km', dur: '60\'', result: 'SALTATO', skipped: true },
+      { code: 'OPZ 2', t: 'Compromise · 4 round: 20 Dual DB Front Squat @heavy + 15 Burpees + max Wall Balls unbroken @9 kg · 30" rest · 500 m run @cannone · 3\' rest', d: 'Mattia · passo run libero, a tutta · corsa tot 2 km', dur: '60\'', result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'MER', date: '26', title: 'SKI SOGLIA 4×5\' + BIKE Z2', sub: 'Palestra · soglia W1 + 30\' spinning', load: 'Z4', duration: 75, kind: 'ski', done: true,
@@ -1224,28 +1221,40 @@ const WEEK = [
   { day: 'GIO', date: '27', title: 'REST', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: true,
     blocks: []
   },
-  { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 240, kind: 'strength', done: false,
+  { day: 'VEN', date: '28', title: '10:30 VIRGIN · FORZA CON MATTIA + AEROBICA', sub: 'Tutta la forza della settimana in presenza · poi Z2 · rulli a casa', load: 'MIX', duration: 240, kind: 'strength', done: true,
     blocks: [
       { code: 'FORZA', t: 'Back Squat 5×3 @70% + Deadlift 5×3 @70%', d: 'Mattia, 10:30 Virgin · spostati da LUN e MER su tua decisione', dur: '30\'', result: 'Back Squat 3×3 @70 kg (20+5/lato) · Romanian DL 3×6 @70 kg — carichi e varianti decisi dal vivo con Mattia (prescritti BSQ 5×3 @72,5 · DL classico 5×3 @110)' },
       { code: 'FORZA', t: 'Split Jerk 8×2 @70% + Push Press 6×3 @70% + Pause Bench 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, 10:30 Virgin', dur: '45\'', result: 'Panca SALTATA: fastidio alla spalla sinistra · Jerk e Push Press non eseguiti · al loro posto rematore doppio 4×8 @26 kg in circuito con estensioni tricipiti su panca piana 3×10 @6 kg + 1×10 @8 kg' },
-      { code: 'CARDIO', t: 'Stairmaster · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'da fare' },
+      { code: 'CARDIO', t: 'Stairmaster · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm', dur: '30\'', result: 'SALTATO', skipped: true },
       { code: 'ASSAULT', t: 'Assault Bike · 30\' @Z2', d: 'Mattia · Z2 = 120-135 bpm · blocco di DOM 30 fatto oggi', dur: '30\'', result: '18.209 m in 30:00 @282 W (scala Assault) · 59 rpm · FC 128/152, Z2 81% · 373 cal display' },
       { code: 'RUN', t: 'Ripetute · 3×2000 m @4\'30"/km · rec 3\' cammino', d: 'Gabriele · lavoro di GIO fatto stasera al Valentino (prescritta pista) · 9:00 a rep (derivato)', dur: '50\'', result: '8,519 km in 48:04 · 3/3 sotto target: 8:51.6 · 8:53.8 · 8:49.7 (media 4:25.9/km su 4:30) · FC rep 159,2 max 167 · rec 3\' camminati, HRR60 −34/−35/−28 · defa 3:47 sui 20\' prescritti' },
-      { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'SALTATO', skipped: true },
     ]
   },
-  { day: 'SAB', date: '29', title: 'COLLINARE 1H10\' + 10\' RISC', sub: '⚠️ PACEPRO: creala PRIMA di uscire · piedi in salita · ≥10 km per il Weekend 10K', load: 'Z2-Z3', duration: 80, kind: 'run', done: false,
+  { day: 'SAB', date: '29', title: 'SKI+ROW 60\' + CORSETTA', sub: 'Palestra · Z2', load: 'Z2', duration: 92, kind: 'multierg', done: true,
     blocks: [
-      { code: 'RUN', t: 'Collinare · 10\' risc + 1h10\' usando bene i piedi in salita', d: 'Gabriele · ⚠️ occasione PacePro · finestra Weekend 10K (28-30)', dur: '80\'', result: 'da fare' },
+      { code: 'RUN', t: 'Collinare · 10\' risc + 1h10\' usando bene i piedi in salita', d: 'Gabriele', dur: '80\'', result: 'SALTATO', skipped: true },
       { code: 'ERG', t: 'Ski+Row Aerobic · 6×10\' alternati Row/Ski @Z2', d: 'Mattia · blocco di VEN fatto oggi · Z2 = 120-135 bpm', dur: '62\'', result: '14.158 m in 62:04 (60:00 di lavoro) · Row C2 2.455-2.390-2.333 m @192-177-165 W · Ski 2.364-2.309-2.307 m @171-160-159 W · FC 120,2/134, mai sopra Z2' },
       { code: 'EXTRA', t: 'Corsetta · Tapis · 30\' @Z2', d: 'Aggiunta di Federico, subito dopo lo ski+row', dur: '30\'', result: '4,621 km in 30:01 @6:29.8/km · FC 122/132' },
     ]
   },
   { day: 'DOM', date: '30', title: 'ROW VO2 4×4:00', sub: 'Palestra · VO2 W1 Fondamenta', load: 'Z4-Z5', duration: 45, kind: 'row', done: false,
     blocks: [
-      { code: 'ROW', t: 'Row · VO2 Max W1 · 4×4:00 @ritmo 2k +3-4″/500 · r3:00 attivo', d: 'Mattia · niente numeri da record, prima rep tranquilla · negative split = dosaggio giusto · SPM costanti · totale intensità 16\'', dur: '45\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · VO2 Max W1 · 4×4:00 @ritmo 2k +3-4″/500 · r3:00 attivo', d: 'Mattia · niente numeri da record, prima rep tranquilla · negative split = dosaggio giusto · SPM costanti · totale intensità 16\'', dur: '45\'', result: 'SALTATO', skipped: true },
     ]
   },
+] },
+];
+
+// Current week — S34 (17 AGO - 23 AGO 2026)
+const WEEK = [
+  { day: 'LUN', date: '31', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MAR', date: '01', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'MER', date: '02', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'GIO', date: '03', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'VEN', date: '04', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'SAB', date: '05', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'DOM', date: '06', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
 ];
 
 // Prossima settimana — S35: programmi non ancora arrivati
@@ -1269,11 +1278,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
@@ -10437,7 +10446,7 @@ const BADGES = {
       why: 'A luglio 13 corse, la piu\' corta 4,190 km: la distanza non e\' il problema, il giorno si\'.',
       go: 'Presa il primo giorno di finestra: badge visibile sulla pagina Garmin dell\'attivita\'.' },
     { n: 'Weekend 10K di agosto', en: 'August Weekend 10K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 10 km', win: '28 → 30 AGO', d1: '2026-08-28', d2: '2026-08-30', st: 'plan', prog: null,
+      req: 'Una singola corsa da 10 km', win: '28 → 30 AGO', d1: '2026-08-28', d2: '2026-08-30', st: 'miss', prog: null,
       why: 'Il medio da 10 km lo fai gia\' (25 LUG, 10 km @5:02/km).',
       go: 'Metti il medio lungo di quella settimana a SAB 29.' },
     { n: '15K di agosto', en: 'August 15K', cat: 'RUN', tipo: 'singola',
@@ -10458,9 +10467,9 @@ const BADGES = {
       why: 'La bike di DOM 09 allungata sarebbe bastata, ma non e\' stata fatta.',
       go: 'Finestra 07-09 chiusa senza uscita bici: la bike di DOM 09 è stata spostata a SAB 15.' },
     { n: 'Pedala 100 km ad agosto', en: 'August Ride to 100', cat: 'BIKE', tipo: 'cumulativa',
-      req: '100 km di bici sommati nel periodo', win: '23 → 29 AGO', d1: '2026-08-23', d2: '2026-08-29', st: 'push', prog: '3,8 / 100,0 km (Federico, 26/08)',
+      req: '100 km di bici sommati nel periodo', win: '23 → 29 AGO', d1: '2026-08-23', d2: '2026-08-29', st: 'miss', prog: '3,8 / 100,0 km (Federico, 26/08)',
       why: 'Contano solo le bici registrate con app/device Garmin: i TCX Technogym importati NON entrano (verificato da Federico, 26/08).',
-      go: '96,2 km entro VEN 29 solo di bici Garmin-registrate, in settimana Hyrox.' },
+      go: 'Chiusa al 3,8%: solo bici Garmin-registrate contavano.' },
     { n: 'Tour di agosto', en: 'August Tour', cat: 'BIKE', tipo: 'cumulativa',
       req: '400 km di bici in agosto', win: 'tutto agosto', d1: null, d2: null, st: 'push', prog: '83,0 / 400,0 km (Federico, 26/08)',
       why: 'Al 26/08 restano 317 km su 5 giorni — e contano solo le bici registrate col Garmin, i TCX Technogym no.',
@@ -10488,7 +10497,7 @@ const BADGES = {
       why: 'Al 17/08 restavano 54.479 passi: chiusi in tre giorni.',
       go: 'Presa in anticipo sul previsto.' },
     { n: 'Podio per i passi ad agosto', en: 'August Steps Podium', cat: 'STEP', tipo: 'singola',
-      req: 'Arrivare nei primi 3 di almeno una sfida passi settimanale', win: '03 → 30 AGO', d1: '2026-08-03', d2: '2026-08-30', st: 'plan', prog: null,
+      req: 'Arrivare nei primi 3 di almeno una sfida passi settimanale', win: '03 → 30 AGO', d1: '2026-08-03', d2: '2026-08-30', st: 'miss', prog: null,
       why: 'Dipende da quale sfida passi scegli, non dal volume. Nella 100K settimanale in corso sei 9\u00b0 di 10 (Federico, 26/08).',
       go: 'Iscriviti a una weekly steps challenge con pochi partecipanti.' },
     // ── FORZA E ATTIVITA'
