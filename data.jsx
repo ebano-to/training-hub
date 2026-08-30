@@ -1251,7 +1251,7 @@ const WEEK = [
   { day: 'LUN', date: '31', title: 'RUN 45\' @5\'30" + ROW VO2', sub: '⚠️ PACEPRO sulla run: creala PRIMA di uscire · ultima finestra del badge', load: 'MIX', duration: 120, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Run · 45\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · ⚠️ occasione PacePro (agosto chiude stasera, a settembre il badge riapre da 2 pt) · ~8,2 km totali (derivato)', dur: '50\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · VO2 Max · 4×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · WU 10\' + 3×20" @2k r40" · replica esatta del 03/08: stessi target, "vorrei vedere gli stessi numeri con sensazioni migliori, ho bisogno di capire come sei rientrato" · "se i 288 W del primo escono comodi tienili" · defa 10\'', dur: '45\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · VO2 Max · 4×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · WU 10\' + 3×20" @2k r40" (rif 03/08: 340-361 W) · replica esatta del 03/08: 1\'46"-1\'47" = 283-291 W, SPM 27-28 costanti · quel giorno: 288-288-295-298 W, FC 140→148 · "vorrei vedere gli stessi numeri con sensazioni migliori" · "se i 288 W del primo escono comodi tienili" · rec attivo pagaiato · defa 10\'', dur: '45\'', result: 'da fare' },
     ]
   },
   { day: 'MAR', date: '01', title: 'COMPROMISED RUN · 2 OPZIONI', sub: 'Palestra · scegli una · per Mattia è la seduta più importante del mese', load: 'CR', duration: 70, kind: 'hyrox', done: false,
