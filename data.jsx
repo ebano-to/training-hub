@@ -1260,7 +1260,7 @@ const WEEK = [
       { code: 'OPZ 2', t: 'Compromise+Sled · 4×(50 m Sled Push @208 kg in 4×12,5 + 1.000 m @ritmo gara · 2\' rest) · 5\' pausa · 4×50 m Sled Pull @peso gara r2\'', d: 'Mattia · "la seduta più importante del mese" · segnare il tempo di OGNI sled e di OGNI km', dur: '70\'', result: 'da fare' },
     ]
   },
-  { day: 'MER', date: '02', title: 'SKI SOGLIA 4×5\'', sub: 'Palestra, mattina ~9:00 · replica esatta del 05/08', load: 'Z4', duration: 45, kind: 'ski', done: false,
+  { day: 'MER', date: '02', title: 'SKI SOGLIA 4×5\'', sub: 'Palestra, mattina ~9:00 · replica esatta del 05/08 · sala Hyrox Virgin occupata alle 13:00', load: 'Z4', duration: 45, kind: 'ski', done: false,
     blocks: [
       { code: 'SKI', t: 'Ski · Soglia · 4×5:00 @ritmo soglia · r1:00', d: 'Mattia · stessa seduta e stesso orario del 05/08: "tagliamo le variabili" · WU 10\' COMPLETI + 3×30" progressivi · defa 10\' COMPLETI · rif: 216-228 W (1:55-1:57/500), FC 150-156', dur: '45\'', result: 'da fare' },
     ]
