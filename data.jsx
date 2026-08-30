@@ -1248,13 +1248,45 @@ const WEEK_ARCHIVE = [
 
 // Current week — S34 (17 AGO - 23 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '31', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MAR', date: '01', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'MER', date: '02', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'GIO', date: '03', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'VEN', date: '04', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'SAB', date: '05', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
-  { day: 'DOM', date: '06', title: 'DA DEFINIRE', sub: 'In attesa dei programmi dei coach', load: '—', duration: 0, kind: 'rest', done: false, blocks: [] },
+  { day: 'LUN', date: '31', title: 'RUN 45\' @5\'30" + ROW VO2 + FORZA', sub: '⚠️ PACEPRO sulla run: creala PRIMA di uscire · ultima finestra del badge', load: 'MIX', duration: 150, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run · 45\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · ⚠️ occasione PacePro (agosto chiude stasera, a settembre il badge riapre da 2 pt) · ~8,2 km totali (derivato)', dur: '50\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · VO2 Max · 4×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · WU 10\' + 3×20" @2k r40" · replica esatta del 03/08: stessi target, "se i 288 W del primo escono comodi tienili" · defa 10\'', dur: '45\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MAR', date: '01', title: 'COMPROMISED RUN · 2 OPZIONI', sub: 'Palestra · scegli una · per Mattia è la seduta più importante del mese', load: 'CR', duration: 70, kind: 'hyrox', done: false,
+    blocks: [
+      { code: 'OPZ 1', t: 'Compromise · 6×(stazione per te più tosta 2\' + 800 m @4\'10"/km) · rec 3\' walk', d: 'Gabriele · scaldati bene · 800 m @4\'10"/km = 3:20 a rep (derivato) · corsa tot 4,8 km', dur: '70\'', result: 'da fare' },
+      { code: 'OPZ 2', t: 'Compromise+Sled · 4×(50 m Sled Push @208 kg in 4×12,5 + 1.000 m @ritmo gara · 2\' rest) · 5\' pausa · 4×50 m Sled Pull @peso gara r2\'', d: 'Mattia · "la seduta più importante del mese" · segnare il tempo di OGNI sled e di OGNI km', dur: '70\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '02', title: 'SKI SOGLIA 4×5\' + FORZA', sub: 'Palestra, mattina ~9:00 · replica esatta del 05/08', load: 'Z4', duration: 75, kind: 'ski', done: false,
+    blocks: [
+      { code: 'SKI', t: 'Ski · Soglia · 4×5:00 @ritmo soglia · r1:00', d: 'Mattia · stessa seduta e stesso orario del 05/08: "tagliamo le variabili" · WU 10\' COMPLETI + 3×30" progressivi · defa 10\' COMPLETI · rif: 216-228 W (1:55-1:57/500), FC 150-156', dur: '45\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
+    ]
+  },
+  { day: 'GIO', date: '03', title: 'PISTA · ORARIO DA DECIDERE', sub: 'Con Gabriele', load: 'Z3-Z4', duration: 60, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Pista · struttura da definire con Gabriele', d: 'Gabriele · "pista, decidiamo orario"', dur: '60\'', result: 'da fare' },
+    ]
+  },
+  { day: 'VEN', date: '04', title: 'RULLI 45\' RECUPERO @170W', sub: 'Casa · scarico dal giorno prima', load: 'Z1-Z2', duration: 45, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Rulli · 45\' di recupero @170 W', d: 'Gabriele · 170 W = 72% FTP (237 W, derivato)', dur: '45\'', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '05', title: 'COLLINARE 1H15\' + 10\' RISC', sub: 'Piedi in salita', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '06', title: 'TRAINING CAMP (FACOLTATIVO)', sub: 'Minitriathlon a Caselle Torinese, se vuoi', load: 'CAMP', duration: 0, kind: 'race', done: false,
+    blocks: [
+      { code: 'TRI', t: 'Minitriathlon · Caselle Torinese', d: 'Gabriele · facoltativo: "se vuoi"', dur: '—', result: 'da fare' },
+    ]
+  },
 ];
 
 // Prossima settimana — S35: programmi non ancora arrivati
