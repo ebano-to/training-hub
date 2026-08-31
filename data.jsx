@@ -1329,7 +1329,7 @@ const TOTALS = {
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "29/08/2026",
+ "built": "31/08/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -4301,7 +4301,7 @@ const PROG = {
    {
     "era": "MAG-AGO 26",
     "n": 18,
-    "tot": 35,
+    "tot": 36,
     "vals": [
      {
       "min": 4,
@@ -5801,6 +5801,16 @@ const PROG = {
       "hr": 128,
       "spm": 25,
       "pb": false
+     },
+     {
+      "d": "31/08/26*",
+      "struttura": "4×4:00 +5",
+      "dist": 9286,
+      "w": 205,
+      "pace": "1:59.5",
+      "hr": 125,
+      "spm": 26,
+      "pb": false
      }
     ]
    },
@@ -7227,6 +7237,17 @@ const PROG = {
      "struttura": "4×4:00 +5",
      "rep_s": 246,
      "rep_m": 1038
+    },
+    {
+     "d": "31/08/26*",
+     "dist": 9286,
+     "w": 205,
+     "pace": "1:59.5",
+     "spm": 26,
+     "hr": 125,
+     "struttura": "4×4:00 +5",
+     "rep_s": 246,
+     "rep_m": 1031
     }
    ]
   }
