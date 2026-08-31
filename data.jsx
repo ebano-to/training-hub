@@ -1248,10 +1248,10 @@ const WEEK_ARCHIVE = [
 
 // Current week — S34 (17 AGO - 23 AGO 2026)
 const WEEK = [
-  { day: 'LUN', date: '31', title: 'RUN 45\' @5\'30" + ROW VO2', sub: '⚠️ PACEPRO sulla run: creala PRIMA di uscire · ultima finestra del badge', load: 'MIX', duration: 120, kind: 'run', done: false,
+  { day: 'LUN', date: '31', title: 'RUN 45\' @5\'30" + ROW VO2', sub: 'Row replicato al watt · run interrotta da crampo', load: 'MIX', duration: 120, kind: 'run', done: true,
     blocks: [
-      { code: 'RUN', t: 'Run · 45\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · ⚠️ occasione PacePro (agosto chiude stasera, a settembre il badge riapre da 2 pt) · ~8,2 km totali (derivato)', dur: '50\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · VO2 Max · 4×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · WU 10\' + 3×20" @2k r40" (rif 03/08: 340-361 W) · replica esatta del 03/08: 1\'46"-1\'47" = 283-291 W, SPM 27-28 costanti · quel giorno: 288-288-295-298 W, FC 140→148 · "vorrei vedere gli stessi numeri con sensazioni migliori" · "se i 288 W del primo escono comodi tienili" · rec attivo pagaiato · defa 10\'', dur: '45\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 45\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · fatta su tapis dopo il row (rest 14:41)', dur: '50\'', result: 'INTERROTTA a 5,368 km in 29:22 @5:28.2/km per crampo al bicipite femorale sx · FC 136/143 · allunghi non fatti' },
+      { code: 'ROW', t: 'Row · VO2 Max · 4×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · replica esatta del 03/08 riuscita', dur: '54\'', result: '4×4:00: 287-288-291-292 W (1:46.9→1:46.2), negative split · FC tw 137,1→148,5, max 163 · DF 88 come il 03/08 · richiami WU 319-371-340 W · defa 10\' completo' },
     ]
   },
   { day: 'MAR', date: '01', title: 'COMPROMISED RUN · 2 OPZIONI', sub: 'Palestra · scegli una · per Mattia è la seduta più importante del mese', load: 'CR', duration: 70, kind: 'hyrox', done: false,
@@ -1310,21 +1310,21 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 11.249];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 5.368];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 686.354,
+  rower: 697.603,
   ski: 649.060,
-  run: 751.269,
+  run: 756.637,
   bike: 389.449,
   swim: 57.003,
-  total: 2533.135,
+  total: 2549.752,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7260,6 +7260,10 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '31 AGO', title: 'Run · Tapis · Medio interrotto 5,4 km', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Medio tapis', surf: 'tapis', m: { dist: '5,368 km', dur: '29:22', pace: '5:28.2', unit: '/km', fcMed: '136', fcMax: '143', cad: '170', src: 'fit' }, dur: 29, load: 'Z2-Z3', rpe: 5, note: 'Interrotta al km 5,4 per crampo al bicipite femorale sinistro\nPasso in target (5:28 sui 5:30 chiesti) fino allo stop · allunghi non fatti\nPartita 14:41 dopo la fine del row VO2',
+    details: { summary: 'Tapis, 29:22 continui @5:28.2/km (prescritti 45\' @5\'30" + 8×100 allunghi).\nFC 136/143 · cad 170.\nStop per crampo al bicipite femorale sx: lavoro chiuso al 65% del previsto, allunghi saltati.\nSeconda seduta del giorno: rest reale dal row 14:41.', gps: null } },
+  { date: '31 AGO', title: 'Row · VO2 Max W1 · 4×4:00', kind: 'row', filone: 'row-vo2', filoneLabel: 'Row VO2 Max', m: { lavoro: '4×4:00', dist: '4.506 m', dur: '16:00', pace: '1:46.5', unit: '/500m', watt: '289,5', fcMed: '144,1', fcMax: '163', df: '88', src: 'pm5+web' }, vs: { d: '03 AGO', tag: 'REPLICA ESATTA: stessa struttura, stessi rec, stesso DF 88 — Tier 1', items: [{ v: 'watt pari (289,5 vs 292,3)', g: 1 }, { v: 'FC lavoro −1,0', g: 1 }, { v: 'FC nei rec −6/−11 (ma pagaiati più piano)', g: 0 }] }, dur: 54, load: 'Z3-Z5', rpe: 7, note: 'Consegna eseguita: 287-288-291-292 W in negative split, tutte nel target 283-291\nStessi numeri del 03/08 a FC uguale o più bassa: EF 2,01 su entrambe le sedute\nSPM 26-26-27-29 (chiesti 27-28: prima metà sotto, ultima sopra)',
+    details: { summary: 'Replica del 03/08, stessa struttura lap al secondo e stesso DF 88.\n4×4:00 r3:00 attivo: 287 · 288 · 291 · 292 W (1:46.9 · 1:46.8 · 1:46.3 · 1:46.2) — negative split.\nFC tw per rep 137,1 · 144,4 · 146,5 · 148,5 (03/08: 140,5 · 144,9 · 146,8 · 148,4) · max 163 su entrambe.\nEF per rep 2,09 · 1,99 · 1,99 · 1,97 · lavoro 2,01 (03/08: 2,01).\nFC nei rec attivi 108,7 · 107,7 · 110,4 contro 114,5 · 118,7 · 119,9 del 03/08 — rec pagaiati più piano (383-439 m vs 474-507): merito diviso tra recupero e andatura.\nRichiami WU 3×20″ @2k: 319 · 371 · 340 W (03/08: 340 · 361 · 350).\nWU 10:00 2.302 m @158 W · defa 10:00 2.180 m @134 W COMPLETO.\nTotale 11.249 m · 640 cal · DF 88 · orario 16:50 (03/08: 19:19) — unica variabile non replicata, entrambe comunque tardo pomeriggio/sera.', gps: null } },
   { date: '29 AGO', title: 'Run · Tapis · Corsetta Z2 30′', kind: 'run', filone: 'run-tapis-easy', filoneLabel: 'Corsetta tapis', surf: 'tapis', m: { dist: '4,621 km', dur: '30:01', pace: '6:29.8', unit: '/km', fcMed: '122', fcMax: '132', cad: '168', src: 'fit' }, dur: 30, load: 'Z2', rpe: 3, note: 'Extra fuori programma, 15′ dopo la fine dello ski+row\nZ2 piena dal primo all\'ultimo minuto: mai sopra 132',
     details: { summary: 'Tapis, 30:01 continui subito dopo i 60′ di ski+row (terza attivita\' del giorno).\n4.620,7 m @6:29.8/km · cad 168 · FC 122/132.', gps: null } },
   { date: '29 AGO', title: 'Ski+Row · Aerobic W1 · 6×10′ alternati Z2', kind: 'multierg', filone: 'multi-aerobic', filoneLabel: 'Ski+Row Aerobic', m: { dist: '14.158 m', dur: '60:00', pace: '2:07.1', unit: '/500m', watt: '171', fcMed: '120,2', fcMax: '134', src: 'lavoro' }, dur: 62, load: 'Z2', rpe: 4, note: 'Mai sopra banda Z2 (max 134): consegna "DEVE restare facile" rispettata\nWatt in calo a FC ferma su entrambe: row 192 → 165, ski 171 → 159\nStavolta tutto su Concept2: watt confrontabili con lo storico',
@@ -10490,7 +10494,7 @@ const BADGES = {
       why: 'A luglio hai corso 99,774 km in 13 uscite.',
       go: 'Presa col collinare di Mentone del 17/08.' },
     { n: 'PacePro ad agosto', en: 'PacePro August', cat: 'RUN', tipo: 'singola',
-      req: 'Corsa ≥ 1 km guidata da PacePro, entro ±00:15/km dal passo obiettivo', win: 'tutto agosto', d1: null, d2: null, st: 'plan', prog: null,
+      req: 'Corsa ≥ 1 km guidata da PacePro, entro ±00:15/km dal passo obiettivo', win: 'tutto agosto', d1: null, d2: null, st: 'miss', prog: null,
       why: 'Sfida nuova di agosto, mai fatta prima.',
       go: 'Il tapis NON attiva PacePro (verificato il 05/08): serve una corsa outdoor. Prossime occasioni: pista GIO 27 e collinare SAB 29 — crea la strategia su Connect prima di uscire, mandala all\'orologio, ±15"/km su ≥1 km.' },
     // ── BICI
