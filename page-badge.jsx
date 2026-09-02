@@ -30,14 +30,15 @@ function BadgePage() {
   const items = filter === 'ALL' ? BADGES.items : BADGES.items.filter((b) => b.st === filter);
   const count = (k) => BADGES.items.filter((b) => b.st === k).length;
 
-  // calendario del mese
-  const y = 2026, mo = 7; // agosto = indice 7
+  // calendario del mese — derivato da BADGES.monthStart
+  const [y, moH] = BADGES.monthStart.split('-').map(Number);
+  const mo = moH - 1;
   const firstDow = (new Date(y, mo, 1).getDay() + 6) % 7; // lunedì = 0
   const nDays = new Date(y, mo + 1, 0).getDate();
   const cells = [];
   for (let i = 0; i < firstDow; i++) cells.push(null);
   for (let d = 1; d <= nDays; d++) cells.push(d);
-  const dayIso = (d) => `2026-08-${String(d).padStart(2, '0')}`;
+  const dayIso = (d) => `${BADGES.monthStart.slice(0, 8)}${String(d).padStart(2, '0')}`;
   const badgesOn = (d) => windows.filter((b) => dayIso(d) >= b.d1 && dayIso(d) <= b.d2);
 
   return (
