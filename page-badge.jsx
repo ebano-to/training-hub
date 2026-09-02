@@ -7,7 +7,7 @@ function BadgePage() {
   const ST = {
     done:  { l: 'PRESA', c: 'oklch(72% 0.13 250)' },
     auto:  { l: 'ARRIVA DA SOLO', c: 'var(--accent)' },
-    plan:  { l: 'DA PIAZZARE', c: 'oklch(82% 0.16 85)' },
+    plan:  { l: 'DA PIANIFICARE', c: 'oklch(82% 0.16 85)' },
     push:  { l: 'SERVE VOLUME', c: 'oklch(70% 0.15 30)' },
     off:   { l: 'ALTRO SPORT', c: 'var(--fg-3)' },
     miss:  { l: 'MANCATA', c: 'oklch(60% 0.12 25)' },
