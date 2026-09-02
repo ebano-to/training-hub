@@ -1180,7 +1180,7 @@ const WEEK_ARCHIVE = [
   },
   { day: 'MER', date: '19', title: 'BIKE INTERVALLI · VIRGIN', sub: 'Technogym Ride · sprint 340 W + blocchi @180 W', load: 'Z2-Z3', duration: 46, kind: 'bike', done: true,
     blocks: [
-      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · al Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: '22,006 km in 40:25 · sprint ~324/325 W puliti (FIT con 17% di campioni a 0 W: dropout, TCX in arrivo) · 5\' @178/177 W (tgt 180) · defa 10\' fatto · risc 9:40 su 15\' · FC 127/147' },
+      { code: 'BIKE', t: 'Bike intervalli · 15\' risc + 2×(8×(20" @340 W / 20" @130 W) + 5\' @180 W) + 10\' defa', d: 'Gabriele · in Virgin · dal PDF: 15\' risc + 2 x (8 x (20" a 340 watt + 20" a 130 watt) + 5\' a 180 W) + 10\' defa', dur: '46\'', result: '22,006 km in 40:25 · sprint ~324/325 W puliti (FIT con 17% di campioni a 0 W: dropout, TCX in arrivo) · 5\' @178/177 W (tgt 180) · defa 10\' fatto · risc 9:40 su 15\' · FC 127/147' },
     ]
   },
   { day: 'GIO', date: '20', title: 'COLLINARE 1H15\' + ALLUNGHI', sub: 'No stress + 6 allunghi', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
@@ -10709,6 +10709,13 @@ const BADGES = {
       req: 'Serie passi members-only: classifica su 70 partecipanti', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '7\u00b0 di 69 (Federico, 02/09)',
       why: 'Iscritto dalla serie di agosto (Heat Steps chiusa 11\u00b0 su 70).',
       go: 'Si accumula coi passi: nessuna azione dedicata.' },
+  ],
+  // Badge permanenti cacciabili: compaiono in agenda su ogni giorno del tipo giusto finche' non presi
+  hunts: [
+    { n: 'Scalatore 1', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Una pedalata outdoor con D+ tra 152 e 304 m — sopra i 305 scatta il 2, che hai gia\'', win: 'permanente · 1 pt', go: 'Giro collinare tranquillo da ~200-250 m di dislivello, registrato col Garmin.' },
+    { n: 'Indoor 20-Mile', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '32,2 km in una singola seduta indoor', win: 'permanente · 1 pt', go: 'Bike Virgin registrata col Garmin: ~60\' a ritmo rulli bastano.' },
+    { n: '50-Mile Ride', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '80,5 km in una singola uscita', win: 'permanente · 4 pt', go: 'Uscita lunga outdoor: da pianificare post-Roma.' },
+    { n: 'Brick', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Bici + corsa back-to-back', win: 'permanente · 2 pt', go: 'Bike e poi corsa registrate in sequenza: nelle tue doppie capita gia\'.' },
   ],
   stages: [
     { n: '2026 Running ─ Stage 3', req: '300 km di corsa', win: '01 LUG → 30 SET', st: 'auto', prog: '237,6 / 300,0 km (Federico, 02/09)',

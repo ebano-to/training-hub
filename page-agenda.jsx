@@ -46,7 +46,12 @@ function AgendaPage() {
   function badgesForDay(w) {
     if ((!isCurrentWeek && !isNextWeek) || !BADGES) return [];
     var d = isoForDay(w.date);
-    return BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off' && b.st !== 'done' && b.st !== 'miss'; });
+    var wins = BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off' && b.st !== 'done' && b.st !== 'miss'; });
+    var codes = (w.blocks || []).map(function (b) { return b.code; });
+    var hunts = w.done ? [] : (BADGES.hunts || []).filter(function (h) {
+      return (h.kinds || []).indexOf(w.kind) >= 0 || (h.codes || []).some(function (c) { return codes.indexOf(c) >= 0; });
+    });
+    return wins.concat(hunts);
   }
 
   return (
