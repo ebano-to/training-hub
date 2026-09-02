@@ -1259,9 +1259,9 @@ const WEEK = [
       { code: 'HYROX', t: 'Compromise+Sled · 4×(50 m Sled Push + 1.000 m @ritmo gara · 2\' rest) · 5\' pausa · 4×50 m Sled Pull r2\'', d: 'Mattia · "la seduta più importante del mese" · prescritto peso gara, fatto push 110 kg (50+slitta 60) e pull 70 kg (10+60): Virgin ha spostato la slitta, attrito molto più alto', dur: '58\'', result: 'Push @110 kg: 1:45.4-2:03.8-2:04.5-2:19.2 · 1000: 4:14.0-4:14.6-4:16.8-4:15.9/km · Pull @70 kg: 3:40.5-3:24.4-3:43.7-3:55.7 · FC max 168, HRR60 dopo i 1000: −32/−33/−39/−38' },
     ]
   },
-  { day: 'MER', date: '02', title: '11:00 SKI SOGLIA 4×5\' · ⚠️ SALA HYROX KO ALLE 13', sub: '⚠️ La sala Hyrox in Virgin NON è utilizzabile alle 13:00 · ski alle 11, replica fedele del 05/08', load: 'Z4', duration: 45, kind: 'ski', done: false,
+  { day: 'MER', date: '02', title: 'SKI SOGLIA 4×5\' · RETEST', sub: 'Replica del 05/08 · lavoro alle 12:17', load: 'Z4', duration: 45, kind: 'ski', done: true,
     blocks: [
-      { code: 'SKI', t: 'Ski · Soglia · 4×5:00 @ritmo soglia · r1:00', d: 'Mattia · stessa seduta del 05/08, "tagliamo le variabili" · ore 11:00 (l\'orario vero del 05/08: partenza 11:01) · WU 10\' COMPLETI + 3×30" progressivi · defa 10\' COMPLETI · rif: 216-228 W (1:55-1:57/500), FC 150-156', dur: '45\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · Soglia · 4×5:00 @ritmo soglia · r1:00', d: 'Mattia · replica del 05/08 · rif: 216-228 W (1:55-1:57/500), FC 150-156', dur: '45\'', result: '5.211 m in 20:00 @229 W (1:55.1) · rep 244-229-223-222 W · FC fine rep 157-161, tw 149,0 · DF 58 · WU 10\' completo @161 W · 3×30" e defa: assenti dai file · lavoro alle 12:17 (05/08: 11:01)' },
     ]
   },
   { day: 'GIO', date: '03', title: 'PISTA · ORARIO DA DECIDERE', sub: 'Con Gabriele', load: 'Z3-Z4', duration: 60, kind: 'run', done: false,
@@ -1310,7 +1310,7 @@ const PBS = [
 
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 11.249];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 7.757];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 9.576];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0];
@@ -1319,16 +1319,16 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 // Totals (real)
 const TOTALS = {
   rower: 697.603,
-  ski: 649.060,
+  ski: 656.817,
   run: 760.845,
   bike: 389.449,
   swim: 57.003,
-  total: 2553.960,
+  total: 2561.717,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "31/08/2026",
+ "built": "02/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -2133,6 +2133,17 @@ const PROG = {
       "hr": 116,
       "spm": 42,
       "pb": false
+     },
+     {
+      "d": "02/09/26*",
+      "pezzo": "10:00",
+      "dur": "10:00",
+      "dist": 2315,
+      "w": 161,
+      "pace": "2:09.6",
+      "hr": 108,
+      "spm": 40,
+      "pb": false
      }
     ]
    },
@@ -2865,6 +2876,16 @@ const PROG = {
       "pace": "1:57.2",
       "hr": 142,
       "spm": 46,
+      "pb": false
+     },
+     {
+      "d": "02/09/26*",
+      "struttura": "4×5:00",
+      "dist": 5211,
+      "w": 229,
+      "pace": "1:55.1",
+      "hr": 148,
+      "spm": 45,
       "pb": false
      }
     ]
@@ -3717,6 +3738,16 @@ const PROG = {
      "hr": 116,
      "pezzo": "10:00",
      "dur_s": 600
+    },
+    {
+     "d": "02/09/26*",
+     "dist": 2315,
+     "w": 161,
+     "pace": "2:09.6",
+     "spm": 40,
+     "hr": 108,
+     "pezzo": "10:00",
+     "dur_s": 600
     }
    ],
    "ints": [
@@ -4115,6 +4146,17 @@ const PROG = {
      "struttura": "3×0:30 +1",
      "rep_s": 97,
      "rep_m": 395
+    },
+    {
+     "d": "02/09/26*",
+     "dist": 5211,
+     "w": 229,
+     "pace": "1:55.1",
+     "spm": 45,
+     "hr": 148,
+     "struttura": "4×5:00",
+     "rep_s": 300,
+     "rep_m": 1302
     }
    ]
   }
@@ -7280,6 +7322,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '02 SET', title: 'Ski · Soglia W1 · 4×5:00', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', noGarmin: true, m: { lavoro: '4×5:00', dist: '5.211 m', dur: '20:00', pace: '1:55.1', unit: '/500m', watt: '229', fcMed: '149,0', fcMax: '163', tgt: '150-156', df: '58', src: 'pm5+web' }, vs: { d: '05 AGO', tag: 'Tier 1: fresco vs fresco, stessa struttura · DF 58 vs 57 · lavoro 12:17 vs 11:01', items: [{ v: 'watt pari (229 vs 232)', g: 1 }, { v: 'spread rep1→4 −22 W (era −47)', g: 1 }, { v: 'FC tw lavoro +9 (149,0 vs ~140)', g: 0 }] }, dur: 34, load: 'Z4-Z5', rpe: 7, note: 'Retest riuscito sui watt: 244-229-223-222 (il 05/08: 263-228-223-216), pacing molto più controllato\nFC finalmente al livello soglia: fine rep 157-161 contro i 148-150 di sempre — a parità di watt il cuore ora sale\n3×30" progressivi e defa 10′: assenti dai file caricati',
+    details: { summary: 'Replica del 05/08 da fresco: stessa struttura, DF 58 (era 57), lavoro alle 12:17 (era 11:01).\n4×5:00 r1:00: 244 · 229 · 223 · 222 W (1:52.7 · 1:55.2 · 1:56.2 · 1:56.3) — media 229 W @1:55.1.\nFC tw per rep 140,7 · 150,6 · 151,6 · 153,2 · fine rep 157 · 158 · 160 · 161 · max 163.\nEF per rep 1,73 · 1,52 · 1,47 · 1,45 — a FC stabilizzata (rep 2→4) −4,7%.\nZone nelle rep: Z5 37% · Z4 27% · Z3 20% — il 05/08 la banda non era mai stata raggiunta.\nSPM 45 costanti · rec 1:00 con 46-66 m pagaiati.\nWU 10:00 completo: 2.315 m @161 W progressivo (140→168), FC 98→122.\nvs 26/08 (pre-faticato): +11,5 W medi a parità di struttura — il calo di fine agosto era fatica, confermato.\nA parità di watt col 05/08 la FC tw è +9 (149,0 vs ~140) con EF 1,54 vs 1,65: il cuore ora raggiunge e supera la banda che prima non toccava — lettura fisiologica da discutere con Mattia insieme alla sensazione riferita.', gps: null } },
   { date: '01 SET', title: 'Hyrox · Virgin · 4×(Sled Push + 1.000 m) + 4×Sled Pull', kind: 'hyrox', filone: 'hyrox-cr', filoneLabel: 'Compromised Run', m: { lavoro: '4+4 round', dist: '4,208 km', dur: '58:13', pace: '4:15.3', unit: '/km (1000)', fcMed: '142.2', fcMax: '168', src: 'fit' }, vs: { d: '20 MAG', tag: 'struttura e carichi diversi (lì 3×1,5 km, Push 208/Pull 164 veri) · HRR con stesso metodo', items: [{ v: 'HRR60 −38/−39 da FC 163-167 (era −28/−32 da 150-155)', g: 1 }, { v: 'run 4:15 vs 4:40 (target alzato)', g: 0 }] }, dur: 58, load: 'CR', rpe: 8, note: 'I 1000 tutti a ritmo gara 4:14-4:17 con FC che chiude a 159→167\nSled push @110 kg (attrito alto: slitta spostata da Virgin): 1:45.4 → 2:19.2 (+32%)\nHRR60 dopo i 1000: −32/−33/−39/−38 — riparti da 110-115 ad ogni round',
     details: { summary: 'Virgin, due registrazioni: blocco push+run (37:05) · pausa 4:51 · blocco pull (20:47).\nSled Push 50 m @110 kg (50 + slitta 60): 1:45.4 · 2:03.8 · 2:04.5 · 2:19.2 — FC a fine spinta 129 → 140 → 145 → 143.\n1.000 m su tapis: 1.034 m in 4:22.7 (4:14.0/km) · 1.011 in 4:17.3 (4:14.6) · 1.024 in 4:23.0 (4:16.8) · 1.006 in 4:17.4 (4:15.9) — FC fine run 159 · 163 · 166 · 167, cad 176-180.\nRest 2:00 esatti: HRR60 −32/−33/−39/−38, a inizio sled successivo sei a 110-115.\nSled Pull 50 m @70 kg (10 + slitta 60): 3:40.5 · 3:24.4 · 3:43.7 · 3:55.7 — FC contenuta (126-133 media a tiro).\nFC tw: blocco push+run 142.2 · blocco pull 128.1 · max di giornata 168.\nPesi sotto il prescritto \"peso gara\": Virgin ha spostato la slitta su superficie ad attrito molto più alto, impossibile salire — condizione da registrare per ogni confronto futuro.\nGiorno dopo il crampo al femorale sx: seduta completata senza stop.\nSensazione (Federico): "a 155 bpm a maggio mi sembrava di annegare, oggi no" — percezione allineata ai dati, possibile soglia spostata sopra la banda Z4 del test lattato.\nHRR60 rilette dai FIT di maggio con lo stesso metodo: CR#1 −28/−31 da FC 150-155 · CR#3 −32/−24 · oggi −38/−39 da FC 163-167, in miglioramento durante la seduta.\nPace CR#1 12/05 inaffidabili (stima da polso: lap ~920 m @5:05-5:15 contro i 4:30 dichiarati): per i pace vale solo CR#3.', gps: null } },
   { date: '31 AGO', title: 'Run · Tapis · Medio interrotto 5,4 km', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Medio tapis', surf: 'tapis', m: { dist: '5,368 km', dur: '29:22', pace: '5:28.2', unit: '/km', fcMed: '136', fcMax: '143', cad: '170', src: 'fit' }, dur: 29, load: 'Z2-Z3', rpe: 5, note: 'Interrotta al km 5,4 per crampo al bicipite femorale sinistro\nPasso in target (5:28 sui 5:30 chiesti) fino allo stop · allunghi non fatti\nPartita 14:41 dopo la fine del row VO2',
