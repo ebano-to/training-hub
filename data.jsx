@@ -1295,6 +1295,7 @@ const NEXTWEEK = [];
 // Real Personal Bests
 const PBS = [
   { station: 'SkiErg 2000m', value: '7:06.7', delta: 'PR', date: '24 APR', sub: '1:46.7/500m · 281W' },
+  { station: 'Run 2000m (Best Interval)', value: '8:26.1', delta: '-23.6s', date: '03 SET', sub: '4:13.1/km · pista Ruffini, dentro intervalli misti · FC max 170' },
   { station: 'Row 5000m', value: '17:52.0', delta: '-33s', date: '10 MAG', sub: '1:47.2/500m · 284W' },
   { station: 'Back Squat 1RM', value: '105kg', delta: '', date: '20 MAR' },
   { station: 'Strict Press 1RM', value: '65kg', delta: '', date: '11 GIU' },
