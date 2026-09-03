@@ -1281,9 +1281,9 @@ const WEEK = [
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'da fare' },
     ]
   },
-  { day: 'DOM', date: '06', title: 'TRAINING CAMP (FACOLTATIVO)', sub: 'Minitriathlon a Caselle Torinese, se vuoi', load: 'CAMP', duration: 0, kind: 'race', done: false,
+  { day: 'DOM', date: '06', title: '9:00 ILLEGAL DI SETTEMBRE · CASELLE', sub: 'Ritrovo 8:30, via delle Cartiere 33, Caselle T.se · batterie da 6 ogni 5\' · facoltativo', load: 'CAMP', duration: 90, kind: 'race', done: false,
     blocks: [
-      { code: 'TRI', t: 'Minitriathlon · Caselle Torinese', d: 'Gabriele · facoltativo: "se vuoi"', dur: '—', result: 'da fare' },
+      { code: 'TRI', t: 'Illegal · 3×(200 m nuoto + 6 km bici + 1 km corsa)', d: 'Gabriele · totali: 600 m nuoto, 18 km bici, 3 km corsa · portare: bici e materiale ciclismo, body, materiale corsa e nuoto', dur: '~90\'', result: 'da fare' },
     ]
   },
 ];
