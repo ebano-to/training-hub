@@ -1275,8 +1275,8 @@ const WEEK = [
       { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 10\' Row / 10\' Ski @Z2 · senza sosta ai cambi', d: 'Mattia · 40\' totali · Z2 = 120-135 bpm · "tolgo 20\' di Z2 e lo stairmaster per mettere le due stazioni che non abbiamo allenato"', dur: '40\'', result: 'da fare' },
       { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · recuperi completi · 1RM panca non testato: carico deciso dal vivo · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato · 85: 20+10+2,5/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% (~52,5 kg stimati: 10+5+1,25/lato) + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · recuperi completi · 70% = stima da Epley ~76 kg (top set 65×5, 1RM MAI testato): conferma il carico dal vivo con Mattia · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'da fare' },
     ]
   },
   { day: 'SAB', date: '05', title: 'COLLINARE 1H15\' + 10\' RISC', sub: 'Piedi in salita', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
