@@ -1270,10 +1270,13 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · 3×1\' + 4×40" + 2.000 + 3×1\' · rec 1\'', d: 'Gabriele, struttura decisa in pista', dur: '55\'', result: '8,134 km totali (risc 2,234) · 1\': 3:20-3:42/km · 40": 3:18-3:48 · 2000 CONTINUO in 8:26.1 (4:13.1/km, FC max 170) · finali 3:40-3:53 · HRR60 dopo il 2000: −33' },
     ]
   },
-  { day: 'VEN', date: '04', title: '9:30/10:30 VIRGIN · PERSONAL CON MATTIA', sub: 'Orario da confermare · tutta la forza della settimana in presenza', load: 'MIX', duration: 60, kind: 'strength', done: false,
+  { day: 'VEN', date: '04', title: '9:30/10:30 VIRGIN · PERSONAL CON MATTIA', sub: 'Orario da confermare · forza + le due stazioni mai allenate + 40\' Z2', load: 'MIX', duration: 150, kind: 'strength', done: false,
     blocks: [
+      { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 10\' Row / 10\' Ski @Z2 · senza sosta ai cambi', d: 'Mattia · 40\' totali · Z2 = 120-135 bpm · "tolgo 20\' di Z2 e lo stairmaster per mettere le due stazioni che non abbiamo allenato"', dur: '40\'', result: 'da fare' },
+      { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · recuperi completi · 1RM panca non testato: carico deciso dal vivo · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'da fare' },
     ]
   },
   { day: 'SAB', date: '05', title: 'COLLINARE 1H15\' + 10\' RISC', sub: 'Piedi in salita', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
