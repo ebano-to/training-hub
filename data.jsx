@@ -1283,7 +1283,7 @@ const WEEK = [
   },
   { day: 'DOM', date: '06', title: '9:00 ILLEGAL DI SETTEMBRE · CASELLE', sub: 'Ritrovo 8:30, via delle Cartiere 33, Caselle T.se · batterie da 6 ogni 5\' · facoltativo', load: 'CAMP', duration: 90, kind: 'race', done: false,
     blocks: [
-      { code: 'TRI', t: 'Illegal · 3×(200 m nuoto + 6 km bici + 1 km corsa)', d: 'Gabriele · totali: 600 m nuoto, 18 km bici, 3 km corsa · portare: bici e materiale ciclismo, body, materiale corsa e nuoto', dur: '~90\'', result: 'da fare' },
+      { code: 'TRI', t: 'Illegal · 3×(200 m nuoto + 6 km bici + 1 km corsa) · rec 15\' tra i giri', d: 'Gabriele · totali: 600 m nuoto, 18 km bici, 3 km corsa · portare: bici e materiale ciclismo, body, materiale corsa e nuoto', dur: '~90\'', result: 'da fare' },
     ]
   },
 ];
