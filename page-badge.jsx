@@ -137,15 +137,15 @@ function BadgePage() {
                 display: 'grid', gridTemplateColumns: '120px 1fr 110px', gap: 14, alignItems: 'center',
                 padding: '10px 12px', borderLeft: '3px solid ' + col,
                 background: w === 'now' && !fin ? 'oklch(88% 0.20 130 / 0.06)' : 'transparent',
-                borderBottom: '1px dashed var(--line-2)', opacity: (w === 'past' && !fin) || b.st === 'miss' ? 0.45 : 1,
+                borderBottom: '1px dashed var(--line-2)', opacity: (w === 'past' && !fin) || b.st === 'miss' || b.st === 'done' ? 0.45 : 1,
               }}>
                 <div className="display tabular" style={{ fontSize: 15, color: col }}>{b.win}</div>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--sans)' }}>{b.n}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--sans)', textDecoration: b.st === 'done' ? 'line-through' : 'none' }}>{b.st === 'done' ? '✓ ' : ''}{b.n}</div>
                   <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 2 }}>{b.req}{b.tipo === 'singola' ? ' · una sola attività' : ''}</div>
                 </div>
                 <div style={{ fontSize: 9, letterSpacing: '0.12em', textAlign: 'right', color: col }}>
-                  {fin ? ST[b.st].l : w === 'now' ? '● APERTA' : w === 'past' ? 'CHIUSA' : ST[b.st].l}
+                  {b.st === 'done' ? '✓ PRESA' : fin ? ST[b.st].l : w === 'now' ? '● APERTA' : w === 'past' ? 'CHIUSA' : ST[b.st].l}
                 </div>
               </div>
             );
