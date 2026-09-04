@@ -403,14 +403,6 @@ const WEEK_ARCHIVE = [
   { id: 'S22', label: 'S22 · 25 MAG → 31 MAG', range: '25 MAG → 31 MAG 2026', programWeek: 22, days: [
   { day: 'LUN', date: '25', title: 'RUN GARA + METCON STAZIONI', sub: 'Taper · 3×1km + Ski/Row/Burpees alternati', load: 'RACE PACE', duration: 41, kind: 'hyrox', done: true, today: true,
     blocks: [
-      { code: 'RUN', t: 'Run WU 1.3km + 3×1000m @gara', d: 'WU 1.3km @6:38/km + 3×1000m @gara-5/10s · r.2\' dopo ogni run', dur: '22\'',
-        ref: 'PB Verona: 4:57/km avg · Target gara doubles: ~4:30-4:40/km',
-        expect: '1000m @~4:25-4:35/km · 3 ripetute · sensazioni gara',
-        result: 'WU 1.307km 8:40 @6:38/km HR109/132 · R1 1.002km 4:38 @4:38/km HR131/142 · R2 1.003km 4:37 @4:36/km HR144/153 · R3 1.005km 4:39 @4:38/km HR145/154 · cad 89-90' },
-      { code: 'METCON', t: 'Metcon Ski/Row/Burpees alternato a Run', d: 'Ski 1000m @gara r.1\' · Row 1000m @gara r.1\' · 20 Burpees r.1\' · Ski 500m @gara-5/10s r.1\' · Row 500m @gara-5/10s r.1\' · 10 Burpees · BBJ sostituiti con burpees (1 salto ≈ 2m)', dur: '19\'',
-        ref: 'PB Ski 1000m: 4:17 · PB Row 1000m: 4:23 · PB BBJ 80m: 4:30',
-        expect: 'Attivazione a ritmo gara e sub-gara · no bike',
-        result: 'Ski 1000m 3:51 @1:55.5/500m 227W HR134/146 · Row 1000m 4:00 @2:00.2/500m 201W HR126/130 · 20 Burpees · Ski 500m 1:51 @1:51.8/500m 250W HR138/151 · Row 500m 1:52 @1:52.6/500m 245W HR137/144 · 10 Burpees' },
       { code: 'BIKE', t: 'Bike Pianura 1h-1h30\' · 90rpm scarica', d: 'Bici in pianura 1h-1h30\' a 90rpm bassa intensità · scarica tra le gare', dur: '60-90\'',
         ref: 'S21 18/05: MTB 19.180km 65\' 17.7km/h HR96/114',
         expect: 'HR Z1 · cadenza 90rpm · scarica attiva',
@@ -1270,18 +1262,27 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · 3×1\' + 4×40" + 2.000 + 3×1\' · rec 1\'', d: 'Gabriele, struttura decisa in pista', dur: '55\'', result: '8,134 km totali (risc 2,234) · 1\': 3:20-3:42/km · 40": 3:18-3:48 · 2000 CONTINUO in 8:26.1 (4:13.1/km, FC max 170) · finali 3:40-3:53 · HRR60 dopo il 2000: −33' },
     ]
   },
-  { day: 'VEN', date: '04', title: '9:30/10:30 VIRGIN · PERSONAL CON MATTIA', sub: 'Orario da confermare · forza + le due stazioni mai allenate + 40\' Z2', load: 'MIX', duration: 150, kind: 'strength', done: false,
+  { day: 'VEN', date: '04', title: 'SKI×ROW 40\' + CORSETTA', sub: 'Palestra · Z2 · forza e metcon spostati a SAB', load: 'Z2', duration: 72, kind: 'multierg', done: true,
     blocks: [
-      { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 10\' Row / 10\' Ski @Z2 · senza sosta ai cambi', d: 'Mattia · 40\' totali · Z2 = 120-135 bpm · "tolgo 20\' di Z2 e lo stairmaster per mettere le due stazioni che non abbiamo allenato"', dur: '40\'', result: 'da fare' },
+      { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 10\' Row / 10\' Ski @Z2', d: 'Mattia · cambi in 20-32"', dur: '41\'', result: '9.289 m in 41:19 · Row 2.414 @182 W + 2.378 @174 · Ski 2.256 @149 + 2.241 @146 · FC tw 112,4 max 124: mai sopra Z2' },
+      { code: 'EXTRA', t: 'Corsetta defaticante · Tapis · 31\'', d: 'Aggiunta di Federico, 11\' dopo lo ski×row', dur: '31\'', result: '5,029 km in 31:07 @6:11.3/km · FC 119/131' },
       { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '05', title: 'COLLINARE + FORZA + METCON', sub: 'Collinare 1h15\' · poi la forza di VEN con metcon FC/BBJ', load: 'MIX', duration: 165, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run WU 1.3km + 3×1000m @gara', d: 'WU 1.3km @6:38/km + 3×1000m @gara-5/10s · r.2\' dopo ogni run', dur: '22\'',
+        ref: 'PB Verona: 4:57/km avg · Target gara doubles: ~4:30-4:40/km',
+        expect: '1000m @~4:25-4:35/km · 3 ripetute · sensazioni gara',
+        result: 'WU 1.307km 8:40 @6:38/km HR109/132 · R1 1.002km 4:38 @4:38/km HR131/142 · R2 1.003km 4:37 @4:36/km HR144/153 · R3 1.005km 4:39 @4:38/km HR145/154 · cad 89-90' },
+      { code: 'METCON', t: 'Metcon Ski/Row/Burpees alternato a Run', d: 'Ski 1000m @gara r.1\' · Row 1000m @gara r.1\' · 20 Burpees r.1\' · Ski 500m @gara-5/10s r.1\' · Row 500m @gara-5/10s r.1\' · 10 Burpees · BBJ sostituiti con burpees (1 salto ≈ 2m)', dur: '19\'',
+        ref: 'PB Ski 1000m: 4:17 · PB Row 1000m: 4:23 · PB BBJ 80m: 4:30',
+        expect: 'Attivazione a ritmo gara e sub-gara · no bike',
+        result: 'Ski 1000m 3:51 @1:55.5/500m 227W HR134/146 · Row 1000m 4:00 @2:00.2/500m 201W HR126/130 · 20 Burpees · Ski 500m 1:51 @1:51.8/500m 250W HR138/151 · Row 500m 1:52 @1:52.6/500m 245W HR137/144 · 10 Burpees' },
       { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato · 85: 20+10+2,5/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% (~52,5 kg stimati: 10+5+1,25/lato) + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · UNICO CARICO DA %: i ~52,5 kg li ho calcolati io da una stima (Epley ~76 dal top set 65×5, 1RM MAI testato) — validare con Mattia prima della prima serie · DB Row a sensazione, rif. 28/08: rematore doppio 4×8 @26 kg · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'da fare' },
-    ]
-  },
-  { day: 'SAB', date: '05', title: 'COLLINARE 1H15\' + 10\' RISC', sub: 'Piedi in salita', load: 'Z2-Z3', duration: 85, kind: 'run', done: false,
-    blocks: [
-      { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'da fare' },
     ]
   },
   { day: 'DOM', date: '06', title: '9:00 ILLEGAL DI SETTEMBRE · CASELLE', sub: 'Ritrovo 8:30, via delle Cartiere 33, Caselle T.se · batterie da 6 ogni 5\' · facoltativo', load: 'CAMP', duration: 90, kind: 'race', done: false,
@@ -1313,21 +1314,21 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 11.249];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 7.757];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 17.710];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 22.739];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 21.116];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 697.603,
-  ski: 656.817,
-  run: 768.979,
+  rower: 702.395,
+  ski: 661.314,
+  run: 774.008,
   bike: 410.565,
   swim: 57.003,
-  total: 2590.967,
+  total: 2605.285,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7326,6 +7327,16 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '04 SET', title: 'Run · Tapis · Corsetta Z2 31′', kind: 'run', filone: 'run-tapis-easy', filoneLabel: 'Corsetta tapis', surf: 'tapis', m: { dist: '5,029 km', dur: '31:07', pace: '6:11.3', unit: '/km', fcMed: '119', fcMax: '131', cad: '168', src: 'fit' }, dur: 31, load: 'Z1-Z2', rpe: 3, note: 'Regalo di fine settimana, 11′ dopo lo ski×row\nMai sopra 131: defaticante vera',
+    details: { summary: 'Tapis, 31:07 continui @6:11.3/km · FC 119/131 · cad 168.\nTerza attivita\' in sequenza del pomeriggio (ski×row 18:58, corsetta 19:50).', gps: null } },
+  { date: '04 SET', title: 'Ski+Row · Aerobic · 4×10′ alternati Z2', kind: 'multierg', filone: 'multi-aerobic', filoneLabel: 'Ski+Row Aerobic', noGarmin: true, m: { dist: '9.289 m', dur: '40:00', pace: '2:09.2', unit: '/500m', watt: '163', fcMed: '112,4', fcMax: '124', src: 'lavoro' }, dur: 41, load: 'Z2', rpe: 3, note: 'Mai sopra 124: la versione corta (40′) chiesta da Mattia per far posto al metcon\nRow più potente e ski più leggero del 29/08, FC più bassa ovunque\nCambi macchina in 20-32″',
+    details: { summary: '2 giri row→ski da 10:00, cambi 20-32″: 41:19 totali.\nROW (C2): 2.414 m @182 W (FC tw 111,7) → 2.378 m @174 W (115,0).\nSKI (C2): 2.256 m @149 W (110,6) → 2.241 m @146 W (112,9).\nFC tw sessione 112,4 · max 124 · consegna Z2 facile rispettata.\nvs 29/08 (6×10): blocchi row +5/−3 W a FC −6/−8 — carico interno più basso a parita\' di potenza.',
+      ergTable: { fcMed: 112, fcMax: 124, efTot: '1.45', dec: [{ m: 'ROW', v: 'EF 1.63 → 1.51 (G1→G2)' }, { m: 'SKI', v: 'EF 1.35 → 1.29 (G1→G2)' }], total: { tempo: '41:19', metri: '9,289', pace: '2:09.2', watt: '—', calh: '—', sm: 34, ef: '—', fcmed: 112, fcmax: 124, zona: 'Z1', cal: null, colpi: null, maxpw: null }, rows: [
+        { m: 'ROW', split: 'Giro 1', tempo: '10:00', metri: '2,414', pace: '2:04.3', watt: 182, calh: 926, sm: 26, ef: '1.63', fcmed: 112, fcmax: 124, zona: 'Z1', t: 1 },
+        { m: 'SKI', split: 'Giro 1', tempo: '10:00', metri: '2,256', pace: '2:13.0', watt: 149, calh: 813, sm: 42, ef: '1.35', fcmed: 111, fcmax: 118, zona: 'Z1', t: 1 },
+        { m: 'ROW', split: 'Giro 2', tempo: '10:00', metri: '2,378', pace: '2:06.1', watt: 174, calh: 899, sm: 26, ef: '1.51', fcmed: 115, fcmax: 121, zona: 'Z1', t: 1 },
+        { m: 'SKI', split: 'Giro 2', tempo: '10:00', metri: '2,241', pace: '2:13.9', watt: 146, calh: 802, sm: 43, ef: '1.29', fcmed: 113, fcmax: 118, zona: 'Z1', t: 1 },
+      ] }, gps: null } },
   { date: '03 SET', title: 'Run · Pista Ruffini · 3×1′ + 4×40″ + 2.000 + 3×1′', kind: 'run', filone: 'run-pista-intervalli', filoneLabel: 'Pista intervalli', surf: 'pista', m: { lavoro: '10 rep + 2.000', dur: '32:23', dist: '5,900 km', pace: '4:13.1', unit: '/km (2000)', fcMed: '147', fcMax: '170', hrr60: '−33 (dopo il 2000)', src: 'fit' }, dur: 55, load: 'Z3-Z5', rpe: 8, note: 'Il 2000 è CONTINUO: 8:26.1 con split 4:08.0 → 4:18.1 e FC fino a 170\nBrevi veloci: 1′ a 3:20-3:42, 40″ a 3:18-3:48, cad 182-192\nFC max 170: la più alta della stagione in allenamento',
     details: { summary: 'Pista Ruffini, mattina (10:07 risc, 10:45 lavoro) · struttura decisa in pista con Gabriele.\nRisc a parte: 2.233,5 m @6:20.3/km (FC 120/129).\nBlocco 1 · 3×1′ r1′: 301 m (3:20.5) · 273 m (3:42.5) · 279 m (3:37.1) — cad 186-190.\nBlocco 2 · 4×40″ r1′: 194 m (3:28.9) · 205 m (3:18.1) · 187 m (3:37.1) · 182 m (3:48.4) — cad 182-192.\nBlocco 3 · 2.000 m continuo: 8:26.1 = 4:13.1/km (1000 in 4:08.0 + 4:18.1) · FC 159→170 · HRR60 −33.\nBlocco 4 · 3×1′ r1′: 274 m (3:40.8) · 258 m (3:53.8) · 260 m (3:51.9) — dopo il 2000, gambe piene.\nRec 1′ camminati (cad 114-126).\nZone lavoro: Z5 33% · Z3 23% · Z2 21% · Z4 17% · totale giorno 8.134 m.',
       table: { headers: ['Blocco','Rep','Dist','Tempo','Pace/km','FC avg/max','Cad'], rows: [
