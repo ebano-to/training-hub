@@ -10644,9 +10644,9 @@ const BADGES = {
       why: 'Mancato a luglio e agosto: il tapis non lo attiva, serve outdoor con strategia creata prima.',
       go: 'Prossima corsa outdoor utile: crea la strategia su Connect, mandala all\'orologio, seguila.' },
     { n: 'Weekend 5K di settembre', en: 'September Weekend 5K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 5 km nel weekend', win: '04 → 06 SET', d1: '2026-09-04', d2: '2026-09-06', st: 'auto', prog: null,
-      why: 'Il collinare di SAB 05 (1h15\') supera i 5 km da solo.',
-      go: 'Basta correre il programma.' },
+      req: 'Una singola corsa da 5 km nel weekend', win: '04 → 06 SET', d1: '2026-09-04', d2: '2026-09-06', st: 'done', prog: 'PRESO il 04/09 con la corsetta tapis da 5,029 km',
+      why: 'Caduto il primo giorno di finestra senza cercarlo.',
+      go: 'Chiuso.' },
     { n: 'Weekend 10K di settembre', en: 'September Weekend 10K', cat: 'RUN', tipo: 'singola',
       req: 'Una singola corsa da 10 km nel weekend', win: '11 → 13 SET', d1: '2026-09-11', d2: '2026-09-13', st: 'plan', prog: null,
       why: 'Serve che il lungo di quella settimana capiti (o venga messo) nel weekend.',
@@ -10764,7 +10764,7 @@ const BADGES = {
   garmin: [
     // Nomi e requisiti ESATTI dal docx della tab Disponibile di Federico (dati/badges_disponibili_20260817) · ♻ ripetibile
     { cat: 'RIPETIBILI ATTIVI ♻', note: 'gia\' presi, ogni ripetizione ridà i punti: incassano da soli', items: [
-      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 87, req: 'Notti consecutive con sonno registrato', tip: 'A quota 85: non toccare nulla' },
+      { n: 'Periodo ininterrotto di sonno', pt: 4, rep: 88, req: 'Notti consecutive con sonno registrato', tip: 'A quota 85: non toccare nulla' },
       { n: 'Esperto del sonno', pt: 1, rep: 32, req: 'Notti con punteggio sonno alto', tip: 'Incassa da solo' },
       { n: 'Sei il numero uno', pt: 2, rep: 30, req: 'Vinci una sfida qualunque', tip: 'Weekly steps ogni lunedì: la vinci spesso' },
       { n: 'Podio per i passi (mensile)', pt: 2, rep: 7, req: 'Podio in una sfida passi settimanale', tip: 'Routine: iscriviti e basta' },
