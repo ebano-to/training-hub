@@ -10644,7 +10644,7 @@ const BADGES = {
       why: 'Mancato a luglio e agosto: il tapis non lo attiva, serve outdoor con strategia creata prima.',
       go: 'Prossima corsa outdoor utile: crea la strategia su Connect, mandala all\'orologio, seguila.' },
     { n: 'Weekend 5K di settembre', en: 'September Weekend 5K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 5 km nel weekend', win: '04 → 06 SET', d1: '2026-09-04', d2: '2026-09-06', st: 'done', prog: 'PRESO il 04/09 con la corsetta tapis da 5,029 km',
+      req: 'Una singola corsa da 5 km nel weekend', win: '04 → 06 SET', d1: '2026-09-04', d2: '2026-09-06', st: 'done', dDone: '2026-09-04', prog: 'PRESO il 04/09 con la corsetta tapis da 5,029 km',
       why: 'Caduto il primo giorno di finestra senza cercarlo.',
       go: 'Chiuso.' },
     { n: 'Weekend 10K di settembre', en: 'September Weekend 10K', cat: 'RUN', tipo: 'singola',

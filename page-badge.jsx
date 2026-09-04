@@ -39,7 +39,11 @@ function BadgePage() {
   for (let i = 0; i < firstDow; i++) cells.push(null);
   for (let d = 1; d <= nDays; d++) cells.push(d);
   const dayIso = (d) => `${BADGES.monthStart.slice(0, 8)}${String(d).padStart(2, '0')}`;
-  const badgesOn = (d) => windows.filter((b) => dayIso(d) >= b.d1 && dayIso(d) <= b.d2);
+  const badgesOn = (d) => windows.filter((b) => {
+    const dd = dayIso(d);
+    if (b.st === 'done') return b.dDone ? (dd >= b.d1 && dd <= b.dDone) : false; // preso: visibile solo fino al giorno della presa
+    return dd >= b.d1 && dd <= b.d2;
+  });
 
   return (
     <TelemetryChrome active="BADGE">
