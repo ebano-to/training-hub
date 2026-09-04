@@ -10697,11 +10697,11 @@ const BADGES = {
     { n: 'Nuoto a settembre', en: 'September Time to Swim', cat: 'SWIM', tipo: 'cumulativa',
       req: '4 ore di nuoto nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'plan', prog: '0m / 4h (Federico, 02/09)',
       why: 'A tempo, non a metri: 4 ore sono ~4-5 sedute in vasca, tanta roba in un mese di gara.',
-      go: 'Se il minitriathlon e qualche vasca entrano, si vede: nessuna forzatura.' },
+      go: 'DOM 06 all\'Illegal nuoti 600 m (~15-18 minuti sulle 4 ore richieste): il resto solo se le vasche entrano nel piano, nessuna forzatura.' },
     { n: 'Settimana del nuoto di settembre', en: 'September Swim Week', cat: 'SWIM', tipo: 'cumulativa',
       req: '1.000 m di nuoto nella settimana', win: '06 → 12 SET', d1: '2026-09-06', d2: '2026-09-12', st: 'plan', prog: '0 / 1.000 m (Federico, 02/09)',
       why: 'Presa a settembre 2025: una vasca in quella settimana basta ad avviarla.',
-      go: 'Se il minitriathlon di DOM 06 include il nuoto, parte da sola.' },
+      go: 'DOM 06 all\'Illegal nuoti 600 m (3×200): la sfida parte, restano ~400 m da fare in settimana.' },
     // ── ALTRO
     { n: 'Attivita\' a settembre', en: 'Active September', cat: 'MISC', tipo: 'cumulativa',
       req: '20 attivita\' nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '3 / 20 (Federico, 02/09)',
