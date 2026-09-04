@@ -10640,7 +10640,7 @@ const BADGES = {
   items: [
     // ── CORSA
     { n: 'PacePro a settembre', en: 'PacePro September', cat: 'RUN', tipo: 'singola',
-      req: 'Corsa outdoor ≥1 km seguendo una strategia PacePro entro ±15"/km', win: 'tutto settembre', d1: null, d2: null, st: 'push', prog: null,
+      req: 'Corsa outdoor ≥1 km seguendo una strategia PacePro entro ±15"/km', win: 'tutto settembre', d1: null, d2: null, st: 'plan', prog: null,
       why: 'Mancato a luglio e agosto: il tapis non lo attiva, serve outdoor con strategia creata prima.',
       go: 'Prossima corsa outdoor utile: crea la strategia su Connect, mandala all\'orologio, seguila.' },
     { n: 'Weekend 5K di settembre', en: 'September Weekend 5K', cat: 'RUN', tipo: 'singola',
