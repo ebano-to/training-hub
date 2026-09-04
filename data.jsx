@@ -403,6 +403,14 @@ const WEEK_ARCHIVE = [
   { id: 'S22', label: 'S22 · 25 MAG → 31 MAG', range: '25 MAG → 31 MAG 2026', programWeek: 22, days: [
   { day: 'LUN', date: '25', title: 'RUN GARA + METCON STAZIONI', sub: 'Taper · 3×1km + Ski/Row/Burpees alternati', load: 'RACE PACE', duration: 41, kind: 'hyrox', done: true, today: true,
     blocks: [
+      { code: 'RUN', t: 'Run WU 1.3km + 3×1000m @gara', d: 'WU 1.3km @6:38/km + 3×1000m @gara-5/10s · r.2\' dopo ogni run', dur: '22\'',
+        ref: 'PB Verona: 4:57/km avg · Target gara doubles: ~4:30-4:40/km',
+        expect: '1000m @~4:25-4:35/km · 3 ripetute · sensazioni gara',
+        result: 'WU 1.307km 8:40 @6:38/km HR109/132 · R1 1.002km 4:38 @4:38/km HR131/142 · R2 1.003km 4:37 @4:36/km HR144/153 · R3 1.005km 4:39 @4:38/km HR145/154 · cad 89-90' },
+      { code: 'METCON', t: 'Metcon Ski/Row/Burpees alternato a Run', d: 'Ski 1000m @gara r.1\' · Row 1000m @gara r.1\' · 20 Burpees r.1\' · Ski 500m @gara-5/10s r.1\' · Row 500m @gara-5/10s r.1\' · 10 Burpees · BBJ sostituiti con burpees (1 salto ≈ 2m)', dur: '19\'',
+        ref: 'PB Ski 1000m: 4:17 · PB Row 1000m: 4:23 · PB BBJ 80m: 4:30',
+        expect: 'Attivazione a ritmo gara e sub-gara · no bike',
+        result: 'Ski 1000m 3:51 @1:55.5/500m 227W HR134/146 · Row 1000m 4:00 @2:00.2/500m 201W HR126/130 · 20 Burpees · Ski 500m 1:51 @1:51.8/500m 250W HR138/151 · Row 500m 1:52 @1:52.6/500m 245W HR137/144 · 10 Burpees' },
       { code: 'BIKE', t: 'Bike Pianura 1h-1h30\' · 90rpm scarica', d: 'Bici in pianura 1h-1h30\' a 90rpm bassa intensità · scarica tra le gare', dur: '60-90\'',
         ref: 'S21 18/05: MTB 19.180km 65\' 17.7km/h HR96/114',
         expect: 'HR Z1 · cadenza 90rpm · scarica attiva',
@@ -1266,20 +1274,12 @@ const WEEK = [
     blocks: [
       { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 10\' Row / 10\' Ski @Z2', d: 'Mattia · cambi in 20-32"', dur: '41\'', result: '9.289 m in 41:19 · Row 2.414 @182 W + 2.378 @174 · Ski 2.256 @149 + 2.241 @146 · FC tw 112,4 max 124: mai sopra Z2' },
       { code: 'EXTRA', t: 'Corsetta defaticante · Tapis · 31\'', d: 'Aggiunta di Federico, 11\' dopo lo ski×row', dur: '31\'', result: '5,029 km in 31:07 @6:11.3/km · FC 119/131' },
-      { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'da fare' },
     ]
   },
   { day: 'SAB', date: '05', title: 'COLLINARE + FORZA + METCON', sub: 'Collinare 1h15\' · poi la forza di VEN con metcon FC/BBJ', load: 'MIX', duration: 165, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'da fare' },
-      { code: 'RUN', t: 'Run WU 1.3km + 3×1000m @gara', d: 'WU 1.3km @6:38/km + 3×1000m @gara-5/10s · r.2\' dopo ogni run', dur: '22\'',
-        ref: 'PB Verona: 4:57/km avg · Target gara doubles: ~4:30-4:40/km',
-        expect: '1000m @~4:25-4:35/km · 3 ripetute · sensazioni gara',
-        result: 'WU 1.307km 8:40 @6:38/km HR109/132 · R1 1.002km 4:38 @4:38/km HR131/142 · R2 1.003km 4:37 @4:36/km HR144/153 · R3 1.005km 4:39 @4:38/km HR145/154 · cad 89-90' },
-      { code: 'METCON', t: 'Metcon Ski/Row/Burpees alternato a Run', d: 'Ski 1000m @gara r.1\' · Row 1000m @gara r.1\' · 20 Burpees r.1\' · Ski 500m @gara-5/10s r.1\' · Row 500m @gara-5/10s r.1\' · 10 Burpees · BBJ sostituiti con burpees (1 salto ≈ 2m)', dur: '19\'',
-        ref: 'PB Ski 1000m: 4:17 · PB Row 1000m: 4:23 · PB BBJ 80m: 4:30',
-        expect: 'Attivazione a ritmo gara e sub-gara · no bike',
-        result: 'Ski 1000m 3:51 @1:55.5/500m 227W HR134/146 · Row 1000m 4:00 @2:00.2/500m 201W HR126/130 · 20 Burpees · Ski 500m 1:51 @1:51.8/500m 250W HR138/151 · Row 500m 1:52 @1:52.6/500m 245W HR137/144 · 10 Burpees' },
+      { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato · 85: 20+10+2,5/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% (~52,5 kg stimati: 10+5+1,25/lato) + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · UNICO CARICO DA %: i ~52,5 kg li ho calcolati io da una stima (Epley ~76 dal top set 65×5, 1RM MAI testato) — validare con Mattia prima della prima serie · DB Row a sensazione, rif. 28/08: rematore doppio 4×8 @26 kg · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'da fare' },
