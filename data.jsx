@@ -10756,7 +10756,7 @@ const BADGES = {
       why: 'Al 02/09 sei al 79%: restano 62,4 km in 4 settimane, in netto anticipo.' },
     { n: '2026 Cycling ─ Stage 3', req: '675 km di bici', win: '01 LUG → 30 SET', st: 'push', prog: '149,6 / 675,0 km (Federico, 02/09)',
       why: 'A luglio 70,659 km di bici outdoor: servirebbero circa 300 km al mese ad agosto e settembre.' },
-    { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push',
+    { n: '2026 Walking ─ Stage 3', req: '146,5 km di camminata', win: '01 LUG → 30 SET', st: 'push', prog: '16,7 / 146,5 km (Federico, 02/09)',
       why: 'Le camminate sono ora registrate: servono circa 25 km a settimana fino a fine settembre.' },
   ],
   // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili, con requisito e suggerimento.

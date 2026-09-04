@@ -153,6 +153,28 @@ function BadgePage() {
         </div>
       </ModulePanel>
 
+      {/* Stage trimestrali */}
+      <ModulePanel code="MOD.BADGE · stage_trimestrali" title="STAGE 3" sub="01 LUG → 30 SET 2026">
+        <div style={{ display: 'grid', gap: 8 }}>
+          {BADGES.stages.map((s, i) => (
+            <div key={i} style={{
+              border: '1px solid var(--line)', borderLeft: '3px solid ' + ST[s.st].c,
+              background: 'var(--bg-3)', padding: '12px 16px',
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
+                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'var(--sans)' }}>{s.n}</span>
+                <span style={{ fontSize: 9, letterSpacing: '0.12em', color: ST[s.st].c, border: '1px solid ' + ST[s.st].c, padding: '2px 6px' }}>{ST[s.st].l}</span>
+              </div>
+              <div style={{ fontSize: 12, color: 'var(--fg-2)', marginTop: 6, fontFamily: 'var(--sans)' }}>{s.req}</div>
+              {s.prog && <div className="display tabular" style={{ fontSize: 16, marginTop: 6 }}>{s.prog}</div>}
+              <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 6, fontFamily: 'var(--mono)' }}>
+                <span style={{ color: 'oklch(75% 0.14 220)' }}>DATI</span> {s.why}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ModulePanel>
+
       {/* Filtri */}
       <div style={{ display: 'flex', gap: 4, marginBottom: 12, flexWrap: 'wrap' }}>
         {[['ALL', 'TUTTE'], ['plan', ST.plan.l], ['auto', ST.auto.l], ['push', ST.push.l], ['off', ST.off.l], ['miss', ST.miss.l], ['done', ST.done.l]].map(([k, l]) => {
@@ -220,27 +242,6 @@ function BadgePage() {
         </div>
       </ModulePanel>
 
-      {/* Stage trimestrali */}
-      <ModulePanel code="MOD.BADGE · stage_trimestrali" title="STAGE 3" sub="01 LUG → 30 SET 2026">
-        <div style={{ display: 'grid', gap: 8 }}>
-          {BADGES.stages.map((s, i) => (
-            <div key={i} style={{
-              border: '1px solid var(--line)', borderLeft: '3px solid ' + ST[s.st].c,
-              background: 'var(--bg-3)', padding: '12px 16px',
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'var(--sans)' }}>{s.n}</span>
-                <span style={{ fontSize: 9, letterSpacing: '0.12em', color: ST[s.st].c, border: '1px solid ' + ST[s.st].c, padding: '2px 6px' }}>{ST[s.st].l}</span>
-              </div>
-              <div style={{ fontSize: 12, color: 'var(--fg-2)', marginTop: 6, fontFamily: 'var(--sans)' }}>{s.req}</div>
-              {s.prog && <div className="display tabular" style={{ fontSize: 16, marginTop: 6 }}>{s.prog}</div>}
-              <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 6, fontFamily: 'var(--mono)' }}>
-                <span style={{ color: 'oklch(75% 0.14 220)' }}>DATI</span> {s.why}
-              </div>
-            </div>
-          ))}
-        </div>
-      </ModulePanel>
 
       </div>
 
