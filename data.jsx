@@ -10725,7 +10725,7 @@ const BADGES = {
       go: 'Stesso giro di agosto.' },
     { n: 'Ahotu Marathon Challenge', en: 'Ahotu Marathon Challenge', cat: 'RUN', tipo: 'cumulativa',
       req: '42,2 km (26,2 mi) di corsa cumulativi nel mese · premio: 15% sconto gare ahotu.com, da riscattare entro il 31/10', win: '01 → 30 SET', d1: '2026-09-01', d2: '2026-09-30', st: 'auto', prog: '17,2 / 42,2 km (Federico, 04/09)',
-      why: 'Col tuo volume abituale si chiude da solo verso meta\' mese. Conta anche la corsa dentro attivita\' cardio (verificato: i 4 km della compromised).',
+      why: 'Col tuo volume abituale si chiude da solo verso meta\' mese. Le frazioni run dei multisport contano come corsa piena (verificato sulla compromised: 4 sessioni running/treadmill dentro il FIT).',
       go: 'Nessuna azione: si accumula con le corse del programma.' },
     { n: '10K: la sfida di un giorno', en: '10KADAY', cat: 'STEP', tipo: 'streak',
       req: '10.000 passi al giorno per 30 giorni CONSECUTIVI — un giorno sotto azzera tutto', win: 'streak dal 26/08', d1: null, d2: null, st: 'plan', prog: '9 / 30 giorni (Federico, 03/09)',
