@@ -10757,7 +10757,7 @@ const BADGES = {
     { n: 'Scalatore 1', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Una pedalata outdoor con D+ tra 152 e 304 m — sopra i 305 scatta il 2, che hai gia\'', win: 'permanente · 1 pt', go: 'Giro collinare tranquillo da ~200-250 m di dislivello, registrato col Garmin.' },
     { n: 'Indoor 20-Mile', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '32,2 km in una singola seduta indoor', win: 'permanente · 1 pt', go: 'Bike Virgin registrata col Garmin: ~60\' a ritmo rulli bastano.' },
     { n: '50-Mile Ride', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '80,5 km in una singola uscita', win: 'permanente · 4 pt', go: 'Uscita lunga outdoor: da pianificare post-Roma.' },
-    { n: 'Brick', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Bici + corsa back-to-back', win: 'permanente · 2 pt', go: 'Bike e poi corsa registrate in sequenza: nelle tue doppie capita gia\'.' },
+    { n: 'Prendi una decisione', cat: 'SWIM', kinds: ['swim'], codes: ['SWIM','TRI'], req: 'Una nuotata registrata in iarde + una in metri', win: 'permanente · 1 pt', go: 'Due mini-vasche cambiando l\'unita\' nelle impostazioni: il badge piu\' facile che ti manca.' },
   ],
   stages: [
     { n: '2026 Running ─ Stage 3', req: '300 km di corsa', win: '01 LUG → 30 SET', st: 'auto', prog: '253,8 / 300,0 km (Federico, 06/09)',
