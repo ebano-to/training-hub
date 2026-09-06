@@ -10753,6 +10753,7 @@ const BADGES = {
   ],
   // Badge permanenti cacciabili: compaiono in agenda su ogni giorno del tipo giusto finche' non presi
   hunts: [
+    { n: 'Fins On', cat: 'SWIM', kinds: ['swim'], codes: ['SWIM','TRI'], req: 'Una attivita\' di nuoto con pace MEDIO ≤2:00/100 m', win: 'permanente · 2 pt', go: 'Attivita\' dedicata e CORTA: 100 m a tutta e stop — piu\' e\' breve, piu\' la media regge. Il tuo cruise e\' 2:33/100: serve il colpo secco.' },
     { n: 'Scalatore 1', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Una pedalata outdoor con D+ tra 152 e 304 m — sopra i 305 scatta il 2, che hai gia\'', win: 'permanente · 1 pt', go: 'Giro collinare tranquillo da ~200-250 m di dislivello, registrato col Garmin.' },
     { n: 'Indoor 20-Mile', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '32,2 km in una singola seduta indoor', win: 'permanente · 1 pt', go: 'Bike Virgin registrata col Garmin: ~60\' a ritmo rulli bastano.' },
     { n: '50-Mile Ride', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '80,5 km in una singola uscita', win: 'permanente · 4 pt', go: 'Uscita lunga outdoor: da pianificare post-Roma.' },
