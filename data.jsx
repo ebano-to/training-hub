@@ -1276,13 +1276,13 @@ const WEEK = [
       { code: 'EXTRA', t: 'Corsetta defaticante · Tapis · 31\'', d: 'Aggiunta di Federico, 11\' dopo lo ski×row', dur: '31\'', result: '5,029 km in 31:07 @6:11.3/km · FC 119/131' },
     ]
   },
-  { day: 'SAB', date: '05', title: 'COLLINARE + FORZA + METCON', sub: 'Collinare 1h15\' · poi la forza di VEN con metcon FC/BBJ', load: 'MIX', duration: 165, kind: 'run', done: false,
+  { day: 'SAB', date: '05', title: 'COLLINARE + FORZA + METCON', sub: 'Tutto saltato · settimana chiusa', load: 'MIX', duration: 165, kind: 'run', done: true,
     blocks: [
-      { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'da fare' },
-      { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato · 85: 20+10+2,5/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% (~52,5 kg stimati: 10+5+1,25/lato) + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · UNICO CARICO DA %: i ~52,5 kg li ho calcolati io da una stima (Epley ~76 dal top set 65×5, 1RM MAI testato) — validare con Mattia prima della prima serie · DB Row a sensazione, rif. 28/08: rematore doppio 4×8 @26 kg · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'da fare' },
+      { code: 'RUN', t: 'Collinare · 10\' risc + 1h15\' usando bene i piedi in salita', d: 'Gabriele', dur: '85\'', result: 'SALTATO — settimana chiusa senza esecuzione', skipped: true },
+      { code: 'METCON', t: 'Mini Metcon · 4 round senza fretta: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · le due stazioni Hyrox non ancora allenate del ciclo · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '25\'', result: 'SALTATO — settimana chiusa senza esecuzione', skipped: true },
+      { code: 'FORZA', t: 'Back Squat 5×3 @62,5 kg (20+1,25/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · jerk solo se la spalla lo consente', dur: '30\'', result: 'SALTATO — settimana chiusa senza esecuzione', skipped: true },
+      { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato · 85: 20+10+2,5/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · CARICHI IN KG SCRITTI DA MATTIA · recuperi completi · push press: se la spalla tace, la prossima settimana si risale', dur: '30\'', result: 'SALTATO — settimana chiusa senza esecuzione', skipped: true },
+      { code: 'FORZA', t: 'Pause Bench Press 5×3 @70% (~52,5 kg stimati: 10+5+1,25/lato) + Single Arm DB Row 5×6 @heavy', d: 'Mattia, personal in Virgin · UNICO CARICO DA %: i ~52,5 kg li ho calcolati io da una stima (Epley ~76 dal top set 65×5, 1RM MAI testato) — validare con Mattia prima della prima serie · DB Row a sensazione, rif. 28/08: rematore doppio 4×8 @26 kg · la panca torna dopo lo stop spalla del 28/08', dur: '25\'', result: 'SALTATO — settimana chiusa senza esecuzione', skipped: true },
     ]
   },
   { day: 'DOM', date: '06', title: 'ILLEGAL DI SETTEMBRE · CASELLE', sub: 'Fatto: 3 giri completi, partenza 9:01', load: 'RACE', duration: 102, kind: 'race', done: true,
