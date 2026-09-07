@@ -1296,7 +1296,7 @@ const WEEK = [
   { day: 'LUN', date: '07', title: 'RUN 50\' @5\'30" + ROW VO2', sub: 'Run di Gabriele + Row 5×4:00 · ultima settimana di volume pieno', load: 'MIX', duration: 115, kind: 'run', done: false,
     blocks: [
       { code: 'RUN', t: 'Run · 50\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele', dur: '55\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · una rep in più del 31/08 (5×4) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\' · "ultima settimana di ciccia, dalla prossima si scala il volume"', dur: '58\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · una rep in più del 31/08 (5×4) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\' · "ultima settimana di ciccia, dalla prossima si scala il volume"', dur: '58\'', result: '5\u00d74:00: 289-288-294-291-295 W (1:46.5\u21921:45.8) \u00b7 FC tw 132,2\u2192146,4, max 159 \u00b7 DF 89 \u00b7 richiami 394-405-382 W \u00b7 defa 10\' completo' },
     ]
   },
   { day: 'MAR', date: '08', title: 'COMPROMISED · DUE OPZIONI', sub: 'Conflitto coach: Mattia sled+1000 · Gabriele stazione+1000 — da scegliere', load: 'CR', duration: 60, kind: 'hyrox', done: false,
@@ -1360,7 +1360,7 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 12.340];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 0];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 0];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0];
@@ -1369,17 +1369,17 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 
 // Totals (real)
 const TOTALS = {
-  rower: 702.395,
+  rower: 714.735,
   ski: 661.314,
   run: 777.022,
   bike: 429.415,
   swim: 57.628,
-  total: 2627.774,
+  total: 2640.114,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "02/09/2026",
+ "built": "07/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -5667,6 +5667,16 @@ const PROG = {
       "hr": 121,
       "spm": 23,
       "pb": false
+     },
+     {
+      "d": "07/09/26*",
+      "struttura": "3×0:20 +1",
+      "dist": 2611,
+      "w": 173,
+      "pace": "2:06.4",
+      "hr": 103,
+      "spm": 25,
+      "pb": false
      }
     ]
    },
@@ -5902,6 +5912,16 @@ const PROG = {
       "pace": "1:59.5",
       "hr": 125,
       "spm": 26,
+      "pb": false
+     },
+     {
+      "d": "07/09/26*",
+      "struttura": "5×4:00 +1",
+      "dist": 7768,
+      "w": 225,
+      "pace": "1:55.9",
+      "hr": 130,
+      "spm": 27,
       "pb": false
      }
     ]
@@ -7340,6 +7360,28 @@ const PROG = {
      "struttura": "4×4:00 +5",
      "rep_s": 246,
      "rep_m": 1031
+    },
+    {
+     "d": "07/09/26*",
+     "dist": 7768,
+     "w": 225,
+     "pace": "1:55.9",
+     "spm": 27,
+     "hr": 130,
+     "struttura": "5×4:00 +1",
+     "rep_s": 300,
+     "rep_m": 1294
+    },
+    {
+     "d": "07/09/26*",
+     "dist": 2611,
+     "w": 173,
+     "pace": "2:06.4",
+     "spm": 25,
+     "hr": 103,
+     "struttura": "3×0:20 +1",
+     "rep_s": 165,
+     "rep_m": 652
     }
    ]
   }
@@ -7373,6 +7415,25 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '07 SET', title: 'Row \u00b7 VO2 Max \u00b7 5\u00d74:00', kind: 'row', filone: 'row-vo2', filoneLabel: 'Row VO2 Max', noGarmin: true, m: { lavoro: '5\u00d74:00', dist: '5.645 m', dur: '20:00', pace: '1:46.3', unit: '/500m', watt: '291,4', fcMed: '141,3', fcMax: '159', df: '89', src: 'pm5+web' }, vs: { d: '31 AGO', tag: 'Stessa griglia con una rep in pi\u00f9 (5\u00d74 vs 4\u00d74) e DF 89 vs 88 \u2014 Tier 2', items: [{ v: 'watt lavoro +1,9 (291,4 vs 289,5) con una rep in pi\u00f9', g: 1 }, { v: 'FC lavoro \u22122,8 (141,3 vs 144,1)', g: 1 }, { v: 'EF lavoro 2,06 vs 2,01', g: 1 }] }, dur: 57, load: 'Z3-Z5', rpe: 7, note: 'Reps 289-288-294-291-295 W (1:46.7\u21921:45.8): quinta rep aggiunta assorbita, chiusura pi\u00f9 veloce\n\u201cUltima settimana di ciccia\u201d: volume su, EF lavoro 2,06 vs 2,01 del 31/08\nDefa 10\u2032 completo \u00b7 DF 89 \u00b7 rec attivi pagaiati piano (294-401 m)',
+    details: { summary: '5\u00d74:00 r3:00 attivo: 289 \u00b7 288 \u00b7 294 \u00b7 291 \u00b7 295 W (1:46.5 \u00b7 1:46.7 \u00b7 1:46.0 \u00b7 1:46.2 \u00b7 1:45.8) \u2014 chiusura pi\u00f9 veloce.\nFC tw per rep 132,2 \u00b7 141,1 \u00b7 142,9 \u00b7 144,1 \u00b7 146,4 \u00b7 max 159: una rep in pi\u00f9 del 31/08 a FC pi\u00f9 bassa (31/08: 137,1\u2192148,5, max 163).\nEF per rep 2,19 \u00b7 2,04 \u00b7 2,06 \u00b7 2,02 \u00b7 2,02 \u00b7 lavoro 2,06 (31/08: 2,01) \u00b7 dec rep2\u21925 \u22121,3%.\nFC nei rec attivi 103,5 \u00b7 104,5 \u00b7 105,4 \u00b7 104,5 \u00b7 109,7 \u2014 sotto i 107,7-110,4 del 31/08.\nRichiami WU 3\u00d720\u2033 @2k: 394 \u00b7 405 \u00b7 382 W \u2014 i pi\u00f9 potenti del filone (31/08: 319-371).\nWU 10:00 2.299 m @158 W \u00b7 defa 10:00 2.123 m @124 W completo.\nTotale 12.340 m \u00b7 726 cal \u00b7 DF 89 (31/08: 88) \u00b7 lavoro 13:41-14:26.',
+      ergTable: { fcMed: 121, fcMax: 159, efTot: '2.06', dec: [{ m: 'ROW', v: 'EF 2.04 \u2192 2.02 rep2\u21925 (\u22121,3% a FC stabilizzata)' }], total: { tempo: '57:21', metri: '12,340', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: 27, ef: '\u2014', fcmed: 121, fcmax: 159, zona: 'Z2', cal: 726, colpi: 1329, maxpw: null }, rows: [
+        { m: 'ROW', split: 'WU 10\'', tempo: '10:00', metri: '2,299', pace: '2:10.4', watt: 158, calh: 846, sm: 25, ef: '1.54', fcmed: 102, fcmax: 115, zona: '\u2014', t: 0 },
+        { m: 'ROW', split: '20\u2033 @2k n.1', tempo: '0:20', metri: '104', pace: '1:36.1', watt: 394, calh: 1620, sm: 36, ef: '3.27', fcmed: 120, fcmax: 127, zona: 'Z2', t: 0 },
+        { m: 'ROW', split: '20\u2033 @2k n.2', tempo: '0:20', metri: '105', pace: '1:35.2', watt: 405, calh: 1620, sm: 33, ef: '3.36', fcmed: 120, fcmax: 129, zona: 'Z2', t: 0 },
+        { m: 'ROW', split: '20\u2033 @2k n.3', tempo: '0:20', metri: '103', pace: '1:37.0', watt: 382, calh: 1620, sm: 36, ef: '3.15', fcmed: 121, fcmax: 129, zona: 'Z2', t: 0 },
+        { m: 'ROW', split: 'Rep 1', tempo: '4:00', metri: '1,126', pace: '1:46.5', watt: 289, calh: 1305, sm: 28, ef: '2.19', fcmed: 132, fcmax: 147, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '382', pace: '3:55.6', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 104, fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 2', tempo: '4:00', metri: '1,124', pace: '1:46.7', watt: 288, calh: 1290, sm: 28, ef: '2.04', fcmed: 141, fcmax: 154, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '313', pace: '4:47.5', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 105, fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 3', tempo: '4:00', metri: '1,132', pace: '1:46.0', watt: 294, calh: 1320, sm: 29, ef: '2.06', fcmed: 143, fcmax: 157, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '309', pace: '4:51.3', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 105, fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 4', tempo: '4:00', metri: '1,129', pace: '1:46.2', watt: 291, calh: 1305, sm: 29, ef: '2.02', fcmed: 144, fcmax: 157, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '294', pace: '5:06.1', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 104, fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 5', tempo: '4:00', metri: '1,134', pace: '1:45.8', watt: 295, calh: 1320, sm: 29, ef: '2.02', fcmed: 146, fcmax: 159, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '401', pace: '3:44.4', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 110, fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Defa 10\'', tempo: '10:00', metri: '2,123', pace: '2:21.3', watt: 124, calh: 732, sm: 24, ef: '1.13', fcmed: 109, fcmax: 117, zona: '\u2014', t: 0 },
+      ] }, gps: null } },
   { date: '06 SET', title: 'ILLEGAL CASELLE · 3×(nuoto+bici+run) · 73:40', kind: 'race', m: { lavoro: '3 giri', dur: '1:42:21', dist: '22,5 km', fcMax: '158', src: 'multisport' }, dur: 102, load: 'RACE', rpe: 8, note: 'Giri in 24:23 · 24:03 · 25:14 — il migliore è il secondo\nRun il metronomo di sempre (4:46-4:49/km), nuoto in crescita netta (5:06 → 4:35), bici in calo (14:27 → 15:55)\nRegistrata in multisport: 18 frazioni con transizioni misurate',
     details: { summary: 'Illegal di settembre, Caselle T.se — 3×(200 m nuoto + 6,3 km bici + 1 km run), riposo tra le batterie.\nPartenza 9:01 · orologio totale 1:42:21 · somma frazioni 73:40 · con transizioni interne ~81:30.\nNUOTO: 5:06 · 4:09 · 4:35 (distanze rilevate 200/175/250 m da conteggio bracciate: nominali 3×200) — FC 114-122.\nBICI (giro 6,3 km, D+33): 14:27 (26,1 km/h) · 15:01 (25,1) · 15:55 (23,7) — FC 121-133.\nRUN 1 km: 4:50 (4:47.0/km) · 4:53 (4:49.6) · 4:44 (4:46.3) — FC max 158 → 153 → 153, cad 176.\nT nuoto→bici: 2:50 · 2:31 · 2:03 (in miglioramento) · T bici→run: 8″ · 8″ · 12″.\nRiposi tra i giri: 8:32 e 12:00 (batterie).\nTotali: 625 m nuoto (rilevati) · 18.850 m bici · 3.014 m run.',
       table: { headers: ['Giro','Nuoto','T1','Bici 6,3 km','T2','Run 1 km','FC run','Tot frazioni'], rows: [
