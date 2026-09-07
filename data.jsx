@@ -10860,6 +10860,7 @@ const BADGES = {
   ],
   // Badge permanenti cacciabili: compaiono in agenda su ogni giorno del tipo giusto finche' non presi
   hunts: [
+    { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
     { n: 'Tempo di nuotare (Fins On)', cat: 'SWIM', kinds: ['swim'], codes: ['SWIM','TRI'], req: 'Una attivita\' di nuoto con passo MEDIO ≤2:00/100 m — permanente, NON e\' il mensile omonimo', win: 'permanente · 2 pt', go: 'Attivita\' dedicata e CORTA: 100 m a tutta e stop — piu\' e\' breve, piu\' la media regge. Il tuo cruise e\' 2:33/100: serve il colpo secco.' },
     { n: 'Scalatore 1', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Una pedalata outdoor con D+ tra 152 e 304 m — sopra i 305 scatta il 2, che hai gia\'', win: 'permanente · 1 pt', go: 'Giro collinare tranquillo da ~200-250 m di dislivello, registrato col Garmin.' },
     { n: 'Indoor 20-Mile', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '32,2 km in una singola seduta indoor', win: 'permanente · 1 pt', go: 'Bike Virgin registrata col Garmin: ~60\' a ritmo rulli bastano.' },
