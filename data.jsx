@@ -1304,10 +1304,9 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 50\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · blocco di LUN recuperato oggi, su tapis, dopo lo ski (pre-affaticato)', dur: '58\'', result: '10,754 km in 58:13 @5:24.9/km · steady 8,925 km @5:29.3, FC 133,4 · allunghi 8× @17,2 km/h · FC 136/157 · cad 172' },
     ]
   },
-  { day: 'MER', date: '09', title: 'COMPROMISED · DUE OPZIONI', sub: 'Ski anticipato a MAR: le compromised passano a oggi — da scegliere', load: 'CR', duration: 60, kind: 'hyrox', done: false,
+  { day: 'MER', date: '09', title: 'COMPROMISED + SLED', sub: 'Fatta l\'opzione di Mattia · push flat come chiesto', load: 'CR', duration: 74, kind: 'hyrox', done: true,
     blocks: [
-      { code: 'HYROX', t: 'OPZ 1 (Mattia) · 4×(50 m Sled Push + 1.000 m @4\'12"-4\'15"/km · 2\' rest) · 5\' pausa · 6×25 m Sled Pull r90"', d: 'Push 110 kg e Pull 70 kg come settimana scorsa, stessa superficie ad alto attrito · obiettivo: quarto round costante · segnare il tempo di ogni sled e di ogni km', dur: '55\'', result: 'da fare' },
-      { code: 'HYROX', t: 'OPZ 2 (Gabriele) · 5×(2\' stazione più tosta + 1.000 m @4\'10"/km · rec 4\' bike bassa intensità)', d: 'Gabriele · "scaldati bene" · stazione a scelta: la più tosta per te', dur: '55\'', result: 'da fare' },
+      { code: 'HYROX', t: 'Compromised · 4×(50 m Sled Push + 1.000 m @4\'12"-4\'15"/km · 2\' rest) · 5\' pausa · 6×25 m Sled Pull r90"', d: 'Mattia · push 110 kg e pull 70 kg, stessa superficie alto attrito del 01/09 · obiettivo dichiarato: quarto round costante', dur: '74\'', result: 'Push: 2:04.2-2:02.4-2:10.1-2:09.5 (quarto costante ✓) · 1000: 4:19.2-4:16.4-4:15.2-4:25.8 (quarta calata, tapis ~4:21-4:29) · Pull 6×25 m: 1:50.0→1:31.6 · FC max 171 · HRR60 −41/−35/−31/−32' },
     ]
   },
   { day: 'GIO', date: '10', title: 'PISTA · ORARIO DA DECIDERE', sub: 'Con Gabriele · struttura decisa in pista', load: 'Z3-Z5', duration: 55, kind: 'run', done: false,
@@ -1362,7 +1361,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 12.340];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 8.637];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 11.279];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 16.774];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1371,10 +1370,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 714.735,
   ski: 669.951,
-  run: 788.301,
+  run: 793.796,
   bike: 429.415,
   swim: 57.628,
-  total: 2660.030,
+  total: 2665.525,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7457,6 +7456,20 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '09 SET', title: 'Hyrox · Virgin · 4×(Sled Push + 1.000 m) + 6×Sled Pull 25 m', kind: 'hyrox', filone: 'hyrox-cr', filoneLabel: 'Compromised Run', m: { lavoro: '4+6 round', dist: '3,966 km', dur: '~66:00', pace: '4:19.1', unit: '/km (1000)', fcMed: '142.3', fcMax: '171', src: 'fit' }, vs: { d: '01 SET', tag: 'Stesso push (110 kg, stessa superficie) · pull diverso: 6×25 m r90\u2033 invece di 4×50 m r2\u2032 \u2014 Tier 1 sui push, pull non confrontabile secco', items: [{ v: 'push: quarto round COSTANTE (2:10.1\u21922:09.5) \u2014 il 01/09 era esploso (+14,7s)', g: 1 }, { v: 'spread push 7,7s contro 33,8s', g: 1 }, { v: 'run pi\u00f9 lente: 4:15-4:19 e quarta ~4:25 (01/09: 4:14-4:17 tutte)', g: 0 }] }, dur: 74, load: 'CR', rpe: 8, note: 'Il compito era \u201cquarto round costante\u201d: push 2:04.2 \u00b7 2:02.4 \u00b7 2:10.1 \u00b7 2:09.5 \u2014 fatto, pagando la partenza controllata\nLe run per\u00f2 calano: prime tre sul target (tapis a 4:11-4:16), la quarta rallentata a ~4:21-4:29 con FC 171\nHRR60 in discesa nella seduta: \u221241 \u2192 \u221232',
+    details: { summary: 'Virgin, tre registrazioni: WU tapis 1.528 m in 9:59 (6:32/km) \u00b7 blocco push+run in multisport (15:52-16:29) \u00b7 pull (16:30-16:47).\nSled Push 50 m @110 kg: 2:04.2 \u00b7 2:02.4 \u00b7 2:10.1 \u00b7 2:09.5 \u2014 spread 7,7s (01/09: 33,8s), FC a fine spinta 136-147.\n1.000 m su tapis: 996,6 m in 4:18.3 (4:19.2/km) \u00b7 997,5 in 4:15.8 (4:16.4) \u00b7 999,0 in 4:14.9 (4:15.2) \u00b7 973,2 in 4:18.6 (4:25.8) \u2014 FC fine run 161 \u00b7 164 \u00b7 166 \u00b7 166, max 171.\nBelt comandato: prime tre run a 4:11-4:16/km (nel target 4:12-4:15), quarta abbassata a ~4:21-4:29.\nRest 2:00 esatti: HRR60 \u221241 \u00b7 \u221235 \u00b7 \u221231 \u00b7 \u221232.\nPausa ~5\u2032 come da consegna, poi Sled Pull 25 m @70 kg r90\u2033: 1:50.0 \u00b7 1:39.5 \u00b7 1:38.1 \u00b7 1:39.6 \u00b7 1:32.0 \u00b7 1:31.6 \u2014 in miglioramento, FC 124/139.\nFC tw: blocco push+run 142,3 \u00b7 pull 124,2.\nStessa slitta e superficie ad alto attrito del 01/09 \u2014 condizione annotata.',
+      table: { headers: ['#','Stazione','Tempo staz.','Run','Tempo','Pace/km','FC fine run','Rec 60\u2033'], rows: [
+        ['1','Sled Push 110 kg','2:04.2','996,6 m','4:18.3','4:19.2','161','\u221241'],
+        ['2','Sled Push 110 kg','2:02.4','997,5 m','4:15.8','4:16.4','164','\u221235'],
+        ['3','Sled Push 110 kg','2:10.1','999,0 m','4:14.9','4:15.2','166','\u221231'],
+        ['4','Sled Push 110 kg','2:09.5','973,2 m','4:18.6','4:25.8','166','\u221232'],
+        ['5','Sled Pull 70 kg \u00b7 25 m','1:50.0','\u2014','\u2014','\u2014','\u2014','\u2014'],
+        ['6','Sled Pull 70 kg \u00b7 25 m','1:39.5','\u2014','\u2014','\u2014','\u2014','\u2014'],
+        ['7','Sled Pull 70 kg \u00b7 25 m','1:38.1','\u2014','\u2014','\u2014','\u2014','\u2014'],
+        ['8','Sled Pull 70 kg \u00b7 25 m','1:39.6','\u2014','\u2014','\u2014','\u2014','\u2014'],
+        ['9','Sled Pull 70 kg \u00b7 25 m','1:32.0','\u2014','\u2014','\u2014','\u2014','\u2014'],
+        ['10','Sled Pull 70 kg \u00b7 25 m','1:31.6','\u2014','\u2014','\u2014','\u2014','\u2014'],
+      ] }, gps: null } },
   { date: '08 SET', title: 'Run · Tapis · 50′ @5′30″ + 8 allunghi', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Run medio tapis', m: { lavoro: '10,754 km', dur: '58:13', pace: '5:24.9', unit: '/km', fcMed: '136', fcMax: '157', cad: '172', src: 'garmin' }, dur: 59, load: 'Z2-Z3', rpe: 6, note: 'Run di LUN recuperata in coda allo ski soglia: doppia seduta serale, gambe pre-affaticate\nSteady inchiodato al 5′30″ chiesto (5:29.3/km) · drift EF −2,4%\nAllunghi 8/8 @17,2 km/h comandati, recuperi di corsa',
     details: { summary: 'Tapis, sera (18:47-19:56), subito dopo lo ski soglia: condizione pre-affaticata.\nSteady 49:00: 8.925 m @5:29.3/km — consegna sul target 5′30″ · FC 133,4 med.\nDrift contenuto: EF 0,083→0,081 (−2,4%), FC 131,6→135,1 a velocità pari.\nAllunghi: 8 picchi @3:29/km (17,2 km/h comandati, rampa tapis) · FC max 157.\nCadenza media 172.\nRiscaldamento camminato a parte: 525 m in 7:13 (file separato).\nTotale 10.754 m in 58:13 @5:24.9/km.', gps: null } },
   { date: '08 SET', title: 'Ski · Soglia · 4×5:00 @230 W', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', noGarmin: true, m: { lavoro: '4×5:00', dist: '5.213 m', dur: '20:00', pace: '1:55.0', unit: '/500m', watt: '229,5', fcMed: '148,4', fcMax: '167', df: '52', src: 'pm5+web' }, vs: { d: '02 SET', tag: 'Stessa struttura 4×5:00 r1:00 · prima volta a watt comandati · DF 52 vs 58 e orario serale: condizioni annotate — Tier 1 sulla media', items: [{ v: 'watt medi identici: 229,5 vs 229,5 — ma spread 1 W contro 22 (244→222)', g: 1 }, { v: 'FC fine rep 149→164 vs 157→161: parte più basso, chiude più alto', g: 0 }] }, dur: 38, load: 'Z4-Z5', rpe: 7, note: 'Consegna chirurgica: 4 rep in 1 W di spread sul 230 chiesto\nA watt fissi la FC sale rep dopo rep fino a 164 di fine: il costo cardiaco vero del 230 flat\nDefa saltato di nuovo · DF 52 (02/09: 58)',
