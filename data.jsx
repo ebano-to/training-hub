@@ -1306,7 +1306,7 @@ const WEEK = [
   },
   { day: 'MER', date: '09', title: 'COMPROMISED + SLED', sub: 'Fatta l\'opzione di Mattia · push flat come chiesto', load: 'CR', duration: 74, kind: 'hyrox', done: true,
     blocks: [
-      { code: 'HYROX', t: 'Compromised · 4×(50 m Sled Push + 1.000 m @4\'12"-4\'15"/km · 2\' rest) · 5\' pausa · 6×25 m Sled Pull r90"', d: 'Mattia · push 110 kg e pull 70 kg, stessa superficie alto attrito del 01/09 · obiettivo dichiarato: quarto round costante', dur: '74\'', result: 'Push: 2:04.2-2:02.4-2:10.1-2:09.5 (quarto costante ✓) · 1000: 4:19.2-4:16.4-4:15.2-4:25.8 (quarta calata, tapis ~4:21-4:29) · Pull 6×25 m: 1:50.0→1:31.6 · FC max 171 · HRR60 −41/−35/−31/−32' },
+      { code: 'HYROX', t: 'Compromised · 4×(50 m Sled Push + 1.000 m @4\'12"-4\'15"/km · 2\' rest) · 5\' pausa · 6×25 m Sled Pull r90"', d: 'Mattia · push 110 kg e pull 70 kg, stessa superficie alto attrito del 01/09 · obiettivo dichiarato: quarto round costante', dur: '74\'', result: 'Push: 2:04.2-2:02.4-2:10.1-2:09.5 (quarto costante ✓) · 1000: tutte @14,2 km/h impostati (4:13.5/km) · Pull 6×25 m: 1:50.0→1:31.6 · FC max 171 · HRR60 −41/−35/−31/−32' },
     ]
   },
   { day: 'GIO', date: '10', title: 'PISTA · ORARIO DA DECIDERE', sub: 'Con Gabriele · struttura decisa in pista', load: 'Z3-Z5', duration: 55, kind: 'run', done: false,
@@ -1361,7 +1361,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 12.340];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 8.637];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 16.774];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 16.807];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1370,10 +1370,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 714.735,
   ski: 669.951,
-  run: 793.796,
+  run: 793.829,
   bike: 429.415,
   swim: 57.628,
-  total: 2665.525,
+  total: 2665.558,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7456,13 +7456,13 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
-  { date: '09 SET', title: 'Hyrox · Virgin · 4×(Sled Push + 1.000 m) + 6×Sled Pull 25 m', kind: 'hyrox', filone: 'hyrox-cr', filoneLabel: 'Compromised Run', m: { lavoro: '4+6 round', dist: '3,966 km', dur: '~66:00', pace: '4:19.1', unit: '/km (1000)', fcMed: '142.3', fcMax: '171', src: 'fit' }, vs: { d: '01 SET', tag: 'Stesso push (110 kg, stessa superficie) · pull diverso: 6×25 m r90\u2033 invece di 4×50 m r2\u2032 \u2014 Tier 1 sui push, pull non confrontabile secco', items: [{ v: 'push: quarto round COSTANTE (2:10.1\u21922:09.5) \u2014 il 01/09 era esploso (+14,7s)', g: 1 }, { v: 'spread push 7,7s contro 33,8s', g: 1 }, { v: 'run pi\u00f9 lente: 4:15-4:19 e quarta ~4:25 (01/09: 4:14-4:17 tutte)', g: 0 }] }, dur: 74, load: 'CR', rpe: 8, note: 'Il compito era \u201cquarto round costante\u201d: push 2:04.2 \u00b7 2:02.4 \u00b7 2:10.1 \u00b7 2:09.5 \u2014 fatto, pagando la partenza controllata\nLe run per\u00f2 calano: prime tre sul target (tapis a 4:11-4:16), la quarta rallentata a ~4:21-4:29 con FC 171\nHRR60 in discesa nella seduta: \u221241 \u2192 \u221232',
-    details: { summary: 'Virgin, tre registrazioni: WU tapis 1.528 m in 9:59 (6:32/km) \u00b7 blocco push+run in multisport (15:52-16:29) \u00b7 pull (16:30-16:47).\nSled Push 50 m @110 kg: 2:04.2 \u00b7 2:02.4 \u00b7 2:10.1 \u00b7 2:09.5 \u2014 spread 7,7s (01/09: 33,8s), FC a fine spinta 136-147.\n1.000 m su tapis: 996,6 m in 4:18.3 (4:19.2/km) \u00b7 997,5 in 4:15.8 (4:16.4) \u00b7 999,0 in 4:14.9 (4:15.2) \u00b7 973,2 in 4:18.6 (4:25.8) \u2014 FC fine run 161 \u00b7 164 \u00b7 166 \u00b7 166, max 171.\nBelt comandato: prime tre run a 4:11-4:16/km (nel target 4:12-4:15), quarta abbassata a ~4:21-4:29.\nRest 2:00 esatti: HRR60 \u221241 \u00b7 \u221235 \u00b7 \u221231 \u00b7 \u221232.\nPausa ~5\u2032 come da consegna, poi Sled Pull 25 m @70 kg r90\u2033: 1:50.0 \u00b7 1:39.5 \u00b7 1:38.1 \u00b7 1:39.6 \u00b7 1:32.0 \u00b7 1:31.6 \u2014 in miglioramento, FC 124/139.\nFC tw: blocco push+run 142,3 \u00b7 pull 124,2.\nStessa slitta e superficie ad alto attrito del 01/09 \u2014 condizione annotata.',
+  { date: '09 SET', title: 'Hyrox · Virgin · 4×(Sled Push + 1.000 m) + 6×Sled Pull 25 m', kind: 'hyrox', filone: 'hyrox-cr', filoneLabel: 'Compromised Run', m: { lavoro: '4+6 round', dist: '4,0 km (nom.)', dur: '~66:00', pace: '4:13.5', unit: '/km impostato', fcMed: '142.3', fcMax: '171', src: 'fit' }, vs: { d: '01 SET', tag: 'Stesso push (110 kg, stessa superficie) · pull diverso: 6×25 m r90\u2033 invece di 4×50 m r2\u2032 \u2014 Tier 1 sui push, pull non confrontabile secco', items: [{ v: 'push: quarto round COSTANTE (2:10.1\u21922:09.5) \u2014 il 01/09 era esploso (+14,7s)', g: 1 }, { v: 'spread push 7,7s contro 33,8s', g: 1 }, { v: 'run tutte @4:13.5 impostato: FC fine 161\u2192166 (max 171) a passo identico', g: 1 }] }, dur: 74, load: 'CR', rpe: 8, note: 'Il compito era \u201cquarto round costante\u201d: push 2:04.2 \u00b7 2:02.4 \u00b7 2:10.1 \u00b7 2:09.5 \u2014 fatto, pagando la partenza controllata\nRun tutte a 14,2 km/h impostati (4:13.5/km, nel target): il tapis Virgin non trasmette al Garmin, i pace del file sono stime dal polso\nHRR60 in discesa nella seduta: \u221241 \u2192 \u221232',
+    details: { summary: 'Virgin, tre registrazioni: WU tapis 1.528 m in 9:59 (6:32/km) \u00b7 blocco push+run in multisport (15:52-16:29) \u00b7 pull (16:30-16:47).\nSled Push 50 m @110 kg: 2:04.2 \u00b7 2:02.4 \u00b7 2:10.1 \u00b7 2:09.5 \u2014 spread 7,7s (01/09: 33,8s), FC a fine spinta 136-147.\n1.000 m su tapis TUTTI a 14,2 km/h impostati = 4:13.5/km, nel target 4:12-4:15 (Federico, 09/09) \u2014 FC fine run 161 \u00b7 164 \u00b7 166 \u00b7 166, max 171.\nIl tapis Virgin non trasmette al Garmin: distanze (996-999, 973 m) e pace del file sono stime dal polso \u2014 la \u201cquarta lenta\u201d era un artefatto della stima, non un calo reale.\nRest 2:00 esatti: HRR60 \u221241 \u00b7 \u221235 \u00b7 \u221231 \u00b7 \u221232.\nPausa ~5\u2032 come da consegna, poi Sled Pull 25 m @70 kg r90\u2033: 1:50.0 \u00b7 1:39.5 \u00b7 1:38.1 \u00b7 1:39.6 \u00b7 1:32.0 \u00b7 1:31.6 \u2014 in miglioramento, FC 124/139.\nFC tw: blocco push+run 142,3 \u00b7 pull 124,2.\nStessa slitta e superficie ad alto attrito del 01/09 \u2014 condizione annotata.',
       table: { headers: ['#','Stazione','Tempo staz.','Run','Tempo','Pace/km','FC fine run','Rec 60\u2033'], rows: [
-        ['1','Sled Push 110 kg','2:04.2','996,6 m','4:18.3','4:19.2','161','\u221241'],
-        ['2','Sled Push 110 kg','2:02.4','997,5 m','4:15.8','4:16.4','164','\u221235'],
-        ['3','Sled Push 110 kg','2:10.1','999,0 m','4:14.9','4:15.2','166','\u221231'],
-        ['4','Sled Push 110 kg','2:09.5','973,2 m','4:18.6','4:25.8','166','\u221232'],
+        ['1','Sled Push 110 kg','2:04.2','1.000 m','~4:14','4:13.5 imp.','161','\u221241'],
+        ['2','Sled Push 110 kg','2:02.4','1.000 m','~4:14','4:13.5 imp.','164','\u221235'],
+        ['3','Sled Push 110 kg','2:10.1','1.000 m','~4:14','4:13.5 imp.','166','\u221231'],
+        ['4','Sled Push 110 kg','2:09.5','1.000 m','~4:14','4:13.5 imp.','166','\u221232'],
         ['5','Sled Pull 70 kg \u00b7 25 m','1:50.0','\u2014','\u2014','\u2014','\u2014','\u2014'],
         ['6','Sled Pull 70 kg \u00b7 25 m','1:39.5','\u2014','\u2014','\u2014','\u2014','\u2014'],
         ['7','Sled Pull 70 kg \u00b7 25 m','1:38.1','\u2014','\u2014','\u2014','\u2014','\u2014'],
