@@ -1314,9 +1314,8 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · 3×7:00 · rec 3:00 corsi', d: 'Gabriele · struttura decisa in campo ("pista decidiamo orario") · Mattia aveva in programma "Run QUALITÀ" senza numeri', dur: '55\'', result: '3×7:00: 1.431,8 m (4:53.3/km) · 1.395,8 m (5:00.9) · 1.468,8 m (4:46.0) · FC 137-144, max 150 · rec corsi 6:26-6:34 · risc 2,105 km · totale 7,544 km' },
     ]
   },
-  { day: 'VEN', date: '11', title: 'SKI×ROW 60\' + METCON + FORZA + RULLI', sub: 'Personal con Mattia in Virgin · forza consolidata di LUN+MER+VEN', load: 'MIX', duration: 230, kind: 'multierg', done: false,
+  { day: 'VEN', date: '11', title: 'METCON + FORZA + RULLI', sub: 'Personal con Mattia in Virgin · lo ski×row è stato fatto SAB', load: 'MIX', duration: 170, kind: 'strength', done: false,
     blocks: [
-      { code: 'ERG', t: 'Ski+Row Aerobic · 15\' Row / 15\' Ski / 10\' Row / 10\' Ski / 5\' Row / 5\' Ski @Z2', d: 'Mattia · 60\' senza sosta ai cambi · Z2 = 120-135 bpm', dur: '60\'', result: 'da fare' },
       { code: 'METCON', t: 'Mini Metcon · 5 round senza fretta: 200 m Farmer\'s Carry @peso gara + 40 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · a Bologna: FC 1:40 (rank 20), BBJ 2:14 (rank 3)', dur: '35\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · BSQ: "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 non è mai stata eseguita · jerk fermo a 50 finché la spalla non tace · recuperi completi', dur: '30\'', result: 'da fare' },
       { code: 'FORZA', t: 'Deadlift 5×3 @80-85 kg (80: 20+10/lato · 85: 20+10+2,5/lato) + Push Press 4×3 @50 kg (15/lato)', d: 'Mattia, personal in Virgin · "se esce liscia e la spalla sta tranquilla, la prossima settimana si risale" · recuperi completi', dur: '30\'', result: 'da fare' },
@@ -1324,8 +1323,9 @@ const WEEK = [
       { code: 'BIKE', t: 'Rulli · 50\' di recupero @170 W', d: 'Gabriele · "recupero da ieri" · 170 W = 72% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '50\'', result: 'da fare' },
     ]
   },
-  { day: 'SAB', date: '12', title: 'COLLINARE 1H25\'', sub: 'Fuori · 10\' risc + 1h25\' usando bene i piedi in salita', load: 'Z2-Z3', duration: 95, kind: 'run', done: false,
+  { day: 'SAB', date: '12', title: 'SKI×ROW 60\' + COLLINARE', sub: 'Ski×row di VEN recuperato oggi, 12:36 · Z2 pieno', load: 'MIX', duration: 155, kind: 'multierg', done: false,
     blocks: [
+      { code: 'ERG', t: 'Ski+Row Aerobic · 15\' Row / 15\' Ski / 10\' Row / 10\' Ski / 5\' Row / 5\' Ski @Z2', d: 'Mattia · blocco di VEN recuperato oggi · 60\' senza sosta ai cambi · Z2 = 120-135 bpm', dur: '62\'', result: '14.189 m in 60:00 · Row 3.663 @189 W + 2.378 @174 + 1.219 @188 · Ski 3.470 @160 + 2.294 @156 + 1.165 @164 · FC tw 122,5 max 139: Z2 per tutta l\'ora · cambi 7-46"' },
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h25\' usando bene i piedi in salita', d: 'Gabriele', dur: '95\'', result: 'da fare' },
     ]
   },
@@ -1359,8 +1359,8 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 12.340];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 8.637];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0];
@@ -1368,17 +1368,17 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 
 // Totals (real)
 const TOTALS = {
-  rower: 714.735,
-  ski: 669.951,
+  rower: 721.995,
+  ski: 676.880,
   run: 801.373,
   bike: 429.415,
   swim: 57.628,
-  total: 2673.102,
+  total: 2687.291,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "08/09/2026",
+ "built": "13/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -7456,6 +7456,16 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '12 SET', title: 'Ski+Row · Aerobic · 6 blocchi 15/10/5 alternati Z2', kind: 'multierg', filone: 'multi-aerobic', filoneLabel: 'Ski+Row Aerobic', noGarmin: true, m: { dist: '14.189 m', dur: '60:00', pace: '2:06.7', unit: '/500m', watt: '170', fcMed: '122,5', fcMax: '139', src: 'pm5+web' }, vs: { d: '04 SET', tag: 'Stesso formato alternato Z2, ma 60′ contro 41′ e blocchi da 10′ in posizione più avanzata — Tier 2', items: [{ v: 'ski +10 W a efficienza pari (156 vs 146 W, EF 1,27 vs 1,29)', g: 1 }, { v: '+19′ di lavoro con FC sempre in Z2 (tw 122,5 vs 112,4)', g: 1 }, { v: 'row 10′ a watt identici ma FC +7,9: EF 1,42 vs 1,51', g: 0 }] }, dur: 62, load: 'Z2', rpe: 4, note: 'Ora piena senza uscire dalla Z2: FC tw 122,5, mai sopra 139\nNessun cedimento nel finale — ultimi 5′ i più efficienti dello ski (EF 1,34) e row di nuovo a 188 W\nCambi macchina in 7-46″, 1:45 di transizioni totali',
+    details: { summary: 'MultiErg su ErgZone, sabato 12:36-13:38 (il blocco era in programma venerdì).\nROW: 3.663 m @189 W (FC tw 120,3) · 2.378 m @174 W (122,9) · 1.219 m @188 W (122,1).\nSKI: 3.470 m @160 W (124,6) · 2.294 m @156 W (123,0) · 1.165 m @164 W (122,7).\nFC tw sessione 122,5 · max 139 (picco isolato nel primo row) · consegna Z2 rispettata blocco per blocco.\nEF ROW 1,57 → 1,42 → 1,54 · EF SKI 1,28 → 1,27 → 1,34: nessuna deriva, risalita nel finale.\nTotale 14.189 m in 1:01:45 (60:00 di lavoro + 1:45 di transizioni) · 896 cal · 33 spm medi.\nRegistrato solo su PM5/ErgZone: non conta per il badge Vogatore.',
+      ergTable: { fcMed: 122, fcMax: 139, efTot: '1.39', dec: [{ m: 'ROW', v: 'EF 1.57 → 1.42 → 1.54 (nessuna deriva)' }, { m: 'SKI', v: 'EF 1.28 → 1.27 → 1.34 (migliore nel finale)' }], total: { tempo: '60:00', metri: '14,189', pace: '2:06.7', watt: 170, calh: 888, sm: 33, ef: '—', fcmed: 122, fcmax: 139, zona: 'Z2', cal: 896, colpi: null, maxpw: null }, rows: [
+        { m: 'ROW', split: 'Blocco 15′', tempo: '15:00', metri: '3,663', pace: '2:02.8', watt: 189, calh: 960, sm: 25, ef: '1.57', fcmed: 120, fcmax: 139, zona: 'Z2', t: 1 },
+        { m: 'SKI', split: 'Blocco 15′', tempo: '15:00', metri: '3,470', pace: '2:09.6', watt: 160, calh: 852, sm: 42, ef: '1.28', fcmed: 125, fcmax: 132, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'Blocco 10′', tempo: '10:00', metri: '2,378', pace: '2:06.1', watt: 174, calh: 912, sm: 25, ef: '1.42', fcmed: 123, fcmax: 130, zona: 'Z2', t: 1 },
+        { m: 'SKI', split: 'Blocco 10′', tempo: '10:00', metri: '2,294', pace: '2:10.7', watt: 156, calh: 840, sm: 43, ef: '1.27', fcmed: 123, fcmax: 130, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'Blocco 5′', tempo: '5:00', metri: '1,219', pace: '2:03.0', watt: 188, calh: 948, sm: 25, ef: '1.54', fcmed: 122, fcmax: 131, zona: 'Z2', t: 1 },
+        { m: 'SKI', split: 'Blocco 5′', tempo: '5:00', metri: '1,165', pace: '2:08.7', watt: 164, calh: 864, sm: 43, ef: '1.34', fcmed: 123, fcmax: 130, zona: 'Z2', t: 1 },
+      ] }, gps: null } },
   { date: '10 SET', title: 'Run · Pista Ruffini · 3×7:00 r3:00', kind: 'run', filone: 'run-pista-ruffini', filoneLabel: 'Pista Ruffini', surf: 'pista', m: { lavoro: '3×7:00', dist: '4,296 km', dur: '21:00', pace: '4:53.4', unit: '/km', fcMed: '139,2', fcMax: '150', cad: '180', src: 'fit' }, dur: 55, load: 'Z3', rpe: 6, note: 'Struttura decisa in campo: rep lunghe da 7:00 con 3:00 di recupero CORSO — nessuno dei due coach aveva dato numeri\nRep a 4:53.3 · 5:00.9 · 4:46.0 con FC 137-144: lavoro tutto in Z3 (136-149 bpm), picco 150\nTutte e tre rallentano nella seconda metà (−27″ · −5″ · −9″/km): partenza sopra ritmo di tenuta',
     details: { summary: 'Pista Ruffini, mattina: risc 08:06-08:19, lavoro 08:34-09:03.\nRisc a parte: 2.104,6 m in 13:10.7 @6:15.8/km · FC 112,6/118.\n3×7:00 r3:00: 1.431,8 m (4:53.3/km) · 1.395,8 m (5:00.9) · 1.468,8 m (4:46.0) — la terza è la più veloce.\nFC per rep 137,1 · 136,2 · 144,3 · max di giornata 150.\nSeconde metà sempre più lente: 4:39.4→5:06.4 · 5:03.8→5:09.0 · 4:44.8→4:54.0.\nEF 0,090 · 0,088 · 0,087 — drift −3,3% sul totale, −1,1% a FC stabilizzata (rep 2→3).\nRecuperi CORSI a 6:26.6 e 6:34.7/km: HRR60 −12 · −16 · −11, non confrontabili con i rest fermi delle compromised.\nCadenza 180 in tutte e tre le rep, 174-175 nei recuperi.\nTraining effect 3,0 aerobico · 0,9 anaerobico.\nTotale giorno 7.543,9 m.',
       table: { headers: ['Rep','Dist','Tempo','Pace/km','FC med/max','Cad','Rec 3:00','HRR60'], rows: [
@@ -10893,9 +10903,9 @@ const BADGES = {
       why: 'A tempo, non a metri: 4 ore sono ~4-5 sedute in vasca, tanta roba in un mese di gara.',
       go: 'DOM 06 all\'Illegal nuoti 600 m (~15-18 minuti sulle 4 ore richieste): il resto solo se le vasche entrano nel piano, nessuna forzatura.' },
     { n: 'Settimana del nuoto di settembre', en: 'September Swim Week', cat: 'SWIM', tipo: 'cumulativa',
-      req: '1.000 m di nuoto nella settimana', win: '06 → 12 SET', d1: '2026-09-06', d2: '2026-09-12', st: 'plan', prog: '600 / 1.000 m (Federico, 06/09)',
-      why: 'Presa a settembre 2025: una vasca in quella settimana basta ad avviarla.',
-      go: 'DOM 06 all\'Illegal nuoti 600 m (3×200): la sfida parte, restano ~400 m da fare in settimana.' },
+      req: '1.000 m di nuoto nella settimana', win: '06 → 12 SET', d1: '2026-09-06', d2: '2026-09-12', st: 'miss', prog: '600 / 1.000 m — finestra chiusa il 12/09',
+      why: 'I 600 m dell\'Illegal del 06/09 l\'avevano avviata, ma in settimana non è arrivata nessuna vasca.',
+      go: 'Nessuna azione: la finestra è chiusa. Restano aperti i 4 h di Nuoto a settembre e, in vasca, Tempo di nuotare e Prendi una decisione.' },
     // ── ALTRO
     { n: 'Attivita\' a settembre', en: 'Active September', cat: 'MISC', tipo: 'cumulativa',
       req: '20 attivita\' nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '6 / 20 (Federico, 06/09)',
