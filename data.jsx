@@ -1339,7 +1339,7 @@ const WEEK_ARCHIVE = [
 const WEEK = [
   { day: 'LUN', date: '14', title: 'SKI SOGLIA + RUN 50\' + FORZA', sub: 'Ski di MER anticipato a oggi · BSQ all\'ultima salita del blocco', load: 'MIX', duration: 145, kind: 'ski', done: false,
     blocks: [
-      { code: 'SKI', t: 'Ski · Soglia · 3×5:00 @228-232 W · r1:00 attivo', d: 'Mattia · blocco di MER anticipato a oggi · "una ripetuta in meno, stessi watt" · l\'08/09 hai fatto 230-229-230-229, un watt di spread · 1:54.7-1:55.4/500 (derivato) · WU 10\' + 3×30" progressivi r60" · defa 10\' "questa volta fallo davvero"', dur: '40\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · Soglia · 3×5:00 @228-232 W · r1:00 attivo', d: 'Mattia · blocco di MER anticipato a oggi · "una ripetuta in meno, stessi watt" · l\'08/09 hai fatto 230-229-230-229, un watt di spread · 1:54.7-1:55.4/500 (derivato) · WU 10\' + 3×30" progressivi r60" · defa 10\' "questa volta fallo davvero"', dur: '40\'', result: '230-229-230 W (1:54.9-1:55.1), spread 1 W · FC tw 134,0→149,5, max 162 · DF 54 · WU 10\' @155 W + 3×30" 267-291-244 · DEFA 10\' FATTO (2.108 m, 121 W) · 17:43-18:29' },
       { code: 'RUN', t: 'Run · 50\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele', dur: '55\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
@@ -1407,7 +1407,7 @@ const PBS = [
 
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 9.334];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 0];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0];
@@ -1416,16 +1416,16 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 // Totals (real)
 const TOTALS = {
   rower: 721.995,
-  ski: 676.880,
+  ski: 686.214,
   run: 801.373,
   bike: 429.415,
   swim: 57.628,
-  total: 2687.291,
+  total: 2696.625,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "13/09/2026",
+ "built": "14/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -2241,6 +2241,17 @@ const PROG = {
       "hr": 108,
       "spm": 40,
       "pb": false
+     },
+     {
+      "d": "14/09/26*",
+      "pezzo": "10:00",
+      "dur": "10:00",
+      "dist": 2108,
+      "w": 121,
+      "pace": "2:22.3",
+      "hr": 112,
+      "spm": 33,
+      "pb": false
      }
     ]
    },
@@ -2768,6 +2779,16 @@ const PROG = {
       "hr": 108,
       "spm": 41,
       "pb": false
+     },
+     {
+      "d": "14/09/26*",
+      "struttura": "3×0:30 +1",
+      "dist": 2696,
+      "w": 167,
+      "pace": "2:08.0",
+      "hr": 104,
+      "spm": 35,
+      "pb": false
      }
     ]
    },
@@ -3003,6 +3024,16 @@ const PROG = {
       "pace": "1:55.1",
       "hr": 148,
       "spm": 46,
+      "pb": false
+     },
+     {
+      "d": "14/09/26*",
+      "struttura": "3×5:00",
+      "dist": 3912,
+      "w": 230,
+      "pace": "1:55.0",
+      "hr": 142,
+      "spm": 47,
       "pb": false
      }
     ]
@@ -3865,6 +3896,16 @@ const PROG = {
      "hr": 108,
      "pezzo": "10:00",
      "dur_s": 600
+    },
+    {
+     "d": "14/09/26*",
+     "dist": 2108,
+     "w": 121,
+     "pace": "2:22.3",
+     "spm": 33,
+     "hr": 112,
+     "pezzo": "10:00",
+     "dur_s": 600
     }
    ],
    "ints": [
@@ -4296,6 +4337,28 @@ const PROG = {
      "struttura": "3×0:30 +1",
      "rep_s": 172,
      "rep_m": 677
+    },
+    {
+     "d": "14/09/26*",
+     "dist": 3912,
+     "w": 230,
+     "pace": "1:55.0",
+     "spm": 47,
+     "hr": 142,
+     "struttura": "3×5:00",
+     "rep_s": 300,
+     "rep_m": 1304
+    },
+    {
+     "d": "14/09/26*",
+     "dist": 2696,
+     "w": 167,
+     "pace": "2:08.0",
+     "spm": 35,
+     "hr": 104,
+     "struttura": "3×0:30 +1",
+     "rep_s": 172,
+     "rep_m": 674
     }
    ]
   }
@@ -7503,6 +7566,20 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '14 SET', title: 'Ski · Soglia · 3×5:00 @230 W', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', noGarmin: true, m: { lavoro: '3×5:00', dist: '3.912 m', dur: '15:00', pace: '1:55.0', unit: '/500m', watt: '229,7', fcMed: '143,2', fcMax: '162', df: '54', src: 'pm5+web' }, vs: { d: '08 SET', tag: 'Stessa consegna a watt comandati, una rep in meno (3×5 vs 4×5) · DF 54 vs 52, seduta anticipata di ~2 h — Tier 1 sulle prime tre rep', items: [{ v: 'watt identici: 230-229-230, spread 1 W come l\'08/09', g: 1 }, { v: 'FC più bassa a watt pari: rep 2 −2,7 e rep 3 −5,4 (149,5 vs 154,9)', g: 1 }, { v: 'defa 10′ finalmente eseguito (saltato il 02/09 e l\'08/09)', g: 1 }] }, dur: 46, load: 'Z3-Z4', rpe: 6, note: 'Seconda consegna consecutiva perfetta sui watt: 230-229-230, un watt di spread\nA watt identici il cuore costa meno dell\'08/09: terza rep 149,5 contro 154,9, EF 1,54 contro 1,48\nDefa 10′ eseguito come chiesto da Mattia · richiami WU i più potenti del filone (267-291-244 W)',
+    details: { summary: 'Tre pezzi separati, 17:43-18:29: WU 14:30 · lavoro 18:00 · defa 10:00.\n3×5:00 r1:00: 230 · 229 · 230 W (1:54.9 · 1:55.1 · 1:55.0) — spread 1 W, come l\'08/09.\nFC tw per rep 134,0 · 146,2 · 149,5 · fine rep 150 · 156 · 160 · max 162 (08/09: 132,5 · 148,9 · 154,9 sulle prime tre, max 167).\nEF per rep 1,72 · 1,57 · 1,54 (08/09: 1,74 · 1,54 · 1,48) · dec rep2→3 −1,9%.\nMezze rep: FC 122→146 · 138→154 · 141→158 — la salita interna resta, ma da livelli più bassi.\nRec attivi in calo: 124 · 73 · 61 m.\nWU 10:00 2.285 m @155 W + 3×30″ progressivi 267 · 291 · 244 W r1:00 — i più potenti del filone.\nDefa 10:00 2.108 m @121 W, FC 108-117: watt in salita da 104 a 132, sempre in Z1.\nDF 54 (WU e lavoro), 56 nel defa · totale 9.334 m · 517 cal.',
+      ergTable: { fcMed: 126, fcMax: 162, efTot: '1.61', dec: [{ m: 'SKI', v: 'EF 1.57 → 1.54 rep2→3 (−1,9% a watt fissi)' }], total: { tempo: '42:30', metri: '9,334', pace: '—', watt: '—', calh: '—', sm: 40, ef: '—', fcmed: 126, fcmax: 162, zona: 'Z2', cal: 517, colpi: 1521, maxpw: null }, rows: [
+        { m: 'SKI', split: 'WU 10\'', tempo: '10:00', metri: '2,285', pace: '2:11.2', watt: 155, calh: 834, sm: 33, ef: '1.51', fcmed: 103, fcmax: 119, zona: '—', t: 0 },
+        { m: 'SKI', split: '30″ prog n.1', tempo: '0:30', metri: '137', pace: '1:49.4', watt: 267, calh: 1200, sm: 50, ef: '2.13', fcmed: 125, fcmax: 131, zona: 'Z2', t: 0 },
+        { m: 'SKI', split: '30″ prog n.2', tempo: '0:30', metri: '141', pace: '1:46.3', watt: 291, calh: 1200, sm: 54, ef: '2.49', fcmed: 117, fcmax: 129, zona: 'Z1', t: 0 },
+        { m: 'SKI', split: '30″ prog n.3', tempo: '0:30', metri: '133', pace: '1:52.7', watt: 244, calh: 1080, sm: 54, ef: '2.22', fcmed: 110, fcmax: 120, zona: 'Z1', t: 0 },
+        { m: 'SKI', split: 'Rep 1', tempo: '5:00', metri: '1,305', pace: '1:54.9', watt: 230, calh: 1092, sm: 48, ef: '1.72', fcmed: 134, fcmax: 151, zona: 'Z2', t: 1 },
+        { m: 'SKI', split: 'rec 1:00', tempo: '1:00', metri: '124', pace: '4:01.9', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 120, fcmax: '—', zona: '—', t: 0 },
+        { m: 'SKI', split: 'Rep 2', tempo: '5:00', metri: '1,303', pace: '1:55.1', watt: 229, calh: 1080, sm: 47, ef: '1.57', fcmed: 146, fcmax: 157, zona: 'Z3', t: 1 },
+        { m: 'SKI', split: 'rec 1:00', tempo: '1:00', metri: '73', pace: '6:50.7', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 127, fcmax: '—', zona: '—', t: 0 },
+        { m: 'SKI', split: 'Rep 3', tempo: '5:00', metri: '1,304', pace: '1:55.0', watt: 230, calh: 1092, sm: 47, ef: '1.54', fcmed: 150, fcmax: 162, zona: 'Z4', t: 1 },
+        { m: 'SKI', split: 'Defa 10\'', tempo: '10:00', metri: '2,108', pace: '2:22.3', watt: 121, calh: 720, sm: 33, ef: '1.07', fcmed: 113, fcmax: 122, zona: 'Z1', t: 0 },
+      ] }, gps: null } },
   { date: '12 SET', title: 'Ski+Row · Aerobic · 6 blocchi 15/10/5 alternati Z2', kind: 'multierg', filone: 'multi-aerobic', filoneLabel: 'Ski+Row Aerobic', noGarmin: true, m: { dist: '14.189 m', dur: '60:00', pace: '2:06.7', unit: '/500m', watt: '170', fcMed: '122,5', fcMax: '139', src: 'pm5+web' }, vs: { d: '04 SET', tag: 'Stesso formato alternato Z2, ma 60′ contro 41′ e blocchi da 10′ in posizione più avanzata — Tier 2', items: [{ v: 'ski +10 W a efficienza pari (156 vs 146 W, EF 1,27 vs 1,29)', g: 1 }, { v: '+19′ di lavoro con FC sempre in Z2 (tw 122,5 vs 112,4)', g: 1 }, { v: 'row 10′ a watt identici ma FC +7,9: EF 1,42 vs 1,51', g: 0 }] }, dur: 62, load: 'Z2', rpe: 4, note: 'Ora piena senza uscire dalla Z2: FC tw 122,5, mai sopra 139\nNessun cedimento nel finale — ultimi 5′ i più efficienti dello ski (EF 1,34) e row di nuovo a 188 W\nCambi macchina in 7-46″, 1:45 di transizioni totali',
     details: { summary: 'MultiErg su ErgZone, sabato 12:36-13:38 (il blocco era in programma venerdì).\nROW: 3.663 m @189 W (FC tw 120,3) · 2.378 m @174 W (122,9) · 1.219 m @188 W (122,1).\nSKI: 3.470 m @160 W (124,6) · 2.294 m @156 W (123,0) · 1.165 m @164 W (122,7).\nFC tw sessione 122,5 · max 139 (picco isolato nel primo row) · consegna Z2 rispettata blocco per blocco.\nEF ROW 1,57 → 1,42 → 1,54 · EF SKI 1,28 → 1,27 → 1,34: nessuna deriva, risalita nel finale.\nTotale 14.189 m in 1:01:45 (60:00 di lavoro + 1:45 di transizioni) · 896 cal · 33 spm medi.\nRegistrato solo su PM5/ErgZone: non conta per il badge Vogatore.',
       ergTable: { fcMed: 122, fcMax: 139, efTot: '1.39', dec: [{ m: 'ROW', v: 'EF 1.57 → 1.42 → 1.54 (nessuna deriva)' }, { m: 'SKI', v: 'EF 1.28 → 1.27 → 1.34 (migliore nel finale)' }], total: { tempo: '60:00', metri: '14,189', pace: '2:06.7', watt: 170, calh: 888, sm: 33, ef: '—', fcmed: 122, fcmax: 139, zona: 'Z2', cal: 896, colpi: null, maxpw: null }, rows: [
