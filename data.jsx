@@ -1337,10 +1337,10 @@ const WEEK_ARCHIVE = [
 
 // Current week — S38 (14 SET - 20 SET 2026)
 const WEEK = [
-  { day: 'LUN', date: '14', title: 'RUN 50\' + ROW VO2 + FORZA', sub: 'Row identico al 07/09 · BSQ all\'ultima salita del blocco', load: 'MIX', duration: 150, kind: 'row', done: false,
+  { day: 'LUN', date: '14', title: 'SKI SOGLIA + RUN 50\' + FORZA', sub: 'Ski di MER anticipato a oggi · BSQ all\'ultima salita del blocco', load: 'MIX', duration: 145, kind: 'ski', done: false,
     blocks: [
+      { code: 'SKI', t: 'Ski · Soglia · 3×5:00 @228-232 W · r1:00 attivo', d: 'Mattia · blocco di MER anticipato a oggi · "una ripetuta in meno, stessi watt" · l\'08/09 hai fatto 230-229-230-229, un watt di spread · 1:54.7-1:55.4/500 (derivato) · WU 10\' + 3×30" progressivi r60" · defa 10\' "questa volta fallo davvero"', dur: '40\'', result: 'da fare' },
       { code: 'RUN', t: 'Run · 50\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele', dur: '55\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · identico al 07/09 (289-288-294-291-295 W, EF 2,06) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\'', dur: '58\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
   },
@@ -1350,9 +1350,9 @@ const WEEK = [
       { code: 'HYROX', t: 'OPZ 2 (Gabriele) · 7×(1\'30" stazione più tosta + 600 m @4\'/km · rec 2\' bike bassa intensità)', d: 'Gabriele · "scaldati bene" · stazione a scelta: la più tosta per te · 600 m @4\'/km = 2:24 a rep (derivato)', dur: '55\'', result: 'da fare' },
     ]
   },
-  { day: 'MER', date: '16', title: 'SKI SOGLIA 3×5:00 + FORZA', sub: 'Una rep in meno, stessi watt · ultimo stacco caricato prima della gara', load: 'Z4', duration: 110, kind: 'ski', done: false,
+  { day: 'MER', date: '16', title: 'ROW VO2 5×4:00 + FORZA', sub: 'Row di LUN spostato a oggi · ultimo stacco caricato prima della gara', load: 'Z3-Z5', duration: 100, kind: 'row', done: false,
     blocks: [
-      { code: 'SKI', t: 'Ski · Soglia · 3×5:00 @228-232 W · r1:00 attivo', d: 'Mattia · "una ripetuta in meno, stessi watt" · l\'08/09 hai fatto 230-229-230-229, un watt di spread · 1:54.7-1:55.4/500 (derivato) · WU 10\' + 3×30" progressivi r60" · defa 10\' "questa volta fallo davvero"', dur: '40\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · blocco di LUN spostato a oggi · identico al 07/09 (289-288-294-291-295 W, EF 2,06) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\'', dur: '58\'', result: 'da fare' },
       { code: 'FORZA', t: 'Deadlift 3×3 @80 kg (20+10/lato) + Push Press 3×3 @50 kg (15/lato)', d: 'Mattia · "due serie in meno e scendo di cinque chili: ultima seduta di stacco caricata, poi sparisce fino a dopo la gara" · push press fermo a 50 · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
   },
@@ -10899,9 +10899,9 @@ const BADGES = {
       why: 'Caduto il primo giorno di finestra senza cercarlo.',
       go: 'Chiuso.' },
     { n: 'Weekend 10K di settembre', en: 'September Weekend 10K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 10 km nel weekend', win: '11 → 13 SET', d1: '2026-09-11', d2: '2026-09-13', st: 'plan', prog: null,
-      why: 'Serve che il lungo di quella settimana capiti (o venga messo) nel weekend.',
-      go: 'Da pianificare quando arriva il programma di quella settimana.' },
+      req: 'Una singola corsa da 10 km nel weekend', win: '11 → 13 SET', d1: '2026-09-11', d2: '2026-09-13', st: 'miss', prog: 'nessuna corsa nel weekend — finestra chiusa il 13/09',
+      why: 'Il collinare di SAB 12 era l\'unica occasione ed è stato saltato.',
+      go: 'Nessuna azione: la finestra è chiusa. La prossima corsa lunga utile ai badge è il collinare di SAB 19.' },
     { n: 'Corsa a settembre', en: 'September Time to Run', cat: 'RUN', tipo: 'cumulativa',
       req: '10 ore di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '1h49m / 10h (Federico, 06/09)',
       why: 'Ad agosto il gemello si e\' chiuso da solo col volume normale.',
