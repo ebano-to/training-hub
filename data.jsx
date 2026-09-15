@@ -1344,10 +1344,9 @@ const WEEK = [
       { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
   },
-  { day: 'MAR', date: '15', title: 'COMPROMISED · DUE OPZIONI', sub: 'Mattia scala a 3 round e rallenta a 4\'25" · Gabriele propone 7×600', load: 'CR', duration: 70, kind: 'hyrox', done: false,
+  { day: 'MAR', date: '15', title: 'COMPROMISED + SLED', sub: 'Fatta l\'opzione di Mattia · corsa rallentata a 4\'25"', load: 'CR', duration: 70, kind: 'hyrox', done: true,
     blocks: [
-      { code: 'HYROX', t: 'OPZ 1 (Mattia) · 3×(50 m Sled Push + 1.000 m @4\'25"/km · 2\' rest) · 5\' pausa · 4×25 m Sled Pull r90"', d: 'Push 110 kg e Pull 70 kg, stessa superficie · un round in meno e corsa rallentata da 4\'13" a 4\'25": la settimana scorsa FC fine run 166 con picco 171 e recupero in calo (−41 → −32) · segnare il tempo di ogni sled e di ogni km', dur: '50\'', result: 'da fare' },
-      { code: 'HYROX', t: 'OPZ 2 (Gabriele) · 7×(1\'30" stazione più tosta + 600 m @4\'/km · rec 2\' bike bassa intensità)', d: 'Gabriele · "scaldati bene" · stazione a scelta: la più tosta per te · 600 m @4\'/km = 2:24 a rep (derivato)', dur: '55\'', result: 'da fare' },
+      { code: 'HYROX', t: 'Compromised · 3×(50 m Sled Push + 1.000 m @4\'25"/km · 2\' rest) · 5\' pausa · 4×25 m Sled Pull r90"', d: 'Mattia · push 110 kg e pull 70 kg, stessa superficie ad alto attrito · un round in meno e corsa rallentata da 4\'13" a 4\'25"', dur: '55\'', result: 'Push: 1:44.2-1:56.2-1:51.6 (−18,5s di media sul 09/09) · 1000 tutti @13,6 km/h impostati (4\'25"/km) · FC run 147-152-152, max 162 · HRR60 −38/−36/−32 · Pull 4×25 m: 1:49.5-1:36.6-1:27.6-1:33.6' },
     ]
   },
   { day: 'MER', date: '16', title: 'ROW VO2 5×4:00 + FORZA', sub: 'Row di LUN spostato a oggi · ultimo stacco caricato prima della gara', load: 'Z3-Z5', duration: 100, kind: 'row', done: false,
@@ -1408,7 +1407,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 0];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 9.334];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 10.700];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 13.700];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1417,10 +1416,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 721.995,
   ski: 686.214,
-  run: 812.073,
+  run: 815.073,
   bike: 429.415,
   swim: 57.628,
-  total: 2707.325,
+  total: 2710.325,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7566,6 +7565,17 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '15 SET', title: 'Hyrox · Virgin · 3×(Sled Push + 1.000 m) + 4×Sled Pull 25 m', kind: 'hyrox', filone: 'hyrox-cr', filoneLabel: 'Compromised Run', m: { lavoro: '3+4 round', dist: '3,0 km (nom.)', dur: '~40:00', pace: '4:24.7', unit: '/km impostato', fcMed: '136.2', fcMax: '162', src: 'fit' }, vs: { d: '09 SET', tag: 'Stessi carichi (push 110, pull 70) e stessa superficie · un round in meno e corsa rallentata di 12″/km per scelta del coach — Tier 2', items: [{ v: 'push 18,5s più veloci di media (1:50,7 contro 2:06,6)', g: 1 }, { v: 'FC run crollata: 152 di media nell\'ultimo round contro 163, picco 162 contro 171', g: 1 }, { v: 'recupero migliore e più stabile: HRR60 −38/−36/−32 contro −41/−35/−31/−32', g: 1 }] }, dur: 70, load: 'CR', rpe: 6, note: 'Il rallentamento a 4\'25" ha fatto esattamente quello che Mattia cercava: −11 bpm sull\'ultimo 1.000 e picco a 162\nPush molto più rapidi a carico invariato: 1:44.2 · 1:56.2 · 1:51.6 contro 2:04.2 · 2:02.4 · 2:10.1 · 2:09.5\nPull 4×25 m in progressione fino al terzo (1:27.6), quarto a 1:33.6',
+    details: { summary: 'Virgin, 16:26-17:06: blocco push+run in multisport (16:26-16:55) · pull (16:55-17:06).\nSled Push 50 m @110 kg: 1:44.2 · 1:56.2 · 1:51.6 — media 1:50,7 contro 2:06,6 del 09/09 a carico identico.\n1.000 m su tapis TUTTI a 13,6 km/h impostati = 4\'24,7/km, dentro il 4\'25" chiesto (Federico, 15/09).\nFC run: media 147 · 152 · 152 · fine run 152 · 158 · 159 · max 162 (09/09 a 4\'13": 149 · 155 · 163 · 163, fine fino a 166, picco 171).\nHRR60 nei 2\' di rest: −38 · −36 · −32 (09/09: −41 · −35 · −31 · −32).\nSled Pull 25 m @70 kg r90": 1:49.5 · 1:36.6 · 1:27.6 · 1:33.6 · FC tw 121,9, max 137.\nFC tw blocco push+run 136,2 · max di giornata 162.\nIl tapis Virgin non trasmette al Garmin: le distanze del file (1.040, 1.006, 1.033 m) sono stime dal polso, il pezzo vero è 1.000 m.',
+      table: { headers: ['#','Stazione','Tempo staz.','Run','Pace/km','FC media run','FC fine','Rec 60″'], rows: [
+        ['1','Sled Push 110 kg','1:44.2','1.000 m','4:24.7 imp.','147','152','−38'],
+        ['2','Sled Push 110 kg','1:56.2','1.000 m','4:24.7 imp.','152','158','−36'],
+        ['3','Sled Push 110 kg','1:51.6','1.000 m','4:24.7 imp.','152','159','−32'],
+        ['4','Sled Pull 70 kg · 25 m','1:49.5','—','—','—','—','—'],
+        ['5','Sled Pull 70 kg · 25 m','1:36.6','—','—','—','—','—'],
+        ['6','Sled Pull 70 kg · 25 m','1:27.6','—','—','—','—','—'],
+        ['7','Sled Pull 70 kg · 25 m','1:33.6','—','—','—','—','—'],
+      ] }, gps: null } },
   { date: '14 SET', title: 'Run · Tapis · 50′ @5′30″ + 8 allunghi', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Run medio tapis', m: { lavoro: '10,700 km', dur: '57:51', pace: '5:24.4', unit: '/km', fcMed: '137', fcMax: '155', cad: '175', src: 'garmin' }, vs: { d: '08 SET', tag: 'Stesso MyRun di casa e stessa struttura, ma due condizioni diverse: oggi 0,5% di pendenza fissa e solo 17′ di stacco dallo ski contro 43′ — confronto declassato a Tier 2', items: [{ v: 'steady 1,6″/km più veloce (5:27.7 vs 5:29.3) a FC +2,1', g: 0 }, { v: 'drift −6,4% contro −3,1%, ma con 0,5% di pendenza in più: ~2% di costo metabolico (≈2-3 bpm) è spiegato dal piano inclinato', g: 0 }, { v: 'allunghi 8/8 identici (17,2 km/h), FC di picco più bassa (155 vs 157)', g: 1 }] }, dur: 58, load: 'Z2-Z3', rpe: 6, note: 'Pendenza 0,5% fissa per tutta la seduta (il tapis non la trasmette: dato dichiarato)\nStacco dallo ski di soli 17′ contro i 43′ dell\'08/09: seconda condizione diversa\nSteady 5:27.7 contro il 5′30″ chiesto · allunghi 8/8 a 17,2 km/h, tutti fra 23″ e 26″',
     details: { summary: 'MyRun di casa (collegato al Garmin: letture esatte), 18:47-19:45, dopo lo ski soglia 3×5:00 + defa.\nPendenza tenuta a 0,5% fissa (il MyRun non la manda al Garmin: valore dichiarato da Federico).\nStacco ski→run 17:46 (l\'08/09 era 43:42): seconda condizione diversa.\nSteady 49:38: 9.087,4 m @5:27.7/km — 2,3″/km più veloce del 5′30″ chiesto · FC 135,6 med, max 146.\nDrift: EF 0,0838 → 0,0784 (−6,4%), FC 131,1 → 140,1 a passo invariato (08/09: −3,1%, FC 131,7 → 135,4).\nLo 0,5% di pendenza vale circa +2% di costo metabolico a 11 km/h (≈2-3 bpm): copre metà del gap di FC nella seconda metà.\nAllunghi 8/8 @17,2 km/h comandati, durata 23-26″ ciascuno · FC di picco 148-152.\nFC max di seduta 155 (08/09: 157) · cadenza media 175 (172).\nTotale 10.699,6 m in 57:51 @5:24.4/km · training effect 3,4 aerobico · 0,4 anaerobico.', gps: null } },
   { date: '14 SET', title: 'Ski · Soglia · 3×5:00 @230 W', kind: 'ski', filone: 'ski-soglia', filoneLabel: 'Ski Soglia', noGarmin: true, m: { lavoro: '3×5:00', dist: '3.912 m', dur: '15:00', pace: '1:55.0', unit: '/500m', watt: '229,7', fcMed: '143,2', fcMax: '162', df: '54', src: 'pm5+web' }, vs: { d: '08 SET', tag: 'Stessa consegna a watt comandati, una rep in meno (3×5 vs 4×5) · DF 54 vs 52, seduta anticipata di ~2 h — Tier 1 sulle prime tre rep', items: [{ v: 'watt identici: 230-229-230, spread 1 W come l\'08/09', g: 1 }, { v: 'FC più bassa a watt pari: rep 2 −2,7 e rep 3 −5,4 (149,5 vs 154,9)', g: 1 }, { v: 'defa 10′ finalmente eseguito (saltato il 02/09 e l\'08/09)', g: 1 }] }, dur: 46, load: 'Z3-Z4', rpe: 6, note: 'Seconda consegna consecutiva perfetta sui watt: 230-229-230, un watt di spread\nA watt identici il cuore costa meno dell\'08/09: terza rep 149,5 contro 154,9, EF 1,54 contro 1,48\nDefa 10′ eseguito come chiesto da Mattia · richiami WU i più potenti del filone (267-291-244 W)',
