@@ -1337,11 +1337,10 @@ const WEEK_ARCHIVE = [
 
 // Current week — S38 (14 SET - 20 SET 2026)
 const WEEK = [
-  { day: 'LUN', date: '14', title: 'SKI SOGLIA + RUN 50\' + FORZA', sub: 'Ski di MER anticipato a oggi · BSQ all\'ultima salita del blocco', load: 'MIX', duration: 145, kind: 'ski', done: false,
+  { day: 'LUN', date: '14', title: 'SKI SOGLIA + RUN 50\'', sub: 'Ski anticipato da MER · run a 0,5% di pendenza · forza spostata al personal di VEN', load: 'MIX', duration: 110, kind: 'ski', done: true,
     blocks: [
       { code: 'SKI', t: 'Ski · Soglia · 3×5:00 @228-232 W · r1:00 attivo', d: 'Mattia · blocco di MER anticipato a oggi · "una ripetuta in meno, stessi watt" · l\'08/09 hai fatto 230-229-230-229, un watt di spread · 1:54.7-1:55.4/500 (derivato) · WU 10\' + 3×30" progressivi r60" · defa 10\' "questa volta fallo davvero"', dur: '40\'', result: '230-229-230 W (1:54.9-1:55.1), spread 1 W · FC tw 134,0→149,5, max 162 · DF 54 · WU 10\' @155 W + 3×30" 267-291-244 · DEFA 10\' FATTO (2.108 m, 121 W) · 17:43-18:29' },
       { code: 'RUN', t: 'Run · 50\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · su MyRun di casa, 17\' dopo lo ski soglia', dur: '58\'', result: '10,700 km in 57:51 @5:24.4/km · pendenza 0,5% fissa · steady 9,087 km @5:27.7, FC 135,6 · allunghi 8/8 @17,2 km/h · FC 137/155 · cad 175 · drift EF −6,4%' },
-      { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
   },
   { day: 'MAR', date: '15', title: 'COMPROMISED + SLED', sub: 'Fatta l\'opzione di Mattia · corsa rallentata a 4\'25"', load: 'CR', duration: 70, kind: 'hyrox', done: true,
@@ -1349,10 +1348,9 @@ const WEEK = [
       { code: 'HYROX', t: 'Compromised · 3×(50 m Sled Push + 1.000 m @4\'25"/km · 2\' rest) · 5\' pausa · 4×25 m Sled Pull r90"', d: 'Mattia · push 110 kg e pull 70 kg, stessa superficie ad alto attrito · un round in meno e corsa rallentata da 4\'13" a 4\'25"', dur: '55\'', result: 'Push: 1:44.2-1:56.2-1:51.6 (−18,5s di media sul 09/09) · 1000 tutti @13,6 km/h impostati (4\'25"/km) · FC run 147-152-152, max 162 · HRR60 −38/−36/−32 · Pull 4×25 m: 1:49.5-1:36.6-1:27.6-1:33.6' },
     ]
   },
-  { day: 'MER', date: '16', title: 'ROW VO2 5×4:00 + FORZA', sub: 'Row di LUN spostato a oggi · ultimo stacco caricato prima della gara', load: 'Z3-Z5', duration: 100, kind: 'row', done: false,
+  { day: 'MER', date: '16', title: 'ROW VO2 5×4:00', sub: 'Row di LUN spostato a oggi · forza spostata al personal di VEN', load: 'Z3-Z5', duration: 58, kind: 'row', done: true,
     blocks: [
       { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · blocco di LUN spostato a oggi · identico al 07/09 (289-288-294-291-295 W, EF 2,06) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\'', dur: '58\'', result: '5×4:00: 293-285-291-290-295 W (1:46.1→1:45.9) · FC tw 134,9→147,1, max 161 · DF 85 · WU 10\' @135 W + richiami 361 e 255 W (il secondo non partito) · defa 10\' completo · 18:21-19:29' },
-      { code: 'FORZA', t: 'Deadlift 3×3 @80 kg (20+10/lato) + Push Press 3×3 @50 kg (15/lato)', d: 'Mattia · "due serie in meno e scendo di cinque chili: ultima seduta di stacco caricata, poi sparisce fino a dopo la gara" · push press fermo a 50 · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
   },
   { day: 'GIO', date: '17', title: 'PISTA · RITMO GARA', sub: 'Con Gabriele · orario da concordare: lui ha lezione alle 13:00 in Aquatica', load: 'Z3-Z4', duration: 55, kind: 'run', done: false,
@@ -1360,10 +1358,12 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · qualità a ritmo gara · struttura da definire con Gabriele', d: 'Gabriele: "pista decidiamo orario" · Mattia: "Run QUALITÀ - RITMO GARA" senza numeri · ritmo gara in verifica questa settimana: 4\'25"/km', dur: '55\'', result: 'da fare' },
     ]
   },
-  { day: 'VEN', date: '18', title: 'SKI×ROW 30\' + METCON + DB ROW + RULLI', sub: 'Tutto dimezzato: domani c\'è la mezza simulazione', load: 'MIX', duration: 135, kind: 'multierg', done: false,
+  { day: 'VEN', date: '18', title: 'SKI×ROW 30\' + METCON + FORZA + RULLI', sub: 'Personal con Mattia: tutta la forza della settimana qui · domani la mezza simulazione', load: 'MIX', duration: 200, kind: 'multierg', done: false,
     blocks: [
       { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 5\' Row / 5\' Ski @Z2', d: 'Mattia · "trenta minuti invece di sessanta, domani c\'è la mezza simulazione" · senza sosta ai cambi · Z2 = 120-135 bpm', dur: '32\'', result: 'da fare' },
       { code: 'METCON', t: 'Mini Metcon · 3 round: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · "due round in meno e i broad jump tornano a venti metri" · mai eseguito finora: saltato in S36 e S37', dur: '20\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · blocco di LUN spostato al personal di oggi · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Deadlift 3×3 @80 kg (20+10/lato) + Push Press 3×3 @50 kg (15/lato)', d: 'Mattia · blocco di MER spostato al personal di oggi · "due serie in meno e scendo di cinque chili: ultima seduta di stacco caricata, poi sparisce fino a dopo la gara" · push press fermo a 50 · recuperi completi', dur: '35\'', result: 'da fare' },
       { code: 'FORZA', t: 'Single Arm DB Row 3×6 @heavy', d: 'Mattia · "due serie in meno, carico uguale: è l\'unico lavoro di tirata che ti resta prima della gara e non costa niente" · rif 28/08: rematore doppio 4×8 @26 kg', dur: '15\'', result: 'da fare' },
       { code: 'BIKE', t: 'Rulli · 50\' di recupero @170 W', d: 'Gabriele · "recupero da ieri" · 170 W = 72% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '50\'', result: 'da fare' },
     ]
