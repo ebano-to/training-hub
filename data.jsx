@@ -1351,7 +1351,7 @@ const WEEK = [
   },
   { day: 'MER', date: '16', title: 'ROW VO2 5×4:00 + FORZA', sub: 'Row di LUN spostato a oggi · ultimo stacco caricato prima della gara', load: 'Z3-Z5', duration: 100, kind: 'row', done: false,
     blocks: [
-      { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · blocco di LUN spostato a oggi · identico al 07/09 (289-288-294-291-295 W, EF 2,06) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\'', dur: '58\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · VO2 Max · 5×4:00 @1\'46"-1\'47"/500 · r3:00 attivo', d: 'Mattia · blocco di LUN spostato a oggi · identico al 07/09 (289-288-294-291-295 W, EF 2,06) · target 286-294 W (derivato dal pace) · WU 10\' da Z1 a Z2 (110-119 → 120-135 bpm) + 3×20" @ritmo 2k r40" · defa 10\'', dur: '58\'', result: '5×4:00: 293-285-291-290-295 W (1:46.1→1:45.9) · FC tw 134,9→147,1, max 161 · DF 85 · WU 10\' @135 W + richiami 361 e 255 W (il secondo non partito) · defa 10\' completo · 18:21-19:29' },
       { code: 'FORZA', t: 'Deadlift 3×3 @80 kg (20+10/lato) + Push Press 3×3 @50 kg (15/lato)', d: 'Mattia · "due serie in meno e scendo di cinque chili: ultima seduta di stacco caricata, poi sparisce fino a dopo la gara" · push press fermo a 50 · recuperi completi', dur: '35\'', result: 'da fare' },
     ]
   },
@@ -1405,7 +1405,7 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 12.249];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 9.334];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 13.700];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0];
@@ -1414,17 +1414,17 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 
 // Totals (real)
 const TOTALS = {
-  rower: 721.995,
+  rower: 734.244,
   ski: 686.214,
   run: 815.073,
   bike: 429.415,
   swim: 57.628,
-  total: 2710.325,
+  total: 2722.574,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "14/09/2026",
+ "built": "16/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -5827,6 +5827,16 @@ const PROG = {
       "hr": 103,
       "spm": 25,
       "pb": false
+     },
+     {
+      "d": "16/09/26*",
+      "struttura": "3×0:20 +1",
+      "dist": 2375,
+      "w": 130,
+      "pace": "2:18.9",
+      "hr": 104,
+      "spm": 22,
+      "pb": false
      }
     ]
    },
@@ -6071,6 +6081,16 @@ const PROG = {
       "w": 225,
       "pace": "1:55.9",
       "hr": 130,
+      "spm": 27,
+      "pb": false
+     },
+     {
+      "d": "16/09/26*",
+      "struttura": "5×4:00 +1",
+      "dist": 7671,
+      "w": 217,
+      "pace": "1:57.3",
+      "hr": 131,
       "spm": 27,
       "pb": false
      }
@@ -7532,6 +7552,28 @@ const PROG = {
      "struttura": "3×0:20 +1",
      "rep_s": 165,
      "rep_m": 652
+    },
+    {
+     "d": "16/09/26*",
+     "dist": 7671,
+     "w": 217,
+     "pace": "1:57.3",
+     "spm": 27,
+     "hr": 131,
+     "struttura": "5×4:00 +1",
+     "rep_s": 300,
+     "rep_m": 1278
+    },
+    {
+     "d": "16/09/26*",
+     "dist": 2375,
+     "w": 130,
+     "pace": "2:18.9",
+     "spm": 22,
+     "hr": 104,
+     "struttura": "3×0:20 +1",
+     "rep_s": 165,
+     "rep_m": 593
     }
    ]
   }
@@ -7565,6 +7607,24 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '16 SET', title: 'Row · VO2 Max · 5×4:00', kind: 'row', filone: 'row-vo2', filoneLabel: 'Row VO2 Max', noGarmin: true, m: { lavoro: '5×4:00', dist: '5.639 m', dur: '20:00', pace: '1:46.4', unit: '/500m', watt: '290,8', fcMed: '142,4', fcMax: '161', df: '85', src: 'pm5+web' }, vs: { d: '07 SET', tag: 'Replica esatta della stessa seduta, ma al TERZO giorno consecutivo di carico invece che al primo · DF 85 vs 89 — Tier 1 sui watt', items: [{ v: 'watt di fatto identici: 290,8 contro 291,4', g: 1 }, { v: 'FC di lavoro sovrapponibile (±2 bpm per rep), EF 2,04 contro 2,06', g: 1 }, { v: 'recupero peggiore: HRR60 medio −39 contro −48,8 (ma due rec pagaiati a 508-541 m)', g: 0 }] }, dur: 58, load: 'Z3-Z5', rpe: 7, note: 'Stessa prestazione del 07/09 ma al terzo giorno di fila di lavoro: watt e FC identici\nRecupero cardiaco più lento (−39 contro −48,8 di media), con due rec pagaiati molto più forte (508 e 541 m)\nSecondo richiamo del WU non partito: 1 m in 20″, a referto',
+    details: { summary: '5×4:00 r3:00 attivo: 293 · 285 · 291 · 290 · 295 W (1:46.1 · 1:47.1 · 1:46.3 · 1:46.4 · 1:45.9).\nMedia di lavoro 290,8 W contro 291,4 del 07/09 — stessa seduta, terzo giorno consecutivo di carico (ski+run lunedì, compromised martedì).\nFC tw per rep 134,9 · 139,6 · 144,8 · 145,7 · 147,1 · max 161 (07/09: 132,2 · 141,1 · 142,9 · 144,1 · 146,4, max 159).\nEF per rep 2,17 · 2,04 · 2,01 · 1,99 · 2,01 · lavoro 2,04 (07/09: 2,06) · dec rep2→5 −1,8%.\nHRR60 dopo ogni rep: −38 · −35 · −43 · −35 · −44 (07/09: −46 · −44 · −51 · −53 · −50).\nI due recuperi peggiori coincidono con i due più intensi: 541 m e 508 m contro i 287-441 degli altri.\nRichiami WU: 361 W il primo, 255 W il terzo; il secondo registra 1 m in 20″ — non partito.\nWU 10:00 2.183 m @135 W · defa 10:00 2.032 m @109 W completo.\nTotale 12.249 m · 700 cal · DF 85-86 (07/09: 88-89) · lavoro 18:44-19:29.',
+      ergTable: { fcMed: 127, fcMax: 161, efTot: '2.04', dec: [{ m: 'ROW', v: 'EF 2.04 → 2.01 rep2→5 (−1,8% a FC stabilizzata)' }], total: { tempo: '57:21', metri: '12,249', pace: '—', watt: '—', calh: '—', sm: 26, ef: '—', fcmed: 127, fcmax: 161, zona: 'Z2', cal: 700, colpi: 1341, maxpw: null }, rows: [
+        { m: 'ROW', split: 'WU 10\'', tempo: '10:00', metri: '2,183', pace: '2:17.4', watt: 135, calh: 810, sm: 23, ef: '1.24', fcmed: 109, fcmax: 122, zona: '—', t: 0 },
+        { m: 'ROW', split: '20″ @2k n.1', tempo: '0:20', metri: '101', pace: '1:39.0', watt: 361, calh: 1440, sm: 33, ef: '2.90', fcmed: 125, fcmax: 131, zona: 'Z2', t: 0 },
+        { m: 'ROW', split: '20″ @2k n.3', tempo: '0:20', metri: '90', pace: '1:51.1', watt: 255, calh: 1080, sm: 24, ef: '2.15', fcmed: 119, fcmax: 121, zona: 'Z1', t: 0 },
+        { m: 'ROW', split: 'Rep 1', tempo: '4:00', metri: '1,131', pace: '1:46.1', watt: 293, calh: 1320, sm: 29, ef: '2.17', fcmed: 135, fcmax: 150, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '294', pace: '5:06.1', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 105, fcmax: '—', zona: '—', t: 0 },
+        { m: 'ROW', split: 'Rep 2', tempo: '4:00', metri: '1,120', pace: '1:47.1', watt: 285, calh: 1290, sm: 29, ef: '2.04', fcmed: 140, fcmax: 154, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '541', pace: '2:46.4', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 117, fcmax: '—', zona: '—', t: 0 },
+        { m: 'ROW', split: 'Rep 3', tempo: '4:00', metri: '1,128', pace: '1:46.3', watt: 291, calh: 1305, sm: 30, ef: '2.01', fcmed: 145, fcmax: 157, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '287', pace: '5:13.6', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 105, fcmax: '—', zona: '—', t: 0 },
+        { m: 'ROW', split: 'Rep 4', tempo: '4:00', metri: '1,127', pace: '1:46.4', watt: 290, calh: 1305, sm: 31, ef: '1.99', fcmed: 146, fcmax: 158, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '508', pace: '2:57.2', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 118, fcmax: '—', zona: '—', t: 0 },
+        { m: 'ROW', split: 'Rep 5', tempo: '4:00', metri: '1,133', pace: '1:45.9', watt: 295, calh: 1320, sm: 28, ef: '2.01', fcmed: 147, fcmax: 161, zona: 'Z3', t: 1 },
+        { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '441', pace: '3:24.1', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 111, fcmax: '—', zona: '—', t: 0 },
+        { m: 'ROW', split: 'Defa 10\'', tempo: '10:00', metri: '2,032', pace: '2:27.6', watt: 109, calh: 690, sm: 24, ef: '0.97', fcmed: 112, fcmax: 118, zona: '—', t: 0 },
+      ] }, gps: null } },
   { date: '15 SET', title: 'Hyrox · Virgin · 3×(Sled Push + 1.000 m) + 4×Sled Pull 25 m', kind: 'hyrox', filone: 'hyrox-cr', filoneLabel: 'Compromised Run', m: { lavoro: '3+4 round', dist: '3,0 km (nom.)', dur: '~40:00', pace: '4:24.7', unit: '/km impostato', fcMed: '136.2', fcMax: '162', src: 'fit' }, vs: { d: '09 SET', tag: 'Stessi carichi (push 110, pull 70) e stessa superficie · un round in meno e corsa rallentata di 12″/km per scelta del coach — Tier 2', items: [{ v: 'push 18,5s più veloci di media (1:50,7 contro 2:06,6)', g: 1 }, { v: 'FC run crollata: 152 di media nell\'ultimo round contro 163, picco 162 contro 171', g: 1 }, { v: 'recupero migliore e più stabile: HRR60 −38/−36/−32 contro −41/−35/−31/−32', g: 1 }] }, dur: 70, load: 'CR', rpe: 6, note: 'Il rallentamento a 4\'25" ha fatto esattamente quello che Mattia cercava: −11 bpm sull\'ultimo 1.000 e picco a 162\nPush molto più rapidi a carico invariato: 1:44.2 · 1:56.2 · 1:51.6 contro 2:04.2 · 2:02.4 · 2:10.1 · 2:09.5\nPull 4×25 m in progressione fino al terzo (1:27.6), quarto a 1:33.6',
     details: { summary: 'Virgin, 16:26-17:06: blocco push+run in multisport (16:26-16:55) · pull (16:55-17:06).\nSled Push 50 m @110 kg: 1:44.2 · 1:56.2 · 1:51.6 — media 1:50,7 contro 2:06,6 del 09/09 a carico identico.\n1.000 m su tapis TUTTI a 13,6 km/h impostati = 4\'24,7/km, dentro il 4\'25" chiesto (Federico, 15/09).\nFC run: media 147 · 152 · 152 · fine run 152 · 158 · 159 · max 162 (09/09 a 4\'13": 149 · 155 · 163 · 163, fine fino a 166, picco 171).\nHRR60 nei 2\' di rest: −38 · −36 · −32 (09/09: −41 · −35 · −31 · −32).\nSled Pull 25 m @70 kg r90": 1:49.5 · 1:36.6 · 1:27.6 · 1:33.6 · FC tw 121,9, max 137.\nFC tw blocco push+run 136,2 · max di giornata 162.\nIl tapis Virgin non trasmette al Garmin: le distanze del file (1.040, 1.006, 1.033 m) sono stime dal polso, il pezzo vero è 1.000 m.',
       table: { headers: ['#','Stazione','Tempo staz.','Run','Pace/km','FC media run','FC fine','Rec 60″'], rows: [
