@@ -11261,6 +11261,9 @@ const HYDRATION = [
   { date: '2026-07-08', label: '08 LUG', type: 'run+ski', workout: 'Run tapis 80\' + Ski Erg Z2 80\' (2 sessioni)', duration: 160, outdoor: false,
     weightPre: 96.9, weightPost: 95.0, fluidIn: 2250,
     sweatTotal: 4150, sweatRate: 1556, rehydTarget: 6225, rehydRemaining: 3975 },
+  { date: '2026-09-16', label: '16 SET', type: 'row', workout: 'Row VO2 5×4:00 (WU + lavoro + defa)', duration: 67, outdoor: false,
+    weightPre: 96.5, weightPost: 95.7, fluidIn: 750,
+    sweatTotal: 1550, sweatRate: 1388, rehydTarget: 2325, rehydRemaining: 1575 },
 ];
 
 window.TRAINING = {
