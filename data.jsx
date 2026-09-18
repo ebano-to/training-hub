@@ -1360,7 +1360,7 @@ const WEEK = [
   },
   { day: 'VEN', date: '18', title: 'SKI×ROW 30\' + METCON + FORZA + RULLI', sub: 'Personal con Mattia: tutta la forza della settimana qui · domani la mezza simulazione', load: 'MIX', duration: 200, kind: 'multierg', done: false,
     blocks: [
-      { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 5\' Row / 5\' Ski @Z2', d: 'Mattia · "trenta minuti invece di sessanta, domani c\'è la mezza simulazione" · senza sosta ai cambi · Z2 = 120-135 bpm', dur: '32\'', result: 'da fare' },
+      { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 5\' Row / 5\' Ski @Z2', d: 'Mattia · "trenta minuti invece di sessanta, domani c\'è la mezza simulazione" · senza sosta ai cambi · Z2 = 120-135 bpm', dur: '62\'', result: '⚠️ fatti 60\' invece di 30\': 20\' Row / 10\' Ski / 20\' Row / 10\' Ski · 13.256 m · Row 121 e 158 W, Ski 151 e 133 W · FC tw 110,4 max 124: sotto la Z2 chiesta' },
       { code: 'METCON', t: 'Mini Metcon · 3 round: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · "due round in meno e i broad jump tornano a venti metri" · mai eseguito finora: saltato in S36 e S37', dur: '20\'', result: 'da fare' },
       { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · blocco di LUN spostato al personal di oggi · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'FATTA \u00b7 personal con Mattia in presenza, nessun dato registrato' },
       { code: 'FORZA', t: 'Deadlift 3×3 @80 kg (20+10/lato) + Push Press 3×3 @50 kg (15/lato)', d: 'Mattia · blocco di MER spostato al personal di oggi · "due serie in meno e scendo di cinque chili: ultima seduta di stacco caricata, poi sparisce fino a dopo la gara" · push press fermo a 50 · recuperi completi', dur: '35\'', result: 'FATTA \u00b7 personal con Mattia in presenza, nessun dato registrato' },
@@ -1405,8 +1405,8 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 12.249];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 9.334];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774];
 const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 21.806];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0];
@@ -1414,17 +1414,17 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 
 // Totals (real)
 const TOTALS = {
-  rower: 734.244,
-  ski: 686.214,
+  rower: 743.060,
+  ski: 690.654,
   run: 823.179,
   bike: 429.415,
   swim: 57.628,
-  total: 2730.680,
+  total: 2743.936,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "16/09/2026",
+ "built": "18/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -7607,6 +7607,14 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '18 SET', title: 'Ski+Row · Aerobic · 20/10/20/10 alternati', kind: 'multierg', filone: 'multi-aerobic', filoneLabel: 'Ski+Row Aerobic', noGarmin: true, m: { dist: '13.256 m', dur: '60:00', pace: '2:15.7', unit: '/500m', watt: '138', fcMed: '110,4', fcMax: '124', tgt: '120-135', src: 'pm5+web' }, vs: { d: '12 SET', tag: 'Stessa durata di lavoro (60′) e stesso formato alternato, ma blocchi più lunghi e intensità molto più bassa — vigilia della mezza simulazione', items: [{ v: 'FC tw 110,4 contro 122,5: tutta la seduta in Z1 invece che in Z2', g: 0 }, { v: 'watt row 121 e 158 contro 174-189 · ski 133 e 151 contro 156-164', g: 0 }] }, dur: 62, load: 'Z1', rpe: 3, note: '⚠️ Mattia aveva scritto \u201ctrenta minuti invece di sessanta, domani c\'è la mezza simulazione\u201d: ne sono stati fatti 60\nIntensità però dimezzata: FC media 110,4 e mai sopra 124, sotto la banda Z2 (120-135) prescritta\nSecondo blocco row il più forte della seduta (158 W) e senza deriva: FC 113,6 → 113,8',
+    details: { summary: 'MultiErg su ErgZone, 17:57-18:59: 20′ Row / 10′ Ski / 20′ Row / 10′ Ski, transizioni 1:26 totali.\nROW: 4.212 m @121 W (FC tw 106,2) · 4.604 m @158 W (113,7).\nSKI: 2.268 m @151 W (112,7) · 2.172 m @133 W (109,5).\nFC tw sessione 110,4 · max 124: la seduta più blanda del filone, sotto la Z2 richiesta.\nEF 1,14 · 1,34 · 1,39 · 1,21 — il secondo row è il blocco più efficiente e non deriva (113,6 → 113,8).\nIl primo row parte da freddo: FC 100,3 nella prima metà, 113,1 nella seconda.\nVolume doppio del prescritto (60′ contro 30′) a intensità dimezzata rispetto al 12/09.\nTotale 13.256 m in 1:01:26 · 814 cal · 29 spm medi.',
+      ergTable: { fcMed: 110, fcMax: 124, efTot: '1.25', dec: [{ m: 'ROW', v: 'EF 1.14 → 1.39 (secondo blocco più efficiente)' }, { m: 'SKI', v: 'EF 1.34 → 1.21 (secondo blocco più blando)' }], total: { tempo: '60:00', metri: '13,256', pace: '2:15.7', watt: 138, calh: 784, sm: 29, ef: '—', fcmed: 110, fcmax: 124, zona: 'Z1', cal: 814, colpi: null, maxpw: null }, rows: [
+        { m: 'ROW', split: 'Blocco 20′', tempo: '20:00', metri: '4,212', pace: '2:22.4', watt: 121, calh: 786, sm: 23, ef: '1.14', fcmed: 106, fcmax: 123, zona: 'Z1', t: 1 },
+        { m: 'SKI', split: 'Blocco 10′', tempo: '10:00', metri: '2,268', pace: '2:12.2', watt: 151, calh: 822, sm: 39, ef: '1.34', fcmed: 113, fcmax: 124, zona: 'Z1', t: 1 },
+        { m: 'ROW', split: 'Blocco 20′', tempo: '20:00', metri: '4,604', pace: '2:10.3', watt: 158, calh: 867, sm: 25, ef: '1.39', fcmed: 114, fcmax: 124, zona: 'Z1', t: 1 },
+        { m: 'SKI', split: 'Blocco 10′', tempo: '10:00', metri: '2,172', pace: '2:18.1', watt: 133, calh: 756, sm: 39, ef: '1.21', fcmed: 110, fcmax: 117, zona: 'Z1', t: 1 },
+      ] }, gps: null } },
   { date: '17 SET', title: 'Run · Pista Ruffini · Piramide 8×150 + 6×200 + 4×250 + 2×300', kind: 'run', filone: 'run-pista-ruffini', filoneLabel: 'Pista Ruffini', surf: 'pista', m: { lavoro: '20 rep · 4.253 m', dist: '6,320 km', dur: '30:23', pace: '3:08.0', unit: '/km (medio rep)', fcMed: '156,6', fcMax: '174', cad: '190', src: 'fit' }, vs: { d: '10 SET', tag: 'Stessa pista ma lavoro opposto: rep brevi velocissime contro rep lunghe da 7:00 in Z3 \u2014 nessun delta confrontabile, solo contesto', items: [{ v: 'FC max 174 contro 150: la seduta pi\u00f9 intensa della stagione', g: 1 }, { v: 'Z5 al 56% del tempo, TE anaerobico 4,8 contro 0,9', g: 1 }] }, dur: 55, load: 'Z5', rpe: 9, note: 'Pace di serie 2:52 \u2192 3:13 \u2192 3:15 \u2192 3:17: solo 4\u2033/km persi dai 200 ai 300 m\nFC max 174 (FCmax 177), Z5 al 56% e TE anaerobico 4,8: la seduta pi\u00f9 lattacida della stagione, a 7 giorni dalla gara\nRecuperi da 41\u2033 a 73\u2033, con gli ultimi quattro camminati invece che corsi',
     details: { summary: 'Pista Ruffini, mattina: risc 08:40-08:52, lavoro 09:18-09:48.\nRisc a parte: 1.785,8 m in 11:30 @6:25,8/km · FC 105/118.\nPiramide a distanze crescenti impostate 150/200/250/300, recupero 100 m jog o cammino: 20 rep per 4.253 m di lavoro in 13:19 @3:08.0/km.\n\u00b7 8×150: 151-167 m in 26,9-28,8\u2033 \u2192 2:43.7-3:01.9/km (serie 2:52.2) · FC tw 150,9 (max 168), cad 192.\n\u00b7 6×200: 208-214 m in 39,0-41,6\u2033 \u2192 3:05.7-3:18.7/km (serie 3:13.0) · FC tw 160,7 (max 171), cad 188.\n\u00b7 4×250: 253-273 m in 49,5-53,5\u2033 \u2192 3:10.6-3:19.9/km (serie 3:15.4) · FC tw 159,0 (max 173), cad 188.\n\u00b7 2×300: 321-323 m in 63,2-63,9\u2033 \u2192 3:16.0-3:18.7/km (serie 3:17.4) · FC tw 158,8 (max 173), cad 189.\nRecuperi: da 41\u2033 a 73\u2033, i primi 13 di jog, dal quattordicesimo in poi quasi tutti camminati (cadenza sotto 130).\nZone del lavoro: Z5 56% · Z4 23% · Z3 20% · FC max 174, la pi\u00f9 alta della stagione in allenamento.\nTraining effect 3,6 aerobico e 4,8 ANAEROBICO.\nTotale giorno 8.106 m.',
       table: { headers: ['Rep','N','Dist reale','Pace/km','FC media','FC max','Cad','Rec 100 m'], rows: [
