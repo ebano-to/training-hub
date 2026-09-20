@@ -46,9 +46,14 @@ function AgendaPage() {
   function badgesForDay(w) {
     if ((!isCurrentWeek && !isNextWeek) || !BADGES) return [];
     var d = isoForDay(w.date);
-    var wins = BADGES.items.filter(function (b) { return b.d1 && b.d2 && d >= b.d1 && d <= b.d2 && b.st !== 'off' && b.st !== 'done' && b.st !== 'miss'; });
     var codes = (w.blocks || []).map(function (b) { return b.code; });
     var hasRun = codes.indexOf('RUN') >= 0 || w.kind === 'run';
+    var wins = BADGES.items.filter(function (b) {
+      if (!(b.d1 && b.d2 && d >= b.d1 && d <= b.d2)) return false;
+      if (b.st === 'off' || b.st === 'done' || b.st === 'miss') return false;
+      if (b.runOnly && !hasRun) return false;
+      return true;
+    });
     var hunts = w.done ? [] : (BADGES.hunts || []).filter(function (h) {
       if (h.whenNoRun) return !hasRun && w.kind !== 'rest';
       return (h.kinds || []).indexOf(w.kind) >= 0 || (h.codes || []).some(function (c) { return codes.indexOf(c) >= 0; });

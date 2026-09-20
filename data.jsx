@@ -11056,9 +11056,9 @@ const BADGES = {
   items: [
     // ── CORSA
     { n: 'PacePro a settembre', en: 'PacePro September', cat: 'RUN', tipo: 'singola',
-      req: 'Corsa outdoor ≥1 km seguendo una strategia PacePro entro ±15"/km', win: 'tutto settembre', d1: null, d2: null, st: 'plan', prog: null,
-      why: 'Mancato a luglio e agosto: il tapis non lo attiva, serve outdoor con strategia creata prima.',
-      go: 'Prossima corsa outdoor utile: crea la strategia su Connect, mandala all\'orologio, seguila.' },
+      req: 'Corsa outdoor ≥1 km seguendo una strategia PacePro entro ±15"/km', win: '01 → 30 SET', d1: '2026-09-01', d2: '2026-09-30', runOnly: true, st: 'plan', prog: null,
+      why: 'Mancato a luglio e agosto: il tapis non lo attiva, serve outdoor con strategia creata PRIMA di uscire. Vale 2 pt.',
+      go: 'Crea la strategia su Connect, mandala all\'orologio, seguila entro ±15\u2033/km: basta 1 km. Ogni giorno con una corsa outdoor \u00e8 buono.' },
     { n: 'Weekend 5K di settembre', en: 'September Weekend 5K', cat: 'RUN', tipo: 'singola',
       req: 'Una singola corsa da 5 km nel weekend', win: '04 → 06 SET', d1: '2026-09-04', d2: '2026-09-06', st: 'done', dDone: '2026-09-04', prog: 'PRESO il 04/09 con la corsetta tapis da 5,029 km',
       why: 'Caduto il primo giorno di finestra senza cercarlo.',
