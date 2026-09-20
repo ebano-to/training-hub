@@ -1,7 +1,7 @@
 // AGENDA — Telemetry style + week archive navigation
 function AgendaPage() {
   const { ATHLETE, WEEK, WEEK_ARCHIVE, NEXTWEEK, BADGES } = window.TRAINING;
-  const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '14 SET → 20 SET 2026', programWeek: ATHLETE.programWeek, days: WEEK }]).concat(NEXTWEEK && NEXTWEEK.length ? [{ id: 'S' + (ATHLETE.programWeek + 1), label: 'S' + (ATHLETE.programWeek + 1) + ' · DA DEFINIRE', range: '21 → 27 SET 2026', programWeek: ATHLETE.programWeek + 1, days: NEXTWEEK }] : []);
+  const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '21 SET → 27 SET 2026', programWeek: ATHLETE.programWeek, days: WEEK }]).concat(NEXTWEEK && NEXTWEEK.length ? [{ id: 'S' + (ATHLETE.programWeek + 1), label: 'S' + (ATHLETE.programWeek + 1) + ' · DA DEFINIRE', range: '28 SET → 04 OTT 2026', programWeek: ATHLETE.programWeek + 1, days: NEXTWEEK }] : []);
   const curIdx = NEXTWEEK && NEXTWEEK.length ? allWeeks.length - 2 : allWeeks.length - 1;
   const [weekIdx, setWeekIdx] = React.useState(curIdx);
   const currentWeekDays = allWeeks[weekIdx].days;

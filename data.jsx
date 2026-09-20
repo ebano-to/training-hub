@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 38,
+  programWeek: 39,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -1333,10 +1333,8 @@ const WEEK_ARCHIVE = [
     ]
   },
   ] },
-];
+  { id: 'S38', label: 'S38 · 14 SET → 20 SET', range: '14 SET → 20 SET 2026', programWeek: 38, days: [
 
-// Current week — S38 (14 SET - 20 SET 2026)
-const WEEK = [
   { day: 'LUN', date: '14', title: 'SKI SOGLIA + RUN 50\'', sub: 'Ski anticipato da MER · run a 0,5% di pendenza · forza spostata al personal di VEN', load: 'MIX', duration: 110, kind: 'ski', done: true,
     blocks: [
       { code: 'SKI', t: 'Ski · Soglia · 3×5:00 @228-232 W · r1:00 attivo', d: 'Mattia · blocco di MER anticipato a oggi · "una ripetuta in meno, stessi watt" · l\'08/09 hai fatto 230-229-230-229, un watt di spread · 1:54.7-1:55.4/500 (derivato) · WU 10\' + 3×30" progressivi r60" · defa 10\' "questa volta fallo davvero"', dur: '40\'', result: '230-229-230 W (1:54.9-1:55.1), spread 1 W · FC tw 134,0→149,5, max 162 · DF 54 · WU 10\' @155 W + 3×30" 267-291-244 · DEFA 10\' FATTO (2.108 m, 121 W) · 17:43-18:29' },
@@ -1358,14 +1356,14 @@ const WEEK = [
       { code: 'RUN', t: 'Pista · Piramide · 8×150 m + 6×200 m + 4×250 m + 2×300 m · rec 100 m jog/cammino', d: 'Gabriele, struttura decisa in pista · piramide crescente a rec costante', dur: '55\'', result: '20 rep, 4.253 m di lavoro in 13:19 @3:08.0/km · 150: 2:44-3:02 · 200: 3:06-3:19 · 250: 3:11-3:20 · 300: 3:16-3:19 · FC 157/174 (max stagionale) · Z5 56% · TE anaer 4,8 · risc 1,786 km' },
     ]
   },
-  { day: 'VEN', date: '18', title: 'SKI×ROW 30\' + METCON + FORZA + RULLI', sub: 'Personal con Mattia: tutta la forza della settimana qui · domani la mezza simulazione', load: 'MIX', duration: 200, kind: 'multierg', done: false,
+  { day: 'VEN', date: '18', title: 'SKI×ROW 30\' + METCON + FORZA + RULLI', sub: 'Personal con Mattia: forza fatta · metcon e rulli saltati', load: 'MIX', duration: 200, kind: 'multierg', done: false,
     blocks: [
       { code: 'ERG', t: 'Ski+Row Aerobic · 10\' Row / 10\' Ski / 5\' Row / 5\' Ski @Z2', d: 'Mattia · "trenta minuti invece di sessanta, domani c\'è la mezza simulazione" · senza sosta ai cambi · Z2 = 120-135 bpm', dur: '62\'', result: '⚠️ fatti 60\' invece di 30\': 20\' Row / 10\' Ski / 20\' Row / 10\' Ski · 13.256 m · Row 121 e 158 W, Ski 151 e 133 W · FC tw 110,4 max 124: sotto la Z2 chiesta' },
       { code: 'METCON', t: 'Mini Metcon · 3 round: 200 m Farmer\'s Carry @peso gara + 20 m Burpee Broad Jump controllati · r2\'', d: 'Mattia · "due round in meno e i broad jump tornano a venti metri" · mai eseguito finora: saltato in S36 e S37', dur: '20\'', result: 'SALTATO', skipped: true },
       { code: 'FORZA', t: 'Back Squat 5×3 @65 kg (20+2,5/lato) + Split Jerk 4×2 @50 kg (15/lato)', d: 'Mattia · blocco di LUN spostato al personal di oggi · "ultima salita del blocco, poi il carico resta fermo e togliamo serie" — la 5×3 @62,5 di S36 e la @65 di S37 non sono mai state eseguite · jerk salvo spalla · recuperi completi', dur: '35\'', result: 'FATTA \u00b7 personal con Mattia in presenza, nessun dato registrato' },
       { code: 'FORZA', t: 'Deadlift 3×3 @80 kg (20+10/lato) + Push Press 3×3 @50 kg (15/lato)', d: 'Mattia · blocco di MER spostato al personal di oggi · "due serie in meno e scendo di cinque chili: ultima seduta di stacco caricata, poi sparisce fino a dopo la gara" · push press fermo a 50 · recuperi completi', dur: '35\'', result: 'FATTA \u00b7 personal con Mattia in presenza, nessun dato registrato' },
       { code: 'FORZA', t: 'Single Arm DB Row 3×6 @heavy', d: 'Mattia · "due serie in meno, carico uguale: è l\'unico lavoro di tirata che ti resta prima della gara e non costa niente" · rif 28/08: rematore doppio 4×8 @26 kg', dur: '15\'', result: 'FATTA \u00b7 personal con Mattia in presenza, nessun dato registrato' },
-      { code: 'BIKE', t: 'Rulli · 50\' di recupero @170 W', d: 'Gabriele · "recupero da ieri" · 170 W = 72% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '50\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Rulli · 50\' di recupero @170 W', d: 'Gabriele · "recupero da ieri" · 170 W = 72% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '50\'', result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'SAB', date: '19', title: 'MEZZA SIMULAZIONE · SALTATA', sub: 'Nessuna delle due opzioni eseguita · il collinare è stato recuperato domenica', load: 'RACE', duration: 90, kind: 'hyrox', done: false,
@@ -1379,7 +1377,54 @@ const WEEK = [
       { code: 'RUN', t: 'Collinare · 10\' risc + 1h20\' usando bene i piedi in salita', d: 'Gabriele · blocco di SAB recuperato oggi · collina torinese, D+ 257 m · strategia PacePro attiva: badge PRESO', dur: '90\'', result: '11,787 km in 1:20:19 @6:48.9/km · D+ 257 m (quota 223-345) · FC tw 130,6 max 151 · cad 168 · risc 1,446 km @6:59.4 · seconda metà più veloce: 7:00 → 6:22/km' },
     ]
   },
+  ] },
 ];
+
+// Current week — S39 (21 SET - 27 SET 2026) · SETTIMANA DI GARA
+const WEEK = [
+  { day: 'LUN', date: '21', title: 'RUN 40\' + ROW RICHIAMO + ULTIMO SQUAT', sub: 'Scarico vero: 4\' di lavoro sul row e 4 ripetizioni di bilanciere', load: 'Z2', duration: 75, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run · 40\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' in meno della versione di S38', dur: '48\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · Richiamo · 10\' facile + 4×1\' @ritmo 2k · r1\' · 5\' defa', d: 'Mattia · "quindici minuti scarsi, quattro di lavoro vero: serve a tenere sveglio il sistema, non ad allenarlo. Se finisci sudato hai fatto troppo" · ritmo 2k row = 1\'46"-1\'47"/500 (~290 W, derivato)', dur: '19\'', result: 'da fare' },
+      { code: 'FORZA', t: 'Back Squat 2×2 @62,5 kg (20+1,25/lato) · risc 1×5 @40 + 1×3 @55', d: 'Mattia · "ultimo contatto col bilanciere, quattro ripetizioni in tutto: serve a ricordare alle gambe che sanno spingere forte. Chiudi che te ne senti altre dieci" · recupero completo · SPLIT JERK NON SI FA: la spalla arriva alla gara senza essere stuzzicata', dur: '20\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MAR', date: '22', title: 'RITMO GARA + RICHIAMO STAZIONI', sub: 'Ultimo ripasso del 4\'25" · due opzioni di corsa', load: 'Z3-Z4', duration: 70, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'OPZ 1 (Mattia) · 1 km risc + 4×2\' @4\'25"/km · r2\' · 1 km defa', d: 'Mattia · "otto minuti di corsa. Il numero è 4\'25" e da oggi non si discute più" · 4\'25"/km = 13,6 km/h sul tapis', dur: '35\'', result: 'da fare' },
+      { code: 'RUN', t: 'OPZ 2 (Gabriele) · scaldati bene + 4×1.000 m @4\'45"/km · r1\' cammino · 20\' defa', d: 'Gabriele · volume maggiore e passo più lento del ritmo gara (4\'45" = 4:45 al km, 4:45 a rep)', dur: '55\'', result: 'da fare' },
+      { code: 'HYROX', t: 'Richiamo stazioni · 1 round senza cronometro: 25 m Sled Push + 25 m Sled Pull @carico gara + 100 m Farmer\'s Carry @peso gara', d: 'Mattia · 5\' di pausa dopo la corsa · mezze distanze, una volta sola · PULL: piedi piantati, tira con gambe e schiena non con le braccia, corda mano su mano · FARMER\'S: magnesite, non appoggiare prima dei 100 m · a Roma le slitte saranno diverse da quelle di Virgin, i tempi non saranno confrontabili', dur: '15\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '23', title: 'VIGILIA · PRIMING + RICHIAMO GESTI', sub: 'Venti minuti che vogliono dire venti · domani si gara', load: 'Z1', duration: 40, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Priming · 8\' corsa facile + 5 allunghi da 80 m progressivi (non sprint) + 6 salti verticali + mobilità anca e caviglia', d: 'Mattia · blocco della vigilia, anticipato da VEN perché la gara è GIO 24 · "il giorno prima non si riposa e basta, si accende il sistema: carichi bassi, movimenti veloci, zero fatica" · ⚠️ "oggi venti minuti vuol dire venti": la volta scorsa 30\' prescritti sono diventati 60', dur: '22\'', result: 'da fare' },
+      { code: 'METCON', t: 'Richiamo gesti · 20 m Burpee Broad Jump controllati + 20 m Farmer\'s Carry @peso gara · una volta sola, senza cronometro', d: 'Mattia · "quaranta metri in tutto, solo per ricordare i due gesti. Sul farmer\'s usa la magnesite: voglio che l\'ultima sensazione che porti a domani sia quella della presa che tiene"', dur: '10\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · Richiamo · 10\' Z1→Z2 + 4×1\' @230 W · r1\' · 5\' defa', d: 'Mattia · blocco C, opzionale oggi: era previsto 3 giorni prima della gara · "sullo ski sei a bersaglio da due settimane col costo cardiaco che scende, non c\'è niente da provare" · saltalo se la giornata è piena', dur: '19\'', result: 'da fare' },
+    ]
+  },
+  { day: 'GIO', date: '24', title: '🏁 HYROX ROMA · DOUBLES MEN', sub: 'Con Attilio Armando Tronca · obiettivo sub 60\'', load: 'RACE', duration: 120, kind: 'race', done: false,
+    blocks: [
+      { code: 'RACE', t: 'HYROX ROMA · Doubles Men · 8×(1 km run + stazione)', d: 'RISCALDAMENTO da chiudere 10-15\' prima dello start: 8\' jog facile + mobilità anca e caviglia + 4 allunghi progressivi da 80 m + 300 m Ski costruendo fino al passo gara · IL PIANO DI MATTIA: corse 1-5 a 4\'25"/km, non un secondo più veloce · corse 6-8: se hai gambe, vai · Sled Pull: piedi piantati, gambe e schiena, corda mano su mano · Farmer\'s: magnesite, non appoggiare prima dei 100 m · BBJ controllati, mai a sprint · bevi nella roxzone dopo il row e dopo il farmer\'s', dur: '~60\'', result: 'da fare' },
+    ]
+  },
+  { day: 'VEN', date: '25', title: 'DEFATICAMENTO 30\'', sub: 'Il giorno dopo la gara', load: 'Z1', duration: 30, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run · 30\' @6\'30"/km', d: 'Gabriele', dur: '30\'', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '26', title: 'RECOVERY', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: [
+      { code: 'REST', t: 'Riposo', d: 'Gabriele · recovery', dur: '—', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '27', title: 'BIKE 40\' @150 W', sub: 'Rigenerante', load: 'Z1-Z2', duration: 40, kind: 'bike', done: false,
+    blocks: [
+      { code: 'BIKE', t: 'Bike · 40\' @150 W · ~95 rpm', d: 'Gabriele · 150 W = 63% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '40\'', result: 'da fare' },
+    ]
+  },
+];
+
 
 
 
@@ -1405,11 +1450,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
