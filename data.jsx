@@ -1382,11 +1382,11 @@ const WEEK_ARCHIVE = [
 
 // Current week — S39 (21 SET - 27 SET 2026) · SETTIMANA DI GARA
 const WEEK = [
-  { day: 'LUN', date: '21', title: 'RUN 40\' + ROW RICHIAMO + ULTIMO SQUAT', sub: 'Scarico vero: 4\' di lavoro sul row e 4 ripetizioni di bilanciere', load: 'Z2', duration: 75, kind: 'run', done: false,
+  { day: 'LUN', date: '21', title: 'RUN 40\' + ROW RICHIAMO + ULTIMO SQUAT', sub: 'Scarico vero: 4\' di lavoro sul row e 4 ripetizioni di bilanciere', load: 'Z2', duration: 75, kind: 'run', done: true,
     blocks: [
-      { code: 'RUN', t: 'Run · 40\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' in meno della versione di S38', dur: '48\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · Richiamo · 10\' facile + 4×1\' @ritmo 2k · r1\' · 5\' defa', d: 'Mattia · "quindici minuti scarsi, quattro di lavoro vero: serve a tenere sveglio il sistema, non ad allenarlo. Se finisci sudato hai fatto troppo" · ritmo 2k row = 1\'46"-1\'47"/500 (~290 W, derivato)', dur: '19\'', result: 'da fare' },
-      { code: 'FORZA', t: 'Back Squat 2×2 @62,5 kg (20+1,25/lato) · risc 1×5 @40 + 1×3 @55', d: 'Mattia · "ultimo contatto col bilanciere, quattro ripetizioni in tutto: serve a ricordare alle gambe che sanno spingere forte. Chiudi che te ne senti altre dieci" · recupero completo · SPLIT JERK NON SI FA: la spalla arriva alla gara senza essere stuzzicata', dur: '20\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 40\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' in meno della versione di S38', dur: '48\'', result: '8,823 km in 51:47 · steady 40:05: 7,053 km @5:41.0/km (tgt 5\'30") · FC 135/151 · drift EF −10,8% · allunghi 8/8 a 15,2-17,0 km/h · cad 170' },
+      { code: 'ROW', t: 'Row · Richiamo · 10\' facile + 4×1\' @ritmo 2k · r1\' · 5\' defa', d: 'Mattia · "quindici minuti scarsi, quattro di lavoro vero: serve a tenere sveglio il sistema, non ad allenarlo. Se finisci sudato hai fatto troppo" · ritmo 2k row = 1\'46"-1\'47"/500 (~290 W, derivato)', dur: '19\'', result: '4×1\': 303-294-303-303 W (1:44.9-1:46.0/500) · FC tw 126,8-131,3, max 142 · WU 10\' @154 W · defa 5\' @95 W · totale 5.114 m' },
+      { code: 'FORZA', t: 'Back Squat 2×2 @62,5 kg (20+1,25/lato) · risc 1×5 @40 + 1×3 @55', d: 'Mattia · "ultimo contatto col bilanciere, quattro ripetizioni in tutto: serve a ricordare alle gambe che sanno spingere forte. Chiudi che te ne senti altre dieci" · recupero completo · SPLIT JERK NON SI FA: la spalla arriva alla gara senza essere stuzzicata', dur: '20\'', result: 'FATTO come prescritto: risc 5×35 + 3×55 · lavoro 2×2 @62,5 kg · recuperi 1:36-2:27 · 8:43 totali · FC 75/100' },
     ]
   },
   { day: 'MAR', date: '22', title: 'RITMO GARA + RICHIAMO STAZIONI', sub: 'Ultimo ripasso del 4\'25" · due opzioni di corsa', load: 'Z3-Z4', duration: 70, kind: 'run', done: false,
@@ -1451,26 +1451,26 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 8.823];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 743.060,
+  rower: 748.174,
   ski: 690.654,
-  run: 836.412,
+  run: 845.235,
   bike: 429.415,
   swim: 57.628,
-  total: 2757.169,
+  total: 2771.106,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "18/09/2026",
+ "built": "21/09/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -6139,6 +6139,16 @@ const PROG = {
       "hr": 131,
       "spm": 27,
       "pb": false
+     },
+     {
+      "d": "21/09/26*",
+      "struttura": "4×1:00 +2",
+      "dist": 4393,
+      "w": 160,
+      "pace": "2:09.8",
+      "hr": 112,
+      "spm": 24,
+      "pb": false
      }
     ]
    },
@@ -7620,6 +7630,17 @@ const PROG = {
      "struttura": "3×0:20 +1",
      "rep_s": 165,
      "rep_m": 593
+    },
+    {
+     "d": "21/09/26*",
+     "dist": 4393,
+     "w": 160,
+     "pace": "2:09.8",
+     "spm": 24,
+     "hr": 112,
+     "struttura": "4×1:00 +2",
+     "rep_s": 190,
+     "rep_m": 732
     }
    ]
   }
@@ -7653,6 +7674,23 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '21 SET', title: 'Row · Richiamo · 4×1\u2032 @ritmo 2k', kind: 'row', filone: 'row-ripetute', filoneLabel: 'Row ripetute', noGarmin: true, m: { lavoro: '4×1\u2032', dist: '1.141 m', dur: '4:00', pace: '1:45.2', unit: '/500m', watt: '300,8', fcMed: '129,2', fcMax: '142', src: 'pm5' }, dur: 23, load: 'Z2-Z3', rpe: 4, note: 'Richiamo da 23\u2032 con 4\u2032 di lavoro vero, esattamente come chiesto da Mattia\nRep a 303-294-303-303 W: la terza \u00e8 la pi\u00f9 efficiente (EF 2,39) \u00b7 FC mai sopra 142\n\u201cSe finisci sudato hai fatto troppo\u201d: FC media di sessione 115,0',
+    details: { summary: 'Row di richiamo, 17:51-18:14 \u00b7 struttura di Mattia rispettata al secondo.\nWU 10:00: 2.280 m @154 W \u00b7 FC tw 110,2.\n4×1\u2032 @ritmo 2k con 1\u2032 di rest: 286 m (303 W) \u00b7 283 (294) \u00b7 286 (303) \u00b7 286 (303) \u2014 pace 1:44.9-1:46.0/500.\nFC tw per rep 131,3 \u00b7 128,1 \u00b7 126,8 \u00b7 130,5 \u00b7 max 142: nessuna rep sopra la Z3.\nEF per rep 2,31 \u00b7 2,30 \u00b7 2,39 \u00b7 2,32.\nRec 1\u2032 pagaiati: 183 \u00b7 177 \u00b7 186 \u00b7 175 m.\nDefa 5:00: 972 m @95 W \u00b7 FC tw 104,2.\nTotale 5.114 m \u00b7 FC tw sessione 115,0, max 142.',
+      ergTable: { fcMed: 115, fcMax: 142, efTot: '2.33', dec: [{ m: 'ROW', v: 'EF 2.30 \u2192 2.32 rep2\u21924 (nessuna deriva su rep da 1\u2032)' }], total: { tempo: '23:00', metri: '5,114', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: 25, ef: '\u2014', fcmed: 115, fcmax: 142, zona: 'Z1', cal: null, colpi: null, maxpw: null }, rows: [
+        { m: 'ROW', split: 'WU 10\'', tempo: '10:00', metri: '2,280', pace: '2:11.6', watt: 154, calh: null, sm: 24, ef: '1.40', fcmed: 110, fcmax: 122, zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 1', tempo: '1:00', metri: '286', pace: '1:44.9', watt: 303, calh: null, sm: 30, ef: '2.31', fcmed: 131, fcmax: 138, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'rec 1:00', tempo: '1:00', metri: '183', pace: '2:43.9', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 2', tempo: '1:00', metri: '283', pace: '1:46.0', watt: 294, calh: null, sm: 30, ef: '2.30', fcmed: 128, fcmax: 139, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'rec 1:00', tempo: '1:00', metri: '177', pace: '2:49.5', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 3', tempo: '1:00', metri: '286', pace: '1:44.9', watt: 303, calh: null, sm: 30, ef: '2.39', fcmed: 127, fcmax: 139, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'rec 1:00', tempo: '1:00', metri: '186', pace: '2:41.3', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: '\u2014', fcmax: '\u2014', zona: '\u2014', t: 0 },
+        { m: 'ROW', split: 'Rep 4', tempo: '1:00', metri: '286', pace: '1:44.9', watt: 303, calh: null, sm: 30, ef: '2.32', fcmed: 131, fcmax: 142, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: 'Defa 5\'', tempo: '5:00', metri: '972', pace: '2:34.3', watt: 95, calh: null, sm: 22, ef: '0.91', fcmed: 104, fcmax: 116, zona: '\u2014', t: 0 },
+      ] }, gps: null } },
+  { date: '21 SET', title: 'Run · Tapis · 40\u2032 @5\u203230\u2033 + 8 allunghi', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Run medio tapis', m: { lavoro: '8,823 km', dur: '51:47', pace: '5:41.0', unit: '/km (steady)', fcMed: '135', fcMax: '151', cad: '170', src: 'garmin' }, vs: { d: '14 SET', tag: 'Stessa struttura della settimana scorsa ma 10\u2032 pi\u00f9 corta (40\u2032 contro 50\u2032) \u2014 Tier 2', items: [{ v: 'steady 11\u2033/km pi\u00f9 lento del target (5:41,0 contro 5\u203230\u2033)', g: 0 }, { v: 'drift EF \u221210,8% contro \u22126,4%: FC da 125,6 a 144,5', g: 0 }] }, dur: 52, load: 'Z2-Z3', rpe: 5, note: 'Steady a 5:41,0/km contro il 5\u203230\u2033 chiesto: 11\u2033/km sopra il target\nDrift marcato: FC 125,6 \u2192 144,5 nella seconda met\u00e0 a passo pari, EF \u221210,8%\nAllunghi 8/8 da 20-24\u2033, picchi 15,2-17,0 km/h',
+    details: { summary: 'Tapis, 16:23-17:15 \u00b7 prima seduta del pomeriggio, prima del row di richiamo.\nSteady 40:05: 7.052,9 m @5:41,0/km \u00b7 FC 135,1 media, max 151.\nDrift: EF 0,0833 \u2192 0,0743 (\u221210,8%) con FC da 125,6 a 144,5 e passo da 5:44,1 a 5:35,2.\nAllunghi: 8 su 8, durata 20-24\u2033 ciascuno, picchi da 15,2 a 17,0 km/h \u00b7 FC di picco 133-150.\nPausa di 2:34 tra steady e allunghi.\nCadenza media 170 \u00b7 totale 8.822,87 m in 51:47.', gps: null } },
+  { date: '21 SET', title: 'Forza · Back Squat 2×2 @62,5 kg', kind: 'strength', filone: 'forza', filoneLabel: 'Forza', m: { lavoro: '2×2 @62,5 kg', dur: '8:43', fcMed: '75', fcMax: '100', src: 'garmin' }, dur: 9, load: 'FORZA', rpe: 3, note: 'Ultimo contatto col bilanciere prima della gara: 4 ripetizioni di lavoro in tutto\nCarico di lavoro esatto (62,5 kg), riscaldamento partito da 35 kg invece dei 40 prescritti\nSplit Jerk non eseguito come da programma: la spalla arriva alla gara senza essere stuzzicata',
+    details: { summary: 'Virgin, 16:10-16:19 \u00b7 8:43 totali, il blocco pi\u00f9 corto del ciclo.\nRiscaldamento: 5 reps @35 kg (45,3\u2033) \u00b7 3 reps @55 kg (40,6\u2033).\nLavoro: 2 reps @62,5 kg (33,5\u2033) \u00b7 2 reps @62,5 kg (35,6\u2033).\nRecuperi: 1:36 \u00b7 2:27 \u00b7 2:01 \u2014 completi come chiesto.\nFC 75 media, max 100: carico neuromuscolare senza costo cardiaco.\nPesi e ripetizioni letti dai messaggi set del FIT Garmin.', gps: null } },
   { date: '20 SET', title: 'Run · Fuori · Collinare 1h20\u2032', kind: 'run', filone: 'run-fuori-collinare', filoneLabel: 'Collinare', surf: 'strada', m: { lavoro: '11,787 km', dur: '1:20:19', pace: '6:48.9', unit: '/km', fcMed: '130,6', fcMax: '151', asc: '257 m', cad: '168', src: 'garmin' }, dur: 90, load: 'Z2-Z3', rpe: 5, note: 'Collinare di SAB recuperato la domenica, dopo che la mezza simulazione \u00e8 stata saltata\nSeconda met\u00e0 pi\u00f9 veloce della prima (6:22 contro 7:00/km) a FC quasi pari: +2,2 bpm\nStrategia PacePro seguita: badge di settembre PRESO, 2 pt',
     details: { summary: 'Collina torinese, 15:55-17:15 · risc a parte 1.446 m @6:59,4/km (FC 110/124).\n11.787 m in 1:20:19 @6:48,9/km · D+ 257 m, quota da 223 a 345 m.\nFC tw 130,6 · max 151 · cadenza 168.\nKm pi\u00f9 duri: il 6\u00b0 (8:17/km, +75 m di dislivello) e il 2\u00b0 (7:34, +61 m).\nKm pi\u00f9 veloci in discesa e pianura: 8\u00b0 5:57 · 9\u00b0 6:18 · 10\u00b0 6:09.\nSeconda met\u00e0 pi\u00f9 rapida della prima (6:22,2 contro 7:00,2/km) con FC da 129,6 a 131,8: EF in salita dell\'8,2%, profilo altimetrico favorevole nel finale.\nTraining effect 3,1 aerobico.\nCon questa uscita: badge PacePro Settembre preso e stage Corsa 2026 Parte 3 chiuso a 300,0/300,0 km.',
       table: { headers: ['Km','Tempo','Pace/km','D+','FC media','FC max','Cad'], rows: [
@@ -11130,11 +11168,11 @@ const BADGES = {
       why: 'Il collinare di SAB 12 era l\'unica occasione ed è stato saltato.',
       go: 'Nessuna azione: la finestra è chiusa. La prossima corsa lunga utile ai badge è il collinare di SAB 19.' },
     { n: 'Corsa a settembre', en: 'September Time to Run', cat: 'RUN', tipo: 'cumulativa',
-      req: '10 ore di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '7h27m / 10h (Federico, 20/09)',
+      req: '10 ore di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '8h19m / 10h (sito, 21/09)',
       why: 'Ad agosto il gemello si e\' chiuso da solo col volume normale.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Settembre, mese di corse', en: 'September Rundown', cat: 'RUN', tipo: 'cumulativa',
-      req: '80,5 km (50 mi) di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '79,6 / 80,5 km (Federico, 20/09)',
+      req: '80,5 km (50 mi) di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'done', prog: 'PRESO \u00b7 88,4 / 80,5 km (sito, 21/09)',
       why: 'Ad agosto chiuso (86,860 km al traguardo).',
       go: 'Nessuna azione: si accumula.' },
     // ── PASSI / CAMMINATA
@@ -11168,9 +11206,9 @@ const BADGES = {
       why: 'Parte domenica 20, settimana di Roma (24/09): dipende da come esce il piano post-gara.',
       go: 'Se post-gara ci sono uscite outdoor puo\' starci: da rivalutare il 20.' },
     { n: 'Weekend 40K di settembre', en: 'September Weekend 40K', cat: 'BIKE', tipo: 'singola',
-      req: '40 km di bici nel weekend', win: '18 → 20 SET', d1: '2026-09-18', d2: '2026-09-20', st: 'plan', prog: null,
-      why: 'Weekend pre-Roma: 40 km outdoor in Z1-Z2 sono compatibili con lo scarico solo se i coach li approvano.',
-      go: 'Chiedere a Gabriele se un\'uscita lunga facile ci sta nel taper.' },
+      req: '40 km di bici nel weekend', win: '18 → 20 SET', d1: '2026-09-18', d2: '2026-09-20', st: 'miss', prog: 'nessuna uscita in bici nel weekend — finestra chiusa il 20/09',
+      why: 'Weekend pre-Roma: sabato i rulli sono stati saltati e domenica c\'è stato il collinare. Nessun km di bici.',
+      go: 'Nessuna azione: la finestra è chiusa. La bici torna DOM 27 con i 40\u2032 @150 W di Gabriele.' },
     // ── NUOTO
     { n: 'Nuoto a settembre', en: 'September Time to Swim', cat: 'SWIM', tipo: 'cumulativa',
       req: '4 ore di nuoto nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'plan', prog: '13m / 4h (Federico, 16/09)',
