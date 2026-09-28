@@ -369,6 +369,16 @@ function HistoryRow({ h, kindLabel, kindColor }) {
             </div>
           )}
 
+          {/* Link ad analisi estesa */}
+          {h.details.deepLink && (
+            <a href={h.details.deepLink.href} style={{
+              display: 'inline-block', margin: '4px 0 12px', padding: '9px 14px',
+              border: '1px solid var(--accent)', background: 'rgba(184,255,87,0.08)',
+              color: 'var(--accent)', fontFamily: 'var(--display)', fontSize: 13,
+              letterSpacing: '0.06em', fontWeight: 700, textDecoration: 'none'
+            }}>{h.details.deepLink.label} →</a>
+          )}
+
           {/* Erg standard table */}
           {h.details.ergTable && <ErgTable d={h.details.ergTable} />}
 
