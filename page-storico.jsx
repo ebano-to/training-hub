@@ -78,7 +78,6 @@ function StoricoPage() {
           { l: 'MULTI', v: HISTORY.filter((h) => h.kind === 'multierg').length },
           { l: 'BIKE', v: HISTORY.filter((h) => h.kind === 'bike').length },
           { l: 'HX', v: HISTORY.filter((h) => h.kind === 'hyrox').length },
-          { l: 'GARA', v: HISTORY.filter((h) => h.kind === 'race').length },
           { l: 'ALT', v: HISTORY.filter((h) => h.kind === 'altro').length },
           { l: 'STR', v: HISTORY.filter((h) => h.kind === 'strength').length },
           { l: 'SWIM', v: HISTORY.filter((h) => h.kind === 'swim').length },

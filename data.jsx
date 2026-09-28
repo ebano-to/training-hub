@@ -7899,7 +7899,7 @@ const HISTORY = [
         { m: 'ROW', split: 'rec 3:00', tempo: '3:00', metri: '401', pace: '3:44.4', watt: '\u2014', calh: '\u2014', sm: '\u2014', ef: '\u2014', fcmed: 110, fcmax: '\u2014', zona: '\u2014', t: 0 },
         { m: 'ROW', split: 'Defa 10\'', tempo: '10:00', metri: '2,123', pace: '2:21.3', watt: 124, calh: 732, sm: 24, ef: '1.13', fcmed: 109, fcmax: 117, zona: '\u2014', t: 0 },
       ] }, gps: null } },
-  { date: '06 SET', title: 'ILLEGAL CASELLE · 3×(nuoto+bici+run) · 73:40', kind: 'race', m: { lavoro: '3 giri', dist: '22,5 km', dur: '73:40', pace: '24:33', unit: '/giro', fcMed: '129,8', fcMax: '158', src: 'multisport' }, dur: 102, load: 'RACE', rpe: 8, note: 'Giri in 24:23 · 24:03 · 25:14 — il migliore è il secondo\nRun il metronomo di sempre (4:46-4:49/km), nuoto in crescita netta (5:06 → 4:35), bici in calo (14:27 → 15:55)\nRegistrata in multisport: 18 frazioni con transizioni misurate',
+  { date: '06 SET', title: 'ILLEGAL CASELLE · 3×(nuoto+bici+run) · 73:40', kind: 'altro', m: { lavoro: '3 giri', dist: '22,5 km', dur: '73:40', pace: '24:33', unit: '/giro', fcMed: '129,8', fcMax: '158', src: 'multisport' }, dur: 102, load: 'RACE', rpe: 8, note: 'Giri in 24:23 · 24:03 · 25:14 — il migliore è il secondo\nRun il metronomo di sempre (4:46-4:49/km), nuoto in crescita netta (5:06 → 4:35), bici in calo (14:27 → 15:55)\nRegistrata in multisport: 18 frazioni con transizioni misurate',
     details: { summary: 'Illegal di settembre, Caselle T.se — 3×(200 m nuoto + 6,3 km bici + 1 km run), riposo tra le batterie.\nPartenza 9:01 · orologio totale 1:42:21 · somma frazioni 73:40 · con transizioni interne ~81:30.\nNUOTO: 5:06 · 4:09 · 4:35 (distanze rilevate 200/175/250 m da conteggio bracciate: nominali 3×200) — FC 114-122.\nBICI (giro 6,3 km, D+33): 14:27 (26,1 km/h) · 15:01 (25,1) · 15:55 (23,7) — FC 121-133.\nRUN 1 km: 4:50 (4:47.0/km) · 4:53 (4:49.6) · 4:44 (4:46.3) — FC max 158 → 153 → 153, cad 176.\nT nuoto→bici: 2:50 · 2:31 · 2:03 (in miglioramento) · T bici→run: 8″ · 8″ · 12″.\nRiposi tra i giri: 8:32 e 12:00 (batterie).\nTotali: 625 m nuoto (rilevati) · 18.850 m bici · 3.014 m run.',
       table: { headers: ['Giro','Nuoto','T1','Bici 6,3 km','T2','Run 1 km','FC run','Tot frazioni'], rows: [
         ['1','5:06','2:50','14:27 · 26,1 km/h','0:08','4:50 @4:47.0','152/158','24:23'],
@@ -8532,7 +8532,7 @@ const HISTORY = [
       },
     }
   },
-  { date: '05 LUG', title: 'Tire Race \u00b7 32\'47" \u00b7 5 run + 5 stazioni tire \u00b7 Z5 80%', kind: 'race', m: { fcMed: '148', fcMax: '160', asc: '1', dec: '+36.0%', cad: '130' }, dur: 33, load: 'Z5', rpe: 9, note: 'Gara, sostituisce l\'EMOM: 80% del tempo in Z5\nNon conta nei volumi',
+  { date: '05 LUG', title: 'Tire Race \u00b7 32\'47" \u00b7 5 run + 5 stazioni tire \u00b7 Z5 80%', kind: 'altro', m: { fcMed: '148', fcMax: '160', asc: '1', dec: '+36.0%', cad: '130' }, dur: 33, load: 'Z5', rpe: 9, note: 'Gara, sostituisce l\'EMOM: 80% del tempo in Z5\nNon conta nei volumi',
     details: {
       summary: '5 frazioni di corsa (277 + 1105 + 1042 + 714 + 1140 m = 4,278 km) alternate a 5 stazioni tire (55 m, 9′25″ totali).\nFC 160/168 · Z5 80% · Z4 14% — tutta sopra soglia.\nCorsa in progressione dopo il primo tratto lento: 4:58-5:15/km sui centrali.',
       metrics: [
