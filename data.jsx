@@ -16,7 +16,7 @@ const ATHLETE = {
   height: 195,
   weight: 100,
   hrmax: 177,
-  programWeek: 39,
+  programWeek: 40,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -1378,10 +1378,8 @@ const WEEK_ARCHIVE = [
     ]
   },
   ] },
-];
+  { id: 'S39', label: 'S39 · 21 SET → 27 SET', range: '21 SET → 27 SET 2026', programWeek: 39, days: [
 
-// Current week — S39 (21 SET - 27 SET 2026) · SETTIMANA DI GARA
-const WEEK = [
   { day: 'LUN', date: '21', title: 'RUN 40\' + ROW RICHIAMO + ULTIMO SQUAT', sub: 'Scarico vero: 4\' di lavoro sul row e 4 ripetizioni di bilanciere', load: 'Z2', duration: 75, kind: 'run', done: true,
     blocks: [
       { code: 'RUN', t: 'Run · 40\' @5\'30"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' in meno della versione di S38', dur: '48\'', result: '8,823 km in 51:47 · blocco di lavoro 35:05: 6,370 km @5:30.4/km, target 5\'30" centrato · FC 139,9 max 151 · risc 5\' @7:19.9 · allunghi 8/8 a 15,2-17,0 km/h · cad 170' },
@@ -1424,7 +1422,48 @@ const WEEK = [
       { code: 'BIKE', t: 'Bike · 40\' @150 W · ~95 rpm', d: 'Gabriele · 150 W = 63% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '40\'', result: 'SALTATO', skipped: true },
     ]
   },
+  ] },
 ];
+
+// Current week — S40 (28 SET - 04 OTT 2026) · post-gara
+const WEEK = [
+  { day: 'LUN', date: '28', title: 'RUN 1H @5\'40" + ALLUNGHI', sub: 'Prima settimana post-gara · programma di Mattia non ancora arrivato', load: 'Z2', duration: 70, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run · 1h @5\'40"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' più lunga e 10"/km più lenta della versione pre-gara', dur: '70\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MAR', date: '29', title: 'PENDENZA 2×10\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 55, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run · 15\' risc + 2×10\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata (140 bpm = Z3 bassa): il passo è la conseguenza, non il bersaglio · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '55\'', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '30', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: [
+      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
+    ]
+  },
+  { day: 'GIO', date: '01', title: 'PISTA · ORARIO DA DECIDERE', sub: 'Con Gabriele, 15:00 o 15:30 · struttura da definire', load: 'Z3-Z5', duration: 55, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Pista · struttura da definire con Gabriele', d: 'Gabriele: "in pista h 15 o 15.30: da decidere"', dur: '55\'', result: 'da fare' },
+    ]
+  },
+  { day: 'VEN', date: '02', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: [
+      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '03', title: 'MEDIO 10 KM @5\'20"', sub: '3 km di riscaldamento + 10 km a ritmo medio', load: 'Z2-Z3', duration: 75, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Run · 3 km risc + 10 km @5\'20"/km', d: 'Gabriele · 13 km totali', dur: '75\'', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '04', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: [
+      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
+    ]
+  },
+];
+
 
 
 
@@ -1451,11 +1490,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
@@ -7674,7 +7713,7 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
-  { date: '24 SET', title: 'Hyrox · Roma · Doubles Men 1:03:53', kind: 'race', filone: 'hyrox-gara', filoneLabel: 'Gara Hyrox', pb: '3° AG del giovedì', m: { lavoro: 'DOUBLES · 8 stazioni divise', dur: '1:03:53', dist: '8 km (nom.)', pace: '4:12.6', unit: '/km nominale', fcMed: '158,2', fcMax: '174', src: 'fit+hyrox' }, vs: { d: '04 APR', tag: 'Bologna Doubles 1:03:27, stesso partner e stessa categoria — Tier 1 sul tempo totale', items: [{ v: 'tempo +26\u2033 (1:03:53 contro 1:03:27)', g: 0 }, { v: 'corsa e SkiErg (47°) le uniche voci sopra il piazzamento complessivo (51°)', g: 1 }] }, dur: 64, load: 'RACE', rpe: 10, note: 'Rank di stazione = piazzamento DEL GIORNO dentro la divisione (fonte Rox Lyfe): corsa 47° e SkiErg 47° sono le uniche voci sopra il 51° complessivo, Sled Push 223° il buco nero\nIL LIMITE NON \u00c8 STATO CARDIACO: alla sesta corsa la FC scende a 158 e l\'efficienza MIGLIORA (recupero), alla settima risale a 164 col miglior passo della seconda metà\nLA GARA SI CHIUDE SUI CRAMPI ai lunges: nell\'ottava corsa FC e velocità calano insieme = limite periferico',
+  { date: '24 SET', title: 'Hyrox · Roma · Doubles Men 1:03:53', kind: 'hyrox', filone: 'hyrox-gara', filoneLabel: 'Gara Hyrox', pb: '3° AG del giovedì', m: { lavoro: 'DOUBLES · 8 stazioni divise', dur: '1:03:53', dist: '8 km (nom.)', pace: '4:12.6', unit: '/km nominale', fcMed: '158,2', fcMax: '174', src: 'fit+hyrox' }, vs: { d: '04 APR', tag: 'Bologna Doubles 1:03:27, stesso partner e stessa categoria — Tier 1 sul tempo totale', items: [{ v: 'tempo +26\u2033 (1:03:53 contro 1:03:27)', g: 0 }, { v: 'corsa e SkiErg (47°) le uniche voci sopra il piazzamento complessivo (51°)', g: 1 }] }, dur: 64, load: 'RACE', rpe: 10, note: 'Rank di stazione = piazzamento DEL GIORNO dentro la divisione (fonte Rox Lyfe): corsa 47° e SkiErg 47° sono le uniche voci sopra il 51° complessivo, Sled Push 223° il buco nero\nIL LIMITE NON \u00c8 STATO CARDIACO: alla sesta corsa la FC scende a 158 e l\'efficienza MIGLIORA (recupero), alla settima risale a 164 col miglior passo della seconda metà\nLA GARA SI CHIUDE SUI CRAMPI ai lunges: nell\'ottava corsa FC e velocità calano insieme = limite periferico',
     details: { summary: 'HYROX ROMA, DOUBLES Men con Attilio Armando Tronca · bib 105018 · start 10:50:02 · FIT allineato allo start esatto: la roxzone ricalcolata dai battiti fa 5:25, identica al dato ufficiale.\n1:03:53 · nessuna penalità · due classifiche: OVERALL dei 5 giorni 213° assoluto e 10° di categoria 40-44, nella classifica del solo giovedì 51° e 3° AG.\nRun total 33:41: 9° sull\'overall (47° nel giorno) · best run lap 3:41: 6° overall · roxzone 5:25.\nFC di gara: media 158,2 · max 174 (toccato nella prima corsa) · minimo 100.\nLe corse: 5:15 di partenza in gruppo, poi 3:41 · 3:57 · 4:00 · 4:04 · 4:04 · 3:59 e l\'ottava a 4:44.\nMattia aveva chiesto 4\u203225\u2033 sulle prime cinque: le corse 2-7 sono state fatte tra 3:41 e 4:04, l\'ultima paga 1:03 rispetto alla migliore.\nRIPARTIZIONE CON ARMANDO (dichiarata da Federico): SkiErg 150/150/200/200/150/150 alternati = 500 m a testa · Sled Push e Pull 12,5 m a testa poi frazioni da 6,25 · BBJ 3-4 salti a testa, aperti e chiusi da Armando · Row 250 Armando + 500 FEDERICO + 250 Armando · Farmers 100+100 · Lunges ~10 a testa ma gli ultimi ~20 li ha chiusi Armando da solo, Federico in crampo · Wall Balls serie da 10 e 15.\nIL ROW È IL RECUPERO DELLA GARA: si entra a 162,7 (coda della quinta corsa), la FC crolla a 135,5 nei 250 m di Armando, risale a 148,6 nei 500 m di Federico e riscende a 139,4 all\'uscita. I suoi 500 m costano ~13 battiti sopra il minimo e non superano mai 150 — l\'unico segmento sotto soglia della gara.\nLe medie per frazione non vanno confrontate tra loro: quella di ingresso contiene il transitorio di discesa dalla corsa.\nCOME SI LEGGONO I RANK (fonte Rox Lyfe, leaderboard-explained): i piazzamenti di stazione sono quelli DEL GIORNO, dentro la propria divisione. Valgono quindi i numeri della vista \"Doubles - Thursday\": SkiErg 47 · Push 223 · Pull 169 · BBJ 132 · Row 62 · Farmers 132 · Lunges 121 · WB 62 · Roxzone 69 · Run Total 47 · Best Run 41, con overall 51° e 3° AG.\nLa vista \"Overall\" mostra per le stazioni numeri molto migliori (14 · 48 · 68 · 35 · 15 · 50 · 26 · 16, Run Total 9): non è documentato su cosa siano calcolati — l\'ipotesi coerente coi numeri è la categoria d\'età, ma resta un\'inferenza. NON usarli.\nLETTURA: rispetto al 51° complessivo, solo corsa (47°) e SkiErg (47°) stanno sopra; tutto il resto sta sotto, con Sled Push 223° come voce peggiore.\nDUE MISURE DI PACE, entrambe legittime: NOMINALE 4:12.6/km (33:41 sugli 8×1.000 m ufficiali — è il 4:13 che mostra ROXFIT e il numero con cui ci si confronta tra atleti) e MISURATO 4:26.2/km (i 7.592 m del Garmin dai lap manuali). Scarto 408 m, il 5,1%.\nIl Garmin indoor stima dai passi e su un percorso a serpentina pu\u00f2 sbagliare in entrambi i versi; Hyrox certifica 8 km. Per i confronti tra gare usare SEMPRE il nominale.\nDistanze dai lap: RUN 1 = 1.323 m · RUN 2-7 = 857-907 (media 877) · RUN 8 = 1.008.\nIL DATO SOLIDO, CHE NON DIPENDE DALLA DISTANZA, \u00c8 LA FREQUENZA: 163 · 169 · 165 · 165 · 163 · 158 · 164 · 158 di media, con 174 di picco gi\u00e0 nella prima corsa (FCmax 177).\nLe prime cinque corse a 163-169 di media (in allenamento lo stesso passo-gara dava 147-152). Ma il cuore NON \u00e8 stato il limite: alla sesta corsa la FC scende a 158 con passo uguale o migliore — efficienza in salita, cio\u00e8 recupero — e alla settima risale a 164 firmando il miglior passo della seconda met\u00e0.\nL\'unico calo vero \u00e8 l\'ottava corsa, dove FC e velocit\u00e0 scendono INSIEME: firma di limite periferico. Il punto di rottura sono i crampi ai Sandbag Lunges, la stazione precedente, dove Armando ha chiuso ~20 ripetizioni da solo.\nSecondo episodio di crampi in un mese (31/08 run interrotta): da indagare \u2014 idratazione e sali, condizionamento sui lunges, o costo muscolare della partenza.\nCadenza 176-182 su tutte le corse.',
       deepLink: { href: 'gara-roma.html', label: 'APRI L\'ANALISI COMPLETA DELLA GARA' },
       table: { headers: ['#','Segmento (stazioni = TEAM)','Tempo','Rank GIO · 5gg','FC media','FC max','FC fine'], rows: [
