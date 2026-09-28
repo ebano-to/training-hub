@@ -1391,37 +1391,37 @@ const WEEK = [
   },
   { day: 'MAR', date: '22', title: 'RITMO GARA + RICHIAMO STAZIONI', sub: 'Ultimo ripasso del 4\'25" · due opzioni di corsa', load: 'Z3-Z4', duration: 70, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'OPZ 1 (Mattia) · 1 km risc + 4×2\' @4\'25"/km · r2\' · 1 km defa', d: 'Mattia · "otto minuti di corsa. Il numero è 4\'25" e da oggi non si discute più" · 4\'25"/km = 13,6 km/h sul tapis', dur: '35\'', result: 'da fare' },
-      { code: 'RUN', t: 'OPZ 2 (Gabriele) · scaldati bene + 4×1.000 m @4\'45"/km · r1\' cammino · 20\' defa', d: 'Gabriele · volume maggiore e passo più lento del ritmo gara (4\'45" = 4:45 al km, 4:45 a rep)', dur: '55\'', result: 'da fare' },
-      { code: 'HYROX', t: 'Richiamo stazioni · 1 round senza cronometro: 25 m Sled Push + 25 m Sled Pull @carico gara + 100 m Farmer\'s Carry @peso gara', d: 'Mattia · 5\' di pausa dopo la corsa · mezze distanze, una volta sola · PULL: piedi piantati, tira con gambe e schiena non con le braccia, corda mano su mano · FARMER\'S: magnesite, non appoggiare prima dei 100 m · a Roma le slitte saranno diverse da quelle di Virgin, i tempi non saranno confrontabili', dur: '15\'', result: 'da fare' },
+      { code: 'RUN', t: 'OPZ 1 (Mattia) · 1 km risc + 4×2\' @4\'25"/km · r2\' · 1 km defa', d: 'Mattia · "otto minuti di corsa. Il numero è 4\'25" e da oggi non si discute più" · 4\'25"/km = 13,6 km/h sul tapis', dur: '35\'', result: 'SALTATO', skipped: true },
+      { code: 'RUN', t: 'OPZ 2 (Gabriele) · scaldati bene + 4×1.000 m @4\'45"/km · r1\' cammino · 20\' defa', d: 'Gabriele · volume maggiore e passo più lento del ritmo gara (4\'45" = 4:45 al km, 4:45 a rep)', dur: '55\'', result: 'SALTATO', skipped: true },
+      { code: 'HYROX', t: 'Richiamo stazioni · 1 round senza cronometro: 25 m Sled Push + 25 m Sled Pull @carico gara + 100 m Farmer\'s Carry @peso gara', d: 'Mattia · 5\' di pausa dopo la corsa · mezze distanze, una volta sola · PULL: piedi piantati, tira con gambe e schiena non con le braccia, corda mano su mano · FARMER\'S: magnesite, non appoggiare prima dei 100 m · a Roma le slitte saranno diverse da quelle di Virgin, i tempi non saranno confrontabili', dur: '15\'', result: 'SALTATO', skipped: true },
     ]
   },
   { day: 'MER', date: '23', title: 'VIGILIA · PRIMING + RICHIAMO GESTI', sub: 'Venti minuti che vogliono dire venti · per Gabriele è giorno di recovery · domani si gara', load: 'Z1', duration: 40, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'Priming · 8\' corsa facile + 5 allunghi da 80 m progressivi (non sprint) + 6 salti verticali + mobilità anca e caviglia', d: 'Mattia · blocco della vigilia, anticipato da VEN perché la gara è GIO 24 · "il giorno prima non si riposa e basta, si accende il sistema: carichi bassi, movimenti veloci, zero fatica" · ⚠️ "oggi venti minuti vuol dire venti": la volta scorsa 30\' prescritti sono diventati 60', dur: '22\'', result: 'da fare' },
-      { code: 'METCON', t: 'Richiamo gesti · 20 m Burpee Broad Jump controllati + 20 m Farmer\'s Carry @peso gara · una volta sola, senza cronometro', d: 'Mattia · "quaranta metri in tutto, solo per ricordare i due gesti. Sul farmer\'s usa la magnesite: voglio che l\'ultima sensazione che porti a domani sia quella della presa che tiene" · DB ROW NON SI FA: nessuna tirata caricata prima della gara', dur: '10\'', result: 'da fare' },
-      { code: 'PREP', t: 'Preparazione gara · borsa + carboidrati + sonno', d: 'Mattia · BORSA: scarpe, calze, MAGNESITE (sul farmer\'s è la differenza tra tenere e mollare), quello che mangi e bevi prima · CARBOIDRATI 7-8 g/kg nelle 24-36 ore (≈670-770 g per 96 kg, derivato), solo cibi che mangi già abitualmente · SONNO lungo da stanotte, non solo la vigilia', dur: '—', result: 'da fare' },
-      { code: 'SKI', t: 'Ski · Richiamo · 10\' Z1→Z2 + 4×1\' @230 W · r1\' · 5\' defa', d: 'Mattia · blocco C, opzionale oggi: era previsto 3 giorni prima della gara · "sullo ski sei a bersaglio da due settimane col costo cardiaco che scende, non c\'è niente da provare" · saltalo se la giornata è piena · DEADLIFT e PUSH PRESS NON SI FANNO: lo stacco sparisce nella settimana di gara per freschezza, la spalla resta tranquilla', dur: '19\'', result: 'da fare' },
+      { code: 'RUN', t: 'Priming · 8\' corsa facile + 5 allunghi da 80 m progressivi (non sprint) + 6 salti verticali + mobilità anca e caviglia', d: 'Mattia · blocco della vigilia, anticipato da VEN perché la gara è GIO 24 · "il giorno prima non si riposa e basta, si accende il sistema: carichi bassi, movimenti veloci, zero fatica" · ⚠️ "oggi venti minuti vuol dire venti": la volta scorsa 30\' prescritti sono diventati 60', dur: '22\'', result: 'SALTATO', skipped: true },
+      { code: 'METCON', t: 'Richiamo gesti · 20 m Burpee Broad Jump controllati + 20 m Farmer\'s Carry @peso gara · una volta sola, senza cronometro', d: 'Mattia · "quaranta metri in tutto, solo per ricordare i due gesti. Sul farmer\'s usa la magnesite: voglio che l\'ultima sensazione che porti a domani sia quella della presa che tiene" · DB ROW NON SI FA: nessuna tirata caricata prima della gara', dur: '10\'', result: 'SALTATO', skipped: true },
+      { code: 'PREP', t: 'Preparazione gara · borsa + carboidrati + sonno', d: 'Mattia · BORSA: scarpe, calze, MAGNESITE (sul farmer\'s è la differenza tra tenere e mollare), quello che mangi e bevi prima · CARBOIDRATI 7-8 g/kg nelle 24-36 ore (≈670-770 g per 96 kg, derivato), solo cibi che mangi già abitualmente · SONNO lungo da stanotte, non solo la vigilia', dur: '—', result: 'SALTATO', skipped: true },
+      { code: 'SKI', t: 'Ski · Richiamo · 10\' Z1→Z2 + 4×1\' @230 W · r1\' · 5\' defa', d: 'Mattia · blocco C, opzionale oggi: era previsto 3 giorni prima della gara · "sullo ski sei a bersaglio da due settimane col costo cardiaco che scende, non c\'è niente da provare" · saltalo se la giornata è piena · DEADLIFT e PUSH PRESS NON SI FANNO: lo stacco sparisce nella settimana di gara per freschezza, la spalla resta tranquilla', dur: '19\'', result: 'SALTATO', skipped: true },
     ]
   },
-  { day: 'GIO', date: '24', title: '🏁 HYROX ROMA · DOUBLES MEN', sub: 'Con Attilio Armando Tronca · obiettivo sub 60\'', load: 'RACE', duration: 120, kind: 'race', done: false,
+  { day: 'GIO', date: '24', title: '🏁 HYROX ROMA · 1:03:53', sub: 'Con Attilio Armando Tronca · 10° AG 40-44 sui 5 giorni (3° nel solo giovedì)', load: 'RACE', duration: 64, kind: 'race', done: true,
     blocks: [
-      { code: 'RACE', t: 'HYROX ROMA · Doubles Men · 8×(1 km run + stazione)', d: 'Gabriele: "scaldati bene" · RISCALDAMENTO di Mattia da chiudere 10-15\' prima dello start: 8\' jog facile + mobilità anca e caviglia + 4 allunghi progressivi da 80 m + 300 m Ski costruendo fino al passo gara · IL PIANO DI MATTIA: corse 1-5 a 4\'25"/km, non un secondo più veloce · corse 6-8: se hai gambe, vai · Sled Pull: piedi piantati, gambe e schiena, corda mano su mano · Farmer\'s: magnesite, non appoggiare prima dei 100 m · BBJ controllati, mai a sprint · bevi nella roxzone dopo il row e dopo il farmer\'s', dur: '~60\'', result: 'da fare' },
+      { code: 'RACE', t: 'HYROX ROMA · Doubles Men · 8×(1 km run + stazione)', d: 'Gabriele: "scaldati bene" · RISCALDAMENTO di Mattia da chiudere 10-15\' prima dello start: 8\' jog facile + mobilità anca e caviglia + 4 allunghi progressivi da 80 m + 300 m Ski costruendo fino al passo gara · IL PIANO DI MATTIA: corse 1-5 a 4\'25"/km, non un secondo più veloce · corse 6-8: se hai gambe, vai · Sled Pull: piedi piantati, gambe e schiena, corda mano su mano · Farmer\'s: magnesite, non appoggiare prima dei 100 m · BBJ controllati, mai a sprint · bevi nella roxzone dopo il row e dopo il farmer\'s', dur: '~60\'', result: '1:03:53 · OVERALL 5 giorni: 213° assoluto, 10° di categoria 40-44 · nella classifica del solo giovedì: 51° e 3° AG · Run total 33:41 (9° overall) · best run 3:41 (6°) · roxzone 5:25 · FC media 158,2 max 174' },
     ]
   },
   { day: 'VEN', date: '25', title: 'DEFATICAMENTO 30\'', sub: 'Il giorno dopo la gara', load: 'Z1', duration: 30, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'Run · 30\' @6\'30"/km', d: 'Gabriele', dur: '30\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 30\' @6\'30"/km', d: 'Gabriele', dur: '30\'', result: 'SALTATO', skipped: true },
     ]
   },
-  { day: 'SAB', date: '26', title: 'RECOVERY', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: false,
+  { day: 'SAB', date: '26', title: 'RECOVERY', sub: 'Riposo', load: '—', duration: 0, kind: 'rest', done: true,
     blocks: [
-      { code: 'REST', t: 'Riposo', d: 'Gabriele · recovery', dur: '—', result: 'da fare' },
+      { code: 'REST', t: 'Riposo', d: 'Gabriele · recovery', dur: '—', result: 'Riposo' },
     ]
   },
   { day: 'DOM', date: '27', title: 'BIKE 40\' @150 W', sub: 'Rigenerante', load: 'Z1-Z2', duration: 40, kind: 'bike', done: false,
     blocks: [
-      { code: 'BIKE', t: 'Bike · 40\' @150 W · ~95 rpm', d: 'Gabriele · 150 W = 63% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '40\'', result: 'da fare' },
+      { code: 'BIKE', t: 'Bike · 40\' @150 W · ~95 rpm', d: 'Gabriele · 150 W = 63% FTP (237 W, derivato) · bike Technogym in Virgin', dur: '40\'', result: 'SALTATO', skipped: true },
     ]
   },
 ];
@@ -1453,7 +1453,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 8.823];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1462,10 +1462,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 748.174,
   ski: 690.654,
-  run: 845.235,
+  run: 854.013,
   bike: 429.415,
   swim: 57.628,
-  total: 2771.106,
+  total: 2779.884,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7674,6 +7674,29 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '24 SET', title: 'Hyrox · Roma · Doubles Men 1:03:53', kind: 'race', filone: 'hyrox-gara', filoneLabel: 'Gara Hyrox', pb: '10° AG · 9° RUN TOTAL', m: { lavoro: '8 stazioni', dur: '1:03:53', dist: '8,778 km', pace: '4:12.6', unit: '/km (8 corse)', fcMed: '158,2', fcMax: '174', src: 'fit+hyrox' }, vs: { d: '04 APR', tag: 'Bologna Doubles 1:03:27, stesso partner e stessa categoria — Tier 1 sul tempo totale', items: [{ v: 'tempo +26\u2033 (1:03:53 contro 1:03:27)', g: 0 }, { v: 'Run Total 9° e Best Run Lap 6° sull\'overall dei 5 giorni', g: 1 }] }, dur: 64, load: 'RACE', rpe: 10, note: '10° di categoria 40-44 e 213° assoluto sull\'overall dei 5 giorni · 3° AG nella classifica del solo giovedì · 26\u2033 sopra il PB di Bologna\nLA CORSA \u00c8 IL PUNTO DI FORZA: Run Total 9° e Best Run Lap 6° su tutto il weekend\nPiano di Mattia (corse 1-5 a 4\u203225\u2033) non seguito: corse 2-7 tra 3:41 e 4:04, poi l\'ottava a 4:44 (+1:03 dalla migliore)',
+    details: { summary: 'HYROX ROMA, Doubles Men con Attilio Armando Tronca · bib 105018 · start 10:50:02.\n1:03:53 · nessuna penalità · due classifiche: OVERALL dei 5 giorni 213° assoluto e 10° di categoria 40-44, nella classifica del solo giovedì 51° e 3° AG.\nRun total 33:41: 9° sull\'overall (47° nel giorno) · best run lap 3:41: 6° overall · roxzone 5:25.\nFC di gara: media 158,2 · max 174 (toccato nella prima corsa) · minimo 100.\nLe corse: 5:15 di partenza in gruppo, poi 3:41 · 3:57 · 4:00 · 4:04 · 4:04 · 3:59 e l\'ottava a 4:44.\nMattia aveva chiesto 4\u203225\u2033 sulle prime cinque: le corse 2-7 sono state fatte tra 3:41 e 4:04, l\'ultima paga 1:03 rispetto alla migliore.\nStazioni migliori sull\'overall: SkiErg 14° · Row 15° · Wall Balls 16° — i tre attrezzi ergometrici sono la parte più forte.\nStazioni più deboli sull\'overall: Farmers Carry 50° e Sled Push 48°.\nFC per stazione allineata al minutaggio ufficiale (roxzone calcolata 5:25 = dato Hyrox): il Row è l\'unico recupero vero (145,4 media, scende a 139).\nCadenza nelle corse 176-182.',
+      table: { headers: ['#','Segmento','Tempo','Rank GIO · 5gg','FC media','FC max','FC fine'], rows: [
+        ['—','RUN 1','5:15','—','162,0','174','171'],
+        ['01','SkiErg 1000 m','3:47','47 · 14','155,7','171','159'],
+        ['—','RUN 2','3:41','—','168,9','172','166'],
+        ['02','Sled Push 50 m','1:55','223 · 48','151,9','167','153'],
+        ['—','RUN 3','3:57','—','165,4','169','167'],
+        ['03','Sled Pull 50 m','3:14','169 · 68','152,8','166','156'],
+        ['—','RUN 4','4:00','—','164,9','168','163'],
+        ['04','Burpee BJ 80 m','2:57','132 · 35','157,4','165','155'],
+        ['—','RUN 5','4:04','—','163,2','168','166'],
+        ['05','Row 1000 m','4:19','62 · 15','145,4','166','139'],
+        ['—','RUN 6','4:04','—','157,9','165','163'],
+        ['06','Farmers Carry 200 m','1:34','132 · 50','151,2','159','159'],
+        ['—','RUN 7','3:59','—','164,3','168','166'],
+        ['07','Sandbag Lunges 100 m','3:16','121 · 26','151,0','155','142'],
+        ['—','RUN 8','4:44','—','157,8','166','162'],
+        ['08','Wall Balls','3:51','62 · 16','149,7','164','151'],
+        ['—','ROXZONE (totale)','5:25','69 · —','—','—','—'],
+        ['—','RUN TOTAL','33:41','47 · 9','162,8','174','—'],
+        ['—','TOTALE','1:03:53','51°/3°AG · 213°/10°AG','158,2','174','—'],
+      ] }, gps: null } },
   { date: '21 SET', title: 'Row · Richiamo · 4×1\u2032 @ritmo 2k', kind: 'row', filone: 'row-ripetute', filoneLabel: 'Row ripetute', noGarmin: true, m: { lavoro: '4×1\u2032', dist: '1.141 m', dur: '4:00', pace: '1:45.2', unit: '/500m', watt: '300,8', fcMed: '129,2', fcMax: '142', src: 'pm5' }, dur: 23, load: 'Z2-Z3', rpe: 4, note: 'Richiamo da 23\u2032 con 4\u2032 di lavoro vero, esattamente come chiesto da Mattia\nRep a 303-294-303-303 W: la terza \u00e8 la pi\u00f9 efficiente (EF 2,39) \u00b7 FC mai sopra 142\n\u201cSe finisci sudato hai fatto troppo\u201d: FC media di sessione 115,0',
     details: { summary: 'Row di richiamo, 17:51-18:14 \u00b7 struttura di Mattia rispettata al secondo.\nWU 10:00: 2.280 m @154 W \u00b7 FC tw 110,2.\n4×1\u2032 @ritmo 2k con 1\u2032 di rest: 286 m (303 W) \u00b7 283 (294) \u00b7 286 (303) \u00b7 286 (303) \u2014 pace 1:44.9-1:46.0/500.\nFC tw per rep 131,3 \u00b7 128,1 \u00b7 126,8 \u00b7 130,5 \u00b7 max 142: nessuna rep sopra la Z3.\nEF per rep 2,31 \u00b7 2,30 \u00b7 2,39 \u00b7 2,32.\nRec 1\u2032 pagaiati: 183 \u00b7 177 \u00b7 186 \u00b7 175 m.\nDefa 5:00: 972 m @95 W \u00b7 FC tw 104,2.\nTotale 5.114 m \u00b7 FC tw sessione 115,0, max 142.',
       ergTable: { fcMed: 115, fcMax: 142, efTot: '2.33', dec: [{ m: 'ROW', v: 'EF 2.30 \u2192 2.32 rep2\u21924 (nessuna deriva su rep da 1\u2032)' }], total: { tempo: '23:00', metri: '5,114', pace: '\u2014', watt: '\u2014', calh: '\u2014', sm: 25, ef: '\u2014', fcmed: 115, fcmax: 142, zona: 'Z1', cal: null, colpi: null, maxpw: null }, rows: [
@@ -11189,7 +11212,7 @@ const BADGES = {
       why: 'Le sfide settimanali sono automatiche: il podio dipende dal girone in cui capiti.',
       go: 'Nella 100K in corso (chiude LUN 07/09) sei 4\u00b0 di 10: il podio della prima finestra e\' a un posto di distanza.' },
     { n: 'Weekend di camminata di settembre', en: 'September Weekend Walking', cat: 'WALK', tipo: 'singola',
-      req: 'Una camminata da ~4,8 km nel weekend (da confermare)', win: '25 → 27 SET', d1: '2026-09-25', d2: '2026-09-27', st: 'plan', prog: null,
+      req: 'Una camminata da ~4,8 km nel weekend (da confermare)', win: '25 → 27 SET', d1: '2026-09-25', d2: '2026-09-27', st: 'miss', prog: 'nessuna camminata registrata nel weekend — finestra chiusa il 27/09',
       why: 'Il gemello di agosto e\' stato mancato per una camminata non fatta: ~50 minuti bastano.',
       go: 'Weekend post-Roma: una camminata di scarico lo prende.' },
     // ── BICI (contano SOLO attivita\' registrate con Garmin: outdoor si\', TCX importati no)
@@ -11202,7 +11225,7 @@ const BADGES = {
       why: 'La finestra chiude il 19 (un giorno prima di quanto risultasse): restano 181,2 km in tre giorni, con la gara del 24 alle porte. Fuori portata.',
       go: 'Lasciata andare: i rulli di VEN valgono comunque per Bici a settembre.' },
     { n: 'Ride to 100 di settembre', en: 'September Ride to 100', cat: 'BIKE', tipo: 'cumulativa',
-      req: '100 km di bici nella finestra', win: '20 → 26 SET', d1: '2026-09-20', d2: '2026-09-26', st: 'plan', prog: '0 / 100 km (Federico, 20/09)',
+      req: '100 km di bici nella finestra', win: '20 → 26 SET', d1: '2026-09-20', d2: '2026-09-26', st: 'miss', prog: '0 / 100 km — finestra chiusa il 26/09, settimana di gara',
       why: 'Parte domenica 20, settimana di Roma (24/09): dipende da come esce il piano post-gara.',
       go: 'Se post-gara ci sono uscite outdoor puo\' starci: da rivalutare il 20.' },
     { n: 'Weekend 40K di settembre', en: 'September Weekend 40K', cat: 'BIKE', tipo: 'singola',
@@ -11260,7 +11283,7 @@ const BADGES = {
       why: 'Conta i piani saliti e il dislivello di tutte le attivit\u00e0: avanza da sola col collinare e con le uscite outdoor.',
       go: 'Nessuna azione dedicata: il collinare di SAB la fa salire.' },
     { n: 'Sfida di 100K passi', en: '100K Step Challenge', cat: 'STEP', tipo: 'cumulativa',
-      req: 'Sfida settimanale a gruppi: classifica su 10 partecipanti', win: 'fino al 21 SET', d1: null, d2: '2026-09-21', st: 'auto', prog: '5\u00b0 di 10 (Federico, 16/09)',
+      req: 'Sfida settimanale a gruppi: classifica su 10 partecipanti', win: 'fino al 21 SET', d1: null, d2: '2026-09-21', st: 'done', prog: 'chiusa 5\u00b0 di 10 (Federico, 16/09)',
       why: 'Sfida di gruppo settimanale: la posizione si muove coi passi quotidiani.',
       go: 'Nessuna azione: si accumula, chiude LUN 21.' },
     { n: 'September Strides', en: 'September Strides (members)', cat: 'WALK', tipo: 'cumulativa',
