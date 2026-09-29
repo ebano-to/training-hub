@@ -229,19 +229,20 @@ function ChartCard({ code, data, unit, min, max, color }) {
   );
 }
 
-// ── STORICO GARE HYROX — cronologico per formato
+// ── STORICO GARE HYROX — cronologico per formato · dati ufficiali results.hyrox.com
 function HyroxRaces() {
   var RACES = window.TRAINING.RACES;
+  if (!RACES || !RACES.length) return null;
   var FMT = {
     single: { label: 'SINGLES', c: '#FFB454' },
     doubles: { label: 'DOUBLES OPEN', c: '#39E75F' },
     doublesPro: { label: 'DOUBLES PRO', c: '#6C68D7' },
   };
+  function secs(t) { var p = String(t).split(':').map(Number); return p.length === 3 ? p[0] * 3600 + p[1] * 60 + p[2] : p[0] * 60 + p[1]; }
   function mmss(sec) {
     var s = Math.abs(sec), m = Math.floor(s / 60), r = s % 60;
-    return (sec < 0 ? '−' : '+') + m + ':' + (r < 10 ? '0' : '') + r;
+    return (sec < 0 ? '−' : sec > 0 ? '+' : '±') + m + ':' + (r < 10 ? '0' : '') + r;
   }
-  // delta contro la gara precedente dello STESSO formato
   var prev = {};
   var rows = RACES.map(function (r) {
     var d = prev[r.fmt] !== undefined ? r.t - prev[r.fmt] : null;
@@ -251,29 +252,85 @@ function HyroxRaces() {
   var maxT = Math.max.apply(null, RACES.map(function (r) { return r.t; }));
   var th = { fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'left', padding: '8px 10px', borderBottom: '1px solid var(--line)', whiteSpace: 'nowrap' };
   var td = { fontSize: 12, padding: '10px', borderBottom: '1px solid var(--line)', whiteSpace: 'nowrap' };
+  var LAB = [['ski', 'SkiErg 1000 m'], ['push', 'Sled Push 50 m'], ['pull', 'Sled Pull 50 m'], ['bbj', 'Burpee BJ 80 m'], ['row', 'Row 1000 m'], ['fc', 'Farmers 200 m'], ['lun', 'Lunges 100 m'], ['wb', 'Wall Balls 100']];
+
+  function Serie(props) {
+    var a = props.races;
+    if (a.length < 2) return null;
+    var first = a[0], last = a[a.length - 1];
+    return (
+      <ModulePanel code={props.code} title={props.title} sub={props.sub}>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead><tr>
+              <th style={th}>SEGMENTO</th>
+              {a.map(function (r) { return <th key={r.id} style={th}>{r.city.toUpperCase() + ' ' + r.d.slice(-4)}</th>; })}
+              <th style={th}>{'Δ PRIMA → ULTIMA'}</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td style={Object.assign({}, td, { fontWeight: 700 })}>TOTALE</td>
+                {a.map(function (r) { return <td key={r.id} style={Object.assign({}, td, { fontWeight: 700 })} className="display tabular">{r.time}</td>; })}
+                <td style={Object.assign({}, td, { fontWeight: 700, color: (last.t - first.t) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(last.t - first.t)}</td>
+              </tr>
+              <tr>
+                <td style={Object.assign({}, td, { color: 'var(--fg-3)', fontSize: 11 })}>Piazzamento giornata</td>
+                {a.map(function (r) { return <td key={r.id} style={Object.assign({}, td, { fontSize: 11, color: 'var(--fg-2)' })}>{r.rank || '—'}</td>; })}
+                <td style={Object.assign({}, td, { color: 'var(--fg-3)' })}>{'—'}</td>
+              </tr>
+              <tr>
+                <td style={td}>Run total</td>
+                {a.map(function (r) { return <td key={r.id} style={td} className="tabular">{r.runTot + ' '}<span style={{ color: 'var(--fg-3)', fontSize: 10 }}>{'(' + r.runTotR + '°)'}</span></td>; })}
+                <td style={Object.assign({}, td, { color: (last.runTotS - first.runTotS) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(last.runTotS - first.runTotS)}</td>
+              </tr>
+              <tr>
+                <td style={td}>Roxzone</td>
+                {a.map(function (r) { return <td key={r.id} style={td} className="tabular">{r.rox || '—'}</td>; })}
+                <td style={Object.assign({}, td, { color: (last.roxS - first.roxS) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(last.roxS - first.roxS)}</td>
+              </tr>
+              {LAB.map(function (L) {
+                var d = secs(last.st[L[0]]) - secs(first.st[L[0]]);
+                return (
+                  <tr key={L[0]}>
+                    <td style={td}>{L[1]}</td>
+                    {a.map(function (r) {
+                      return <td key={r.id} style={td} className="tabular">{r.st[L[0]] + ' '}<span style={{ color: 'var(--fg-3)', fontSize: 10 }}>{'(' + r.stR[L[0]] + '°)'}</span></td>;
+                    })}
+                    <td style={Object.assign({}, td, { color: d === 0 ? 'var(--fg-3)' : (d < 0 ? '#39E75F' : '#FF6B6B') })} className="tabular">{mmss(d)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 14, lineHeight: 1.7, whiteSpace: 'pre-line' }}>{props.read}</div>
+        </div>
+      </ModulePanel>
+    );
+  }
+
+  var armando = RACES.filter(function (r) { return r.fmt === 'doubles' && r.partner === 'Armando Tronca'; });
+  var singoli = RACES.filter(function (r) { return r.fmt === 'single'; });
 
   return (
     <div>
-      <ModulePanel code="MOD.HYROX · storico_gare" title="GARE HYROX" sub="Sei gare in ordine cronologico · i tre formati NON sono confrontabili fra loro: ogni delta è calcolato solo contro la gara precedente dello stesso formato" accent>
-        {/* barre cronologiche */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(' + RACES.length + ', 1fr)', gap: 8, alignItems: 'end', height: 190, marginBottom: 18 }}>
+      <ModulePanel code={'MOD.HYROX · storico_gare · ' + RACES.length + ' gare'} title="GARE HYROX" sub={'Dal debutto di Torino 2024 a oggi · tempi e piazzamenti ufficiali da results.hyrox.com · i tre formati NON sono confrontabili fra loro: ogni delta è calcolato solo contro la gara precedente dello stesso formato'} accent>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(' + RACES.length + ', 1fr)', gap: 6, alignItems: 'end', height: 200, marginBottom: 18 }}>
           {rows.map(function (x) {
             var r = x.r, f = FMT[r.fmt];
-            var h = Math.round((r.t / maxT) * 140);
+            var h = Math.round((r.t / maxT) * 130);
             return (
               <a key={r.id} href={r.href || 'storico.html'} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
-                <div className="display tabular" style={{ fontSize: 13, color: f.c, marginBottom: 6, textAlign: 'center' }}>{r.time}</div>
+                <div className="display tabular" style={{ fontSize: 12, color: f.c, marginBottom: 5, textAlign: 'center' }}>{r.time}</div>
                 {x.delta !== null && (
                   <div className="tabular" style={{ fontSize: 10, color: x.delta < 0 ? '#39E75F' : '#FF6B6B', marginBottom: 4, textAlign: 'center' }}>{mmss(x.delta)}</div>
                 )}
                 <div style={{ height: h, background: f.c, opacity: 0.85, border: '1px solid var(--line)' }} />
-                <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 6, textAlign: 'center', letterSpacing: '0.06em' }}>{r.city.toUpperCase()}</div>
+                <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 6, textAlign: 'center', letterSpacing: '0.04em' }}>{r.city.toUpperCase()}</div>
                 <div style={{ fontSize: 9, color: 'var(--fg-3)', textAlign: 'center' }}>{r.d}</div>
               </a>
             );
           })}
         </div>
-        {/* legenda */}
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 14 }}>
           {Object.keys(FMT).map(function (k) {
             return (
@@ -283,11 +340,10 @@ function HyroxRaces() {
             );
           })}
         </div>
-        {/* tabella */}
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead><tr>
-              {['DATA', 'GARA', 'FORMATO', 'TEMPO', 'Δ STESSO FORMATO', 'RUN TOT', 'ROXZONE', 'FC MED', 'PIAZZAMENTO'].map(function (h, i) {
+              {['DATA', 'GARA', 'FORMATO', 'TEMPO', 'Δ STESSO FORMATO', 'GIORNATA', 'EVENTO', 'RUN TOT', 'ROXZONE', 'FC MED'].map(function (h, i) {
                 return <th key={i} style={th}>{h}</th>;
               })}
             </tr></thead>
@@ -299,72 +355,38 @@ function HyroxRaces() {
                     <td style={td} className="tabular">{r.d}</td>
                     <td style={td}>
                       {r.href ? <a href={r.href} style={{ color: 'var(--accent)' }}>{r.city}</a> : r.city}
-                      {r.partner && <span style={{ color: 'var(--fg-3)' }}>{' · ' + r.partner}</span>}
+                      {r.partner && <span style={{ color: 'var(--fg-3)' }}>{' · ' + r.partner.split(' ')[0]}</span>}
                     </td>
                     <td style={Object.assign({}, td, { color: f.c, fontSize: 10, letterSpacing: '0.1em' })}>{f.label}</td>
                     <td style={Object.assign({}, td, { fontWeight: 700 })} className="display tabular">{r.time}</td>
                     <td style={Object.assign({}, td, { color: x.delta === null ? 'var(--fg-3)' : (x.delta < 0 ? '#39E75F' : '#FF6B6B') })} className="tabular">{x.delta === null ? '— prima del formato' : mmss(x.delta)}</td>
+                    <td style={Object.assign({}, td, { fontSize: 11 })}>{r.rank || '—'}</td>
+                    <td style={Object.assign({}, td, { fontSize: 11, color: 'var(--fg-3)' })}>{r.rankO || '—'}</td>
                     <td style={td} className="tabular">{r.runTot}</td>
                     <td style={td} className="tabular">{r.rox || '—'}</td>
                     <td style={td} className="tabular">{r.hrMed || '—'}</td>
-                    <td style={Object.assign({}, td, { color: 'var(--fg-3)', fontSize: 11, whiteSpace: 'normal' })}>{r.rank || '—'}</td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
         </div>
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 12, lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10 }}>
+          {'GIORNATA = piazzamento nella propria divisione il giorno di gara · EVENTO = piazzamento sull\'intera manifestazione, quando dura più giorni. Sono due numeri diversi e non vanno mescolati.\nI tempi di stazione dei doubles sono DI COPPIA: misurano la squadra, non il singolo.'}
+        </div>
       </ModulePanel>
 
-      {/* Progressione Doubles Open — l'unica linea pulita */}
-      <ModulePanel code="MOD.HYROX · doubles_open_stazioni" title="LA LINEA PULITA: DOUBLES OPEN CON ARMANDO" sub="Stessa categoria, stesso partner, stesse stazioni divise — le tre gare confrontabili una a una. I tempi di stazione sono DI COPPIA.">
-        {(() => {
-          var a = RACES.filter(function (r) { return r.fmt === 'doubles'; });
-          var labels = [['ski', 'SkiErg 1000 m'], ['push', 'Sled Push 50 m'], ['pull', 'Sled Pull 50 m'], ['bbj', 'Burpee BJ 80 m'], ['row', 'Row 1000 m'], ['fc', 'Farmers 200 m'], ['lun', 'Lunges 100 m'], ['wb', 'Wall Balls 100']];
-          function secs(t) { var p = t.split(':'); return (+p[0]) * 60 + (+p[1]); }
-          return (
-            <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead><tr>
-                  <th style={th}>SEGMENTO</th>
-                  {a.map(function (r) { return <th key={r.id} style={th}>{r.city + ' ' + r.d.slice(-4)}</th>; })}
-                  <th style={th}>{'Δ PRIMA → ULTIMA'}</th>
-                </tr></thead>
-                <tbody>
-                  <tr>
-                    <td style={Object.assign({}, td, { fontWeight: 700 })}>TOTALE</td>
-                    {a.map(function (r) { return <td key={r.id} style={Object.assign({}, td, { fontWeight: 700 })} className="display tabular">{r.time}</td>; })}
-                    <td style={Object.assign({}, td, { fontWeight: 700, color: (a[a.length - 1].t - a[0].t) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(a[a.length - 1].t - a[0].t)}</td>
-                  </tr>
-                  <tr>
-                    <td style={td}>Run total</td>
-                    {a.map(function (r) { return <td key={r.id} style={td} className="tabular">{r.runTot}</td>; })}
-                    <td style={Object.assign({}, td, { color: '#39E75F' })} className="tabular">{mmss(a[a.length - 1].runTotS - a[0].runTotS)}</td>
-                  </tr>
-                  <tr>
-                    <td style={td}>Roxzone</td>
-                    {a.map(function (r) { return <td key={r.id} style={td} className="tabular">{r.rox}</td>; })}
-                    <td style={Object.assign({}, td, { color: (a[a.length - 1].roxS - a[0].roxS) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(a[a.length - 1].roxS - a[0].roxS)}</td>
-                  </tr>
-                  {labels.map(function (L) {
-                    var d = secs(a[a.length - 1].st[L[0]]) - secs(a[0].st[L[0]]);
-                    return (
-                      <tr key={L[0]}>
-                        <td style={td}>{L[1]}</td>
-                        {a.map(function (r) { return <td key={r.id} style={td} className="tabular">{r.st[L[0]]}</td>; })}
-                        <td style={Object.assign({}, td, { color: d === 0 ? 'var(--fg-3)' : (d < 0 ? '#39E75F' : '#FF6B6B') })} className="tabular">{d === 0 ? '±0' : mmss(d)}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-              <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 14, lineHeight: 1.6 }}>
-                {'In un anno il totale scende di 4:50, ma tutto il guadagno viene dalla CORSA: 5:11 tolti al run total, da 38:52 a 33:41.\nLe stazioni nel complesso sono andate indietro: Sled Push +0:21, Sled Pull +0:39, Burpee BJ +0:19, Wall Balls +0:13.\nBologna resta la gara meglio eseguita sulle stazioni; Roma 2026 la migliore di corsa.'}
-              </div>
-            </div>
-          );
-        })()}
-      </ModulePanel>
+      <Serie races={armando}
+        code="MOD.HYROX · doubles_open_armando"
+        title="LA LINEA PULITA: DOUBLES OPEN CON ARMANDO"
+        sub={'Stessa categoria, stesso partner, stesse stazioni divise — le tre gare confrontabili una a una. Fra parentesi il piazzamento di segmento nella giornata.'}
+        read={'In un anno il totale scende di 4:50, ma tutto il guadagno viene dalla CORSA: 5:11 tolti al run total, da 38:52 a 33:41, con il piazzamento di corsa che passa da 364° a 47°.\nLe stazioni nel complesso sono andate indietro: Sled Push +0:21, Sled Pull +0:39, Burpee BJ +0:19, Wall Balls +0:13.\nBologna resta la gara meglio eseguita sulle stazioni (sei su otto dentro i primi 70, Row 22°); Roma 2026 la migliore di corsa e l\'unica col podio di categoria.'} />
+
+      <Serie races={singoli}
+        code="MOD.HYROX · singles"
+        title="I SINGOLI"
+        sub={'Tre gare in singolo: qui i tempi di stazione sono suoi al 100%, ed è il confronto che dice davvero come sta la forza.'}
+        read={'Da Rimini a Verona, in sei mesi, 3:22 tolti al totale: quasi tutto sulle stazioni (Burpee BJ −1:04, Lunges −1:08), mentre la corsa migliorava di appena 54″.\nDa Verona a Torino invece il totale risale di 49″ con le corse identiche (39:30 contro 39:32): il tempo si perde tutto sugli attrezzi, con Sled Pull +0:24 e Wall Balls +0:16.\nIl Sled Push è la costante negativa dei singoli: 3:11, 3:12 e 3:13 in tre gare, sempre oltre il 760° posto.'} />
     </div>
   );
 }

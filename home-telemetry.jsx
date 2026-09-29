@@ -351,8 +351,10 @@ function BodyComposition() {
   var span = Math.max(1, t1 - t0);
   var X = function (d) { return PAD + ((new Date(d).getTime() - t0) / span) * (W - PAD * 2); };
 
-  var kgs = BODY.map(function (b) { return b.kg; }).concat(PLICO.map(function (p) { return p.kg; }));
-  var bfs = BODY.filter(function (b) { return b.bf; }).map(function (b) { return b.bf; }).concat(PLICO.filter(function (p) { return p.bf; }).map(function (p) { return p.bf; }));
+  var plicoKg = PLICO.filter(function (p) { return p.kg; });
+  var plicoBf = PLICO.filter(function (p) { return p.bf; });
+  var kgs = BODY.map(function (b) { return b.kg; }).concat(plicoKg.map(function (p) { return p.kg; }));
+  var bfs = BODY.filter(function (b) { return b.bf; }).map(function (b) { return b.bf; }).concat(plicoBf.map(function (p) { return p.bf; }));
   var kgLo = Math.floor(Math.min.apply(null, kgs) - 1), kgHi = Math.ceil(Math.max.apply(null, kgs) + 1);
   var bfLo = Math.floor(Math.min.apply(null, bfs) - 1), bfHi = Math.ceil(Math.max.apply(null, bfs) + 1);
   var Ykg = function (v) { return H - ((v - kgLo) / (kgHi - kgLo)) * H; };
@@ -385,7 +387,10 @@ function BodyComposition() {
           <div className="display" style={{ fontSize: 26, lineHeight: 1, marginTop: 6 }}>PESO E MASSA GRASSA</div>
         </div>
         <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'right' }}>
-          {first.d.split('-').reverse().join('/') + ' → ' + last.d.split('-').reverse().join('/')}
+          {(function () {
+            var a = PLICO.length ? (PLICO[0].d < first.d ? PLICO[0].d : first.d) : first.d;
+            return a.split('-').reverse().join('/') + ' \u2192 ' + last.d.split('-').reverse().join('/');
+          })()}
         </div>
       </div>
 
@@ -421,12 +426,13 @@ function BodyComposition() {
             return <line key={i} x1="0" y1={Ykg(g)} x2={W} y2={Ykg(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
           })}
           <path d={line(BODY, Ykg, 'kg')} fill="none" stroke="#FFFFFF" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          {plicoKg.length > 1 && <path d={line(plicoKg, Ykg, 'kg')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {BODY.map(function (b, i) {
             return <circle key={i} cx={X(b.d)} cy={Ykg(b.kg)} r="3" fill={i === BODY.length - 1 ? '#39E75F' : '#FFFFFF'} vectorEffect="non-scaling-stroke">
               <title>{b.d.split('-').reverse().join('/') + ' · ' + b.kg + ' kg' + (b.bf ? ' · ' + b.bf + '% grasso' : '')}</title>
             </circle>;
           })}
-          {PLICO.map(function (p, i) {
+          {plicoKg.map(function (p, i) {
             return <g key={'p' + i}>
               <line x1={X(p.d)} y1="0" x2={X(p.d)} y2={H} stroke="#FFB454" strokeWidth="1" strokeDasharray="2 4" vectorEffect="non-scaling-stroke" />
               <rect x={X(p.d) - 5} y={Ykg(p.kg) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
@@ -445,21 +451,24 @@ function BodyComposition() {
             return <line key={i} x1="0" y1={Ybf(g)} x2={W} y2={Ybf(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
           })}
           <path d={line(bodyBf, Ybf, 'bf')} fill="none" stroke="#FF6B9D" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          {plicoBf.length > 1 && <path d={line(plicoBf, Ybf, 'bf')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {bodyBf.map(function (b, i) {
             return <circle key={i} cx={X(b.d)} cy={Ybf(b.bf)} r="3" fill={i === bodyBf.length - 1 ? '#39E75F' : '#FF6B9D'} vectorEffect="non-scaling-stroke">
               <title>{b.d.split('-').reverse().join('/') + ' · ' + b.bf + '%'}</title>
             </circle>;
           })}
-          {PLICO.filter(function (p) { return p.bf; }).map(function (p, i) {
+          {plicoBf.map(function (p, i) {
             return <rect key={'pb' + i} x={X(p.d) - 5} y={Ybf(p.bf) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
               <title>{'ZAPPITELLI ' + p.d.split('-').reverse().join('/') + ' · ' + p.bf + '% (plicometria)'}</title>
             </rect>;
           })}
         </svg>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6, fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em' }}>
-          {months.filter(function (m, i) { return i % 2 === 0; }).map(function (m) {
-            return <span key={m}>{MN[parseInt(m.slice(5), 10) - 1]}</span>;
-          })}
+          {(function () {
+            var y0 = new Date(t0).getFullYear(), y1 = new Date(t1).getFullYear(), o = [];
+            for (var y = y0; y <= y1; y++) o.push(y);
+            return o.map(function (y) { return <span key={y}>{y}</span>; });
+          })()}
         </div>
       </div>
 
@@ -469,10 +478,16 @@ function BodyComposition() {
         <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FF6B9D', display: 'inline-block' }} />MASSA GRASSA (INDEX S2)</span>
         <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 9, height: 9, background: '#FFB454', display: 'inline-block' }} />ZAPPITELLI (PLICOMETRIA)</span>
       </div>
-      <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10 }}>
-        {'In un anno il peso scende di ' + Math.abs(dKg).toFixed(1).replace('.', ',') + ' kg, ma il dato che conta è la ripartizione: grasso ' + n(dFat) + ' kg, massa magra ' + n(dLean) + ' kg. Il calo è quasi tutto grasso.'}
+      <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10, whiteSpace: 'pre-line' }}>
+        {'Sull\'ultimo anno di bilancia il peso scende di ' + Math.abs(dKg).toFixed(1).replace('.', ',') + ' kg, ma il dato che conta è la ripartizione: grasso ' + n(dFat) + ' kg, massa magra ' + n(dLean) + ' kg. Il calo è quasi tutto grasso.'}
         {PLICO.length
-          ? '\nDue metodi diversi: la bilancia usa la bioimpedenza, Zappitelli la plicometria col calibro. Sui soggetti allenati la plicometria legge di norma una massa grassa più bassa, quindi le due serie non vanno mediate: si guarda la TENDENZA di ciascuna.'
+          ? (function () {
+            var lp = plicoBf[plicoBf.length - 1], fp = plicoBf[0];
+            return '\nLE DUE SERIE NON COINCIDONO, E LA DISTANZA È GRANDE: la bilancia legge ' + String(lb.bf).replace('.', ',') + '% di massa grassa, l\'ultima plicometria di Zappitelli ' + String(lp.bf).replace('.', ',') + '%. Quindici punti non sono un problema di taratura: i due numeri non possono essere entrambi giusti.'
+              + '\nI due metodi sbagliano in direzioni note e opposte. La bioimpedenza domestica SOVRASTIMA il grasso, e idratazione, pasti e allenamento recente la spostano di giorno in giorno. Le formule su pliche SOTTOSTIMANO sui soggetti alti e pesanti, perché tarate su popolazioni di corporatura media. Il valore vero sta quasi certamente in mezzo.'
+              + '\nQuello che va guardato è la TENDENZA di ciascuna serie, non il livello — e lì sono d\'accordo: la bilancia fa ' + String(fb.bf).replace('.', ',') + '% → ' + String(lb.bf).replace('.', ',') + '%, la plicometria ' + String(fp.bf).replace('.', ',') + '% → ' + String(lp.bf).replace('.', ',') + '% partendo dal ' + fp.d.split('-').reverse().join('/') + '. Scendono entrambe.'
+              + '\nAnche i pesi non coincidono, con Zappitelli sempre circa due chili più alto: bilance diverse, ore e abbigliamento diversi. Ogni serie va letta contro sé stessa.';
+          })()
           : '\nLe plicometrie di Zappitelli entreranno qui come quadrati arancioni, su una linea propria: metodo diverso dalla bioimpedenza, le due serie si leggono in parallelo e non si mediano.'}
       </div>
     </div>
