@@ -1432,9 +1432,9 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 1h @5\'40"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' più lunga e 10"/km più lenta della versione pre-gara · MyRun di casa, pendenza 0,5% fissa sui 60\'', dur: '69\'', result: 'Blocco 1h: 10,563 km @5:40.2/km ESATTO sul target · FC 124,5 max 136 · drift EF −4,9% · allunghi 8/8 a 17,2 km/h · totale 12,099 km in 1:08:47 · cad 168' },
     ]
   },
-  { day: 'MAR', date: '29', title: 'PENDENZA 2×10\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 55, kind: 'run', done: false,
+  { day: 'MAR', date: '29', title: 'PENDENZA 2×10\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 57, kind: 'run', done: true,
     blocks: [
-      { code: 'RUN', t: 'Run · 15\' risc + 2×10\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata (140 bpm = Z3 bassa): il passo è la conseguenza, non il bersaglio · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '55\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 15\' risc + 2×10\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata (140 bpm = Z3 bassa): il passo è la conseguenza, non il bersaglio · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '57\'', result: "Blocchi 2×10:00 @8%: 1.332,8 m @7:30.2/km FC 140,9 · 1.317,3 m @7:35.5/km FC 141,6 — target 140 centrato, Z3 94% e mai Z4 · rec 6' a 9,91 km/h con FC 131,6 · defa 15:55 sui 10' prescritti · totale 8,568 km in 56:55 · D+ 243 m del MyRun conferma l'8%" },
     ]
   },
   { day: 'MER', date: '30', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
@@ -1492,7 +1492,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 12.099];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 20.667];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1501,10 +1501,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 748.174,
   ski: 690.654,
-  run: 866.112,
+  run: 874.680,
   bike: 429.415,
   swim: 57.628,
-  total: 2791.983,
+  total: 2800.551,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7713,6 +7713,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '29 SET', title: 'Run · Tapis · Pendenza 2×10′ @8%', kind: 'run', filone: 'run-tapis-pendenza', filoneLabel: 'Tapis in pendenza', surf: 'tapis', m: { lavoro: '2×10′ @8%', dur: '56:55', dist: '8,568 km', pace: '7:32.8', unit: '/km (blocchi)', fcMed: '141,3', fcMax: '148', tgt: '140', drift: '−1,7%', ef: '0,0563', src: 'fit' }, dur: 57, load: 'Z3', rpe: 6, note: "FC comandata centrata: 141,3 su 140, zone dei blocchi Z3 94% e mai Z4\nSecondo blocco più corto del primo di 15,5 m (−1,2%) a pari FC: il costo dei 20′ è quasi nullo\nD+ 243 m del MyRun conferma l'8%: prima volta che la pendenza è verificata e non solo dichiarata",
+    details: { summary: "MyRun di casa, 15:41-16:38 · pendenza 8% sui due blocchi e 0,5% su riscaldamento, recupero e defaticamento (dato di Federico).\nProtocollo a FC comandata: il bersaglio è 140 bpm, il passo è la conseguenza.\nBLOCCO 1 (10:00 esatti): 1.332,8 m @7:30.2/km · FC 140,9 su target 140 · EF 0,0574 → 0,0561 (−2,3%).\nBLOCCO 2 (10:00 esatti): 1.317,3 m @7:35.5/km · FC 141,6 · EF 0,0584 → 0,0533 (−8,7%): parte più forte (7:20.5 nella prima metà) e cede di più (7:51.6 nella seconda).\nInsieme: 2.650,1 m in 20:00 @7:32.8/km, FC 141,3 · zone dei blocchi Z3 94% · Z2 6%, mai Z4.\nIl costo del secondo blocco è minimo: 15,5 m in meno (−1,2%) ed EF −1,7% rispetto al primo.\nIl recupero non è un recupero: 6:00 di corsetta a 9,91 km/h con FC 131,6 (minimo 124), appena 9 battiti sotto il blocco.\nLAP SBAGLIATO: il secondo lap è stato chiuso a 28:16 invece che a 25:00, 3:16 dentro il recupero. I blocchi veri (15:00-25:00 e 30:50-40:50) sono ricostruiti dal profilo di velocità, che cade da 8,5 a 7,2-7,9 km/h nei due tratti in salita, e il secondo è confermato dal lap 4: 599,8 s, dieci minuti esatti.\nRiscaldamento 14:51 · 2.268,7 m in rampa da 7,59 a 11,59 km/h · FC 111,4.\nDefaticamento 15:55 · 2.638,9 m @6:01.9/km · FC 135,5 — prescritti 10′, fatti quasi 16′.\nTotale 8.567,9 m in 56:55 @6:38.6/km · FC 130,9 media, max 148 · cadenza 166 · 803 cal · TE 3,1 aerobico.\nDisplay MyRun: 8,59 km · 57:00 · 980 kcal · FC 130/148 · velocità media 9,0 max 11,6 km/h · inclinazione media 2,8% max 8,0% · D+ 243 m.\nIL D+ CONFERMA LA PENDENZA: 8% sui 2.650 m dei blocchi più 0,5% sui 5.918 m restanti fanno 241,5 m calcolati contro i 243 misurati dal tapis.\nSerie storica dello stesso protocollo a FC comandata, fuori dalla finestra di confronto dei 35 giorni: 06/07 25′ @8% a 141,9 bpm con 7:41/km · 13/07 27′ @8% a 142,6 bpm con 7:42/km · oggi 7:30.2 e 7:35.5 a 140-141,6. Più veloce a FC più bassa, ma su blocchi da 10′ invece che da 25-27′: la struttura spezzata spiega gran parte del vantaggio.", gps: null } },
   { date: '28 SET', title: 'Run · Tapis · 1h @5\u203240\u2033 + 8 allunghi', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Run medio tapis', m: { lavoro: '12,099 km', dur: '1:08:47', pace: '5:40.2', unit: '/km (blocco)', fcMed: '124,5', fcMax: '151', tgt: '5:40', cad: '168', src: 'garmin' }, vs: { d: '21 SET', tag: 'Stessa struttura, blocco da 60\u2032 invece di 35\u2032 e passo 10\u2033/km pi\u00f9 lento \u00b7 prima uscita dopo la gara \u2014 Tier 2', items: [{ v: 'passo inchiodato al target: 5:40.2 contro 5\u203240\u2033 chiesto', g: 1 }, { v: 'FC media 124,5 contro 139,9: 15 battiti in meno su un blocco quasi doppio', g: 1 }, { v: 'drift \u22124,9% contro \u22128,8%, su 60\u2032 invece di 35\u2032', g: 1 }] }, dur: 69, load: 'Z2', rpe: 4, note: 'Prima uscita dopo Roma: 60\u2032 a 5:40.2/km, il target centrato al decimo di secondo\nFC media 124,5 e mai sopra 136 nel blocco: tutto in Z2, drift \u22124,9% su un\'ora\nPendenza 0,5% fissa (MyRun di casa) \u00b7 allunghi 8/8 a 17,2 km/h',
     details: { summary: 'MyRun di casa, 18:12-19:21 \u00b7 pendenza 0,5% fissa per i 60\u2032 (dato di Federico: il tapis non la trasmette).\nBlocco da 1h: 10.563,4 m in 59:54 @5:40.2/km \u2014 consegna esatta \u00b7 FC 124,5 media, max 136.\nPasso identico nei tre terzi (5:40.3 ovunque): nessuna oscillazione.\nDrift solo cardiaco: FC 119,9 \u2192 126,0 \u2192 127,7 nei tre terzi, EF 0,0883 \u2192 0,0829 (\u22124,9% sull\'ora).\nAllunghi 8/8 a 17,2 km/h comandati, 23-30\u2033 ciascuno \u00b7 FC di picco in DISCESA lungo la serie: 149 \u2192 131.\nTotale 12.099,2 m in 1:08:47 \u00b7 923 cal \u00b7 cadenza 168 \u00b7 TE 2,8 aerobico.\nDisplay MyRun: 12,03 km, 1254 kcal, D+ 53 m, inclinazione media 0,4% max 0,5% \u2014 distanza a 69 m dal Garmin (0,6%).', gps: null } },
   { date: '24 SET', title: 'Hyrox · Roma · Doubles Men 1:03:53', kind: 'hyrox', filone: 'hyrox-gara', filoneLabel: 'Gara Hyrox', pb: '3° AG del giovedì', m: { lavoro: 'DOUBLES · 8 stazioni divise', dur: '1:03:53', dist: '8 km (nom.)', pace: '4:12.6', unit: '/km nominale', fcMed: '158,2', fcMax: '174', src: 'fit+hyrox' }, vs: { d: '04 APR', tag: 'Bologna Doubles 1:03:27, stesso partner e stessa categoria — Tier 1 sul tempo totale', items: [{ v: 'tempo +26\u2033 (1:03:53 contro 1:03:27)', g: 0 }, { v: 'corsa e SkiErg (47°) le uniche voci sopra il piazzamento complessivo (51°)', g: 1 }] }, dur: 64, load: 'RACE', rpe: 10, note: 'Rank di stazione = piazzamento DEL GIORNO dentro la divisione (fonte Rox Lyfe): corsa 47° e SkiErg 47° sono le uniche voci sopra il 51° complessivo, Sled Push 223° il buco nero\nIL LIMITE NON \u00c8 STATO CARDIACO: alla sesta corsa la FC scende a 158 e l\'efficienza MIGLIORA (recupero), alla settima risale a 164 col miglior passo della seconda metà\nLA GARA SI CHIUDE SUI CRAMPI ai lunges: nell\'ottava corsa FC e velocità calano insieme = limite periferico',
@@ -11285,7 +11287,7 @@ const BADGES = {
       go: 'Nessuna azione: la finestra è chiusa. Restano aperti i 4 h di Nuoto a settembre e, in vasca, Tempo di nuotare e Prendi una decisione.' },
     // ── ALTRO
     { n: 'Attivita\' a settembre', en: 'Active September', cat: 'MISC', tipo: 'cumulativa',
-      req: '20 attivita\' nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '18 / 20 (sito, 29/09)',
+      req: '20 attivita\' nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '19 / 20 (sito, 29/09)',
       why: 'Ad agosto chiuso in anticipo col volume normale.',
       go: 'Nessuna azione.' },
     { n: 'Piu\' forza a settembre', en: 'September Gains', cat: 'STRENGTH', tipo: 'cumulativa',
