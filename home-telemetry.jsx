@@ -199,6 +199,34 @@ function HomeTelemetry() {
         })}
       </div>
 
+      {/* TODAY BAR */}
+      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 16 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
+          <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em' }}>
+            // SESSION_TODAY · {today.day} {today.date} · S{ATHLETE.programWeek}
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{today.kind.toUpperCase()}</div>
+        </div>
+        <div className="r-today" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 200px', gap: 32, alignItems: 'center' }}>
+          <div>
+            <div className="display" style={{ fontSize: 40, lineHeight: 1 }}>{today.title}</div>
+            <div style={{ fontSize: 13, color: 'var(--fg-2)', marginTop: 8 }}>{today.sub}</div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+            <Kv k="DURATA" v={today.duration + '\''} big />
+            <Kv k="ZONA" v={today.load} big />
+            <Kv k="BLOCCHI" v={today.blocks ? today.blocks.length : 1} big />
+          </div>
+          <a href="agenda.html" style={{
+            background: 'var(--accent)', color: '#000', padding: '16px 20px',
+            fontFamily: 'var(--display)', fontSize: 18, letterSpacing: '0.05em', fontWeight: 700,
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center'
+          }}>
+            VEDI DETTAGLI <Icon.arrow width="16" height="16" />
+          </a>
+        </div>
+      </div>
+
       {/* COMPOSIZIONE CORPOREA */}
       <BodyComposition />
 
@@ -233,34 +261,6 @@ function HomeTelemetry() {
               <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>Ricette settimanali dettagliate</div>
             </div>
             <Icon.arrow width="16" height="16" style={{ color: '#2D6A4F' }} />
-          </a>
-        </div>
-      </div>
-
-      {/* TODAY BAR */}
-      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 16 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
-          <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em' }}>
-            // SESSION_TODAY · {today.day} {today.date} · S{ATHLETE.programWeek}
-          </div>
-          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{today.kind.toUpperCase()}</div>
-        </div>
-        <div className="r-today" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 200px', gap: 32, alignItems: 'center' }}>
-          <div>
-            <div className="display" style={{ fontSize: 40, lineHeight: 1 }}>{today.title}</div>
-            <div style={{ fontSize: 13, color: 'var(--fg-2)', marginTop: 8 }}>{today.sub}</div>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
-            <Kv k="DURATA" v={today.duration + '\''} big />
-            <Kv k="ZONA" v={today.load} big />
-            <Kv k="BLOCCHI" v={today.blocks ? today.blocks.length : 1} big />
-          </div>
-          <a href="agenda.html" style={{
-            background: 'var(--accent)', color: '#000', padding: '16px 20px',
-            fontFamily: 'var(--display)', fontSize: 18, letterSpacing: '0.05em', fontWeight: 700,
-            display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-          }}>
-            VEDI DETTAGLI <Icon.arrow width="16" height="16" />
           </a>
         </div>
       </div>
@@ -376,6 +376,33 @@ function BodyComposition() {
   BODY.forEach(function (b) { var k = b.d.slice(0, 7); if (months.indexOf(k) < 0) months.push(k); });
   var MN = ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'];
 
+
+  // asse x condiviso: tick posizionati sulla scala temporale reale
+  function AxisX() {
+    var d0 = new Date(t0), d1 = new Date(t1);
+    var ticks = [];
+    var y = d0.getFullYear(), m = d0.getMonth() <= 5 ? 0 : 6;
+    var cur = new Date(y, m, 1);
+    while (cur.getTime() < d0.getTime()) { cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1); }
+    while (cur.getTime() <= d1.getTime()) {
+      ticks.push({ t: cur.getTime(), lab: MN[cur.getMonth()] + ' ' + String(cur.getFullYear()).slice(2) });
+      cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1);
+    }
+    return (
+      <div style={{ position: 'relative', height: 16, marginTop: 4 }}>
+        {ticks.map(function (k, i) {
+          var pct = ((k.t - t0) / span) * 100;
+          return (
+            <span key={i} style={{
+              position: 'absolute', left: pct + '%', transform: 'translateX(-50%)',
+              fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.08em', whiteSpace: 'nowrap'
+            }}>{k.lab}</span>
+          );
+        })}
+      </div>
+    );
+  }
+
   var box = { border: '1px solid var(--line)', padding: '12px 14px', background: 'var(--bg)' };
   var lab = { fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.16em' };
 
@@ -441,6 +468,7 @@ function BodyComposition() {
             </g>;
           })}
         </svg>
+        <AxisX />
       </div>
 
       {/* grafico massa grassa */}
@@ -463,13 +491,7 @@ function BodyComposition() {
             </rect>;
           })}
         </svg>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6, fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em' }}>
-          {(function () {
-            var y0 = new Date(t0).getFullYear(), y1 = new Date(t1).getFullYear(), o = [];
-            for (var y = y0; y <= y1; y++) o.push(y);
-            return o.map(function (y) { return <span key={y}>{y}</span>; });
-          })()}
-        </div>
+        <AxisX />
       </div>
 
       {/* legenda + lettura */}
