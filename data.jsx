@@ -33,6 +33,46 @@ const STATIONS = [
   { code: 'WB', name: 'Wall Balls x100', pb: '5:27', unit: 'time' },
 ];
 
+// ── STORICO GARE HYROX — cronologico, dalla prima all'ultima.
+// ATTENZIONE: tre formati diversi, NON confrontabili fra loro.
+//   single      = Singles, fa tutto lui
+//   doubles     = Doubles Men Open con Armando, stazioni divise "I go you go"
+//   doublesPro  = Doubles PRO con Mattia, stessi lavori ma pesi PRO
+// t = tempo ufficiale in secondi (per grafici e delta) · le stazioni dei doubles sono tempi DI COPPIA.
+const RACES = [
+  { id: 'roma25', d: '28 SET 2025', iso: '2025-09-28', city: 'Roma', fmt: 'doubles', fmtLabel: 'Doubles Men Open', partner: 'Armando', bib: '103020',
+    time: '1:08:43', t: 4123, rank: null,
+    runTot: '38:52', runTotS: 2332, bestRun: '4:13', rox: '6:42', roxS: 402, hrMed: '155', hrMax: '168', cal: '1.272',
+    st: { ski: '4:01', push: '1:34', pull: '2:35', bbj: '2:38', row: '4:10', fc: '1:23', lun: '3:15', wb: '3:38' },
+    note: 'Prima gara Hyrox in coppia con Armando.' },
+  { id: 'verona25', d: 'DIC 2025', iso: '2025-12-06', city: 'Verona', fmt: 'single', fmtLabel: 'Singles Open M 40-44', partner: null, bib: '102025',
+    time: '1:17:44', t: 4664, rank: '476° overall · 60° AG',
+    runTot: '39:30', runTotS: 2370, bestRun: '4:39', rox: '6:31', roxS: 391, hrMed: null, hrMax: null, cal: null,
+    st: { ski: '4:17', push: '3:11', pull: '3:42', bbj: '4:30', row: '4:23', fc: '1:43', lun: '4:33', wb: '5:27' },
+    note: 'PB singolo. Giorno esatto non a archivio: la tappa si è corsa il 5-7 dicembre.' },
+  { id: 'torino26', d: '31 GEN 2026', iso: '2026-01-31', city: 'Torino', fmt: 'single', fmtLabel: 'Singles Open Men', partner: null, bib: null,
+    time: '1:18:33', t: 4713, rank: '55° AG',
+    runTot: '39:35', runTotS: 2375, bestRun: '3:44', rox: null, roxS: null, hrMed: '149', hrMax: '163', cal: null,
+    st: { ski: '4:18', push: '3:12', pull: '4:06', bbj: '4:51', row: '4:37', fc: '1:37', lun: '4:23', wb: '5:43' },
+    note: 'Corse identiche a Verona (4:57/km), 49″ persi tutti sulle stazioni.' },
+  { id: 'bologna26', d: '04 APR 2026', iso: '2026-04-04', city: 'Bologna', fmt: 'doubles', fmtLabel: 'Doubles Men Open', partner: 'Armando', bib: '164034',
+    time: '1:03:27', t: 3807, rank: null,
+    runTot: '35:45', runTotS: 2145, bestRun: '4:20', rox: '5:12', roxS: 312, hrMed: '155', hrMax: '171', cal: '1.226',
+    st: { ski: '3:45', push: '1:34', pull: '2:23', bbj: '2:14', row: '3:58', fc: '1:40', lun: '3:24', wb: '3:37' },
+    note: '−5:16 su Roma 2025 a frequenza media identica: efficienza pura, non più sforzo.' },
+  { id: 'rimini26', d: '30 MAG 2026', iso: '2026-05-30', city: 'Rimini', fmt: 'doublesPro', fmtLabel: 'Doubles PRO', partner: 'Mattia', bib: null,
+    time: '1:15:26', t: 4526, rank: '183° PRO Doubles M 40-44',
+    runTot: '39:59', runTotS: 2399, bestRun: '4:25', rox: '4:39', roxS: 279, hrMed: '146', hrMax: '166', cal: null,
+    st: { ski: '4:01', push: '3:02', pull: '5:01', bbj: '2:53', row: '4:31', fc: '1:42', lun: '4:37', wb: '4:51' },
+    note: 'Unica gara coi pesi PRO: i tempi di stazione non vanno confrontati con gli Open.' },
+  { id: 'roma26', d: '24 SET 2026', iso: '2026-09-24', city: 'Roma', fmt: 'doubles', fmtLabel: 'Doubles Men Open', partner: 'Armando', bib: '105018',
+    time: '1:03:53', t: 3833, rank: '51° del giorno · 3° AG · 213° sui 5 giorni',
+    runTot: '33:41', runTotS: 2021, bestRun: '3:41', rox: '5:25', roxS: 325, hrMed: '158,2', hrMax: '174', cal: null,
+    st: { ski: '3:47', push: '1:55', pull: '3:14', bbj: '2:57', row: '4:19', fc: '1:34', lun: '3:16', wb: '3:51' },
+    href: 'gara-roma.html',
+    note: 'Miglior corsa di sempre (33:41) ma peggior Sled Push: la gara si chiude sui crampi ai lunges.' },
+];
+
 // Week archive — completed weeks
 const WEEK_ARCHIVE = [
   { id: 'S17', label: 'S17 · 27 APR → 03 MAG', range: '27 APR → 03 MAG 2026', programWeek: 18, days: [
@@ -11559,4 +11599,4 @@ const HYDRATION = [
 
 window.TRAINING = {
   NEXTWEEK,
-  PROG, RACE, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };
+  PROG, RACE, RACES, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };
