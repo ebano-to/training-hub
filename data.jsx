@@ -1427,9 +1427,9 @@ const WEEK_ARCHIVE = [
 
 // Current week — S40 (28 SET - 04 OTT 2026) · post-gara
 const WEEK = [
-  { day: 'LUN', date: '28', title: 'RUN 1H @5\'40" + ALLUNGHI', sub: 'Prima settimana post-gara · programma di Mattia non ancora arrivato', load: 'Z2', duration: 70, kind: 'run', done: false,
+  { day: 'LUN', date: '28', title: 'RUN 1H @5\'40" + ALLUNGHI', sub: 'Prima uscita post-Roma · target centrato al decimo', load: 'Z2', duration: 69, kind: 'run', done: true,
     blocks: [
-      { code: 'RUN', t: 'Run · 1h @5\'40"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' più lunga e 10"/km più lenta della versione pre-gara', dur: '70\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 1h @5\'40"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' più lunga e 10"/km più lenta della versione pre-gara · MyRun di casa, pendenza 0,5% fissa sui 60\'', dur: '69\'', result: 'Blocco 1h: 10,563 km @5:40.2/km ESATTO sul target · FC 124,5 max 136 · drift EF −4,9% · allunghi 8/8 a 17,2 km/h · totale 12,099 km in 1:08:47 · cad 168' },
     ]
   },
   { day: 'MAR', date: '29', title: 'PENDENZA 2×10\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 55, kind: 'run', done: false,
@@ -1492,7 +1492,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0];
 const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 12.099];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1501,10 +1501,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 748.174,
   ski: 690.654,
-  run: 854.013,
+  run: 866.112,
   bike: 429.415,
   swim: 57.628,
-  total: 2779.884,
+  total: 2791.983,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -7713,6 +7713,8 @@ const EF_TREND = [
 
 // Storico — real recent workouts (più recenti prima)
 const HISTORY = [
+  { date: '28 SET', title: 'Run · Tapis · 1h @5\u203240\u2033 + 8 allunghi', kind: 'run', filone: 'run-tapis-medio', filoneLabel: 'Run medio tapis', m: { lavoro: '12,099 km', dur: '1:08:47', pace: '5:40.2', unit: '/km (blocco)', fcMed: '124,5', fcMax: '151', tgt: '5:40', cad: '168', src: 'garmin' }, vs: { d: '21 SET', tag: 'Stessa struttura, blocco da 60\u2032 invece di 35\u2032 e passo 10\u2033/km pi\u00f9 lento \u00b7 prima uscita dopo la gara \u2014 Tier 2', items: [{ v: 'passo inchiodato al target: 5:40.2 contro 5\u203240\u2033 chiesto', g: 1 }, { v: 'FC media 124,5 contro 139,9: 15 battiti in meno su un blocco quasi doppio', g: 1 }, { v: 'drift \u22124,9% contro \u22128,8%, su 60\u2032 invece di 35\u2032', g: 1 }] }, dur: 69, load: 'Z2', rpe: 4, note: 'Prima uscita dopo Roma: 60\u2032 a 5:40.2/km, il target centrato al decimo di secondo\nFC media 124,5 e mai sopra 136 nel blocco: tutto in Z2, drift \u22124,9% su un\'ora\nPendenza 0,5% fissa (MyRun di casa) \u00b7 allunghi 8/8 a 17,2 km/h',
+    details: { summary: 'MyRun di casa, 18:12-19:21 \u00b7 pendenza 0,5% fissa per i 60\u2032 (dato di Federico: il tapis non la trasmette).\nBlocco da 1h: 10.563,4 m in 59:54 @5:40.2/km \u2014 consegna esatta \u00b7 FC 124,5 media, max 136.\nPasso identico nei tre terzi (5:40.3 ovunque): nessuna oscillazione.\nDrift solo cardiaco: FC 119,9 \u2192 126,0 \u2192 127,7 nei tre terzi, EF 0,0883 \u2192 0,0829 (\u22124,9% sull\'ora).\nAllunghi 8/8 a 17,2 km/h comandati, 23-30\u2033 ciascuno \u00b7 FC di picco in DISCESA lungo la serie: 149 \u2192 131.\nTotale 12.099,2 m in 1:08:47 \u00b7 923 cal \u00b7 cadenza 168 \u00b7 TE 2,8 aerobico.\nDisplay MyRun: 12,03 km, 1254 kcal, D+ 53 m, inclinazione media 0,4% max 0,5% \u2014 distanza a 69 m dal Garmin (0,6%).', gps: null } },
   { date: '24 SET', title: 'Hyrox · Roma · Doubles Men 1:03:53', kind: 'hyrox', filone: 'hyrox-gara', filoneLabel: 'Gara Hyrox', pb: '3° AG del giovedì', m: { lavoro: 'DOUBLES · 8 stazioni divise', dur: '1:03:53', dist: '8 km (nom.)', pace: '4:12.6', unit: '/km nominale', fcMed: '158,2', fcMax: '174', src: 'fit+hyrox' }, vs: { d: '04 APR', tag: 'Bologna Doubles 1:03:27, stesso partner e stessa categoria — Tier 1 sul tempo totale', items: [{ v: 'tempo +26\u2033 (1:03:53 contro 1:03:27)', g: 0 }, { v: 'corsa e SkiErg (47°) le uniche voci sopra il piazzamento complessivo (51°)', g: 1 }] }, dur: 64, load: 'RACE', rpe: 10, note: 'Rank di stazione = piazzamento DEL GIORNO dentro la divisione (fonte Rox Lyfe): corsa 47° e SkiErg 47° sono le uniche voci sopra il 51° complessivo, Sled Push 223° il buco nero\nIL LIMITE NON \u00c8 STATO CARDIACO: alla sesta corsa la FC scende a 158 e l\'efficienza MIGLIORA (recupero), alla settima risale a 164 col miglior passo della seconda metà\nLA GARA SI CHIUDE SUI CRAMPI ai lunges: nell\'ottava corsa FC e velocità calano insieme = limite periferico',
     details: { summary: 'HYROX ROMA, DOUBLES Men con Attilio Armando Tronca · bib 105018 · start 10:50:02 · FIT allineato allo start esatto: la roxzone ricalcolata dai battiti fa 5:25, identica al dato ufficiale.\n1:03:53 · nessuna penalità · due classifiche: OVERALL dei 5 giorni 213° assoluto e 10° di categoria 40-44, nella classifica del solo giovedì 51° e 3° AG.\nRun total 33:41: 9° sull\'overall (47° nel giorno) · best run lap 3:41: 6° overall · roxzone 5:25.\nFC di gara: media 158,2 · max 174 (toccato nella prima corsa) · minimo 100.\nLe corse: 5:15 di partenza in gruppo, poi 3:41 · 3:57 · 4:00 · 4:04 · 4:04 · 3:59 e l\'ottava a 4:44.\nMattia aveva chiesto 4\u203225\u2033 sulle prime cinque: le corse 2-7 sono state fatte tra 3:41 e 4:04, l\'ultima paga 1:03 rispetto alla migliore.\nRIPARTIZIONE CON ARMANDO (dichiarata da Federico): SkiErg 150/150/200/200/150/150 alternati = 500 m a testa · Sled Push e Pull 12,5 m a testa poi frazioni da 6,25 · BBJ 3-4 salti a testa, aperti e chiusi da Armando · Row 250 Armando + 500 FEDERICO + 250 Armando · Farmers 100+100 · Lunges ~10 a testa ma gli ultimi ~20 li ha chiusi Armando da solo, Federico in crampo · Wall Balls serie da 10 e 15.\nIL ROW È IL RECUPERO DELLA GARA: si entra a 162,7 (coda della quinta corsa), la FC crolla a 135,5 nei 250 m di Armando, risale a 148,6 nei 500 m di Federico e riscende a 139,4 all\'uscita. I suoi 500 m costano ~13 battiti sopra il minimo e non superano mai 150 — l\'unico segmento sotto soglia della gara.\nLe medie per frazione non vanno confrontate tra loro: quella di ingresso contiene il transitorio di discesa dalla corsa.\nCOME SI LEGGONO I RANK (fonte Rox Lyfe, leaderboard-explained): i piazzamenti di stazione sono quelli DEL GIORNO, dentro la propria divisione. Valgono quindi i numeri della vista \"Doubles - Thursday\": SkiErg 47 · Push 223 · Pull 169 · BBJ 132 · Row 62 · Farmers 132 · Lunges 121 · WB 62 · Roxzone 69 · Run Total 47 · Best Run 41, con overall 51° e 3° AG.\nLa vista \"Overall\" mostra per le stazioni numeri molto migliori (14 · 48 · 68 · 35 · 15 · 50 · 26 · 16, Run Total 9): non è documentato su cosa siano calcolati — l\'ipotesi coerente coi numeri è la categoria d\'età, ma resta un\'inferenza. NON usarli.\nLETTURA: rispetto al 51° complessivo, solo corsa (47°) e SkiErg (47°) stanno sopra; tutto il resto sta sotto, con Sled Push 223° come voce peggiore.\nDUE MISURE DI PACE, entrambe legittime: NOMINALE 4:12.6/km (33:41 sugli 8×1.000 m ufficiali — è il 4:13 che mostra ROXFIT e il numero con cui ci si confronta tra atleti) e MISURATO 4:26.2/km (i 7.592 m del Garmin dai lap manuali). Scarto 408 m, il 5,1%.\nIl Garmin indoor stima dai passi e su un percorso a serpentina pu\u00f2 sbagliare in entrambi i versi; Hyrox certifica 8 km. Per i confronti tra gare usare SEMPRE il nominale.\nDistanze dai lap: RUN 1 = 1.323 m · RUN 2-7 = 857-907 (media 877) · RUN 8 = 1.008.\nIL DATO SOLIDO, CHE NON DIPENDE DALLA DISTANZA, \u00c8 LA FREQUENZA: 163 · 169 · 165 · 165 · 163 · 158 · 164 · 158 di media, con 174 di picco gi\u00e0 nella prima corsa (FCmax 177).\nLe prime cinque corse a 163-169 di media (in allenamento lo stesso passo-gara dava 147-152). Ma il cuore NON \u00e8 stato il limite: alla sesta corsa la FC scende a 158 con passo uguale o migliore — efficienza in salita, cio\u00e8 recupero — e alla settima risale a 164 firmando il miglior passo della seconda met\u00e0.\nL\'unico calo vero \u00e8 l\'ottava corsa, dove FC e velocit\u00e0 scendono INSIEME: firma di limite periferico. Il punto di rottura sono i crampi ai Sandbag Lunges, la stazione precedente, dove Armando ha chiuso ~20 ripetizioni da solo.\nSecondo episodio di crampi in un mese (31/08 run interrotta): da indagare \u2014 idratazione e sali, condizionamento sui lunges, o costo muscolare della partenza.\nCadenza 176-182 su tutte le corse.',
       deepLink: { href: 'gara-roma.html', label: 'APRI L\'ANALISI COMPLETA DELLA GARA' },
@@ -11231,7 +11233,7 @@ const BADGES = {
       why: 'Il collinare di SAB 12 era l\'unica occasione ed è stato saltato.',
       go: 'Nessuna azione: la finestra è chiusa. La prossima corsa lunga utile ai badge è il collinare di SAB 19.' },
     { n: 'Corsa a settembre', en: 'September Time to Run', cat: 'RUN', tipo: 'cumulativa',
-      req: '10 ore di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '9h22m / 10h (Federico, 28/09)',
+      req: '10 ore di corsa nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'done', prog: 'PRESO \u00b7 10h30m / 10h (sito, 29/09)',
       why: 'Ad agosto il gemello si e\' chiuso da solo col volume normale.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Settembre, mese di corse', en: 'September Rundown', cat: 'RUN', tipo: 'cumulativa',
@@ -11283,7 +11285,7 @@ const BADGES = {
       go: 'Nessuna azione: la finestra è chiusa. Restano aperti i 4 h di Nuoto a settembre e, in vasca, Tempo di nuotare e Prendi una decisione.' },
     // ── ALTRO
     { n: 'Attivita\' a settembre', en: 'Active September', cat: 'MISC', tipo: 'cumulativa',
-      req: '20 attivita\' nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '17 / 20 (Federico, 28/09)',
+      req: '20 attivita\' nel mese', win: 'tutto settembre', d1: null, d2: null, st: 'auto', prog: '18 / 20 (sito, 29/09)',
       why: 'Ad agosto chiuso in anticipo col volume normale.',
       go: 'Nessuna azione.' },
     { n: 'Piu\' forza a settembre', en: 'September Gains', cat: 'STRENGTH', tipo: 'cumulativa',
