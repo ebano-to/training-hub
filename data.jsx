@@ -14,7 +14,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 100,
+  weight: 95.1,
+  bodyFat: 22.4,
+  bodyDate: '29 SET 2026',
   hrmax: 177,
   programWeek: 40,
 };
@@ -31,6 +33,84 @@ const STATIONS = [
   { code: 'FC', name: 'Farmers Carry 200m', pb: '1:43', unit: 'time' },
   { code: 'SLU', name: 'Sandbag Lunges 100m', pb: '4:33', unit: 'time' },
   { code: 'WB', name: 'Wall Balls x100', pb: '5:27', unit: 'time' },
+];
+
+// ── COMPOSIZIONE CORPOREA ──────────────────────────
+// BODY = bilancia Garmin Index S2 (bioimpedenza domestica), export 29/09/2026 · dati/garmin_peso_20260929.csv
+// kg = peso · bf = massa grassa % · mm = massa muscolare scheletrica kg · h2o = acqua corporea %
+const BODY = [
+  { d: '2025-10-02', kg: 98.8, bf: 24.4, mm: 38.3, h2o: 55.2 },
+  { d: '2025-10-06', kg: 100.3, bf: 25.4, mm: 38.7, h2o: 54.5 },
+  { d: '2025-10-09', kg: 99.4, bf: 25.4, mm: 38.4, h2o: 54.5 },
+  { d: '2025-10-14', kg: 98.8, bf: 24.9, mm: 38.3, h2o: 54.8 },
+  { d: '2025-10-21', kg: 98.4, bf: 24.3, mm: 38.2, h2o: 55.3 },
+  { d: '2025-11-06', kg: 98.5, bf: 24.3, mm: 38.2, h2o: 55.3 },
+  { d: '2025-11-10', kg: 98.4, bf: 23.3, mm: 38.2, h2o: 56.0 },
+  { d: '2025-11-11', kg: 98.2, bf: 24.7, mm: 38.2, h2o: 55.0 },
+  { d: '2025-11-13', kg: 98.3, bf: 24.6, mm: 38.2, h2o: 55.0 },
+  { d: '2025-11-24', kg: 99.2, bf: 24.5, mm: 38.4, h2o: 55.1 },
+  { d: '2025-11-27', kg: 98.7, bf: 24.4, mm: 38.3, h2o: 55.2 },
+  { d: '2025-12-08', kg: 98.3, bf: 24.0, mm: 38.2, h2o: 55.5 },
+  { d: '2025-12-17', kg: 98.6, bf: 24.0, mm: 38.2, h2o: 55.5 },
+  { d: '2025-12-26', kg: 100.9, bf: 25.3, mm: 38.8, h2o: 54.6 },
+  { d: '2025-12-26', kg: 100.7, bf: 24.8, mm: 38.8, h2o: 54.9 },
+  { d: '2026-01-06', kg: 101.4, bf: 25.5, mm: 38.9, h2o: 54.4 },
+  { d: '2026-01-08', kg: 100.1, bf: 25.3, mm: 38.6, h2o: 54.5 },
+  { d: '2026-01-12', kg: 98.8, bf: 25.5, mm: 38.3, h2o: 54.4 },
+  { d: '2026-01-17', kg: 98.1, bf: 25.1, mm: 38.1, h2o: 54.7 },
+  { d: '2026-01-20', kg: 98.9, bf: 24.5, mm: 38.3, h2o: 55.1 },
+  { d: '2026-01-30', kg: 99.9, bf: 24.9, mm: 38.6, h2o: 54.8 },
+  { d: '2026-02-07', kg: 98.4, bf: 23.7, mm: 38.2, h2o: 55.7 },
+  { d: '2026-02-14', kg: 99.3, bf: 24.2, mm: 38.4, h2o: 55.4 },
+  { d: '2026-02-16', kg: 99.3, bf: 24.7, mm: 38.4, h2o: 55.0 },
+  { d: '2026-02-19', kg: 98.0, bf: 24.5, mm: 38.1, h2o: 55.1 },
+  { d: '2026-02-19', kg: 97.9, bf: 24.5, mm: 38.1, h2o: 55.1 },
+  { d: '2026-02-23', kg: 98.3, bf: 24.3, mm: 38.2, h2o: 55.3 },
+  { d: '2026-02-27', kg: 97.6, bf: 24.3, mm: 38.0, h2o: 55.2 },
+  { d: '2026-02-28', kg: 97.1, bf: 24.0, mm: 37.9, h2o: 55.4 },
+  { d: '2026-03-01', kg: 97.8, bf: 23.7, mm: 38.1, h2o: 55.7 },
+  { d: '2026-03-03', kg: 97.1, bf: 24.2, mm: 37.9, h2o: 55.4 },
+  { d: '2026-04-02', kg: 97.6, bf: 24.5, mm: 37.9, h2o: 55.1 },
+  { d: '2026-04-11', kg: 99.2, bf: 24.2, mm: 38.3, h2o: 55.4 },
+  { d: '2026-04-22', kg: 98.1, bf: 24.7, mm: 38.0, h2o: 55.0 },
+  { d: '2026-05-13', kg: 95.5, bf: 24.0, mm: 37.4, h2o: 55.5 },
+  { d: '2026-05-13', kg: 95.5, bf: 24.0, mm: 37.4, h2o: 55.5 },
+  { d: '2026-05-16', kg: 95.9, bf: 23.4, mm: 37.5, h2o: 55.9 },
+  { d: '2026-06-02', kg: 99.1, bf: 24.1, mm: 38.3, h2o: 55.4 },
+  { d: '2026-06-05', kg: 99.0, bf: null, mm: null, h2o: null },
+  { d: '2026-06-05', kg: 97.3, bf: null, mm: null, h2o: null },
+  { d: '2026-06-08', kg: 99.1, bf: 23.6, mm: 38.3, h2o: 55.8 },
+  { d: '2026-06-08', kg: 98.5, bf: 24.2, mm: 38.1, h2o: 55.4 },
+  { d: '2026-06-12', kg: 97.5, bf: 23.1, mm: 37.9, h2o: 56.2 },
+  { d: '2026-06-12', kg: 96.8, bf: 23.6, mm: 37.7, h2o: 55.8 },
+  { d: '2026-06-29', kg: 96.6, bf: 23.8, mm: 37.7, h2o: 55.7 },
+  { d: '2026-07-04', kg: 97.2, bf: 22.9, mm: 37.8, h2o: 56.3 },
+  { d: '2026-07-04', kg: 95.3, bf: 23.2, mm: 37.4, h2o: 56.1 },
+  { d: '2026-07-08', kg: 96.1, bf: 23.2, mm: 37.6, h2o: 56.0 },
+  { d: '2026-07-08', kg: 96.9, bf: 22.7, mm: 37.7, h2o: 56.4 },
+  { d: '2026-07-08', kg: 95.0, bf: 22.6, mm: 37.3, h2o: 56.5 },
+  { d: '2026-07-11', kg: 96.3, bf: 23.6, mm: 37.6, h2o: 55.8 },
+  { d: '2026-07-20', kg: 95.0, bf: 22.8, mm: 37.3, h2o: 56.3 },
+  { d: '2026-08-03', kg: 95.6, bf: 22.7, mm: 37.4, h2o: 56.5 },
+  { d: '2026-08-07', kg: 96.4, bf: 22.6, mm: 37.6, h2o: 56.5 },
+  { d: '2026-08-14', kg: 99.9, bf: 23.3, mm: 38.5, h2o: 56.0 },
+  { d: '2026-09-13', kg: 96.7, bf: 22.8, mm: 37.7, h2o: 56.4 },
+  { d: '2026-09-16', kg: 94.8, bf: 22.7, mm: 37.2, h2o: 56.5 },
+  { d: '2026-09-16', kg: 96.5, bf: 22.2, mm: 37.7, h2o: 56.8 },
+  { d: '2026-09-16', kg: 95.7, bf: 22.3, mm: 37.5, h2o: 56.7 },
+  { d: '2026-09-17', kg: 95.0, bf: 22.8, mm: 37.3, h2o: 56.4 },
+  { d: '2026-09-18', kg: 95.4, bf: 23.4, mm: 37.4, h2o: 55.9 },
+  { d: '2026-09-19', kg: 95.7, bf: 23.2, mm: 37.5, h2o: 56.0 },
+  { d: '2026-09-20', kg: 96.2, bf: 23.4, mm: 37.6, h2o: 55.9 },
+  { d: '2026-09-28', kg: 96.2, bf: 22.9, mm: 37.6, h2o: 56.3 },
+  { d: '2026-09-29', kg: 95.1, bf: 22.4, mm: 37.3, h2o: 56.6 },
+];
+
+// PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
+// Metodo diverso dalla bioimpedenza: sui soggetti allenati la plicometria legge di norma
+// una massa grassa piu' bassa. Le due serie vanno lette in parallelo, mai mediate.
+// Formato: { d: 'AAAA-MM-GG', kg: 00.0, bf: 00.0, note: '' }
+const PLICO = [
 ];
 
 // ── STORICO GARE HYROX — cronologico, dalla prima all'ultima.
@@ -11599,4 +11679,4 @@ const HYDRATION = [
 
 window.TRAINING = {
   NEXTWEEK,
-  PROG, RACE, RACES, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };
+  PROG, RACE, RACES, BODY, PLICO, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };

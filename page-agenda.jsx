@@ -190,31 +190,6 @@ function AgendaPage() {
               <div className="display r-display-mega" style={{ fontSize: 'var(--display-mega)', lineHeight: 0.95, marginBottom: 8 }}>{day.title}</div>
               <div style={{ fontSize: 13, color: 'var(--fg-2)', marginBottom: 20, fontFamily: 'var(--sans)' }}>{day.sub}</div>
 
-              {(function () {
-                var bs = badgesForDay(day);
-                if (!bs.length) return null;
-                return (
-                  <div style={{ marginBottom: 20, border: '1px dashed var(--line-2)', padding: '12px 14px', background: 'var(--bg-3)' }}>
-                    <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.16em', marginBottom: 10 }}>
-                      // BADGE_GARMIN_APERTI · {bs.length}
-                    </div>
-                    {bs.map(function (b, bi) {
-                      var c = badgeCat[b.cat] || 'var(--fg-2)';
-                      return (
-                        <div key={bi} style={{ borderLeft: '3px solid ' + c, paddingLeft: 10, marginBottom: bi === bs.length - 1 ? 0 : 10 }}>
-                          <div style={{ fontSize: 12, fontWeight: 700, fontFamily: 'var(--sans)', color: c }}>{b.n}</div>
-                          <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 2 }}>{b.req} · finestra {b.win}</div>
-                          <div style={{ fontSize: 10, color: 'var(--accent)', marginTop: 4, fontFamily: 'var(--mono)', letterSpacing: '0.04em' }}>PROPOSTA {b.go}</div>
-                        </div>
-                      );
-                    })}
-                    <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 10, borderTop: '1px dashed var(--line-2)', paddingTop: 8 }}>
-                      SOLO PROPOSTE · IL PROGRAMMA RESTA QUELLO DEI COACH · <a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE SFIDE →</a>
-                    </div>
-                  </div>
-                );
-              })()}
-
               <div style={{ borderTop: '1px dashed var(--line-2)' }}>
                 {dayBlocks.map((b, i) => {
                   var isSkipped = b.result === 'SALTATO';
@@ -313,6 +288,30 @@ function AgendaPage() {
                   </div>
                 ))}
               </ModulePanel>
+
+              {(function () {
+                var bs = badgesForDay(day);
+                if (!bs.length) return null;
+                return (
+                  <ModulePanel code={'MOD.BADGE_GARMIN \u00b7 ' + bs.length + ' aperti'}>
+                    {bs.map(function (b, bi) {
+                      var c = badgeCat[b.cat] || 'var(--fg-2)';
+                      return (
+                        <div key={bi} style={{ borderLeft: '3px solid ' + c, paddingLeft: 10, paddingBottom: 12, marginBottom: bi === bs.length - 1 ? 0 : 12, borderBottom: bi === bs.length - 1 ? 'none' : '1px dashed var(--line-2)' }}>
+                          <div style={{ fontSize: 12, fontWeight: 700, fontFamily: 'var(--sans)', color: c, lineHeight: 1.3 }}>{b.n}</div>
+                          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.08em', marginTop: 3 }}>{b.win}</div>
+                          <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 4, lineHeight: 1.45 }}>{b.req}</div>
+                          {b.prog && <div className="tabular" style={{ fontSize: 11, color: 'var(--fg)', marginTop: 4 }}>{b.prog}</div>}
+                          <div style={{ fontSize: 10, color: 'var(--accent)', marginTop: 6, fontFamily: 'var(--mono)', letterSpacing: '0.04em', lineHeight: 1.5 }}>{'\u2192 ' + b.go}</div>
+                        </div>
+                      );
+                    })}
+                    <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 12, borderTop: '1px dashed var(--line-2)', paddingTop: 8, lineHeight: 1.6 }}>
+                      SOLO PROPOSTE \u00b7 IL PROGRAMMA RESTA QUELLO DEI COACH<br /><a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE SFIDE \u2192</a>
+                    </div>
+                  </ModulePanel>
+                );
+              })()}
 
             </div>
           </div>
