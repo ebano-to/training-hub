@@ -23,9 +23,6 @@ function DashboardPage() {
         <BigStat code="PB.TESTS" v={'0' + PBS.length} u="" sub={PBS.map(p => p.station.split(' ')[0]).join(' · ')} highlight />
       </div>
 
-      {/* Storico gare Hyrox */}
-      <HyroxRaces />
-
       {/* Program weeks — tracked so far */}
       <ModulePanel code="MOD.PROGRAM · weeks_tracked" sub={'S1 → S' + ATHLETE.programWeek}>
         <div className="r-program-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(' + ATHLETE.programWeek + ', 1fr)', gap: 4 }}>
@@ -125,6 +122,9 @@ function DashboardPage() {
         })()}
       </ModulePanel>
 
+
+      {/* Storico gare Hyrox */}
+      <HyroxRaces />
 
       {/* Personal Bests & 1RMs */}
       <ModulePanel code="MOD.PERSONAL_BESTS · 1RM + erg tests" accent>
@@ -252,6 +252,8 @@ function HyroxRaces() {
   var maxT = Math.max.apply(null, RACES.map(function (r) { return r.t; }));
   var th = { fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'left', padding: '8px 10px', borderBottom: '1px solid var(--line)', whiteSpace: 'nowrap' };
   var td = { fontSize: 12, padding: '10px', borderBottom: '1px solid var(--line)', whiteSpace: 'nowrap' };
+  function stTot(r) { if (!r.st) return null; return Object.keys(r.st).reduce(function (a, k) { return a + secs(r.st[k]); }, 0); }
+  function fmt(sec) { if (sec === null || sec === undefined) return '\u2014'; var m = Math.floor(sec / 60), x = sec % 60; return m + ':' + (x < 10 ? '0' : '') + x; }
   var LAB = [['ski', 'SkiErg 1000 m'], ['push', 'Sled Push 50 m'], ['pull', 'Sled Pull 50 m'], ['bbj', 'Burpee BJ 80 m'], ['row', 'Row 1000 m'], ['fc', 'Farmers 200 m'], ['lun', 'Lunges 100 m'], ['wb', 'Wall Balls 100']];
 
   function Serie(props) {
@@ -284,6 +286,11 @@ function HyroxRaces() {
                 <td style={Object.assign({}, td, { color: (last.runTotS - first.runTotS) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(last.runTotS - first.runTotS)}</td>
               </tr>
               <tr>
+                <td style={Object.assign({}, td, { fontWeight: 700 })}>Stazioni (totale)</td>
+                {a.map(function (r) { return <td key={r.id} style={Object.assign({}, td, { fontWeight: 700 })} className="tabular">{fmt(stTot(r))}</td>; })}
+                <td style={Object.assign({}, td, { fontWeight: 700, color: (stTot(last) - stTot(first)) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(stTot(last) - stTot(first))}</td>
+              </tr>
+              <tr>
                 <td style={td}>Roxzone</td>
                 {a.map(function (r) { return <td key={r.id} style={td} className="tabular">{r.rox || '—'}</td>; })}
                 <td style={Object.assign({}, td, { color: (last.roxS - first.roxS) < 0 ? '#39E75F' : '#FF6B6B' })} className="tabular">{mmss(last.roxS - first.roxS)}</td>
@@ -308,12 +315,12 @@ function HyroxRaces() {
     );
   }
 
-  var armando = RACES.filter(function (r) { return r.fmt === 'doubles' && r.partner === 'Armando Tronca'; });
-  var singoli = RACES.filter(function (r) { return r.fmt === 'single'; });
+  var armando = RACES.filter(function (r) { return r.fmt === 'doubles' && r.partner === 'Armando Tronca' && !r.noSplit; });
+  var singoli = RACES.filter(function (r) { return r.fmt === 'single' && !r.noSplit; });
 
   return (
     <div>
-      <ModulePanel code={'MOD.HYROX · storico_gare · ' + RACES.length + ' gare'} title="GARE HYROX" sub={'Dal debutto di Torino 2024 a oggi · tempi e piazzamenti ufficiali da results.hyrox.com · i tre formati NON sono confrontabili fra loro: ogni delta è calcolato solo contro la gara precedente dello stesso formato'} accent>
+      <ModulePanel code={'MOD.HYROX · storico_gare · ' + RACES.length + ' gare'} title="GARE HYROX" sub={'Dieci gare dal debutto di Torino, febbraio 2024, a oggi · tempi e piazzamenti ufficiali da results.hyrox.com · i tre formati NON sono confrontabili fra loro: ogni delta è calcolato solo contro la gara precedente dello stesso formato'} accent>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(' + RACES.length + ', 1fr)', gap: 6, alignItems: 'end', height: 200, marginBottom: 18 }}>
           {rows.map(function (x) {
             var r = x.r, f = FMT[r.fmt];
@@ -343,7 +350,7 @@ function HyroxRaces() {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead><tr>
-              {['DATA', 'GARA', 'FORMATO', 'TEMPO', 'Δ STESSO FORMATO', 'GIORNATA', 'EVENTO', 'RUN TOT', 'ROXZONE', 'FC MED'].map(function (h, i) {
+              {['DATA', 'GARA', 'FORMATO', 'TEMPO', 'Δ STESSO FORMATO', 'GIORNATA', 'EVENTO', 'RUN TOT', 'STAZIONI', 'ROXZONE', 'FC MED'].map(function (h, i) {
                 return <th key={i} style={th}>{h}</th>;
               })}
             </tr></thead>
@@ -362,7 +369,8 @@ function HyroxRaces() {
                     <td style={Object.assign({}, td, { color: x.delta === null ? 'var(--fg-3)' : (x.delta < 0 ? '#39E75F' : '#FF6B6B') })} className="tabular">{x.delta === null ? '— prima del formato' : mmss(x.delta)}</td>
                     <td style={Object.assign({}, td, { fontSize: 11 })}>{r.rank || '—'}</td>
                     <td style={Object.assign({}, td, { fontSize: 11, color: 'var(--fg-3)' })}>{r.rankO || '—'}</td>
-                    <td style={td} className="tabular">{r.runTot}</td>
+                    <td style={td} className="tabular">{r.runTot || '\u2014'}</td>
+                    <td style={Object.assign({}, td, { fontWeight: 700 })} className="tabular">{fmt(stTot(r))}</td>
                     <td style={td} className="tabular">{r.rox || '—'}</td>
                     <td style={td} className="tabular">{r.hrMed || '—'}</td>
                   </tr>
@@ -380,13 +388,13 @@ function HyroxRaces() {
         code="MOD.HYROX · doubles_open_armando"
         title="LA LINEA PULITA: DOUBLES OPEN CON ARMANDO"
         sub={'Stessa categoria, stesso partner, stesse stazioni divise — le tre gare confrontabili una a una. Fra parentesi il piazzamento di segmento nella giornata.'}
-        read={'In un anno il totale scende di 4:50, ma tutto il guadagno viene dalla CORSA: 5:11 tolti al run total, da 38:52 a 33:41, con il piazzamento di corsa che passa da 364° a 47°.\nLe stazioni nel complesso sono andate indietro: Sled Push +0:21, Sled Pull +0:39, Burpee BJ +0:19, Wall Balls +0:13.\nBologna resta la gara meglio eseguita sulle stazioni (sei su otto dentro i primi 70, Row 22°); Roma 2026 la migliore di corsa e l\'unica col podio di categoria.'} />
+        read={'In un anno il totale scende di 4:50, ma tutto il guadagno viene dalla CORSA: 5:11 tolti al run total, da 38:52 a 33:41, con il piazzamento di corsa che passa da 364° a 47°.\nLe stazioni nel complesso sono andate indietro: Sled Push +0:21, Sled Pull +0:39, Burpee BJ +0:19, Wall Balls +0:13.\nIl totale stazioni lo dice senza appello: 23:14 a Roma 2025, 22:35 a Bologna, 24:53 a Roma 2026 — un minuto e 39 secondi in più sugli attrezzi, mentre la corsa ne guadagnava cinque.\nBologna resta la gara meglio eseguita sulle stazioni (sei su otto dentro i primi 70, Row 22°); Roma 2026 la migliore di corsa e l\'unica col podio di categoria.'} />
 
       <Serie races={singoli}
         code="MOD.HYROX · singles"
         title="I SINGOLI"
-        sub={'Tre gare in singolo: qui i tempi di stazione sono suoi al 100%, ed è il confronto che dice davvero come sta la forza.'}
-        read={'Da Rimini a Verona, in sei mesi, 3:22 tolti al totale: quasi tutto sulle stazioni (Burpee BJ −1:04, Lunges −1:08), mentre la corsa migliorava di appena 54″.\nDa Verona a Torino invece il totale risale di 49″ con le corse identiche (39:30 contro 39:32): il tempo si perde tutto sugli attrezzi, con Sled Pull +0:24 e Wall Balls +0:16.\nIl Sled Push è la costante negativa dei singoli: 3:11, 3:12 e 3:13 in tre gare, sempre oltre il 760° posto.'} />
+        sub={'Cinque gare in singolo, ma solo quattro hanno gli split pubblicati. Qui i tempi di stazione sono suoi al 100%, ed è il confronto che dice davvero come sta la forza.'}
+        read={'Cinque gare in singolo, dal 1:24:24 di Torino 2025 al 1:18:33 di Torino 2026: 5:51 tolti in un anno.\nIl totale stazioni racconta la storia meglio del tempo finale: 33:51 a Parigi, 33:46 a Rimini, poi 31:46 a Verona e 32:47 a Torino 2026. Il guadagno è tutto lì — il run total resta inchiodato fra 39:30 e 40:24 in tutte e quattro le gare cronometrate.\nIl balzo vero è Rimini→Verona (−3:22): Burpee BJ −1:04 e Lunges −1:08, con la corsa quasi ferma (−54″). Poi Verona→Torino riperde 49″ con le corse identiche (39:30 contro 39:32), tutto sugli attrezzi: Sled Pull +24″ e Wall Balls +16″.\nI Wall Balls sono il trend peggiore: 4:56 → 5:12 → 5:27 → 5:43, quarantasette secondi persi gara dopo gara.\nIl Sled Push non si muove da due anni: 3:16, 3:13, 3:11, 3:12 — e il 1185° posto di Parigi è il piazzamento peggiore di tutta la carriera.\nTorino 01/02/2025 non compare in tabella: results.hyrox.com non pubblica più l\'archivio di quella tappa, restano tempo e piazzamento dall\'app ufficiale.'} />
     </div>
   );
 }
