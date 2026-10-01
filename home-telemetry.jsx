@@ -18,7 +18,7 @@ function HomeTelemetry() {
         padding: '8px 16px', border: '1px solid var(--line)', background: 'var(--bg-2)',
         fontSize: 11, letterSpacing: '0.1em', color: 'var(--fg-3)', marginBottom: 16, gap: 12
       }}>
-        <span>FS://TRAINING.SYS · v2.7.0 · SUB60-PROTOCOL</span>
+        <span>FS://TRAINING.SYS · v2.8.0 · BEAT-ARMANDO-PROTOCOL</span>
         <span className="r-sysbar-mid"><LiveDot /> &nbsp;UPLINK · {new Date().toLocaleTimeString('it-IT')}</span>
         <span>S{ATHLETE.programWeek} · T-{cd.days}D</span>
       </div>
@@ -34,10 +34,13 @@ function HomeTelemetry() {
               // RACE_PROTOCOL · {RACE.date.toISOString().slice(0, 10)}
             </div>
             <div className="display r-display-hero" style={{ fontSize: 'var(--display-hero)', lineHeight: 0.92, marginBottom: 10 }}>
-              ROAD TO SUB60' <span style={{ color: 'var(--accent)' }}>ROMA</span>
+              {RACE.titleMain} <span style={{ color: 'var(--accent)' }}>{RACE.titleAccent}</span>
             </div>
             <div style={{ fontSize: 13, color: 'var(--fg-2)' }}>
-              {RACE.category} · {RACE.partner} · {RACE.city}
+              {RACE.category} · {RACE.partner} · {RACE.city}{RACE.venue ? ' (' + RACE.venue + ')' : ''}
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 6, letterSpacing: '0.04em' }}>
+              Target: {RACE.target} — non un tempo, un distacco
             </div>
           </div>
           <div className="r-hero-countdown" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, auto)', gap: 18, paddingLeft: 32, borderLeft: '1px dashed var(--line-2)' }}>

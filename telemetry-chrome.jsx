@@ -17,7 +17,7 @@ function TelemetryChrome({ active, children }) {
         padding: '8px 16px', border: '1px solid var(--line)', background: 'var(--bg-2)',
         fontSize: 11, letterSpacing: '0.1em', color: 'var(--fg-3)', marginBottom: 12, gap: 12
       }}>
-        <span>FS://TRAINING.SYS · v2.7.0 · SUB60-PROTOCOL</span>
+        <span>FS://TRAINING.SYS · v2.8.0 · BEAT-ARMANDO-PROTOCOL</span>
         <span className="r-sysbar-mid"><LiveDot /> &nbsp;UPLINK · {time}</span>
         <span>S{ATHLETE.programWeek} · T-{cd.days}D</span>
       </div>

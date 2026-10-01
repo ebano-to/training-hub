@@ -2,12 +2,18 @@
 // Real data — S32 week (03 Aug - 09 Aug 2026)
 
 const RACE = {
-  name: 'HYROX ROMA',
-  category: 'Doubles Men',
-  partner: 'Armando',
-  date: new Date('2026-09-24T09:00:00+02:00'),
-  city: 'Roma',
-  target: 'SUB 60\'',
+  name: 'HYROX MILANO',
+  category: 'Singolo Open M 40-44',
+  // Non un partner: un AVVERSARIO. A Milano Federico e Armando corrono uno contro l'altro,
+  // ciascuno in singolo. Il bersaglio non e' un tempo assoluto ma il distacco: arrivare davanti.
+  partner: 'contro Armando',
+  rival: 'Armando Tronca',
+  date: new Date('2026-12-04T15:00:00+01:00'),
+  city: 'Milano',
+  venue: 'Fiera Milano, Rho',
+  target: 'SUB 1\u2033 SU ARMANDO',
+  titleMain: 'ROAD TO SUB 1\u2033',
+  titleAccent: 'VS ARMANDO',
 };
 
 const ATHLETE = {
