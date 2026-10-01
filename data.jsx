@@ -1631,9 +1631,10 @@ const WEEK = [
       { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
     ]
   },
-  { day: 'GIO', date: '01', title: 'PISTA · ORARIO DA DECIDERE', sub: 'Con Gabriele, 15:00 o 15:30 · struttura da definire', load: 'Z3-Z5', duration: 55, kind: 'run', done: false,
+  { day: 'GIO', date: '01', title: 'PISTA + TEST RM SLITTA', sub: 'Pista con Gabriele · forza con Mattia: massimali di slitta', load: 'Z3-Z5 + HEAVY', duration: 115, kind: 'hyrox', done: false,
     blocks: [
       { code: 'RUN', t: 'Pista · struttura da definire con Gabriele', d: 'Gabriele: "in pista h 15 o 15.30: da decidere"', dur: '55\'', result: 'da fare' },
+      { code: 'PESI', t: 'Forza con Mattia · TEST 1RM Sled Push + Sled Pull', d: 'Slitta del Virgin · 1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) · i due massimali diventano la base dei carichi del prossimo ciclo', dur: '60\'', result: 'TEST: Sled Push 1RM 300 kg · Sled Pull 1RM 220 kg · slitta Virgin, 1 rip = andata+ritorno ~7,5 m · i 208 kg usati finora in allenamento sono il 69% del push' },
     ]
   },
   { day: 'VEN', date: '02', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
@@ -1666,6 +1667,8 @@ const PBS = [
   { station: 'SkiErg 2000m', value: '7:06.7', delta: 'PR', date: '24 APR', sub: '1:46.7/500m · 281W' },
   { station: 'Run 2000m (Best Interval)', value: '8:26.1', delta: '-23.6s', date: '03 SET', sub: '4:13.1/km · pista Ruffini, dentro intervalli misti · FC max 170' },
   { station: 'Row 5000m', value: '17:52.0', delta: '-33s', date: '10 MAG', sub: '1:47.2/500m · 284W' },
+  { station: 'Sled Push 1RM (Virgin)', value: '300kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
+  { station: 'Sled Pull 1RM (Virgin)', value: '220kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
   { station: 'Back Squat 1RM', value: '105kg', delta: '', date: '20 MAR' },
   { station: 'Strict Press 1RM', value: '65kg', delta: '', date: '11 GIU' },
   { station: 'Deadlift 1RM', value: '157.5kg', delta: '+7.5kg', date: '11 GIU' },
@@ -11403,12 +11406,12 @@ const HISTORY = [
 //     'push' = serve volume oltre l'attuale · 'off' = sport fuori dal programma · 'done' = gia' preso
 // tipo: 'singola' = una sola attivita' deve soddisfare il requisito · 'cumulativa' = si somma nel periodo
 const BADGES = {
-  month: 'SETTEMBRE 2026 → OTTOBRE 2026',
-  monthStart: '2026-09-01',
+  month: 'OTTOBRE 2026',
+  monthStart: '2026-10-01',
   monthEnd: '2026-10-31',
-  updated: '29 SET 2026',
-  snapshot: "29 SET 2026: ultimo giorno pieno di settembre + sfide di ottobre già iscritte · livello 6, 1.064 punti (196 al livello 7)",
-  sources: ['dati/sfide_iscritte_20260929.webarchive', 'dati/badges_ricevuti_20260929.webarchive', 'dati/badges_disponibili_20260929.webarchive'],
+  updated: '01 OTT 2026',
+  snapshot: "01 OTT 2026: settembre chiuso a 11 badge presi · le voci di settembre restano sotto come consuntivo · livello 6, 1.064 punti (196 al livello 7)",
+  sources: ['dati/sfide_iscritte_20261001.webarchive', 'dati/badges_ricevuti_20261001.webarchive', 'dati/badges_disponibili_20261001.webarchive'],
   items: [
     // ══════════════════════ SETTEMBRE — ultimo giorno (chiude MER 30) ══════════════════════
     // ── CORSA
@@ -11442,7 +11445,7 @@ const BADGES = {
       why: 'Preso ogni mese del 2026 finora.',
       go: 'Chiuso.' },
     { n: 'Camminate di settembre', en: 'September Walking', cat: 'WALK', tipo: 'cumulativa',
-      req: '48,3 km (30 mi) di camminata nel mese', win: 'tutto settembre', d1: null, d2: '2026-09-30', st: 'miss', prog: '0 / 48,3 km — mese chiuso a zero (webarchive, 29/09)',
+      req: '48,3 km (30 mi) di camminata nel mese', win: 'tutto settembre', d1: null, d2: '2026-09-30', st: 'miss', prog: '0,4 / 48,3 km — mese chiuso allo 0% (webarchive, 01/10)',
       why: 'Il contatore misura le ATTIVITÀ Camminata, non i passi: camminando 14.000 passi al giorno è rimasto a zero tutto il mese perché non ne è stata avviata nessuna.',
       go: 'Il gemello di ottobre riparte giovedì, ma a ore invece che a km: serve premere start sul Garmin.' },
     { n: 'Podio per i passi a settembre', en: 'September Steps Podium', cat: 'WALK', tipo: 'singola',
@@ -11477,9 +11480,9 @@ const BADGES = {
       go: 'Nessuna azione: la finestra è chiusa.' },
     // ── ALTRO
     { n: 'Attività a settembre', en: 'Active September', cat: 'MISC', tipo: 'cumulativa',
-      req: '20 attività di almeno 20 minuti nel mese', win: 'tutto settembre', d1: '2026-09-29', d2: '2026-09-30', st: 'push', prog: '19 / 20 — 95% (webarchive, 29/09)',
-      why: 'L\'UNICO badge di settembre ancora a tiro: manca una sola attività da 20 minuti e il mese chiude domani sera.',
-      go: 'Qualunque cosa da 20 minuti registrata col Garmin entro MER 30. Se la fai come attività Camminata muovi anche i contatori che a settembre sono rimasti a zero.' },
+      req: '20 attività di almeno 20 minuti nel mese', win: 'tutto settembre', d1: null, d2: '2026-09-30', st: 'miss', prog: 'MANCATO per UNA attività · 19 / 20 — 95% (webarchive, 01/10)',
+      why: 'Era l\'unico badge di settembre ancora a tiro ed è finito a una sola attività dal traguardo: 19 su 20, due punti persi per venti minuti di movimento registrato.',
+      go: 'Lezione per ottobre: il margine è di una o due attività, non di volume. Registrare anche camminate e defaticamenti, dal giorno 1.' },
     { n: 'Più forza a settembre', en: 'September Gains', cat: 'STRENGTH', tipo: 'cumulativa',
       req: '4 ore di attività Forza nel mese', win: 'tutto settembre', d1: null, d2: '2026-09-30', st: 'miss', prog: '1h / 4h — 25% (webarchive, 29/09)',
       why: 'Terzo mese di fila sotto (1h18m ad agosto): le sedute col personal non vengono salvate come attività Forza separata, quindi non contano.',
@@ -11501,9 +11504,9 @@ const BADGES = {
       why: 'Lo yoga non fa parte della routine.',
       go: 'Ignorato per scelta.' },
     { n: 'September Strides', en: 'September Strides (members)', cat: 'WALK', tipo: 'cumulativa',
-      req: 'Serie passi members-only: classifica su 70 partecipanti', win: 'tutto settembre', d1: null, d2: '2026-09-30', st: 'auto', prog: '10° di 70 (webarchive, 29/09)',
-      why: 'Iscritto dalla serie di agosto. Risalito di una posizione rispetto al 28/09.',
-      go: 'Si accumula coi passi: nessuna azione dedicata.' },
+      req: 'Serie passi members-only: classifica su 70 partecipanti', win: 'tutto settembre', d1: null, d2: '2026-09-30', st: 'miss', prog: 'chiusa 12° di 70 · badge non ricevuto (webarchive, 01/10)',
+      why: 'Serie members-only chiusa il 30/09: scivolato dal 10° al 12° posto negli ultimi due giorni e il badge non è arrivato.',
+      go: 'Nessuna azione: la serie è chiusa. Il testimone passa a October Outdoors.' },
 
     // ══════════════════════ OTTOBRE — si apre GIO 01 ══════════════════════
     // ── CORSA
@@ -11529,11 +11532,11 @@ const BADGES = {
       go: 'Carica la strategia PacePro sull\'orologio PRIMA di uscire, alla prima corsa outdoor del mese.' },
     // ── PASSI / CAMMINATA
     { n: 'Ottobre, mese dei passi', en: 'October Step Month', cat: 'WALK', tipo: 'cumulativa',
-      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '0 / 300.000 — parte GIO 01',
+      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '4.785 / 300.000 (webarchive, 01/10)',
       why: 'Preso ogni mese del 2026: con la media da 14.400 passi al giorno il traguardo cade a tre quarti di mese.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Passi di ottobre', en: 'October Steps', cat: 'WALK', tipo: 'cumulativa',
-      req: '100.000 passi fra il 1° e il 14 ottobre · 2 punti', win: '01 → 14 OTT', d1: '2026-10-01', d2: '2026-10-14', st: 'auto', prog: '0 / 100.000',
+      req: '100.000 passi fra il 1° e il 14 ottobre · 2 punti', win: '01 → 14 OTT', d1: '2026-10-01', d2: '2026-10-14', st: 'auto', prog: '4.785 / 100.000 (webarchive, 01/10)',
       why: 'Due settimane per 100.000 passi: servono 7.150 al giorno, metà della tua media.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Camminata a ottobre', en: 'October Time to Walk', cat: 'WALK', tipo: 'cumulativa',
@@ -11549,7 +11552,7 @@ const BADGES = {
       why: 'Preso quasi ogni mese: dipende dal girone in cui capiti, non dallo sforzo.',
       go: 'Nessuna azione: sei iscritto d\'ufficio alle settimanali.' },
     { n: 'October Outdoors', en: 'October Outdoors (members)', cat: 'WALK', tipo: 'cumulativa',
-      req: 'Serie members-only: classifica su 70 partecipanti · parte GIO 01', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '70 partecipanti — non ancora iniziata',
+      req: 'Serie members-only: classifica su 70 partecipanti · parte GIO 01', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '10° di 70 (webarchive, 01/10)',
       why: 'Erede di September Strides, dove hai chiuso 10° su 70.',
       go: 'Si accumula da sola: nessuna azione dedicata.' },
     // ── BICI
@@ -11584,8 +11587,8 @@ const BADGES = {
       why: 'A settembre è arrivato al fotofinish, 19/20 a un giorno dalla fine: il margine è di una o due attività, non di volume.',
       go: 'Registra tutto, anche camminate e defaticamenti.' },
     { n: 'Più forza a ottobre', en: 'October Gains', cat: 'STRENGTH', tipo: 'cumulativa',
-      req: '4 ore di attività Forza nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '0m / 4h — parte GIO 01',
-      why: 'Mancato tre mesi di fila (1h18m ad agosto, 1h a settembre) sempre per lo stesso motivo: la forza non viene salvata come attività Forza.',
+      req: '4 ore di attività Forza nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'push', prog: '19m / 4h — 7% al primo giorno (webarchive, 01/10)',
+      why: 'Mancato tre mesi di fila (1h18m ad agosto, 1h a settembre). I 19 minuti del test RM con Mattia sono già a referto: il meccanismo funziona, va solo ripetuto.',
       go: 'Quattro ore sono quattro o cinque sedute: il volume c\'è già, manca premere start. Alimenta anche Forza estrema 5.' },
     { n: 'Asana di ottobre', en: 'October Asana', cat: 'MISC', tipo: 'cumulativa',
       req: '4 ore di yoga nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'off', prog: '0m / 4h',
@@ -11605,13 +11608,13 @@ const BADGES = {
       why: 'Due serie rotte: il 03/09 al nono giorno e il 16/09 al secondo. Entrambe cadute in giorni di solo erg, dove l\'allenamento non produce passi.',
       go: 'Nei giorni di solo row/ski servono 7-7,5 km di camminata a parte: o si programmano quelli, o la serie si rompe lì.' },
     { n: 'Olimpo — Arrampicata', en: 'Olympus Climbing', cat: 'MISC', tipo: 'cumulativa',
-      req: '2.917 m di dislivello cumulativo (spedizione Garmin, senza scadenza) · 2 punti', win: 'spedizione', d1: null, d2: null, st: 'auto', prog: '1.721,1 / 2.917,0 m — 59% (webarchive, 29/09)',
+      req: '2.917 m di dislivello cumulativo (spedizione Garmin, senza scadenza) · 2 punti', win: 'spedizione', d1: null, d2: null, st: 'auto', prog: '1.750,4 / 2.917,0 m — 60% (webarchive, 01/10)',
       why: 'Conta i piani saliti e il dislivello delle attività: +10,3 m in un giorno, avanza piano ma da sola.',
       go: 'Nessuna azione dedicata. Le sedute in pendenza al tapis NON contano: il MyRun non trasmette il dislivello al Garmin.' },
     { n: 'Sfida di 100K passi', en: '100K Step Challenge', cat: 'STEP', tipo: 'cumulativa',
-      req: 'Sfida settimanale a gruppi: classifica su 10 partecipanti', win: 'fino al 05 OTT', d1: null, d2: '2026-10-05', st: 'auto', prog: '3° di 10 (webarchive, 29/09)',
-      why: 'Risalito dal 9° al 3° posto in un giorno. È questa istanza che può consegnare il Podio per i passi di ottobre.',
-      go: 'Sei sul podio: tieni il ritmo fino a LUN 05 e il badge di ottobre cade da solo.' },
+      req: 'Sfida settimanale a gruppi: classifica su 10 partecipanti', win: 'fino al 05 OTT', d1: null, d2: '2026-10-05', st: 'push', prog: '5° di 10 — fuori dal podio (webarchive, 01/10)',
+      why: 'Sceso dal 3° al 5° posto. È questa istanza che può consegnare il Podio per i passi di ottobre, e chiude LUN 05.',
+      go: 'Servono due posizioni in quattro giorni: è l\'unica sfida passi in corso, qualche migliaio di passi in più al giorno basta.' },
     { n: 'Sfida di corsa (follower)', en: 'Follower Running Challenge', cat: 'RUN', tipo: 'singola',
       req: 'Sfida di corsa fra follower · classifica su 1 partecipante', win: 'fino al 04 OTT', d1: null, d2: '2026-10-04', st: 'auto', prog: '1° di 1 (webarchive, 29/09)',
       why: 'Sfida di gruppo con un solo iscritto.',
