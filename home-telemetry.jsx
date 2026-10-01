@@ -41,6 +41,8 @@ function HomeTelemetry() {
             </div>
             <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 6, letterSpacing: '0.04em' }}>
               Target: {RACE.target} — non un tempo, un distacco
+              {RACE.targetTime && <span style={{ color: 'var(--accent)' }}>{'  ·  E sul cronometro: ' + RACE.targetTime}</span>}
+              {RACE.targetTimeNote && <span>{' (' + RACE.targetTimeNote + ')'}</span>}
             </div>
             {RACE.mission && (
               <div style={{ marginTop: 12, paddingLeft: 12, borderLeft: '2px solid var(--accent)' }}>

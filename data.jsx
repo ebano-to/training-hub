@@ -12,6 +12,9 @@ const RACE = {
   city: 'Milano',
   venue: 'Fiera Milano, Rho',
   target: 'SUB 1\u2033 SU ARMANDO',
+  // Due bersagli distinti: quello che decide la sfida (il distacco) e quello personale sul cronometro.
+  targetTime: 'SUB 1:10:00',
+  targetTimeNote: '7:44 sotto il PB di Verona',
   titleMain: 'ROAD TO SUB 1\u2033',
   titleAccent: 'VS ARMANDO',
   missionTitle: 'DA COMPAGNO A RIVALE',
