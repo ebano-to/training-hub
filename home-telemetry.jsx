@@ -42,6 +42,12 @@ function HomeTelemetry() {
             <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 6, letterSpacing: '0.04em' }}>
               Target: {RACE.target} — non un tempo, un distacco
             </div>
+            {RACE.mission && (
+              <div style={{ marginTop: 12, paddingLeft: 12, borderLeft: '2px solid var(--accent)' }}>
+                <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: 4 }}>▸ {RACE.missionTitle}</div>
+                <div style={{ fontSize: 12, color: 'var(--fg-2)', lineHeight: 1.5, fontFamily: 'var(--sans)', fontStyle: 'italic' }}>{RACE.mission}</div>
+              </div>
+            )}
           </div>
           <div className="r-hero-countdown" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, auto)', gap: 18, paddingLeft: 32, borderLeft: '1px dashed var(--line-2)' }}>
             {[

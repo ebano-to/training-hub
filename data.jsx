@@ -14,6 +14,8 @@ const RACE = {
   target: 'SUB 1\u2033 SU ARMANDO',
   titleMain: 'ROAD TO SUB 1\u2033',
   titleAccent: 'VS ARMANDO',
+  missionTitle: 'DA COMPAGNO A RIVALE',
+  mission: 'Tre gare fianco a fianco, con i tempi di stazione sempre di coppia. A Milano, finalmente, si vede chi tirava la slitta.',
 };
 
 const ATHLETE = {
