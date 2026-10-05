@@ -159,7 +159,9 @@ function BadgePage() {
       </ModulePanel>
 
       {/* Stage trimestrali */}
-      <ModulePanel code="MOD.BADGE · stage_trimestrali" title="STAGE 3" sub="01 LUG → 30 SET 2026">
+      <ModulePanel code="MOD.BADGE · stage_trimestrali"
+        title={((BADGES.stages[0] || {}).n || '').match(/Stage \d+/) ? ((BADGES.stages[0].n.match(/Stage \d+/))[0]).toUpperCase() : 'STAGE'}
+        sub={((BADGES.stages[0] || {}).win || '') + ' 2026'}>
         <div style={{ display: 'grid', gap: 8 }}>
           {BADGES.stages.map((s, i) => (
             <div key={i} style={{
@@ -167,7 +169,10 @@ function BadgePage() {
               background: 'var(--bg-3)', padding: '12px 16px',
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'var(--sans)' }}>{s.n}</span>
+                <span style={{ fontSize: 14, fontWeight: 700, fontFamily: 'var(--sans)' }}>
+                  {s.n}
+                  {s.win && <span style={{ fontSize: 10, fontWeight: 400, letterSpacing: '0.1em', color: 'var(--fg-3)', marginLeft: 10, fontFamily: 'var(--mono)' }}>{s.win}</span>}
+                </span>
                 <span style={{ fontSize: 9, letterSpacing: '0.12em', color: ST[s.st].c, border: '1px solid ' + ST[s.st].c, padding: '2px 6px' }}>{ST[s.st].l}</span>
               </div>
               <div style={{ fontSize: 12, color: 'var(--fg-2)', marginTop: 6, fontFamily: 'var(--sans)' }}>{s.req}</div>
