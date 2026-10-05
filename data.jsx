@@ -1665,11 +1665,10 @@ const WEEK_ARCHIVE = [
 
 // Current week — S41 (05 OTT - 11 OTT 2026) · prima settimana della struttura fissa
 const WEEK = [
-  { day: 'LUN', date: '05', title: 'TEST SKI 1000 m + FORZA RM + RUN', sub: 'Primo test della batteria · massimali con Mattia · run di Gabriele la sera', load: 'Z5 + HEAVY', duration: 125, kind: 'ski', done: false,
+  { day: 'LUN', date: '05', title: 'TEST SKI 1000 m + FORZA RM + RUN', sub: 'Primo test della batteria · massimali con Mattia · run di Gabriele la sera', load: 'Z5 + HEAVY', duration: 105, kind: 'ski', done: false,
     blocks: [
       { code: 'SKI', t: 'Ski · risc 12:30 + TEST 1000 m + defa 10:00', d: 'Primo dei due test erg di inizio ciclo · ingresso al test a 96 bpm dopo 4\' di pausa dal riscaldamento', dur: '34\'', result: 'TEST 1000 m: 3:27.4 @1:43.7/500 · 314 W · 60 s/m · DF 69 · FC tw 160,5 max 173 · il piu\' veloce di sempre · split in progressione negativa: 1:38.0 → 1:51.5' },
       { code: 'PESI', t: 'Forza con Mattia · rampa Back Squat + rampa Deadlift + accessoria ai cavi', d: 'Virgin · i due RM diventano la base dei carichi del ciclo verso Milano', dur: '56\'', result: 'DEADLIFT 3RM 140 kg (60-100-120-132,5-140 · 3 rip) · BACK SQUAT fino a 85×4 (20×6-40×4-60×2-70×5-77,5×5-85×4) · accessoria 3×(10 curl + 10 tricipiti ai cavi) @25 kg · 55:38 · FC 92,2 max 123' },
-      { code: 'PESI', t: '20\' manubri upper body · a casa, a seguire', d: 'Manubri componibili da 24 kg · contenuto da Mattia', dur: '20\'', result: 'da fare' },
       { code: 'RUN', t: 'Run · 50\' @5\'50"/km + 8×100 m allunghi r40″', d: 'Gabriele · la sera, staccata dal mattino · tapis o esterno', dur: '60\'', result: 'da fare' },
     ]
   },
