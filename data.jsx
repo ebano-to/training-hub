@@ -1676,7 +1676,7 @@ const WEEK = [
     blocks: [
       { code: 'PESI', t: 'Romanian Deadlift · 4×6-8 @80 kg', d: 'Mattia, blocco C · riscaldamento bilanciere vuoto×8, 40×6, 60×4, 80×2 · 80 kg = 30 per lato (20+10) · recupero completo tra le serie', dur: '4 serie', result: 'da fare' },
       { code: 'MOB', t: 'Postural · in Virgin · 13:15 → 14:00', d: 'Classe Virgin da prenotare · alle 14 la mattinata e\' chiusa', dur: '45\'', result: 'da fare' },
-      { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano · non dentro la fascia 18-19', dur: '63\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '63\'', result: 'da fare' },
     ]
   },
   { day: 'MER', date: '07', title: 'TEST ROW 2000 m + ROW Z2 + METCON + BODY ARMOR', sub: 'Blocco C di Mattia · il test dei 1000 Ski e\' gia\' stato fatto lunedì: qui resta il Row', load: 'Z5 + METCON', duration: 190, kind: 'multierg', done: false,
