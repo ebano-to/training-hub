@@ -26,6 +26,10 @@ function BadgePage() {
   // finestre datate ordinate — quelle ancora aperte per prime
   const windows = BADGES.items.filter((b) => b.d1 && b.d2).sort((a, b) => a.d1.localeCompare(b.d1));
   const winState = (b) => (todayIso > b.d2 ? 'past' : todayIso >= b.d1 ? 'now' : 'next');
+  // il calendario disegna solo le finestre CORTE: le sfide lunghe un mese intero
+  // comparirebbero su ogni singolo giorno e renderebbero la griglia illeggibile
+  const giorni = (b) => Math.round((new Date(b.d2) - new Date(b.d1)) / 86400000) + 1;
+  const winBreve = windows.filter((b) => giorni(b) <= 15);
 
   const items = filter === 'ALL' ? BADGES.items : BADGES.items.filter((b) => b.st === filter);
   const count = (k) => BADGES.items.filter((b) => b.st === k).length;
@@ -39,7 +43,7 @@ function BadgePage() {
   for (let i = 0; i < firstDow; i++) cells.push(null);
   for (let d = 1; d <= nDays; d++) cells.push(d);
   const dayIso = (d) => `${BADGES.monthStart.slice(0, 8)}${String(d).padStart(2, '0')}`;
-  const badgesOn = (d) => windows.filter((b) => {
+  const badgesOn = (d) => winBreve.filter((b) => {
     const dd = dayIso(d);
     if (b.st === 'done') return b.dDone ? (dd >= b.d1 && dd <= b.dDone) : false; // preso: visibile solo fino al giorno della presa
     return dd >= b.d1 && dd <= b.d2;
@@ -101,6 +105,7 @@ function BadgePage() {
                 border: '1px solid ' + (isToday ? 'var(--accent)' : bs.length ? 'var(--line-2)' : 'var(--line)'),
                 background: isToday ? 'oklch(88% 0.20 130 / 0.10)' : bs.length ? 'var(--bg-3)' : 'transparent',
                 padding: '6px 6px 8px', minHeight: 62, opacity: isPast && !isToday ? 0.4 : 1,
+                minWidth: 0, overflow: 'hidden',
               }}>
                 <div className="display tabular" style={{ fontSize: 16, lineHeight: 1, color: isToday ? 'var(--accent)' : 'var(--fg-2)' }}>{d}</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 4 }}>
@@ -108,7 +113,7 @@ function BadgePage() {
                     <div key={j} title={b.n + ' — ' + b.req} style={{
                       fontSize: 8, letterSpacing: '0.04em', lineHeight: 1.25,
                       color: CAT[b.cat] || 'var(--fg-2)', borderLeft: '2px solid ' + (CAT[b.cat] || 'var(--fg-2)'),
-                      paddingLeft: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                      paddingLeft: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0,
                     }}>{b.en.replace('August ', '').replace('Weekend ', 'WE ')}</div>
                   ))}
                 </div>
@@ -117,7 +122,7 @@ function BadgePage() {
           })}
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', borderTop: '1px dashed var(--line-2)', paddingTop: 10 }}>
-          {Object.keys(CAT).map((c) => (
+          {Object.keys(CAT).filter((c) => BADGES.items.some((b) => b.cat === c)).map((c) => (
             <span key={c} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
               <span style={{ width: 7, height: 7, background: CAT[c] }} />{c}
             </span>

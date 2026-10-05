@@ -2590,6 +2590,17 @@ const PROG = {
       "hr": 112,
       "spm": 33,
       "pb": false
+     },
+     {
+      "d": "05/10/26*",
+      "pezzo": "10:00",
+      "dur": "10:00",
+      "dist": 1882,
+      "w": 86,
+      "pace": "2:39.4",
+      "hr": 110,
+      "spm": 39,
+      "pb": false
      }
     ]
    },
@@ -3127,6 +3138,16 @@ const PROG = {
       "hr": 104,
       "spm": 35,
       "pb": false
+     },
+     {
+      "d": "05/10/26*",
+      "struttura": "3×0:20 +1",
+      "dist": 2510,
+      "w": 154,
+      "pace": "2:11.5",
+      "hr": 115,
+      "spm": 42,
+      "pb": false
      }
     ]
    },
@@ -3444,6 +3465,16 @@ const PROG = {
      "hr": 135,
      "pezzo": "2000m",
      "dur_s": 496
+    },
+    {
+     "d": "04/10/25",
+     "dist": 1000,
+     "w": 228,
+     "pace": "1:55.4",
+     "spm": 38,
+     "hr": null,
+     "pezzo": "1000m",
+     "dur_s": 230
     },
     {
      "d": "04/10/25",
@@ -3897,6 +3928,16 @@ const PROG = {
     },
     {
      "d": "25/03/26",
+     "dist": 800,
+     "w": 127,
+     "pace": "2:20.2",
+     "spm": 28,
+     "hr": 110,
+     "pezzo": "800m",
+     "dur_s": 224
+    },
+    {
+     "d": "25/03/26",
      "dist": 3000,
      "w": 143,
      "pace": "2:14.8",
@@ -4136,6 +4177,16 @@ const PROG = {
      "dur_s": 466
     },
     {
+     "d": "25/05/26",
+     "dist": 1000,
+     "w": 227,
+     "pace": "1:55.5",
+     "spm": 47,
+     "hr": 134,
+     "pezzo": "1000m",
+     "dur_s": 231
+    },
+    {
      "d": "02/06/26",
      "dist": 7016,
      "w": 166,
@@ -4244,6 +4295,26 @@ const PROG = {
      "hr": 112,
      "pezzo": "10:00",
      "dur_s": 600
+    },
+    {
+     "d": "05/10/26*",
+     "dist": 1882,
+     "w": 86,
+     "pace": "2:39.4",
+     "spm": 39,
+     "hr": 110,
+     "pezzo": "10:00",
+     "dur_s": 600
+    },
+    {
+     "d": "05/10/26*",
+     "dist": 1000,
+     "w": 314,
+     "pace": "1:43.7",
+     "spm": 60,
+     "hr": 159,
+     "pezzo": "3:27",
+     "dur_s": 207
     }
    ],
    "ints": [
@@ -4697,6 +4768,17 @@ const PROG = {
      "struttura": "3×0:30 +1",
      "rep_s": 172,
      "rep_m": 674
+    },
+    {
+     "d": "05/10/26*",
+     "dist": 2510,
+     "w": 154,
+     "pace": "2:11.5",
+     "spm": 42,
+     "hr": 115,
+     "struttura": "3×0:20 +1",
+     "rep_s": 165,
+     "rep_m": 627
     }
    ]
   }
@@ -6545,6 +6627,16 @@ const PROG = {
      "dur_s": 361
     },
     {
+     "d": "14/02/25",
+     "dist": 843,
+     "w": 192,
+     "pace": "2:02.2",
+     "spm": 25,
+     "hr": null,
+     "pezzo": "3:26",
+     "dur_s": 206
+    },
+    {
      "d": "25/02/25",
      "dist": 983,
      "w": 167,
@@ -6575,6 +6667,16 @@ const PROG = {
      "dur_s": 343
     },
     {
+     "d": "04/03/25",
+     "dist": 776,
+     "w": 110,
+     "pace": "2:27.1",
+     "spm": 31,
+     "hr": null,
+     "pezzo": "3:48",
+     "dur_s": 228
+    },
+    {
      "d": "25/04/25",
      "dist": 5205,
      "w": 228,
@@ -6593,6 +6695,16 @@ const PROG = {
      "hr": null,
      "pezzo": "2000m",
      "dur_s": 469
+    },
+    {
+     "d": "04/10/25",
+     "dist": 1000,
+     "w": 294,
+     "pace": "1:46.0",
+     "spm": 25,
+     "hr": 149,
+     "pezzo": "1000m",
+     "dur_s": 211
     },
     {
      "d": "04/10/25",
@@ -7073,6 +7185,16 @@ const PROG = {
      "hr": 125,
      "pezzo": "1:05:00",
      "dur_s": 3900
+    },
+    {
+     "d": "26/03/26",
+     "dist": 700,
+     "w": 127,
+     "pace": "2:20.2",
+     "spm": 23,
+     "hr": 115,
+     "pezzo": "700m",
+     "dur_s": 196
     },
     {
      "d": "26/03/26",
@@ -11637,31 +11759,7 @@ const BADGES = {
       why: 'Erede di September Strides, dove hai chiuso 10° su 70.',
       go: 'Si accumula da sola: nessuna azione dedicata.' },
     // ── BICI
-    { n: 'Bici a ottobre', en: 'October Time to Ride', cat: 'BIKE', tipo: 'cumulativa',
-      req: '20 ore di bici Garmin-registrate nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'off', prog: '0m / 20h — parte GIO 01',
-      why: 'A settembre 1h30m su 20h. Venti ore di bici in un mese non stanno nel programma di corsa e Hyrox.',
-      go: 'Lasciato andare salvo un blocco bici dedicato.' },
-    { n: 'Tour di ottobre', en: 'October Tour', cat: 'BIKE', tipo: 'cumulativa',
-      req: '400 km di bici nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'off', prog: '0 / 400 km',
-      why: 'A settembre 182,2 km sull\'intero trimestrale: 400 km in un mese sono fuori scala.',
-      go: 'Lasciato andare.' },
-    { n: 'Weekend 40K di ottobre', en: 'October Weekend 40K', cat: 'BIKE', tipo: 'singola',
-      req: '40 km di bici fra il 9 e l\'11 ottobre · 2 punti', win: '09 → 11 OTT', d1: '2026-10-09', d2: '2026-10-11', st: 'plan', prog: 'finestra da presidiare',
-      why: 'Quaranta chilometri in un weekend è l\'unico badge bici davvero alla portata: due ore scarse di uscita.',
-      go: 'Se il piano post-Roma prevede una uscita outdoor, mettila lì. Vale anche per Ciclismo 2026 P4 e, con 150-300 m di dislivello, per Scalatore 1.' },
-    { n: 'Pedala 100 km a ottobre', en: 'October Ride to 100', cat: 'BIKE', tipo: 'cumulativa',
-      req: '100 km di bici fra il 18 e il 24 ottobre · 2 punti', win: '18 → 24 OTT', d1: '2026-10-18', d2: '2026-10-24', st: 'plan', prog: '0 / 100 km',
-      why: 'Cento chilometri in una settimana: due uscite da 50 o tre da 35.',
-      go: 'Da rivalutare quando arriva il programma: dipende se la bici rientra nel ciclo.' },
     // ── NUOTO
-    { n: 'Ottobre a nuoto', en: 'October Swim', cat: 'SWIM', tipo: 'cumulativa',
-      req: '4.000 metri di nuoto nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '0 / 4.000 m — parte GIO 01',
-      why: 'A METRI, non a ore come il settembrino: 4.000 m sono tre o quattro vasche, molto più abbordabile delle 4 ore chieste a settembre.',
-      go: 'Il badge nuoto più facile dell\'anno: quattro sedute in vasca nel mese lo chiudono.' },
-    { n: 'Settimana del nuoto di ottobre', en: 'October Swim Week', cat: 'SWIM', tipo: 'singola',
-      req: 'Una nuotata da 1.000 m fra l\'11 e il 17 ottobre · 1 pt', win: '11 → 17 OTT', d1: '2026-10-11', d2: '2026-10-17', st: 'plan', prog: 'finestra da presidiare',
-      why: 'Mancato a settembre per 400 m: i 600 dell\'Illegal avevano avviato il contatore e poi non è arrivata nessuna vasca.',
-      go: 'Una vasca da 1.000 m in quella settimana prende questo E un quarto di Ottobre a nuoto.' },
     // ── ALTRO
     { n: 'Attività a ottobre', en: 'Active October', cat: 'MISC', tipo: 'cumulativa',
       req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '2 / 20 — 10% (webarchive, 05/10)',
@@ -11713,11 +11811,6 @@ const BADGES = {
   hunts: [
     { n: 'Passi: giorno a rischio', cat: 'STEP', whenNoRun: true, kinds: [], codes: [], req: 'Giorno senza corsa: l\'allenamento non produce passi, i 10.000 vanno fatti a parte', win: 'finche\' la serie 10KADAY e\' aperta \u00b7 4 pt', go: 'Servono 7-7,5 km di camminata dedicata (anche spezzata): \u00e8 in giorni come questo che la serie si \u00e8 rotta due volte, il 03/09 e il 16/09.' },
     { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
-    { n: 'Tempo di nuotare (Fins On)', cat: 'SWIM', kinds: ['swim'], codes: ['SWIM','TRI'], req: 'Una attivita\' di nuoto con passo MEDIO ≤2:00/100 m — permanente, NON e\' il mensile omonimo', win: 'permanente · 2 pt', go: 'Attivita\' dedicata e CORTA: 100 m a tutta e stop — piu\' e\' breve, piu\' la media regge. Il tuo cruise e\' 2:33/100: serve il colpo secco.' },
-    { n: 'Scalatore 1', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: 'Una pedalata outdoor con D+ tra 152 e 304 m — sopra i 305 scatta il 2, che hai gia\'', win: 'permanente · 1 pt', go: 'Giro collinare tranquillo da ~200-250 m di dislivello, registrato col Garmin.' },
-    { n: 'Indoor 20-Mile', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '32,2 km in una singola seduta indoor', win: 'permanente · 1 pt', go: 'Bike Virgin registrata col Garmin: ~60\' a ritmo rulli bastano.' },
-    { n: '50-Mile Ride', cat: 'BIKE', kinds: ['bike'], codes: ['BIKE'], req: '80,5 km in una singola uscita', win: 'permanente · 4 pt', go: 'Uscita lunga outdoor: da pianificare post-Roma.' },
-    { n: 'Prendi una decisione', cat: 'SWIM', kinds: ['swim'], codes: ['SWIM','TRI'], req: 'Una nuotata registrata in iarde + una in metri', win: 'permanente · 1 pt', go: 'Due mini-vasche cambiando l\'unita\' nelle impostazioni: il badge piu\' facile che ti manca.' },
   ],
   stages: [
     { n: '2026 Running ─ Stage 3', req: '300 km di corsa', win: '01 LUG → 30 SET', st: 'done', prog: 'CHIUSO · 300,0 / 300,0 km (webarchive, 29/09)',
