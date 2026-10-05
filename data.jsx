@@ -1694,11 +1694,11 @@ const WEEK = [
       { code: 'RUN', t: 'Ripetute · Pista Nebiolo · 15:00 → 16:00', d: 'Gabriele, in presenza · unica indicazione sul programma: "menare!" · struttura decisa in pista', dur: '60\'', result: 'da fare' },
     ]
   },
-  { day: 'VEN', date: '09', title: 'Z2 LUNGA 60\' SKI+ROW + BODY ARMOR + MEDIO 11 KM', sub: 'Blocco E di Mattia · la sera 3 km risc + 11 km @5\'20"', load: 'Z2', duration: 185, kind: 'multierg', done: false,
+  { day: 'VEN', date: '09', title: 'Z2 LUNGA 60\' SKI+ROW + BODY ARMOR + MEDIO 11 KM', sub: 'Blocco E di Mattia · alla Pista Nebiolo dalle 17 il medio da 14 km', load: 'Z2', duration: 185, kind: 'multierg', done: false,
     blocks: [
       { code: 'SKI', t: 'Z2 lunga · 10\' Ski / 10\' Row alternati fino a 60\' totali', d: 'Mattia, blocco A · tutto in zona 2, 120-135 bpm', dur: '60\'', result: 'da fare' },
       { code: 'PESI', t: 'Body Armor · 3+3 round, a seguire', d: 'Mattia, blocco B · 3 round: 10/10 renegade row senza push-up @2×24 kg + max plank, r2\' · poi 3 round: 12/12 single arm row @24 kg superslow + max hollow hold', dur: '~25\'', result: 'da fare' },
-      { code: 'RUN', t: 'Run · 3 km risc + 11 km @5\'20"/km', d: 'Gabriele · 14 km totali · CONFLITTO: il venerdi\' alle 17 era la pista coi bimbi, corsa tranquilla. Da sciogliere con Gabriele', dur: '80\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 3 km risc + 11 km @5\'20"/km', d: 'Gabriele · 14 km totali · alla Pista Nebiolo dalle 17, coi bimbi', dur: '80\'', result: 'da fare' },
     ]
   },
   { day: 'SAB', date: '10', title: 'DEADLIFT 3×3 @140 + TEST LUNGES + DOPPIO EMOM', sub: 'Blocco F di Mattia · la mobilita\' chiude la mattina', load: 'HEAVY + METCON', duration: 180, kind: 'strength', done: false,
