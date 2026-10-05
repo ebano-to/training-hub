@@ -29,7 +29,7 @@ const ATHLETE = {
   bodyFat: 22.4,
   bodyDate: '29 SET 2026',
   hrmax: 177,
-  programWeek: 40,
+  programWeek: 41,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -1623,10 +1623,7 @@ const WEEK_ARCHIVE = [
     ]
   },
   ] },
-];
-
-// Current week — S40 (28 SET - 04 OTT 2026) · post-gara
-const WEEK = [
+  { id: 'S40', label: 'S40 · 28 SET → 04 OTT', range: '28 SET → 04 OTT 2026', programWeek: 40, days: [
   { day: 'LUN', date: '28', title: 'RUN 1H @5\'40" + ALLUNGHI', sub: 'Prima uscita post-Roma · target centrato al decimo', load: 'Z2', duration: 69, kind: 'run', done: true,
     blocks: [
       { code: 'RUN', t: 'Run · 1h @5\'40"/km + 8×100 m allunghi r40"', d: 'Gabriele · 10\' più lunga e 10"/km più lenta della versione pre-gara · MyRun di casa, pendenza 0,5% fissa sui 60\'', dur: '69\'', result: 'Blocco 1h: 10,563 km @5:40.2/km ESATTO sul target · FC 124,5 max 136 · drift EF −4,9% · allunghi 8/8 a 17,2 km/h · totale 12,099 km in 1:08:47 · cad 168' },
@@ -1637,9 +1634,9 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 15\' risc + 2×10\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata (140 bpm = Z3 bassa): il passo è la conseguenza, non il bersaglio · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '57\'', result: "Blocchi 2×10:00 @8%: 1.332,8 m @7:30.2/km FC 140,9 · 1.317,3 m @7:35.5/km FC 141,6 — target 140 centrato, Z3 94% e mai Z4 · rec 6' a 9,91 km/h con FC 131,6 · defa 15:55 sui 10' prescritti · totale 8,568 km in 56:55 · D+ 243 m del MyRun conferma l'8%" },
     ]
   },
-  { day: 'MER', date: '30', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
+  { day: 'MER', date: '30', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: true,
     blocks: [
-      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
+      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'Riposo' },
     ]
   },
   { day: 'GIO', date: '01', title: 'PISTA PIRAMIDE + TEST RM SLITTA', sub: 'Piramide 600-500-400-300 con Gabriele · forza con Mattia: massimali di slitta', load: 'Z3-Z5 + HEAVY', duration: 123, kind: 'hyrox', done: true,
@@ -1648,22 +1645,75 @@ const WEEK = [
       { code: 'PESI', t: 'Forza con Mattia · TEST 1RM Sled Push + Sled Pull', d: 'Slitta del Virgin · 1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) · i due massimali diventano la base dei carichi del prossimo ciclo', dur: '60\'', result: 'TEST: Sled Push 1RM 300 kg · Sled Pull 1RM 220 kg · slitta Virgin, 1 rip = andata+ritorno ~7,5 m · i 208 kg usati finora in allenamento sono il 69% del push' },
     ]
   },
-  { day: 'VEN', date: '02', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
+  { day: 'VEN', date: '02', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: true,
     blocks: [
-      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
+      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'Riposo' },
     ]
   },
-  { day: 'SAB', date: '03', title: 'MEDIO 10 KM @5\'20"', sub: '3 km di riscaldamento + 10 km a ritmo medio', load: 'Z2-Z3', duration: 75, kind: 'run', done: false,
+  { day: 'SAB', date: '03', title: 'MEDIO 10 KM @5\'20"', sub: '3 km di riscaldamento + 10 km a ritmo medio · saltato per raffreddore', load: 'Z2-Z3', duration: 75, kind: 'run', done: false,
     blocks: [
-      { code: 'RUN', t: 'Run · 3 km risc + 10 km @5\'20"/km', d: 'Gabriele · 13 km totali', dur: '75\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 3 km risc + 10 km @5\'20"/km', d: 'Gabriele · 13 km totali', dur: '75\'', result: 'SALTATO', skipped: true },
     ]
   },
-  { day: 'DOM', date: '04', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: false,
+  { day: 'DOM', date: '04', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: true,
     blocks: [
-      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'da fare' },
+      { code: 'REST', t: 'Riposo', d: 'Gabriele: nessun lavoro assegnato', dur: '—', result: 'Riposo' },
+    ]
+  },
+  ] },
+];
+
+// Current week — S41 (05 OTT - 11 OTT 2026) · prima settimana della struttura fissa
+const WEEK = [
+  { day: 'LUN', date: '05', title: 'Z2 ERGOMETRI + 20\' MANUBRI + RUN', sub: 'Erg tranquillo al mattino · run la sera', load: 'Z2', duration: 125, kind: 'multierg', done: false,
+    blocks: [
+      { code: 'ERG', t: 'Erg Z2 · a casa, dalle 08:15', d: 'Struttura fissa concordata il 04/10 · tranquillo: il mattino presto non regge intervalli · contenuto da Mattia', dur: 'dalle 08:15', result: 'da fare' },
+      { code: 'PESI', t: '20\' manubri upper body · a casa, a seguire', d: 'Manubri componibili da 24 kg · sempre in appendice a un\'altra seduta, mai da soli · contenuto da Mattia', dur: '20\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · la sera · tapis o esterno', d: 'Gabriele · una delle due run settimanali sara\' su tapis', dur: 'da definire', result: 'da fare' },
+    ]
+  },
+  { day: 'MAR', date: '06', title: 'FORZA + POSTURAL + RUN', sub: 'Forza in Virgin dalle 12:00 · mobilita\' a seguire', load: 'HEAVY + Z2', duration: 135, kind: 'strength', done: false,
+    blocks: [
+      { code: 'PESI', t: 'Forza · in Virgin, dalle 12:00', d: 'Mattia · esempio: back squat, deadlift · precede la classe di mobilita\', che fa da scarico', dur: 'da definire', result: 'da fare' },
+      { code: 'MOB', t: 'Postural · in Virgin · 13:15 → 14:00', d: 'Classe Virgin da prenotare · alle 14 la mattinata e\' chiusa', dur: '45\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · la sera · tapis o esterno', d: 'Gabriele · non dentro la fascia 18-19', dur: 'da definire', result: 'da fare' },
+    ]
+  },
+  { day: 'MER', date: '07', title: 'Z2 SKIERG + POSTURAL + METCON', sub: 'Tutto in Virgin · skierg prima della classe delle 9:30', load: 'Z2 + METCON', duration: 150, kind: 'multierg', done: false,
+    blocks: [
+      { code: 'SKI', t: 'Ski Z2 · in Virgin · 08:15 → 09:20', d: 'Mattia · spostato in Virgin per incastrarsi con la mobilita\' delle 9:30 · tranquillo, non intervalli', dur: '65\'', result: 'da fare' },
+      { code: 'MOB', t: 'Postural · in Virgin · 09:30 → 10:15', d: 'Classe Virgin da prenotare · stessa uscita dello skierg', dur: '45\'', result: 'da fare' },
+      { code: 'METCON', t: 'Metcon · in Virgin · dalle 14:00', d: 'Mattia · contenuto da definire', dur: 'da definire', result: 'da fare' },
+      { code: 'PESI', t: '20\' manubri upper body · a seguire', d: 'Terzo upper della settimana · cade dopo il metcon: da confermare con Mattia', dur: '20\'', result: 'da fare' },
+    ]
+  },
+  { day: 'GIO', date: '08', title: 'PISTA · RUN QUALITA\'', sub: 'Nebiolo · riscaldamento 14:30, lavoro 15:00', load: 'Z4-Z5', duration: 90, kind: 'run', done: false,
+    blocks: [
+      { code: 'RUN', t: 'Riscaldamento · Nebiolo · 14:30 → 15:00', d: 'Prima del lavoro di qualita\'', dur: '30\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run qualita\' · Nebiolo · 15:00 → 16:00', d: 'Gabriele, in presenza · appuntamento fisso della settimana · struttura da definire', dur: '60\'', result: 'da fare' },
+    ]
+  },
+  { day: 'VEN', date: '09', title: 'Z2 ERGOMETRI + 20\' MANUBRI + PISTA', sub: 'Erg al mattino · pista alle 17 coi bimbi', load: 'Z2', duration: 140, kind: 'multierg', done: false,
+    blocks: [
+      { code: 'ERG', t: 'Erg Z2 · a casa, dalle 08:15', d: 'Lavoro tranquillo · contenuto da Mattia', dur: 'dalle 08:15', result: 'da fare' },
+      { code: 'PESI', t: '20\' manubri upper body · a casa, a seguire', d: 'Manubri da 24 kg · contenuto da Mattia', dur: '20\'', result: 'da fare' },
+      { code: 'RUN', t: 'Pista · Nebiolo · 17:00 → 18:15 coi bimbi', d: 'Corsa tranquilla, non un allenamento duro', dur: '75\'', result: 'da fare' },
+    ]
+  },
+  { day: 'SAB', date: '10', title: 'PESI LOWER + METCON + FLEXABILITY', sub: 'Tutto il lavoro prima, la mobilita\' chiude alle 11:30', load: 'HEAVY + METCON', duration: 150, kind: 'strength', done: false,
+    blocks: [
+      { code: 'PESI', t: 'Pesi lower · in Virgin', d: 'Mattia · esempio: affondi · da chiudere in tempo per la classe delle 11:30', dur: 'da definire', result: 'da fare' },
+      { code: 'METCON', t: 'Metcon · in Virgin · a seguire', d: 'Mattia · contenuto da definire', dur: 'da definire', result: 'da fare' },
+      { code: 'MOB', t: 'Flexability · in Virgin · 11:30 → 12:15', d: 'Classe Virgin da prenotare · ultima cosa della mattina, fa da scarico', dur: '45\'', result: 'da fare' },
+    ]
+  },
+  { day: 'DOM', date: '11', title: 'RIPOSO', sub: 'Giorno di scarico della struttura fissa', load: '—', duration: 0, kind: 'rest', done: false,
+    blocks: [
+      { code: 'REST', t: 'Riposo', d: 'Giorno di riposo previsto dalla settimana tipo', dur: '—', result: 'da fare' },
     ]
   },
 ];
+
 
 
 
@@ -1693,11 +1743,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0];
-const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0];
-const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0];
+const VOL_SKI = [13.9,20.7,16.9,52.0,0,25.0,11.8,23.1,37.9,36.8,41.7,35.053,32.9,20.006,14.572,20.031,22.032,33.524,7.348,10.347,0,1.5,16.668,18.663,15.657,0,16.838,17.462,21.215,18.339,32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 0];
+const VOL_RUN = [0,7.82,7.934,7.711,16.085,4.13,10.157,28.909,32.259,33.324,23.487,29.075,30.518,2.15,20.223,19.458,36.5,21.552,26.931,41.432,23.563,18.107,17.298,24.177,15.624,16.800,15.832,33.903,12.759,25.742,33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
@@ -11534,9 +11584,9 @@ const BADGES = {
       why: 'Preso ogni mese: settembre ha chiuso a 80,5 e agosto a 86,9. Col programma di Gabriele arriva da solo.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Weekend 5K di ottobre', en: 'October Weekend 5K', cat: 'RUN', tipo: 'singola',
-      req: 'Una corsa da 5 km fra il 2 e il 4 ottobre · 1 pt', win: '02 → 04 OTT', d1: '2026-10-02', d2: '2026-10-04', st: 'auto', prog: 'il medio di SAB 03 lo prende da solo',
-      why: 'La finestra di tre giorni cade su un sabato già occupato da 13 km.',
-      go: 'Nessuna azione: SAB 03 hai 3 km di riscaldamento + 10 km @5\'20". Basta registrarlo col Garmin.' },
+      req: 'Una corsa da 5 km fra il 2 e il 4 ottobre · 1 pt', win: '02 → 04 OTT', d1: '2026-10-02', d2: '2026-10-04', st: 'miss', prog: 'nessuna corsa nella finestra (05/10)',
+      why: 'La finestra di tre giorni dipendeva da una corsa sola, il medio di SAB 03.',
+      go: 'Finestra chiusa: il medio è saltato per raffreddore e non c\'era un secondo giorno utile. Lezione: i badge appesi a una sola seduta non hanno margine.' },
     { n: 'Weekend 10K di ottobre', en: 'October Weekend 10K', cat: 'RUN', tipo: 'singola',
       req: 'Una singola corsa da 10 km fra il 16 e il 18 ottobre · 2 punti', win: '16 → 18 OTT', d1: '2026-10-16', d2: '2026-10-18', st: 'plan', prog: 'finestra da presidiare',
       why: 'Il gemello di settembre è stato mancato perché il collinare del weekend è saltato: è il badge che sfugge più spesso.',
@@ -11639,9 +11689,9 @@ const BADGES = {
       why: 'Sceso dal 3° al 5° posto. È questa istanza che può consegnare il Podio per i passi di ottobre, e chiude LUN 05.',
       go: 'Servono due posizioni in quattro giorni: è l\'unica sfida passi in corso, qualche migliaio di passi in più al giorno basta.' },
     { n: 'Sfida di corsa (follower)', en: 'Follower Running Challenge', cat: 'RUN', tipo: 'singola',
-      req: 'Sfida di corsa fra follower · classifica su 1 partecipante', win: 'fino al 04 OTT', d1: null, d2: '2026-10-04', st: 'auto', prog: '1° di 1 (webarchive, 29/09)',
-      why: 'Sfida di gruppo con un solo iscritto.',
-      go: 'Nessuna azione.' },
+      req: 'Sfida di corsa fra follower · classifica su 1 partecipante', win: 'fino al 04 OTT', d1: null, d2: '2026-10-04', st: 'done', prog: '1° di 1 alla chiusura (webarchive, 29/09)',
+      why: 'Sfida di gruppo con un solo iscritto: la classifica si chiude cos\'ì com\'è.',
+      go: 'Chiusa. Da confermare al prossimo export dei badge ricevuti.' },
   ],
   // Badge permanenti cacciabili: compaiono in agenda su ogni giorno del tipo giusto finche' non presi
   hunts: [
