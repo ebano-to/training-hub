@@ -11818,6 +11818,59 @@ const HYDRATION = [
     sweatTotal: 1550, sweatRate: 1388, rehydTarget: 2325, rehydRemaining: 1575 },
 ];
 
+// SETTIMANA TIPO — gli SLOT fissi della settimana, non i lavori.
+// Serve a vedere dove devo essere e cosa devo prenotare: il colore e' il LUOGO.
+// h = ora di inizio in formato decimale, e = ora di fine. Durata = e - h.
+const SETTIMANA_TIPO = {
+  updated: '06 OTT 2026',
+  luoghi: {
+    casa:     { l: 'CASA',     c: 'oklch(72% 0.13 250)' },
+    virgin:   { l: 'VIRGIN',   c: 'oklch(82% 0.16 85)'  },
+    pista:    { l: 'PISTA',    c: 'oklch(75% 0.18 145)' },
+    famiglia: { l: 'FAMIGLIA', c: 'oklch(70% 0.10 200)' },
+  },
+  giorni: [
+    { d: 'LUN', slot: [
+      { h: 7.25, e: 8.0,  n: 'PORTO I BIMBI', p: 'famiglia', fisso: true },
+      { h: 8.25, e: 9.5,  n: 'ERG + MANUBRI', p: 'casa' },
+      { h: 17.5, e: 19.0, n: 'RUN', p: 'casa' },
+    ]},
+    { d: 'MAR', slot: [
+      { h: 12.0, e: 13.0, n: 'FORZA', p: 'virgin', fisso: true },
+      { h: 13.25, e: 14.0, n: 'CLASSE MOBILITÀ', p: 'virgin', prenota: true },
+      { h: 17.5, e: 19.0, n: 'RUN', p: 'casa' },
+      { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
+    ]},
+    { d: 'MER', slot: [
+      { h: 7.25, e: 8.0,  n: 'PORTO I BIMBI', p: 'famiglia', fisso: true },
+      { h: 8.25, e: 9.333, n: 'ERG', p: 'virgin' },
+      { h: 9.5, e: 10.25, n: 'CLASSE MOBILITÀ', p: 'virgin', prenota: true },
+      { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
+      { h: 19.0, e: 20.0, n: 'METCON + MANUBRI', p: 'casa' },
+    ]},
+    { d: 'GIO', slot: [
+      { h: 14.5, e: 16.0, n: 'PISTA CON GABRY', p: 'pista', fisso: true },
+      { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
+    ]},
+    { d: 'VEN', slot: [
+      { h: 7.25, e: 8.0,  n: 'PORTO I BIMBI', p: 'famiglia', fisso: true },
+      { h: 8.25, e: 9.5,  n: 'ERG + MANUBRI', p: 'casa' },
+      { h: 17.0, e: 18.5, n: 'PISTA COI BIMBI', p: 'pista', fisso: true },
+    ]},
+    { d: 'SAB', slot: [
+      { h: 9.75, e: 11.5, n: 'PESI + METCON', p: 'virgin' },
+      { h: 11.5, e: 12.25, n: 'CLASSE MOBILITÀ', p: 'virgin', prenota: true },
+    ]},
+    { d: 'DOM', slot: [] },
+  ],
+  note: [
+    "Le classi del Virgin vanno PRENOTATE con anticipo: vanno spesso in lista d'attesa.",
+    'Lunedì, mercoledì e venerdì mattina i bimbi li porto io. Martedì e giovedì li porta Maura.',
+    'Martedì, mercoledì e giovedì dalle 18 alle 19 sono coi bimbi: niente Virgin, ma a casa posso allenarmi.',
+  ],
+};
+
 window.TRAINING = {
   NEXTWEEK,
+  SETTIMANA_TIPO,
   PROG, RACE, RACES, BODY, PLICO, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };

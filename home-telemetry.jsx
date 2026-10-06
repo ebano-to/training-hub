@@ -7,6 +7,46 @@ function HomeTelemetry() {
   const cd = useCountdown(RACE.date);
   const todayNum = new Date().getDate();
   const today = WEEK.find((w) => parseInt(w.date, 10) === todayNum) || WEEK.find((w) => w.today) || WEEK[0];
+
+  // --- dati di sintesi per i moduli della home ---
+  const HHMM = function (v) {
+    var h = Math.floor(v), m = Math.round((v - h) * 60);
+    return h + ':' + (m < 10 ? '0' : '') + m;
+  };
+  const ST = window.TRAINING.SETTIMANA_TIPO;
+  const OGGI_SIGLA = ['DOM', 'LUN', 'MAR', 'MER', 'GIO', 'VEN', 'SAB'][new Date().getDay()];
+  const G_OGGI = ST.giorni.find(function (g) { return g.d === OGGI_SIGLA; });
+  const SETTIMANA_OGGI = (G_OGGI ? G_OGGI.slot : []).slice().sort(function (x, y) { return x.h - y.h; });
+  const PRENOTA_N = ST.giorni.reduce(function (a2, g) { return a2 + g.slot.filter(function (x) { return x.prenota; }).length; }, 0);
+
+  const BADGE_DONE = window.TRAINING.BADGES.items.filter(function (b) { return b.st === 'done'; }).length;
+  const BADGE_VICINI = (function () {
+    var out = [];
+    window.TRAINING.BADGES.items.forEach(function (b) {
+      if (b.st === 'done' || b.st === 'miss' || b.st === 'off') return;
+      if (!b.prog) return;
+      var m = String(b.prog).match(/(\d+)\s*%/);
+      if (!m) return;
+      out.push({ n: b.n, pct: parseInt(m[1], 10) });
+    });
+    out.sort(function (x, y) { return y.pct - x.pct; });
+    return out.slice(0, 4);
+  })();
+
+  const CORPO = (function () {
+    var B = window.TRAINING.BODY || [];
+    if (!B.length) return { kg: 0, bf: 0, dKg: 0, dBf: 0, dKgL: '', dBfL: '', serieKg: [], serieBf: [] };
+    var bf = B.filter(function (x) { return x.bf; });
+    var last = B[B.length - 1], lb = bf[bf.length - 1], fb = bf[0];
+    var dKg = last.kg - B[0].kg, dBf = lb.bf - fb.bf;
+    var fmt = function (v) { return (v > 0 ? '+' : v < 0 ? '\u2212' : '') + Math.abs(v).toFixed(1).replace('.', ','); };
+    return {
+      kg: last.kg, bf: lb.bf, dKg: dKg, dBf: dBf,
+      dKgL: fmt(dKg) + ' kg', dBfL: fmt(dBf) + ' pt',
+      serieKg: B.map(function (x) { return x.kg; }),
+      serieBf: bf.map(function (x) { return x.bf; }),
+    };
+  })();
   const [tick, setTick] = React.useState(0);
   React.useEffect(() => { const id = setInterval(() => setTick((t) => t + 1), 1000); return () => clearInterval(id); }, []);
 
@@ -75,7 +115,6 @@ function HomeTelemetry() {
           <Avatar size={48} />
           <div>
             <div className="display" style={{ fontSize: 20, lineHeight: 1 }}>F.SIMONDI</div>
-            <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 4, letterSpacing: '0.15em' }}>// ATHLETE_ID 0x4F-2026 · M-40</div>
           </div>
         </div>
         <div className="r-athlete-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, paddingLeft: 24, borderLeft: '1px dashed var(--line-2)' }}>
@@ -99,9 +138,34 @@ function HomeTelemetry() {
           href="agenda.html"
         >
           <div style={{ marginTop: 12 }}>
-            <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.12em', marginBottom: 4 }}>OGGI</div>
+            <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.12em', marginBottom: 4 }}>
+              OGGI · {today.day} {today.date} · S{ATHLETE.programWeek}
+            </div>
             <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--sans)', color: 'var(--fg)', lineHeight: 1.3 }}>{today.title}</div>
-            <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 3 }}>{today.duration}' · {today.load}</div>
+            {today.sub && <div style={{ fontSize: 10, color: 'var(--fg-2)', marginTop: 4, lineHeight: 1.35 }}>{today.sub}</div>}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6, marginTop: 10 }}>
+              {[['DURATA', today.duration + "'"], ['ZONA', today.load], ['BLOCCHI', today.blocks ? today.blocks.length : 1]].map(function (x) {
+                return (
+                  <div key={x[0]} style={{ border: '1px solid var(--line)', background: 'var(--bg)', padding: '6px 8px' }}>
+                    <div style={{ fontSize: 8, color: 'var(--fg-3)', letterSpacing: '0.14em' }}>{x[0]}</div>
+                    <div className="display tabular" style={{ fontSize: 17, lineHeight: 1.1 }}>{x[1]}</div>
+                  </div>
+                );
+              })}
+            </div>
+            {today.blocks && today.blocks.length > 0 && (
+              <div style={{ marginTop: 8, display: 'grid', gap: 3 }}>
+                {today.blocks.map(function (bk, i) {
+                  var fatto = bk.result && bk.result !== 'da fare';
+                  return (
+                    <div key={i} style={{ display: 'flex', gap: 6, alignItems: 'baseline' }}>
+                      <span style={{ fontSize: 8, letterSpacing: '0.1em', color: fatto ? 'var(--accent)' : 'var(--fg-3)', minWidth: 46 }}>{bk.code}</span>
+                      <span style={{ fontSize: 10, color: 'var(--fg-2)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{bk.t}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
           <div style={{ display: 'flex', gap: 4, marginTop: 12 }}>
             {WEEK.map((w, i) => (
@@ -183,63 +247,141 @@ function HomeTelemetry() {
         </ModuleCard>
       </div>
 
-      {/* SECONDARY LINKS — BADGE / PROGRESSI / HYDRATION */}
-      <div className="r-grid r-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 16 }}>
-        {[
-          ['badge.html', '// GARMIN_CHALLENGES', 'BADGE', window.TRAINING.BADGES.items.filter(function(b) { return b.st === 'done'; }).length + ' prese · mensili + catalogo'],
-          ['progressione.html', '// SEI_MIGLIORATO?', 'PROGRESSI', 'erg dal 2025 · nuoto dal 2023'],
-          ['hydration.html', '// SWEAT_TRACKING', 'HYDRATION', window.TRAINING.HYDRATION.length + ' sessioni · sweat rate'],
-        ].map(function(item) {
-          return (
-            <a key={item[0]} href={item[0]} style={{
-              border: '1px solid var(--line)', background: 'var(--bg-2)', padding: '16px 20px',
-              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-              transition: 'border-color .15s', textDecoration: 'none',
-            }}
-              onMouseEnter={function(e) { e.currentTarget.style.borderColor = 'var(--accent)'; }}
-              onMouseLeave={function(e) { e.currentTarget.style.borderColor = 'var(--line)'; }}
-            >
-              <div>
-                <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{item[1]}</div>
-                <div className="display" style={{ fontSize: 20, color: 'var(--fg)', marginTop: 4 }}>{item[2]}</div>
-                <div style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{item[3]}</div>
+      {/* SECONDA FILA DI MODULI — stessa forma della prima */}
+      <div className="r-grid r-grid-3" style={{ marginBottom: 16 }}>
+
+        <ModuleCard
+          code="MOD.04"
+          title="SETTIMANA"
+          sub="slot fissi · dove devo essere"
+          metric={SETTIMANA_OGGI.length}
+          metricLabel={'SLOT OGGI · ' + OGGI_SIGLA}
+          href="settimana.html"
+        >
+          <div style={{ marginTop: 12, display: 'grid', gap: 4 }}>
+            {SETTIMANA_OGGI.length === 0 && (
+              <div style={{ fontSize: 12, color: 'var(--fg-3)', fontFamily: 'var(--sans)' }}>Nessuno slot fisso oggi.</div>
+            )}
+            {SETTIMANA_OGGI.map(function (sl, i) {
+              var L = window.TRAINING.SETTIMANA_TIPO.luoghi[sl.p];
+              return (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, borderLeft: '3px solid ' + L.c, paddingLeft: 7 }}>
+                  <span className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)', minWidth: 72 }}>{HHMM(sl.h)}→{HHMM(sl.e)}</span>
+                  <span style={{ fontSize: 11, color: 'var(--fg)', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{sl.n}</span>
+                </div>
+              );
+            })}
+          </div>
+          {PRENOTA_N > 0 && (
+            <div style={{ marginTop: 10, fontSize: 10, color: 'oklch(82% 0.16 85)', letterSpacing: '0.1em' }}>
+              {PRENOTA_N} CLASSI VIRGIN DA PRENOTARE IN SETTIMANA
+            </div>
+          )}
+        </ModuleCard>
+
+        <ModuleCard
+          code="MOD.05"
+          title="PROGRESSI"
+          sub="personal best · erg e gare"
+          metric={window.TRAINING.PBS.length}
+          metricLabel="PB A REFERTO"
+          href="progressione.html"
+        >
+          <div style={{ marginTop: 12, display: 'grid', gap: 5 }}>
+            {window.TRAINING.PBS.slice(0, 6).map(function (pb, i) {
+              return (
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
+                  <span style={{ fontSize: 10, color: 'var(--fg-3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{pb.station}</span>
+                  <span className="display tabular" style={{ fontSize: 14, color: 'var(--fg)', flexShrink: 0 }}>{pb.value}</span>
+                </div>
+              );
+            })}
+          </div>
+        </ModuleCard>
+
+        <ModuleCard
+          code="MOD.06"
+          title="BADGE"
+          sub="garmin_challenges"
+          metric={BADGE_DONE + '/' + window.TRAINING.BADGES.items.length}
+          metricLabel="PRESE QUESTO MESE"
+          href="badge.html"
+        >
+          <div style={{ marginTop: 12, display: 'grid', gap: 5 }}>
+            <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.12em', marginBottom: 2 }}>I PIÙ VICINI</div>
+            {BADGE_VICINI.map(function (b, i) {
+              return (
+                <div key={i}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
+                    <span style={{ fontSize: 10, color: 'var(--fg-2)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{b.n}</span>
+                    <span className="tabular" style={{ fontSize: 11, color: 'var(--fg)', flexShrink: 0 }}>{b.pct}%</span>
+                  </div>
+                  <div style={{ height: 4, background: 'var(--bg-3)', marginTop: 3 }}>
+                    <div style={{ width: b.pct + '%', height: '100%', background: 'var(--accent)' }} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </ModuleCard>
+
+      </div>
+
+      {/* TERZA FILA — CORPO / HYDRATION / STORICO già sopra */}
+      <div className="r-grid r-grid-3" style={{ marginBottom: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+
+        <ModuleCard
+          code="MOD.07"
+          title="MASSA CORPOREA"
+          sub="peso · massa grassa"
+          metric={String(CORPO.kg).replace('.', ',') + 'kg'}
+          metricLabel={'MASSA GRASSA ' + String(CORPO.bf).replace('.', ',') + '%'}
+          href="corpo.html"
+        >
+          <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                <span style={{ fontSize: 9, color: '#58ADF7', letterSpacing: '0.12em' }}>PESO</span>
+                <span className="tabular" style={{ fontSize: 10, color: CORPO.dKg < 0 ? '#39E75F' : 'var(--fg-3)' }}>{CORPO.dKgL}</span>
               </div>
-              <div style={{ fontSize: 18, color: 'var(--fg-3)' }}>→</div>
-            </a>
-          );
-        })}
-      </div>
+              <Sparkline data={CORPO.serieKg} width={150} height={34} color="#58ADF7" />
+            </div>
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                <span style={{ fontSize: 9, color: '#FF6B9D', letterSpacing: '0.12em' }}>MASSA GRASSA</span>
+                <span className="tabular" style={{ fontSize: 10, color: CORPO.dBf < 0 ? '#39E75F' : 'var(--fg-3)' }}>{CORPO.dBfL}</span>
+              </div>
+              <Sparkline data={CORPO.serieBf} width={150} height={34} color="#FF6B9D" />
+            </div>
+          </div>
+          <div style={{ fontSize: 9, color: 'var(--fg-3)', marginTop: 8, letterSpacing: '0.1em' }}>
+            {window.TRAINING.BODY.length} MISURE INDEX S2 · {window.TRAINING.PLICO.length} PLICOMETRIE
+          </div>
+        </ModuleCard>
 
-      {/* TODAY BAR */}
-      <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 16 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
-          <div style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.18em' }}>
-            // SESSION_TODAY · {today.day} {today.date} · S{ATHLETE.programWeek}
+        <ModuleCard
+          code="MOD.08"
+          title="HYDRATION"
+          sub="sweat_rate"
+          metric={(window.TRAINING.HYDRATION.reduce(function (a2, h) { return a2 + h.sweatRate; }, 0) / window.TRAINING.HYDRATION.length / 1000).toFixed(2).replace('.', ',') + 'L/h'}
+          metricLabel={'SUDORE MEDIO \u00b7 ' + window.TRAINING.HYDRATION.length + ' SESSIONI'}
+          href="hydration.html"
+        >
+          <div style={{ marginTop: 12, display: 'grid', gap: 5 }}>
+            {window.TRAINING.HYDRATION.slice(-4).reverse().map(function (h, i) {
+              return (
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
+                  <span style={{ fontSize: 10, color: 'var(--fg-3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{h.label} · {h.type}</span>
+                  <span className="tabular" style={{ fontSize: 12, color: 'var(--fg)', flexShrink: 0 }}>
+                    {(h.sweatRate / 1000).toFixed(2).replace('.', ',')} L/h
+                  </span>
+                </div>
+              );
+            })}
           </div>
-          <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.15em' }}>{today.kind.toUpperCase()}</div>
-        </div>
-        <div className="r-today" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 200px', gap: 32, alignItems: 'center' }}>
-          <div>
-            <div className="display" style={{ fontSize: 40, lineHeight: 1 }}>{today.title}</div>
-            <div style={{ fontSize: 13, color: 'var(--fg-2)', marginTop: 8 }}>{today.sub}</div>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
-            <Kv k="DURATA" v={today.duration + '\''} big />
-            <Kv k="ZONA" v={today.load} big />
-            <Kv k="BLOCCHI" v={today.blocks ? today.blocks.length : 1} big />
-          </div>
-          <a href="agenda.html" style={{
-            background: 'var(--accent)', color: '#000', padding: '16px 20px',
-            fontFamily: 'var(--display)', fontSize: 18, letterSpacing: '0.05em', fontWeight: 700,
-            display: 'flex', justifyContent: 'space-between', alignItems: 'center'
-          }}>
-            VEDI DETTAGLI <Icon.arrow width="16" height="16" />
-          </a>
-        </div>
-      </div>
+        </ModuleCard>
 
-      {/* COMPOSIZIONE CORPOREA */}
-      <BodyComposition />
+      </div>
 
       {/* NUTRITION — SPESA + RICETTARIO (separati dal training) */}
       <div style={{ border: '1px solid #2D6A4F', padding: 16, marginBottom: 16 }}>
@@ -349,182 +491,6 @@ function ModuleCard({ code, title, sub, metric, metricLabel, href, accent, child
 }
 
 // ── COMPOSIZIONE CORPOREA — Garmin Index S2 + plicometria Zappitelli
-function BodyComposition() {
-  var BODY = window.TRAINING.BODY || [];
-  var PLICO = window.TRAINING.PLICO || [];
-  if (!BODY.length) return null;
 
-  var W = 1000, H = 220, PAD = 34;
-  var all = BODY.concat(PLICO);
-  var t0 = new Date(all[0].d).getTime();
-  var t1 = new Date(BODY[BODY.length - 1].d).getTime();
-  PLICO.forEach(function (p) { var t = new Date(p.d).getTime(); if (t < t0) t0 = t; if (t > t1) t1 = t; });
-  var span = Math.max(1, t1 - t0);
-  var X = function (d) { return PAD + ((new Date(d).getTime() - t0) / span) * (W - PAD * 2); };
-
-  var plicoKg = PLICO.filter(function (p) { return p.kg; });
-  var plicoBf = PLICO.filter(function (p) { return p.bf; });
-  var kgs = BODY.map(function (b) { return b.kg; }).concat(plicoKg.map(function (p) { return p.kg; }));
-  var bfs = BODY.filter(function (b) { return b.bf; }).map(function (b) { return b.bf; }).concat(plicoBf.map(function (p) { return p.bf; }));
-  var kgLo = Math.floor(Math.min.apply(null, kgs) - 1), kgHi = Math.ceil(Math.max.apply(null, kgs) + 1);
-  var bfLo = Math.floor(Math.min.apply(null, bfs) - 1), bfHi = Math.ceil(Math.max.apply(null, bfs) + 1);
-  var Ykg = function (v) { return H - ((v - kgLo) / (kgHi - kgLo)) * H; };
-  var Ybf = function (v) { return H - ((v - bfLo) / (bfHi - bfLo)) * H; };
-
-  function line(pts, yf, key) {
-    return 'M' + pts.map(function (p) { return X(p.d) + ',' + yf(p[key]); }).join(' L');
-  }
-  var bodyBf = BODY.filter(function (b) { return b.bf; });
-  var first = BODY[0], last = BODY[BODY.length - 1];
-  var fb = bodyBf[0], lb = bodyBf[bodyBf.length - 1];
-  var fatKg0 = fb.kg * fb.bf / 100, fatKg1 = lb.kg * lb.bf / 100;
-  var leanKg0 = fb.kg - fatKg0, leanKg1 = lb.kg - fatKg1;
-  var dKg = last.kg - first.kg, dBf = lb.bf - fb.bf, dFat = fatKg1 - fatKg0, dLean = leanKg1 - leanKg0;
-  var n = function (v, dec) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(dec === undefined ? 1 : dec).replace('.', ','); };
-
-  // etichette mese
-  var months = [];
-  BODY.forEach(function (b) { var k = b.d.slice(0, 7); if (months.indexOf(k) < 0) months.push(k); });
-  var MN = ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'];
-
-
-  // asse x condiviso: tick posizionati sulla scala temporale reale
-  function AxisX() {
-    var d0 = new Date(t0), d1 = new Date(t1);
-    var ticks = [];
-    var y = d0.getFullYear(), m = d0.getMonth() <= 5 ? 0 : 6;
-    var cur = new Date(y, m, 1);
-    while (cur.getTime() < d0.getTime()) { cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1); }
-    while (cur.getTime() <= d1.getTime()) {
-      ticks.push({ t: cur.getTime(), lab: MN[cur.getMonth()] + ' ' + String(cur.getFullYear()).slice(2) });
-      cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1);
-    }
-    return (
-      <div style={{ position: 'relative', height: 16, marginTop: 4 }}>
-        {ticks.map(function (k, i) {
-          var pct = ((k.t - t0) / span) * 100;
-          return (
-            <span key={i} style={{
-              position: 'absolute', left: pct + '%', transform: 'translateX(-50%)',
-              fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.08em', whiteSpace: 'nowrap'
-            }}>{k.lab}</span>
-          );
-        })}
-      </div>
-    );
-  }
-
-  var box = { border: '1px solid var(--line)', padding: '12px 14px', background: 'var(--bg)' };
-  var lab = { fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.16em' };
-
-  return (
-    <div style={{ border: '1px solid var(--line)', padding: 16, marginBottom: 16, background: 'var(--bg-2)' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
-        <div>
-          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{'// BODY_COMP · ' + BODY.length + ' misure · Garmin Index S2' + (PLICO.length ? ' + ' + PLICO.length + ' plicometrie Zappitelli' : '')}</div>
-          <div className="display" style={{ fontSize: 26, lineHeight: 1, marginTop: 6 }}>PESO E MASSA GRASSA</div>
-        </div>
-        <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'right' }}>
-          {(function () {
-            var a = PLICO.length ? (PLICO[0].d < first.d ? PLICO[0].d : first.d) : first.d;
-            return a.split('-').reverse().join('/') + ' \u2192 ' + last.d.split('-').reverse().join('/');
-          })()}
-        </div>
-      </div>
-
-      {/* numeri chiave */}
-      <div className="r-grid r-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10, marginBottom: 16 }}>
-        <div style={box}>
-          <div style={lab}>PESO OGGI</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{String(last.kg).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: dKg < 0 ? '#39E75F' : 'var(--fg-3)', marginTop: 4 }}>{n(dKg) + ' kg in un anno'}</div>
-        </div>
-        <div style={box}>
-          <div style={lab}>MASSA GRASSA</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1, color: '#FF6B9D' }}>{String(lb.bf).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> %</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: dBf < 0 ? '#39E75F' : 'var(--fg-3)', marginTop: 4 }}>{n(dBf) + ' punti'}</div>
-        </div>
-        <div style={box}>
-          <div style={lab}>GRASSO IN KG</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{fatKg1.toFixed(1).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: dFat < 0 ? '#39E75F' : 'var(--fg-3)', marginTop: 4 }}>{n(dFat) + ' kg'}</div>
-        </div>
-        <div style={box}>
-          <div style={lab}>MASSA MAGRA</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{leanKg1.toFixed(1).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{n(dLean) + ' kg'}</div>
-        </div>
-      </div>
-
-      {/* grafico peso */}
-      <div style={{ ...box, marginBottom: 10 }}>
-        <div style={{ ...lab, marginBottom: 8 }}>{'PESO · kg · scala ' + kgLo + '–' + kgHi}</div>
-        <svg viewBox={'0 0 ' + W + ' ' + H} style={{ width: '100%', height: 170, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
-          {[kgLo, (kgLo + kgHi) / 2, kgHi].map(function (g, i) {
-            return <line key={i} x1="0" y1={Ykg(g)} x2={W} y2={Ykg(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
-          })}
-          <path d={line(BODY, Ykg, 'kg')} fill="none" stroke="#FFFFFF" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-          {plicoKg.length > 1 && <path d={line(plicoKg, Ykg, 'kg')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
-          {BODY.map(function (b, i) {
-            return <circle key={i} cx={X(b.d)} cy={Ykg(b.kg)} r="3" fill={i === BODY.length - 1 ? '#39E75F' : '#FFFFFF'} vectorEffect="non-scaling-stroke">
-              <title>{b.d.split('-').reverse().join('/') + ' · ' + b.kg + ' kg' + (b.bf ? ' · ' + b.bf + '% grasso' : '')}</title>
-            </circle>;
-          })}
-          {plicoKg.map(function (p, i) {
-            return <g key={'p' + i}>
-              <line x1={X(p.d)} y1="0" x2={X(p.d)} y2={H} stroke="#FFB454" strokeWidth="1" strokeDasharray="2 4" vectorEffect="non-scaling-stroke" />
-              <rect x={X(p.d) - 5} y={Ykg(p.kg) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
-                <title>{'ZAPPITELLI ' + p.d.split('-').reverse().join('/') + ' · ' + p.kg + ' kg' + (p.bf ? ' · ' + p.bf + '% (plicometria)' : '')}</title>
-              </rect>
-            </g>;
-          })}
-        </svg>
-        <AxisX />
-      </div>
-
-      {/* grafico massa grassa */}
-      <div style={{ ...box, marginBottom: 12 }}>
-        <div style={{ ...lab, marginBottom: 8 }}>{'MASSA GRASSA · % · scala ' + bfLo + '–' + bfHi}</div>
-        <svg viewBox={'0 0 ' + W + ' ' + H} style={{ width: '100%', height: 170, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
-          {[bfLo, (bfLo + bfHi) / 2, bfHi].map(function (g, i) {
-            return <line key={i} x1="0" y1={Ybf(g)} x2={W} y2={Ybf(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
-          })}
-          <path d={line(bodyBf, Ybf, 'bf')} fill="none" stroke="#FF6B9D" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-          {plicoBf.length > 1 && <path d={line(plicoBf, Ybf, 'bf')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
-          {bodyBf.map(function (b, i) {
-            return <circle key={i} cx={X(b.d)} cy={Ybf(b.bf)} r="3" fill={i === bodyBf.length - 1 ? '#39E75F' : '#FF6B9D'} vectorEffect="non-scaling-stroke">
-              <title>{b.d.split('-').reverse().join('/') + ' · ' + b.bf + '%'}</title>
-            </circle>;
-          })}
-          {plicoBf.map(function (p, i) {
-            return <rect key={'pb' + i} x={X(p.d) - 5} y={Ybf(p.bf) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
-              <title>{'ZAPPITELLI ' + p.d.split('-').reverse().join('/') + ' · ' + p.bf + '% (plicometria)'}</title>
-            </rect>;
-          })}
-        </svg>
-        <AxisX />
-      </div>
-
-      {/* legenda + lettura */}
-      <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginBottom: 10 }}>
-        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FFFFFF', display: 'inline-block' }} />PESO (INDEX S2)</span>
-        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FF6B9D', display: 'inline-block' }} />MASSA GRASSA (INDEX S2)</span>
-        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 9, height: 9, background: '#FFB454', display: 'inline-block' }} />ZAPPITELLI (PLICOMETRIA)</span>
-      </div>
-      <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10, whiteSpace: 'pre-line' }}>
-        {'Sull\'ultimo anno di bilancia il peso scende di ' + Math.abs(dKg).toFixed(1).replace('.', ',') + ' kg, ma il dato che conta è la ripartizione: grasso ' + n(dFat) + ' kg, massa magra ' + n(dLean) + ' kg. Il calo è quasi tutto grasso.'}
-        {PLICO.length
-          ? (function () {
-            var lp = plicoBf[plicoBf.length - 1], fp = plicoBf[0];
-            return '\nLE DUE SERIE NON COINCIDONO, E LA DISTANZA È GRANDE: la bilancia legge ' + String(lb.bf).replace('.', ',') + '% di massa grassa, l\'ultima plicometria di Zappitelli ' + String(lp.bf).replace('.', ',') + '%. Quindici punti non sono un problema di taratura: i due numeri non possono essere entrambi giusti.'
-              + '\nI due metodi sbagliano in direzioni note e opposte. La bioimpedenza domestica SOVRASTIMA il grasso, e idratazione, pasti e allenamento recente la spostano di giorno in giorno. Le formule su pliche SOTTOSTIMANO sui soggetti alti e pesanti, perché tarate su popolazioni di corporatura media. Il valore vero sta quasi certamente in mezzo.'
-              + '\nQuello che va guardato è la TENDENZA di ciascuna serie, non il livello — e lì sono d\'accordo: la bilancia fa ' + String(fb.bf).replace('.', ',') + '% → ' + String(lb.bf).replace('.', ',') + '%, la plicometria ' + String(fp.bf).replace('.', ',') + '% → ' + String(lp.bf).replace('.', ',') + '% partendo dal ' + fp.d.split('-').reverse().join('/') + '. Scendono entrambe.'
-              + '\nAnche i pesi non coincidono, con Zappitelli sempre circa due chili più alto: bilance diverse, ore e abbigliamento diversi. Ogni serie va letta contro sé stessa.';
-          })()
-          : '\nLe plicometrie di Zappitelli entreranno qui come quadrati arancioni, su una linea propria: metodo diverso dalla bioimpedenza, le due serie si leggono in parallelo e non si mediano.'}
-      </div>
-    </div>
-  );
-}
 
 window.HomeTelemetry = HomeTelemetry;
