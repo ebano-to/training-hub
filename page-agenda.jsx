@@ -177,6 +177,7 @@ function AgendaPage() {
       {(() => {
         var dayBlocks = day.blocks || [{ code: day.kind.slice(0, 3).toUpperCase(), t: day.title, d: day.sub, dur: day.duration + '\'' }];
         return (
+          <React.Fragment>
           <div className="r-agenda-session" style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 12 }}>
             <div style={{ border: '1px solid var(--accent)', background: 'oklch(88% 0.20 130 / 0.04)', padding: 24 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>
@@ -289,32 +290,37 @@ function AgendaPage() {
                 ))}
               </ModulePanel>
 
-              {(function () {
-                var bs = badgesForDay(day);
-                if (!bs.length) return null;
-                return (
-                  <ModulePanel code={'MOD.BADGE_GARMIN \u00b7 ' + bs.length + ' aperti'}>
-                    {bs.map(function (b, bi) {
-                      var c = badgeCat[b.cat] || 'var(--fg-2)';
-                      return (
-                        <div key={bi} style={{ borderLeft: '3px solid ' + c, paddingLeft: 10, paddingBottom: 12, marginBottom: bi === bs.length - 1 ? 0 : 12, borderBottom: bi === bs.length - 1 ? 'none' : '1px dashed var(--line-2)' }}>
-                          <div style={{ fontSize: 12, fontWeight: 700, fontFamily: 'var(--sans)', color: c, lineHeight: 1.3 }}>{b.n}</div>
-                          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.08em', marginTop: 3 }}>{b.win}</div>
-                          <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 4, lineHeight: 1.45 }}>{b.req}</div>
-                          {b.prog && <div className="tabular" style={{ fontSize: 11, color: 'var(--fg)', marginTop: 4 }}>{b.prog}</div>}
-                          <div style={{ fontSize: 10, color: 'var(--accent)', marginTop: 6, fontFamily: 'var(--mono)', letterSpacing: '0.04em', lineHeight: 1.5 }}>{'\u2192 ' + b.go}</div>
-                        </div>
-                      );
-                    })}
-                    <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 12, borderTop: '1px dashed var(--line-2)', paddingTop: 8, lineHeight: 1.6 }}>
-                      SOLO PROPOSTE \u00b7 IL PROGRAMMA RESTA QUELLO DEI COACH<br /><a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE SFIDE \u2192</a>
-                    </div>
-                  </ModulePanel>
-                );
-              })()}
-
             </div>
           </div>
+
+          {/* BADGE \u2014 a tutta larghezza sotto il dettaglio: in colonna a destra allungavano la pagina */}
+          {(function () {
+            var bs = badgesForDay(day);
+            if (!bs.length) return null;
+            return (
+              <ModulePanel code={'MOD.BADGE_GARMIN \u00b7 ' + bs.length + ' aperti'}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10 }}>
+                  {bs.map(function (b, bi) {
+                    var c = badgeCat[b.cat] || 'var(--fg-2)';
+                    return (
+                      <div key={bi} style={{
+                        borderLeft: '3px solid ' + c, border: '1px solid var(--line)', borderLeftWidth: 3, borderLeftColor: c,
+                        background: 'var(--bg-3)', padding: '10px 12px', minWidth: 0,
+                      }}>
+                        <div style={{ fontSize: 12, fontWeight: 700, fontFamily: 'var(--sans)', color: c, lineHeight: 1.25 }}>{b.n}</div>
+                        <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.08em', marginTop: 2 }}>{b.win}</div>
+                        {b.prog && <div className="tabular" style={{ fontSize: 11, color: 'var(--fg)', marginTop: 5 }}>{b.prog}</div>}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 12, borderTop: '1px dashed var(--line-2)', paddingTop: 8 }}>
+                  SOLO PROPOSTE &middot; IL PROGRAMMA RESTA QUELLO DEI COACH &middot; <a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE SFIDE &rarr;</a>
+                </div>
+              </ModulePanel>
+            );
+          })()}
+          </React.Fragment>
         );
       })()}
     </TelemetryChrome>
