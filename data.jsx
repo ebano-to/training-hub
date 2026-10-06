@@ -11837,14 +11837,14 @@ const SETTIMANA_TIPO = {
     ]},
     { d: 'MAR', slot: [
       { h: 12.0, e: 13.0, n: 'FORZA', p: 'virgin', fisso: true },
-      { h: 13.25, e: 14.0, n: 'POSTURAL 13:15', p: 'virgin', prenota: true },
+      { h: 13.25, e: 14.0, n: 'POSTURAL', p: 'virgin', prenota: true },
       { h: 17.5, e: 19.0, n: 'RUN', p: 'casa' },
       { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
     ]},
     { d: 'MER', slot: [
       { h: 7.25, e: 8.0,  n: 'PORTO I BIMBI', p: 'famiglia', fisso: true },
       { h: 8.25, e: 9.333, n: 'ERG', p: 'virgin' },
-      { h: 9.5, e: 10.25, n: 'POSTURAL 09:30', p: 'virgin', prenota: true },
+      { h: 9.5, e: 10.25, n: 'POSTURAL', p: 'virgin', prenota: true },
       { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
       { h: 18.0, e: 19.5, n: 'METCON + MANUBRI', p: 'casa' },
     ]},
@@ -11859,7 +11859,7 @@ const SETTIMANA_TIPO = {
     ]},
     { d: 'SAB', slot: [
       { h: 9.75, e: 11.5, n: 'PESI + METCON', p: 'virgin' },
-      { h: 11.5, e: 12.25, n: 'FLEXABILITY 11:30', p: 'virgin', prenota: true },
+      { h: 11.5, e: 12.25, n: 'FLEXABILITY', p: 'virgin', prenota: true },
     ]},
     { d: 'DOM', slot: [] },
   ],

@@ -7,7 +7,7 @@ function SettimanaPage() {
 
   const H0 = 7;    // prima ora mostrata
   const H1 = 21;   // ultima ora mostrata
-  const ROW = 46;  // pixel per ora
+  const ROW = 58;  // pixel per ora — 45' = 26 px utili, basta per nome + orario
   const H = (H1 - H0) * ROW;
 
   const ore = [];
@@ -111,16 +111,23 @@ function SettimanaPage() {
                     position: 'absolute', top: top + 1, left: 'calc(' + (k * w) + '% + 2px)', width: 'calc(' + w + '% - 4px)', height: hgt,
                     background: 'color-mix(in oklch, ' + col + ' 18%, var(--bg-2))',
                     borderLeft: '3px solid ' + col,
-                    padding: '3px 5px', overflow: 'hidden',
+                    padding: '4px 6px', overflow: 'hidden',
+                    display: 'flex', flexDirection: hgt >= 42 ? 'column' : 'row',
+                    alignItems: hgt >= 42 ? 'stretch' : 'baseline',
+                    gap: hgt >= 42 ? 2 : 6, minWidth: 0,
                   }}>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.04em', color: col, lineHeight: 1.15 }}>
+                    <div style={{
+                      fontSize: 10, fontWeight: 700, letterSpacing: '0.02em', color: col, lineHeight: 1.1,
+                      overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0,
+                    }}>
                       {s.n}{s.prenota ? ' ●' : ''}
                     </div>
-                    {hgt > 32 && (
-                      <div className="tabular" style={{ fontSize: 8, color: 'var(--fg-3)', marginTop: 2 }}>
-                        {hhmm(s.h)}→{hhmm(s.e)}
-                      </div>
-                    )}
+                    <div className="tabular" style={{
+                      fontSize: 9, color: 'var(--fg-3)', lineHeight: 1.1,
+                      whiteSpace: 'nowrap', flexShrink: 0,
+                    }}>
+                      {hhmm(s.h)}→{hhmm(s.e)}
+                    </div>
                   </div>
                 );
                 });
