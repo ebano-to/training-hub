@@ -63,9 +63,6 @@ function TelemetryChrome({ active, children }) {
             transition: 'background .12s, color .12s', whiteSpace: 'nowrap', textDecoration: 'none'
           }}>RICETTARIO</a>
         </nav>
-        <div className="r-topnav-meta" style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'right' }}>
-          <div>S{ATHLETE.programWeek} · {ATHLETE.weight}KG · {ATHLETE.height}CM</div>
-        </div>
       </div>
 
       {children}
