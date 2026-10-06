@@ -8066,30 +8066,6 @@ const PROG = {
 // PROG_END
 
 // EF Trend — real Z2 SkiErg data
-const EF_TREND = [
-  { date: '03/01', ef: 1.27, power: 155, hr: 122 },
-  { date: '16/01', ef: 1.20, power: 150, hr: 125 },
-  { date: '20/01', ef: 1.28, power: 156, hr: 122 },
-  { date: '21/01', ef: 1.36, power: 155, hr: 114 },
-  { date: '25/01', ef: 1.31, power: 154, hr: 118 },
-  { date: '03/02', ef: 1.35, power: 167, hr: 124 },
-  { date: '07/02', ef: 1.29, power: 154, hr: 119 },
-  { date: '08/02', ef: 1.30, power: 163, hr: 125 },
-  { date: '28/02', ef: 1.30, power: 162, hr: 125 },
-  { date: '01/03', ef: 1.38, power: 164, hr: 119 },
-  { date: '03/03', ef: 1.34, power: 165, hr: 123 },
-  { date: '09/03', ef: 1.37, power: 171, hr: 125 },
-  { date: '15/03', ef: 1.36, power: 166, hr: 122 },
-  { date: '23/03', ef: 1.41, power: 172, hr: 122 },
-  { date: '01/04', ef: 1.38, power: 165, hr: 120 },
-  { date: '09/04', ef: 1.17, power: 146, hr: 125 },
-  { date: '16/04', ef: 1.37, power: 156, hr: 114 },
-  { date: '27/04', ef: 1.30, power: 165, hr: 127 },
-  { date: '03/05', ef: 1.36, power: 174, hr: 128 },
-  { date: '12/05', ef: 1.23, power: 158, hr: 128 },
-];
-
-// Storico — real recent workouts (più recenti prima)
 const HISTORY = [
   { date: '05 OTT', title: 'Run · Tapis · Medio 50′ + 8 allunghi', kind: 'run', filone: 'run-medio-tapis', filoneLabel: 'Medio tapis', surf: 'tapis', m: { lavoro: '49:29 + 8 allunghi', dist: '9,995 km', dur: '58:11', pace: '5:50.3', unit: '/km (blocco)', fcMed: '130,7', fcMax: '145', src: 'fit' }, dur: 58, load: 'Z2', rpe: 5, note: 'Target 5\'50"/km centrato al decimo: il tapis a 10,28 km/h fissi per 49:29\nGli allunghi sono durati 24-29" invece dei ~21" che servono per 100 m a quel passo: 110-134 m l\'uno\nFC 130,7 di media sul blocco, senza deriva: a questo passo e\' lavoro aerobico puro',
     details: { summary: 'MyRun di casa, 18:22-19:20.\nBLOCCO BASE: 49:29 per 8.476,9 m a velocita\' comandata costante 10,28 km/h = 5:50.3/km · FC 130,7 media, max 145.\nLa frequenza sale per gradini lungo il blocco: 117 nei primi 5′, 130 a meta\', 140 negli ultimi 10′ · deriva fisiologica su un\'ora di lavoro, mai sopra Z3.\nALLUNGHI: 8 ripetizioni a 17,20 km/h (3:29.3/km), tutte alla stessa velocita\' comandata · durata 24 · 27 · 28 · 28 · 28 · 29 · 29 · 29 secondi · 109,9-133,8 m · 1.022,3 m in totale.\nFC degli allunghi 137-147: a 25 secondi la frequenza non fa in tempo a rispondere, il primo e\' il piu\' alto solo per il residuo del blocco.\nTotale 9,995 km in 58:11 · FC sessione 133, max 158 · 888 kcal · TE 3,1 aerobico / 1,2 anaerobico.' } },
@@ -11873,4 +11849,4 @@ const SETTIMANA_TIPO = {
 window.TRAINING = {
   NEXTWEEK,
   SETTIMANA_TIPO,
-  PROG, RACE, RACES, BODY, PLICO, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, EF_TREND, HISTORY, HYDRATION, BADGES };
+  PROG, RACE, RACES, BODY, PLICO, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, HISTORY, HYDRATION, BADGES };
