@@ -1672,10 +1672,9 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 50\' @5\'50"/km + 8×100 m allunghi r40″', d: 'Gabriele · la sera, staccata dal mattino · tapis MyRun di casa', dur: '58\'', result: 'Blocco 49:29 a 10,28 km/h fissi = 5:50.3/km, target centrato al decimo · 8.476,9 m · FC 130,7 max 145 · 8 allunghi a 17,20 km/h (3:29.3/km) da 24-29" · totale 9,995 km in 58:11 · FC 133 max 158' },
     ]
   },
-  { day: 'MAR', date: '06', title: 'FORZA · ROMANIAN DL + POSTURAL + CORSA QUALITA\'', sub: 'Blocco B di Mattia · la sera i blocchi in pendenza a 140 bpm', load: 'HEAVY + Z3', duration: 150, kind: 'strength', done: false,
+  { day: 'MAR', date: '06', title: 'FORZA · ROMANIAN DL + CORSA QUALITA\'', sub: 'Blocco B di Mattia · la sera i blocchi in pendenza a 140 bpm', load: 'HEAVY + Z3', duration: 105, kind: 'strength', done: false,
     blocks: [
       { code: 'PESI', t: 'Romanian Deadlift · 4×6-8 @80 kg', d: 'Mattia, blocco C · riscaldamento bilanciere vuoto×8, 40×6, 60×4, 80×2 · 80 kg = 30 per lato (20+10) · recupero completo tra le serie', dur: '4 serie', result: 'da fare' },
-      { code: 'MOB', t: 'Postural · in Virgin · 13:15 → 14:00', d: 'Classe Virgin da prenotare · alle 14 la mattinata e\' chiusa', dur: '45\'', result: 'da fare' },
       { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '63\'', result: 'da fare' },
     ]
   },
