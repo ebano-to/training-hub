@@ -1672,10 +1672,10 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 50\' @5\'50"/km + 8×100 m allunghi r40″', d: 'Gabriele · la sera, staccata dal mattino · tapis MyRun di casa', dur: '58\'', result: 'Blocco 49:29 a 10,28 km/h fissi = 5:50.3/km, target centrato al decimo · 8.476,9 m · FC 130,7 max 145 · 8 allunghi a 17,20 km/h (3:29.3/km) da 24-29" · totale 9,995 km in 58:11 · FC 133 max 158' },
     ]
   },
-  { day: 'MAR', date: '06', title: 'FORZA · ROMANIAN DL + CORSA QUALITA\'', sub: 'Blocco B di Mattia · la sera i blocchi in pendenza a 140 bpm', load: 'HEAVY + Z3', duration: 105, kind: 'strength', done: false,
+  { day: 'MAR', date: '06', title: 'PENDENZA 2×12\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 51, kind: 'run', done: false,
     blocks: [
       { code: 'PESI', t: 'Romanian Deadlift · 4×6-8 @80 kg', d: 'Mattia, blocco C · riscaldamento bilanciere vuoto×8, 40×6, 60×4, 80×2 · 80 kg = 30 per lato (20+10) · recupero completo tra le serie', dur: '4 serie', result: 'da fare' },
-      { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '63\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '51\'', result: 'Blocchi 2×12:00 @8%: 1.598,1 m @7:30.7/km FC 140,6 · 1.479,6 m @8:07.4/km FC 142,1 · target 140 centrato su entrambi · rec 6:00 a 9,97 km/h FC 133,5 · risc 9:27 sui 15\' prescritti · totale 7,306 km in 50:52' },
     ]
   },
   { day: 'MER', date: '07', title: 'TEST ROW 2000 m + ROW Z2 + METCON + BODY ARMOR', sub: 'Blocco C di Mattia · il test dei 1000 Ski e\' gia\' stato fatto lunedì: qui resta il Row', load: 'Z5 + METCON', duration: 190, kind: 'multierg', done: false,
@@ -1748,7 +1748,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0];
 const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 5.528];
-const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 9.995];
+const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 17.301];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
@@ -1757,10 +1757,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 const TOTALS = {
   rower: 748.174,
   ski: 696.182,
-  run: 891.801,
+  run: 899.107,
   bike: 429.415,
   swim: 57.628,
-  total: 2823.200,
+  total: 2830.506,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -8067,6 +8067,8 @@ const PROG = {
 
 // EF Trend — real Z2 SkiErg data
 const HISTORY = [
+  { date: '06 OTT', title: 'Run · Tapis · Pendenza 2×12′ @8%', kind: 'run', filone: 'run-pendenza-8', filoneLabel: 'Pendenza 8%', surf: 'tapis', m: { lavoro: '2×12:00 @8%', dist: '7,306 km', dur: '50:52', pace: '7:49.0', unit: '/km (medio blocchi)', fcMed: '141,4', fcMax: '149', drift: '−8,5%', src: 'fit' }, vs: { d: '29 SET', tag: 'Stessa pendenza, stessa frequenza comandata, due minuti in piu\' per blocco: il primo li assorbe senza pagare, il secondo no', items: [{ v: 'blocco 1 a 7:30.7/km contro 7:30.2 di sette giorni fa, identico, ma tenuto per 12′ invece che 10′', g: 1 }, { v: 'blocco 2 a 8:07.4/km contro 7:35.5: 32″/km piu\' lento a parita\' di battiti', g: -1 }, { v: 'decoupling −8,5% contro −1,6%: il costo dell\'allungamento si scarica tutto sul secondo blocco', g: -1 }] }, dur: 51, load: 'Z3', rpe: 7, note: 'Target 140 bpm centrato su entrambi i blocchi: 140,6 e 142,1\nIl primo blocco tiene lo stesso passo del 29/09 per due minuti in piu\', il secondo cede di 32″/km\nRiscaldamento 9:27 sui 15\' prescritti',
+    details: { summary: 'MyRun di casa, 18:58-19:49. Lavoro a FC comandata: la pendenza e il passo sono i mezzi, 140 bpm e\' il bersaglio.\nRISCALDAMENTO 9:27 per 1.429,1 m @6:36.6/km · FC tw 107,6 (prescritti 15\').\nBLOCCO 1 12:00 @8%: 1.598,1 m @7:30.7/km · 7,99 km/h · FC tw 140,6 max 149 · EF 0,05681.\nRECUPERO 6:00 in pianura: 997,6 m @6:00.9/km · FC tw 133,5 · la frequenza scende di soli 7 battiti, il recupero e\' attivo non passivo.\nBLOCCO 2 12:01 @8%: 1.479,6 m @8:07.4/km · 7,39 km/h · FC tw 142,1 max 146 · EF 0,05197.\nDEFATICAMENTO 11:23 in due tratti: 997,6 m @6:00.8 e 803,8 m @6:42.1 · FC 137,6 e 130,3.\nDECOUPLING FRA I BLOCCHI: EF 0,05681 → 0,05197, −8,5%. Il 29/09, sui 10\', era −1,6%.\nTotale 7,306 km in 50:52 · FC sessione 133 max 149 · 744 kcal · TE 3,1 aerobico.\nLa pendenza non viene trasmessa dal tapis al Garmin: l\'8% e\' quello impostato a mano, non un dato misurato.' } },
   { date: '05 OTT', title: 'Run · Tapis · Medio 50′ + 8 allunghi', kind: 'run', filone: 'run-medio-tapis', filoneLabel: 'Medio tapis', surf: 'tapis', m: { lavoro: '49:29 + 8 allunghi', dist: '9,995 km', dur: '58:11', pace: '5:50.3', unit: '/km (blocco)', fcMed: '130,7', fcMax: '145', src: 'fit' }, dur: 58, load: 'Z2', rpe: 5, note: 'Target 5\'50"/km centrato al decimo: il tapis a 10,28 km/h fissi per 49:29\nGli allunghi sono durati 24-29" invece dei ~21" che servono per 100 m a quel passo: 110-134 m l\'uno\nFC 130,7 di media sul blocco, senza deriva: a questo passo e\' lavoro aerobico puro',
     details: { summary: 'MyRun di casa, 18:22-19:20.\nBLOCCO BASE: 49:29 per 8.476,9 m a velocita\' comandata costante 10,28 km/h = 5:50.3/km · FC 130,7 media, max 145.\nLa frequenza sale per gradini lungo il blocco: 117 nei primi 5′, 130 a meta\', 140 negli ultimi 10′ · deriva fisiologica su un\'ora di lavoro, mai sopra Z3.\nALLUNGHI: 8 ripetizioni a 17,20 km/h (3:29.3/km), tutte alla stessa velocita\' comandata · durata 24 · 27 · 28 · 28 · 28 · 29 · 29 · 29 secondi · 109,9-133,8 m · 1.022,3 m in totale.\nFC degli allunghi 137-147: a 25 secondi la frequenza non fa in tempo a rispondere, il primo e\' il piu\' alto solo per il residuo del blocco.\nTotale 9,995 km in 58:11 · FC sessione 133, max 158 · 888 kcal · TE 3,1 aerobico / 1,2 anaerobico.' } },
   { date: '05 OTT', title: 'Forza · Back Squat rampa + Deadlift 3RM', kind: 'strength', filone: 'forza-rm', filoneLabel: 'Test RM', m: { lavoro: '11 serie + accessoria', dist: '—', dur: '55:38', pace: '—', unit: '', fcMed: '92,2', fcMax: '123', src: 'fit' }, dur: 56, load: 'HEAVY', rpe: 7, note: 'Deadlift 3RM a 140 kg e back squat portato fino a 85×4: sono la base dei carichi del ciclo verso Milano\nIl 5RM di 85 kg concordato con Mattia non è una serie eseguita: il file registra quattro ripetizioni\nFC media 92,2 su 55:38: carico neurale, non metabolico',
@@ -11606,7 +11608,7 @@ const BADGES = {
     // ══════════════════════ OTTOBRE — si apre GIO 01 ══════════════════════
     // ── CORSA
     { n: 'Ottobre, mese di corse', en: 'October Rundown', cat: 'RUN', tipo: 'cumulativa',
-      req: '80,5 km (50 mi) di corsa nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '17,1 / 80,5 km — 21% (garmin, 06/10)',
+      req: '80,5 km (50 mi) di corsa nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '24,4 / 80,5 km — 30% (sito, 06/10)',
       why: 'Preso ogni mese. Col programma di Gabriele — quattro run a settimana — arriva da solo.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Weekend 5K di ottobre', en: 'October Weekend 5K', cat: 'RUN', tipo: 'singola',
@@ -11654,7 +11656,7 @@ const BADGES = {
     // ── NUOTO
     // ── ALTRO
     { n: 'Attività a ottobre', en: 'Active October', cat: 'MISC', tipo: 'cumulativa',
-      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '3 / 20 — 15% (garmin, 06/10)',
+      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '4 / 20 — 20% (sito, 06/10)',
       why: 'Il margine è di una o due attività, non di volume: l\'anno scorso si è deciso sull\'ultimo giorno.',
       go: 'Registra tutto, anche camminate e defaticamenti.' },
     { n: 'Più forza a ottobre', en: 'October Gains', cat: 'STRENGTH', tipo: 'cumulativa',
@@ -11701,7 +11703,7 @@ const BADGES = {
     { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
   ],
   stages: [
-    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '17,1 / 300,0 km — 6% (garmin, 06/10)',
+    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '24,4 / 300,0 km — 8% (sito, 06/10)',
       why: 'Tre mesi per 300 km: con 80-90 km al mese si chiude con un mese di anticipo, come nello stage 3.' },
     { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '0 / 148,1 km (garmin, 06/10)',
       why: 'Lo stage 3 è finito all\'11%. Le 15 ore al mese del badge Camminata a ottobre valgono circa 50 km: tre mesi così e lo stage si chiude.' },
