@@ -11821,7 +11821,7 @@ const SETTIMANA_TIPO = {
     ]},
     { d: 'MER', slot: [
       { h: 7.25, e: 8.0,  n: 'PORTO I BIMBI', p: 'famiglia', fisso: true },
-      { h: 8.25, e: 9.333, n: 'ERG', p: 'virgin' },
+      { h: 8.25, e: 9.333, n: 'SKIERG', p: 'virgin' },
       { h: 9.5, e: 10.25, n: 'POSTURAL', p: 'virgin', prenota: true, istr: 'Ilaria Lestingi' },
       { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
       { h: 18.0, e: 19.5, n: 'METCON + MANUBRI', p: 'casa' },
