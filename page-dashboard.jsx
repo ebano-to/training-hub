@@ -135,7 +135,10 @@ function DashboardPage() {
                 border: '1px solid var(--line)', background: 'var(--bg-3)', padding: 16,
               }}>
                 <div style={{ fontSize: 10, color: 'var(--accent)', letterSpacing: '0.15em', marginBottom: 8 }}>{pb.station}</div>
-                <div className="display tabular" style={{ fontSize: 32, lineHeight: 1 }}>{pb.value}</div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap' }}>
+                  <span className="display tabular" style={{ fontSize: 32, lineHeight: 1 }}>{pb.value}</span>
+                  {pb.pace && <span className="tabular" style={{ fontSize: 12, color: 'var(--fg-2)' }}>{pb.pace}</span>}
+                </div>
                 {pb.sub && <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 4, letterSpacing: '0.08em', opacity: 0.7 }}>{pb.sub}</div>}
                 <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: pb.sub ? 2 : 6, letterSpacing: '0.1em' }}>{pb.date}{pb.delta ? ' · ' + pb.delta : ''}</div>
               </div>

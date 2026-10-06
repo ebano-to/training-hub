@@ -109,24 +109,6 @@ function HomeTelemetry() {
         </div>
       </div>
 
-      {/* ATHLETE STRIP */}
-      <div className="r-athlete" style={{ border: '1px solid var(--line)', padding: 16, background: 'var(--bg-2)', marginBottom: 16, display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: 24, alignItems: 'center' }}>
-        <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
-          <Avatar size={48} />
-          <div>
-            <div className="display" style={{ fontSize: 20, lineHeight: 1 }}>F.SIMONDI</div>
-          </div>
-        </div>
-        <div className="r-athlete-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, paddingLeft: 24, borderLeft: '1px dashed var(--line-2)' }}>
-          <Kv k="PESO" v={ATHLETE.weight + 'kg'} />
-          <Kv k="ALT" v={ATHLETE.height + 'cm'} />
-          <Kv k="HRMAX" v={ATHLETE.hrmax + 'bpm'} />
-        </div>
-        <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.15em', textAlign: 'right' }}>
-          S{ATHLETE.programWeek}
-        </div>
-      </div>
-
       {/* MODULE GRID */}
       <div className="r-grid r-grid-3" style={{ marginBottom: 16 }}>
         <ModuleCard
@@ -154,13 +136,13 @@ function HomeTelemetry() {
               })}
             </div>
             {today.blocks && today.blocks.length > 0 && (
-              <div style={{ marginTop: 8, display: 'grid', gap: 3 }}>
+              <div style={{ marginTop: 8, display: 'grid', gap: 3, minWidth: 0 }}>
                 {today.blocks.map(function (bk, i) {
                   var fatto = bk.result && bk.result !== 'da fare';
                   return (
-                    <div key={i} style={{ display: 'flex', gap: 6, alignItems: 'baseline' }}>
+                    <div key={i} style={{ display: 'flex', gap: 6, alignItems: 'baseline', minWidth: 0 }}>
                       <span style={{ fontSize: 8, letterSpacing: '0.1em', color: fatto ? 'var(--accent)' : 'var(--fg-3)', minWidth: 46 }}>{bk.code}</span>
-                      <span style={{ fontSize: 10, color: 'var(--fg-2)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{bk.t}</span>
+                      <span style={{ fontSize: 10, color: 'var(--fg-2)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>{bk.t}</span>
                     </div>
                   );
                 })}
@@ -272,11 +254,6 @@ function HomeTelemetry() {
               );
             })}
           </div>
-          {PRENOTA_N > 0 && (
-            <div style={{ marginTop: 10, fontSize: 10, color: 'oklch(82% 0.16 85)', letterSpacing: '0.1em' }}>
-              {PRENOTA_N} CLASSI VIRGIN DA PRENOTARE IN SETTIMANA
-            </div>
-          )}
         </ModuleCard>
 
         <ModuleCard
@@ -290,9 +267,12 @@ function HomeTelemetry() {
           <div style={{ marginTop: 12, display: 'grid', gap: 5 }}>
             {window.TRAINING.PBS.slice(0, 6).map(function (pb, i) {
               return (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
-                  <span style={{ fontSize: 10, color: 'var(--fg-3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{pb.station}</span>
-                  <span className="display tabular" style={{ fontSize: 14, color: 'var(--fg)', flexShrink: 0 }}>{pb.value}</span>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8, minWidth: 0 }}>
+                  <span style={{ fontSize: 10, color: 'var(--fg-3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>{pb.station}</span>
+                  <span style={{ flexShrink: 0, textAlign: 'right' }}>
+                    <span className="display tabular" style={{ fontSize: 14, color: 'var(--fg)' }}>{pb.value}</span>
+                    {pb.pace && <span className="tabular" style={{ fontSize: 9, color: 'var(--fg-3)', marginLeft: 6 }}>{pb.pace}</span>}
+                  </span>
                 </div>
               );
             })}
@@ -469,7 +449,7 @@ function ModuleCard({ code, title, sub, metric, metricLabel, href, accent, child
       style={{
         border: hov ? '1px solid var(--accent)' : (accent ? '1px solid var(--accent)' : '1px solid var(--line)'),
         padding: 20, background: 'var(--bg-2)', cursor: 'pointer',
-        display: 'flex', flexDirection: 'column',
+        display: 'flex', flexDirection: 'column', minWidth: 0, overflow: 'hidden',
         transition: 'border-color .15s, background .15s',
         boxShadow: hov ? '0 0 0 4px oklch(88% 0.20 130 / 0.1)' : 'none'
       }}>
@@ -481,7 +461,7 @@ function ModuleCard({ code, title, sub, metric, metricLabel, href, accent, child
         </div>
         <Icon.arrowDR width="16" height="16" style={{ color: 'var(--fg-3)', transition: 'transform .2s', transform: hov ? 'translate(2px,-2px)' : 'none' }} />
       </div>
-      <div style={{ flex: 1 }}>{children}</div>
+      <div style={{ flex: 1, minWidth: 0 }}>{children}</div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: 16, paddingTop: 12, borderTop: '1px dashed var(--line-2)' }}>
         <span className="display tabular" style={{ fontSize: 26, color: accent ? 'var(--accent)' : 'var(--fg)' }}>{metric}</span>
         <span style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{metricLabel}</span>

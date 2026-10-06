@@ -1727,20 +1727,20 @@ const NEXTWEEK = [];
 
 // Real Personal Bests
 const PBS = [
-  { station: 'SkiErg 2000m', value: '7:06.7', delta: 'PR', date: '24 APR', sub: '1:46.7/500m · 281W' },
-  { station: 'SkiErg 1000m', value: '3:27.4', delta: 'TEST', date: '05 OTT', sub: '1:43.7/500m · 314W · DF 69 · 60 s/m · test di inizio ciclo' },
-  { station: 'Run 2000m (Best Interval)', value: '8:26.1', delta: '-23.6s', date: '03 SET', sub: '4:13.1/km · pista Ruffini, dentro intervalli misti · FC max 170' },
-  { station: 'Row 5000m', value: '17:52.0', delta: '-33s', date: '10 MAG', sub: '1:47.2/500m · 284W' },
+  { station: 'SkiErg 2000m', value: '7:06.7', pace: '1:46.7/500m', delta: 'PR', date: '24 APR', sub: '1:46.7/500m · 281W' },
+  { station: 'SkiErg 1000m', value: '3:27.4', pace: '1:43.7/500m', delta: 'TEST', date: '05 OTT', sub: '1:43.7/500m · 314W · DF 69 · 60 s/m · test di inizio ciclo' },
+  { station: 'Run 2000m (Best Interval)', value: '8:26.1', pace: '4:13.1/km', delta: '-23.6s', date: '03 SET', sub: '4:13.1/km · pista Ruffini, dentro intervalli misti · FC max 170' },
+  { station: 'Row 5000m', value: '17:52.0', pace: '1:47.2/500m', delta: '-33s', date: '10 MAG', sub: '1:47.2/500m · 284W' },
   { station: 'Sled Push 1RM (Virgin)', value: '300kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
   { station: 'Sled Pull 1RM (Virgin)', value: '220kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
   { station: 'Back Squat 1RM', value: '105kg', delta: '', date: '20 MAR' },
   { station: 'Strict Press 1RM', value: '65kg', delta: '', date: '11 GIU' },
   { station: 'Deadlift 1RM', value: '157.5kg', delta: '+7.5kg', date: '11 GIU' },
-  { station: 'Nuoto pace/100m', value: '2:33.2', delta: 'media sessione', date: '17 LUG 2025', sub: 'migliore su sedute ≥500 m (1.780 m, vasca 20) · il singolo 100 più veloce non è misurabile: vasche frammentate dal rilevamento muro' },
+  { station: 'Nuoto pace/100m', value: '2:33.2', pace: '/100 m', delta: 'media sessione', date: '17 LUG 2025', sub: 'migliore su sedute ≥500 m (1.780 m, vasca 20) · il singolo 100 più veloce non è misurabile: vasche frammentate dal rilevamento muro' },
   { station: 'Assault 30′ @145 media', value: '19.272,5 m', delta: 'baseline', date: '21 AGO 2026', sub: 'test aerobico Mattia · FC 145,0 esatta / max 151 · 429,3 cal · 326 W · 62 rpm (scala Assault)' },
   { station: 'FTP Bike (test 2×8\')', value: '237W', delta: '90% di 263W', date: '20 LUG', sub: '2×8\' max 265/262W · HR 129/140 max152 · cad 79rpm · Technogym Ride' },
-  { station: 'Hyrox Verona Singles', value: '1:17:44', delta: 'PB Singles', date: '2025' },
-  { station: 'Hyrox Torino Singles', value: '1:18:33', delta: '+49s', date: '31 GEN' },
+  { station: 'Hyrox Verona Singles', value: '1:17:44', pace: '4:52/km sugli 8 km', delta: 'PB Singles', date: '2025' },
+  { station: 'Hyrox Torino Singles', value: '1:18:33', pace: '4:55/km sugli 8 km', delta: '+49s', date: '31 GEN' },
   { station: 'Hyrox Bologna Doubles', value: '1:03:27', delta: 'PB Doubles', date: '04 APR' },
   { station: 'Hyrox Rimini Pro Doubles', value: '1:15:26', delta: '+11:59', date: '30 MAG' },
 ];
@@ -11825,7 +11825,7 @@ const SETTIMANA_TIPO = {
   updated: '06 OTT 2026',
   luoghi: {
     casa:     { l: 'CASA',     c: 'oklch(72% 0.13 250)' },
-    virgin:   { l: 'VIRGIN',   c: 'oklch(82% 0.16 85)'  },
+    virgin:   { l: 'VIRGIN ACTIVE', c: '#E10A0A' },
     pista:    { l: 'PISTA',    c: 'oklch(75% 0.18 145)' },
     famiglia: { l: 'FAMIGLIA', c: 'oklch(70% 0.10 200)' },
   },
@@ -11837,16 +11837,16 @@ const SETTIMANA_TIPO = {
     ]},
     { d: 'MAR', slot: [
       { h: 12.0, e: 13.0, n: 'FORZA', p: 'virgin', fisso: true },
-      { h: 13.25, e: 14.0, n: 'CLASSE MOBILITÀ', p: 'virgin', prenota: true },
+      { h: 13.25, e: 14.0, n: 'POSTURAL 13:15', p: 'virgin', prenota: true },
       { h: 17.5, e: 19.0, n: 'RUN', p: 'casa' },
       { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
     ]},
     { d: 'MER', slot: [
       { h: 7.25, e: 8.0,  n: 'PORTO I BIMBI', p: 'famiglia', fisso: true },
       { h: 8.25, e: 9.333, n: 'ERG', p: 'virgin' },
-      { h: 9.5, e: 10.25, n: 'CLASSE MOBILITÀ', p: 'virgin', prenota: true },
+      { h: 9.5, e: 10.25, n: 'POSTURAL 09:30', p: 'virgin', prenota: true },
       { h: 18.0, e: 19.0, n: 'MAURA SI ALLENA', p: 'famiglia', fisso: true },
-      { h: 19.0, e: 20.0, n: 'METCON + MANUBRI', p: 'casa' },
+      { h: 18.0, e: 19.5, n: 'METCON + MANUBRI', p: 'casa' },
     ]},
     { d: 'GIO', slot: [
       { h: 14.5, e: 16.0, n: 'PISTA CON GABRY', p: 'pista', fisso: true },
@@ -11859,7 +11859,7 @@ const SETTIMANA_TIPO = {
     ]},
     { d: 'SAB', slot: [
       { h: 9.75, e: 11.5, n: 'PESI + METCON', p: 'virgin' },
-      { h: 11.5, e: 12.25, n: 'CLASSE MOBILITÀ', p: 'virgin', prenota: true },
+      { h: 11.5, e: 12.25, n: 'FLEXABILITY 11:30', p: 'virgin', prenota: true },
     ]},
     { d: 'DOM', slot: [] },
   ],
