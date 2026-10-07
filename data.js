@@ -1672,22 +1672,22 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 50\' @5\'50"/km + 8×100 m allunghi r40″', d: 'Gabriele · la sera, staccata dal mattino · tapis MyRun di casa', dur: '58\'', result: 'Blocco 49:29 a 10,28 km/h fissi = 5:50.3/km, target centrato al decimo · 8.476,9 m · FC 130,7 max 145 · 8 allunghi a 17,20 km/h (3:29.3/km) da 24-29" · totale 9,995 km in 58:11 · FC 133 max 158' },
     ]
   },
-  { day: 'MAR', date: '06', title: 'PENDENZA 2×12\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 51, kind: 'run', done: false,
+  { day: 'MAR', date: '06', title: 'PENDENZA 2×12\' @8%', sub: 'A frequenza comandata: 140 bpm', load: 'Z3', duration: 51, kind: 'run', done: true,
     blocks: [
-      { code: 'PESI', t: 'Romanian Deadlift · 4×6-8 @80 kg', d: 'Mattia, blocco C · riscaldamento bilanciere vuoto×8, 40×6, 60×4, 80×2 · 80 kg = 30 per lato (20+10) · recupero completo tra le serie', dur: '4 serie', result: 'da fare' },
+      { code: 'PESI', t: 'Romanian Deadlift · 4×6-8 @80 kg', d: 'Mattia, blocco C · riscaldamento bilanciere vuoto×8, 40×6, 60×4, 80×2 · 80 kg = 30 per lato (20+10) · recupero completo tra le serie', dur: '4 serie', result: 'SALTATO', skipped: true },
       { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '51\'', result: 'Blocchi 2×12:00 @8%: 1.598,1 m @7:30.7/km FC 140,6 · 1.479,6 m @8:07.4/km FC 142,1 · target 140 centrato su entrambi · rec 6:00 a 9,97 km/h FC 133,5 · risc 9:27 sui 15\' prescritti · totale 7,306 km in 50:52' },
     ]
   },
-  { day: 'MER', date: '07', title: 'TEST ROW 2000 m + ROW Z2 + METCON + BODY ARMOR', sub: 'Blocco C di Mattia · il test dei 1000 Ski e\' gia\' stato fatto lunedì: qui resta il Row', load: 'Z5 + METCON', duration: 145, kind: 'multierg', done: false,
+  { day: 'MER', date: '07', title: 'BODY ARMOR + METCON EMOM 15\'', sub: 'Blocchi C e D di Mattia · upper body, poi il metcon in Virgin', load: 'METCON', duration: 40, kind: 'hyrox', done: true,
     blocks: [
-      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME', d: 'Mattia · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · 30\' @Z2 costante', d: 'Mattia, blocco B', dur: '30\'', result: 'da fare' },
-      { code: 'METCON', t: 'Metcon · EMOM 15\' · in Virgin', d: 'Mattia · I: 12 burpees · II: 20 affondi con due manubri @30 kg · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'EMOM 15:00 completo, 5 giri · SKI 5×15 kcal in 37,6″ · 45,0″ · 52,2″ · 57,3″ · 56,2″ (323 → 181 W dal primo al quarto) · BURPEES 12 solo al secondo giro, meno negli altri · AFFONDI sempre almeno 20, con due kettlebell da 12 kg · FC 142 max 157 · 16:11-16:26' },
       { code: 'PESI', t: 'Body Armor · 3+3 round', d: 'Mattia, blocco D · 3 round: max push-up + 10 curl bicipiti @2×12 kg, r2\' · poi 3 round: 10 alzate laterali @2×10 kg + 10 french press @2×10 kg, r2\' · e\' l\'upper body della settimana', dur: '~25\'', result: '3+3 round in 18:23, 15:45-16:03, prima del metcon · PUSH-UP: 4, per un fastidio alla spalla sinistra · CURL BICIPITI 3×10 @2×12 kg: peso leggero, prossimo carico da provare 14 kg · ALZATE LATERALI e FRENCH PRESS @2×10 kg: carico giusto · recuperi 2:01 nel primo blocco · FC 86 max 109' },
+      { code: 'METCON', t: 'Metcon · EMOM 15\' · in Virgin', d: 'Mattia · I: 12 burpees · II: 20 affondi con due manubri @30 kg · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'EMOM 15:00 completo, 5 giri · SKI 5×15 kcal in 37,6″ · 45,0″ · 52,2″ · 57,3″ · 56,2″ (323 → 181 W dal primo al quarto) · BURPEES 12 solo al secondo giro, meno negli altri · AFFONDI sempre almeno 20, con due kettlebell da 12 kg · FC 142 max 157 · 16:11-16:26' },
     ]
   },
-  { day: 'GIO', date: '08', title: 'PISTA · CORSA RIPETUTE', sub: 'Blocco D di Mattia: solo la corsa di Gabriele · Pista Nebiolo h 15', load: 'Z4-Z5', duration: 90, kind: 'run', done: false,
+  { day: 'GIO', date: '08', title: 'TEST ROW 2000 m + ROW Z2 + PISTA · CORSA RIPETUTE', sub: 'Al mattino a casa i due lavori al remo · Pista Nebiolo h 15', load: 'Z5 + Z4-Z5', duration: 155, kind: 'run', done: false,
     blocks: [
+      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa, al mattino', d: 'Mattia · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · 30\' @Z2 costante · a casa, al mattino', d: 'Mattia, blocco B', dur: '30\'', result: 'da fare' },
       { code: 'RUN', t: 'Riscaldamento · Pista Nebiolo · 14:30 → 15:00', d: 'Prima del lavoro di qualita\'', dur: '30\'', result: 'da fare' },
       { code: 'RUN', t: 'Ripetute · Pista Nebiolo · 15:00 → 16:00', d: 'Gabriele, in presenza · unica indicazione sul programma: "menare!" · struttura decisa in pista', dur: '60\'', result: 'da fare' },
     ]
