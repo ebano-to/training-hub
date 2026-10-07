@@ -1678,12 +1678,11 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 15\' risc + 2×12\' in pendenza 8% @140 bpm · rec 6\' corsetta in pianura + 10\' defa', d: 'Gabriele · lavoro a FC comandata: il passo e\' la conseguenza · due minuti in piu\' per blocco rispetto al 29/09 · la pendenza non viene trasmessa dal tapis, va impostata a mano', dur: '51\'', result: 'Blocchi 2×12:00 @8%: 1.598,1 m @7:30.7/km FC 140,6 · 1.479,6 m @8:07.4/km FC 142,1 · target 140 centrato su entrambi · rec 6:00 a 9,97 km/h FC 133,5 · risc 9:27 sui 15\' prescritti · totale 7,306 km in 50:52' },
     ]
   },
-  { day: 'MER', date: '07', title: 'TEST ROW 2000 m + ROW Z2 + METCON + BODY ARMOR', sub: 'Blocco C di Mattia · il test dei 1000 Ski e\' gia\' stato fatto lunedì: qui resta il Row', load: 'Z5 + METCON', duration: 190, kind: 'multierg', done: false,
+  { day: 'MER', date: '07', title: 'TEST ROW 2000 m + ROW Z2 + METCON + BODY ARMOR', sub: 'Blocco C di Mattia · il test dei 1000 Ski e\' gia\' stato fatto lunedì: qui resta il Row', load: 'Z5 + METCON', duration: 145, kind: 'multierg', done: false,
     blocks: [
       { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME', d: 'Mattia · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
       { code: 'ROW', t: 'Row · 30\' @Z2 costante', d: 'Mattia, blocco B', dur: '30\'', result: 'da fare' },
-      { code: 'MOB', t: 'Postural · in Virgin · 09:30 → 10:15', d: 'Classe Virgin da prenotare · stessa uscita dell\'erg del mattino', dur: '45\'', result: 'da fare' },
-      { code: 'METCON', t: 'Metcon · EMOM 15\' · a casa, la sera', d: 'Mattia · I: 12 burpees · II: 20 affondi con due manubri @30 kg · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'da fare' },
+      { code: 'METCON', t: 'Metcon · EMOM 15\'', d: 'Mattia · I: 12 burpees · II: 20 affondi con due manubri @30 kg · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'EMOM 15:00 completo, 5 giri · SKI 5×15 kcal in 37,6″ · 45,0″ · 52,2″ · 57,3″ · 56,2″ (323 → 181 W dal primo al quarto) · BURPEES 12 solo al secondo giro, meno negli altri · AFFONDI sempre almeno 20, con due kettlebell da 12 kg · FC 142 max 157 · 16:11-16:26' },
       { code: 'PESI', t: 'Body Armor · 3+3 round, a casa, a seguire', d: 'Mattia, blocco D · 3 round: max push-up + 10 curl bicipiti @2×12 kg, r2\' · poi 3 round: 10 alzate laterali @2×10 kg + 10 french press @2×10 kg, r2\' · e\' l\'upper body della settimana', dur: '~25\'', result: 'da fare' },
     ]
   },
@@ -1747,7 +1746,7 @@ const PBS = [
 
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0];
-const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 5.528];
+const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789];
 const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 17.301];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0];
@@ -1756,16 +1755,16 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 // Totals (real)
 const TOTALS = {
   rower: 748.174,
-  ski: 696.182,
+  ski: 697.443,
   run: 899.107,
   bike: 429.415,
   swim: 57.628,
-  total: 2830.506,
+  total: 2831.767,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "05/10/2026",
+ "built": "07/10/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -3033,6 +3032,16 @@ const PROG = {
       "pace": "1:59.5",
       "hr": 139,
       "spm": 49,
+      "pb": false
+     },
+     {
+      "d": "07/10/26*",
+      "struttura": "1×0:38 +3",
+      "dist": 835,
+      "w": 230,
+      "pace": "1:55.0",
+      "hr": 146,
+      "spm": 52,
       "pb": false
      }
     ]
@@ -4781,6 +4790,17 @@ const PROG = {
      "struttura": "3×0:20 +1",
      "rep_s": 165,
      "rep_m": 627
+    },
+    {
+     "d": "07/10/26*",
+     "dist": 835,
+     "w": 230,
+     "pace": "1:55.0",
+     "spm": 52,
+     "hr": 146,
+     "struttura": "1×0:38 +3",
+     "rep_s": 48,
+     "rep_m": 208
     }
    ]
   }
@@ -8067,6 +8087,16 @@ const PROG = {
 
 // EF Trend — real Z2 SkiErg data
 const HISTORY = [
+  { date: '07 OTT', title: 'Hyrox · EMOM 15′ · Burpees / Affondi / Ski 15 kcal', kind: 'hyrox', filone: 'hyrox-emom', filoneLabel: 'EMOM Hyrox', m: { lavoro: '5 giri × 3 stazioni', dist: '1.261 m ski', dur: '15:00', pace: '1:56.5', unit: '/500 m (ski, 5×15 kcal)', fcMed: '142', fcMax: '157', src: 'fit' }, dur: 15, load: 'Z3-Z4', rpe: 8, note: 'Ski da 15 kcal sempre chiusi, ma il tempo sale da 37,6″ a 57,3″: 323 W al primo giro, 181 al quarto\nBurpees a 12 solo nel secondo giro · affondi sempre almeno 20, con due kettlebell da 12 kg al posto dei manubri prescritti\nDal terzo giro lo ski lascia meno di 6″ di margine nel minuto, dal quarto sfora: i burpees dopo partono senza pausa',
+    details: { summary: 'EMOM 15′, 16:11-16:26 · 5 giri da 3 minuti: I burpees · II affondi · III 15 kcal allo SkiErg.\nSKI 5×15 kcal (75 kcal sul PM5): 37,6″ · 45,0″ · 52,2″ · 57,3″ · 56,2″ per 183 · 203 · 219 · 230 · 231 m.\nPasso 1:42.7 · 1:50.8 · 1:59.2 · 2:04.6 · 2:01.6 /500 m · 323 · 257 · 207 · 181 · 194 W: dal primo al quarto −44,0%.\nColpi 59 · 56 · 49 · 47 · 48 al minuto: la frequenza scende insieme alla potenza.\nEF 2,35 → 1,28 dal primo al quinto pezzo (−45,5%) · indicativo: su pezzi da 38-57″ la FC arriva in ritardo.\nIl quinto pezzo non ha il suo lap nel file PM5: 231 m in 56,2″ sono CALCOLATI per differenza fra il totale di sessione (1.261 m in 13:19.3) e la somma dei lap; i 194 W dalla formula C2 sul passo.\nLo ski riempie il minuto: finisce a 33,6″ nel primo giro, a 45,0″ nel secondo, a 54,2″ nel terzo; nel quarto e nel quinto sfora di 1,3″ e 3,2″ nel minuto dopo (orologio PM5 allineato al Garmin sulle FC, precisione di un secondo).\nBURPEES, dichiarato da Federico: 12 solo al secondo giro, meno in tutti gli altri · prescritti 12.\nAFFONDI, dichiarato da Federico: sempre almeno 20, con due kettlebell da 12 kg · prescritti 20 con due manubri @30 kg.\nFC sessione 142 max 157 · per giro 126,4 · 143,8 · 143,8 · 148,2 · 147,0 · Z3 60,2% · Z4 24,0% · Z2 11,3% · 259 kcal · TE 2,6 aerobico.',
+      table: { headers: ['Giro','Burpees FC','Affondi FC','Ski 15 kcal','Pace /500 m','Watt','s/m','Ski FC','Fine ski nel minuto'], rows: [
+        ['1','113,4','126,3','37,6″ · 183 m','1:42.7','323','59','137,2','33,6″'],
+        ['2','138,5','145,0','45,0″ · 203 m','1:50.8','257','56','147,7','45,0″'],
+        ['3','139,8','143,2','52,2″ · 219 m','1:59.2','207','49','148,2','54,2″'],
+        ['4','144,7','149,1','57,3″ · 230 m','2:04.6','181','47','150,5','61,3″'],
+        ['5','143,6','145,9','56,2″ · 231 m','2:01.6','194','48','151,5','63,2″'],
+        ['TOT','—','—','4:08.3 · 1.066 m','1:56.5','—','—','—','—'],
+      ] }, gps: null } },
   { date: '06 OTT', title: 'Run · Tapis · Pendenza 2×12′ @8%', kind: 'run', filone: 'run-pendenza-8', filoneLabel: 'Pendenza 8%', surf: 'tapis', m: { lavoro: '2×12:00 @8%', dist: '7,306 km', dur: '50:52', pace: '7:49.0', unit: '/km (medio blocchi)', fcMed: '141,4', fcMax: '149', asc: '264 m', drift: '−8,5%', src: 'fit+myrun' }, vs: { d: '29 SET', tag: 'Stessa pendenza, stessa frequenza comandata, due minuti in piu\' per blocco: il primo li assorbe senza pagare, il secondo no', items: [{ v: 'blocco 1 a 7:30.7/km contro 7:30.2 di sette giorni fa, identico, ma tenuto per 12′ invece che 10′', g: 1 }, { v: 'blocco 2 a 8:07.4/km contro 7:35.5: 32″/km piu\' lento a parita\' di battiti', g: -1 }, { v: 'decoupling −8,5% contro −1,6%: il costo dell\'allungamento si scarica tutto sul secondo blocco', g: -1 }] }, dur: 51, load: 'Z3', rpe: 7, note: 'Target 140 bpm centrato su entrambi i blocchi: 140,6 e 142,1\nIl primo blocco tiene lo stesso passo del 29/09 per due minuti in piu\', il secondo cede di 32″/km\nPendenza all\'8% confermata dal D+ del MyRun: 264 m misurati contro 263 attesi',
     details: { summary: 'MyRun di casa, 18:58-19:49. Lavoro a FC comandata: la pendenza e il passo sono i mezzi, 140 bpm e\' il bersaglio.\nRISCALDAMENTO 9:27 per 1.429,1 m @6:36.6/km · FC tw 107,6 (prescritti 15\').\nBLOCCO 1 12:00 @8%: 1.598,1 m @7:30.7/km · 7,99 km/h · FC tw 140,6 max 149 · EF 0,05681.\nRECUPERO 6:00 in pianura: 997,6 m @6:00.9/km · FC tw 133,5 · la frequenza scende di soli 7 battiti, il recupero e\' attivo non passivo.\nBLOCCO 2 12:01 @8%: 1.479,6 m @8:07.4/km · 7,39 km/h · FC tw 142,1 max 146 · EF 0,05197.\nDEFATICAMENTO 11:23 in due tratti: 997,6 m @6:00.8 e 803,8 m @6:42.1 · FC 137,6 e 130,3.\nDECOUPLING FRA I BLOCCHI: EF 0,05681 → 0,05197, −8,5%. Il 29/09, sui 10\', era −1,6%.\nTotale 7,306 km in 50:52 · FC sessione 133 max 149 · 744 kcal · TE 3,1 aerobico.\nPENDENZA VERIFICATA COL D+ DEL MYRUN: 264 m misurati. I due blocchi all\'8% su 3.077,7 m valgono 246,2 m; i restanti 4.228,2 m di riscaldamento, recupero e defa ne spiegano 17,8, cioe\' lo 0,42% medio. Controprova dalla pendenza media del display, 3,6% su 7,35 km = 263 m. **L\'8% e\' confermato**, non solo dichiarato: il tapis non trasmette la pendenza al Garmin, ma il dislivello simulato la ricostruisce.\nDal display MyRun: velocita\' media 8,6 km/h, max 11,9 · pendenza media 3,6%, max 8,0% · passo medio 6:57/km · 51:00 · 7,35 km.' } },
   { date: '05 OTT', title: 'Run · Tapis · Medio 50′ + 8 allunghi', kind: 'run', filone: 'run-medio-tapis', filoneLabel: 'Medio tapis', surf: 'tapis', m: { lavoro: '49:29 + 8 allunghi', dist: '9,995 km', dur: '58:11', pace: '5:50.3', unit: '/km (blocco)', fcMed: '130,7', fcMax: '145', src: 'fit' }, dur: 58, load: 'Z2', rpe: 5, note: 'Target 5\'50"/km centrato al decimo: il tapis a 10,28 km/h fissi per 49:29\nGli allunghi sono durati 24-29" invece dei ~21" che servono per 100 m a quel passo: 110-134 m l\'uno\nFC 130,7 di media sul blocco, senza deriva: a questo passo e\' lavoro aerobico puro',
