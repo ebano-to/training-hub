@@ -339,10 +339,16 @@ function AgendaRunMap({ gps }) {
                   [Math.max.apply(null, lats), Math.max.apply(null, lons)]];
 
     var map = L.map(containerRef.current, {
-      zoomControl: true, scrollWheelZoom: false, attributionControl: false,
+      zoomControl: true, scrollWheelZoom: false, attributionControl: true,
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19 }).addTo(map);
+    if (!document.getElementById('osm-dark-css')) {
+      var st = document.createElement('style'); st.id = 'osm-dark-css';
+      st.textContent = '.osm-dark{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.9) saturate(.3);} .leaflet-control-attribution{background:rgba(0,0,0,.55)!important;color:#888!important;font-size:9px!important;} .leaflet-control-attribution a{color:#aaa!important;}';
+      document.head.appendChild(st);
+    }
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, className: 'osm-dark', attribution: '&copy; OpenStreetMap' }).addTo(map);
+    map.attributionControl.setPrefix(false);
 
     L.polyline(gps, { color: '#B8FF57', weight: 3, opacity: 0.9, lineCap: 'round', lineJoin: 'round' }).addTo(map);
 

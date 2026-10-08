@@ -408,13 +408,17 @@ function RunMap({ gps, title, date }) {
     var map = L.map(containerRef.current, {
       zoomControl: true,
       scrollWheelZoom: false,
-      attributionControl: false,
+      attributionControl: true,
     });
 
-    // Dark tile layer matching site theme
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-    }).addTo(map);
+    // Sfondo OpenStreetMap scurito via CSS (nessuna chiave richiesta)
+    if (!document.getElementById('osm-dark-css')) {
+      var st = document.createElement('style'); st.id = 'osm-dark-css';
+      st.textContent = '.osm-dark{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.9) saturate(.3);} .leaflet-control-attribution{background:rgba(0,0,0,.55)!important;color:#888!important;font-size:9px!important;} .leaflet-control-attribution a{color:#aaa!important;}';
+      document.head.appendChild(st);
+    }
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, className: 'osm-dark', attribution: '&copy; OpenStreetMap' }).addTo(map);
+    map.attributionControl.setPrefix(false);
 
     // Route polyline — accent green
     var routeLine = L.polyline(gps, {
