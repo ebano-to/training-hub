@@ -1684,10 +1684,8 @@ const WEEK = [
       { code: 'METCON', t: 'Metcon · EMOM 15\' · in Virgin', d: 'Mattia · I: 12 burpees · II: 20 affondi con due manubri @30 kg · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'EMOM 15:00 completo, 5 giri · SKI 5×15 kcal in 37,6″ · 45,0″ · 52,2″ · 57,3″ · 56,4″ (323 → 181 W dal primo al quarto) · BURPEES 12 solo al secondo giro, meno negli altri · AFFONDI sempre almeno 20, con due kettlebell da 12 kg · FC 142 max 157 · 16:11-16:26' },
     ]
   },
-  { day: 'GIO', date: '08', title: 'TEST ROW 2000 m + ROW Z2 + PISTA · CORSA RIPETUTE', sub: 'Al mattino a casa i due lavori al remo · Pista Nebiolo h 15', load: 'Z5 + Z4-Z5', duration: 155, kind: 'run', done: false,
+  { day: 'GIO', date: '08', title: 'PISTA · CORSA RIPETUTE', sub: 'Pista Nebiolo h 15', load: 'Z4-Z5', duration: 90, kind: 'run', done: true,
     blocks: [
-      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa, al mattino', d: 'Mattia · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · 30\' @Z2 costante · a casa, al mattino', d: 'Mattia, blocco B', dur: '30\'', result: 'da fare' },
       { code: 'RUN', t: 'Riscaldamento · Pista Nebiolo · 14:30 → 15:00', d: 'Prima del lavoro di qualita\'', dur: '30\'', result: "Riscaldamento 14:51-15:01 · 1.696,5 m in 9:37.1 @5:40.2/km · FC 113 max 125" },
       { code: 'RUN', t: 'Ripetute · Pista Nebiolo · 15:00 → 16:00', d: 'Gabriele, in presenza · unica indicazione sul programma: "menare!" · struttura decisa in pista', dur: '60\'', result: "3×2.000 m r3:00, 5 giri di pista a ripetuta, 15:23-15:54 · rilevato dal Garmin: 2.149,1 m @3:56.9/km FC 156,2 · 2.122,3 m @3:57.9 FC 158,9 · 2.136,9 m @3:44.9 FC 163,4 max 172 · lavoro 6.408,3 m in 24:54.5 @3:53.2/km · totale di giornata 8,362 km" },
     ]
@@ -1708,9 +1706,10 @@ const WEEK = [
       { code: 'MOB', t: 'Flexability · in Virgin · 11:30 → 12:15', d: 'Classe Virgin da prenotare · ultima cosa della mattina, fa da scarico', dur: '45\'', result: 'da fare' },
     ]
   },
-  { day: 'DOM', date: '11', title: 'RIPOSO', sub: 'Giorno di scarico della struttura fissa', load: '—', duration: 0, kind: 'rest', done: false,
+  { day: 'DOM', date: '11', title: 'TEST ROW 2000 m + ROW Z2', sub: 'A casa i due lavori al remo', load: 'Z5 + Z2', duration: 65, kind: 'row', done: false,
     blocks: [
-      { code: 'REST', t: 'Riposo', d: 'Giorno di riposo previsto dalla settimana tipo', dur: '—', result: 'da fare' },
+      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa', d: 'Mattia · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · 30\' @Z2 costante · a casa', d: 'Mattia, blocco B', dur: '30\'', result: 'da fare' },
     ]
   },
 ];
