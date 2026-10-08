@@ -1727,7 +1727,7 @@ const NEXTWEEK = [];
 const PBS = [
   { station: 'SkiErg 2000m', value: '7:06.7', pace: '1:46.7/500m', delta: 'PR', date: '24 APR', sub: '1:46.7/500m · 281W' },
   { station: 'SkiErg 1000m', value: '3:27.4', pace: '1:43.7/500m', delta: 'TEST', date: '05 OTT', sub: '1:43.7/500m · 314W · DF 69 · 60 s/m · test di inizio ciclo' },
-  { station: 'Run 2000m (Best Interval)', value: '8:26.1', pace: '4:13.1/km', delta: '-23.6s', date: '03 SET', sub: '4:13.1/km · pista Ruffini, dentro intervalli misti · FC max 170' },
+  { station: 'Run 2000m (Best Interval)', value: '8:00.6', pace: '4:00.3/km', delta: '-25.5s', date: '08 OTT', sub: '4:00.3/km · pista Nebiolo, corsia 1, terza delle 3×2.000 m r3:00 · FC 163,4 max 172' },
   { station: 'Row 5000m', value: '17:52.0', pace: '1:47.2/500m', delta: '-33s', date: '10 MAG', sub: '1:47.2/500m · 284W' },
   { station: 'Sled Push 1RM (Virgin)', value: '300kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
   { station: 'Sled Pull 1RM (Virgin)', value: '220kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
