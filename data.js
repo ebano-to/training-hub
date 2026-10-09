@@ -1690,20 +1690,20 @@ const WEEK = [
       { code: 'RUN', t: 'Ripetute · Pista Nebiolo · 15:00 → 16:00', d: 'Gabriele, in presenza · unica indicazione sul programma: "menare!" · struttura decisa in pista', dur: '60\'', result: "3×2.000 m r3:00, 5 giri di pista a ripetuta, 15:23-15:54: 8:29.0 @4:14.5/km FC 156,2 · 8:24.9 @4:12.5 FC 158,9 · 8:00.6 @4:00.3 FC 163,4 max 172 · lavoro 6.000 m in 24:54.5 @4:09.1/km" },
     ]
   },
-  { day: 'VEN', date: '09', title: 'Z2 LUNGA 60\' SKI+ROW + BODY ARMOR + MEDIO 11 KM', sub: 'Blocco E di Mattia · alla Pista Nebiolo dalle 17 il medio da 14 km', load: 'Z2', duration: 185, kind: 'multierg', done: false,
+  { day: 'VEN', date: '09', title: 'MEDIO 11 KM', sub: '3 km di riscaldamento + 11 km a ritmo medio', load: 'Z3', duration: 87, kind: 'run', done: true,
     blocks: [
-      { code: 'SKI', t: 'Z2 lunga · 10\' Ski / 10\' Row alternati fino a 60\' totali', d: 'Mattia, blocco A · tutto in zona 2, 120-135 bpm', dur: '60\'', result: 'da fare' },
-      { code: 'PESI', t: 'Body Armor · 3+3 round, a seguire', d: 'Mattia, blocco B · 3 round: 10/10 renegade row senza push-up @2×24 kg + max plank, r2\' · poi 3 round: 12/12 single arm row @24 kg superslow + max hollow hold', dur: '~25\'', result: 'da fare' },
       { code: 'RUN', t: 'Run · 3 km risc + 11 km @5\'20"/km', d: 'Gabriele · 14 km totali · alla Pista Nebiolo dalle 17, coi bimbi', dur: '80\'', result: "11 km in 57:55.4 @5:15.9/km sul 5'20\" chiesto · FC 138,8 max 146 · drift EF −2,7% · km fra 5:13.4 e 5:21.0 · risc 2.161,4 m @6:21.1/km sui 3 km prescritti · defa 2.327,6 m @6:28.0/km · totale 15,489 km in 1:26:42 · Piazza d\'Armi, 17:53-19:20" },
     ]
   },
-  { day: 'SAB', date: '10', title: 'DEADLIFT 3×3 @140 + TEST LUNGES + DOPPIO EMOM', sub: 'Blocco F di Mattia · la mobilita\' chiude la mattina', load: 'HEAVY + METCON', duration: 180, kind: 'strength', done: false,
+  { day: 'SAB', date: '10', title: 'DEADLIFT 3×3 @140 + TEST LUNGES + DOPPIO EMOM + Z2 LUNGA 60\' SKI+ROW + BODY ARMOR', sub: 'Blocchi E e F di Mattia · la mobilita\' chiude la mattina', load: 'HEAVY + METCON + Z2', duration: 265, kind: 'strength', done: false,
     blocks: [
       { code: 'PESI', t: 'Deadlift · 3×3 @140 kg', d: 'Mattia, blocco A · riscaldamento: bilanciere vuoto×8, 60×6, 100×4, 120×2, 140×1 · 140 kg = 60 per lato (20+20+20) · recupero completo tra le serie', dur: '3 serie', result: 'da fare' },
       { code: 'PESI', t: 'Barbell Reverse Lunge · TEST a serie da 4 per lato', d: 'Mattia, blocco B · riscaldamento bilanciere×5/5, 30×4/4, 40×3/3, 50×2/2 · incrementi del 5-7,5%, ci si ferma alla prima serie a RPE 8 (due ripetizioni in riserva), massimo 4 tentativi · da segnare: carico, RPE, note tecniche · indicazione del coach: velocita\' costante, mai arrivare al rallentamento', dur: '4 tentativi', result: 'da fare' },
       { code: 'METCON', t: 'Metcon · EMOM 15\' · gesti di gara', d: 'Mattia, blocco C · I: 2×7 m sled push · II: 15-20 wall ball @4 kg · III: 2×7 m burpee broad jump', dur: '15\'', result: 'da fare' },
       { code: 'METCON', t: 'Metcon · secondo EMOM 15\'', d: 'Mattia · I: 2×7 m sled pull · II: 4×7 m affondi zavorrati @20 kg · III: max farmer\'s carry', dur: '15\'', result: 'da fare' },
       { code: 'MOB', t: 'Flexability · in Virgin · 11:30 → 12:15', d: 'Classe Virgin da prenotare · ultima cosa della mattina, fa da scarico', dur: '45\'', result: 'da fare' },
+      { code: 'SKI', t: 'Z2 lunga · 10\' Ski / 10\' Row alternati fino a 60\' totali', d: 'Mattia, blocco A · tutto in zona 2, 120-135 bpm', dur: '60\'', result: 'da fare' },
+      { code: 'PESI', t: 'Body Armor · 3+3 round, a seguire', d: 'Mattia, blocco B · 3 round: 10/10 renegade row senza push-up @2×24 kg + max plank, r2\' · poi 3 round: 12/12 single arm row @24 kg superslow + max hollow hold', dur: '~25\'', result: 'da fare' },
     ]
   },
   { day: 'DOM', date: '11', title: 'TEST ROW 2000 m + ROW Z2', sub: 'A casa i due lavori al remo', load: 'Z5 + Z2', duration: 65, kind: 'row', done: false,
