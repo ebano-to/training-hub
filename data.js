@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 95.1,
-  bodyFat: 22.4,
-  bodyDate: '29 SET 2026',
+  weight: 95.2,
+  bodyFat: 23.5,
+  bodyDate: '09 OTT 2026',
   hrmax: 177,
   programWeek: 41,
 };
@@ -47,7 +47,7 @@ const STATIONS = [
 ];
 
 // ── COMPOSIZIONE CORPOREA ──────────────────────────
-// BODY = bilancia Garmin Index S2 (bioimpedenza domestica), export 29/09/2026 · dati/garmin_peso_20260929.csv
+// BODY = bilancia Garmin Index S2 (bioimpedenza domestica), export 29/09/2026 · dati/garmin_peso_20260929.csv · dal 30/09/2026 via API · dati/garmin_peso_20261009.json
 // kg = peso · bf = massa grassa % · mm = massa muscolare scheletrica kg · h2o = acqua corporea %
 const BODY = [
   { d: '2025-10-02', kg: 98.8, bf: 24.4, mm: 38.3, h2o: 55.2 },
@@ -115,6 +115,13 @@ const BODY = [
   { d: '2026-09-20', kg: 96.2, bf: 23.4, mm: 37.6, h2o: 55.9 },
   { d: '2026-09-28', kg: 96.2, bf: 22.9, mm: 37.6, h2o: 56.3 },
   { d: '2026-09-29', kg: 95.1, bf: 22.4, mm: 37.3, h2o: 56.6 },
+  { d: '2026-09-30', kg: 97.8, bf: 23.1, mm: 38.0, h2o: 56.1 },
+  { d: '2026-10-02', kg: 96.8, bf: 23.4, mm: 37.7, h2o: 56.0 },
+  { d: '2026-10-04', kg: 97.0, bf: 24.7, mm: 37.8, h2o: 55.0 },
+  { d: '2026-10-05', kg: 95.2, bf: 22.9, mm: 37.3, h2o: 56.3 },
+  { d: '2026-10-06', kg: 95.9, bf: 22.8, mm: 37.5, h2o: 56.4 },
+  { d: '2026-10-07', kg: 98.4, bf: 24.3, mm: 38.1, h2o: 55.3 },
+  { d: '2026-10-09', kg: 95.2, bf: 23.5, mm: 37.3, h2o: 55.8 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -11724,7 +11731,7 @@ const BADGES = {
       go: 'Nessuna azione.' },
     // ── PERMANENTI E SPEDIZIONI (sempre attive)
     { n: '10K: la sfida di un giorno', en: '10KADAY', cat: 'STEP', tipo: 'streak',
-      req: '10.000 passi al giorno per 30 giorni CONSECUTIVI — un giorno sotto azzera tutto · 4 punti', win: 'permanente, ripetibile', d1: null, d2: null, st: 'plan', prog: 'azzerata il 16/09, si riparte al primo giorno pieno (Federico, 17/09)',
+      req: '10.000 passi al giorno per 30 giorni CONSECUTIVI — un giorno sotto azzera tutto · 4 punti', win: 'permanente, ripetibile', d1: null, d2: null, st: 'plan', prog: '5 / 30 giorni (garmin, 09/10)',
       why: 'Due serie rotte: il 03/09 al nono giorno e il 16/09 al secondo. Entrambe cadute in giorni di solo erg, dove l\'allenamento non produce passi.',
       go: 'Nei giorni di solo row/ski servono 7-7,5 km di camminata a parte: o si programmano quelli, o la serie si rompe lì.' },
     { n: 'Olimpo — Arrampicata', en: 'Olympus Climbing', cat: 'MISC', tipo: 'cumulativa',
