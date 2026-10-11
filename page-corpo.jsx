@@ -4,6 +4,7 @@ function CorpoPage() {
   return (
     <TelemetryChrome active="CORPO">
       <BodyComposition />
+      <Vo2maxChart />
     </TelemetryChrome>
   );
 }
@@ -181,6 +182,86 @@ function BodyComposition() {
               + '\nAnche i pesi non coincidono, con Zappitelli sempre circa due chili più alto: bilance diverse, ore e abbigliamento diversi. Ogni serie va letta contro sé stessa.';
           })()
           : '\nLe plicometrie di Zappitelli entreranno qui come quadrati arancioni, su una linea propria: metodo diverso dalla bioimpedenza, le due serie si leggono in parallelo e non si mediano.'}
+      </div>
+    </div>
+  );
+}
+
+
+// VO2MAX — stima Garmin (corsa) nel tempo, aggiunta l'11/10/2026. Dati da scripts/garmin_corpo.py.
+function Vo2maxChart() {
+  var V = window.TRAINING.VO2MAX || [];
+  var VB = window.TRAINING.VO2MAX_BICI || [];
+  if (V.length < 2) return null;
+  var W = 1000, H = 220, PAD = 34;
+  var t0 = new Date(V[0].d).getTime(), t1 = new Date(V[V.length - 1].d).getTime();
+  var span = Math.max(1, t1 - t0);
+  var X = function (d) { return PAD + ((new Date(d).getTime() - t0) / span) * (W - PAD * 2); };
+  var vs = V.map(function (p) { return p.v; });
+  var lo = Math.floor(Math.min.apply(null, vs) - 0.5), hi = Math.ceil(Math.max.apply(null, vs) + 0.5);
+  var Y = function (v) { return H - ((v - lo) / (hi - lo)) * H; };
+  var path = 'M' + V.map(function (p) { return X(p.d) + ',' + Y(p.v); }).join(' L');
+  var fd = function (d) { return d.split('-').reverse().join('/'); };
+  var c = function (v) { return String(v).replace('.', ','); };
+  var last = V[V.length - 1];
+  var max = V.reduce(function (a, p) { return p.v >= a.v ? p : a; }, V[0]);
+  var min = V.reduce(function (a, p) { return p.v < a.v ? p : a; }, V[0]);
+  var anno = last.d.slice(0, 4);
+  var primoAnno = V.filter(function (p) { return p.d.slice(0, 4) === anno; })[0];
+  var dAnno = Math.round((last.v - primoAnno.v) * 10) / 10;
+  var MN = ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'];
+  var ticks = [];
+  var d0 = new Date(t0), cur = new Date(d0.getFullYear(), d0.getMonth() <= 5 ? 0 : 6, 1);
+  while (cur.getTime() < t0) { cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1); }
+  while (cur.getTime() <= t1) { ticks.push({ t: cur.getTime(), lab: MN[cur.getMonth()] + ' ' + String(cur.getFullYear()).slice(2) }); cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1); }
+  var box = { border: '1px solid var(--line)', padding: '12px 14px', background: 'var(--bg)' };
+  var lab = { fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.16em' };
+  var tile = function (titolo, valore, sotto, colore) {
+    return (
+      <div style={box}>
+        <div style={lab}>{titolo}</div>
+        <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1, color: colore || 'inherit' }}>{valore}</div>
+        <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{sotto}</div>
+      </div>
+    );
+  };
+  return (
+    <div style={{ border: '1px solid var(--line)', padding: 16, marginBottom: 16, background: 'var(--bg-2)' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
+        <div>
+          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{'// VO2MAX · ' + V.length + ' aggiornamenti Garmin · corsa'}</div>
+          <div className="display" style={{ fontSize: 26, lineHeight: 1, marginTop: 6 }}>VO2MAX</div>
+        </div>
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'right' }}>{fd(V[0].d) + ' → ' + fd(last.d)}</div>
+      </div>
+      <div className="r-grid r-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10, marginBottom: 16 }}>
+        {tile('ULTIMO', c(last.v), fd(last.d), '#39E75F')}
+        {tile('DA INIZIO ' + anno, (dAnno > 0 ? '+' : dAnno < 0 ? '−' : '') + c(Math.abs(dAnno)), 'da ' + c(primoAnno.v) + ' del ' + fd(primoAnno.d))}
+        {tile('MASSIMO', c(max.v), fd(max.d))}
+        {tile('MINIMO', c(min.v), fd(min.d))}
+      </div>
+      <div style={{ ...box, marginBottom: 10 }}>
+        <div style={{ ...lab, marginBottom: 8 }}>{'VO2MAX CORSA · ml/kg/min · scala ' + lo + '–' + hi}</div>
+        <svg viewBox={'0 0 ' + W + ' ' + H} style={{ width: '100%', height: 170, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
+          {[lo, (lo + hi) / 2, hi].map(function (g, i) {
+            return <line key={i} x1="0" y1={Y(g)} x2={W} y2={Y(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
+          })}
+          <path d={path} fill="none" stroke="#FFFFFF" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          {V.map(function (p, i) {
+            return <circle key={i} cx={X(p.d)} cy={Y(p.v)} r="3" fill={i === V.length - 1 ? '#39E75F' : '#FFFFFF'} vectorEffect="non-scaling-stroke">
+              <title>{fd(p.d) + ' · VO2max ' + c(p.v)}</title>
+            </circle>;
+          })}
+        </svg>
+        <div style={{ position: 'relative', height: 16, marginTop: 4 }}>
+          {ticks.map(function (k, i) {
+            return <span key={i} style={{ position: 'absolute', left: (((k.t - t0) / span) * 100) + '%', transform: 'translateX(-50%)', fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}>{k.lab}</span>;
+          })}
+        </div>
+      </div>
+      <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10, whiteSpace: 'pre-line' }}>
+        {'Stima di Garmin Connect, valore a un decimale (l\'app mostra l\'intero). Un punto per ogni giorno in cui Garmin l\'ha aggiornata.'}
+        {VB.length ? '\nBICI (stima separata, solo uscite col misuratore di potenza): ' + VB.map(function (p) { return fd(p.d) + ' ' + c(p.v); }).join(' · ') + '.' : ''}
       </div>
     </div>
   );
