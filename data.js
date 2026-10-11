@@ -1741,7 +1741,7 @@ const WEEK = [
       { code: 'SKI', t: 'Ski · 50\' @Z2 costante · Virgin 08:15', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · indicazione del coach: se la FC deriva, rallenta', dur: '50\'', result: 'da fare' },
       { code: 'MOB', t: 'Postural · Virgin 9:30', d: 'Mattia, blocco B · classe di Ilaria Lestingi, da prenotare · subito dopo lo Ski, nella stessa uscita', dur: '45\'', result: 'da fare' },
       { code: 'ROW', t: 'Row · Soglia 3×6:00 @ritmo 2k +10"/500 · r2\' attivo · sera a casa', d: 'Mattia, blocco C · Concept2 di casa · split da tenere = split medio del test 2000 m di questa settimana + 10"/500: il numero esatto si scrive qui appena fatto il test · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media · indicazione del coach: se la terza cala di piu\' di 2", va detto', dur: '22\'', result: 'da fare' },
-      { code: 'METCON', t: 'Metcon · EMOM 15\' · sera a casa', d: 'Mattia, blocco D · I: 12 burpees · II: 20 affondi con due manubri @2×24 kg (prescritti 30 kg, a casa si arriva a 24) · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'da fare' },
+      { code: 'METCON', t: 'Metcon · EMOM 15\' · sera a casa', d: 'Mattia, blocco D · I: 12 burpees · II: 20 affondi con due manubri @30 kg (prescritti da Mattia) · a casa i manubri arrivano a 2×24 kg: DA CHIEDERE A MATTIA · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'da fare' },
       { code: 'PESI', t: 'Upper body · ogni 2\' per 20\' · dopo il metcon · a casa', d: 'Mattia, blocco E · 10 giri: 12/12 single arm row @24 kg superslow + 30" hollow hold · e\' il body armor di venerdi\' rimesso qui · indicazione del coach: se dopo il metcon sei morto, 15\'', dur: '20\'', result: 'da fare' },
     ]
   },
