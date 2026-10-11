@@ -1725,7 +1725,7 @@ const WEEK = [
     blocks: [
       { code: 'SKI', t: 'Ski · 35\' @Z2 costante · mattina a casa', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · nota del coach: cinque minuti in piu\' della settimana scorsa', dur: '35\'', result: 'da fare' },
       { code: 'PESI', t: 'Upper body · ogni 2\' per 20\' · subito dopo lo Ski · a casa', d: 'Mattia, blocco B · 10 giri: 10 curl bicipiti @2×14 kg + 10 french press @2×10 kg · nota del coach: il curl a 12 kg era leggero, sale a 14; la french press resta a 10', dur: '20\'', result: 'da fare' },
-      { code: 'RUN', t: 'Run · 1h @5\'50"/km + 8×100 m allunghi r40" · sera', d: 'Gabriele · mobilita\' prima di partire · tapis o fuori · stima: ~11,1 km in ~68\' (10,3 km nell\'ora + 0,8 km di allunghi)', dur: '~68\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 1h @5\'50"/km + 8×100 m allunghi r40" · sera', d: 'Gabriele · 5\'50"/km = 10,29 km/h sul tapis · mobilita\' prima di partire · tapis o fuori · stima: ~11,1 km in ~68\' (10,3 km nell\'ora + 0,8 km di allunghi)', dur: '~68\'', result: 'da fare' },
     ]
   },
   { day: 'MAR', date: '13', title: 'FORZA CON MATTIA 11:30 + POSTURAL + RUN PENDENZA', sub: 'Virgin: Back Squat e Romanian Deadlift, poi Postural 13:15 · sera: run', load: 'HEAVY + Z3', duration: 165, kind: 'strength', done: false,
@@ -1733,15 +1733,15 @@ const WEEK = [
       { code: 'PESI', t: 'Back Squat · 4×5 @77,5 kg · Virgin 11:30 con Mattia', d: 'Mattia, blocco A, in presenza · riscaldamento bilanciere×5, 40×5, 55×3, 67,5×2 · recupero 2\'30" · 77,5 kg = 28,75 per lato (20+5+2,5+1,25) · da segnare: carico e RPE dell\'ultima serie · indicazione del coach: ultima serie a RPE 7, se arriva a 8 va detto', dur: '4 serie', result: 'da fare' },
       { code: 'PESI', t: 'Romanian Deadlift · 4×8 @80 kg · Virgin', d: 'Mattia, blocco B · riscaldamento bilanciere vuoto×8, 40×6, 60×4 · recupero 2\' · 80 kg = 30 per lato (20+10)', dur: '4 serie', result: 'da fare' },
       { code: 'MOB', t: 'Postural · Virgin 13:15', d: 'Mattia, blocco C · classe di Riccardo Negro, da prenotare · mobilita\' a fine lavoro, per scaricare', dur: '45\'', result: 'da fare' },
-      { code: 'RUN', t: 'Run · 20\' risc + 20\' in pendenza 8% @140 bpm + 20\' @5\'20"/km · sera', d: 'Gabriele · 60\' totali · nel blocco a 5\'20" 3,75 km · la pendenza il tapis non la trasmette, va impostata a mano', dur: '60\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 20\' risc + 20\' in pendenza 8% @140 bpm + 20\' @5\'20"/km · sera', d: 'Gabriele · pendenza: si regola sui 140 bpm, il passo e\' la conseguenza · 5\'20"/km = 11,25 km/h sul tapis · 60\' totali · nel blocco a 5\'20" 3,75 km · la pendenza il tapis non la trasmette, va impostata a mano', dur: '60\'', result: 'da fare' },
     ]
   },
   { day: 'MER', date: '14', title: 'SKI Z2 50\' + POSTURAL · SERA: ROW SOGLIA + METCON + UPPER', sub: 'Virgin 08:15 e Postural 9:30 · sera a casa', load: 'Z2 + Z4 + METCON', duration: 152, kind: 'hyrox', done: false,
     blocks: [
       { code: 'SKI', t: 'Ski · 50\' @Z2 costante · Virgin 08:15', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · indicazione del coach: se la FC deriva, rallenta', dur: '50\'', result: 'da fare' },
       { code: 'MOB', t: 'Postural · Virgin 9:30', d: 'Mattia, blocco B · classe di Ilaria Lestingi, da prenotare · subito dopo lo Ski, nella stessa uscita', dur: '45\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · Soglia 3×6:00 @ritmo 2k +10"/500 · r2\' attivo · sera a casa', d: 'Mattia, blocco C · Concept2 di casa · il ritmo si prende dal test 2000 m di questa settimana, piu\' 10" ogni 500 · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media · indicazione del coach: se la terza cala di piu\' di 2", va detto', dur: '22\'', result: 'da fare' },
-      { code: 'METCON', t: 'Metcon · EMOM 15\' · sera a casa', d: 'Mattia, blocco D · I: 12 burpees · II: 20 affondi con due manubri @30 kg · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · Soglia 3×6:00 @ritmo 2k +10"/500 · r2\' attivo · sera a casa', d: 'Mattia, blocco C · Concept2 di casa · split da tenere = split medio del test 2000 m di questa settimana + 10"/500: il numero esatto si scrive qui appena fatto il test · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media · indicazione del coach: se la terza cala di piu\' di 2", va detto', dur: '22\'', result: 'da fare' },
+      { code: 'METCON', t: 'Metcon · EMOM 15\' · sera a casa', d: 'Mattia, blocco D · I: 12 burpees · II: 20 affondi con due manubri @2×24 kg (prescritti 30 kg, a casa si arriva a 24) · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'da fare' },
       { code: 'PESI', t: 'Upper body · ogni 2\' per 20\' · dopo il metcon · a casa', d: 'Mattia, blocco E · 10 giri: 12/12 single arm row @24 kg superslow + 30" hollow hold · e\' il body armor di venerdi\' rimesso qui · indicazione del coach: se dopo il metcon sei morto, 15\'', dur: '20\'', result: 'da fare' },
     ]
   },
@@ -1754,7 +1754,7 @@ const WEEK = [
     blocks: [
       { code: 'ROW', t: 'Row · 35\' @Z2 costante · mattina a casa', d: 'Mattia, blocco A · Concept2 · ritmo da conversazione · zona 2, 120-135 bpm · nota del coach: cinque minuti in piu\' del row di mercoledi\' scorso', dur: '35\'', result: 'da fare' },
       { code: 'PESI', t: 'Upper body · ogni 2\' per 20\' · subito dopo il Row · a casa', d: 'Mattia, blocco B · 10 giri: 10 alzate laterali @2×10 kg + 10/10 renegade row senza push-up @2×24 kg · indicazioni del coach: le spinte restano fuori finche\' la spalla da\' fastidio, renegade col bacino fermo', dur: '20\'', result: 'da fare' },
-      { code: 'RUN', t: 'Run · 3 km risc + 13 km @5\'30"/km · Pista Nebiolo 17:00', d: 'Gabriele · 16 km totali · stima ~1h31\' (13 km a 5\'30" = 71:30, risc al passo del 09/10)', dur: '~91\'', result: 'da fare' },
+      { code: 'RUN', t: 'Run · 3 km risc + 13 km @5\'30"/km · Pista Nebiolo 17:00', d: 'Gabriele · 5\'30"/km = 2:12 a giro in corsia 1 (400 m), 10,91 km/h · 16 km totali · stima ~1h31\' (13 km a 5\'30" = 71:30, risc al passo del 09/10)', dur: '~91\'', result: 'da fare' },
     ]
   },
   { day: 'SAB', date: '17', title: 'DEADLIFT 4×3 @130 + LUNGES 4×4 @57,5 + DOPPIO EMOM 18\' + FLEXABILITY', sub: 'Virgin, tutta la mattina · Flexability 11:30 per ultima', load: 'HEAVY + METCON', duration: 121, kind: 'strength', done: false,
