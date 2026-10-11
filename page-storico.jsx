@@ -267,7 +267,7 @@ function HistoryRow({ h, kindLabel, kindColor }) {
         <div className="rh-load" style={{ fontSize: 10, letterSpacing: '0.1em', color: 'var(--fg-2)' }}>{h.load}</div>
         <div className="rh-dur display tabular" style={{ fontSize: 18 }}>{h.dur}<span style={{ fontSize: 10, color: 'var(--fg-3)', marginLeft: 1 }}>'</span></div>
         <div className="rh-rpe" style={{ display: 'flex', gap: 1, alignItems: 'flex-end', height: 14 }}>
-          {Array.from({ length: 10 }).map((_, j) => (
+          {typeof h.rpe === 'number' && Array.from({ length: 10 }).map((_, j) => (
             <div key={j} style={{
               width: 3, height: j < h.rpe ? 14 : 4,
               background: j < h.rpe ? (h.rpe >= 8 ? 'var(--warn)' : 'var(--accent)') : 'var(--line)'
@@ -279,7 +279,7 @@ function HistoryRow({ h, kindLabel, kindColor }) {
           <span className="tabular" style={{ letterSpacing: '0.05em' }}>{dayName(h.date)} {h.date}</span>
           <span className="display tabular" style={{ fontSize: 14 }}>{h.dur}'</span>
           <span style={{ fontSize: 10, letterSpacing: '0.1em' }}>{h.load}</span>
-          <span style={{ fontSize: 10, letterSpacing: '0.1em', color: h.rpe >= 8 ? 'var(--warn)' : 'var(--accent)' }}>RPE {h.rpe}</span>
+          {typeof h.rpe === 'number' && <span style={{ fontSize: 10, letterSpacing: '0.1em', color: h.rpe >= 8 ? 'var(--warn)' : 'var(--accent)' }}>RPE {h.rpe}</span>}
         </div>
         <div className="rh-arrow" style={{ textAlign: 'right' }}>
           {hasDetails ? (
