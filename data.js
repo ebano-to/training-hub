@@ -1702,20 +1702,21 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 3 km risc + 11 km @5\'20"/km', d: 'Gabriele · 14 km totali · in Piazza d\'Armi', dur: '80\'', result: "11 km in 57:55.4 @5:15.9/km sul 5'20\" chiesto · FC 138,8 max 146 · drift EF −2,7% · km fra 5:13.4 e 5:21.0 · risc 2.161,4 m @6:21.1/km sui 3 km prescritti · defa 2.327,6 m @6:28.0/km · totale 15,489 km in 1:26:42 · Piazza d\'Armi, 17:53-19:20" },
     ]
   },
-  { day: 'SAB', date: '10', title: 'DEADLIFT 3×3 @140 + TEST LUNGES + DOPPIO EMOM + Z2 LUNGA 60\' SKI+ROW + BODY ARMOR', sub: 'Blocchi E e F di Mattia', load: 'HEAVY + METCON + Z2', duration: 220, kind: 'strength', done: false,
+  { day: 'SAB', date: '10', title: 'DEADLIFT 3×3 @140 + TEST LUNGES + EMOM', sub: 'Blocco F di Mattia', load: 'HEAVY + METCON', duration: 135, kind: 'strength', done: true,
     blocks: [
       { code: 'PESI', t: 'Deadlift · 3×3 @140 kg', d: 'Mattia, blocco A · riscaldamento: bilanciere vuoto×8, 60×6, 100×4, 120×2, 140×1 · 140 kg = 60 per lato (20+20+20) · recupero completo tra le serie', dur: '3 serie', result: "3×3 @140 kg fatte, 12:14-12:21 · recuperi 2:30.4 e 2:28.9 · rampa 30×8, 80×6, 100×4, 120×2, 140×1 · seduta 11:31-12:30, FC 92 max 126" },
       { code: 'PESI', t: 'Barbell Reverse Lunge · TEST a serie da 4 per lato', d: 'Mattia, blocco B · riscaldamento bilanciere×5/5, 30×4/4, 40×3/3, 50×2/2 · incrementi del 5-7,5%, ci si ferma alla prima serie a RPE 8 (due ripetizioni in riserva), massimo 4 tentativi · da segnare: carico, RPE, note tecniche · indicazione del coach: velocita\' costante, mai arrivare al rallentamento', dur: '4 tentativi', result: 'Test a 65 kg, 4 per lato, RPE 8 con inizio di rallentamento (dichiarato da Federico): tentativi 52,5 · 55 · 57,5 · 60 · 62,5 · 65 (sei sui quattro prescritti, salti da 2,5 kg sotto il 5-7,5%) · riscaldamento 30×4/4, 40×3/3, 50×2/2 · 11:39-11:58 · DA RIFARE con una rampa di 4 tentativi' },
       { code: 'METCON', t: 'Metcon · EMOM 15\' · gesti di gara', d: 'Mattia, blocco C · I: 2×7 m sled push · II: 15-20 wall ball @4 kg · III: 2×7 m burpee broad jump', dur: '15\'', result: 'EMOM 15:00 unico, misto dei due, da scarico: sled push @140 kg · 15 wall ball @4 kg a giro · una dozzina di affondi a corpo libero al posto dei burpee broad jump (fastidio alla spalla) · 12:31-12:46 · FC 122 max 145' },
       { code: 'METCON', t: 'Metcon · secondo EMOM 15\'', d: 'Mattia · I: 2×7 m sled pull · II: 4×7 m affondi zavorrati @20 kg · III: max farmer\'s carry', dur: '15\'', result: 'SALTATO', skipped: true },
-      { code: 'SKI', t: 'Z2 lunga · 10\' Ski / 10\' Row alternati fino a 60\' totali', d: 'Mattia, blocco A · tutto in zona 2, 120-135 bpm', dur: '60\'', result: 'da fare' },
-      { code: 'PESI', t: 'Body Armor · 3+3 round, a seguire', d: 'Mattia, blocco B · 3 round: 10/10 renegade row senza push-up @2×24 kg + max plank, r2\' · poi 3 round: 12/12 single arm row @24 kg superslow + max hollow hold', dur: '~25\'', result: 'da fare' },
     ]
   },
-  { day: 'DOM', date: '11', title: 'TEST ROW 2000 m + ROW Z2', sub: 'A casa i due lavori al remo', load: 'Z5 + Z2', duration: 65, kind: 'row', done: false,
+  { day: 'DOM', date: '11', title: 'TEST ROW 2000 m + ROW Z2 + SKI Z2 + Z2 LUNGA SKI+ROW + BODY ARMOR', sub: 'A casa tutto quello che resta della settimana', load: 'Z5 + Z2 + FORZA', duration: 180, kind: 'row', done: false,
     blocks: [
-      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa', d: 'Mattia · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · 30\' @Z2 costante · a casa', d: 'Mattia, blocco B', dur: '30\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa', d: 'Mattia, blocco A di lunedi\' · risc 10\' @Z1→Z2 + 3×20" a ritmo prova con 40" facili + 3\' di recupero completo · poi 2000 m a tutta e 10\' di defa @Z1 · da segnare: tempo, split di ogni 500, rate medio, FC max · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500', dur: '~35\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · 30\' @Z2 costante · a casa', d: 'Mattia, blocco B di mercoledi\' · zona 2, 120-135 bpm', dur: '30\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · 30\' @Z2 · a casa', d: 'Mattia, blocco B di lunedi\' · zona 2, 120-135 bpm', dur: '30\'', result: 'da fare' },
+      { code: 'SKI', t: 'Z2 lunga · 10\' Ski / 10\' Row alternati fino a 60\' totali · a casa', d: 'Mattia, blocco A di venerdi\' · tutto in zona 2, 120-135 bpm', dur: '60\'', result: 'da fare' },
+      { code: 'PESI', t: 'Body Armor · 3+3 round · a casa', d: 'Mattia, blocco B di venerdi\' · 3 round: 10/10 renegade row senza push-up @2×24 kg + max plank, r2\' · poi 3 round: 12/12 single arm row @24 kg superslow + max hollow hold', dur: '~25\'', result: 'da fare' },
     ]
   },
 ];
