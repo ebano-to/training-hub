@@ -65,8 +65,8 @@ function HydrationPage() {
         </td>
         <td style={{ padding: '10px 8px', fontSize: 12, color: 'var(--fg-2)' }}>{h.workout}</td>
         <td style={{ padding: '10px 8px', fontSize: 13, fontFamily: 'var(--mono)', textAlign: 'right' }}>{h.duration}'</td>
-        <td style={{ padding: '10px 8px', fontSize: 13, fontFamily: 'var(--mono)', textAlign: 'right' }}>{h.weightPre.toFixed(1)}</td>
-        <td style={{ padding: '10px 8px', fontSize: 13, fontFamily: 'var(--mono)', textAlign: 'right' }}>{h.weightPost.toFixed(1)}</td>
+        <td style={{ padding: '10px 8px', fontSize: 13, fontFamily: 'var(--mono)', textAlign: 'right' }}>{String(h.weightPre).replace('.', ',')}</td>
+        <td style={{ padding: '10px 8px', fontSize: 13, fontFamily: 'var(--mono)', textAlign: 'right' }}>{String(h.weightPost).replace('.', ',')}</td>
         <td style={{ padding: '10px 8px', fontSize: 13, fontFamily: 'var(--mono)', textAlign: 'right', color: 'var(--fg-3)' }}>{h.fluidIn}</td>
         <td style={{ padding: '10px 8px', fontFamily: 'var(--mono)', textAlign: 'right' }}>
           <span className="display tabular" style={{ fontSize: 15, color: 'var(--accent)' }}>{(h.sweatTotal / 1000).toFixed(2)}</span>
@@ -222,7 +222,7 @@ function HydrationPage() {
             var color = typeColors[h.type] || 'var(--accent)';
             return (
               <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <span className="display tabular" style={{ fontSize: 14, marginBottom: 4, color: color }}>{delta.toFixed(1)}</span>
+                <span className="display tabular" style={{ fontSize: 14, marginBottom: 4, color: color }}>{String(Math.round(delta * 1000) / 1000).replace('.', ',')}</span>
                 <div style={{
                   width: '100%', maxWidth: 60, height: (pct * 0.8) + '%', minHeight: 8,
                   background: 'linear-gradient(180deg, ' + color + ', ' + color + '44)',
