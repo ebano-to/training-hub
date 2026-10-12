@@ -1909,8 +1909,9 @@ const WEEK_ARCHIVE = [
 
 // Current week — S42 (12 OTT - 18 OTT 2026)
 const WEEK = [
-  { day: 'LUN', date: '12', title: 'SKI Z2 35\' + UPPER 20\' + RUN 1H @5\'50"', sub: 'Run al mattino · Ski e manubri a casa', load: 'Z2', duration: 123, kind: 'ski', done: false,
+  { day: 'LUN', date: '12', title: 'RUN 1H @5\'50" + TEST ROW 2000 + SKI Z2 35\' + UPPER 20\'', sub: 'Run al mattino · poi a casa test al remo, Ski e manubri', load: 'Z5 + Z2', duration: 145, kind: 'row', done: false,
     blocks: [
+      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa, prima dello Ski', d: 'Mattia, blocco A della S41: serve per il ritmo della soglia di mercoledi\' · 15\' di riscaldamento, poi il test (scelta di Federico) · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500 · da segnare: tempo, split di ogni 500, rate medio, FC max · RIFERIMENTO, miglior 2000 m sul logbook Concept2: 6:52.9 @1:43.2/500 (318 W), 27 colpi/min, 24/04/2025, secondo pezzo di una seduta dopo 8\' facili, DF 108 · miglior 2000 del 2026: 6:55.4 @1:43.8/500 (312 W), 25 colpi/min, 26/03/2026, prima di 3×2000 m r3\'', dur: '~22\'', result: 'da fare' },
       { code: 'SKI', t: 'Ski · 35\' @Z2 costante · mattina a casa', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · nota del coach: cinque minuti in piu\' della settimana scorsa', dur: '35\'', result: 'da fare' },
       { code: 'PESI', t: 'Upper body · ogni 2\' per 20\' · subito dopo lo Ski · a casa', d: 'Mattia, blocco B · 10 giri: 10 curl bicipiti @2×14 kg + 10 french press @2×10 kg · nota del coach: il curl a 12 kg era leggero, sale a 14; la french press resta a 10', dur: '20\'', result: 'da fare' },
       { code: 'RUN', t: 'Run · 1h @5\'50"/km + 8×100 m allunghi r40" · mattina', d: 'Gabriele · 5\'50"/km = 10,29 km/h sul tapis · mobilita\' prima di partire · tapis o fuori · stima: ~11,1 km in ~68\' (10,3 km nell\'ora + 0,8 km di allunghi)', dur: '~68\'', result: 'Blocco 60:00.0 a 5:46.9/km sul 5\'50" chiesto · 10.378,7 m · FC 130,6 max 139 · drift EF −4,0% · 8×100 m in 26,1-35,5" r40" · Piazza d\'Armi, 07:56-09:21 · totale 13,447 km in 1:21:01' },
