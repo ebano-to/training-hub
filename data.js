@@ -1930,7 +1930,7 @@ const WEEK = [
     blocks: [
       { code: 'SKI', t: 'Ski · 50\' @Z2 costante · Virgin 08:15', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · indicazione del coach: se la FC deriva, rallenta', dur: '50\'', result: "50:00.0 · 11.035 m @2:15.9/500 · 139 W · 44 colpi/min · FC 116,6 max 125, Z1 al 63,13%, Z2 al 29,70% · DF 60 · Virgin, 08:31-09:21" },
       { code: 'MOB', t: 'Postural · Virgin 9:30', d: 'Mattia, blocco B · classe di Ilaria Lestingi, da prenotare · subito dopo lo Ski, nella stessa uscita', dur: '45\'', result: 'da fare' },
-      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa · prima della soglia · spostato da lunedi\' 12 e martedi\' 13', d: 'Mattia, blocco A della S41: serve per il ritmo della soglia, che si fa subito dopo · TARGET 1:40.0/500 = 6:40.0 sui 2000 m, 350 W (scelto da Federico) · riscaldamento di Mattia: 10\' @Z1→Z2, poi 3×20" a ritmo prova (1:40/500) con 40" facili, poi 3\' di recupero completo · dopo il test 10\' di defaticamento @Z1 · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500 · da segnare: tempo, split di ogni 500, rate medio, FC max · RIFERIMENTO, miglior 2000 m sul logbook Concept2: 6:52.9 @1:43.2/500 (318 W), 27 colpi/min, 24/04/2025, secondo pezzo di una seduta dopo 8\' facili, DF 108 · miglior 2000 del 2026: 6:55.4 @1:43.8/500 (312 W), 25 colpi/min, 26/03/2026, prima di 3×2000 m r3\'', dur: '~33\'', result: 'da fare' },
+      { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa · prima della soglia · spostato da lunedi\' 12 e martedi\' 13', d: 'Mattia, blocco A della S41: serve per il ritmo della soglia, che si fa subito dopo · TARGET 1:40.0/500 = 6:40.0 sui 2000 m, 350 W (scelto da Federico) · riscaldamento di Mattia: 10\' @Z1→Z2, poi 3×20" a ritmo prova (1:40/500) con 40" facili, poi 3\' di recupero completo · dopo il test 10\' di defaticamento @Z1 · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500 · da segnare: tempo, split di ogni 500, rate medio, FC max · RIFERIMENTO, miglior 2000 m sul logbook Concept2: 6:52.9 @1:43.2/500 (318 W), 27 colpi/min, 24/04/2025, secondo pezzo di una seduta dopo 8\' facili, DF 108 · miglior 2000 del 2026: 6:55.4 @1:43.8/500 (312 W), 25 colpi/min, 26/03/2026, prima di 3×2000 m r3\'', dur: '~33\'', result: "753 m in 2:48.5 sul pezzo del test, timer fermato a mano · 0-400 m 1:19.6 @1:39.5/500, 355 W, 31 colpi/min · 400-753 m 1:17.3 @1:49.5/500, 267 W, 24 colpi/min · FC 146,1 max 161 · DF 107 · riscaldamento 10:00 @2:18.1/500 + 3×20″ r40″ · a casa, 18:49-19:08" },
       { code: 'ROW', t: 'Row · Soglia 3×6:00 @ritmo 2k +10"/500 · r2\' attivo · sera a casa', d: 'Mattia, blocco C · Concept2 di casa · split da tenere = split medio del test 2000 m di questa settimana + 10"/500: il numero esatto si scrive qui appena fatto il test · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media · indicazione del coach: se la terza cala di piu\' di 2", va detto · Federico: probabilmente 2×6\' invece di 3×6\', decide domani in base a come si sente', dur: '22\'', result: 'da fare' },
       { code: 'METCON', t: 'Metcon · EMOM 15\' · sera a casa', d: 'Mattia, blocco D · I: 12 burpees · II: 20 affondi con due manubri @30 kg (prescritti da Mattia) · a casa i manubri arrivano a 2×24 kg: DA CHIEDERE A MATTIA · III: 15 kcal Row o Ski, alternando', dur: '15\'', result: 'da fare' },
       { code: 'PESI', t: 'Upper body · ogni 2\' per 20\' · dopo il metcon · a casa', d: 'Mattia, blocco E · 10 giri: 12/12 single arm row @24 kg superslow + 30" hollow hold · e\' il body armor di venerdi\' rimesso qui · indicazione del coach: se dopo il metcon sei morto, 15\'', dur: '20\'', result: 'da fare' },
@@ -1995,7 +1995,7 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398];
 const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920];
 const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 22.459];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0];
@@ -2004,12 +2004,12 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 
 // Totals (real)
 const TOTALS = {
-  rower: 748.174,
+  rower: 751.572,
   ski: 716.363,
   run: 945.417,
   bike: 429.415,
   swim: 57.628,
-  total: 2896.997,
+  total: 2900.395,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -6577,6 +6577,16 @@ const PROG = {
       "hr": 104,
       "spm": 22,
       "pb": false
+     },
+     {
+      "d": "14/10/26*",
+      "struttura": "3×0:20 +1",
+      "dist": 2455,
+      "w": 144,
+      "pace": "2:14.4",
+      "hr": 108,
+      "spm": 23,
+      "pb": false
      }
     ]
    },
@@ -8375,6 +8385,17 @@ const PROG = {
      "struttura": "4×1:00 +2",
      "rep_s": 190,
      "rep_m": 732
+    },
+    {
+     "d": "14/10/26*",
+     "dist": 2455,
+     "w": 144,
+     "pace": "2:14.4",
+     "spm": 23,
+     "hr": 108,
+     "struttura": "3×0:20 +1",
+     "rep_s": 165,
+     "rep_m": 613
     }
    ]
   }
@@ -8384,6 +8405,18 @@ const PROG = {
 
 // EF Trend — real Z2 SkiErg data
 const HISTORY = [
+  { date: '14 OTT', title: 'Row · Test 2000 m · 753 m in 2:48.5', kind: 'row', filone: 'row-test2k', filoneLabel: 'Row Test 2K', m: { lavoro: '753 m', dist: '3,398 km', dur: '2:48.5', pace: '1:51.9', unit: '/500m', watt: '250', fcMed: '146,1', fcMax: '161', tgt: '1:40.0', df: '107', src: 'fit' }, dur: 19, load: 'Z3-Z5', note: "Test 2000 m prescritto @1:40.0/500, 350 W: il pezzo registrato è 753 m in 2:48.5, timer fermato a mano\nFino a 718,9 m passo 1:40.2/500, sul target · split del logbook 1:39.5/500 (355 W) e 1:49.5/500 (267 W)\nFC da 94 in partenza a 161 in chiusura · riscaldamento di Mattia completo, 3:11 di pausa prima del test",
+    details: { ergTable: { fcMed: 146.1, fcMax: 161, efTot: '1.71', dec: [{ m: 'ROW', v: 'EF 2.64 → 1.69 fra i due split (−35,9%)' }], total: { tempo: '2:48.5', metri: '753', pace: '1:51.9', watt: 250, calh: 1160, sm: 27, ef: '1.71', fcmed: 146.1, fcmax: 161, zona: 'Z3', cal: 62, colpi: 72, maxpw: 371 }, rows: [
+        { m: 'ROW', split: 'WU', tempo: '10:00', metri: '2,173', pace: '2:18.1', watt: 133, calh: 758, sm: 23, ef: '1.24', fcmed: 107.4, fcmax: 124, zona: '<Z1', t: 0 },
+        { m: 'ROW', split: 'WU 20″ 1', tempo: '0:20', metri: '81', pace: '2:03.5', watt: 186, calh: 940, sm: 21, ef: '1.49', fcmed: 125.1, fcmax: 127, zona: 'Z2', t: 0 },
+        { m: 'ROW', split: 'rec', tempo: '0:40', metri: '17', pace: '—', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 96.8, fcmax: 100, zona: '—', t: 0 },
+        { m: 'ROW', split: 'WU 20″ 2', tempo: '0:20', metri: '98', pace: '1:42.0', watt: 329, calh: 1432, sm: 36, ef: '3.10', fcmed: 106.1, fcmax: 115, zona: '<Z1', t: 0 },
+        { m: 'ROW', split: 'rec', tempo: '0:40', metri: '137', pace: '—', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 115.9, fcmax: 124, zona: '—', t: 0 },
+        { m: 'ROW', split: 'WU 20″ 3', tempo: '0:20', metri: '103', pace: '1:37.1', watt: 382, calh: 1615, sm: 33, ef: '3.13', fcmed: 122.0, fcmax: 132, zona: 'Z2', t: 0 },
+        { m: 'ROW', split: 'rec', tempo: '0:40', metri: '35', pace: '—', watt: '—', calh: '—', sm: '—', ef: '—', fcmed: 134.0, fcmax: 134, zona: '—', t: 0 },
+        { m: 'ROW', split: '0-400', tempo: '1:19.6', metri: '400', pace: '1:39.5', watt: 355, calh: 1522, sm: 31, ef: '2.64', fcmed: 134.3, fcmax: 153, zona: 'Z2', t: 1 },
+        { m: 'ROW', split: '400-753', tempo: '1:17.3', metri: '353', pace: '1:49.5', watt: 267, calh: 1219, sm: 24, ef: '1.69', fcmed: 157.7, fcmax: 161, zona: 'Z5', t: 1 },
+      ] }, summary: "A casa, 18:49-19:08 · RowErg, drag factor 106 nel riscaldamento e 107 nel test.\nPrescritto (Mattia, blocco A): test 2000 m for time · target 6:40.0 @1:40.0/500, 350 W · riscaldamento 10′ @Z1→Z2 + 3×20″ a ritmo prova con 40″ facili + 3′ di recupero completo.\nRISCALDAMENTO 18:49-19:02: 10:00.0 per 2.173 m @2:18.1/500 · 133 W · 23 colpi/min · FC tw 107,4 max 124.\n3×20″ r40″: 81 m @2:03.5 (186 W, 21 colpi/min) · 98 m @1:42.0 (329 W, 36) · 103 m @1:37.1 (382 W, 33) · FC tw 125,1 · 106,1 · 122,0.\nPausa di 3:11 fra la fine del riscaldamento e la partenza del test · FC in partenza 94.\nTEST dalle 19:05:11, come JustRow con target di passo 1:40.0 sul monitor: 753 m in 2:48.5 @1:51.9/500 · 250 W · 27 colpi/min · 72 colpi · 62 kcal · watt max 371.\nSplit del logbook: 0-400 m 1:19.6 @1:39.5/500, 355 W, 31 colpi/min, FC tw 134,3 max 153 · 400-753 m 1:17.3 @1:49.5/500, 267 W, 24 colpi/min, FC tw 157,7 max 161.\nDai record: 718,9 m in 2:24 @1:40.2/500 (alle 19:07:35), poi 34,1 m in 12,9″ e 11,6″ fermo fino allo stop manuale del timer.\nEF 2,64 → 1,69 fra i due split (−35,9%) · indicativo: nel primo la FC parte da 94 e arriva in ritardo." } },
   { date: '14 OTT', title: 'Ski · Continuo · 50′', kind: 'ski', filone: 'ski-continuo', filoneLabel: 'Ski Continuo', m: { lavoro: '50:00', dist: '11.035 m', dur: '50:00', pace: '2:15.9', unit: '/500m', watt: '139', fcMed: '116,6', fcMax: '125', tgt: '120-135', df: '60', src: 'fit' }, vs: { d: '12 OTT', tag: 'Stesso filone, struttura diversa: 50′ contro 35′, Virgin contro casa, DF 60 contro 59', items: [{ v: 'watt 139 contro 148, passo 2:15.9 contro 2:13.2', g: 0 }, { v: 'FC media 116,6 contro 121,2 · EF 1,19 contro 1,22', g: 0 }, { v: 'deriva EF −5,0% contro −10,0%, su 50′ invece di 35′', g: 1 }] }, dur: 50, load: 'Z1-Z2', note: "50′ a 2:15.9/500 con 139 W, 11.035 m · FC 116,6 media, max 125: Z1 al 63,13%, Z2 al 29,70%\nPrescritta Z2 120-135: FC sotto i 120 per il 70,30% del tempo · blocchi da 10′ fra 137 e 146 W\nEF 1,226 → 1,165 fra le due metà (−5,0%): FC da 115,1 a 118,2 con watt 141 → 138",
     details: { ergTable: { fcMed: 116.6, fcMax: 125, efTot: '1.19', dec: [{ m: 'SKI', v: '+5.0%' }], total: { tempo: '50:00', metri: '11,035', pace: '2:15.9', watt: 139, calh: 778, sm: 44, ef: '1.19', fcmed: 116.6, fcmax: 125, zona: 'Z1', cal: 651, colpi: 2246, maxpw: 168 }, rows: [{ m: 'SKI', split: 'blocco 1', tempo: '10:00', metri: '2,197', pace: '2:16.5', watt: 137, calh: 771, sm: 44, ef: '1.26', fcmed: 108.8, fcmax: 121, zona: '<Z1', t: 1 }, { m: 'SKI', split: 'blocco 2', tempo: '10:00', metri: '2,242', pace: '2:13.8', watt: 146, calh: 802, sm: 46, ef: '1.22', fcmed: 119.5, fcmax: 125, zona: 'Z1', t: 1 }, { m: 'SKI', split: 'blocco 3', tempo: '10:00', metri: '2,200', pace: '2:16.4', watt: 138, calh: 775, sm: 45, ef: '1.17', fcmed: 118.2, fcmax: 124, zona: 'Z1', t: 1 }, { m: 'SKI', split: 'blocco 4', tempo: '10:00', metri: '2,204', pace: '2:16.1', watt: 139, calh: 778, sm: 45, ef: '1.17', fcmed: 119.2, fcmax: 125, zona: 'Z1', t: 1 }, { m: 'SKI', split: 'blocco 5', tempo: '10:00', metri: '2,192', pace: '2:16.9', watt: 137, calh: 771, sm: 44, ef: '1.17', fcmed: 117.5, fcmax: 124, zona: 'Z1', t: 1 }] }, summary: "Virgin, 08:31-09:21 · SkiErg, drag factor 60.\nPrescritto (Mattia, blocco A): 50′ @Z2 costante, 120-135 bpm, ritmo da conversazione · se la FC deriva, rallenta.\nEseguito: 11.035 m in 50:00.0 @2:15.9/500 · 139 W · 44 colpi/min · 2.246 colpi · 651 kcal · watt max 168.\nBlocchi da 10′: 137 · 146 · 138 · 139 · 137 W · passo 2:16.5 · 2:13.8 · 2:16.4 · 2:16.1 · 2:16.9 /500.\nFC 116,6 media, max 125 · per blocco 108,8 · 119,5 · 118,2 · 119,2 · 117,5.\nZone: Z1 63,13% · Z2 29,70% · sotto Z1 7,17%.\nDRIFT: EF 1,226 → 1,165 fra le due metà (−5,0%) · FC 115,1 → 118,2 con watt 141 → 138.", gps: null } },
   { date: '13 OTT', title: 'Run · Tapis · 20′ in pendenza 8% @140 bpm + 20′ @5′20″', kind: 'run', filone: 'run-pendenza-8', filoneLabel: 'Pendenza 8%', surf: 'tapis', m: { lavoro: '20′ @8% + 20′ @5′20″', dist: '9,012 km', dur: '1:00:01', pace: '8:25.3', unit: '/km (blocco in pendenza)', fcMed: '142,6', fcMax: '147', tgt: '140', drift: '−8,3%', src: 'fit' }, vs: { d: '06 OTT', tag: 'Struttura diversa (un blocco da 20′ invece di 2×12′), stessa pendenza prescritta e stessa FC comandata', items: [{ v: 'blocco a 8:25.3/km con FC 142,6, contro 7:30.7 e 8:07.4/km con FC 140,6 e 142,1 del 06/10', g: 0 }, { v: 'decoupling dentro il blocco −8,3%, contro −8,5% fra i due blocchi del 06/10', g: 0 }] }, dur: 60, load: 'Z3', note: "Blocco in pendenza a FC 142,6 sul target 140, tutto in Z3: il passo scende da 8:08.3 a 8:43.6/km fra prima e seconda meta'\nBlocco a 5:20.2/km sul 5'20\" chiesto, FC 153,4 max 160: a velocita' costante sale da 149,4 a 156,6 nei quattro tratti da 5′\nDislivello MyRun 236 m, pendenza media 2,6%: con 0,5% + 8% + 0,5% dichiarati ne servono 223,3, i 12,7 restanti stanno nella salita a fine riscaldamento",
@@ -12013,7 +12046,7 @@ const BADGES = {
       go: 'Carica la strategia PacePro sull\'orologio PRIMA di uscire, alla prima corsa outdoor del mese.' },
     // ── PASSI / CAMMINATA
     { n: 'Ottobre, mese dei passi', en: 'October Step Month', cat: 'WALK', tipo: 'cumulativa',
-      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '191.397 / 300.000 — 64% (garmin, 14/10)',
+      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '194.159 / 300.000 — 65% (garmin, 14/10)',
       why: 'Preso ogni mese del 2026: con la media da 14.400 passi al giorno il traguardo cade a tre quarti di mese.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Passi di ottobre', en: 'October Steps', cat: 'WALK', tipo: 'cumulativa',
