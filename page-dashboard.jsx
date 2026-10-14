@@ -150,7 +150,7 @@ function DashboardPage() {
       {/* Body comp / athlete stats */}
       <div className="r-grid r-grid-3" style={{ gap: 12 }}>
         {[
-          { code: 'BODY.WEIGHT', v: ATHLETE.weight, u: 'kg', sub: 'peso attuale' },
+          { code: 'BODY.WEIGHT', v: ATHLETE.weight, u: 'kg', sub: 'media 7 giorni' },
           { code: 'HEIGHT', v: ATHLETE.height, u: 'cm', sub: 'altezza' },
           { code: 'FCMAX', v: ATHLETE.hrmax, u: 'bpm', sub: 'frequenza cardiaca massima' },
         ].map((s) => (

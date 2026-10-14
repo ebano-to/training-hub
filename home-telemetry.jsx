@@ -34,17 +34,20 @@ function HomeTelemetry() {
   })();
 
   const CORPO = (function () {
-    var B = window.TRAINING.BODY || [];
-    if (!B.length) return { kg: 0, bf: 0, dKg: 0, dBf: 0, dKgL: '', dBfL: '', serieKg: [], serieBf: [] };
-    var bf = B.filter(function (x) { return x.bf; });
-    var last = B[B.length - 1], lb = bf[bf.length - 1], fb = bf[0];
-    var dKg = last.kg - B[0].kg, dBf = lb.bf - fb.bf;
-    var fmt = function (v) { return (v > 0 ? '+' : v < 0 ? '\u2212' : '') + Math.abs(v).toFixed(1).replace('.', ','); };
+    // dal 14/10/2026: medie di 7 giorni di tutte le pesate (BODY_TREND, generato da scripts/garmin_corpo.py)
+    var T = (window.TRAINING.BODY_TREND || {}).pts || [];
+    if (!T.length) return { kg: 0, bf: 0, dKg: 0, dBf: 0, dKgL: '', dBfL: '', serieKg: [], serieBf: [] };
+    var now = T[T.length - 1];
+    var tb = T.filter(function (x) { return x.bf7 !== null; });
+    var nb = tb[tb.length - 1];
+    var fmt = function (v) { return (v > 0 ? '+' : v < 0 ? '\u2212' : '') + Math.abs(v).toFixed(2).replace('.', ','); };
+    var lab = function (st, d, u) { return st ? st.toUpperCase() + ' ' + fmt(d) + u : ''; };
+    var dal = new Date(now.d).getTime() - 90 * 86400000;
     return {
-      kg: last.kg, bf: lb.bf, dKg: dKg, dBf: dBf,
-      dKgL: fmt(dKg) + ' kg', dBfL: fmt(dBf) + ' pt',
-      serieKg: B.map(function (x) { return x.kg; }),
-      serieBf: bf.map(function (x) { return x.bf; }),
+      kg: now.kg7.toFixed(2), bf: nb.bf7.toFixed(2), dKg: now.sKg === 'discesa' ? -1 : 0, dBf: nb.sBf === 'discesa' ? -1 : 0,
+      dKgL: lab(now.sKg, now.dKg, ' kg/7gg'), dBfL: lab(nb.sBf, nb.dBf, ' pt/7gg'),
+      serieKg: T.filter(function (x) { return new Date(x.d).getTime() >= dal; }).map(function (x) { return x.kg7; }),
+      serieBf: tb.filter(function (x) { return new Date(x.d).getTime() >= dal; }).map(function (x) { return x.bf7; }),
     };
   })();
   const [tick, setTick] = React.useState(0);
@@ -335,7 +338,7 @@ function HomeTelemetry() {
             </div>
           </div>
           <div style={{ fontSize: 9, color: 'var(--fg-3)', marginTop: 8, letterSpacing: '0.1em' }}>
-            {window.TRAINING.BODY.length} MISURE INDEX S2 · {window.TRAINING.PLICO.length} PLICOMETRIE
+            MEDIE 7 GG · {window.TRAINING.BODY.length} PESATE · {window.TRAINING.PLICO.length} PLICOMETRIE
           </div>
         </ModuleCard>
 

@@ -12,20 +12,24 @@ function CorpoPage() {
 function BodyComposition() {
   var BODY = window.TRAINING.BODY || [];
   var PLICO = window.TRAINING.PLICO || [];
-  if (!BODY.length) return null;
+  var BT = window.TRAINING.BODY_TREND || { pts: [], soglie: { kg: 0.3, bf: 0.3 } };
+  var PT = window.TRAINING.PLICO_TREND || [];
+  var T = BT.pts || [];
+  if (!BODY.length || !T.length) return null;
 
   var W = 1000, H = 220, PAD = 34;
-  var all = BODY.concat(PLICO);
-  var t0 = new Date(all[0].d).getTime();
-  var t1 = new Date(BODY[BODY.length - 1].d).getTime();
-  PLICO.forEach(function (p) { var t = new Date(p.d).getTime(); if (t < t0) t0 = t; if (t > t1) t1 = t; });
+  var DAY = 86400000;
+  var ms = function (d) { return new Date(d).getTime(); };
+  var t0 = ms(BODY[0].d), t1 = ms(T[T.length - 1].d);
+  PLICO.forEach(function (p) { var t = ms(p.d); if (t < t0) t0 = t; if (t > t1) t1 = t; });
   var span = Math.max(1, t1 - t0);
-  var X = function (d) { return PAD + ((new Date(d).getTime() - t0) / span) * (W - PAD * 2); };
+  var X = function (d) { return PAD + ((ms(d) - t0) / span) * (W - PAD * 2); };
 
   var plicoKg = PLICO.filter(function (p) { return p.kg; });
   var plicoBf = PLICO.filter(function (p) { return p.bf; });
+  var bodyBf = BODY.filter(function (b) { return b.bf; });
   var kgs = BODY.map(function (b) { return b.kg; }).concat(plicoKg.map(function (p) { return p.kg; }));
-  var bfs = BODY.filter(function (b) { return b.bf; }).map(function (b) { return b.bf; }).concat(plicoBf.map(function (p) { return p.bf; }));
+  var bfs = bodyBf.map(function (b) { return b.bf; }).concat(plicoBf.map(function (p) { return p.bf; }));
   var kgLo = Math.floor(Math.min.apply(null, kgs) - 1), kgHi = Math.ceil(Math.max.apply(null, kgs) + 1);
   var bfLo = Math.floor(Math.min.apply(null, bfs) - 1), bfHi = Math.ceil(Math.max.apply(null, bfs) + 1);
   var Ykg = function (v) { return H - ((v - kgLo) / (kgHi - kgLo)) * H; };
@@ -34,26 +38,46 @@ function BodyComposition() {
   function line(pts, yf, key) {
     return 'M' + pts.map(function (p) { return X(p.d) + ',' + yf(p[key]); }).join(' L');
   }
-  var bodyBf = BODY.filter(function (b) { return b.bf; });
-  var first = BODY[0], last = BODY[BODY.length - 1];
-  var fb = bodyBf[0], lb = bodyBf[bodyBf.length - 1];
-  var fatKg0 = fb.kg * fb.bf / 100, fatKg1 = lb.kg * lb.bf / 100;
-  var leanKg0 = fb.kg - fatKg0, leanKg1 = lb.kg - fatKg1;
-  var dKg = last.kg - first.kg, dBf = lb.bf - fb.bf, dFat = fatKg1 - fatKg0, dLean = leanKg1 - leanKg0;
-  var n = function (v, dec) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(dec === undefined ? 1 : dec).replace('.', ','); };
+  // linea di tendenza: si interrompe dove fra due giorni con pesate passano piu' di 7 giorni (li' la media non esiste)
+  function trendPath(key, yf) {
+    var out = '', prev = null;
+    T.forEach(function (p) {
+      if (p[key] === null || p[key] === undefined) { prev = null; return; }
+      var cmd = (prev && ms(p.d) - ms(prev.d) <= 7 * DAY) ? ' L' : ' M';
+      out += cmd + X(p.d) + ',' + yf(p[key]);
+      prev = p;
+    });
+    return out.trim();
+  }
 
-  // etichette mese
-  var months = [];
-  BODY.forEach(function (b) { var k = b.d.slice(0, 7); if (months.indexOf(k) < 0) months.push(k); });
+  var now = T[T.length - 1];
+  var nowBf = T.filter(function (p) { return p.bf7 !== null; }).slice(-1)[0];
+  var fatNow = now.kg7 * nowBf.bf7 / 100, leanNow = now.kg7 - fatNow;
+  var c2 = function (v) { return v.toFixed(2).replace('.', ','); };
+  var n = function (v, dec) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(dec === undefined ? 1 : dec).replace('.', ','); };
+  var fd = function (d) { return d.split('-').reverse().join('/'); };
+  var col = function (st) { return st === 'discesa' ? '#39E75F' : st === 'salita' ? '#FFB454' : 'var(--fg-3)'; };
+  var stTxt = function (st, delta, u) {
+    if (!st) return 'settimana prima senza pesate';
+    return st.toUpperCase() + ' · ' + n(delta, 2) + u + ' sulla media di 7 gg prima';
+  };
+
+  // confronto con un anno fa: ultimo punto di tendenza con massa grassa ad almeno 365 giorni da oggi
+  var ref = T.filter(function (p) { return p.bf7 !== null && ms(p.d) <= ms(now.d) - 365 * DAY; }).slice(-1)[0];
+  // escursione massima dentro uno stesso giorno, dai grammi esatti
+  var spread = (function () {
+    var g = {}, best = { d: null, v: 0 };
+    BODY.forEach(function (b) { (g[b.d] = g[b.d] || []).push(b.g); });
+    Object.keys(g).forEach(function (d) { var v = (Math.max.apply(null, g[d]) - Math.min.apply(null, g[d])) / 1000; if (v > best.v) best = { d: d, v: v }; });
+    return best;
+  })();
+  var nIdx = BODY.filter(function (b) { return !b.man; }).length, nMan = BODY.length - nIdx;
   var MN = ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'];
 
-
-  // asse x condiviso: tick posizionati sulla scala temporale reale
   function AxisX() {
     var d0 = new Date(t0), d1 = new Date(t1);
     var ticks = [];
-    var y = d0.getFullYear(), m = d0.getMonth() <= 5 ? 0 : 6;
-    var cur = new Date(y, m, 1);
+    var cur = new Date(d0.getFullYear(), d0.getMonth() <= 5 ? 0 : 6, 1);
     while (cur.getTime() < d0.getTime()) { cur = new Date(cur.getFullYear(), cur.getMonth() + 6, 1); }
     while (cur.getTime() <= d1.getTime()) {
       ticks.push({ t: cur.getTime(), lab: MN[cur.getMonth()] + ' ' + String(cur.getFullYear()).slice(2) });
@@ -74,67 +98,70 @@ function BodyComposition() {
     );
   }
 
-  var box = { border: '1px solid var(--line)', padding: '12px 14px', background: 'var(--bg)' };
+  var box = { border: '1px solid var(--line)', padding: '12px 14px', background: 'var(--bg)', minWidth: 0 };
   var lab = { fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.16em' };
+  var cell = { padding: '5px 8px', borderBottom: '1px solid var(--line)', whiteSpace: 'nowrap' };
 
   return (
     <div style={{ border: '1px solid var(--line)', padding: 16, marginBottom: 16, background: 'var(--bg-2)' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
         <div>
-          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{'// BODY_COMP · ' + BODY.length + ' misure · Garmin Index S2' + (PLICO.length ? ' + ' + PLICO.length + ' plicometrie Zappitelli' : '')}</div>
-          <div className="display" style={{ fontSize: 26, lineHeight: 1, marginTop: 6 }}>PESO E MASSA GRASSA</div>
+          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{'// BODY_COMP · ' + BODY.length + ' pesate (' + nIdx + ' Index S2' + (nMan ? ', ' + nMan + ' scritte a mano' : '') + ')' + (PLICO.length ? ' + ' + PLICO.length + ' plicometrie Zappitelli' : '')}</div>
+          <div className="display" style={{ fontSize: 26, lineHeight: 1, marginTop: 6 }}>PESO E MASSA GRASSA · TENDENZA</div>
         </div>
         <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'right' }}>
-          {(function () {
-            var a = PLICO.length ? (PLICO[0].d < first.d ? PLICO[0].d : first.d) : first.d;
-            return a.split('-').reverse().join('/') + ' \u2192 ' + last.d.split('-').reverse().join('/');
-          })()}
+          {fd(new Date(t0).toISOString().slice(0, 10)) + ' → ' + fd(now.d)}
         </div>
       </div>
 
-      {/* numeri chiave */}
+      {/* numeri chiave: medie di 7 giorni */}
       <div className="r-grid r-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10, marginBottom: 16 }}>
         <div style={box}>
-          <div style={lab}>PESO OGGI</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{String(last.kg).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: dKg < 0 ? '#39E75F' : 'var(--fg-3)', marginTop: 4 }}>{n(dKg) + ' kg in un anno'}</div>
+          <div style={lab}>PESO · MEDIA 7 GG</div>
+          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{c2(now.kg7)}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
+          <div className="tabular" style={{ fontSize: 11, color: col(now.sKg), marginTop: 4 }}>{stTxt(now.sKg, now.dKg, ' kg')}</div>
+          <div className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 2 }}>{now.n + ' pesate dal ' + fd(new Date(ms(now.d) - 6 * DAY).toISOString().slice(0, 10)) + ' al ' + fd(now.d)}</div>
         </div>
         <div style={box}>
-          <div style={lab}>MASSA GRASSA</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1, color: '#FF6B9D' }}>{String(lb.bf).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> %</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: dBf < 0 ? '#39E75F' : 'var(--fg-3)', marginTop: 4 }}>{n(dBf) + ' punti'}</div>
+          <div style={lab}>MASSA GRASSA · MEDIA 7 GG</div>
+          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1, color: '#FF6B9D' }}>{c2(nowBf.bf7)}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> %</span></div>
+          <div className="tabular" style={{ fontSize: 11, color: col(nowBf.sBf), marginTop: 4 }}>{stTxt(nowBf.sBf, nowBf.dBf, ' punti')}</div>
+          <div className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 2 }}>{nowBf.nbf + ' pesate con massa grassa'}</div>
         </div>
         <div style={box}>
           <div style={lab}>GRASSO IN KG</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{fatKg1.toFixed(1).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: dFat < 0 ? '#39E75F' : 'var(--fg-3)', marginTop: 4 }}>{n(dFat) + ' kg'}</div>
+          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{c2(fatNow)}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
+          <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{'media peso × media massa grassa'}</div>
+          {ref && <div className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 2 }}>{n(fatNow - ref.kg7 * ref.bf7 / 100, 2) + ' kg dal ' + fd(ref.d)}</div>}
         </div>
         <div style={box}>
           <div style={lab}>MASSA MAGRA</div>
-          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{leanKg1.toFixed(1).replace('.', ',')}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
-          <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{n(dLean) + ' kg'}</div>
+          <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1 }}>{c2(leanNow)}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> kg</span></div>
+          <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{'media peso − grasso in kg'}</div>
+          {ref && <div className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 2 }}>{n(leanNow - (ref.kg7 - ref.kg7 * ref.bf7 / 100), 2) + ' kg dal ' + fd(ref.d)}</div>}
         </div>
       </div>
 
       {/* grafico peso */}
       <div style={{ ...box, marginBottom: 10 }}>
-        <div style={{ ...lab, marginBottom: 8 }}>{'PESO · kg · scala ' + kgLo + '–' + kgHi}</div>
+        <div style={{ ...lab, marginBottom: 8 }}>{'PESO · kg · scala ' + kgLo + '–' + kgHi + ' · punti = pesate · linea = media 7 gg'}</div>
         <svg viewBox={'0 0 ' + W + ' ' + H} style={{ width: '100%', height: 170, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
           {[kgLo, (kgLo + kgHi) / 2, kgHi].map(function (g, i) {
             return <line key={i} x1="0" y1={Ykg(g)} x2={W} y2={Ykg(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
           })}
-          <path d={line(BODY, Ykg, 'kg')} fill="none" stroke="#FFFFFF" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-          {plicoKg.length > 1 && <path d={line(plicoKg, Ykg, 'kg')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {BODY.map(function (b, i) {
-            return <circle key={i} cx={X(b.d)} cy={Ykg(b.kg)} r="3" fill={i === BODY.length - 1 ? '#39E75F' : '#FFFFFF'} vectorEffect="non-scaling-stroke">
-              <title>{b.d.split('-').reverse().join('/') + ' · ' + b.kg + ' kg' + (b.bf ? ' · ' + b.bf + '% grasso' : '')}</title>
+            return <circle key={i} cx={X(b.d)} cy={Ykg(b.kg)} r="2.2" fill={b.man ? 'none' : '#FFFFFF'} stroke="#FFFFFF" strokeWidth="1" opacity="0.4" vectorEffect="non-scaling-stroke">
+              <title>{fd(b.d) + ' ' + b.h + ' · ' + b.kg + ' kg' + (b.bf ? ' · ' + b.bf + '% grasso' : '') + (b.man ? ' · scritta a mano' : '')}</title>
             </circle>;
           })}
+          <path d={trendPath('kg7', Ykg)} fill="none" stroke="#FFFFFF" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <circle cx={X(now.d)} cy={Ykg(now.kg7)} r="4" fill="#39E75F" vectorEffect="non-scaling-stroke"><title>{'media 7 gg al ' + fd(now.d) + ' · ' + c2(now.kg7) + ' kg'}</title></circle>
+          {plicoKg.length > 1 && <path d={line(plicoKg, Ykg, 'kg')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {plicoKg.map(function (p, i) {
             return <g key={'p' + i}>
               <line x1={X(p.d)} y1="0" x2={X(p.d)} y2={H} stroke="#FFB454" strokeWidth="1" strokeDasharray="2 4" vectorEffect="non-scaling-stroke" />
               <rect x={X(p.d) - 5} y={Ykg(p.kg) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
-                <title>{'ZAPPITELLI ' + p.d.split('-').reverse().join('/') + ' · ' + p.kg + ' kg' + (p.bf ? ' · ' + p.bf + '% (plicometria)' : '')}</title>
+                <title>{'ZAPPITELLI ' + fd(p.d) + ' · ' + p.kg + ' kg' + (p.bf ? ' · ' + p.bf + '% (plicometria)' : '')}</title>
               </rect>
             </g>;
           })}
@@ -144,44 +171,70 @@ function BodyComposition() {
 
       {/* grafico massa grassa */}
       <div style={{ ...box, marginBottom: 12 }}>
-        <div style={{ ...lab, marginBottom: 8 }}>{'MASSA GRASSA · % · scala ' + bfLo + '–' + bfHi}</div>
+        <div style={{ ...lab, marginBottom: 8 }}>{'MASSA GRASSA · % · scala ' + bfLo + '–' + bfHi + ' · punti = pesate · linea = media 7 gg'}</div>
         <svg viewBox={'0 0 ' + W + ' ' + H} style={{ width: '100%', height: 170, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
           {[bfLo, (bfLo + bfHi) / 2, bfHi].map(function (g, i) {
             return <line key={i} x1="0" y1={Ybf(g)} x2={W} y2={Ybf(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
           })}
-          <path d={line(bodyBf, Ybf, 'bf')} fill="none" stroke="#FF6B9D" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-          {plicoBf.length > 1 && <path d={line(plicoBf, Ybf, 'bf')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {bodyBf.map(function (b, i) {
-            return <circle key={i} cx={X(b.d)} cy={Ybf(b.bf)} r="3" fill={i === bodyBf.length - 1 ? '#39E75F' : '#FF6B9D'} vectorEffect="non-scaling-stroke">
-              <title>{b.d.split('-').reverse().join('/') + ' · ' + b.bf + '%'}</title>
+            return <circle key={i} cx={X(b.d)} cy={Ybf(b.bf)} r="2.2" fill="#FF6B9D" opacity="0.4" vectorEffect="non-scaling-stroke">
+              <title>{fd(b.d) + ' ' + b.h + ' · ' + b.bf + '%'}</title>
             </circle>;
           })}
+          <path d={trendPath('bf7', Ybf)} fill="none" stroke="#FF6B9D" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          <circle cx={X(nowBf.d)} cy={Ybf(nowBf.bf7)} r="4" fill="#39E75F" vectorEffect="non-scaling-stroke"><title>{'media 7 gg al ' + fd(nowBf.d) + ' · ' + c2(nowBf.bf7) + '%'}</title></circle>
+          {plicoBf.length > 1 && <path d={line(plicoBf, Ybf, 'bf')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {plicoBf.map(function (p, i) {
             return <rect key={'pb' + i} x={X(p.d) - 5} y={Ybf(p.bf) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
-              <title>{'ZAPPITELLI ' + p.d.split('-').reverse().join('/') + ' · ' + p.bf + '% (plicometria)'}</title>
+              <title>{'ZAPPITELLI ' + fd(p.d) + ' · ' + p.bf + '% (plicometria)'}</title>
             </rect>;
           })}
         </svg>
         <AxisX />
       </div>
 
-      {/* legenda + lettura */}
+      {/* legenda */}
       <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginBottom: 10 }}>
-        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FFFFFF', display: 'inline-block' }} />PESO (INDEX S2)</span>
-        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FF6B9D', display: 'inline-block' }} />MASSA GRASSA (INDEX S2)</span>
+        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FFFFFF', display: 'inline-block' }} />PESO, MEDIA 7 GG</span>
+        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FF6B9D', display: 'inline-block' }} />MASSA GRASSA, MEDIA 7 GG</span>
+        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 6, height: 6, borderRadius: 3, background: 'var(--fg-3)', display: 'inline-block' }} />SINGOLA PESATA (VUOTA = SCRITTA A MANO)</span>
         <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 9, height: 9, background: '#FFB454', display: 'inline-block' }} />ZAPPITELLI (PLICOMETRIA)</span>
       </div>
+
+      {/* plicometria: velocita' fra visite */}
+      {PT.length > 0 && (
+        <div style={{ ...box, marginBottom: 12, overflowX: 'auto' }}>
+          <div style={{ ...lab, marginBottom: 8 }}>{'ZAPPITELLI · TENDENZA FRA UNA VISITA E LA PRECEDENTE · soglie ' + String(BT.soglie.kg).replace('.', ',') + ' kg e ' + String(BT.soglie.bf).replace('.', ',') + ' punti a settimana'}</div>
+          <table className="tabular" style={{ borderCollapse: 'collapse', fontSize: 11, width: '100%' }}>
+            <thead><tr style={{ color: 'var(--fg-3)', textAlign: 'left' }}>
+              <th style={cell}>VISITA</th><th style={cell}>SETTIMANE</th><th style={cell}>KG</th><th style={cell}>KG / SETT</th><th style={cell}>GRASSO %</th><th style={cell}>PUNTI / SETT</th>
+            </tr></thead>
+            <tbody>
+              {PT.slice().reverse().map(function (t, i) {
+                var p = PLICO.filter(function (x) { return x.d === t.d; })[0] || {};
+                return <tr key={i}>
+                  <td style={cell}>{fd(t.d)}</td>
+                  <td style={cell}>{String(t.sett).replace('.', ',')}</td>
+                  <td style={cell}>{p.kg ? String(p.kg).replace('.', ',') : '—'}</td>
+                  <td style={{ ...cell, color: col(t.sKg) }}>{t.kgSett === null ? '—' : n(t.kgSett, 2) + ' · ' + t.sKg}</td>
+                  <td style={cell}>{p.bf ? String(p.bf).replace('.', ',') : '—'}</td>
+                  <td style={{ ...cell, color: col(t.sBf) }}>{t.bfSett === null ? '—' : n(t.bfSett, 2) + ' · ' + t.sBf}</td>
+                </tr>;
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+
       <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10, whiteSpace: 'pre-line' }}>
-        {'Sull\'ultimo anno di bilancia il peso scende di ' + Math.abs(dKg).toFixed(1).replace('.', ',') + ' kg, ma il dato che conta è la ripartizione: grasso ' + n(dFat) + ' kg, massa magra ' + n(dLean) + ' kg. Il calo è quasi tutto grasso.'}
+        {'La singola pesata conta poco: nello stesso giorno il peso è arrivato a variare di ' + spread.v.toFixed(3).replace('.', ',') + ' kg (' + fd(spread.d) + '). Conta la linea, cioè la media di tutte le pesate degli ultimi 7 giorni. La tendenza confronta la media di oggi con quella di 7 giorni prima: sotto ' + String(BT.soglie.kg).replace('.', ',') + ' kg (peso) e ' + String(BT.soglie.bf).replace('.', ',') + ' punti (massa grassa) è stabile.'}
+        {ref ? '\nRispetto alla media di 7 giorni al ' + fd(ref.d) + ': peso ' + n(now.kg7 - ref.kg7, 2) + ' kg, grasso ' + n(fatNow - ref.kg7 * ref.bf7 / 100, 2) + ' kg, massa magra ' + n(leanNow - (ref.kg7 - ref.kg7 * ref.bf7 / 100), 2) + ' kg.' : ''}
         {PLICO.length
           ? (function () {
-            var lp = plicoBf[plicoBf.length - 1], fp = plicoBf[0];
-            return '\nLE DUE SERIE NON COINCIDONO, E LA DISTANZA È GRANDE: la bilancia legge ' + String(lb.bf).replace('.', ',') + '% di massa grassa, l\'ultima plicometria di Zappitelli ' + String(lp.bf).replace('.', ',') + '%. Quindici punti non sono un problema di taratura: i due numeri non possono essere entrambi giusti.'
-              + '\nI due metodi sbagliano in direzioni note e opposte. La bioimpedenza domestica SOVRASTIMA il grasso, e idratazione, pasti e allenamento recente la spostano di giorno in giorno. Le formule su pliche SOTTOSTIMANO sui soggetti alti e pesanti, perché tarate su popolazioni di corporatura media. Il valore vero sta quasi certamente in mezzo.'
-              + '\nQuello che va guardato è la TENDENZA di ciascuna serie, non il livello — e lì sono d\'accordo: la bilancia fa ' + String(fb.bf).replace('.', ',') + '% → ' + String(lb.bf).replace('.', ',') + '%, la plicometria ' + String(fp.bf).replace('.', ',') + '% → ' + String(lp.bf).replace('.', ',') + '% partendo dal ' + fp.d.split('-').reverse().join('/') + '. Scendono entrambe.'
-              + '\nAnche i pesi non coincidono, con Zappitelli sempre circa due chili più alto: bilance diverse, ore e abbigliamento diversi. Ogni serie va letta contro sé stessa.';
+            var lp = plicoBf[plicoBf.length - 1];
+            return '\nLE DUE SERIE NON COINCIDONO: la bilancia legge ' + c2(nowBf.bf7) + '% di massa grassa (media 7 gg), l\'ultima plicometria di Zappitelli ' + String(lp.bf).replace('.', ',') + '% (' + fd(lp.d) + '). Sono due metodi diversi: la bioimpedenza domestica risente di idratazione, pasti e allenamento recente, le formule su pliche sono tarate su corporature medie. Ogni serie va letta contro se stessa, per la sua tendenza, mai mediata con l\'altra.';
           })()
-          : '\nLe plicometrie di Zappitelli entreranno qui come quadrati arancioni, su una linea propria: metodo diverso dalla bioimpedenza, le due serie si leggono in parallelo e non si mediano.'}
+          : ''}
       </div>
     </div>
   );
