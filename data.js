@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 96.2,
-  bodyFat: 23.3,
-  bodyDate: '13 OTT 2026',
+  weight: 95.7,
+  bodyFat: 23.4,
+  bodyDate: '14 OTT 2026',
   hrmax: 177,
   programWeek: 42,
 };
@@ -124,6 +124,7 @@ const BODY = [
   { d: '2026-10-09', kg: 95.2, bf: 23.5, mm: 37.3, h2o: 55.8 },
   { d: '2026-10-12', kg: 96.7, bf: 23.1, mm: 37.7, h2o: 56.1 },
   { d: '2026-10-13', kg: 96.2, bf: 23.3, mm: 37.6, h2o: 56.0 },
+  { d: '2026-10-14', kg: 95.7, bf: 23.4, mm: 37.5, h2o: 55.9 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -1927,7 +1928,7 @@ const WEEK = [
   },
   { day: 'MER', date: '14', title: 'SKI Z2 50\' + POSTURAL · SERA: TEST ROW 2000 + ROW SOGLIA + METCON + UPPER', sub: 'Virgin 08:15 e Postural 9:30 · sera a casa: test RowErg 2000 m, poi la soglia', load: 'Z2 + Z5 + Z4 + METCON', duration: 185, kind: 'hyrox', done: false,
     blocks: [
-      { code: 'SKI', t: 'Ski · 50\' @Z2 costante · Virgin 08:15', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · indicazione del coach: se la FC deriva, rallenta', dur: '50\'', result: 'da fare' },
+      { code: 'SKI', t: 'Ski · 50\' @Z2 costante · Virgin 08:15', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · indicazione del coach: se la FC deriva, rallenta', dur: '50\'', result: "50:00.0 · 11.035 m @2:15.9/500 · 139 W · 44 colpi/min · FC 116,6 max 125, Z1 al 63,13%, Z2 al 29,70% · DF 60 · Virgin, 08:31-09:21" },
       { code: 'MOB', t: 'Postural · Virgin 9:30', d: 'Mattia, blocco B · classe di Ilaria Lestingi, da prenotare · subito dopo lo Ski, nella stessa uscita', dur: '45\'', result: 'da fare' },
       { code: 'ROW', t: 'Row · TEST 2000 m FOR TIME · a casa · prima della soglia · spostato da lunedi\' 12 e martedi\' 13', d: 'Mattia, blocco A della S41: serve per il ritmo della soglia, che si fa subito dopo · TARGET 1:40.0/500 = 6:40.0 sui 2000 m, 350 W (scelto da Federico) · riscaldamento di Mattia: 10\' @Z1→Z2, poi 3×20" a ritmo prova (1:40/500) con 40" facili, poi 3\' di recupero completo · dopo il test 10\' di defaticamento @Z1 · indicazione del coach: passo controllato e costante fino ai 1500, poi accelerare negli ultimi 500 · da segnare: tempo, split di ogni 500, rate medio, FC max · RIFERIMENTO, miglior 2000 m sul logbook Concept2: 6:52.9 @1:43.2/500 (318 W), 27 colpi/min, 24/04/2025, secondo pezzo di una seduta dopo 8\' facili, DF 108 · miglior 2000 del 2026: 6:55.4 @1:43.8/500 (312 W), 25 colpi/min, 26/03/2026, prima di 3×2000 m r3\'', dur: '~33\'', result: 'da fare' },
       { code: 'ROW', t: 'Row · Soglia 3×6:00 @ritmo 2k +10"/500 · r2\' attivo · sera a casa', d: 'Mattia, blocco C · Concept2 di casa · split da tenere = split medio del test 2000 m di questa settimana + 10"/500: il numero esatto si scrive qui appena fatto il test · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media · indicazione del coach: se la terza cala di piu\' di 2", va detto · Federico: probabilmente 2×6\' invece di 3×6\', decide domani in base a come si sente', dur: '22\'', result: 'da fare' },
@@ -1995,7 +1996,7 @@ const PBS = [
 
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 0];
-const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 7.885];
+const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920];
 const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 22.459];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0];
@@ -2004,16 +2005,16 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[
 // Totals (real)
 const TOTALS = {
   rower: 748.174,
-  ski: 705.328,
+  ski: 716.363,
   run: 945.417,
   bike: 429.415,
   swim: 57.628,
-  total: 2885.962,
+  total: 2896.997,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "12/10/2026",
+ "built": "14/10/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -3269,6 +3270,17 @@ const PROG = {
       "pace": "2:10.4",
       "hr": 128,
       "spm": 33,
+      "pb": false
+     },
+     {
+      "d": "14/10/26*",
+      "pezzo": "50:00",
+      "dur": "50:00",
+      "dist": 11035,
+      "w": 139,
+      "pace": "2:15.9",
+      "hr": 116,
+      "spm": 44,
       "pb": false
      }
     ]
@@ -4601,6 +4613,16 @@ const PROG = {
      "hr": 121,
      "pezzo": "35:00",
      "dur_s": 2100
+    },
+    {
+     "d": "14/10/26*",
+     "dist": 11035,
+     "w": 139,
+     "pace": "2:15.9",
+     "spm": 44,
+     "hr": 116,
+     "pezzo": "50:00",
+     "dur_s": 3000
     }
    ],
    "ints": [
@@ -8362,6 +8384,8 @@ const PROG = {
 
 // EF Trend — real Z2 SkiErg data
 const HISTORY = [
+  { date: '14 OTT', title: 'Ski · Continuo · 50′', kind: 'ski', filone: 'ski-continuo', filoneLabel: 'Ski Continuo', m: { lavoro: '50:00', dist: '11.035 m', dur: '50:00', pace: '2:15.9', unit: '/500m', watt: '139', fcMed: '116,6', fcMax: '125', tgt: '120-135', df: '60', src: 'fit' }, vs: { d: '12 OTT', tag: 'Stesso filone, struttura diversa: 50′ contro 35′, Virgin contro casa, DF 60 contro 59', items: [{ v: 'watt 139 contro 148, passo 2:15.9 contro 2:13.2', g: 0 }, { v: 'FC media 116,6 contro 121,2 · EF 1,19 contro 1,22', g: 0 }, { v: 'deriva EF −5,0% contro −10,0%, su 50′ invece di 35′', g: 1 }] }, dur: 50, load: 'Z1-Z2', note: "50′ a 2:15.9/500 con 139 W, 11.035 m · FC 116,6 media, max 125: Z1 al 63,13%, Z2 al 29,70%\nPrescritta Z2 120-135: FC sotto i 120 per il 70,30% del tempo · blocchi da 10′ fra 137 e 146 W\nEF 1,226 → 1,165 fra le due metà (−5,0%): FC da 115,1 a 118,2 con watt 141 → 138",
+    details: { ergTable: { fcMed: 116.6, fcMax: 125, efTot: '1.19', dec: [{ m: 'SKI', v: '+5.0%' }], total: { tempo: '50:00', metri: '11,035', pace: '2:15.9', watt: 139, calh: 778, sm: 44, ef: '1.19', fcmed: 116.6, fcmax: 125, zona: 'Z1', cal: 651, colpi: 2246, maxpw: 168 }, rows: [{ m: 'SKI', split: 'blocco 1', tempo: '10:00', metri: '2,197', pace: '2:16.5', watt: 137, calh: 771, sm: 44, ef: '1.26', fcmed: 108.8, fcmax: 121, zona: '<Z1', t: 1 }, { m: 'SKI', split: 'blocco 2', tempo: '10:00', metri: '2,242', pace: '2:13.8', watt: 146, calh: 802, sm: 46, ef: '1.22', fcmed: 119.5, fcmax: 125, zona: 'Z1', t: 1 }, { m: 'SKI', split: 'blocco 3', tempo: '10:00', metri: '2,200', pace: '2:16.4', watt: 138, calh: 775, sm: 45, ef: '1.17', fcmed: 118.2, fcmax: 124, zona: 'Z1', t: 1 }, { m: 'SKI', split: 'blocco 4', tempo: '10:00', metri: '2,204', pace: '2:16.1', watt: 139, calh: 778, sm: 45, ef: '1.17', fcmed: 119.2, fcmax: 125, zona: 'Z1', t: 1 }, { m: 'SKI', split: 'blocco 5', tempo: '10:00', metri: '2,192', pace: '2:16.9', watt: 137, calh: 771, sm: 44, ef: '1.17', fcmed: 117.5, fcmax: 124, zona: 'Z1', t: 1 }] }, summary: "Virgin, 08:31-09:21 · SkiErg, drag factor 60.\nPrescritto (Mattia, blocco A): 50′ @Z2 costante, 120-135 bpm, ritmo da conversazione · se la FC deriva, rallenta.\nEseguito: 11.035 m in 50:00.0 @2:15.9/500 · 139 W · 44 colpi/min · 2.246 colpi · 651 kcal · watt max 168.\nBlocchi da 10′: 137 · 146 · 138 · 139 · 137 W · passo 2:16.5 · 2:13.8 · 2:16.4 · 2:16.1 · 2:16.9 /500.\nFC 116,6 media, max 125 · per blocco 108,8 · 119,5 · 118,2 · 119,2 · 117,5.\nZone: Z1 63,13% · Z2 29,70% · sotto Z1 7,17%.\nDRIFT: EF 1,226 → 1,165 fra le due metà (−5,0%) · FC 115,1 → 118,2 con watt 141 → 138.", gps: null } },
   { date: '13 OTT', title: 'Run · Tapis · 20′ in pendenza 8% @140 bpm + 20′ @5′20″', kind: 'run', filone: 'run-pendenza-8', filoneLabel: 'Pendenza 8%', surf: 'tapis', m: { lavoro: '20′ @8% + 20′ @5′20″', dist: '9,012 km', dur: '1:00:01', pace: '8:25.3', unit: '/km (blocco in pendenza)', fcMed: '142,6', fcMax: '147', tgt: '140', drift: '−8,3%', src: 'fit' }, vs: { d: '06 OTT', tag: 'Struttura diversa (un blocco da 20′ invece di 2×12′), stessa pendenza prescritta e stessa FC comandata', items: [{ v: 'blocco a 8:25.3/km con FC 142,6, contro 7:30.7 e 8:07.4/km con FC 140,6 e 142,1 del 06/10', g: 0 }, { v: 'decoupling dentro il blocco −8,3%, contro −8,5% fra i due blocchi del 06/10', g: 0 }] }, dur: 60, load: 'Z3', note: "Blocco in pendenza a FC 142,6 sul target 140, tutto in Z3: il passo scende da 8:08.3 a 8:43.6/km fra prima e seconda meta'\nBlocco a 5:20.2/km sul 5'20\" chiesto, FC 153,4 max 160: a velocita' costante sale da 149,4 a 156,6 nei quattro tratti da 5′\nDislivello MyRun 236 m, pendenza media 2,6%: con 0,5% + 8% + 0,5% dichiarati ne servono 223,3, i 12,7 restanti stanno nella salita a fine riscaldamento",
     details: { summary: "Tapis, 18:40-19:40. Prescritto (Gabriele): 20′ risc + 20′ in pendenza 8% a 140 bpm + 20′ @5′20″/km. Nel blocco in pendenza il bersaglio e' la FC, il passo e' l'esito.\nRISCALDAMENTO 19:55.2: 2.871,5 m @6:56.2/km · 8,0 km/h per i primi 10′, poi 9,3 km/h · FC tw 111,1 max 138.\nBLOCCO IN PENDENZA 20:00.7: 2.376,1 m @8:25.3/km · 7,12 km/h · FC tw 142,6 max 147, 100% Z3 · EF 0,04995.\nPrima e seconda meta' del blocco: 7,37 → 6,88 km/h (8:08.3 → 8:43.6/km) con FC 141,45 → 143,79 · decoupling −8,3%.\nBLOCCO A 5′20″ 20:05.1: 3.764,0 m @5:20.2/km · 11,24 km/h · FC tw 153,4 max 160 · Z3 13,0% · Z4 70,1% · Z5 16,9% · EF 0,07329.\nA velocita' costante la FC sale nei tratti da 5′: 149,4 · 152,3 · 155,3 · 156,6 · decoupling −3,7%.\nTotale 9,012 km in 1:00:01 · FC sessione 136 max 160 · 941 kcal · TE 3,8 aerobico.\nPendenza dichiarata da Federico: 0,5% nel riscaldamento con salita negli ultimi minuti, 8% fisso nel blocco, 0,5% fisso nel 5′20″.\nControprova dal display MyRun: D+ 236 m, pendenza media 2,6%, 9,02 km in 1:00:00.\nAtteso senza la salita finale del riscaldamento: 14,4 + 190,1 + 18,8 = 223,3 m · i 12,7 m restanti sono la salita.",
       table: { headers: ['Tratto','Tempo','Metri','Passo /km','km/h','FC tw','FC max','EF'], rows: [
@@ -11954,8 +11978,8 @@ const BADGES = {
   month: 'OTTOBRE 2026',
   monthStart: '2026-10-01',
   monthEnd: '2026-10-31',
-  updated: '13 OTT 2026',
-  snapshot: "13 OTT 2026, letto da Garmin via API",
+  updated: '14 OTT 2026',
+  snapshot: "14 OTT 2026, letto da Garmin via API",
   sources: ['dati/sfide_iscritte_20261001.webarchive', 'dati/badges_ricevuti_20261001.webarchive', 'dati/badges_disponibili_20261001.webarchive'],
   items: [
     // ══════════════════════ SETTEMBRE — ultimo giorno (chiude MER 30) ══════════════════════
@@ -11968,7 +11992,7 @@ const BADGES = {
     // ══════════════════════ OTTOBRE — si apre GIO 01 ══════════════════════
     // ── CORSA
     { n: 'Ottobre, mese di corse', en: 'October Rundown', cat: 'RUN', tipo: 'cumulativa',
-      req: '80,5 km (50 mi) di corsa nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '70,7 / 80,5 km — 88% (garmin, 13/10)',
+      req: '80,5 km (50 mi) di corsa nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '70,7 / 80,5 km — 88% (garmin, 14/10)',
       why: 'Preso ogni mese. Col programma di Gabriele — quattro run a settimana — arriva da solo.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Weekend 5K di ottobre', en: 'October Weekend 5K', cat: 'RUN', tipo: 'singola',
@@ -11978,7 +12002,7 @@ const BADGES = {
     { n: 'Weekend 10K di ottobre', en: 'October Weekend 10K', cat: 'RUN', tipo: 'singola',
       req: 'Una singola corsa da 10 km fra il 16 e il 18 ottobre · 2 punti', win: '16 → 18 OTT', d1: '2026-10-16', d2: '2026-10-18', st: 'plan', prog: 'finestra da presidiare',
       why: 'Il gemello di settembre è stato mancato perché il collinare del weekend è saltato: è il badge che sfugge più spesso.',
-      go: 'Metti la corsa lunga nel weekend del 16-18, non infrasettimanale.' },
+      go: 'In agenda il medio di VEN 16 (13 km @5\'30"/km in pista Nebiolo) cade dentro la finestra: va registrato come una corsa unica da almeno 10 km.' },
     { n: '15K di ottobre', en: 'October 15K', cat: 'RUN', tipo: 'singola',
       req: 'Una SINGOLA corsa da 15 km nel mese · 4 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'done', prog: 'PRESA · corsa da 15,489 km del 09/10 (garmin, 11/10)',
       why: 'Vale 4 punti, il massimo fra i badge di corsa del mese. Preso ad agosto col medio da 16 km.',
@@ -11989,7 +12013,7 @@ const BADGES = {
       go: 'Carica la strategia PacePro sull\'orologio PRIMA di uscire, alla prima corsa outdoor del mese.' },
     // ── PASSI / CAMMINATA
     { n: 'Ottobre, mese dei passi', en: 'October Step Month', cat: 'WALK', tipo: 'cumulativa',
-      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '178.283 / 300.000 — 59% (garmin, 13/10)',
+      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '191.397 / 300.000 — 64% (garmin, 14/10)',
       why: 'Preso ogni mese del 2026: con la media da 14.400 passi al giorno il traguardo cade a tre quarti di mese.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Passi di ottobre', en: 'October Steps', cat: 'WALK', tipo: 'cumulativa',
@@ -11997,7 +12021,7 @@ const BADGES = {
       why: 'Due settimane per 100.000 passi: servono 7.150 al giorno, metà della tua media.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Camminata a ottobre', en: 'October Time to Walk', cat: 'WALK', tipo: 'cumulativa',
-      req: '15 ORE di attività Camminata registrate nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '45m / 15h — 5% (garmin, 13/10)',
+      req: '15 ORE di attività Camminata registrate nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '1h 07m / 15h — 7% (garmin, 14/10)',
       why: 'A settembre il gemello a chilometri ha chiuso a ZERO: cammini tanto ma non avvii mai l\'attività. Quindici ore sono circa mezz\'ora al giorno registrata.',
       go: 'Una regola sola: premi start quando cammini. Da solo alimenta anche Camminata 2026 P4, il weekend di camminata e Più fatti e meno parole 4.' },
     { n: 'Weekend di camminata di ottobre', en: 'October Weekend Walking', cat: 'WALK', tipo: 'singola',
@@ -12016,23 +12040,23 @@ const BADGES = {
     // ── NUOTO
     // ── ALTRO
     { n: 'Attività a ottobre', en: 'Active October', cat: 'MISC', tipo: 'cumulativa',
-      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '12 / 20 — 60% (garmin, 13/10)',
+      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '13 / 20 — 65% (garmin, 14/10)',
       why: 'Il margine è di una o due attività, non di volume: l\'anno scorso si è deciso sull\'ultimo giorno.',
       go: 'Registra tutto, anche camminate e defaticamenti.' },
     { n: 'Più forza a ottobre', en: 'October Gains', cat: 'STRENGTH', tipo: 'cumulativa',
-      req: '4 ore di attività Forza nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'push', prog: '3h 43m / 4h — 93% (garmin, 13/10)',
-      why: 'Mancato tre mesi di fila. Al 13/10 sei a 3h 43m, il 93% del totale.',
+      req: '4 ore di attività Forza nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'push', prog: '3h 43m / 4h — 93% (garmin, 14/10)',
+      why: 'Mancato tre mesi di fila. Al 14/10 sei a 3h 43m, il 93% del totale.',
       go: 'Mancano 16m 16s di attività Forza registrata entro il 31/10. Alimenta anche Forza estrema 5.' },
     { n: 'Guerriero di ottobre', en: 'October Warrior', cat: 'MISC', tipo: 'cumulativa',
-      req: '4 ore di yoga nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '43m / 4h — 18% (garmin, 13/10)',
+      req: '4 ore di yoga nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '43m / 4h — 18% (garmin, 14/10)',
       why: 'Dal 13/10 la mobilità entra in routine: 2-3 ore a settimana (Postural, Flexability). Le classi registrate come Yoga contano qui: la Postural del 13/10 vale i primi 43m.',
       go: 'Mancano 3h 16m 59s entro il 31/10, 18 giorni dal 14: a 2 ore a settimana arrivano 5h 08m. Avvia ogni classe di mobilità come Yoga sull\'orologio. Alimenta anche Attività a ottobre e Zen Master 5.' },
     { n: 'Sfida Oakley Meta Performance', en: 'Oakley Meta Performance Challenge', cat: 'MISC', tipo: 'cumulativa',
-      req: '5 ORE di attivit\u00e0 OUTDOOR nel mese \u00b7 1 pt \u00b7 premio: 25% di sconto sugli Oakley Meta AI su meta.com, una sola ricompensa per utente, da riscattare entro il 31/01/2027', win: '01 \u2192 31 OTT', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '4h 50m / 5h — 97% (garmin, 13/10)',
+      req: '5 ORE di attivit\u00e0 OUTDOOR nel mese \u00b7 1 pt \u00b7 premio: 25% di sconto sugli Oakley Meta AI su meta.com, una sola ricompensa per utente, da riscattare entro il 31/01/2027', win: '01 \u2192 31 OTT', d1: '2026-10-01', d2: '2026-10-31', st: 'done', prog: 'PRESA · 5h 00m / 5h 00m · badge ricevuto il 14/10 (garmin, 14/10)',
       why: 'Conta solo quello che fai FUORI, ed \u00e8 esattamente il punto debole del tuo calendario: a settembre quasi tutto il volume di corsa era sul tapis di casa o in Virgin. Cinque ore outdoor in un mese sono circa un\'ora e un quarto a settimana.',
-      go: 'Si incastra con altri tre badge: ogni corsa fuori alimenta anche PacePro a ottobre (che il tapis NON attiva), il Weekend 10K del 16-18 e, se registrata come Camminata, le 15 ore di Camminata a ottobre. Portare il lungo del weekend all\'aperto invece che sul MyRun chiude quasi tutto da solo. Al 13/10 mancano 9m 08s di attivita\' all\'aperto.' },
+      go: 'Nessuna azione: il premio va riscattato su meta.com entro il 31/01/2027.' },
     { n: 'Condivisione foto di ottobre', en: 'October Photo Share', cat: 'SOCIAL', tipo: 'cumulativa',
-      req: '3 attività con foto · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '1 / 3 — 33% (garmin, 13/10)',
+      req: '3 attività con foto · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '1 / 3 — 33% (garmin, 14/10)',
       why: 'Preso quasi ogni mese, a settembre chiuso proprio in coda.',
       go: 'Tre foto allegate ad altrettante attività: farle subito evita la rincorsa finale.' },
     { n: 'Mi piace a ottobre', en: 'October Likes', cat: 'SOCIAL', tipo: 'cumulativa',
@@ -12041,11 +12065,11 @@ const BADGES = {
       go: 'Nessuna azione.' },
     // ── PERMANENTI E SPEDIZIONI (sempre attive)
     { n: '10K: la sfida di un giorno', en: '10KADAY', cat: 'STEP', tipo: 'streak',
-      req: '10.000 passi al giorno per 30 giorni CONSECUTIVI — un giorno sotto azzera tutto · 4 punti', win: 'permanente, ripetibile', d1: null, d2: null, st: 'plan', prog: '1 / 30 giorni (garmin, 12/10)',
+      req: '10.000 passi al giorno per 30 giorni CONSECUTIVI — un giorno sotto azzera tutto · 4 punti', win: 'permanente, ripetibile', d1: null, d2: null, st: 'plan', prog: '3 / 30 giorni (garmin, 14/10)',
       why: 'L\'11/10 Garmin segna 0: la serie che il 10/10 era a 5 giorni si è azzerata. Prima, due serie rotte: il 03/09 al nono giorno e il 16/09 al secondo. Entrambe cadute in giorni di solo erg, dove l\'allenamento non produce passi.',
       go: 'Nei giorni di solo row/ski servono 7-7,5 km di camminata a parte: o si programmano quelli, o la serie si rompe lì.' },
     { n: 'Olimpo — Arrampicata', en: 'Olympus Climbing', cat: 'MISC', tipo: 'cumulativa',
-      req: '2.917 m di dislivello cumulativo (spedizione Garmin, senza scadenza) · 2 punti', win: 'spedizione', d1: null, d2: null, st: 'auto', prog: '2.028,8 / 2.917,0 m — 70% (garmin, 13/10)',
+      req: '2.917 m di dislivello cumulativo (spedizione Garmin, senza scadenza) · 2 punti', win: 'spedizione', d1: null, d2: null, st: 'auto', prog: '2.054,17 / 2.917,0 m — 70% (garmin, 14/10)',
       why: 'Conta i piani saliti e il dislivello delle attività: avanza piano ma da sola.',
       go: 'Nessuna azione dedicata. Le sedute in pendenza al tapis NON contano: il MyRun non trasmette il dislivello al Garmin.' },
     { n: 'Sfida di 100K passi', en: '100K Step Challenge', cat: 'STEP', tipo: 'cumulativa',
@@ -12063,9 +12087,9 @@ const BADGES = {
     { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
   ],
   stages: [
-    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '70,7 / 300,0 km — 24% (garmin, 13/10)',
+    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '70,7 / 300,0 km — 24% (garmin, 14/10)',
       why: 'Tre mesi per 300 km: con 80-90 km al mese si chiude con un mese di anticipo, come nello stage 3.' },
-    { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '1,379 / 148,1 km (garmin, 13/10)',
+    { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '2,8 / 148,1 km — 2% (garmin, 14/10)',
       why: 'Lo stage 3 è finito all\'11%. Le 15 ore al mese del badge Camminata a ottobre valgono circa 50 km: tre mesi così e lo stage si chiude.' },
   ],
   // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili, con requisito e suggerimento.
