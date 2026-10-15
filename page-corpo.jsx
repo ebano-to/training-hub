@@ -13,7 +13,7 @@ function BodyComposition() {
   var BODY = window.TRAINING.BODY || [];
   var PLICO = window.TRAINING.PLICO || [];
   var BT = window.TRAINING.BODY_TREND || { pts: [], soglie: { kg: 0.3, bf: 0.3 } };
-  var PT = window.TRAINING.PLICO_TREND || [];
+  var ZA = window.TRAINING.ZAP_ANCORE || [];
   var T = BT.pts || [];
   if (!BODY.length || !T.length) return null;
 
@@ -52,6 +52,10 @@ function BodyComposition() {
 
   var now = T[T.length - 1];
   var nowBf = T.filter(function (p) { return p.bf7 !== null; }).slice(-1)[0];
+  var nowZ = T.filter(function (p) { return p.z7 !== null && p.z7 !== undefined; }).slice(-1)[0];
+  var ancNow = nowZ ? ZA.filter(function (a) { return a.d === nowZ.za; })[0] : null;
+  var errMax = (function () { var e = ZA.filter(function (a) { return a.err !== null; }).map(function (a) { return Math.abs(a.err); }); return e.length ? Math.max.apply(null, e) : null; })();
+  if (!ancNow) nowZ = null;
   var fatNow = now.kg7 * nowBf.bf7 / 100, leanNow = now.kg7 - fatNow;
   var c2 = function (v) { return v.toFixed(2).replace('.', ','); };
   var n = function (v, dec) { return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(dec === undefined ? 1 : dec).replace('.', ','); };
@@ -183,6 +187,7 @@ function BodyComposition() {
           })}
           <path d={trendPath('bf7', Ybf)} fill="none" stroke="#FF6B9D" strokeWidth="2" vectorEffect="non-scaling-stroke" />
           <circle cx={X(nowBf.d)} cy={Ybf(nowBf.bf7)} r="4" fill="#39E75F" vectorEffect="non-scaling-stroke"><title>{'media 7 gg al ' + fd(nowBf.d) + ' · ' + c2(nowBf.bf7) + '%'}</title></circle>
+          <path d={trendPath('z7', Ybf)} fill="none" stroke="#FFB454" strokeWidth="2" vectorEffect="non-scaling-stroke" />
           {plicoBf.length > 1 && <path d={line(plicoBf, Ybf, 'bf')} fill="none" stroke="#FFB454" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />}
           {plicoBf.map(function (p, i) {
             return <rect key={'pb' + i} x={X(p.d) - 5} y={Ybf(p.bf) - 5} width="10" height="10" fill="#FFB454" vectorEffect="non-scaling-stroke">
@@ -199,26 +204,36 @@ function BodyComposition() {
         <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FF6B9D', display: 'inline-block' }} />MASSA GRASSA, MEDIA 7 GG</span>
         <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 6, height: 6, borderRadius: 3, background: 'var(--fg-3)', display: 'inline-block' }} />SINGOLA PESATA (VUOTA = SCRITTA A MANO)</span>
         <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 9, height: 9, background: '#FFB454', display: 'inline-block' }} />ZAPPITELLI (PLICOMETRIA)</span>
+        <span style={{ ...lab, display: 'flex', alignItems: 'center', gap: 6 }}><i style={{ width: 10, height: 2, background: '#FFB454', display: 'inline-block' }} />STIMA ZAPPITELLI DALLA BILANCIA</span>
       </div>
 
-      {/* plicometria: velocita' fra visite */}
-      {PT.length > 0 && (
+      {/* stima Zappitelli: la plicometria fa da ancora per la massa grassa della bilancia */}
+      {ZA.length > 0 && nowZ && (
         <div style={{ ...box, marginBottom: 12, overflowX: 'auto' }}>
-          <div style={{ ...lab, marginBottom: 8 }}>{'ZAPPITELLI · TENDENZA FRA UNA VISITA E LA PRECEDENTE · soglie ' + String(BT.soglie.kg).replace('.', ',') + ' kg e ' + String(BT.soglie.bf).replace('.', ',') + ' punti a settimana'}</div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
+            <div style={lab}>{'STIMA ZAPPITELLI · massa grassa della bilancia riportata sulla plicometria'}</div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, flexWrap: 'wrap', marginBottom: 6 }}>
+            <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1, color: '#FFB454' }}>{c2(nowZ.z7)}<span style={{ fontSize: 13, color: 'var(--fg-3)' }}> %</span></div>
+            <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.6 }}>
+              {'bilancia ' + c2(nowZ.bf7) + '% (media 7 gg al ' + fd(nowZ.d) + ') × ' + ancNow.k.toFixed(4).replace('.', ',')}
+              <br />{'ancora: visita del ' + fd(ancNow.d) + ', plicometria ' + String(ancNow.plico).replace('.', ',') + '% contro ' + c2(ancNow.bil) + '% della bilancia (' + ancNow.n + ' pesate entro 7 giorni)'}
+            </div>
+          </div>
+          {errMax !== null && <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginBottom: 8 }}>{'Alle visite passate la stima ha sbagliato fino a ' + errMax.toFixed(2).replace('.', ',') + ' punti: va letta con questo margine.'}</div>}
           <table className="tabular" style={{ borderCollapse: 'collapse', fontSize: 11, width: '100%' }}>
             <thead><tr style={{ color: 'var(--fg-3)', textAlign: 'left' }}>
-              <th style={cell}>VISITA</th><th style={cell}>SETTIMANE</th><th style={cell}>KG</th><th style={cell}>KG / SETT</th><th style={cell}>GRASSO %</th><th style={cell}>PUNTI / SETT</th>
+              <th style={cell}>VISITA</th><th style={cell}>PLICOMETRIA</th><th style={cell}>BILANCIA ±7 GG</th><th style={cell}>RAPPORTO</th><th style={cell}>STIMA PRIMA DELLA VISITA</th><th style={cell}>ERRORE</th>
             </tr></thead>
             <tbody>
-              {PT.slice().reverse().map(function (t, i) {
-                var p = PLICO.filter(function (x) { return x.d === t.d; })[0] || {};
+              {ZA.slice().reverse().map(function (a, i) {
                 return <tr key={i}>
-                  <td style={cell}>{fd(t.d)}</td>
-                  <td style={cell}>{String(t.sett).replace('.', ',')}</td>
-                  <td style={cell}>{p.kg ? String(p.kg).replace('.', ',') : '—'}</td>
-                  <td style={{ ...cell, color: col(t.sKg) }}>{t.kgSett === null ? '—' : n(t.kgSett, 2) + ' · ' + t.sKg}</td>
-                  <td style={cell}>{p.bf ? String(p.bf).replace('.', ',') : '—'}</td>
-                  <td style={{ ...cell, color: col(t.sBf) }}>{t.bfSett === null ? '—' : n(t.bfSett, 2) + ' · ' + t.sBf}</td>
+                  <td style={cell}>{fd(a.d)}</td>
+                  <td style={cell}>{String(a.plico).replace('.', ',') + '%'}</td>
+                  <td style={cell}>{c2(a.bil) + '% · ' + a.n + ' pesate'}</td>
+                  <td style={cell}>{a.k.toFixed(4).replace('.', ',')}</td>
+                  <td style={cell}>{a.stima === null ? '—' : c2(a.stima) + '% (ancora ' + fd(a.da) + ')'}</td>
+                  <td style={cell}>{a.err === null ? '—' : n(a.err, 2) + ' punti'}</td>
                 </tr>;
               })}
             </tbody>
@@ -232,7 +247,7 @@ function BodyComposition() {
         {PLICO.length
           ? (function () {
             var lp = plicoBf[plicoBf.length - 1];
-            return '\nLE DUE SERIE NON COINCIDONO: la bilancia legge ' + c2(nowBf.bf7) + '% di massa grassa (media 7 gg), l\'ultima plicometria di Zappitelli ' + String(lp.bf).replace('.', ',') + '% (' + fd(lp.d) + '). Sono due metodi diversi: la bioimpedenza domestica risente di idratazione, pasti e allenamento recente, le formule su pliche sono tarate su corporature medie. Ogni serie va letta contro se stessa, per la sua tendenza, mai mediata con l\'altra.';
+            return '\nLE DUE SERIE NON COINCIDONO: la bilancia legge ' + c2(nowBf.bf7) + '% di massa grassa (media 7 gg), l\'ultima plicometria di Zappitelli ' + String(lp.bf).replace('.', ',') + '% (' + fd(lp.d) + '). Sono due metodi diversi: la bioimpedenza domestica risente di idratazione, pasti e allenamento recente, le formule su pliche sono tarate su corporature medie. Le due serie non si mediano: la plicometria fa da ancora e la linea arancione riporta la bilancia sulla sua scala, con il rapporto dell\'ultima visita. A ogni visita nuova il rapporto si aggiorna.';
           })()
           : ''}
       </div>
