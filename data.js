@@ -2158,7 +2158,7 @@ const WEEK = [
       { code: 'RUN', t: 'Run · 20\' risc + 20\' in pendenza 8% @140 bpm + 20\' @5\'20"/km · sera', d: 'Gabriele · pendenza: si regola sui 140 bpm, il passo e\' la conseguenza · 5\'20"/km = 11,25 km/h sul tapis · 60\' totali · nel blocco a 5\'20" 3,75 km · la pendenza il tapis non la trasmette, va impostata a mano', dur: '60\'', result: 'Riscaldamento 19:55.2, 2.871,5 m @6:56.2/km · blocco in pendenza 20:00.7, 2.376,1 m @8:25.3/km, FC 142,6 max 147 sul target 140, tutto in Z3 · blocco 20:05.1, 3.764,0 m @5:20.2/km sul 5\'20" chiesto, FC 153,4 max 160 · totale 9,012 km in 1:00:01 · 18:40-19:40' },
     ]
   },
-  { day: 'MER', date: '14', title: 'SKI Z2 50\' + POSTURAL · SERA: TEST ROW 2000', sub: 'Virgin 08:15 e Postural 9:30 · sera a casa: test RowErg 2000 m · soglia, metcon e upper spostati a giovedi\' mattina', load: 'Z2 + Z5', duration: 128, kind: 'hyrox', done: false,
+  { day: 'MER', date: '14', title: 'SKI Z2 50\' + POSTURAL · SERA: TEST ROW 2000', sub: 'Virgin 08:15 e Postural 9:30 · sera a casa: test RowErg 2000 m · soglia, metcon e upper spostati a giovedi\' mattina', load: 'Z2 + Z5', duration: 128, kind: 'hyrox', done: true,
     blocks: [
       { code: 'SKI', t: 'Ski · 50\' @Z2 costante · Virgin 08:15', d: 'Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · indicazione del coach: se la FC deriva, rallenta', dur: '50\'', result: "50:00.0 · 11.035 m @2:15.9/500 · 139 W · 44 colpi/min · FC 116,6 max 125, Z1 al 63,13%, Z2 al 29,70% · DF 60 · Virgin, 08:31-09:21" },
       { code: 'MOB', t: 'Postural · Virgin 9:30', d: 'Mattia, blocco B · classe di Ilaria Lestingi, da prenotare · subito dopo lo Ski, nella stessa uscita', dur: '45\'', result: 'SALTATO', skipped: true },
