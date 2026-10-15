@@ -26,8 +26,8 @@ const ATHLETE = {
   category: 'Doubles Men Pro',
   height: 195,
   weight: 96.51,
-  bodyFat: 23.37,
-  bodyDate: '14 OTT 2026',
+  bodyFat: 23.36,
+  bodyDate: '15 OTT 2026',
   hrmax: 177,
   programWeek: 42,
 };
@@ -206,6 +206,7 @@ const BODY = [
   { d: '2026-10-13', h: '20:00', kg: 96.2, g: 96160, bf: 23.3, mm: 37.6, h2o: 56.0 },
   { d: '2026-10-14', h: '09:35', kg: 95.7, g: 95720, bf: 23.4, mm: 37.5, h2o: 55.9 },
   { d: '2026-10-14', h: '19:33', kg: 97.0, g: 97010, bf: 23.1, mm: 37.8, h2o: 56.2 },
+  { d: '2026-10-15', h: '18:15', kg: 96.5, g: 96500, bf: 23.3, mm: 37.7, h2o: 56.0 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -369,6 +370,7 @@ const BODY_TREND = {
     { d: '2026-10-12', kg7: 96.83, bf7: 23.60, n: 6, nbf: 6, dKg: 0.47, dBf: 0.30, sKg: 'salita', sBf: 'salita', z7: 7.24, za: '2026-06-09' },
     { d: '2026-10-13', kg7: 96.94, bf7: 23.60, n: 5, nbf: 5, dKg: 0.42, dBf: 0.10, sKg: 'salita', sBf: 'stabile', z7: 7.24, za: '2026-06-09' },
     { d: '2026-10-14', kg7: 96.51, bf7: 23.37, n: 6, nbf: 6, dKg: -0.11, dBf: -0.33, sKg: 'stabile', sBf: 'discesa', z7: 7.17, za: '2026-06-09' },
+    { d: '2026-10-15', kg7: 96.51, bf7: 23.36, n: 7, nbf: 7, dKg: -0.11, dBf: -0.34, sKg: 'stabile', sBf: 'discesa', z7: 7.17, za: '2026-06-09' },
   ],
 };
 
