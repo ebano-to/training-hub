@@ -241,6 +241,25 @@ function AgendaPage() {
                         )}
                       </div>
                     )}
+                    {b.table && b.table.r && (
+                      <div style={{ marginTop: 10, marginLeft: 76, overflowX: 'auto' }}>
+                        <table style={{ borderCollapse: 'collapse', width: '100%', fontFamily: 'var(--mono)', fontSize: 11 }}>
+                          <thead><tr>{b.table.h.map(function (h, j) { return (
+                            <th key={j} style={{ textAlign: 'left', padding: '4px 8px', color: 'var(--fg-3)', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: 10, borderBottom: '1px solid color-mix(in oklab, ' + blockColor + ' 45%, transparent)' }}>{h}</th>
+                          ); })}</tr></thead>
+                          <tbody>{b.table.r.map(function (row, j) { return (
+                            <tr key={j} style={{ background: j % 2 ? 'transparent' : 'color-mix(in oklab, ' + blockColor + ' 7%, transparent)' }}>
+                              {row.map(function (c, k) { return (
+                                <td key={k} style={{ padding: '5px 8px', borderBottom: '1px dashed var(--line-2)', color: k === 0 ? blockColor : 'var(--fg)', fontWeight: k === 1 ? 700 : 400, whiteSpace: k === 0 ? 'nowrap' : 'normal', verticalAlign: 'top' }}>{c}</td>
+                              ); })}
+                            </tr>
+                          ); })}</tbody>
+                        </table>
+                        {b.table.foot && (
+                          <div style={{ marginTop: 6, fontSize: 10, color: 'var(--fg-3)', fontFamily: 'var(--mono)', letterSpacing: '0.05em' }}>{b.table.foot}</div>
+                        )}
+                      </div>
+                    )}
                     {b.result && b.result !== 'da fare' && !isSkipped && (
                       <div style={{ marginTop: 8, marginLeft: 76, fontSize: 11, color: 'var(--accent)', fontFamily: 'var(--mono)', letterSpacing: '0.05em', padding: '6px 10px', background: 'oklch(88% 0.20 130 / 0.08)', border: '1px solid oklch(88% 0.20 130 / 0.15)' }}>
                         ✓ {b.result}
