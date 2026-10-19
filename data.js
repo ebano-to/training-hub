@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 96.96,
-  bodyFat: 23.51,
-  bodyDate: '18 OTT 2026',
+  weight: 96.67,
+  bodyFat: 23.50,
+  bodyDate: '19 OTT 2026',
   hrmax: 177,
   programWeek: 43,
 };
@@ -210,6 +210,7 @@ const BODY = [
   { d: '2026-10-16', h: '22:38', kg: 97.7, g: 97699, bf: 23.9, mm: 37.9, h2o: 55.6 },
   { d: '2026-10-17', h: '09:11', kg: 97.0, g: 96980, bf: 24.0, mm: 37.8, h2o: 55.5 },
   { d: '2026-10-18', h: '08:31', kg: 97.6, g: 97620, bf: 23.7, mm: 37.9, h2o: 55.7 },
+  { d: '2026-10-19', h: '21:11', kg: 95.7, g: 95650, bf: 23.3, mm: 37.4, h2o: 56.0 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -377,6 +378,7 @@ const BODY_TREND = {
     { d: '2026-10-16', kg7: 96.86, bf7: 23.41, n: 7, nbf: 7, dKg: 0.49, dBf: -0.30, sKg: 'salita', sBf: 'discesa', z7: 7.19, za: '2026-06-09' },
     { d: '2026-10-17', kg7: 96.88, bf7: 23.49, n: 8, nbf: 8, dKg: 0.51, dBf: -0.23, sKg: 'salita', sBf: 'stabile', z7: 7.21, za: '2026-06-09' },
     { d: '2026-10-18', kg7: 96.96, bf7: 23.51, n: 9, nbf: 9, dKg: 0.72, dBf: -0.01, sKg: 'salita', sBf: 'stabile', z7: 7.22, za: '2026-06-09' },
+    { d: '2026-10-19', kg7: 96.67, bf7: 23.50, n: 8, nbf: 8, dKg: -0.16, dBf: -0.10, sKg: 'stabile', sBf: 'stabile', z7: 7.21, za: '2026-06-09' },
   ],
 };
 
@@ -577,6 +579,7 @@ const VO2MAX = [
   { d: '2026-10-09', v: 52.6 },
   { d: '2026-10-12', v: 52.2 },
   { d: '2026-10-16', v: 52.2 },
+  { d: '2026-10-19', v: 52.0 },
 ];
 
 // VO2MAX_BICI = stima VO2max di Garmin sulla bici (solo uscite con misuratore di potenza). Stessa fonte e formato.
