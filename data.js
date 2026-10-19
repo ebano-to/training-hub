@@ -2203,14 +2203,15 @@ const WEEK_ARCHIVE = [
 
 // Current week — S43 (19 OTT - 25 OTT 2026)
 const WEEK = [
-  { day: "LUN", date: "19", title: "SKI Z2 40' + UPPER 20' · SERA: RUN 1H @5'50\"", sub: "Mattina a casa SkiErg e manubri · sera: run", load: "Z2", duration: 130, kind: "ski", done: false,
+  { day: 'LUN', date: '19', title: "SKI Z2 40' + UPPER 20' · SERA: TEST ROW 2000 + RUN 1H @5'50\"", sub: "Mattina a casa SkiErg e manubri · sera a casa: test RowErg 2000 m, poi run", load: "Z2 + Z5", duration: 153, kind: "ski", done: false,
     blocks: [
       { code: "SKI", t: "Ski · 40′ @Z2 costante · mattina a casa", d: "Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · nota del coach: cinque minuti in più, sempre zona due", dur: "40′" },
       { code: "PESI", t: "Upper body · ogni 2′ per 20′ · subito dopo lo Ski · a casa", d: "Mattia, blocco B · nota del coach: tiene 13,5 kg e i 9 kg in piedi, una ripetizione in più · le ultime pulite", dur: "20′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Curl bicipiti", "11", "2×13,5 kg"], ["B", "French press in piedi", "11", "9 kg"]], "foot": "10 giri · 110 ripetizioni per esercizio"} },
-      { code: "RUN", t: "Run · 1h @5′50″/km + 8×100 m allunghi r40″ · sera", d: "Gabriele · mobilità prima di partire · tapis o fuori", dur: "~70′", table: {"h": ["Fase", "Quanto", "Passo", "Tapis"], "r": [["Corsa", "60′ · 10,29 km", "5′50″/km", "10,29 km/h"], ["Allunghi", "8×100 m", "-", "-"], ["Recupero", "40″ dopo ogni allungo", "-", "-"]], "foot": "stima ~70′: 60′ + 8 allunghi da 26-35″ (come il 12/10) con 40″ di recupero"} },
+      { code: "ROW", t: "Row · TEST 2000 m FOR TIME · sera a casa", d: "Test della batteria di inizio ciclo (Mattia, blocco A della S41) · serve per il ritmo della soglia di mercoledì · riscaldamento 10′ @Z1→Z2 + 3×20″ a ritmo prova r40″ + recupero", dur: "~23′", table: {"h": ["500 m", "Tempo", "Passo /500", "Watt", "Colpi/min", "FC tw"], "r": [["1", "1:39.32", "1:39.32", "357,2", "29,6", "136,2"], ["2", "1:41.60", "1:41.60", "333,7", "28,3", "161,8"], ["3", "1:54.68", "1:54.68", "232,1", "25,1", "162,6"], ["4", "1:48.30", "1:48.30", "275,5", "28,3", "157,8"], ["Totale", "7:03.9", "1:45.975", "294,1", "27,6", "155,0"]], "foot": "drag factor 107 · FC max 166"}, result: "7:03.9 @1:45.975/500 · 294,1 W · split da 500: 1:39.32 · 1:41.60 · 1:54.68 · 1:48.30 · FC 155,0 max 166 · a casa, 19:20:56-19:28" },
+      { code: "RUN", t: "Run · 1h @5′50″/km + 8×100 m allunghi r40″ · sera", d: "Gabriele · mobilità prima di partire · tapis o fuori", dur: "~70′", table: {"h": ["Fase", "Quanto", "Passo", "Tapis"], "r": [["Corsa", "60′ · 10,29 km", "5′50″/km", "10,29 km/h"], ["Allunghi", "8×100 m", "-", "-"], ["Recupero", "40″ dopo ogni allungo", "-", "-"]], "foot": "stima ~70′: 60′ + 8 allunghi da 26-35″ (come il 12/10) con 40″ di recupero"}, result: "Blocco 59:18.1 a 5:50.5/km sul 5'50\" chiesto · 10.150,2 m · FC 135,2 max 145 · drift EF −5,1% · 8 allunghi da 25-30″ a 15,99 km/h r39-41″ · tapis, 19:52-21:01, 24:47 dopo il test · totale 11,647 km in 1:08:42.5" },
     ]
   },
-  { day: "MAR", date: "20", title: "BACK SQUAT 4×5 @80 + RDL 4×8 @70 + POSTURAL · SERA: RUN PENDENZA", sub: "Virgin 11:30 con Mattia, poi Postural 13:15 · sera: run", load: "HEAVY + Z3", duration: 170, kind: "strength", done: false,
+  { day: 'MAR', date: '20', title: "BACK SQUAT 4×5 @80 + RDL 4×8 @70 + POSTURAL · SERA: RUN PENDENZA", sub: "Virgin 11:30 con Mattia, poi Postural 13:15 · sera: run", load: "HEAVY + Z3", duration: 170, kind: "strength", done: false,
     blocks: [
       { code: "PESI", t: "Back Squat · 4×5 @80 kg · Virgin 11:30 con Mattia", d: "Mattia, blocco A, in presenza · ultima serie a RPE 7, se arriva a 8 va detto · da segnare: carico e RPE dell'ultima serie · da ora la forza va a blocchi di 4 settimane: 2 di accumulo, 1 si sale, 1 di scarico o test", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5", "20", "solo bilanciere"], ["Risc. 2", "5", "40", "10"], ["Risc. 3", "3", "55", "10+5+2,5"], ["Risc. 4", "2", "70", "20+5"], ["Lavoro 1-4", "5", "80", "20+10"]], "foot": "recupero 2′30″"} },
       { code: "PESI", t: "Romanian Deadlift · 4×8 @70 kg · Virgin", d: "Mattia, blocco B · martedì scorso arrivato a 70 kg in piramide, ora quattro serie da 8 a 70 · schiena neutra fino all'ultima", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "6", "40", "10"], ["Risc. 3", "4", "55", "10+5+2,5"], ["Lavoro 1-4", "8", "70", "20+5"]], "foot": "recupero 2′"} },
@@ -2218,28 +2219,28 @@ const WEEK = [
       { code: "RUN", t: "Run · 20′ risc + 25′ in pendenza 8% @140 bpm + 20′ @5′20″/km · sera", d: "Gabriele · nel blocco in pendenza la velocità si regola per stare a 140 bpm (Z3), il passo è la conseguenza · sul tapis la pendenza va impostata a mano: il MyRun non la trasmette", dur: "65′", table: {"h": ["Fase", "Durata", "Pendenza", "Target"], "r": [["Riscaldamento", "20′", "-", "-"], ["Blocco 1", "25′", "8%", "140 bpm · rif. 13/10 a 8%: 8:25.3/km (7,12 km/h) a FC 142,6"], ["Blocco 2", "20′", "-", "5′20″/km = 11,25 km/h · 3,75 km"]], "foot": "65′ totali"} },
     ]
   },
-  { day: "MER", date: "21", title: "SKI Z2 55' + POSTURAL · SERA: SOGLIA ROW + METCON + UPPER", sub: "Virgin 08:15 e Postural 9:30 · sera a casa", load: "Z2 + Z4 + METCON", duration: 177, kind: "hyrox", done: false,
+  { day: 'MER', date: '21', title: "SKI Z2 55' + POSTURAL · SERA: SOGLIA ROW + METCON + UPPER", sub: "Virgin 08:15 e Postural 9:30 · sera a casa", load: "Z2 + Z4 + METCON", duration: 177, kind: "hyrox", done: false,
     blocks: [
       { code: "SKI", t: "Ski · 55′ @Z2 costante · Virgin 08:15", d: "Mattia, blocco A · ritmo da conversazione · zona 2, 120-135 bpm · nota del coach: cinque minuti in più, tutti in zona due · se la FC deriva, rallenta", dur: "55′" },
       { code: "MOB", t: "Postural · Virgin 9:30", d: "Mattia, blocco B · classe di Ilaria Lestingi, da prenotare · subito dopo lo Ski, nella stessa uscita", dur: "45′" },
-      { code: "ROW", t: "Row · Soglia 3×7′ @ritmo 2k +10″/500 · r2′ attivo · sera a casa", d: "Mattia, blocco C · RowErg · un minuto in più a blocco, stesso ritmo · tre blocchi uguali prima del metcon · se il terzo cala di più di 2″ va detto · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media", dur: "43′", table: {"h": ["Fase", "Durata", "Split", "Recupero"], "r": [["Riscaldamento", "10′", "Z1 → Z2", "-"], ["Prove", "3×20″", "ritmo 2k del test", "40″ facili"], ["Rep 1", "7′", "ritmo 2k +10″/500", "2′ attivo"], ["Rep 2", "7′", "ritmo 2k +10″/500", "2′ attivo"], ["Rep 3", "7′", "ritmo 2k +10″/500", "-"], ["Defaticamento", "5′", "Z1", "-"]], "foot": "riferimenti 2000 m: miglior 6:52.9 @1:43.2/500 il 24/04/2025 · miglior 2026 6:55.4 @1:43.8/500 il 26/03"} },
+      { code: "ROW", t: "Row · Soglia 3×7′ @1:56.0/500 (test +10″) · r2′ attivo · sera a casa", d: "Mattia, blocco C · RowErg · un minuto in più a blocco, stesso ritmo · tre blocchi uguali prima del metcon · se il terzo cala di più di 2″ va detto · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media", dur: "43′", table: {"h": ["Fase", "Durata", "Split", "Recupero"], "r": [["Riscaldamento", "10′", "Z1 → Z2", "-"], ["Prove", "3×20″", "1:46.0 sul monitor (ritmo del test)", "40″ facili"], ["Rep 1", "7′", "1:56.0 sul monitor · 224,4 W · ~1.811 m", "2′ attivo"], ["Rep 2", "7′", "1:56.0 sul monitor · 224,4 W · ~1.811 m", "2′ attivo"], ["Rep 3", "7′", "1:56.0 sul monitor · 224,4 W · ~1.811 m", "-"], ["Defaticamento", "5′", "Z1", "-"]], "foot": "test del 19/10: 7:03.9 @1:45.975/500 · +10″ = 1:55.975/500"} },
       { code: "METCON", t: "Metcon · 5 giri ogni 2′45″ · sera a casa, dopo la soglia", d: "Mattia, blocco D · tutto di fila, il tempo che avanza è recupero · stesse stazioni, da 15′ a 13′45″ (circa +9%) · da segnare: quanto resta all'ultimo giro", dur: "13′45″", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Burpees", "12", "corpo libero"], ["2", "Affondi con due manubri", "20", "30 kg"], ["3", "Row / Ski, alternati", "15 kcal", "-"]], "foot": "partenze dei giri: 0:00 · 2:45 · 5:30 · 8:15 · 11:00 · fine a 13:45"} },
       { code: "PESI", t: "Upper body · ogni 2′ per 20′ · a casa, dopo il metcon", d: "Mattia, blocco E · due chili in più sul row e cinque secondi sull'hollow · se dopo il metcon sei morto, 15′", dur: "20′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Single arm row superslow", "12 per lato", "26 kg"], ["B", "Hollow hold", "35″", "corpo libero"]], "foot": "10 giri"} },
     ]
   },
-  { day: "GIO", date: "22", title: "PISTA CON GABRY h 15", sub: "Pista Nebiolo · riscaldamento dalle 14:30", load: "QUALITA'", duration: 90, kind: "run", done: false,
+  { day: 'GIO', date: '22', title: "PISTA CON GABRY h 15", sub: "Pista Nebiolo · riscaldamento dalle 14:30", load: "QUALITA'", duration: 90, kind: "run", done: false,
     blocks: [
       { code: "RUN", t: "Corsa qualità · Pista Nebiolo 15:00", d: "Gabriele, in presenza · riscaldamento dalle 14:30, lavoro dalle 15:00 · sul programma: \"in pista h 15\"", dur: "90′" },
     ]
   },
-  { day: "VEN", date: "23", title: "ROW Z2 40' + UPPER 20' · PISTA H 17: MEDIO 14 KM", sub: "Mattina a casa RowErg e manubri · Pista Nebiolo h 17", load: "Z2 + Z3", duration: 156, kind: "run", done: false,
+  { day: 'VEN', date: '23', title: "ROW Z2 40' + UPPER 20' · PISTA H 17: MEDIO 14 KM", sub: "Mattina a casa RowErg e manubri · Pista Nebiolo h 17", load: "Z2 + Z3", duration: 156, kind: "run", done: false,
     blocks: [
       { code: "ROW", t: "Row · 40′ @Z2 costante · mattina a casa", d: "Mattia, blocco A · RowErg · ritmo da conversazione · zona 2, 120-135 bpm · nota del coach: cinque minuti in più", dur: "40′" },
       { code: "PESI", t: "Upper body · ogni 2′ per 20′ · subito dopo il row · a casa", d: "Mattia, blocco B · le spinte restano fuori finché la spalla dà fastidio · due alzate e una renegade in più · bacino fermo", dur: "20′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Alzate laterali", "12", "2×10 kg"], ["B", "Renegade row senza push-up", "11 per lato", "2×24 kg"]], "foot": "10 giri"} },
       { code: "RUN", t: "Run · 3 km risc + 14 km @5′30″/km · Pista Nebiolo 17:00", d: "Gabriele · 17 km totali", dur: "~96′", table: {"h": ["Fase", "Distanza", "Giri corsia 1", "Passo"], "r": [["Riscaldamento", "3 km", "7 e mezzo", "-"], ["Medio", "14 km", "35", "5′30″/km = 2:12 a giro · 10,91 km/h · 77:00"]], "foot": "stima ~96′: riscaldamento al passo del 16/10 (6:28.4/km, 3 km = 19:25) + 77:00"} },
     ]
   },
-  { day: "SAB", date: "24", title: "DEADLIFT 4×3 @132,5 + LUNGES 4×4 @60 + METCON 2×16'30\" + FLEXABILITY", sub: "Virgin · Flexability 11:30 per ultima", load: "HEAVY + METCON", duration: 137, kind: "strength", done: false,
+  { day: 'SAB', date: '24', title: "DEADLIFT 4×3 @132,5 + LUNGES 4×4 @60 + METCON 2×16'30\" + FLEXABILITY", sub: "Virgin · Flexability 11:30 per ultima", load: "HEAVY + METCON", duration: 137, kind: "strength", done: false,
     blocks: [
       { code: "PESI", t: "Deadlift · 4×3 @132,5 kg · Virgin", d: "Mattia, blocco A · due chili e mezzo in più, quattro serie · ogni ripetizione resettata da terra · se l'ultima rallenta va detto", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Risc. 5", "1", "120", "20+20+10"], ["Lavoro 1-4", "3", "132,5", "20+20+10+5+1,25"]], "foot": "recupero completo fra le serie di lavoro"} },
       { code: "PESI", t: "Barbell Reverse Lunge · 4×4 per lato @60 kg · Virgin", d: "Mattia, blocco B · due chili e mezzo in più, quattro serie stabili · ginocchio dietro che sfiora terra", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-4", "4 per lato", "60", "10+10"]], "foot": "recupero 2′"} },
@@ -2248,7 +2249,7 @@ const WEEK = [
       { code: "MOB", t: "Flexability · Virgin 11:30", d: "Mattia, blocco D · classe di Asia Pellegrino, da prenotare · ultima cosa della mattina, per scaricare", dur: "45′" },
     ]
   },
-  { day: "DOM", date: "25", title: "REST", sub: "Riposo", load: "REST", duration: 0, kind: "rest", done: false,
+  { day: 'DOM', date: '25', title: "REST", sub: "Riposo", load: "REST", duration: 0, kind: "rest", done: false,
     blocks: [
     ]
   },
@@ -2285,26 +2286,26 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964];
 const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0];
-const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 0];
+const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 11.647];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0];
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i] + VOL_BIKE[i] + VOL_SWIM[i]).toFixed(1));
 
 // Totals (real)
 const TOTALS = {
-  rower: 751.572,
+  rower: 756.536,
   ski: 716.363,
-  run: 964.447,
+  run: 976.094,
   bike: 429.415,
   swim: 57.628,
-  total: 2919.425,
+  total: 2936.036,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
 const PROG = {
- "built": "14/10/2026",
+ "built": "19/10/2026",
  "firstDate": "01/01/2025",
  "ski": {
   "pd": [
@@ -5798,8 +5799,7 @@ const PROG = {
       "pace": "1:57.1",
       "hr": 134,
       "spm": 23,
-      "pb": true,
-      "cur": true
+      "pb": true
      },
      {
       "d": "04/02/26",
@@ -5899,6 +5899,18 @@ const PROG = {
       "hr": 110,
       "spm": 24,
       "pb": false
+     },
+     {
+      "d": "19/10/26*",
+      "pezzo": "7:03",
+      "dur": "7:04",
+      "dist": 2000,
+      "w": 294,
+      "pace": "1:46.0",
+      "hr": 154,
+      "spm": 27,
+      "pb": true,
+      "cur": true
      }
     ]
    },
@@ -6876,6 +6888,16 @@ const PROG = {
       "pace": "2:14.4",
       "hr": 108,
       "spm": 23,
+      "pb": false
+     },
+     {
+      "d": "19/10/26*",
+      "struttura": "3×0:20 +1",
+      "dist": 2665,
+      "w": 184,
+      "pace": "2:03.8",
+      "hr": 110,
+      "spm": 25,
       "pb": false
      }
     ]
@@ -8024,6 +8046,16 @@ const PROG = {
      "hr": 118,
      "pezzo": "10:00",
      "dur_s": 600
+    },
+    {
+     "d": "19/10/26*",
+     "dist": 2000,
+     "w": 294,
+     "pace": "1:46.0",
+     "spm": 27,
+     "hr": 154,
+     "pezzo": "7:03",
+     "dur_s": 423
     }
    ],
    "ints": [
@@ -8686,6 +8718,17 @@ const PROG = {
      "struttura": "3×0:20 +1",
      "rep_s": 165,
      "rep_m": 613
+    },
+    {
+     "d": "19/10/26*",
+     "dist": 2665,
+     "w": 184,
+     "pace": "2:03.8",
+     "spm": 25,
+     "hr": 110,
+     "struttura": "3×0:20 +1",
+     "rep_s": 165,
+     "rep_m": 666
     }
    ]
   }
@@ -8695,6 +8738,8 @@ const PROG = {
 
 // EF Trend — real Z2 SkiErg data
 const HISTORY = [
+  { date: '19 OTT', title: 'Run · Tapis · 1h @5′50″ + 8 allunghi', kind: "run", filone: "run-medio-tapis", filoneLabel: "Medio tapis", surf: "tapis", m: {"lavoro": "59:18.1 + 8 allunghi", "dist": "11,647 km", "dur": "1:08:42.5", "pace": "5:50.5", "unit": "/km (blocco)", "fcMed": "135,2", "fcMax": "145", "tgt": "5:50", "drift": "−5,1%", "ef": "0,0760", "cad": "168", "src": "fit"}, vs: {"d": "05 OTT", "tag": "Stesso tapis e stesso passo bersaglio, oggi dopo il test 2000 m", "items": [{"v": "blocco 59:18.1 a 5:50.5/km, contro 49:29 a 5:50.3/km del 05/10", "g": 0}, {"v": "FC media 135,2 contro 130,7 del 05/10 (+4,5)", "g": 0}]}, dur: 69, load: "Z2-Z3", note: "59:18.1 a 5:50.5/km sull'ora a 5'50\" chiesta: 10.150,2 m, tapis fisso a 10,28 km/h\nFC 135,2 di media, max 145, Z3 al 54,7% · da 131,6 a 138,8 fra le due metà a passo pari: drift EF −5,1%\n8 allunghi da 25-30″ a 15,99 km/h (3:45.1/km), recuperi 39-41″ · partita 24:47 dopo il test 2000 m", details: {"summary": "Tapis MyRun, 19:52-21:01 · 24:47 dopo la fine del test 2000 m: seduta pre-affaticata.\nPrescritto (Gabriele): 1h a 5'50\"/km + 8×100 m di allunghi con 40\" di recupero.\nBLOCCO 59:18.1: 10.150,2 m @5:50.5/km · 10,27 km/h · FC tw 135,2 max 145 · cadenza 168.\nFC per tratti da 5′: 127,6 · 132,7 · 132,0 · 130,3 · 133,7 · 133,6 · 136,6 · 137,9 · 138,5 · 139,3 · 140,9 · 140,4 (ultimi 4:18).\nDRIFT: EF 0,0781 → 0,0741 (−5,1%) · FC 131,6 → 138,8 a 10,27 e 10,28 km/h fra le due metà.\nZone del blocco: Z3 54,7% · Z2 44,9% · Z1 0,4%.\nALLUNGHI: 25 · 29 · 28 · 29 · 30 · 30 · 30 · 30″ a 15,99 km/h (3:45.1/km) · recuperi 39-41″ a 8,5 km/h · FC max 152 al primo, poi da 148 a 139.\nFederico: prima mezz'ora faticosissima, poi tutto liscio (dichiarato).\nTotale 11,647 km in 1:08:42.5 @5:53.9/km · FC 136 max 154 · 1.078 kcal · TE 3,3 aerobico.", "table": {"headers": ["Tratto", "Durata", "km/h", "Passo /km", "Recupero dopo", "FC max"], "rows": [["Blocco", "59:18.1", "10,27", "5:50.5", "-", "145"], ["Allungo 1", "25″", "15,99", "3:45.1", "39″", "152"], ["Allungo 2", "29″", "15,99", "3:45.1", "40″", "148"], ["Allungo 3", "28″", "15,99", "3:45.1", "41″", "141"], ["Allungo 4", "29″", "15,99", "3:45.1", "39″", "143"], ["Allungo 5", "30″", "15,99", "3:45.1", "39″", "142"], ["Allungo 6", "30″", "15,99", "3:45.1", "40″", "140"], ["Allungo 7", "30″", "15,99", "3:45.1", "39″", "140"], ["Allungo 8", "30″", "15,99", "3:45.1", "fine seduta", "139"]]}, "gps": null} },
+  { date: '19 OTT', title: 'Row · Test 2000 m', kind: "row", filone: "row-test2k", filoneLabel: "Row Test 2K", m: {"lavoro": "2000 m", "dist": "4,964 km", "dur": "7:03.9", "pace": "1:45.975", "unit": "/500m", "watt": "294,1", "fcMed": "155,0", "fcMax": "166", "df": "107", "src": "fit"}, vs: {"d": "14 OTT", "tag": "Stesso test, stesso drag factor 107, stessa partenza", "items": [{"v": "primi 400 m in 1:19.8 @1:39.75/500, contro 1:19.6 @1:39.5 del 14/10", "g": 0}, {"v": "chiuso a 2000 m in 7:03.9, il 14/10 mollato a 753 m", "g": 0}]}, dur: 23, load: "Z5", note: "2000 m in 7:03.9 @1:45.975/500, 294,1 W · split da 500: 1:39.32 · 1:41.60 · 1:54.68 · 1:48.30\nPrimi 1000 m a 345,2 W, il 10,1% sopra i primi 1000 del 26/03 (6:55.4): FC già a 161,8 nel secondo 500\nFra 1.399,8 e 1.442,8 m 18″ con tre soli colpi, uno da 10″: FC da 163 a 156 · ultimi 500 a 275,5 W", details: {"ergTable": {"fcMed": 155.0, "fcMax": 166, "efTot": "1.90", "dec": [{"m": "ROW", "v": "EF 2,31 → 1,58 fra prima e seconda metà (−31,9%)"}], "total": {"tempo": "7:03.9", "metri": "2000", "pace": "1:45.975", "watt": 294.1, "calh": 1312, "sm": 27.6, "ef": "1.90", "fcmed": 155.0, "fcmax": 166, "zona": "Z4", "cal": 161, "colpi": 195, "maxpw": 374}, "rows": [{"m": "ROW", "split": "WU", "tempo": "10:00", "metri": "2,369", "pace": "2:06.6", "watt": 172.3, "calh": 893, "sm": 24.8, "ef": "1.58", "fcmed": 109.2, "fcmax": 128, "zona": "<Z1", "t": 0}, {"m": "ROW", "split": "WU 20″ 1", "tempo": "0:20", "metri": "97", "pace": "1:43.1", "watt": 319.4, "calh": 1399, "sm": 27, "ef": "2.46", "fcmed": 129.7, "fcmax": 133, "zona": "Z2", "t": 0}, {"m": "ROW", "split": "rec", "tempo": "0:40", "metri": "130", "pace": "-", "watt": "-", "calh": "-", "sm": "-", "ef": "-", "fcmed": 127.1, "fcmax": 134, "zona": "-", "t": 0}, {"m": "ROW", "split": "WU 20″ 2", "tempo": "0:20", "metri": "99", "pace": "1:41.0", "watt": 339.6, "calh": 1469, "sm": 27, "ef": "2.81", "fcmed": 120.8, "fcmax": 127, "zona": "Z2", "t": 0}, {"m": "ROW", "split": "rec", "tempo": "0:40", "metri": "136", "pace": "-", "watt": "-", "calh": "-", "sm": "-", "ef": "-", "fcmed": 124.6, "fcmax": 130, "zona": "-", "t": 0}, {"m": "ROW", "split": "WU 20″ 3", "tempo": "0:20", "metri": "100", "pace": "1:40.0", "watt": 350.0, "calh": 1505, "sm": 33, "ef": "2.89", "fcmed": 121.0, "fcmax": 131, "zona": "Z2", "t": 0}, {"m": "ROW", "split": "0-500", "tempo": "1:39.32", "metri": "500", "pace": "1:39.32", "watt": 357.2, "calh": 1529, "sm": 29.6, "ef": "2.62", "fcmed": 136.2, "fcmax": 156, "zona": "Z3", "t": 1}, {"m": "ROW", "split": "500-1000", "tempo": "1:41.60", "metri": "500", "pace": "1:41.60", "watt": 333.7, "calh": 1449, "sm": 28.3, "ef": "2.06", "fcmed": 161.8, "fcmax": 164, "zona": "Z5", "t": 1}, {"m": "ROW", "split": "1000-1500", "tempo": "1:54.68", "metri": "500", "pace": "1:54.68", "watt": 232.1, "calh": 1099, "sm": 25.1, "ef": "1.43", "fcmed": 162.6, "fcmax": 166, "zona": "Z5", "t": 1}, {"m": "ROW", "split": "1500-2000", "tempo": "1:48.30", "metri": "500", "pace": "1:48.30", "watt": 275.5, "calh": 1248, "sm": 28.3, "ef": "1.75", "fcmed": 157.8, "fcmax": 161, "zona": "Z5", "t": 1}]}, "summary": "A casa, 19:06-19:28 · RowErg, drag factor 107 · test 2000 m della batteria di inizio ciclo, base del ritmo della soglia di mercoledì.\nRISCALDAMENTO 19:06-19:19: 10:00.0 per 2.369 m @2:06.6/500 · 172,3 W · FC tw 109,2 max 128 · 3×20″ r40″: 97 m @1:43.1 · 99 m @1:41.0 · 100 m @1:40.0.\nDalla fine dell'ultima prova al via 2:36 · FC in partenza 98.\nTEST dalle 19:20:56: 2000 m in 7:03.9 @1:45.975/500 · 294,1 W · 195 colpi (27,6 al minuto) · FC tw 155,0 max 166 · 161 kcal · watt max 374.\nSplit da 500: 1:39.32 (357,2 W, 29,6 colpi/min) · 1:41.60 (333,7, 28,3) · 1:54.68 (232,1, 25,1) · 1:48.30 (275,5, 28,3) · FC tw 136,2 · 161,8 · 162,6 · 157,8.\nSplit da 400 del PM5: 1:19.8 · 1:20.4 · 1:21.9 · 1:34.8 · 1:26.9.\nIL CEDIMENTO: primo calo a 21 colpi/min fra 1.308 e 1.330 m · fra 1.399,8 e 1.442,8 m 43,0 m in 18″ con tre soli colpi, uno da 10″, FC da 163 a 156 · al passo di prima ci volevano 9,1″.\nPrimi 1000 m in 3:20.92 @1:40.46/500, 345,2 W: +10,1% sui primi 1000 del 26/03 (3:27.47, 313,5 W) e +8,4% sulla media del miglior 2000 di sempre (6:52.9, 318,4 W).\nIl 26/03 (6:55.4, primo di 3×2000 r3′) stava fra 1:43.40 e 1:44.12 in tutti e quattro i 500, a 25-26 colpi/min, con FC tw 146,7 nel secondo 500.\nFederico: \"ero a pezzi\", portato a casa lo stesso (dichiarato) · EF 2,31 → 1,58 fra le due metà (−31,9%)."} },
   { date: '17 OTT', title: "Forza · Virgin · Reverse Lunge 4×4 @57,5 kg + Deadlift 4×3 @130 kg + Rematore", kind: 'strength', filone: 'forza', filoneLabel: 'Forza', m: {"lavoro": "Lunge 4×4 @57,5 + DL 4×3 @130 + rematore 10 giri", "dist": "—", "dur": "58:58 + 15:57", "pace": "—", "unit": "", "fcMed": "85", "fcMax": "120", "src": "fit"}, dur: 75, load: 'HEAVY', note: "Affondi 4×4 per lato @57,5 kg e stacco 4×3 @130 kg come da prescrizione, gli affondi per primi\nRecuperi dello stacco in crescita: 2:43.0 · 2:58.2 · 3:23.4\nRematore a un braccio @24 kg, 10 giri ogni 2′, 12 per lato il primo e poi 10, con 10 crunch a giro",
     details: { summary: "Virgin, 16:37-17:36 forza (58:58) e 17:43-17:59 rematore (15:57) · orari locali.\nOrdine reale: prima gli affondi, poi lo stacco · carichi e ripetizioni come da prescrizione (dichiarato da Federico, confermato dal file).\nREVERSE LUNGE 4×4 per lato @57,5 kg · rampa 20-30-45 · recuperi 1:54.2 · 1:51.6 · 1:51.0 sui 2′ prescritti · FC max di serie 106-116.\nDEADLIFT 4×3 @130 kg · rampa 20-60-90-110-120 · recuperi 2:43.0 · 2:58.2 · 3:23.4 · FC max di serie 111-116.\nIl Garmin conta 8 ripetizioni per serie di affondi: sono le 4 per lato · sul bilanciere vuoto dello stacco ne conta 9 sulle 8 prescritte.\nREMATORE a un braccio @24 kg, ogni 2′ (dichiarato da Federico): 10 giri, 12 per lato il primo e 10 per lato dal secondo, più 10 crunch a giro al posto dell'hollow hold.\nIl file del rematore registra 8 giri da 1:50 in 15:57: gli ultimi due non sono nel file.\nFC 85 di media (max 120) nella forza, 99 (max 116) nel rematore · 299 + 137 kcal.",
       table: { headers: ["Esercizio", "Serie", "Reps", "Kg", "Recupero dopo"], rows: [["Affondi", "risc.", "10 (5/5)", "20", "—"], ["Affondi", "risc.", "8 (4/4)", "30", "—"], ["Affondi", "risc.", "6 (3/3)", "45", "—"], ["Affondi", "1", "8 (4/4)", "57,5", "1:54.2"], ["Affondi", "2", "8 (4/4)", "57,5", "1:51.6"], ["Affondi", "3", "8 (4/4)", "57,5", "1:51.0"], ["Affondi", "4", "8 (4/4)", "57,5", "—"], ["Stacco", "risc.", "8 (Garmin 9)", "20", "—"], ["Stacco", "risc.", "5", "60", "—"], ["Stacco", "risc.", "3", "90", "—"], ["Stacco", "risc.", "2", "110", "—"], ["Stacco", "risc.", "1", "120", "2:38.3"], ["Stacco", "1", "3", "130", "2:43.0"], ["Stacco", "2", "3", "130", "2:58.2"], ["Stacco", "3", "3", "130", "3:23.4"], ["Stacco", "4", "3", "130", "—"], ["Rematore", "10 giri ogni 2′", "12/12 il primo, poi 10/10 + 10 crunch", "24", "—"]] }, gps: null } },
@@ -12310,8 +12355,8 @@ const BADGES = {
   month: 'OTTOBRE 2026',
   monthStart: '2026-10-01',
   monthEnd: '2026-10-31',
-  updated: '14 OTT 2026',
-  snapshot: "14 OTT 2026, letto da Garmin via API",
+  updated: '19 OTT 2026',
+  snapshot: "19 OTT 2026, letto da Garmin via API",
   sources: ['dati/sfide_iscritte_20261001.webarchive', 'dati/badges_ricevuti_20261001.webarchive', 'dati/badges_disponibili_20261001.webarchive'],
   items: [
     // ══════════════════════ SETTEMBRE — ultimo giorno (chiude MER 30) ══════════════════════
@@ -12345,7 +12390,7 @@ const BADGES = {
       go: 'Carica la strategia PacePro sull\'orologio PRIMA di uscire, alla prima corsa outdoor del mese.' },
     // ── PASSI / CAMMINATA
     { n: 'Ottobre, mese dei passi', en: 'October Step Month', cat: 'WALK', tipo: 'cumulativa',
-      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '237.859 / 300.000 — 79% (garmin, 17/10)',
+      req: '300.000 passi nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '266.770 / 300.000 - 89% (garmin, 19/10)',
       why: 'Preso ogni mese del 2026: con la media da 14.400 passi al giorno il traguardo cade a tre quarti di mese.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Passi di ottobre', en: 'October Steps', cat: 'WALK', tipo: 'cumulativa',
@@ -12361,9 +12406,9 @@ const BADGES = {
       why: 'Mancato ad agosto e a settembre per lo stesso motivo: nessuna attività Camminata avviata nel weekend giusto.',
       go: 'Circa 50 minuti di passeggiata registrata in uno dei tre giorni.' },
     { n: 'Podio per i passi di ottobre', en: 'October Steps Podium', cat: 'WALK', tipo: 'singola',
-      req: 'Chiudi nei primi 3 una sfida passi settimanale fra il 5 ottobre e il 1° novembre · 2 punti', win: '05 OTT → 01 NOV', d1: '2026-10-05', d2: '2026-11-01', st: 'auto', prog: 'prima settimanale utile ancora da giocare (webarchive, 05/10)',
+      req: 'Chiudi nei primi 3 una sfida passi settimanale fra il 5 ottobre e il 1° novembre · 2 punti', win: '05 OTT → 01 NOV', d1: '2026-10-05', d2: '2026-11-01', st: 'done', prog: 'PRESA · badge ricevuto il 19/10 (garmin, 19/10)',
       why: 'Preso quasi ogni mese: dipende dal girone in cui capiti, non dallo sforzo.',
-      go: 'Nessuna azione: sei iscritto d\'ufficio alle settimanali.' },
+      go: 'Preso il 19/10 con la settimanale dei passi.' },
     { n: 'October Outdoors', en: 'October Outdoors (members)', cat: 'WALK', tipo: 'cumulativa',
       req: 'Serie members-only: classifica su 70 partecipanti · parte GIO 01', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '27° di 70 (webarchive, 05/10)',
       why: 'Serie members-only sui passi: la posizione dipende dal girone, non dallo sforzo.',
@@ -12372,7 +12417,7 @@ const BADGES = {
     // ── NUOTO
     // ── ALTRO
     { n: 'Attività a ottobre', en: 'Active October', cat: 'MISC', tipo: 'cumulativa',
-      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '15 / 20 — 75% (garmin, 17/10)',
+      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '16 / 20 - 80% (garmin, 19/10)',
       why: 'Il margine è di una o due attività, non di volume: l\'anno scorso si è deciso sull\'ultimo giorno.',
       go: 'Registra tutto, anche camminate e defaticamenti.' },
     { n: 'Più forza a ottobre', en: 'October Gains', cat: 'STRENGTH', tipo: 'cumulativa',
@@ -12419,7 +12464,7 @@ const BADGES = {
     { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
   ],
   stages: [
-    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '89,8 / 300,0 km — 30% (garmin, 16/10)',
+    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '101,4 / 300,0 km - 34% (garmin, 19/10)',
       why: 'Tre mesi per 300 km: con 80-90 km al mese si chiude con un mese di anticipo, come nello stage 3.' },
     { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '2,8 / 148,1 km — 2% (garmin, 15/10)',
       why: 'Lo stage 3 è finito all\'11%. Le 15 ore al mese del badge Camminata a ottobre valgono circa 50 km: tre mesi così e lo stage si chiude.' },
