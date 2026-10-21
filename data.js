@@ -2232,9 +2232,8 @@ const WEEK = [
       { code: "PESI", t: "Upper body · ogni 2′ per 20′ · a casa, dopo il metcon", d: "Mattia, blocco E · due chili in più sul row e cinque secondi sull'hollow · se dopo il metcon sei morto, 15′", dur: "20′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Single arm row superslow", "12 per lato", "26 kg"], ["B", "Hollow hold", "35″", "corpo libero"]], "foot": "10 giri"} },
     ]
   },
-  { day: 'GIO', date: '22', title: "PISTA CON GABRY h 15", sub: "Pista Nebiolo · riscaldamento dalle 14:30", load: "QUALITA'", duration: 90, kind: "run", done: false,
+  { day: 'GIO', date: '22', title: "VOLO PER ABU DHABI", sub: "Head judge Hyrox, trasferta fino al 26/10", load: "REST", duration: 0, kind: "rest", done: false,
     blocks: [
-      { code: "RUN", t: "Corsa qualità · Pista Nebiolo 15:00", d: "Gabriele, in presenza · riscaldamento dalle 14:30, lavoro dalle 15:00 · sul programma: \"in pista h 15\"", dur: "90′" },
     ]
   },
   { day: 'VEN', date: '23', title: "ROW Z2 40' + UPPER 20' · PISTA H 17: MEDIO 14 KM", sub: "Mattina a casa RowErg e manubri · Pista Nebiolo h 17", load: "Z2 + Z3", duration: 156, kind: "run", done: false,
