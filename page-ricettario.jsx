@@ -1,134 +1,132 @@
-// RICETTARIO SETTIMANALE — Piano Zappitelli · Telemetry style
+// RICETTARIO SETTIMANALE — Piano Zappitelli 19/10/2026 · Telemetry style
 
 var RICETTARIO = [
-  { day: 'LUNEDI', schema: 'A', kcal: 3000, color: '#39E75F', meals: [
-    { type: 'PRANZO', name: 'Riso integrale al limone con frittata al curry',
-      ing: 'Riso integrale 150g · Albume 400g · Spinaci 200g · EVO 10g',
+  { day: 'LUNEDI', schema: 'PRANZO 200g · CENA 150g', kcal: 3200, color: '#39E75F', meals: [
+    { type: 'PRANZO', name: 'Riso integrale al limone con frittata al curry e grana',
+      ing: 'Riso integrale 200g · Albume 500g · Spinaci 200g · Grana 30g · EVO 10g',
       steps: [
         'Metti il riso integrale in acqua bollente salata con una scorza di limone. Cuoci 10 min.',
         'Schiaccia uno spicchio d\'aglio in padella antiaderente calda. Butta gli spinaci, sale, appassisci 2 min.',
-        'Versa gli albumi sugli spinaci. Aggiungi curry (o curcuma + pepe nero), sale. Copri, fuoco medio 4 min — frittata dorata sotto.',
-        'Scola il riso, spremi mezzo limone, EVO 10g a crudo. Taglia la frittata a spicchi e servi sopra.',
+        'Versa i 500g di albume sugli spinaci. Curry (o curcuma + pepe nero), sale. Copri, fuoco medio 5 min — con 500g la frittata e piu spessa.',
+        'Scola il riso, spremi mezzo limone, grana 30g grattugiato, EVO 10g a crudo. Taglia la frittata a spicchi e servi sopra.',
       ],
       tip: 'Il curry sulla frittata di albume toglie il sapore "di niente" tipico dell\'albume.' },
     { type: 'CENA', name: 'Polenta con ragu di lenticchie al rosmarino',
-      ing: 'Polenta 150g · Lenticchie precotte 180g · Bietole 200g · EVO 10g',
+      ing: 'Polenta 150g · Lenticchie precotte 240g (1 barattolo scolato) · Bietole 200g · EVO 10g',
       steps: [
         'Bolli 685ml d\'acqua salata, versa la polenta a pioggia mescolando. Fuoco basso, 8 min.',
-        'Padella: aglio + rosmarino 30s. Lenticchie sciacquate, 3 cucchiai passata, peperoncino. 3-4 min, schiaccia un po\' col cucchiaio.',
+        'Padella: aglio + rosmarino 30s. Lenticchie (barattolo intero, scolato e sciacquato), 3 cucchiai passata, peperoncino. 3-4 min, schiaccia un po\' col cucchiaio.',
         'Bietole a pezzi grossi con aglio, sale, goccia d\'aceto. 3 min.',
         'Polenta, ragu sopra, bietole di lato, EVO 10g a crudo.',
       ],
       tip: 'Schiacciare meta lenticchie col cucchiaio crea una cremina che veste la polenta.' },
   ]},
-  { day: 'MARTEDI', schema: 'B', kcal: 3300, color: '#FFB84D', meals: [
+  { day: 'MARTEDI', schema: 'PRANZO 150g · CENA 180g', kcal: 3200, color: '#FFB84D', meals: [
     { type: 'PRANZO', name: 'Farro con seitan alla pizzaiola e peperoni',
-      ing: 'Farro perlato 150g · Seitan 110g · Peperoni 200g · EVO 10g',
+      ing: 'Farro perlato 150g · Seitan 200g · Peperoni 200g · Grana 30g · EVO 10g',
       steps: [
         'Farro perlato in acqua bollente salata, 10 min (resta al dente).',
-        'Seitan a straccetti. Padella ben calda: rosola 2 min per lato, croccante e dorato. Togli.',
+        'Seitan a straccetti. Padella ben calda: rosola 2 min per lato, croccante e dorato (200g: in due volte se la padella e piccola). Togli.',
         'Stessa padella: peperoni a listarelle + aglio, sale, origano. 4 min fuoco vivo (croccanti).',
-        'Rimetti seitan, 2 cucchiai passata, capperi. 1 min. Scola farro, EVO 10g, pizzaiola sopra.',
+        'Rimetti seitan, 2 cucchiai passata, capperi. 1 min. Scola farro, EVO 10g, pizzaiola sopra, grana 30g a scaglie.',
       ],
       tip: 'Padella ben calda: il seitan deve fare la crosticina, non bollire nel suo liquido.' },
     { type: 'CENA', name: 'Pure con caprese calda gratinata',
-      ing: 'Pure Pfanni 150g polvere · Mozzarella light 200g · Pomodori 200g · EVO 10g',
+      ing: 'Pure Pfanni 180g polvere · Mozzarella light 200g · Pomodori 200g · EVO 10g',
       steps: [
-        'Pure: 630ml a ebollizione, togli dal fuoco, 160ml fredda, versa 150g Pfanni, mescola, riposa 2 min.',
+        'Pure: 720ml a ebollizione, togli dal fuoco, 480ml fredda, versa 180g Pfanni (2 buste + 30g), mescola 1 min.',
         'Pomodori a fette spesse in padella calda, sale, origano. 2 min per lato — caramellare.',
         'Mozzarella a fette sui pomodori caldi, copri 1 min — si ammorbidisce e fila.',
         'Pure come base, pomodori + mozzarella sopra. EVO 10g, pepe nero, basilico.',
       ],
       tip: 'Griglia i pomodori finche non fanno le righe scure — l\'origano tostato sul pomodoro caramellato vale il piatto.' },
   ]},
-  { day: 'MERCOLEDI', schema: 'C', kcal: 3000, color: '#58ADF7', meals: [
+  { day: 'MERCOLEDI', schema: 'PRANZO 200g · CENA 150g', kcal: 3200, color: '#39E75F', meals: [
     { type: 'PRANZO', name: 'Pasta e ceci risottata con broccoli e peperoncino',
-      ing: 'Pasta integrale 150g · Ceci precotti 180g · Broccoli 200g · EVO 10g',
+      ing: 'Pasta integrale 200g · Ceci precotti 240g (1 barattolo scolato) · Broccoli 200g · Grana 30g · EVO 10g',
       steps: [
         'Cuoci la pasta. A 4 min dalla fine, butta i broccoli a cimette nella stessa pentola.',
-        'Padella: aglio + peperoncino 30s. Meta ceci (90g), schiacciali con forchetta. 1 mestolo acqua di cottura.',
+        'Padella: aglio + peperoncino 30s. Meta ceci (120g), schiacciali con forchetta. 1 mestolo acqua di cottura.',
         'Aggiungi ceci interi rimasti.',
-        'Scola pasta e broccoli (tieni acqua), versa in padella. Manteca 1 min a fuoco vivo. EVO 10g, pepe, prezzemolo.',
+        'Scola pasta e broccoli (tieni acqua), versa in padella. Manteca 1 min a fuoco vivo. EVO 10g, grana 30g grattugiato, pepe, prezzemolo.',
       ],
-      tip: 'Schiacciare meta ceci e il segreto della risottatura — crea cremosita senza formaggio.' },
-    { type: 'CENA', name: 'Polenta con uovo in camicia e fagiolini al limone',
-      ing: 'Polenta 150g · Uova 3 medie · Fagiolini 200g · EVO 10g',
+      tip: 'Schiacciare meta ceci e il segreto della risottatura — il grana a fine cottura la completa.' },
+    { type: 'CENA', name: 'Polenta con uova in camicia e fagiolini al limone',
+      ing: 'Polenta 150g · Uova 4 medie · Fagiolini 200g · EVO 10g',
       steps: [
         'Polenta: 685ml acqua salata a bollore, versa 150g, mescola 8 min.',
         'Fagiolini in padella: sale, goccia d\'acqua, copri 4 min. Scoperchia, limone, pepe. Verdi e croccanti.',
-        'Uova: padella antiaderente, rompi le 3 uova. Sale, pepe, coperchio, fuoco bassissimo 3 min. Tuorlo morbido.',
-        'Polenta, uova sopra, fagiolini di lato. EVO 10g. Rompi il tuorlo sulla polenta.',
+        'Uova: padella antiaderente, rompi le 4 uova. Sale, pepe, coperchio, fuoco bassissimo 3 min. Tuorlo morbido.',
+        'Polenta, uova sopra, fagiolini di lato. EVO 10g. Rompi i tuorli sulla polenta.',
       ],
       tip: 'Il tuorlo morbido che cola sulla polenta calda diventa il condimento perfetto.' },
   ]},
-  { day: 'GIOVEDI', schema: 'A', kcal: 3000, color: '#39E75F', meals: [
-    { type: 'PRANZO', name: 'Orzotto alla curcuma con rotolo di frittata alle erbe',
-      ing: 'Orzo perlato 150g · Albume 400g · Spinaci 200g · EVO 10g',
+  { day: 'GIOVEDI', schema: 'PRANZO 150g SOLO PRIMO (13:00) · CENA 200g', kcal: 3200, color: '#58ADF7', meals: [
+    { type: 'PRANZO 13:00', name: 'Orzotto alla curcuma',
+      ing: 'Orzo perlato 150g · EVO 10g · SOLO PRIMO come da piano (niente secondo, niente verdure)',
       steps: [
         'Orzo in acqua bollente salata con curcuma e pepe nero, 10 min. Scola lasciando umido.',
-        'Spinaci in padella: appassisci 2 min con aglio. Togli e strizza.',
-        'Stessa padella: albumi a crepe sottile. Sale, prezzemolo+erba cipollina. 3 min, gira, 1 min.',
-        'Stendi frittata, spinaci sopra, arrotola. Taglia a rondelle 3cm. Orzotto sotto, rondelle sopra. EVO 10g.',
+        'EVO 10g a crudo, pepe nero, scorza di limone grattugiata. Fine.',
       ],
-      tip: 'La frittata a crepe sottile arrotolata con gli spinaci e molto piu bella del solito blocco.' },
-    { type: 'CENA', name: 'Pure con borlotti alla salvia e finocchi crudi',
-      ing: 'Pure Pfanni 150g polvere · Borlotti precotti 180g · Finocchi 200g · EVO 10g',
+      tip: 'Pasto volutamente leggero: 13:00 in punto, poi allenamento, poi whey 40g e spuntino pomeridiano.' },
+    { type: 'CENA', name: 'Pure al grana con borlotti alla salvia e finocchi crudi',
+      ing: 'Pure Pfanni 200g polvere · Borlotti precotti 240g (1 barattolo scolato) · Finocchi 200g · Grana 30g · EVO 10g',
       steps: [
-        'Pure: 630ml bollente, togli, 160ml fredda, 150g Pfanni, mescola, riposa.',
-        'Padella: 4-5 foglie salvia fresca, tosta 30s. Borlotti, sale, pepe, 2 cucchiai passata. 3 min, schiaccia un terzo.',
+        'Pure: 800ml bollente, togli, 530ml fredda, 200g Pfanni (2 buste + 50g), mescola 1 min. Grana 30g grattugiato dentro, mescola ancora.',
+        'Padella: 4-5 foglie salvia fresca, tosta 30s. Borlotti (barattolo intero scolato), sale, pepe, 2 cucchiai passata. 3 min, schiaccia un terzo.',
         'Finocchi affettati sottilissimi. Limone, sale, pepe rosa. Crudi e croccanti.',
-        'Pure, borlotti alla salvia sopra, finocchi di lato. EVO 10g sui finocchi.',
+        'Pure al grana, borlotti alla salvia sopra, finocchi di lato. EVO 10g sui finocchi.',
       ],
       tip: 'I finocchi crudi sottili con limone bilanciano la pesantezza del pure — contrasto caldo/freddo.' },
   ]},
-  { day: 'VENERDI', schema: 'B', kcal: 3300, color: '#FFB84D', meals: [
+  { day: 'VENERDI', schema: 'PRANZO 200g · CENA 150g', kcal: 3200, color: '#39E75F', meals: [
     { type: 'PRANZO', name: 'Bowl di quinoa con tempeh teriyaki e zucchine',
-      ing: 'Quinoa 150g · Tempeh 110g · Zucchine 200g · EVO 10g',
+      ing: 'Quinoa 200g · Tempeh 200g · Zucchine 200g · Grana 30g · EVO 10g',
       steps: [
-        'Sciacqua la quinoa (toglie l\'amaro). Cuoci in acqua salata 12 min, scola, sgrana con forchetta.',
+        'Sciacqua la quinoa (toglie l\'amaro). Cuoci in acqua salata 12-13 min, scola, sgrana con forchetta.',
         'Tempeh a cubetti 1.5cm. Marinatura: 1 cucchiaino soia + 1 aceto di mele + zenzero + aglio in polvere.',
         'Padella ben calda: rosola tempeh 3 min per lato — scuro e croccante. Togli.',
-        'Stessa padella: zucchine a mezzaluna, sale, timo, fuoco vivo 3 min. Bowl: quinoa, zucchine, tempeh. EVO 10g, limone.',
+        'Stessa padella: zucchine a mezzaluna, sale, timo, fuoco vivo 3 min. Bowl: quinoa, zucchine, tempeh. EVO 10g, limone, grana 30g a scaglie sulle zucchine (o a parte).',
       ],
       tip: 'La marinatura express soia+aceto+zenzero trasforma il tempeh da cartone a qualcosa che vuoi rifare.' },
     { type: 'CENA', name: 'Polenta taragna con ricotta montata alle erbe e bietole',
-      ing: 'Polenta taragna 150g · Ricotta light 180g · Bietole 200g · EVO 10g',
+      ing: 'Polenta taragna 150g · Ricotta magra 200g · Bietole 200g · EVO 10g',
       steps: [
         'Polenta taragna: 685ml acqua salata a bollore, versa 150g, mescola 8 min.',
-        'Ricotta (180g) + sale + pepe nero + erba cipollina + scorza di limone. Mescola con forchetta — soffice e cremosa.',
+        'Ricotta (200g) + sale + pepe nero + erba cipollina + scorza di limone. Mescola con forchetta — soffice e cremosa.',
         'Bietole in padella: aglio, peperoncino, sale. 3 min fuoco vivo.',
         'Polenta calda, cucchiaiate di ricotta montata sopra, bietole di lato. EVO 10g.',
       ],
       tip: 'La ricotta montata con limone ed erbe e un altro mondo rispetto alla ricotta fredda dal vasetto.' },
   ]},
-  { day: 'SABATO', schema: 'C', kcal: 3000, color: '#58ADF7', meals: [
+  { day: 'SABATO', schema: 'PRANZO 180g · CENA 180g', kcal: 3200, color: '#FFB84D', meals: [
     { type: 'PRANZO', name: 'Insalata tiepida di riso integrale e cannellini al basilico',
-      ing: 'Riso integrale parboiled 150g · Cannellini precotti 180g · Insalata mista 200g · EVO 10g',
+      ing: 'Riso integrale 180g · Cannellini precotti 240g (1 barattolo scolato) · Insalata mista 200g · Grana 30g · EVO 10g',
       steps: [
-        'Riso integrale parboiled 10 min, scola e raffreddalo sotto acqua 10s — tiepido, non caldo.',
+        'Riso integrale 10 min, scola e raffreddalo sotto acqua 10s — tiepido, non caldo.',
         'Ciotola: riso + cannellini sciacquati + limone + sale + pepe + basilico fresco + cipolla rossa tritata.',
         'Mescola, lascia insaporire 2 min.',
-        'Insalata mista nel piatto, riso e cannellini sopra. EVO 10g, limone.',
+        'Insalata mista nel piatto, riso e cannellini sopra. EVO 10g, limone, grana 30g a scaglie.',
       ],
-      tip: 'Piatto estivo perfetto — basilico fresco con cannellini e limone e una combinazione che non ti aspetti.' },
+      tip: 'Basilico fresco, cannellini, limone e scaglie di grana — una combinazione che non ti aspetti.' },
     { type: 'CENA', name: 'Nido di pure con uova al tegamino e zucchine alla scapece',
-      ing: 'Pure Pfanni 150g polvere · Uova 3 medie · Zucchine 200g · EVO 10g',
+      ing: 'Pure Pfanni 180g polvere · Uova 4 medie · Zucchine 200g · EVO 10g',
       steps: [
-        'Zucchine a rondelle sottili. Padella caldissima: griglia singolo strato, 2 min per lato. Condisci subito: aceto, aglio a fettine, basilico, sale.',
-        'Pure: 630ml bollente, 160ml fredda, 150g Pfanni, mescola.',
-        'Stessa padella: 3 uova, sale, pepe, paprika affumicata. Coperchio, fuoco basso, 3 min. Tuorlo morbido.',
+        'Zucchine a rondelle sottili. Padella caldissima: griglia singolo strato, 2 min per lato. Condisci subito: aceto di vino bianco, aglio a fettine, basilico fresco, sale.',
+        'Pure: 720ml bollente, 480ml fredda, 180g Pfanni (2 buste + 30g), mescola 1 min.',
+        'Stessa padella: 4 uova, sale, pepe, paprika affumicata. Coperchio, fuoco basso, 3 min. Tuorlo morbido.',
         'Pure a nido (avvallamento al centro), uova nel nido, zucchine alla scapece intorno. EVO 10g.',
       ],
       tip: 'La scapece (aceto+aglio+basilico) sulle zucchine le rende acide e profumate — spaccano col pure dolce.' },
   ]},
-  { day: 'DOMENICA', schema: 'B', kcal: 3300, color: '#FFB84D', meals: [
+  { day: 'DOMENICA', schema: 'PRANZO 150g · CENA 150g', kcal: 3200, color: '#58ADF7', meals: [
     { type: 'PRANZO', name: 'Pasta integrale con tofu croccante e peperonata veloce',
-      ing: 'Pasta integrale 150g · Tofu 150g · Peperoni+pomodori 200g · EVO 10g',
+      ing: 'Pasta integrale 150g · Tofu 200g · Peperoni+pomodori 200g · Grana 30g · EVO 10g',
       steps: [
         'Pasta integrale 10 min. Tofu a cubetti 2cm, asciuga bene con carta.',
         'Padella caldissima: tofu senza niente, fuoco alto, 2 min per lato senza toccare. A fine: 1 cucchiaino soia, mescola 10s. Togli.',
         'Stessa padella: peperoni + pomodorini a meta + aglio + origano. 4 min fuoco vivo — pomodorini scoppiano.',
-        'Scola pasta (tieni acqua), versa in peperonata, 1 min. Tofu sopra. EVO 10g, basilico.',
+        'Scola pasta (tieni acqua), versa in peperonata, 1 min. Tofu sopra. EVO 10g, grana 30g grattugiato, basilico.',
       ],
       tip: 'Il tofu va asciugato e cotto a fuoco ALTO senza muoverlo. La soia a fine cottura lo glassa.' },
     { type: 'CENA', name: 'Polenta 5 cereali con fiocchi di latte all\'erba cipollina e lattughino',
@@ -179,13 +177,13 @@ function RicettarioPage() {
       {/* ── HERO ── */}
       <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 12 }}>
         <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 8 }}>
-          // MEAL_PLAN · PIANO ZAPPITELLI · S{ATHLETE.programWeek} · {totalMeals} PASTI
+          // MEAL_PLAN · PIANO ZAPPITELLI 19/10/2026 · S{ATHLETE.programWeek} · {totalMeals} PASTI
         </div>
         <div className="display r-display-hero" style={{ fontSize: 'var(--display-hero)', lineHeight: 0.9 }}>
           RICET<span style={{ color: 'var(--accent)' }}>TARIO.</span>
         </div>
         <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 10 }}>
-          Tutte ricette &le; 10 minuti · Solo 10g EVO per pasto · Niente parmigiano
+          3200 Kcal tutti i giorni · Primo 150/180/200g · Grana 30g a pranzo · Solo 10g EVO per pasto
         </div>
       </div>
 
@@ -230,7 +228,7 @@ function RicettarioPage() {
             }}>
               <div>
                 <div style={{ fontSize: 10, color: day.color, letterSpacing: '0.18em' }}>
-                  // SCHEMA {day.schema} · {day.kcal} KCAL
+                  // {day.schema} · {day.kcal} KCAL
                 </div>
                 <div className="display" style={{ fontSize: 24, lineHeight: 1, marginTop: 4 }}>
                   {day.day}
@@ -314,9 +312,9 @@ function RicettarioPage() {
         padding: 14, marginBottom: 12, textAlign: 'center'
       }}>
         <div style={{ fontSize: 11, color: 'var(--warn)', letterSpacing: '0.1em', lineHeight: 1.7, fontFamily: 'var(--mono)' }}>
-          NIENTE PARMIGIANO · Solo 10g EVO per pasto · Spezie, erbe, limone, aceto: liberi<br/>
-          Legumi: precotti/barattolo (180g cotti = 60g secchi) — sciacquali sempre<br/>
-          Pure Pfanni (2x95g): 150g polvere → 630ml bollente + 160ml fredda
+          GRANA 30g A PRANZO (giovedi a cena) e nel piano, non un extra · Solo 10g EVO per pasto · Spezie, erbe, limone, aceto: liberi<br/>
+          Legumi: 1 barattolo da 400g scolato ≈ 240g = porzione intera (80g secchi)<br/>
+          Pure Pfanni fiocchi (senza latte), solo acqua: 150g → 600+400ml · 180g → 720+480ml · 200g → 800+530ml. Meno acqua = pure piu denso, i carbo non cambiano
         </div>
       </div>
     </TelemetryChrome>
