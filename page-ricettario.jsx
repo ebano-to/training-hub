@@ -201,10 +201,13 @@ function RicettarioPage() {
   var ATHLETE = window.TRAINING.ATHLETE;
   var totalMeals = RICETTARIO.reduce(function(s, d) { return s + d.meals.length; }, 0);
 
-  // Expand/collapse state per day
+  // Giorno di oggi: RICETTARIO parte da LUNEDI (0), JS Date.getDay() parte da domenica (0)
+  var todayIdx = (new Date().getDay() + 6) % 7;
+
+  // Expand/collapse state per day: all'apertura solo il giorno di oggi e' espanso
   var _s = React.useState(function() {
     var init = {};
-    RICETTARIO.forEach(function(d, i) { init[i] = true; });
+    RICETTARIO.forEach(function(d, i) { init[i] = (i === todayIdx); });
     return init;
   });
   var expanded = _s[0];
@@ -270,10 +273,11 @@ function RicettarioPage() {
       {/* ── DAYS ── */}
       {RICETTARIO.map(function(day, di) {
         var isOpen = !!expanded[di];
+        var isToday = di === todayIdx;
 
         return (
           <div key={di} style={{
-            border: '1px solid ' + (isOpen ? day.color + '44' : 'var(--line)'),
+            border: '1px solid ' + (isToday ? day.color : (isOpen ? day.color + '44' : 'var(--line)')),
             background: 'var(--bg-2)', marginBottom: 12
           }}>
             {/* Day header — clickable */}
@@ -284,7 +288,7 @@ function RicettarioPage() {
             }}>
               <div>
                 <div style={{ fontSize: 10, color: day.color, letterSpacing: '0.18em' }}>
-                  // {day.schema} · {day.kcal} KCAL
+                  // {day.schema} · {day.kcal} KCAL{isToday ? ' · OGGI' : ''}
                 </div>
                 <div className="display" style={{ fontSize: 24, lineHeight: 1, marginTop: 4 }}>
                   {day.day}
