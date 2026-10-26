@@ -2,6 +2,12 @@
 
 var RICETTARIO = [
   { day: 'LUNEDI', schema: 'PRANZO 200g · CENA 150g', kcal: 3200, color: '#39E75F', meals: [
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 30g (1 porzione)', steps: [], tip: 'subito dopo l\'allenamento' },
+    { type: 'SPUNTINO MATTUTINO', name: 'Cracker e frutta',
+      ing: 'Cracker non salati in superficie 30g · Frutta fresca o fruttino 150g', steps: [], tip: '' },
     { type: 'PRANZO', name: 'Riso integrale al limone con frittata al curry e grana',
       ing: 'Riso integrale 200g · Albume 500g · Spinaci 200g · Grana 30g · EVO 10g',
       steps: [
@@ -11,6 +17,10 @@ var RICETTARIO = [
         'Scola il riso, spremi mezzo limone, grana 30g grattugiato, EVO 10g a crudo. Taglia la frittata a spicchi e servi sopra.',
       ],
       tip: 'Il curry sulla frittata di albume toglie il sapore "di niente" tipico dell\'albume.' },
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 30g (1 porzione)', steps: [], tip: 'subito dopo l\'allenamento' },
     { type: 'CENA', name: 'Polenta con ragu di lenticchie al rosmarino',
       ing: 'Polenta 150g · Lenticchie precotte 240g (1 barattolo scolato) · Bietole 200g · EVO 10g',
       steps: [
@@ -22,6 +32,10 @@ var RICETTARIO = [
       tip: 'Schiacciare meta lenticchie col cucchiaio crea una cremina che veste la polenta.' },
   ]},
   { day: 'MARTEDI', schema: 'PRANZO 150g · CENA 180g', kcal: 3200, color: '#FFB84D', meals: [
+    { type: 'COLAZIONE', name: 'Pane integrale, burro di arachidi e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Burro di arachidi 30g · Marmellata 30g (1 cucchiaio)', steps: [], tip: '' },
+    { type: 'SPUNTINO MATTUTINO', name: 'Yogurt greco, frutta e cereali',
+      ing: 'Yogurt greco 0% 150g · Frutta fresca o fruttino 150g · Cereali da colazione 50g', steps: [], tip: '' },
     { type: 'PRANZO', name: 'Farro con seitan alla pizzaiola e peperoni',
       ing: 'Farro perlato 150g · Seitan 200g · Peperoni 200g · Grana 30g · EVO 10g',
       steps: [
@@ -31,6 +45,8 @@ var RICETTARIO = [
         'Rimetti seitan, 2 cucchiai passata, capperi. 1 min. Scola farro, EVO 10g, pizzaiola sopra, grana 30g a scaglie.',
       ],
       tip: 'Padella ben calda: il seitan deve fare la crosticina, non bollire nel suo liquido.' },
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
     { type: 'CENA', name: 'Pure con caprese calda gratinata',
       ing: 'Pure Pfanni 180g polvere · Mozzarella light 200g · Pomodori 200g · EVO 10g',
       steps: [
@@ -42,6 +58,12 @@ var RICETTARIO = [
       tip: 'Griglia i pomodori finche non fanno le righe scure — l\'origano tostato sul pomodoro caramellato vale il piatto.' },
   ]},
   { day: 'MERCOLEDI', schema: 'PRANZO 200g · CENA 150g', kcal: 3200, color: '#39E75F', meals: [
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 30g (1 porzione)', steps: [], tip: 'subito dopo l\'allenamento' },
+    { type: 'SPUNTINO MATTUTINO', name: 'Cracker e frutta',
+      ing: 'Cracker non salati in superficie 30g · Frutta fresca o fruttino 150g', steps: [], tip: '' },
     { type: 'PRANZO', name: 'Pasta e ceci risottata con broccoli e peperoncino',
       ing: 'Pasta integrale 200g · Ceci precotti 240g (1 barattolo scolato) · Broccoli 200g · Grana 30g · EVO 10g',
       steps: [
@@ -51,6 +73,10 @@ var RICETTARIO = [
         'Scola pasta e broccoli (tieni acqua), versa in padella. Manteca 1 min a fuoco vivo. EVO 10g, grana 30g grattugiato, pepe, prezzemolo.',
       ],
       tip: 'Schiacciare meta ceci e il segreto della risottatura — il grana a fine cottura la completa.' },
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 30g (1 porzione)', steps: [], tip: 'subito dopo l\'allenamento' },
     { type: 'CENA', name: 'Polenta con uova in camicia e fagiolini al limone',
       ing: 'Polenta 150g · Uova 4 medie · Fagiolini 200g · EVO 10g',
       steps: [
@@ -62,6 +88,10 @@ var RICETTARIO = [
       tip: 'Il tuorlo morbido che cola sulla polenta calda diventa il condimento perfetto.' },
   ]},
   { day: 'GIOVEDI', schema: 'PRANZO 150g SOLO PRIMO (13:00) · CENA 200g', kcal: 3200, color: '#58ADF7', meals: [
+    { type: 'COLAZIONE', name: 'Pane integrale, burro di arachidi e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Burro di arachidi 30g · Marmellata 30g (1 cucchiaio)', steps: [], tip: '' },
+    { type: 'SPUNTINO MATTUTINO', name: 'Yogurt greco, frutta e cereali',
+      ing: 'Yogurt greco 0% 150g · Frutta fresca o fruttino 150g · Cereali da colazione 50g', steps: [], tip: '' },
     { type: 'PRANZO 13:00', name: 'Orzotto alla curcuma',
       ing: 'Orzo perlato 150g · EVO 10g · SOLO PRIMO come da piano (niente secondo, niente verdure)',
       steps: [
@@ -69,6 +99,10 @@ var RICETTARIO = [
         'EVO 10g a crudo, pepe nero, scorza di limone grattugiata. Fine.',
       ],
       tip: 'Pasto volutamente leggero: 13:00 in punto, poi allenamento, poi whey 40g e spuntino pomeridiano.' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 40g', steps: [], tip: 'subito dopo l\'allenamento' },
+    { type: 'SPUNTINO POMERIDIANO', name: 'Yogurt greco, frutta e cereali',
+      ing: 'Yogurt greco 0% 150g · Frutta fresca o fruttino 150g · Cereali da colazione 50g', steps: [], tip: '' },
     { type: 'CENA', name: 'Pure al grana con borlotti alla salvia e finocchi crudi',
       ing: 'Pure Pfanni 200g polvere · Borlotti precotti 240g (1 barattolo scolato) · Finocchi 200g · Grana 30g · EVO 10g',
       steps: [
@@ -80,6 +114,12 @@ var RICETTARIO = [
       tip: 'I finocchi crudi sottili con limone bilanciano la pesantezza del pure — contrasto caldo/freddo.' },
   ]},
   { day: 'VENERDI', schema: 'PRANZO 200g · CENA 150g', kcal: 3200, color: '#39E75F', meals: [
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 30g (1 porzione)', steps: [], tip: 'subito dopo l\'allenamento' },
+    { type: 'SPUNTINO MATTUTINO', name: 'Cracker e frutta',
+      ing: 'Cracker non salati in superficie 30g · Frutta fresca o fruttino 150g', steps: [], tip: '' },
     { type: 'PRANZO', name: 'Bowl di quinoa con tempeh teriyaki e zucchine',
       ing: 'Quinoa 200g · Tempeh 200g · Zucchine 200g · Grana 30g · EVO 10g',
       steps: [
@@ -89,6 +129,10 @@ var RICETTARIO = [
         'Stessa padella: zucchine a mezzaluna, sale, timo, fuoco vivo 3 min. Bowl: quinoa, zucchine, tempeh. EVO 10g, limone, grana 30g a scaglie sulle zucchine (o a parte).',
       ],
       tip: 'La marinatura express soia+aceto+zenzero trasforma il tempeh da cartone a qualcosa che vuoi rifare.' },
+    { type: 'PRE-ALLENAMENTO', name: 'Pane integrale e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Marmellata 30g (1 cucchiaio)', steps: [], tip: '60 minuti prima dell\'allenamento' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 30g (1 porzione)', steps: [], tip: 'subito dopo l\'allenamento' },
     { type: 'CENA', name: 'Polenta taragna con ricotta montata alle erbe e bietole',
       ing: 'Polenta taragna 150g · Ricotta magra 200g · Bietole 200g · EVO 10g',
       steps: [
@@ -100,6 +144,10 @@ var RICETTARIO = [
       tip: 'La ricotta montata con limone ed erbe e un altro mondo rispetto alla ricotta fredda dal vasetto.' },
   ]},
   { day: 'SABATO', schema: 'PRANZO 180g · CENA 180g', kcal: 3200, color: '#FFB84D', meals: [
+    { type: 'COLAZIONE', name: 'Pane integrale, burro di arachidi e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Burro di arachidi 30g · Marmellata 30g (1 cucchiaio)', steps: [], tip: '' },
+    { type: 'POST-ALLENAMENTO', name: 'Whey isolate',
+      ing: 'Whey protein isolate 40g', steps: [], tip: 'subito dopo l\'allenamento' },
     { type: 'PRANZO', name: 'Insalata tiepida di riso integrale e cannellini al basilico',
       ing: 'Riso integrale 180g · Cannellini precotti 240g (1 barattolo scolato) · Insalata mista 200g · Grana 30g · EVO 10g',
       steps: [
@@ -109,6 +157,8 @@ var RICETTARIO = [
         'Insalata mista nel piatto, riso e cannellini sopra. EVO 10g, limone, grana 30g a scaglie.',
       ],
       tip: 'Basilico fresco, cannellini, limone e scaglie di grana — una combinazione che non ti aspetti.' },
+    { type: 'PRE-ALLENAMENTO', name: 'Yogurt greco, frutta e cereali',
+      ing: 'Yogurt greco 0% 150g · Frutta fresca o fruttino 150g · Cereali da colazione 50g', steps: [], tip: '60 minuti prima dell\'allenamento' },
     { type: 'CENA', name: 'Nido di pure con uova al tegamino e zucchine alla scapece',
       ing: 'Pure Pfanni 180g polvere · Uova 4 medie · Zucchine 200g · EVO 10g',
       steps: [
@@ -120,6 +170,10 @@ var RICETTARIO = [
       tip: 'La scapece (aceto+aglio+basilico) sulle zucchine le rende acide e profumate — spaccano col pure dolce.' },
   ]},
   { day: 'DOMENICA', schema: 'PRANZO 150g · CENA 150g', kcal: 3200, color: '#58ADF7', meals: [
+    { type: 'COLAZIONE', name: 'Pane integrale, burro di arachidi e marmellata',
+      ing: 'Pane integrale 100g (4 fette) · Burro di arachidi 30g · Marmellata 30g (1 cucchiaio)', steps: [], tip: '' },
+    { type: 'SPUNTINO MATTUTINO', name: 'Cracker, frutta e whey',
+      ing: 'Cracker non salati in superficie 30g · Frutta fresca o fruttino 150g · Whey protein isolate 40g', steps: [], tip: '' },
     { type: 'PRANZO', name: 'Pasta integrale con tofu croccante e peperonata veloce',
       ing: 'Pasta integrale 150g · Tofu 200g · Peperoni+pomodori 200g · Grana 30g · EVO 10g',
       steps: [
@@ -129,6 +183,8 @@ var RICETTARIO = [
         'Scola pasta (tieni acqua), versa in peperonata, 1 min. Tofu sopra. EVO 10g, grana 30g grattugiato, basilico.',
       ],
       tip: 'Il tofu va asciugato e cotto a fuoco ALTO senza muoverlo. La soia a fine cottura lo glassa.' },
+    { type: 'SPUNTINO POMERIDIANO', name: 'Yogurt greco, frutta e cereali',
+      ing: 'Yogurt greco 0% 150g · Frutta fresca o fruttino 150g · Cereali da colazione 50g', steps: [], tip: '' },
     { type: 'CENA', name: 'Polenta 5 cereali con fiocchi di latte all\'erba cipollina e lattughino',
       ing: 'Polenta 5 cereali 150g · Fiocchi di latte 200g · Lattughino 200g · EVO 10g',
       steps: [
@@ -177,13 +233,13 @@ function RicettarioPage() {
       {/* ── HERO ── */}
       <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 24, marginBottom: 12 }}>
         <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.18em', marginBottom: 8 }}>
-          // MEAL_PLAN · PIANO ZAPPITELLI 19/10/2026 · S{ATHLETE.programWeek} · {totalMeals} PASTI
+          // MEAL_PLAN · PIANO ZAPPITELLI 19/10/2026 · S{ATHLETE.programWeek} · {totalMeals} PASTI E SPUNTINI
         </div>
         <div className="display r-display-hero" style={{ fontSize: 'var(--display-hero)', lineHeight: 0.9 }}>
           RICET<span style={{ color: 'var(--accent)' }}>TARIO.</span>
         </div>
         <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 10 }}>
-          3200 Kcal tutti i giorni · Primo 150/180/200g · Grana 30g a pranzo · Solo 10g EVO per pasto
+          Giornata completa: colazione, spuntini, pre/post allenamento, pranzo e cena · 3200 Kcal · Primo 150/180/200g · Grana 30g a pranzo · 10g EVO per pasto
         </div>
       </div>
 
@@ -247,6 +303,24 @@ function RicettarioPage() {
 
             {/* Meals — visible when expanded */}
             {isOpen && day.meals.map(function(meal, mi) {
+              if (!meal.steps || meal.steps.length === 0) {
+                return (
+                  <div key={mi} style={{
+                    padding: '10px 16px',
+                    borderBottom: mi < day.meals.length - 1 ? '1px solid var(--line)' : 'none',
+                    display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap'
+                  }}>
+                    <span style={{
+                      display: 'inline-block', padding: '3px 10px', fontSize: 10,
+                      letterSpacing: '0.14em', fontFamily: 'var(--mono)',
+                      border: '1px solid var(--line-2)', color: 'var(--fg-3)', whiteSpace: 'nowrap'
+                    }}>{meal.type}</span>
+                    <span style={{ fontSize: 13, color: 'var(--fg)', fontFamily: 'var(--sans)' }}>{meal.name}</span>
+                    <span style={{ fontSize: 12, color: 'var(--fg-2)', fontFamily: 'var(--mono)', letterSpacing: '0.02em' }}>{meal.ing}</span>
+                    {meal.tip ? <span style={{ fontSize: 11, color: 'var(--accent-2)', fontStyle: 'italic' }}>{meal.tip}</span> : null}
+                  </div>
+                );
+              }
               return (
                 <div key={mi} style={{
                   padding: '16px 16px 20px',
