@@ -235,6 +235,7 @@ const PLICO = [
   { d: '2025-12-15', kg: 99.7,  bf: 7.27,  somma: 34.5 },
   { d: '2026-03-06', kg: 98.6,  bf: 6.29,  somma: 29.5 },
   { d: '2026-06-09', kg: 98.5,  bf: 7.28,  somma: 30.0 },
+  { d: '2026-10-12', kg: 97.7,  bf: 5.59,  somma: 25.0 },
 ];
 
 // BODY_TREND_START — generato da scripts/garmin_corpo.py, non editare a mano
@@ -372,15 +373,15 @@ const BODY_TREND = {
     { d: '2026-10-06', kg7: 96.53, bf7: 23.50, n: 6, nbf: 6, dKg: 0.89, dBf: 0.85, sKg: 'salita', sBf: 'salita', z7: 7.21, za: '2026-06-09' },
     { d: '2026-10-07', kg7: 96.63, bf7: 23.70, n: 6, nbf: 6, dKg: 0.28, dBf: 0.90, sKg: 'stabile', sBf: 'salita', z7: 7.27, za: '2026-06-09' },
     { d: '2026-10-09', kg7: 96.37, bf7: 23.72, n: 6, nbf: 6, dKg: -0.07, dBf: 0.77, sKg: 'stabile', sBf: 'salita', z7: 7.28, za: '2026-06-09' },
-    { d: '2026-10-12', kg7: 96.83, bf7: 23.60, n: 6, nbf: 6, dKg: 0.47, dBf: 0.30, sKg: 'salita', sBf: 'salita', z7: 7.24, za: '2026-06-09' },
-    { d: '2026-10-13', kg7: 96.94, bf7: 23.60, n: 5, nbf: 5, dKg: 0.42, dBf: 0.10, sKg: 'salita', sBf: 'stabile', z7: 7.24, za: '2026-06-09' },
-    { d: '2026-10-14', kg7: 96.51, bf7: 23.37, n: 6, nbf: 6, dKg: -0.11, dBf: -0.33, sKg: 'stabile', sBf: 'discesa', z7: 7.17, za: '2026-06-09' },
-    { d: '2026-10-15', kg7: 96.51, bf7: 23.36, n: 7, nbf: 7, dKg: -0.11, dBf: -0.34, sKg: 'stabile', sBf: 'discesa', z7: 7.17, za: '2026-06-09' },
-    { d: '2026-10-16', kg7: 96.86, bf7: 23.41, n: 7, nbf: 7, dKg: 0.49, dBf: -0.30, sKg: 'salita', sBf: 'discesa', z7: 7.19, za: '2026-06-09' },
-    { d: '2026-10-17', kg7: 96.88, bf7: 23.49, n: 8, nbf: 8, dKg: 0.51, dBf: -0.23, sKg: 'salita', sBf: 'stabile', z7: 7.21, za: '2026-06-09' },
-    { d: '2026-10-18', kg7: 96.96, bf7: 23.51, n: 9, nbf: 9, dKg: 0.72, dBf: -0.01, sKg: 'salita', sBf: 'stabile', z7: 7.22, za: '2026-06-09' },
-    { d: '2026-10-19', kg7: 96.67, bf7: 23.50, n: 8, nbf: 8, dKg: -0.16, dBf: -0.10, sKg: 'stabile', sBf: 'stabile', z7: 7.21, za: '2026-06-09' },
-    { d: '2026-10-22', kg7: 96.90, bf7: 23.82, n: 5, nbf: 5, dKg: 0.39, dBf: 0.46, sKg: 'salita', sBf: 'salita', z7: 7.31, za: '2026-06-09' },
+    { d: '2026-10-12', kg7: 96.83, bf7: 23.60, n: 6, nbf: 6, dKg: 0.47, dBf: 0.30, sKg: 'salita', sBf: 'salita', z7: 5.61, za: '2026-10-12' },
+    { d: '2026-10-13', kg7: 96.94, bf7: 23.60, n: 5, nbf: 5, dKg: 0.42, dBf: 0.10, sKg: 'salita', sBf: 'stabile', z7: 5.61, za: '2026-10-12' },
+    { d: '2026-10-14', kg7: 96.51, bf7: 23.37, n: 6, nbf: 6, dKg: -0.11, dBf: -0.33, sKg: 'stabile', sBf: 'discesa', z7: 5.56, za: '2026-10-12' },
+    { d: '2026-10-15', kg7: 96.51, bf7: 23.36, n: 7, nbf: 7, dKg: -0.11, dBf: -0.34, sKg: 'stabile', sBf: 'discesa', z7: 5.56, za: '2026-10-12' },
+    { d: '2026-10-16', kg7: 96.86, bf7: 23.41, n: 7, nbf: 7, dKg: 0.49, dBf: -0.30, sKg: 'salita', sBf: 'discesa', z7: 5.57, za: '2026-10-12' },
+    { d: '2026-10-17', kg7: 96.88, bf7: 23.49, n: 8, nbf: 8, dKg: 0.51, dBf: -0.23, sKg: 'salita', sBf: 'stabile', z7: 5.59, za: '2026-10-12' },
+    { d: '2026-10-18', kg7: 96.96, bf7: 23.51, n: 9, nbf: 9, dKg: 0.72, dBf: -0.01, sKg: 'salita', sBf: 'stabile', z7: 5.59, za: '2026-10-12' },
+    { d: '2026-10-19', kg7: 96.67, bf7: 23.50, n: 8, nbf: 8, dKg: -0.16, dBf: -0.10, sKg: 'stabile', sBf: 'stabile', z7: 5.59, za: '2026-10-12' },
+    { d: '2026-10-22', kg7: 96.90, bf7: 23.82, n: 5, nbf: 5, dKg: 0.39, dBf: 0.46, sKg: 'salita', sBf: 'salita', z7: 5.67, za: '2026-10-12' },
   ],
 };
 
@@ -391,6 +392,7 @@ const ZAP_ANCORE = [
   { d: '2025-12-15', plico: 7.27, bil: 24.00, n: 2, k: 0.3029, da: '2025-09-15', stima: 8.58, err: 1.31 },
   { d: '2026-03-06', plico: 6.29, bil: 24.05, n: 4, k: 0.2615, da: '2025-12-15', stima: 7.29, err: 1.00 },
   { d: '2026-06-09', plico: 7.28, bil: 23.72, n: 5, k: 0.3069, da: '2026-03-06', stima: 6.20, err: -1.08 },
+  { d: '2026-10-12', plico: 5.59, bil: 23.50, n: 15, k: 0.2379, da: '2026-06-09', stima: 7.21, err: 1.62 },
 ];
 // BODY_TREND_END
 
