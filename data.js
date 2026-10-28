@@ -12490,8 +12490,8 @@ const BADGES = {
   month: 'OTTOBRE 2026',
   monthStart: '2026-10-01',
   monthEnd: '2026-10-31',
-  updated: '27 OTT 2026',
-  snapshot: "27 OTT 2026, letto da Garmin via API",
+  updated: '28 OTT 2026',
+  snapshot: "28 OTT 2026, letto da Garmin via API",
   sources: ['dati/sfide_iscritte_20261001.webarchive', 'dati/badges_ricevuti_20261001.webarchive', 'dati/badges_disponibili_20261001.webarchive'],
   items: [
     // ══════════════════════ SETTEMBRE — ultimo giorno (chiude MER 30) ══════════════════════
@@ -12599,9 +12599,9 @@ const BADGES = {
     { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
   ],
   stages: [
-    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '137,4 / 300,0 km - 46% (garmin, 27/10)',
+    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '138,8 / 300,0 km - 46% (garmin, 28/10)',
       why: 'Tre mesi per 300 km: con 80-90 km al mese si chiude con un mese di anticipo, come nello stage 3.' },
-    { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '2,8 / 148,1 km — 2% (garmin, 27/10)',
+    { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '2,8 / 148,1 km - 2% (garmin, 28/10)',
       why: 'Lo stage 3 è finito all\'11%. Le 15 ore al mese del badge Camminata a ottobre valgono circa 50 km: tre mesi così e lo stage si chiude.' },
   ],
   // Catalogo permanente Garmin (badgehero.io, 17/08/2026): SOLO da prendere + ripetibili, con requisito e suggerimento.
