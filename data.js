@@ -12602,7 +12602,7 @@ const BADGES = {
   // Badge permanenti cacciabili: compaiono in agenda su ogni giorno del tipo giusto finche' non presi
   hunts: [
     { n: 'Passi: giorno a rischio', cat: 'STEP', whenNoRun: true, kinds: [], codes: [], req: 'Giorno senza corsa: l\'allenamento non produce passi, i 10.000 vanno fatti a parte', win: 'finche\' la serie 10KADAY e\' aperta \u00b7 4 pt', go: 'Servono 7-7,5 km di camminata dedicata (anche spezzata): \u00e8 in giorni come questo che la serie si \u00e8 rotta due volte, il 03/09 e il 16/09.' },
-    { n: 'Vogatore normale', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '10 attivita\' di canottaggio REGISTRATE COL GARMIN — le row sincronizzate dal logbook C2 non contano (test 07/09)', win: 'permanente \u00b7 1 pt', go: 'A ogni row avvia anche il Garmin (profilo Vogatore, anche collegato al PM5): 10 sedute e il badge arriva da solo. Poi 21,1 km = Mezza (2 pt), gia\' fatta il 24/01 ma solo-PM5.' },
+    { n: 'Mezza maratona di canottaggio', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '21,0975 km in una sola attivita\' di canottaggio REGISTRATA COL GARMIN (requisito dal nome del badge) · la mezza del 24/01 era solo sul PM5 e non conta', win: 'permanente \u00b7 2 pt', go: 'Vogatore normale preso il 28/10/2026. Restano la Mezza (2 pt) e la Maratona di canottaggio, 42,195 km in una sola attivita\' (4 pt): servono una seduta lunga sul RowErg con il Garmin avviato.' },
   ],
   stages: [
     { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '143,1 / 300,0 km - 48% (garmin, 29/10)',
