@@ -29,7 +29,7 @@ const ATHLETE = {
   bodyFat: 23.13,
   bodyDate: '01 NOV 2026',
   hrmax: 177,
-  programWeek: 44,
+  programWeek: 45,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -2274,10 +2274,7 @@ const WEEK_ARCHIVE = [
     ]
   },
   ]},
-];
-
-// Current week — S44 (26 OTT - 01 NOV 2026)
-const WEEK = [
+  { id: 'S44', label: 'S44 · 26 OTT → 01 NOV', range: '26 OTT → 01 NOV 2026', programWeek: 44, days: [
   { day: "LUN", date: "26", title: "REST", sub: "Riposo", load: "REST", duration: 0, kind: "rest", done: true,
     blocks: [
     ]
@@ -2313,12 +2310,12 @@ const WEEK = [
   },
   { day: "SAB", date: "31", title: "FORZA A O B + LUNGES 5×4 @60 + METCON AMRAP 26' · H 15: RUN 3 KM + 15 KM @5'45\" ALLA MANDRIA", sub: "Virgin · ginocchio dolorante: deadlift + glutei · ginocchio a posto: back squat + RDL · ore 15 corsa lunga al Parco La Mandria con PacePro", load: "HEAVY + METCON + Z3", duration: 167, kind: "strength", done: false,
     blocks: [
-      { code: "PESI", t: "Opzione A, ginocchio dolorante · Deadlift · 5×3 @132,5 kg · Virgin", d: "Mattia, blocco A · W2 · nota del coach: stesso carico, una serie in più, ogni ripetizione resettata da terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Risc. 5", "1", "120", "20+20+10"], ["Lavoro 1-5", "3", "132,5", "20+20+10+5+1,25"]], "foot": "recupero completo fra le serie di lavoro"} },
-      { code: "PESI", t: "Opzione A, ginocchio dolorante · Glutei · 3×8 · Virgin", d: "Lo stesso esercizio del 27/10, al posto del Romanian Deadlift (deciso con Mattia)", dur: "3 serie" },
-      { code: "PESI", t: "Opzione B, ginocchio a posto · Back Squat · 5×5 @80 kg · Virgin", d: "Mattia, blocco A di martedì 27 · W2 · nota del coach: stesso carico, una serie in più, l'ultima a RPE 7 o 8 · da segnare: carico e RPE dell'ultima serie", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5", "20", "solo bilanciere"], ["Risc. 2", "5", "40", "10"], ["Risc. 3", "3", "55", "10+5+2,5"], ["Risc. 4", "2", "70", "20+5"], ["Lavoro 1-5", "5", "80", "20+10"]], "foot": "recupero 2′30″"} },
-      { code: "PESI", t: "Opzione B, ginocchio a posto · Romanian Deadlift · 4×8-10 @70 kg · Virgin", d: "Mattia, blocco B di martedì 27 · RIR 2 · doppia progressione: quando chiudi tutte le serie a 10, la volta dopo sali di carico", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "6", "40", "10"], ["Risc. 3", "4", "55", "10+5+2,5"], ["Lavoro 1-4", "8-10 (RIR 2)", "70", "20+5"]], "foot": "recupero 2′"} },
-      { code: "PESI", t: "Barbell Reverse Lunge · 5×4 per lato @60 kg · Virgin", d: "Mattia, blocco B · nota del coach: stesso carico, una serie in più, ginocchio dietro che sfiora terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-5", "4 per lato", "60", "10+10"]], "foot": "recupero 2′"} },
-      { code: "METCON", t: "Metcon · AMRAP 26′", d: "Mattia, blocco C · un solo blocco lungo invece di due · target 10 giri (circa 310 kJ, 199 W) · lo swing riprende lo stacco della mattina · da segnare: i giri", dur: "26′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Sled push", "4×7 m", "208 kg (carico gara concordato)"], ["2", "Kettlebell swing", "15", "24 kg"], ["3", "Burpee broad jump", "4×7 m", "corpo libero"]], "foot": "target 10 giri in 26′"} },
+      { code: "PESI", t: "Opzione A, ginocchio dolorante · Deadlift · 5×3 @132,5 kg · Virgin", d: "Mattia, blocco A · W2 · nota del coach: stesso carico, una serie in più, ogni ripetizione resettata da terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Risc. 5", "1", "120", "20+20+10"], ["Lavoro 1-5", "3", "132,5", "20+20+10+5+1,25"]], "foot": "recupero completo fra le serie di lavoro"}, result: 'SALTATO', skipped: true },
+      { code: "PESI", t: "Opzione A, ginocchio dolorante · Glutei · 3×8 · Virgin", d: "Lo stesso esercizio del 27/10, al posto del Romanian Deadlift (deciso con Mattia)", dur: "3 serie", result: 'SALTATO', skipped: true },
+      { code: "PESI", t: "Opzione B, ginocchio a posto · Back Squat · 5×5 @80 kg · Virgin", d: "Mattia, blocco A di martedì 27 · W2 · nota del coach: stesso carico, una serie in più, l'ultima a RPE 7 o 8 · da segnare: carico e RPE dell'ultima serie", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5", "20", "solo bilanciere"], ["Risc. 2", "5", "40", "10"], ["Risc. 3", "3", "55", "10+5+2,5"], ["Risc. 4", "2", "70", "20+5"], ["Lavoro 1-5", "5", "80", "20+10"]], "foot": "recupero 2′30″"}, result: 'SALTATO', skipped: true },
+      { code: "PESI", t: "Opzione B, ginocchio a posto · Romanian Deadlift · 4×8-10 @70 kg · Virgin", d: "Mattia, blocco B di martedì 27 · RIR 2 · doppia progressione: quando chiudi tutte le serie a 10, la volta dopo sali di carico", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "6", "40", "10"], ["Risc. 3", "4", "55", "10+5+2,5"], ["Lavoro 1-4", "8-10 (RIR 2)", "70", "20+5"]], "foot": "recupero 2′"}, result: 'SALTATO', skipped: true },
+      { code: "PESI", t: "Barbell Reverse Lunge · 5×4 per lato @60 kg · Virgin", d: "Mattia, blocco B · nota del coach: stesso carico, una serie in più, ginocchio dietro che sfiora terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-5", "4 per lato", "60", "10+10"]], "foot": "recupero 2′"}, result: 'SALTATO', skipped: true },
+      { code: "METCON", t: "Metcon · AMRAP 26′", d: "Mattia, blocco C · un solo blocco lungo invece di due · target 10 giri (circa 310 kJ, 199 W) · lo swing riprende lo stacco della mattina · da segnare: i giri", dur: "26′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Sled push", "4×7 m", "208 kg (carico gara concordato)"], ["2", "Kettlebell swing", "15", "24 kg"], ["3", "Burpee broad jump", "4×7 m", "corpo libero"]], "foot": "target 10 giri in 26′"}, result: 'SALTATO', skipped: true },
       { code: "RUN", t: "Run · 3 km risc + 15 km @5′45″/km · Parco La Mandria 15:00 · con PacePro", d: "Gabriele, prescritto per venerdì 30 in pista Nebiolo, spostato a sabato alla Mandria · 18 km totali · PacePro a ottobre, oggi ultimo giorno · requisiti minimi del badge: corsa all'aperto con GPS di almeno 1 km, guidata da una strategia PacePro caricata sull'orologio e avviata con la corsa, chiusa entro ±15″/km dal passo obiettivo · il tapis non vale", dur: "~106′", table: {"h": ["Fase", "Distanza", "Passo"], "r": [["Riscaldamento", "3 km", "-"], ["Medio", "15 km", "5′45″/km · 10,43 km/h · 86:15"]], "foot": "stima ~106′: riscaldamento al passo del 16/10 (6:28.4/km, 3 km = 19:25) + 86:15"}, result: "3.000,98 m di riscaldamento in 19:06.2 @6:21.9/km + 15.010,32 m in 1:25:17.6 @5:40.9/km · FC 138,20 max 150 · km fra 5:35.0 e 5:46.0 · drift EF −1,22% · EF 0,0764 · Parco La Mandria, 15:06-16:51" },
     ]
   },
@@ -2326,6 +2323,62 @@ const WEEK = [
     blocks: [
     ]
   },
+  ]},
+];
+
+// Current week - S45 (02 - 08 NOV 2026)
+const WEEK = [
+  { day: "LUN", date: "02", title: "SKI Z2 48' + UPPER 12' · SERA: RUN 35' @5'50\" + 5' @5'20\"", sub: "Mattina a casa SkiErg e manubri · sera run, tapis o fuori", load: "Z2", duration: 100, kind: "ski", done: false,
+    blocks: [
+      { code: "SKI", t: "Ski · 48′ @Z2 · mattina a casa", d: "Mattia, blocco A · 4 volte 9′ a colpi lunghi + 3′ a colpi corti · nota del coach: uso i tuoi colpi, l'efficienza è uguale quindi le alterno; quattro minuti in più del previsto, sempre zona due", dur: "48′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "9′", "lunghi, 27-28 al minuto", "Z2"], ["", "3′", "corti, 42-45 al minuto", "Z2"]], "foot": "48′ · Z2 = 120-135 bpm"} },
+      { code: "PESI", t: "Upper body · ogni 2′ · subito dopo lo ski · a casa", d: "Mattia, blocco B · nota del coach: sei giri come da accordo, stessi carichi, le ultime pulite", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Curl bicipiti", "10", "2×14 kg"], ["B", "French press su panca", "10", "10 kg"]], "foot": "6 giri · 60 ripetizioni per esercizio"} },
+      { code: "RUN", t: "Run · 35′ @5′50″/km + 5′ @5′20″/km · sera, tapis o fuori", d: "Gabriele", dur: "40′", table: {"h": ["Fase", "Quanto", "Passo", "Tapis"], "r": [["Corsa", "35′ · 6,00 km", "5′50″/km", "10,29 km/h"], ["Finale", "5′ · 0,94 km", "5′20″/km", "11,25 km/h"]], "foot": "totale 6,94 km in 40′"} },
+    ]
+  },
+  { day: "MAR", date: "03", title: "BACK SQUAT 5×3 @87,5 + RDL 4×8-10 @72,5 + POSTURAL · SERA: RUN 2×8' @4'45\"", sub: "Virgin 11:30 con Mattia, Postural 13:15 · sera run", load: "HEAVY + Z4", duration: 159, kind: "strength", done: false,
+    blocks: [
+      { code: "PESI", t: "Back Squat · 5×3 @87,5 kg · Virgin 11:30 con Mattia · se il ginocchio sta bene", d: "Mattia, blocco A · W3 · nota del coach: settimana in cui saliamo, triple a 87,5; decidiamo insieme sul ginocchio prima di partire · se il ginocchio fa male: glutei alla macchina 4×8 a 80 sulla scala della macchina · da segnare: carico e RPE dell'ultima serie", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5", "20", "solo bilanciere"], ["Risc. 2", "5", "40", "10"], ["Risc. 3", "3", "55", "10+5+2,5"], ["Risc. 4", "2", "70", "20+5"], ["Lavoro 1-5", "3", "87,5", "20+10+2,5+1,25"]], "foot": "recupero 2′30″"} },
+      { code: "PESI", t: "Romanian Deadlift · 4×8-10 @72,5 kg · Virgin", d: "Mattia, blocco B · RIR 2 · doppia progressione: quando chiudi tutte le serie a 10, la volta dopo sali di carico", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "6", "40", "10"], ["Risc. 3", "4", "55", "10+5+2,5"], ["Lavoro 1-4", "8-10 (RIR 2)", "72,5", "20+5+1,25"]], "foot": "recupero 2′"} },
+      { code: "MOB", t: "Postural · Virgin 13:15", d: "Mattia, blocco C · mobilità alla fine del lavoro, per scaricare", dur: "45′" },
+      { code: "RUN", t: "Run · 20′ risc + 2×(8′ @4′45″/km r4′ corsetta) + 10′ defaticamento · sera", d: "Gabriele", dur: "54′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "20′", "-", "-"], ["Ripetuta 1", "8′ · 1,68 km", "4′45″/km", "12,63 km/h"], ["Corsetta", "4′", "-", "-"], ["Ripetuta 2", "8′ · 1,68 km", "4′45″/km", "12,63 km/h"], ["Corsetta", "4′", "-", "-"], ["Defaticamento", "10′", "-", "-"]], "foot": "54′ · circa 9,3 km con riscaldamento, corsette e defaticamento al passo del riscaldamento del 31/10 (6:21.9/km)"} },
+    ]
+  },
+  { day: "MER", date: "04", title: "SKI Z2 64' + POSTURAL + FLEXABILITY · SERA: SOTTO-SOGLIA ROW 4×7' + METCON + UPPER", sub: "Virgin 08:15, Postural 9:30, Flexability 10:30 · sera a casa", load: "Z2 + Z3 + METCON", duration: 233, kind: "hyrox", done: false,
+    blocks: [
+      { code: "SKI", t: "Ski · 64′ @Z2 · Virgin 08:15", d: "Mattia, blocco A · 8 volte 6′ @Z2 bassa + 2′ @Z2 alta · nota del coach: quattro minuti in più e la Z2 alta più spesso; se la FC deriva, rallenta", dur: "64′", table: {"h": ["Tratto", "Durata", "Zona"], "r": [["8 volte", "6′", "Z2 bassa"], ["", "2′", "Z2 alta"]], "foot": "64′ · Z2 = 120-135 bpm"} },
+      { code: "MOB", t: "Postural · Virgin 9:30", d: "Mattia, blocco B · subito dopo lo ski, nella stessa uscita", dur: "45′" },
+      { code: "MOB", t: "Flexability · Virgin 10:30 · spostata da sabato 07", d: "Mattia, blocco D di sabato · classe di Cecilia Migliosi (palinsesto Virgin del 04/10) · ultima cosa della mattina, per scaricare", dur: "45′" },
+      { code: "ROW", t: "Row · Sotto-soglia 4×7′ @1:58.0/500 (test +12″) · r1′ attivo · sera a casa", d: "Mattia, blocco C · RowErg · nota del coach: split tutti sotto 1:58, ottimo; quattro blocchi da sette minuti, stesso ritmo; leggi bene il numero di blocchi · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media", dur: "49′", table: {"h": ["Fase", "Durata", "Split", "Recupero"], "r": [["Riscaldamento", "10′", "Z1 → Z2", "-"], ["Prove", "3×20″", "1:46.0 sul monitor (ritmo del test)", "40″ facili"], ["Rep 1", "7′", "1:58.0 sul monitor · 213,2 W · ~1.780 m", "1′ attivo"], ["Rep 2", "7′", "1:58.0 sul monitor · 213,2 W · ~1.780 m", "1′ attivo"], ["Rep 3", "7′", "1:58.0 sul monitor · 213,2 W · ~1.780 m", "1′ attivo"], ["Rep 4", "7′", "1:58.0 sul monitor · 213,2 W · ~1.780 m", "-"], ["Defaticamento", "5′", "Z1", "-"]], "foot": "4 ripetute · test del 19/10: 7:03.9 @1:45.975/500 · +12″ = 1:57.975/500"} },
+      { code: "METCON", t: "Metcon · 7 giri ogni 2′30″ · sera a casa, dopo il row", d: "Mattia, blocco D · la versione compromised run proposta da Federico · il tempo che avanza è recupero · target giro sotto 1′38″, la settimana scorsa 1′38″-1′43″ · nota del coach: corsa a 4:00 e manubri da 11,5 come avevi proposto · da segnare: quanto resta all'ultimo giro", dur: "17′30″", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa al tapis", "200 m @4′00″/km · 15,0 km/h", "-"], ["2", "Affondi con manubri", "16", "2×11,5 kg"]], "foot": "partenze dei giri: 0:00 · 2:30 · 5:00 · 7:30 · 10:00 · 12:30 · 15:00 · fine a 17:30"} },
+      { code: "PESI", t: "Upper body · ogni 2′ · a casa, dopo il metcon", d: "Mattia, blocco E · nota del coach: sei giri come gli altri blocchi, cinque secondi in più sull'hollow", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Single arm row superslow", "12 per lato", "28 kg"], ["B", "Hollow hold", "45″", "corpo libero"]], "foot": "6 giri"} },
+    ]
+  },
+  { day: "GIO", date: "05", title: "DEADLIFT 5×2 @142,5 + LUNGES 4×3 @65 + METCON 10 GIRI · PISTA CON GABRY H 15", sub: "Virgin la mattina, i lavori di sabato 07 spostati per il workshop · pista dalle 14:30", load: "HEAVY + METCON + QUALITÀ", duration: 208, kind: "strength", done: false,
+    blocks: [
+      { code: "PESI", t: "Deadlift · 5×2 @142,5 kg · Virgin, mattina · spostato da sabato 07", d: "Mattia, blocco A di sabato · W3 · nota del coach: hai già fatto 4×4 a 132,5, quindi saliamo; doppie a 142,5; ogni ripetizione resettata da terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Risc. 5", "1", "130", "20+20+10+5"], ["Lavoro 1-5", "2", "142,5", "20+20+20+1,25"]], "foot": "recupero completo fra le serie di lavoro"} },
+      { code: "PESI", t: "Barbell Reverse Lunge · 4×3 per lato @65 kg · Virgin · spostato da sabato 07", d: "Mattia, blocco B di sabato · nota del coach: meno ripetizioni, cinque chili in più; ginocchio dietro che sfiora terra", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-4", "3 per lato", "65", "20+2,5"]], "foot": "recupero 2′"} },
+      { code: "METCON", t: "Metcon · 10 giri a tempo, cap 28′ · Virgin · spostato da sabato 07", d: "Mattia, blocco C di sabato · circa 325 kJ, target 24′45″, cioè 2′28,5″ a giro · nota del coach: stessi giri, ora conta il tempo; lo swing riprende lo stacco della mattina · da segnare: tempo finale", dur: "≤28′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Sled push", "4×7 m", "208 kg (carico gara concordato)"], ["2", "Kettlebell swing", "15", "24 kg"], ["3", "Burpee broad jump", "4×7 m", "corpo libero"]], "foot": "10 giri · target 24′45″ · cap 28′"} },
+      { code: "RUN", t: "Corsa · Pista con Gabry · 15:00", d: "Lavoro di qualità con Gabriele in presenza · riscaldamento dalle 14:30 · il lavoro lo dà lui in pista", dur: "~90′" },
+    ]
+  },
+  { day: "VEN", date: "06", title: "ROW Z2 48' + UPPER 12' · PISTA H 17: 3 KM + 7 KM @5'45\"", sub: "Mattina a casa RowErg e manubri · Pista Nebiolo h 17", load: "Z2", duration: 119, kind: "run", done: false,
+    blocks: [
+      { code: "ROW", t: "Row · 48′ @Z2 · mattina a casa", d: "Mattia, blocco A · RowErg · negative split: nei secondi 24′ due colpi al minuto in più, stessa FC · nota del coach: altri quattro minuti, seconda metà un filo più sciolta, ritmo da conversazione", dur: "48′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["1", "24′", "ritmo base", "Z2"], ["2", "24′", "+2 colpi/min", "Z2, stessa FC"]], "foot": "48′ in Z2 · 120-135 bpm"} },
+      { code: "PESI", t: "Upper body · ogni 2′ · subito dopo il row · a casa", d: "Mattia, blocco B · le spinte restano fuori finché la spalla dà fastidio · nota del coach: sei giri e un'alzata in più, bacino fermo", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Alzate laterali", "15", "2×10 kg"], ["B", "Renegade row senza push-up", "12 per lato", "2×24 kg"]], "foot": "6 giri"} },
+      { code: "RUN", t: "Run · 3 km risc + 7 km @5′45″/km · Pista Nebiolo 17:00", d: "Gabriele · 10 km totali", dur: "~59′", table: {"h": ["Fase", "Distanza", "Giri corsia 1", "Passo"], "r": [["Riscaldamento", "3 km", "7 e mezzo", "-"], ["Medio", "7 km", "17 e mezzo", "5′45″/km = 2:18 a giro · 10,43 km/h · 40:15"]], "foot": "stima ~59′: riscaldamento al passo del 31/10 (6:21.9/km, 3 km = 19:05.7) + 40:15"} },
+    ]
+  },
+  { day: "SAB", date: "07", title: "WORKSHOP & TEST HYBRID RACE · CARMAGNOLA 9:30", sub: "Karma Tribe ASD, via Sommariva 35/4, Carmagnola · 9:30-12:30", load: "TEST", duration: 180, kind: "hyrox", done: false,
+    blocks: [
+      { code: "HYROX", t: "Hybrid Race · Workshop & Test #1 · Carmagnola 9:30-12:30", d: "Workshop su corsa, passo, transizioni, tecnica e gestione dello sforzo, poi test individuale: 800 m di corsa alternati a stazioni funzionali, con classifica (hybridracevenice.com) · i lavori di Mattia del sabato sono spostati a mercoledì e giovedì", dur: "180′" },
+    ]
+  },
+  { day: "DOM", date: "08", title: "CEDAS WE RUN · MIRAFIORI 9:00", sub: "Piazzale Stellantis &You, piazza Cattaneo 9 · pettorali sabato 7 dalle 10:00 alle 18:30 o domenica dalle 7:30 alle 8:40", load: "RACE", duration: 60, kind: "race", done: false,
+    blocks: [
+      { code: "RACE", t: "Gara · Cedas We Run · Mirafiori 9:00", d: "10 km FIDAL competitiva (certificato agonistico valido fino al 27/10/2027), 10 km e 5 km non competitive · circa 2,5 km sulla pista prove Mirafiori, arrivo della 10 km dentro lo stabilimento · iscrizione online 20 € fino al 6/11, poi 25 €", dur: "~60′" },
+    ]
+  },
+
 ];
 
 
@@ -2360,11 +2413,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424];
-const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104];
-const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424, 0];
+const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104, 0];
+const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // dal 26/10/2026 il volume totale conta solo rower, ski e run: bici e nuoto fuori (Steelman lasciato, richiesta di Federico)
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i]).toFixed(1));
 
