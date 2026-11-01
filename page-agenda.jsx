@@ -47,7 +47,7 @@ function AgendaPage() {
     if ((!isCurrentWeek && !isNextWeek) || !BADGES) return [];
     var d = isoForDay(w.date);
     var codes = (w.blocks || []).map(function (b) { return b.code; });
-    var hasRun = codes.indexOf('RUN') >= 0 || w.kind === 'run';
+    var hasRun = codes.indexOf('RUN') >= 0 || codes.indexOf('RACE') >= 0 || codes.indexOf('HYROX') >= 0 || w.kind === 'run' || w.kind === 'race';
     var wins = BADGES.items.filter(function (b) {
       if (!(b.d1 && b.d2 && d >= b.d1 && d <= b.d2)) return false;
       if (b.st === 'off' || b.st === 'done' || b.st === 'miss') return false;
