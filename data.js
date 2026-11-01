@@ -2372,7 +2372,7 @@ const WEEK = [
   },
   { day: "DOM", date: "08", title: "CEDAS WE RUN 10 KM · MIRAFIORI 9:00", sub: "Piazzale Stellantis &You, piazza Cattaneo 9 · pettorali sabato 7 dalle 10:00 alle 18:30 o domenica dalle 7:30 alle 8:40", load: "RACE", duration: 60, kind: "race", done: false,
     blocks: [
-      { code: "RACE", t: "Gara · Cedas We Run 10 km competitiva · Mirafiori 9:00", d: "10 km FIDAL, tempo limite 1h40′ · certificato agonistico valido fino al 27/10/2027 · circa 2,5 km sulla pista prove Mirafiori, arrivo dentro lo stabilimento · iscrizione online 20 € fino al 6/11, poi 25 €", dur: "~60′" },
+      { code: "RACE", t: "Gara · Cedas We Run 10 km competitiva · Mirafiori 9:00", d: "10 km FIDAL, tempo limite 1h40′ · certificato agonistico valido fino al 27/10/2027 · circa 2,5 km sulla pista prove Mirafiori, arrivo dentro lo stabilimento · iscritto", dur: "~60′" },
     ]
   },
 
