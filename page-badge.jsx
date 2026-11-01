@@ -74,7 +74,7 @@ function BadgePage() {
             BADGE<span style={{ color: 'var(--accent)' }}>.</span>
           </div>
           <div style={{ fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.12em', marginTop: 12 }}>
-            {BADGES.items.length} SFIDE ISCRITTE · {daysLeft} GIORNI ALLA CHIUSURA · PROGRESSI AL {BADGES.snapshot}
+            {BADGES.items.filter((x) => x.d1 && x.d2).length} SFIDE DEL MESE · {daysLeft} GIORNI ALLA CHIUSURA · PROGRESSI AL {BADGES.snapshot}
           </div>
         </div>
         <div style={{ border: '1px solid var(--line)', background: 'var(--bg-2)', padding: 20 }}>
@@ -114,7 +114,7 @@ function BadgePage() {
                       fontSize: 8, letterSpacing: '0.04em', lineHeight: 1.25,
                       color: CAT[b.cat] || 'var(--fg-2)', borderLeft: '2px solid ' + (CAT[b.cat] || 'var(--fg-2)'),
                       paddingLeft: 3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0,
-                    }}>{b.en.replace('August ', '').replace('Weekend ', 'WE ')}</div>
+                    }}>{b.en.replace(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\b ?/g, '').replace('Weekend ', 'WE ').trim()}</div>
                   ))}
                 </div>
               </div>
