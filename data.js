@@ -2306,7 +2306,7 @@ const WEEK = [
       { code: "RUN", t: "Run · 20′ risc + 30′ in pendenza 8% @144 bpm + 10′ defaticamento · venerdì sera a casa, spostata da martedì 27", d: "Gabriele · nel blocco in pendenza la velocità si regola per stare a 144 bpm (Z3), il passo è la conseguenza · sul tapis la pendenza va impostata a mano: il MyRun non la trasmette", dur: "60′", table: {"h": ["Fase", "Durata", "Pendenza", "Target"], "r": [["Riscaldamento", "20′", "-", "-"], ["Blocco", "30′", "8%", "144 bpm · rif. 13/10 a 8%: 8:25.3/km (7,12 km/h) a FC 142,6"], ["Defaticamento", "10′", "-", "-"]], "foot": "60′ totali"}, result: "15′ con la pendenza a crescere + 29:44.3 all'8% + 5′ di defaticamento allo 0,5% (dichiarato da Federico) · blocco 3.543,46 m @8:23.6/km, FC 145,1 max 151 sul target 144 · tapis da 7,771 a 6,637 km/h · drift EF −9,59% · D+ 322 m dal MyRun · 6.412,86 m in 50:02 · tapis MyRun, 15:29-16:19" },
     ]
   },
-  { day: "SAB", date: "31", title: "FORZA A O B + LUNGES 5×4 @60 + METCON AMRAP 26' + FLEXABILITY · H 15: RUN 3 KM + 15 KM @5'45\" ALLA MANDRIA", sub: "Virgin · ginocchio dolorante: deadlift + glutei · ginocchio a posto: back squat + RDL · Flexability 11:30 per ultima · ore 15 corsa lunga al Parco La Mandria con PacePro", load: "HEAVY + METCON + Z3", duration: 212, kind: "strength", done: false,
+  { day: "SAB", date: "31", title: "FORZA A O B + LUNGES 5×4 @60 + METCON AMRAP 26' · H 15: RUN 3 KM + 15 KM @5'45\" ALLA MANDRIA", sub: "Virgin · ginocchio dolorante: deadlift + glutei · ginocchio a posto: back squat + RDL · ore 15 corsa lunga al Parco La Mandria con PacePro", load: "HEAVY + METCON + Z3", duration: 167, kind: "strength", done: false,
     blocks: [
       { code: "PESI", t: "Opzione A, ginocchio dolorante · Deadlift · 5×3 @132,5 kg · Virgin", d: "Mattia, blocco A · W2 · nota del coach: stesso carico, una serie in più, ogni ripetizione resettata da terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Risc. 5", "1", "120", "20+20+10"], ["Lavoro 1-5", "3", "132,5", "20+20+10+5+1,25"]], "foot": "recupero completo fra le serie di lavoro"} },
       { code: "PESI", t: "Opzione A, ginocchio dolorante · Glutei · 3×8 · Virgin", d: "Lo stesso esercizio del 27/10, al posto del Romanian Deadlift (deciso con Mattia)", dur: "3 serie" },
@@ -2314,7 +2314,6 @@ const WEEK = [
       { code: "PESI", t: "Opzione B, ginocchio a posto · Romanian Deadlift · 4×8-10 @70 kg · Virgin", d: "Mattia, blocco B di martedì 27 · RIR 2 · doppia progressione: quando chiudi tutte le serie a 10, la volta dopo sali di carico", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "6", "40", "10"], ["Risc. 3", "4", "55", "10+5+2,5"], ["Lavoro 1-4", "8-10 (RIR 2)", "70", "20+5"]], "foot": "recupero 2′"} },
       { code: "PESI", t: "Barbell Reverse Lunge · 5×4 per lato @60 kg · Virgin", d: "Mattia, blocco B · nota del coach: stesso carico, una serie in più, ginocchio dietro che sfiora terra", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-5", "4 per lato", "60", "10+10"]], "foot": "recupero 2′"} },
       { code: "METCON", t: "Metcon · AMRAP 26′", d: "Mattia, blocco C · un solo blocco lungo invece di due · target 10 giri (circa 310 kJ, 199 W) · lo swing riprende lo stacco della mattina · da segnare: i giri", dur: "26′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Sled push", "4×7 m", "208 kg (carico gara concordato)"], ["2", "Kettlebell swing", "15", "24 kg"], ["3", "Burpee broad jump", "4×7 m", "corpo libero"]], "foot": "target 10 giri in 26′"} },
-      { code: "MOB", t: "Flexability · Virgin 11:30", d: "Mattia, blocco D · classe di Asia Pellegrino, da prenotare · ultima cosa della mattina, per scaricare", dur: "45′" },
       { code: "RUN", t: "Run · 3 km risc + 15 km @5′45″/km · Parco La Mandria 15:00 · con PacePro", d: "Gabriele, prescritto per venerdì 30 in pista Nebiolo, spostato a sabato alla Mandria · 18 km totali · PacePro a ottobre, oggi ultimo giorno · requisiti minimi del badge: corsa all'aperto con GPS di almeno 1 km, guidata da una strategia PacePro caricata sull'orologio e avviata con la corsa, chiusa entro ±15″/km dal passo obiettivo · il tapis non vale", dur: "~106′", table: {"h": ["Fase", "Distanza", "Passo"], "r": [["Riscaldamento", "3 km", "-"], ["Medio", "15 km", "5′45″/km · 10,43 km/h · 86:15"]], "foot": "stima ~106′: riscaldamento al passo del 16/10 (6:28.4/km, 3 km = 19:25) + 86:15"}, result: "3.000,98 m di riscaldamento in 19:06.2 @6:21.9/km + 15.010,32 m in 1:25:17.6 @5:40.9/km · FC 138,20 max 150 · km fra 5:35.0 e 5:46.0 · drift EF −1,22% · EF 0,0764 · Parco La Mandria, 15:06-16:51" },
     ]
   },
@@ -12567,7 +12566,7 @@ const BADGES = {
       why: 'Due settimane per 100.000 passi: servono 7.150 al giorno, metà della tua media.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Camminata a ottobre', en: 'October Time to Walk', cat: 'WALK', tipo: 'cumulativa',
-      req: '15 ORE di attività Camminata registrate nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '1h 07m / 15h — 7% (garmin, 30/10)',
+      req: '15 ORE di attività Camminata registrate nel mese · 1 pt', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'miss', prog: '1h 52m / 15h - 12% a finestra chiusa (garmin, 01/11)',
       why: 'A settembre il gemello a chilometri ha chiuso a ZERO: cammini tanto ma non avvii mai l\'attività. Quindici ore sono circa mezz\'ora al giorno registrata.',
       go: 'Una regola sola: premi start quando cammini. Da solo alimenta anche Camminata 2026 P4 e Più fatti e meno parole 4.' },
     { n: 'Weekend di camminata di ottobre', en: 'October Weekend Walking', cat: 'WALK', tipo: 'singola',
@@ -12579,7 +12578,7 @@ const BADGES = {
       why: 'Preso quasi ogni mese: dipende dal girone in cui capiti, non dallo sforzo.',
       go: 'Preso il 19/10 con la settimanale dei passi.' },
     { n: 'October Outdoors', en: 'October Outdoors (members)', cat: 'WALK', tipo: 'cumulativa',
-      req: 'Serie members-only: classifica su 70 partecipanti · parte GIO 01', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'auto', prog: '27° di 70 (webarchive, 05/10)',
+      req: 'Serie members-only: classifica su 70 partecipanti · parte GIO 01', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'miss', prog: 'nessun badge ricevuto a finestra chiusa (garmin, 01/11)',
       why: 'Serie members-only sui passi: la posizione dipende dal girone, non dallo sforzo.',
       go: 'Si accumula da sola: nessuna azione dedicata.' },
     // ── BICI
@@ -12594,7 +12593,7 @@ const BADGES = {
       why: 'Mancato tre mesi di fila. Al 14/10 sei a 3h 43m, il 93% del totale.',
       go: 'Preso il 17/10 con la forza in Virgin. Alimenta anche Forza estrema 5.' },
     { n: 'Guerriero di ottobre', en: 'October Warrior', cat: 'MISC', tipo: 'cumulativa',
-      req: '4 ore di yoga nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'plan', prog: '43m / 4h — 18% (garmin, 30/10)',
+      req: '4 ore di yoga nel mese · 2 punti', win: 'tutto ottobre', d1: '2026-10-01', d2: '2026-10-31', st: 'miss', prog: '43m / 4h - 18% a finestra chiusa (garmin, 01/11)',
       why: 'Dal 13/10 la mobilità entra in routine: 2-3 ore a settimana (Postural, Flexability). Le classi registrate come Yoga contano qui: la Postural del 13/10 vale i primi 43m.',
       go: 'Mancano 3h 16m 59s entro il 31/10: dal 29 al 31 sono 3 giorni, circa 66 minuti di yoga registrato al giorno. Avvia ogni classe di mobilità come Yoga sull\'orologio. Alimenta anche Zen Master 5.' },
     { n: 'Sfida Oakley Meta Performance', en: 'Oakley Meta Performance Challenge', cat: 'MISC', tipo: 'cumulativa',
