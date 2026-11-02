@@ -25,7 +25,7 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 95.90,
+  weight: 95.89,
   bodyFat: 23.04,
   bodyDate: '02 NOV 2026',
   hrmax: 177,
@@ -219,6 +219,7 @@ const BODY = [
   { d: '2026-10-31', h: '18:01', kg: 95.3, g: 95279, bf: 23.0, mm: 37.3, h2o: 56.2 },
   { d: '2026-11-01', h: '19:56', kg: 95.3, g: 95339, bf: 23.0, mm: 37.4, h2o: 56.2 },
   { d: '2026-11-02', h: '11:01', kg: 94.9, g: 94879, bf: 22.5, mm: 37.3, h2o: 56.5 },
+  { d: '2026-11-02', h: '19:12', kg: 95.8, g: 95839, bf: 23.0, mm: 37.5, h2o: 56.2 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -395,7 +396,7 @@ const BODY_TREND = {
     { d: '2026-10-30', kg7: 96.45, bf7: 23.20, n: 4, nbf: 4, dKg: -0.25, dBf: -0.60, sKg: 'stabile', sBf: 'discesa', z7: 5.52, za: '2026-10-12' },
     { d: '2026-10-31', kg7: 96.22, bf7: 23.16, n: 5, nbf: 5, dKg: -0.39, dBf: -0.57, sKg: 'discesa', sBf: 'discesa', z7: 5.51, za: '2026-10-12' },
     { d: '2026-11-01', kg7: 96.07, bf7: 23.13, n: 6, nbf: 6, dKg: -0.03, dBf: -0.62, sKg: 'stabile', sBf: 'discesa', z7: 5.50, za: '2026-10-12' },
-    { d: '2026-11-02', kg7: 95.90, bf7: 23.04, n: 7, nbf: 7, dKg: -0.65, dBf: -1.16, sKg: 'discesa', sBf: 'discesa', z7: 5.48, za: '2026-10-12' },
+    { d: '2026-11-02', kg7: 95.89, bf7: 23.04, n: 8, nbf: 8, dKg: -0.66, dBf: -1.16, sKg: 'discesa', sBf: 'discesa', z7: 5.48, za: '2026-10-12' },
   ],
 };
 
