@@ -29,7 +29,7 @@ const ATHLETE = {
   bodyFat: 23.16,
   bodyDate: '08 NOV 2026',
   hrmax: 177,
-  programWeek: 45,
+  programWeek: 46,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -2341,10 +2341,7 @@ const WEEK_ARCHIVE = [
     ]
   },
   ]},
-];
-
-// Current week - S45 (02 - 08 NOV 2026)
-const WEEK = [
+  { id: 'S45', label: 'S45 · 02 NOV → 08 NOV', range: '02 NOV → 08 NOV 2026', programWeek: 45, days: [
   { day: "LUN", date: "02", title: "SKI Z2 48' · RUN 35' @5'50\" + 5' @5'20\"", sub: "Run la mattina al tapis · SkiErg la sera a casa · upper spostato a martedì 03", load: "Z2", duration: 88, kind: "ski", done: true,
     blocks: [
       { code: "SKI", t: "Ski · 48′ @Z2 · a casa, la sera", d: "Mattia, blocco A · 4 volte 9′ a colpi lunghi + 3′ a colpi corti · nota del coach: uso i tuoi colpi, l'efficienza è uguale quindi le alterno; quattro minuti in più del previsto, sempre zona due", dur: "48′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "9′", "lunghi, 27-28 al minuto", "Z2"], ["", "3′", "corti, 42-45 al minuto", "Z2"]], "foot": "48′ · Z2 = 120-135 bpm"}, result: "10.690 m in 48:00 @2:14.7/500 · 143,2 W · DF 67 · lunghi 1.964 · 2.045 · 1.932 · 1.993 m a 27-29 colpi/min (134,7 · 152,1 · 128,2 · 140,8 W) · corti 712 · 687 · 684 · 680 m a 42-44 (173,3 · 155,7 · 153,6 · 151,0 W) · FC 115,86 max 126, Z2 al 36,26% · EF a regime lunghi 1,177, corti 1,241 · a pari watt lunghi 1,291 contro corti 1,213 · 18:13-19:01" },
@@ -2393,7 +2390,39 @@ const WEEK = [
       { code: "RACE", t: "Gara · Cedas We Run 10 km competitiva · Mirafiori 9:00", d: "10 km FIDAL, tempo limite 1h40′ · certificato agonistico valido fino al 27/10/2027 · circa 2,5 km sulla pista prove Mirafiori, arrivo dentro lo stabilimento · iscritto", dur: "~60′", result: "10.068,91 m in 44:19.316 @4:24.1/km, tempo ufficiale del Garmin · 112° assoluto, 100° uomini, 10° SM45 · obiettivo 4:15/km · primi 5 km 21:40.855, secondi 22:20.393 · FC 159,75 max 166 · drift EF −5,51% · 09:01-09:45" },
     ]
   },
+  ]},
+];
 
+// Current week - S46 (09 - 15 NOV 2026)
+const WEEK = [
+  { day: "LUN", date: "09", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "MAR", date: "10", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "MER", date: "11", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "GIO", date: "12", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "VEN", date: "13", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "SAB", date: "14", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "DOM", date: "15", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
 ];
 
 
@@ -2401,7 +2430,7 @@ const WEEK = [
 
 
 
-// Prossima settimana — S35: programmi non ancora arrivati
+// Prossima settimana: programmi non ancora arrivati
 const NEXTWEEK = [];
 
 
@@ -2430,11 +2459,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424, 19.456];
-const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104, 25.674];
-const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 37.89981];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424, 19.456, 0];
+const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104, 25.674, 0];
+const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 37.89981, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // dal 26/10/2026 il volume totale conta solo rower, ski e run: bici e nuoto fuori (Steelman lasciato, richiesta di Federico)
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i]).toFixed(1));
 
