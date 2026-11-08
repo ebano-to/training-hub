@@ -133,6 +133,7 @@ function DashboardPage() {
                 </div>
                 {pb.sub && <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 4, letterSpacing: '0.08em', opacity: 0.7 }}>{pb.sub}</div>}
                 <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: pb.sub ? 2 : 6, letterSpacing: '0.1em' }}>{pb.date}{pb.delta ? ' · ' + pb.delta : ''}</div>
+                {pb.href && <a href={pb.href} style={{ display: 'inline-block', marginTop: 8, fontSize: 10, color: 'var(--accent)', letterSpacing: '0.15em', textDecoration: 'none', border: '1px solid var(--accent)', padding: '4px 8px' }}>ANALISI DELLA GARA →</a>}
               </div>
             );
           })}
