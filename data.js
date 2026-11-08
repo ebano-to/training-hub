@@ -2427,9 +2427,9 @@ const WEEK = [
       { code: "HJ", t: "Düsseldorf · turno head judge 6:15-15:00, poi rientro", d: "Hyrox Düsseldorf, Rotational Pull · rientro in Italia la sera", dur: "giornata" },
     ]
   },
-  { day: "DOM", date: "15", title: "ALLENAMENTO IBRIDO · CASELLE", sub: "Gabriele", load: "HYROX", duration: 0, kind: "hyrox", done: false,
+  { day: "DOM", date: "15", title: "REST", sub: "Riposo dopo Düsseldorf", load: "REST", duration: 0, kind: "rest", done: false,
     blocks: [
-      { code: "HYROX", t: "Allenamento ibrido a Caselle", d: "Gabriele", dur: "-" },
+      { code: "HYROX", t: "Allenamento ibrido a Caselle", d: "Gabriele", dur: "-", result: "SALTATO", skipped: true },
     ]
   },
 ];
