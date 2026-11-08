@@ -2429,7 +2429,6 @@ const WEEK = [
   },
   { day: "DOM", date: "15", title: "REST", sub: "Riposo dopo Düsseldorf", load: "REST", duration: 0, kind: "rest", done: false,
     blocks: [
-      { code: "HYROX", t: "Allenamento ibrido a Caselle", d: "Gabriele", dur: "-", result: "SALTATO", skipped: true },
     ]
   },
 ];
