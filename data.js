@@ -2395,32 +2395,41 @@ const WEEK_ARCHIVE = [
 
 // Current week - S46 (09 - 15 NOV 2026)
 const WEEK = [
-  { day: "LUN", date: "09", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "LUN", date: "09", title: "RUN 10' + 40' @5'40\"", sub: "Gabriele · Mattia in arrivo", load: "Z2", duration: 50, kind: "run", done: false,
     blocks: [
+      { code: "RUN", t: "Run · 10′ risc + 40′ @5′40″/km", d: "Gabriele · tapis o fuori", dur: "50′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "40′ · 7,06 km", "5′40″/km", "10,59 km/h"]], "foot": "50′ · circa 8,6 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} },
     ]
   },
-  { day: "MAR", date: "10", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "MAR", date: "10", title: "RUN 10' + 50' @5'30\"", sub: "Gabriele · Mattia in arrivo", load: "Z2", duration: 60, kind: "run", done: false,
     blocks: [
+      { code: "RUN", t: "Run · 10′ risc + 50′ @5′30″/km", d: "Gabriele · tapis o fuori", dur: "60′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "50′ · 9,09 km", "5′30″/km", "10,91 km/h"]], "foot": "60′ · circa 10,7 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} },
     ]
   },
-  { day: "MER", date: "11", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "MER", date: "11", title: "DÜSSELDORF · VOLO + TURNO HJ 14-22", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: false,
     blocks: [
+      { code: "HJ", t: "Düsseldorf · volo e turno head judge 14:00-22:00", d: "Hyrox Düsseldorf, Rotational Pull · check-in in hotel", dur: "giornata" },
     ]
   },
-  { day: "GIO", date: "12", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "GIO", date: "12", title: "DÜSSELDORF · HJ MATTINA · RUN POMERIGGIO", sub: "Hyrox Düsseldorf · lavoro di corsa da Gabri", load: "QUALITÀ", duration: 60, kind: "run", done: false,
     blocks: [
+      { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina" },
+      { code: "RUN", t: "Run · Düsseldorf, pomeriggio · al posto della pista con Gabry delle 15:00", d: "Gabriele · il lavoro lo chiede Federico a Gabri", dur: "~60′" },
     ]
   },
-  { day: "VEN", date: "13", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "VEN", date: "13", title: "DÜSSELDORF · HJ MATTINA · RUN 3 KM + 12 KM @5'40\"", sub: "Hyrox Düsseldorf · corsa il pomeriggio", load: "Z2", duration: 87, kind: "run", done: false,
     blocks: [
+      { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina" },
+      { code: "RUN", t: "Run · 3 km risc + 12 km @5′40″/km · Düsseldorf, pomeriggio", d: "Gabriele · 15 km totali", dur: "~87′", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "3 km", "-", "19:05.7 al passo del 31/10 (6:21.9/km)"], ["Medio", "12 km", "5′40″/km · 10,59 km/h", "68:00"]], "foot": "stima 87:05.7"} },
     ]
   },
-  { day: "SAB", date: "14", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "SAB", date: "14", title: "DÜSSELDORF · TURNO HJ 6:15-15 + RIENTRO", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: false,
     blocks: [
+      { code: "HJ", t: "Düsseldorf · turno head judge 6:15-15:00, poi rientro", d: "Hyrox Düsseldorf, Rotational Pull · rientro in Italia la sera", dur: "giornata" },
     ]
   },
-  { day: "DOM", date: "15", title: "PROGRAMMA IN ARRIVO", sub: "Mattia e Gabriele", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "DOM", date: "15", title: "ALLENAMENTO IBRIDO · CASELLE", sub: "Gabriele", load: "HYROX", duration: 0, kind: "hyrox", done: false,
     blocks: [
+      { code: "HYROX", t: "Allenamento ibrido a Caselle", d: "Gabriele", dur: "-" },
     ]
   },
 ];
