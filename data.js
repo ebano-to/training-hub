@@ -2442,10 +2442,11 @@ const WEEK = [
       { code: "HJ", t: "Düsseldorf · turno head judge 6:15-15:00, poi rientro", d: "Hyrox Düsseldorf, Rotational Pull · rientro in Italia la sera", dur: "giornata" },
     ]
   },
-  { day: "DOM", date: "15", title: "SKI Z2 68' + ROW Z2 52' · A CASA", sub: "Gli erg di mercoledì e venerdì, dopo il rientro da Düsseldorf", load: "Z2", duration: 120, kind: "ski", done: false,
+  { day: "DOM", date: "15", title: "SKI Z2 68' + ROW Z2 52' + METCON 7 GIRI · A CASA", sub: "Gli erg di mercoledì e venerdì, poi il metcon di mercoledì, dopo il rientro da Düsseldorf", load: "Z2 + METCON", duration: 138, kind: "ski", done: false,
     blocks: [
       { code: "SKI", t: "Ski · 68′ @Z2 · a casa · spostato da mercoledì 11", d: "Mattia, blocco A di mercoledì · 4 volte 13′ @Z2 bassa + 4′ @Z2 alta · nota del coach: quattro minuti in più e blocchi più lunghi, la Z2 alta dura il doppio; se la FC deriva, rallenta", dur: "68′", table: {"h": ["Tratto", "Durata", "Zona"], "r": [["4 volte", "13′", "Z2 bassa"], ["", "4′", "Z2 alta"]], "foot": "68′ · Z2 = 120-135 bpm"} },
       { code: "ROW", t: "Row · 52′ @Z2 · a casa · spostato da venerdì 13", d: "Mattia, blocco A di venerdì · RowErg · 4 volte 10′ a 20-22 colpi al minuto + 3′ a 24-26, stessa FC · nota del coach: cambi colpi ogni tredici minuti, la FC non deve salire nei tratti veloci; ritmo da conversazione", dur: "52′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "10′", "20-22 al minuto", "Z2"], ["", "3′", "24-26 al minuto", "Z2, stessa FC"]], "foot": "52′ · Z2 = 120-135 bpm"} },
+      { code: "METCON", t: "Metcon · ogni 2′30″ × 7 · tapis 200 m + 16 affondi · a casa, dopo gli erg · spostato da mercoledì 11", d: "Mattia, blocco D di mercoledì · il tempo che avanza è recupero · target: tutti i giri sotto 1′40″, gli ultimi due sotto 1′34″ (circa +5%) · nota del coach: parti già sotto 1′40″ dal primo giro e tieni gli affondi a 42″ come negli ultimi; ferma l'orologio a fine giro, non a fine lavoro", dur: "17′30″", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa al tapis", "200 m @3′55″/km · 15,32 km/h · 47″", "-"], ["2", "Affondi con due manubri", "16", "2×11,5 kg"]], "foot": "7 giri · partenze 0:00 · 2:30 · 5:00 · 7:30 · 10:00 · 12:30 · 15:00 · fine a 17:30"} },
     ]
   },
 ];
