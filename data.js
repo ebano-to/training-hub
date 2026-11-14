@@ -12837,7 +12837,7 @@ const BADGES = {
       why: 'Preso a settembre, chiuso il 28.',
       go: 'Nessuna azione: si accumula con le corse in programma.' },
     { n: 'Weekend 10K di novembre', en: 'November Weekend 10K', cat: 'RUN', tipo: 'singola',
-      req: 'Una singola corsa da 10 km fra il 13 e il 15 novembre · 2 punti', win: '13 → 15 NOV', d1: '2026-11-13', d2: '2026-11-15', runOnly: true, st: 'plan', prog: '0 (garmin, 14/11)',
+      req: 'Una singola corsa da 10 km fra il 13 e il 15 novembre · 2 punti', win: '13 → 15 NOV', d1: '2026-11-13', d2: '2026-11-15', runOnly: true, st: 'done', prog: 'preso il 13/11 col fartlek di Düsseldorf (garmin, 14/11)',
       why: 'A ottobre preso col medio da 15 km del 16. Vale solo una corsa unica da almeno 10 km, non la somma di riscaldamento e lavoro registrati separati.',
       go: 'Finestra VEN 13 → DOM 15: serve una corsa registrata come attività unica da almeno 10 km.' },
     { n: 'Weekend 5K di novembre', en: 'November Weekend 5K', cat: 'RUN', tipo: 'singola',
