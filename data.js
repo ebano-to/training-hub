@@ -2419,24 +2419,23 @@ const WEEK = [
       { code: "PESI", t: "Upper body · ogni 2′ · single arm row + hollow · da mercoledì 11, da decidere con Mattia", d: "Mattia, blocco E di mercoledì · nota del coach: la scorsa settimana l'hai saltato, quindi lo riprendiamo uguale", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Single arm row superslow", "12 per lato", "28 kg"], ["B", "Hollow hold", "45″", "corpo libero"]], "foot": "6 giri"} , result: "SALTATO", skipped: true },
       { code: "PESI", t: "Upper body · ogni 2′ · alzate laterali + renegade row · da venerdì 13, da decidere con Mattia", d: "Mattia, blocco B di venerdì · nota del coach: le spinte restano fuori finché la spalla dà fastidio; sei giri e un'alzata in più anche questa settimana; bacino fermo sul renegade", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Alzate laterali", "16", "2×10 kg"], ["B", "Renegade row senza push-up", "12 per lato", "2×24 kg"]], "foot": "6 giri"} , result: "SALTATO", skipped: true },
       { code: "METCON", t: "Metcon · 5 giri a tempo, cap 30′ · Virgin 10:30 · spostato da sabato 14", d: "Mattia, blocco C di sabato · nota del coach: meno giri ma entra la corsa, circa +5% di lavoro totale · target 26′30″", dur: "≤30′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa", "400 m", "-"], ["2", "Sled push", "4×7 m", "208 kg (carico gara concordato)"], ["3", "Kettlebell swing", "20", "24 kg"], ["4", "Burpee broad jump", "4×7 m", "corpo libero"]], "foot": "5 giri · target 26′30″ · cap 30′"} , result: "Fatto dentro la classe Hyrox: AMRAP 40′ a coppie" },
-      { code: "RUN", t: "Run · 10′ risc + 50′ @5′20″/km + 5′ @4′50″/km · sera a casa al tapis", d: "Gabriele, piano aggiornato del 09/11", dur: "65′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "50′ · 9,375 km", "5′20″/km", "11,25 km/h"], ["Finale", "5′ · 1,034 km", "4′50″/km", "12,41 km/h"]], "foot": "65′ · circa 11,98 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} },
+      { code: "RUN", t: "Run · 10′ risc + 50′ @5′20″/km + 5′ @4′50″/km · sera a casa al tapis", d: "Gabriele, piano aggiornato del 09/11", dur: "65′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "50′ · 9,375 km", "5′20″/km", "11,25 km/h"], ["Finale", "5′ · 1,034 km", "4′50″/km", "12,41 km/h"]], "foot": "65′ · circa 11,98 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} , result: "SALTATO", skipped: true },
     ]
   },
-  { day: "MER", date: "11", title: "DÜSSELDORF · VOLO + TURNO HJ 14-22", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "MER", date: "11", title: "DÜSSELDORF · VOLO + TURNO HJ 14-22", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: true,
     blocks: [
-      { code: "HJ", t: "Düsseldorf · volo e turno head judge 14:00-22:00", d: "Hyrox Düsseldorf, Rotational Pull · check-in in hotel", dur: "giornata" },
+      { code: "HJ", t: "Düsseldorf · volo e turno head judge 14:00-22:00", d: "Hyrox Düsseldorf, Rotational Pull · check-in in hotel", dur: "giornata", result: "Fatto" },
     ]
   },
-  { day: "GIO", date: "12", title: "DÜSSELDORF · HJ MATTINA", sub: "Hyrox Düsseldorf · la corsa è passata a venerdì 13", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "GIO", date: "12", title: "DÜSSELDORF · HJ MATTINA", sub: "Hyrox Düsseldorf · la corsa è passata a venerdì 13", load: "—", duration: 0, kind: "rest", done: true,
     blocks: [
-      { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina" },
+      { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina", result: "Fatto" },
     ]
   },
   { day: "VEN", date: "13", title: "DÜSSELDORF · HJ MATTINA · RUN FARTLEK 3 GIRI", sub: "Hyrox Düsseldorf · corsa il pomeriggio: il lavoro di giovedì 12", load: "QUALITÀ", duration: 80, kind: "run", done: false,
     blocks: [
       { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina" },
       { code: "RUN", t: "Run · riscaldamento + 3 giri da 14′ + 20′ defaticamento · Düsseldorf, pomeriggio · spostato da giovedì 12", d: "Gabriele, piano aggiornato del 09/11, al posto della pista · scaldati bene, poi 3 × (30″ forte + 30″ piano + 45″ forte + 45″ piano + 1′30″ forte + 2′ piano + 4′ @4′35″/km + 4′ @5′35″/km) + 20′ defaticamento", dur: "62′ + riscaldamento", table: {"h": ["Tratto", "Durata", "Passo"], "r": [["3 giri", "30″", "forte"], ["", "30″", "piano"], ["", "45″", "forte"], ["", "45″", "piano"], ["", "1′30″", "forte"], ["", "2′", "piano"], ["", "4′ · 0,873 km", "4′35″/km · 13,09 km/h"], ["", "4′ · 0,716 km", "5′35″/km · 10,75 km/h"], ["Defaticamento", "20′", "-"]], "foot": "giro 14′ · 3 giri 42′ + 20′ = 62′ più il riscaldamento · nei 4′ a passo 4,77 km in tutto"} , result: "2.664,8 · 2.609,2 · 2.523,3 m in 14:00 per giro · 4′ veloci @4:37.0 · 4:38.4 · 4:41.5/km, 4′ lenti @5:31.7 · 5:33.3 · 5:54.6/km · FC 4′ veloci 149 · 149 · 146 · 13.854,5 m in 1:19:53 · 17:01-18:21" },
-      { code: "RUN", t: "Run · 3 km risc + 12 km @5′30″/km · Düsseldorf, pomeriggio", d: "Gabriele, piano aggiornato del 09/11 · 15 km totali", dur: "~85′", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "3 km", "-", "19:05.7 al passo del 31/10 (6:21.9/km)"], ["Medio", "12 km", "5′30″/km · 10,91 km/h", "66:00"]], "foot": "stima 85:05.7"} },
     ]
   },
   { day: "SAB", date: "14", title: "DÜSSELDORF · TURNO HJ 6:15-15 + RIENTRO", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: false,
@@ -2444,11 +2443,12 @@ const WEEK = [
       { code: "HJ", t: "Düsseldorf · turno head judge 6:15-15:00, poi rientro", d: "Hyrox Düsseldorf, Rotational Pull · rientro in Italia la sera", dur: "giornata" },
     ]
   },
-  { day: "DOM", date: "15", title: "SKI Z2 68' + ROW Z2 52' + METCON 7 GIRI · A CASA", sub: "Gli erg di mercoledì e venerdì, poi il metcon di mercoledì, dopo il rientro da Düsseldorf", load: "Z2 + METCON", duration: 138, kind: "ski", done: false,
+  { day: "DOM", date: "15", title: "SKI Z2 68' + ROW Z2 52' + METCON 7 GIRI · A CASA · RUN 3 KM + 12 KM @5'30\"", sub: "Gli erg di mercoledì e venerdì, il metcon di mercoledì e la corsa di venerdì 13, dopo il rientro da Düsseldorf", load: "Z2 + METCON", duration: 223, kind: "ski", done: false,
     blocks: [
       { code: "SKI", t: "Ski · 68′ @Z2 · a casa · spostato da mercoledì 11", d: "Mattia, blocco A di mercoledì · 4 volte 13′ @Z2 bassa + 4′ @Z2 alta · nota del coach: quattro minuti in più e blocchi più lunghi, la Z2 alta dura il doppio; se la FC deriva, rallenta", dur: "68′", table: {"h": ["Tratto", "Durata", "Zona"], "r": [["4 volte", "13′", "Z2 bassa"], ["", "4′", "Z2 alta"]], "foot": "68′ · Z2 = 120-135 bpm"} },
       { code: "ROW", t: "Row · 52′ @Z2 · a casa · spostato da venerdì 13", d: "Mattia, blocco A di venerdì · RowErg · 4 volte 10′ a 20-22 colpi al minuto + 3′ a 24-26, stessa FC · nota del coach: cambi colpi ogni tredici minuti, la FC non deve salire nei tratti veloci; ritmo da conversazione", dur: "52′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "10′", "20-22 al minuto", "Z2"], ["", "3′", "24-26 al minuto", "Z2, stessa FC"]], "foot": "52′ · Z2 = 120-135 bpm"} },
       { code: "METCON", t: "Metcon · ogni 2′30″ × 7 · tapis 200 m + 16 affondi · a casa, dopo gli erg · spostato da mercoledì 11", d: "Mattia, blocco D di mercoledì · il tempo che avanza è recupero · target: tutti i giri sotto 1′40″, gli ultimi due sotto 1′34″ (circa +5%) · nota del coach: parti già sotto 1′40″ dal primo giro e tieni gli affondi a 42″ come negli ultimi; ferma l'orologio a fine giro, non a fine lavoro", dur: "17′30″", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa al tapis", "200 m @3′55″/km · 15,32 km/h · 47″", "-"], ["2", "Affondi con due manubri", "16", "2×11,5 kg"]], "foot": "7 giri · partenze 0:00 · 2:30 · 5:00 · 7:30 · 10:00 · 12:30 · 15:00 · fine a 17:30"} },
+      { code: "RUN", t: "Run · 3 km risc + 12 km @5′30″/km · spostata da venerdì 13", d: "Gabriele, piano aggiornato del 09/11 · 15 km totali", dur: "~85′", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "3 km", "-", "19:05.7 al passo del 31/10 (6:21.9/km)"], ["Medio", "12 km", "5′30″/km · 10,91 km/h", "66:00"]], "foot": "stima 85:05.7"} },
     ]
   },
 ];
