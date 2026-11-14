@@ -2432,15 +2432,15 @@ const WEEK = [
       { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina", result: "Fatto" },
     ]
   },
-  { day: "VEN", date: "13", title: "DÜSSELDORF · HJ MATTINA · RUN FARTLEK 3 GIRI", sub: "Hyrox Düsseldorf · corsa il pomeriggio: il lavoro di giovedì 12", load: "QUALITÀ", duration: 80, kind: "run", done: false,
+  { day: "VEN", date: "13", title: "DÜSSELDORF · HJ MATTINA · RUN FARTLEK 3 GIRI", sub: "Hyrox Düsseldorf · corsa il pomeriggio: il lavoro di giovedì 12", load: "QUALITÀ", duration: 80, kind: "run", done: true,
     blocks: [
-      { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina" },
+      { code: "HJ", t: "Düsseldorf · turno head judge, mattina", d: "Hyrox Düsseldorf, Rotational Pull", dur: "mattina", result: "Fatto" },
       { code: "RUN", t: "Run · riscaldamento + 3 giri da 14′ + 20′ defaticamento · Düsseldorf, pomeriggio · spostato da giovedì 12", d: "Gabriele, piano aggiornato del 09/11, al posto della pista · scaldati bene, poi 3 × (30″ forte + 30″ piano + 45″ forte + 45″ piano + 1′30″ forte + 2′ piano + 4′ @4′35″/km + 4′ @5′35″/km) + 20′ defaticamento", dur: "62′ + riscaldamento", table: {"h": ["Tratto", "Durata", "Passo"], "r": [["3 giri", "30″", "forte"], ["", "30″", "piano"], ["", "45″", "forte"], ["", "45″", "piano"], ["", "1′30″", "forte"], ["", "2′", "piano"], ["", "4′ · 0,873 km", "4′35″/km · 13,09 km/h"], ["", "4′ · 0,716 km", "5′35″/km · 10,75 km/h"], ["Defaticamento", "20′", "-"]], "foot": "giro 14′ · 3 giri 42′ + 20′ = 62′ più il riscaldamento · nei 4′ a passo 4,77 km in tutto"} , result: "2.664,8 · 2.609,2 · 2.523,3 m in 14:00 per giro · 4′ veloci @4:37.0 · 4:38.4 · 4:41.5/km, 4′ lenti @5:31.7 · 5:33.3 · 5:54.6/km · FC 4′ veloci 149 · 149 · 146 · 13.854,5 m in 1:19:53 · 17:01-18:21" },
     ]
   },
-  { day: "SAB", date: "14", title: "DÜSSELDORF · TURNO HJ 6:15-15 + RIENTRO", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "SAB", date: "14", title: "DÜSSELDORF · TURNO HJ 6:15-15 + RIENTRO", sub: "Hyrox Düsseldorf", load: "—", duration: 0, kind: "rest", done: true,
     blocks: [
-      { code: "HJ", t: "Düsseldorf · turno head judge 6:15-15:00, poi rientro", d: "Hyrox Düsseldorf, Rotational Pull · rientro in Italia la sera", dur: "giornata" },
+      { code: "HJ", t: "Düsseldorf · turno head judge 6:15-15:00, poi rientro", d: "Hyrox Düsseldorf, Rotational Pull · rientro in Italia la sera", dur: "giornata", result: "Fatto" },
     ]
   },
   { day: "DOM", date: "15", title: "SKI Z2 68' + ROW Z2 52' + METCON 7 GIRI · A CASA · RUN 3 KM + 12 KM @5'30\"", sub: "Gli erg di mercoledì e venerdì, il metcon di mercoledì e la corsa di venerdì 13, dopo il rientro da Düsseldorf", load: "Z2 + METCON", duration: 223, kind: "ski", done: false,
