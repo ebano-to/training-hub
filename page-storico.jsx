@@ -12,6 +12,13 @@ function StoricoPage() {
   const { HISTORY } = window.TRAINING;
   const [query, setQuery] = React.useState('');
   const [filter, setFilter] = React.useState('TUTTI');
+  // link diretto a una scheda (es. storico.html#gara-torino26 dalla dashboard): apre e porta alla scheda
+  React.useEffect(() => {
+    var id = decodeURIComponent((window.location.hash || '').slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el) setTimeout(function () { el.scrollIntoView({ block: 'start' }); }, 50);
+  }, []);
 
   const filtered = HISTORY.filter((h) => {
     if (filter !== 'TUTTI' && h.kind.toUpperCase() !== filter) return false;
@@ -178,7 +185,7 @@ function ErgTable({ d }) {
 
 function HistoryRow({ h, kindLabel, kindColor }) {
   const [hov, setHov] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(!!h.anchor && h.anchor === decodeURIComponent((window.location.hash || '').slice(1)));
   const isPb = h.pb === true || h.note.includes('PB');
   const isTest = (h.filone || '').indexOf('test') >= 0 || h.title.toLowerCase().indexOf('test') >= 0;
   const hasDetails = !!h.details;
@@ -190,7 +197,7 @@ function HistoryRow({ h, kindLabel, kindColor }) {
     : m.asc ? { l: 'DISLIVELLO', v: String(m.asc).indexOf('+') === 0 ? String(m.asc).replace(' m', '') : '+' + String(m.asc).replace(' m', ''), s: ' m' }
     : null);
   return (
-    <div style={{ borderBottom: '1px dashed var(--line-2)' }}>
+    <div id={h.anchor || undefined} style={{ borderBottom: '1px dashed var(--line-2)', scrollMarginTop: 16 }}>
       <div
         className="r-history-row"
         onClick={() => hasDetails && setOpen(!open)}

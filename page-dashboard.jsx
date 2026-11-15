@@ -322,7 +322,7 @@ function HyroxRaces() {
             var r = x.r, f = FMT[r.fmt];
             var h = Math.round((r.t / maxT) * 130);
             return (
-              <a key={r.id} href={r.href || 'storico.html'} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
+              <a key={r.id} href={r.href || (r.hist ? 'storico.html#' + r.hist : 'storico.html')} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
                 <div className="display tabular" style={{ fontSize: 12, color: f.c, marginBottom: 5, textAlign: 'center' }}>{r.time}</div>
                 {x.delta !== null && (
                   <div className="tabular" style={{ fontSize: 10, color: x.delta < 0 ? '#39E75F' : '#FF6B6B', marginBottom: 4, textAlign: 'center' }}>{mmss(x.delta)}</div>
@@ -357,7 +357,7 @@ function HyroxRaces() {
                   <tr key={r.id}>
                     <td style={td} className="tabular">{r.d}</td>
                     <td style={td}>
-                      {r.href ? <a href={r.href} style={{ color: 'var(--accent)' }}>{r.city}</a> : r.city}
+                      {(r.href || r.hist) ? <a href={r.href || ('storico.html#' + r.hist)} style={{ color: 'var(--accent)' }}>{r.city}</a> : r.city}
                       {r.partner && <span style={{ color: 'var(--fg-3)' }}>{' · ' + r.partner.split(' ')[0]}</span>}
                     </td>
                     <td style={Object.assign({}, td, { color: f.c, fontSize: 10, letterSpacing: '0.1em' })}>{f.label}</td>
