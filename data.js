@@ -29,7 +29,7 @@ const ATHLETE = {
   bodyFat: 23.54,
   bodyDate: '09 NOV 2026',
   hrmax: 177,
-  programWeek: 46,
+  programWeek: 47,
 };
 
 // Hyrox stations — PB from Hyrox Verona 2025 Singles (1:17:44 total)
@@ -2396,10 +2396,7 @@ const WEEK_ARCHIVE = [
     ]
   },
   ]},
-];
-
-// Current week - S46 (09 - 15 NOV 2026)
-const WEEK = [
+  { id: 'S46', label: 'S46 · 09 NOV → 15 NOV', range: '09 NOV → 15 NOV 2026', programWeek: 46, days: [
   { day: "LUN", date: "09", title: "ROW SOTTO-SOGLIA 4×8' · SERA: RUN 10' + 40' @5'40\"", sub: "Mattina a casa RowErg · sera corsa al tapis", load: "Z3 + Z2", duration: 101, kind: "row", done: true,
     blocks: [
       { code: "ROW", t: "Row · Sotto-soglia 4×8′ @1:58.0/500 · r1′ attivo · mattina a casa", d: "Mattia, blocco C di mercoledì · RowErg · nota del coach: tutte e quattro a 1:57.9, perfetto; stesso ritmo, un minuto in più per blocco; se l'ultima va in Z3 piena, scrivimelo · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media", dur: "51′", table: {"h": ["Fase", "Durata", "Split", "Recupero"], "r": [["Riscaldamento", "10′", "Z1 → Z2", "-"], ["Prove", "3×20″", "1:46.0 sul monitor (ritmo del test)", "40″ facili"], ["Rep 1", "8′", "1:58.0 sul monitor · 213,0 W · ~2.034 m", "1′ attivo"], ["Rep 2", "8′", "1:58.0 · 213,0 W · ~2.034 m", "1′ attivo"], ["Rep 3", "8′", "1:58.0 · 213,0 W · ~2.034 m", "1′ attivo"], ["Rep 4", "8′", "1:58.0 · 213,0 W · ~2.034 m", "-"], ["Defaticamento", "5′", "Z1", "-"]], "foot": "4 ripetute · 04/11: 4×7′ tutte a 1:57.9"} , result: "4×8′ a 1:57.99 · 1:57.88 · 1:57.82 · 1:57.82/500 (2.034 · 2.036 · 2.037 · 2.037 m) · 213,7 W · colpi 27 · 27 · 25 · 27 · FC 122,97 · 129,06 · 130,99 · 134,15 · EF −7,9% dalla prima alla quarta · 08:41-09:36" },
@@ -2445,10 +2442,43 @@ const WEEK = [
   },
   { day: "DOM", date: "15", title: "METCON 7 GIRI + RUN 3 KM + 12 KM @5'30\" · ROW Z2 52' SE AVANZA TEMPO", sub: "Prima il metcon a casa a gambe fresche, poi la corsa · il row solo se avanza tempo", load: "METCON + Z2", duration: 155, kind: "run", done: false,
     blocks: [
-      { code: "METCON", t: "Metcon · ogni 2′30″ × 7 · tapis 200 m + 16 affondi · a casa, per primo a gambe fresche · spostato da mercoledì 11", d: "Mattia, blocco D di mercoledì · il tempo che avanza è recupero · target: tutti i giri sotto 1′40″, gli ultimi due sotto 1′34″ (circa +5%) · nota del coach: parti già sotto 1′40″ dal primo giro e tieni gli affondi a 42″ come negli ultimi; ferma l'orologio a fine giro, non a fine lavoro", dur: "17′30″", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa al tapis", "200 m @3′55″/km · 15,32 km/h · 47″", "-"], ["2", "Affondi con due manubri", "16", "2×11,5 kg"]], "foot": "7 giri · partenze 0:00 · 2:30 · 5:00 · 7:30 · 10:00 · 12:30 · 15:00 · fine a 17:30"} },
-      { code: "RUN", t: "Run · 3 km risc + 12 km @5′30″/km · subito dopo il metcon · spostata da venerdì 13", d: "Gabriele, piano aggiornato del 09/11 · 15 km totali", dur: "~85′", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "3 km", "-", "19:05.7 al passo del 31/10 (6:21.9/km)"], ["Medio", "12 km", "5′30″/km · 10,91 km/h", "66:00"]], "foot": "stima 85:05.7"} },
-      { code: "ROW", t: "Row · 52′ @Z2 · a casa · spostato da venerdì 13 · facoltativo, solo se avanza tempo", d: "Mattia, blocco A di venerdì · RowErg · 4 volte 10′ a 20-22 colpi al minuto + 3′ a 24-26, stessa FC · nota del coach: cambi colpi ogni tredici minuti, la FC non deve salire nei tratti veloci; ritmo da conversazione", dur: "52′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "10′", "20-22 al minuto", "Z2"], ["", "3′", "24-26 al minuto", "Z2, stessa FC"]], "foot": "52′ · Z2 = 120-135 bpm"} },
+      { code: "METCON", t: "Metcon · ogni 2′30″ × 7 · tapis 200 m + 16 affondi · a casa, per primo a gambe fresche · spostato da mercoledì 11", d: "Mattia, blocco D di mercoledì · il tempo che avanza è recupero · target: tutti i giri sotto 1′40″, gli ultimi due sotto 1′34″ (circa +5%) · nota del coach: parti già sotto 1′40″ dal primo giro e tieni gli affondi a 42″ come negli ultimi; ferma l'orologio a fine giro, non a fine lavoro", dur: "17′30″", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa al tapis", "200 m @3′55″/km · 15,32 km/h · 47″", "-"], ["2", "Affondi con due manubri", "16", "2×11,5 kg"]], "foot": "7 giri · partenze 0:00 · 2:30 · 5:00 · 7:30 · 10:00 · 12:30 · 15:00 · fine a 17:30"} , result: "SALTATO", skipped: true },
+      { code: "RUN", t: "Run · 3 km risc + 12 km @5′30″/km · subito dopo il metcon · spostata da venerdì 13", d: "Gabriele, piano aggiornato del 09/11 · 15 km totali", dur: "~85′", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "3 km", "-", "19:05.7 al passo del 31/10 (6:21.9/km)"], ["Medio", "12 km", "5′30″/km · 10,91 km/h", "66:00"]], "foot": "stima 85:05.7"} , result: "SALTATO", skipped: true },
+      { code: "ROW", t: "Row · 52′ @Z2 · a casa · spostato da venerdì 13 · facoltativo, solo se avanza tempo", d: "Mattia, blocco A di venerdì · RowErg · 4 volte 10′ a 20-22 colpi al minuto + 3′ a 24-26, stessa FC · nota del coach: cambi colpi ogni tredici minuti, la FC non deve salire nei tratti veloci; ritmo da conversazione", dur: "52′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "10′", "20-22 al minuto", "Z2"], ["", "3′", "24-26 al minuto", "Z2, stessa FC"]], "foot": "52′ · Z2 = 120-135 bpm"} , result: "SALTATO", skipped: true },
       { code: "SKI", t: "Ski · 68′ @Z2 · a casa · spostato da mercoledì 11", d: "Mattia, blocco A di mercoledì · 4 volte 13′ @Z2 bassa + 4′ @Z2 alta · nota del coach: quattro minuti in più e blocchi più lunghi, la Z2 alta dura il doppio; se la FC deriva, rallenta", dur: "68′", table: {"h": ["Tratto", "Durata", "Zona"], "r": [["4 volte", "13′", "Z2 bassa"], ["", "4′", "Z2 alta"]], "foot": "68′ · Z2 = 120-135 bpm"} , result: "SALTATO", skipped: true },
+    ]
+  },
+  ]},
+];
+
+// Current week - S47 (16 - 22 NOV 2026)
+const WEEK = [
+  { day: "LUN", date: "16", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "MAR", date: "17", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "MER", date: "18", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "GIO", date: "19", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "VEN", date: "20", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "SAB", date: "21", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
+    ]
+  },
+  { day: "DOM", date: "22", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+    blocks: [
     ]
   },
 ];
@@ -2487,11 +2517,11 @@ const PBS = [
 ];
 
 // Volume per week (20 weeks, km) — real data
-const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424, 19.456, 11.559];
-const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104, 25.674, 11.629];
-const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 37.89981, 22.09346];
-const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424, 19.456, 11.559, 0];
+const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104, 25.674, 11.629, 0];
+const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 37.89981, 22.09346, 0];
+const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // dal 26/10/2026 il volume totale conta solo rower, ski e run: bici e nuoto fuori (Steelman lasciato, richiesta di Federico)
 const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i]).toFixed(1));
 
