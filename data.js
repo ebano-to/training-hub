@@ -2453,32 +2453,50 @@ const WEEK_ARCHIVE = [
 
 // Current week - S47 (16 - 22 NOV 2026)
 const WEEK = [
-  { day: "LUN", date: "16", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "LUN", date: "16", title: "SKI Z2 56' + UPPER 12' · SERA: RUN 2 KM + 15 KM @5'30\"", sub: "Mattina a casa SkiErg e manubri · sera corsa, tapis o fuori", load: "Z2 + MEDIO", duration: 163, kind: "ski", done: false,
     blocks: [
+      { code: "SKI", t: "Ski · 56′ @Z2 · mattina a casa", d: "Mattia, blocco A · 4 volte 12′ a colpi lunghi (27-29 al minuto) + 2′ a colpi corti (42-45 al minuto) · nota del coach: quattro minuti in più; con i lunghi sei stato in Z2 per l'85% del tempo, quindi restiamo lì e allunghiamo; i corti servono solo per cambiare · riferimento 10/11: 52′ a 2:14.1/500, 145,0 W, FC 122,76, lunghi 133,5-151,6 W", dur: "56′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "12′", "lunghi, 27-29 al minuto", "Z2"], ["", "2′", "corti, 42-45 al minuto", "Z2"]], "foot": "56′ · Z2 = 120-135 bpm"} },
+      { code: "PESI", t: "Upper body · ogni 2′ · curl + french press · subito dopo lo ski, a casa", d: "Mattia, blocco B · nota del coach: sei giri, stessi carichi, una ripetizione in più per esercizio; se l'ultimo giro si sporca, scrivimi a che giro hai mollato", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Curl bicipiti", "12", "2×14 kg"], ["B", "French press su panca", "12", "10 kg"]], "foot": "6 giri"} },
+      { code: "RUN", t: "Run · 2 km risc + 15 km @5′30″/km · sera, tapis o fuori", d: "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′30″/km · riferimento 31/10: medio 15 km a 5:40.9/km con FC 138,20", dur: "~95′", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "2 km", "-", "12:43.8 al passo del 31/10 (6:21.9/km)"], ["Medio", "15 km", "5′30″/km · 10,91 km/h", "82:30"]], "foot": "17 km · stima 95:13.8"} },
     ]
   },
-  { day: "MAR", date: "17", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "MAR", date: "17", title: "BACK SQUAT 4×5 + RDL 4×8 @75 · SERA: RUN 10' + 40' @5'20\"", sub: "Virgin 11:30 forza con Mattia · sera corsa, tapis o fuori", load: "HEAVY + Z3", duration: 115, kind: "strength", done: false,
     blocks: [
+      { code: "PESI", t: "Back Squat · 4×5 all'80% della tripla del test · Virgin 11:30 con Mattia · se il ginocchio sta bene", d: "Mattia, blocco A · nuovo blocco W1 · carico da decidere con Mattia prima di partire · recupero 2′30″ · nota del coach: nuovo blocco dalla tripla del test; se c'è anche solo fastidio, macchina e nient'altro · se il ginocchio fa male: glutei alla macchina 4×12 a 80 sulla scala della macchina · da segnare: carico e RPE dell'ultima serie", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5", "20", "solo bilanciere"], ["Risc. 2", "5", "40", "10"], ["Risc. 3", "3", "55", "10+5+2,5"], ["Risc. 4", "2", "65", "20+2,5"], ["Lavoro 1-4", "5", "80% della tripla", "da decidere con Mattia"]], "foot": "recupero 2′30″"} },
+      { code: "PESI", t: "Romanian Deadlift · 4×8 @75 kg · Virgin, dopo lo squat", d: "Mattia, blocco B · RIR 3 · nuovo blocco, quattro serie, discesa in tre secondi", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "6", "40", "10"], ["Risc. 3", "4", "55", "10+5+2,5"], ["Lavoro 1-4", "8 (RIR 3)", "75", "20+5+2,5"]], "foot": "recupero 2′"} },
+      { code: "RUN", t: "Run · 10′ risc + 40′ @5′20″/km · sera, tapis o fuori", d: "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′20″/km · riferimento 13/10: 20′ a 5:20.2/km con FC 153,4 dopo 20′ in pendenza", dur: "50′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "40′ · 7,5 km", "5′20″/km", "11,25 km/h"]], "foot": "50′ · circa 9,07 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} },
     ]
   },
-  { day: "MER", date: "18", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "MER", date: "18", title: "SKI Z2 72' IN VIRGIN 8:15 · SERA: ROW 3×10' @1:58 + METCON 6 GIRI + UPPER", sub: "Mattina SkiErg in Virgin · sera a casa row sotto-soglia, metcon e manubri", load: "Z2 + Z3 + METCON", duration: 152, kind: "hyrox", done: false,
     blocks: [
+      { code: "SKI", t: "Ski · 72′ @Z2 · Virgin 8:15", d: "Mattia, blocco A · 4 volte 14′ @Z2 bassa + 4′ @Z2 alta · nota del coach: quattro minuti in più e blocchi bassi più lunghi; se la FC deriva, rallenta · riferimento 04/11 (8 volte 6′ + 2′): tratti bassi 149,2 W a FC 120,69, alti 189,5 W a FC 131,41", dur: "72′", table: {"h": ["Tratto", "Durata", "Zona"], "r": [["4 volte", "14′", "Z2 bassa"], ["", "4′", "Z2 alta"]], "foot": "72′ · Z2 = 120-135 bpm"} },
+      { code: "ROW", t: "Row · Sotto-soglia 3×10′ @1:58.0/500 · r1′ attivo · sera a casa", d: "Mattia, blocco C · RowErg · nota del coach: blocchi da dieci minuti, uno in meno, stesso ritmo; se l'ultimo va in Z3 piena, scrivimelo · da segnare: split medio di ogni ripetuta, colpi al minuto, FC media · riferimento 09/11: 4×8′ a 1:57.82-1:57.99, FC 122,97 → 134,15, la quarta in Z3 per il 62%", dur: "~50′", table: {"h": ["Fase", "Durata", "Split", "Recupero"], "r": [["Riscaldamento", "10′", "Z1 → Z2", "-"], ["Prove", "3×20″", "1:46.0 sul monitor (ritmo del test 2k del 19/10)", "40″ facili"], ["Rep 1", "10′", "1:58.0 · 213,0 W · ~2.542 m", "1′ attivo"], ["Rep 2", "10′", "1:58.0 · 213,0 W · ~2.542 m", "1′ attivo"], ["Rep 3", "10′", "1:58.0 · 213,0 W · ~2.542 m", "-"], ["Defaticamento", "5′", "Z1", "-"]], "foot": "3 ripetute"} },
+      { code: "METCON", t: "Metcon · ogni 3′ × 6 · tapis 200 m + 16 affondi + 10 toes-to-bar · sera a casa, dopo il row", d: "Mattia, blocco D · il tempo che avanza è recupero · alla coppia si aggiungono i toes-to-bar e un chilo per mano, circa +5% · target: ogni giro sotto 2′05″ · riferimento 04/11 (senza toes-to-bar, 11,5 kg): lavoro per giro 1:37.689-1:53.295", dur: "18′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa al tapis", "200 m @3′55″/km · 15,32 km/h · 47″", "-"], ["2", "Affondi con due manubri", "16", "2×12,5 kg"], ["3", "Toes-to-bar", "10", "corpo libero"]], "foot": "6 giri · partenze 0:00 · 3:00 · 6:00 · 9:00 · 12:00 · 15:00 · fine a 18:00 · target giro sotto 2′05″"} },
+      { code: "PESI", t: "Upper body · ogni 2′ · single arm row + hollow · dopo il metcon", d: "Mattia, blocco E · nota del coach: due chili in più sul rematore e cinque secondi in più di hollow; se la serata si allunga, fallo prima del metcon", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Single arm row superslow", "12 per lato", "30 kg"], ["B", "Hollow hold", "50″", "corpo libero"]], "foot": "6 giri"} },
     ]
   },
-  { day: "GIO", date: "19", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "GIO", date: "19", title: "PISTA CON GABRY H 15", sub: "Pista Nebiolo · riscaldamento dalle 14:30", load: "QUALITÀ", duration: 90, kind: "run", done: false,
     blocks: [
+      { code: "RUN", t: "Corsa · Pista con Gabry · 15:00", d: "Lavoro di qualità con Gabriele in presenza · riscaldamento dalle 14:30 · il lavoro lo dà lui in pista · ⚠️ occasione PacePro", dur: "~90′" },
     ]
   },
-  { day: "VEN", date: "20", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "VEN", date: "20", title: "ROW Z2 56' + UPPER 12' · RUN 3 KM + 12 KM @5'40\" PISTA NEBIOLO 17:00", sub: "Mattina a casa RowErg e manubri · Pista Nebiolo 17:00", load: "Z2", duration: 155, kind: "row", done: false,
     blocks: [
+      { code: "ROW", t: "Row · 56′ @Z2 · mattina a casa", d: "Mattia, blocco A · RowErg · 4 volte 11′ a 20-22 colpi al minuto + 3′ a 24-26, stessa FC · nota del coach: altri quattro minuti, un minuto in più a 20-22 colpi a ogni blocco; la FC non deve salire nei tratti veloci; ritmo da conversazione · riferimento 06/11 e 30/10: in Z2 fra 2:02.7 e 2:07.9/500", dur: "56′", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "11′", "20-22 al minuto", "Z2"], ["", "3′", "24-26 al minuto", "Z2, stessa FC"]], "foot": "56′ · Z2 = 120-135 bpm"} },
+      { code: "PESI", t: "Upper body · ogni 2′ · alzate laterali + renegade row · subito dopo il row, a casa", d: "Mattia, blocco B · nota del coach: le spinte restano fuori finché la spalla dà fastidio; un'alzata in più e una remata in più per lato; bacino fermo sul renegade", dur: "12′", table: {"h": ["Ogni 2′", "Esercizio", "Reps", "Peso"], "r": [["A", "Alzate laterali", "17", "2×10 kg"], ["B", "Renegade row senza push-up", "13 per lato", "2×24 kg"]], "foot": "6 giri"} },
+      { code: "RUN", t: "Run · 3 km risc + 12 km @5′40″/km · Pista Nebiolo 17:00", d: "Gabriele · 15 km totali · vale per il Weekend 5K (finestra 20-22) se registrata come attività unica · ⚠️ occasione PacePro: strategia a 5′40″/km", dur: "~87′", table: {"h": ["Fase", "Distanza", "Giri corsia 1", "Passo"], "r": [["Riscaldamento", "3 km", "7 e mezzo", "-"], ["Medio", "12 km", "30", "5′40″/km = 2:16.0 a giro · 10,59 km/h · 68:00"]], "foot": "stima 87:05.7: riscaldamento al passo del 31/10 (6:21.9/km, 3 km = 19:05.7) + 68:00"} },
     ]
   },
-  { day: "SAB", date: "21", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "SAB", date: "21", title: "DEADLIFT 5×4 @130 + LUNGES 4×5 @62,5 + METCON 7 GIRI", sub: "Virgin dalle 9:45: pesi e metcon", load: "HEAVY + METCON", duration: 88, kind: "strength", done: false,
     blocks: [
+      { code: "PESI", t: "Deadlift · 5×4 @130 kg · Virgin 9:45", d: "Mattia, blocco A · nuovo blocco W1 · nota del coach: riparte il blocco dopo le doppie a 142,5; cinque serie da quattro a 130, ogni ripetizione resettata da terra; segnami l'RPE dell'ultima · riferimenti: 27/10 4×4 @132,5 · 10/11 3×3 @125", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Lavoro 1-5", "4", "130", "20+20+10+5"]], "foot": "recupero 2′30″"} },
+      { code: "PESI", t: "Barbell Reverse Lunge · 4×5 per lato @62,5 kg · Virgin", d: "Mattia, blocco B · nota del coach: nuovo blocco, quattro serie a 62,5; ginocchio dietro che sfiora terra, se l'altro ginocchio fa male ti fermi · riferimento 03/11: serie a 65 · 65 · 65 · 70 kg", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-4", "5 per lato", "62,5", "20+1,25"]], "foot": "recupero 2′"} },
+      { code: "METCON", t: "Metcon · ogni 4′ × 7 · 400 m + sled push 4×7 m · Virgin", d: "Mattia, blocco C · il tempo che avanza è recupero · da quattro stazioni torna la coppia, circa +5% · target: ogni giro sotto 3′05″ · nota del coach: corsa a ritmo gara e slitta subito dopo; ogni giro uguale al primo; segnami il tempo di ogni giro", dur: "28′", table: {"h": ["Ordine", "Esercizio", "Reps", "Peso"], "r": [["1", "Corsa", "400 m a ritmo gara", "-"], ["2", "Sled push", "4×7 m", "208 kg (carico gara concordato)"]], "foot": "7 giri · partenze ogni 4′ · fine a 28:00 · target giro sotto 3′05″"} },
     ]
   },
-  { day: "DOM", date: "22", title: "DA PROGRAMMARE", sub: "Programmi S47 di Mattia e Gabri", load: "—", duration: 0, kind: "rest", done: false,
+  { day: "DOM", date: "22", title: "ALLENAMENTO IBRIDO A CASELLE", sub: "Programma di Gabri", load: "HYROX", duration: 0, kind: "hyrox", done: false,
     blocks: [
+      { code: "HYROX", t: "Allenamento ibrido · Caselle", d: "Gabriele, domenica 22", dur: "-" },
     ]
   },
 ];
@@ -12873,11 +12891,11 @@ const BADGES = {
     { n: 'Weekend 5K di novembre', en: 'November Weekend 5K', cat: 'RUN', tipo: 'singola',
       req: 'Una corsa da 5 km fra il 20 e il 22 novembre · 1 pt', win: '20 → 22 NOV', d1: '2026-11-20', d2: '2026-11-22', runOnly: true, st: 'plan', prog: '0 (garmin, 14/11)',
       why: 'A ottobre mancato perché la finestra dipendeva da una sola seduta, saltata.',
-      go: 'Finestra VEN 20 → DOM 22: una corsa registrata come attività unica da almeno 5 km.' },
+      go: 'Finestra VEN 20 → DOM 22: basta il 3 km + 12 km di venerdì 20 in pista, registrato come attività unica.' },
     { n: 'PacePro a novembre', en: 'PacePro November', cat: 'RUN', tipo: 'singola',
       req: 'Corsa all\'aperto di almeno 1 km guidata da una strategia PacePro, chiusa entro ±15″/km dal passo obiettivo · 2 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', runOnly: true, st: 'plan', prog: '0 (garmin, 14/11)',
       why: 'A ottobre non assegnato: progresso 0 a finestra chiusa. Il tapis non lo attiva.',
-      go: 'Alla prima corsa all\'aperto del mese: strategia caricata sull\'orologio prima di partire e avviata con la corsa.' },
+      go: 'Alla prima corsa all\'aperto: strategia caricata sull\'orologio prima di partire e avviata con la corsa · occasioni: LUN 16 e MAR 17 se fuori, GIO 19 e VEN 20 in pista.' },
     // ── PASSI / CAMMINATA
     { n: 'Novembre, mese dei passi', en: 'November Step Month', cat: 'STEP', tipo: 'cumulativa',
       req: '300.000 passi nel mese · 2 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '217.772 / 300.000 - 73% (garmin, 14/11)',
