@@ -623,6 +623,7 @@ const VO2MAX = [
   { d: '2026-11-07', v: 51.3 },
   { d: '2026-11-08', v: 51.3 },
   { d: '2026-11-09', v: 54.0 },
+  { d: '2026-11-13', v: 51.4 },
 ];
 
 // VO2MAX_BICI = stima VO2max di Garmin sulla bici (solo uscite con misuratore di potenza). Stessa fonte e formato.
