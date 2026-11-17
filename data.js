@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 97.04,
-  bodyFat: 23.60,
-  bodyDate: '16 NOV 2026',
+  weight: 97.16,
+  bodyFat: 23.55,
+  bodyDate: '17 NOV 2026',
   hrmax: 177,
   programWeek: 47,
 };
@@ -231,6 +231,7 @@ const BODY = [
   { d: '2026-11-15', h: '09:53', kg: 97.8, g: 97849, bf: 24.0, mm: 38.0, h2o: 55.5 },
   { d: '2026-11-16', h: '10:09', kg: 97.3, g: 97250, bf: 23.7, mm: 37.8, h2o: 55.7 },
   { d: '2026-11-16', h: '19:39', kg: 96.0, g: 96010, bf: 23.1, mm: 37.5, h2o: 56.1 },
+  { d: '2026-11-17', h: '18:36', kg: 97.5, g: 97529, bf: 23.4, mm: 37.9, h2o: 55.9 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -416,6 +417,7 @@ const BODY_TREND = {
     { d: '2026-11-09', kg7: 96.77, bf7: 23.54, n: 8, nbf: 8, dKg: 0.88, dBf: 0.50, sKg: 'salita', sBf: 'salita', z7: 5.60, za: '2026-10-12' },
     { d: '2026-11-15', kg7: 97.30, bf7: 23.93, n: 4, nbf: 4, dKg: 1.08, dBf: 0.77, sKg: 'salita', sBf: 'salita', z7: 5.69, za: '2026-10-12' },
     { d: '2026-11-16', kg7: 97.04, bf7: 23.60, n: 3, nbf: 3, dKg: 0.26, dBf: 0.06, sKg: 'stabile', sBf: 'stabile', z7: 5.61, za: '2026-10-12' },
+    { d: '2026-11-17', kg7: 97.16, bf7: 23.55, n: 4, nbf: 4, dKg: 0.35, dBf: -0.01, sKg: 'salita', sBf: 'stabile', z7: 5.60, za: '2026-10-12' },
   ],
 };
 
@@ -2466,11 +2468,11 @@ const WEEK = [
       { code: "RUN", t: "Run · 2 km risc + 15 km @5′30″/km · sera, tapis o fuori", d: "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′30″/km · riferimento 31/10: medio 15 km a 5:40.9/km con FC 138,20", dur: "~95′", result: "1.998,84 m di riscaldamento in 16:03 @8:01.8/km + 14.948,85 m in 81:53 @5:28.7/km · FC blocco 134,43 max 144 · drift EF −2,88% · pendenza 0,5% sul blocco, 0% nel riscaldamento · tapis 17:36-19:15 · totale 16.999,41 m in 1:38:30", table: {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "2 km", "-", "12:43.8 al passo del 31/10 (6:21.9/km)"], ["Medio", "15 km", "5′30″/km · 10,91 km/h", "82:30"]], "foot": "17 km · stima 95:13.8"} },
     ]
   },
-  { day: "MAR", date: "17", title: "DEADLIFT SINGOLE FINO A 160 + LUNGES 4×5 @62,5 · SERA: RUN 10' + 40' @5'20\"", sub: "Virgin 11:43 stacco e affondi di sabato · sera corsa, tapis o fuori", load: "HEAVY + Z3", duration: 115, kind: "strength", done: false,
+  { day: "MAR", date: "17", title: "DEADLIFT SINGOLE FINO A 160 + LUNGES 4×5 @62,5 · SERA: RUN 10' + 40' @5'20\"", sub: "Virgin 11:43 stacco e affondi di sabato · sera corsa, tapis o fuori", load: "HEAVY + Z3", duration: 115, kind: "strength", done: true,
     blocks: [
       { code: "PESI", t: "Deadlift · singole fino a 160 kg · Virgin 11:43", d: "Mattia, blocco A di sabato 21, fatto oggi · prescritto 5×4 @130 kg · nuovo blocco W1 · nota del coach: riparte il blocco dopo le doppie a 142,5; cinque serie da quattro a 130, ogni ripetizione resettata da terra; segnami l'RPE dell'ultima · riferimenti: 27/10 4×4 @132,5 · 10/11 3×3 @125", dur: "5 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "8", "20", "solo bilanciere"], ["Risc. 2", "5", "60", "20"], ["Risc. 3", "3", "90", "20+10+5"], ["Risc. 4", "2", "110", "20+20+5"], ["Lavoro 1-5", "4", "130", "20+20+10+5"]], "foot": "recupero 2′30″"}, result: "60×5 · 80×3, poi singole a 120 · 140 · 150 · 150 · 160 · 160 kg · recuperi dopo le singole da 140 kg in su 2:40.081 · 3:24.747 · 3:22.074 · 3:50.997 · nuovo 1RM 160 kg, prima 157,5 · 160 kg = 20+20+20+10 per lato · Virgin 11:43-12:05" },
       { code: "PESI", t: "Barbell Reverse Lunge · 4×5 per lato @62,5 kg · Virgin, dopo lo stacco", d: "Mattia, blocco B di sabato 21, fatto oggi · nota del coach: nuovo blocco, quattro serie a 62,5; ginocchio dietro che sfiora terra, se l'altro ginocchio fa male ti fermi · riferimento 03/11: serie a 65 · 65 · 65 · 70 kg", dur: "4 serie", table: {"h": ["Serie", "Reps", "Kg", "Dischi per lato"], "r": [["Risc. 1", "5 per lato", "20", "solo bilanciere"], ["Risc. 2", "4 per lato", "30", "5"], ["Risc. 3", "3 per lato", "45", "10+2,5"], ["Lavoro 1-4", "5 per lato", "62,5", "20+1,25"]], "foot": "recupero 2′"}, result: "20 · 30 · 50 kg, poi 4×5 per lato @62,5 kg, 10 ripetizioni in totale a serie · recuperi 2:07.626 · 2:52.336 · 2:00.542 · 62,5 kg = 20+1,25 per lato · Virgin 12:09-12:29" },
-      { code: "RUN", t: "Run · 10′ risc + 40′ @5′20″/km · sera, tapis o fuori", d: "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′20″/km · riferimento 13/10: 20′ a 5:20.2/km con FC 153,4 dopo 20′ in pendenza", dur: "50′", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "40′ · 7,5 km", "5′20″/km", "11,25 km/h"]], "foot": "50′ · circa 9,07 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} },
+      { code: "RUN", t: "Run · 10′ risc + 40′ @5′20″/km · sera, tapis o fuori", d: "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′20″/km · riferimento 13/10: 20′ a 5:20.2/km con FC 153,4 dopo 20′ in pendenza", dur: "50′", result: "1.337,54 m di riscaldamento in 10:03.5 @7:31.2/km + 7.516,45 m in 39:57.5 @5:19.0/km · FC blocco 137,84 max 151 · drift EF −7,44% · tapis 17:34-18:24 · totale 8.853,99 m in 50:01 · pendenza da completare", table: {"h": ["Fase", "Durata", "Passo", "Tapis"], "r": [["Riscaldamento", "10′", "-", "-"], ["Medio", "40′ · 7,5 km", "5′20″/km", "11,25 km/h"]], "foot": "50′ · circa 9,07 km con il riscaldamento al passo del 31/10 (6:21.9/km)"} },
     ]
   },
   { day: "MER", date: "18", title: "SKI Z2 72' IN VIRGIN 8:15 · SERA: ROW 3×10' @1:58 + METCON 6 GIRI + UPPER", sub: "Mattina SkiErg in Virgin · sera a casa row sotto-soglia, metcon e manubri", load: "Z2 + Z3 + METCON", duration: 152, kind: "hyrox", done: false,
@@ -2543,7 +2545,7 @@ const PBS = [
 // Volume per week (20 weeks, km) — real data
 const VOL_ROWER = [28.2,34.4,58.0,43.328,2.5,27.5,32.3,26.8,18.8,36.8,32.647,38.864,25.4,7.0,18.307,0,11.674,18.774,30.776,14.965,10.549,1.5,17.417,14.190,12.911,0,29.073,17.695,20.681,18.981,10.186, 18.958, 0, 0, 7.178, 16.041, 19.600, 21.065, 5.114, 0, 0, 3.398, 4.964, 19.424, 19.456, 11.559, 0];
 const VOL_SKI = [13.9, 20.7, 16.9, 52.0, 0, 25.0, 11.8, 23.1, 37.9, 36.8, 41.7, 35.053, 32.9, 20.006, 14.572, 20.031, 22.032, 33.524, 7.348, 10.347, 0, 1.5, 16.668, 18.663, 15.657, 0, 16.838, 17.462, 21.215, 18.339, 32.744, 0, 22.006, 0, 15.584, 12.254, 15.566, 13.774, 0, 0, 6.789, 18.920, 0, 22.104, 25.674, 11.629, 12.964];
-const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 37.89981, 22.09346, 16.99941];
+const VOL_RUN = [0, 7.82, 7.934, 7.711, 16.085, 4.13, 10.157, 28.909, 32.259, 33.324, 23.487, 29.075, 30.518, 2.15, 20.223, 19.458, 36.5, 21.552, 26.931, 41.432, 23.563, 18.107, 17.298, 24.177, 15.624, 16.800, 15.832, 33.903, 12.759, 25.742, 33.077, 30.041, 41.213, 30.338, 13.140, 25.753, 24.351, 35.039, 17.601, 27.793, 41.152, 41.489, 36.437, 41.26993, 37.89981, 22.09346, 25.85340];
 const VOL_BIKE = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27.701,37.803,0,0,17.386,0,91.124,26.809,0,0,25.074,60.777, 32.744, 0, 0, 48.025, 39.966, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const VOL_SWIM = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.240,0, 0, 0.625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 // dal 26/10/2026 il volume totale conta solo rower, ski e run: bici e nuoto fuori (Steelman lasciato, richiesta di Federico)
@@ -2553,10 +2555,10 @@ const VOLUME = VOL_ROWER.map((r, i) => +(r + VOL_SKI[i] + VOL_RUN[i]).toFixed(1)
 const TOTALS = {
   rower: 806.975,
   ski: 788.734,
-  run: 1119.14661,
+  run: 1128.00060,
   bike: 429.415,
   swim: 57.628,
-  total: 2714.85561,
+  total: 2723.70960,
 };
 
 // PROG_START — generato da scripts/build_progressione.py, non editare a mano
@@ -9246,6 +9248,7 @@ const PROG = {
 
 // EF Trend — real Z2 SkiErg data
 const HISTORY = [
+  { date: '17 NOV', title: 'Run · Tapis · 10′ + 40′ @5′20″', kind: "run", filone: "run-medio-tapis", filoneLabel: "Medio tapis", surf: "tapis", m: {"lavoro": "10:03 + 39:57", "dist": "8,854 km", "dur": "50:01", "pace": "5:19.0", "unit": "/km (blocco)", "fcMed": "137,84", "fcMax": "151", "tgt": "5:20", "drift": "−7,44%", "ef": "0,0819", "cad": "171,3", "src": "fit"}, vs: {"d": "16 NOV", "tag": "Stesso filone medio al tapis, struttura diversa: 40′ a 5′20″ contro 15 km a 5′30″ · pendenza di oggi non dichiarata, il 16/11 0,5% · tutti e due la sera, dopo la seduta della mattina", "items": [{"v": "blocco a 5:19.0/km con FC 137,84 max 151, contro 5:28.7/km con FC 134,43 max 144", "g": 1}, {"v": "drift EF −7,44% in 39:57 contro −2,88% in 81:53", "g": 0}]}, dur: 50, load: "Z2-Z3", note: "39:57.5 a 5:19.0/km sul 5′20″ chiesto: 7.516,45 m, tapis fisso a 11,286 km/h · prima 10:03.5 di riscaldamento progressivo, 1.337,54 m a 7:31.2/km\nFC 137,84 di media, max 151 · Z3 69,64%, Z2 28,91% · da 132,60 a 143,07 fra le due metà a passo pari: drift EF −7,44%\nDA COMPLETARE: pendenza del tapis", details: {"summary": "Tapis, 17:34-18:24 · orari locali · il tapis trasmette la velocità al Garmin · seconda seduta del giorno, dopo deadlift e affondi in Virgin (fine 12:54) · pendenza non dichiarata.\nPrescritto (Gabriele, martedì 17, sera): 10′ di riscaldamento + 40′ a 5′20″/km (11,25 km/h) · riferimento 13/10: 20′ a 5:20.2/km con FC 153,4 dopo 20′ in pendenza.\nRISCALDAMENTO 10:03.5: 1.337,54 m @7:31.2/km · nastro da 5,980 a 9,976 km/h · FC tw 101,78 max 118.\nBLOCCO 39:57.5 a passo fisso: 7.516,45 m @5:19.0/km · 11,286 km/h · FC tw 137,84 max 151 · cadenza 171,3 · FC 116 all'ingresso, 144 all'uscita.\nFC per tratti da 5′: 125,22 · 129,90 · 136,18 · 139,12 · 140,76 · 141,92 · 143,68 · ultimi 4:57.5 a 145,96.\nDRIFT: EF 0,0851 → 0,0788 (−7,44%) · FC 132,60 → 143,07 fra le due metà, 3.758,97 e 3.754,35 m.\nZone del blocco: Z3 69,64% · Z2 28,91% · Z1 0,83% · Z4 0,63%.\nTotale 8.853,99 m in 50:00.989 @5:38.9/km · FC 131 max 151 (sessione Garmin) · 731 kcal · TE 3,1 aerobico.", "table": {"headers": ["Tratto", "Durata", "Metri", "km/h", "Passo /km", "FC tw", "FC max"], "rows": [["Riscaldamento", "10:03.5", "1.337,54", "5,980 → 9,976", "7:31.2", "101,78", "118"], ["Blocco", "39:57.5", "7.516,45", "11,286", "5:19.0", "137,84", "151"]]}, "gps": null} },
   {"date": "17 NOV", "title": "Forza · Virgin · Deadlift singole fino a 160 kg + Barbell Lunge 4×5 per lato @62,5 kg", "kind": "strength", "filone": "forza", "filoneLabel": "Forza", "pb": "PB deadlift", "m": {"lavoro": "DL singole fino a 160 + lunge 4×5/lato @62,5", "dist": "-", "dur": "1:11:31.415", "pace": "-", "unit": "", "fcMed": "83", "fcMax": "128", "src": "fit"}, "vs": {"d": "10 NOV", "tag": "Stesso filone forza, struttura diversa: deadlift a singole fino a 160 kg + affondi, contro deadlift 3×3 @125 kg + sled push", "items": [{"v": "deadlift carico più alto 160 kg per 1 ripetizione, contro 125 kg per 3 ripetizioni", "g": 1}, {"v": "FC media 83 max 128, contro 96 max 131", "g": 0}]}, "dur": 72, "load": "HEAVY", "note": "Deadlift a singole 120 · 140 · 150 · 150 · 160 · 160 kg dopo 60×5 e 80×3 · recuperi dopo le singole da 140 kg in su 2:40.081 · 3:24.747 · 3:22.074 · 3:50.997 · 160 kg nuovo 1RM, prima 157,5 kg dell'11/06\nBarbell Lunge 4×5 per lato @62,5 kg, 10 ripetizioni in totale a serie (dichiarato da Federico), dopo 20 · 30 · 50 kg · recuperi 2:07.626 · 2:52.336 · 2:00.542 · FC 83 di media, max 128", "details": {"summary": "Virgin, 11:43-12:54 · orari locali · luogo dall'agenda.\nFatti oggi i blocchi A e B di sabato 21 (dichiarato da Federico): Deadlift prescritto 5×4 @130 kg, fatto a singole fino a 160 kg · Barbell Reverse Lunge 4×5 per lato @62,5 kg come prescritto · Back Squat 4×5 e Romanian Deadlift 4×8 @75 kg di oggi spostati a sabato.\nDEADLIFT: 60×5 · 80×3 dalle 11:43, poi singole a 120 · 140 · 150 · 150 · 160 · 160 kg dalle 11:48 alle 12:05 (carichi e ripetizioni del Garmin, singole confermate da Federico).\n160 kg = 20+20+20+10 per lato · 150 kg = 20+20+20+5 per lato · 140 kg = 20+20+20 per lato.\nBARBELL LUNGE: 20×7 · 30×8 · 50×6, poi 4×5 per lato @62,5 kg, 10 ripetizioni in totale a serie (dichiarato da Federico), alle 12:17 · 12:21 · 12:25 · 12:28 · 62,5 kg = 20+1,25 per lato.\nUltimo recupero registrato 25:16.495, fino allo stop delle 12:54:31.\nSessione: 1:11:31.415 · FC media 83, max 128 · 370 kcal · TE 0,6 aerobico.", "table": {"headers": ["Serie", "Esercizio", "Via", "Carico", "Rip. (Garmin)", "Durata", "Rec dopo", "FC max"], "rows": [["1", "Deadlift", "11:43:00", "60 kg", "5", "1:02.808", "2:21.483", "78"], ["2", "Deadlift", "11:46:24", "80 kg", "3", "1:23.961", "22,165″", "112"], ["3", "Deadlift", "11:48:10", "120 kg", "1", "19,72″", "1:56.606", "104"], ["4", "Deadlift", "11:50:26", "140 kg", "1", "19,902″", "2:40.081", "94"], ["5", "Deadlift", "11:53:26", "150 kg", "1", "21,524″", "3:24.747", "79"], ["6", "Deadlift", "11:57:13", "150 kg", "1", "23,356″", "3:22.074", "78"], ["7", "Deadlift", "12:00:58", "160 kg", "1", "19,532″", "3:50.997", "84"], ["8", "Deadlift", "12:05:09", "160 kg", "1", "25,783″", "3:31.109", "97"], ["9", "Barbell Lunge", "12:09:06", "20 kg", "7", "2:07.293", "1:34.192", "97"], ["10", "Barbell Lunge", "12:12:47", "30 kg", "8", "5,243″", "1:23.243", "85"], ["11", "Barbell Lunge", "12:14:16", "50 kg", "6", "51,981″", "2:49.134", "89"], ["12", "Barbell Lunge", "12:17:57", "62,5 kg", "10", "1:33.525", "2:07.626", "93"], ["13", "Barbell Lunge", "12:21:38", "62,5 kg", "10", "55,812″", "2:52.336", "77"], ["14", "Barbell Lunge", "12:25:26", "62,5 kg", "10", "50,549″", "2:00.542", "128"], ["15", "Barbell Lunge", "12:28:17", "62,5 kg", "10", "57,596″", "-", "108"]]}}},
   { date: '16 NOV', title: 'Run · Tapis · 2 km + 15 km @5′30″', kind: "run", filone: "run-medio-tapis", filoneLabel: "Medio tapis", surf: "tapis", m: {"lavoro": "16:03 + 81:53", "dist": "16,999 km", "dur": "1:38:30", "pace": "5:28.7", "unit": "/km (blocco)", "fcMed": "134,43", "fcMax": "144", "tgt": "5:30", "drift": "−2,88%", "ef": "0,0815", "cad": "168,0", "src": "fit"}, vs: {"d": "09 NOV", "tag": "Stesso filone medio al tapis, stessa pendenza 0,5%, struttura diversa: 15 km contro 40′ · tutti e due la sera, dopo un erg della mattina", "items": [{"v": "blocco a 5:28.7/km con FC 134,43 max 144, contro 5:40.3/km con FC 129,83 max 141", "g": 1}, {"v": "drift EF −2,88% in 81:53 contro −6,97% in 40′", "g": 1}]}, dur: 99, load: "Z2-Z3", note: "14.948,85 m in 81:53 a 5:28.7/km sul 5′30″ chiesto, poi 51,72 m di coda: nastro a 5:30.9 e 5:27.9/km · prima 2 km di riscaldamento, 1.998,84 m a 8:01.8/km\nFC 134,43 di media, max 144 · Z2 52,47%, Z3 46,51% · da 132,45 a 136,41 fra le due metà: drift EF −2,88%\nPendenza 0,5% sul blocco, 0% nel riscaldamento: D+ 75 m sul MyRun, lo 0,5% di 14.948,85 m (74,74 m)", details: {"summary": "Tapis, 17:36-19:15 · orari locali · il tapis trasmette il passo al Garmin: velocità fisse nel file · pendenza 0,5% fissa sui 15 km e 0% nel riscaldamento (dichiarato da Federico; MyRun media 0,4%, max 0,5%) · D+ 75 m dal MyRun = lo 0,5% di 14.948,85 m (74,74 m) · seconda seduta del giorno, dopo SkiErg 56′ e upper della mattina (fine 09:54).\nPrescritto (lunedì 16, sera): 2 km di riscaldamento + 15 km a 5′30″/km · riferimento 31/10: medio 15 km a 5:40.9/km con FC 138,20.\nRISCALDAMENTO 16:03: 1.998,84 m @8:01.8/km, progressivo · FC tw 102,78 max 117.\nBLOCCO 81:53: 14.948,85 m @5:28.7/km · nastro a 5:30.9/km per 12:51, a 5:27.9/km per 41:42, di nuovo a 5:30.9/km per 10:36, a 5:27.9/km per 16:44 · FC tw 134,43 max 144 · cadenza 168,0 · FC 113 all'ingresso, 140 all'uscita.\nFC per tratti da 10′: 126,13 · 131,87 · 133,93 · 137,40 · 135,62 · 134,63 · 136,21 · 138,57 · ultimi 1:53 a 140,00.\nDRIFT: EF 0,0827 → 0,0803 (−2,88%) · FC 132,45 → 136,41 fra le due metà, 7.475,00 e 7.473,85 m.\nZone del blocco: Z2 52,47% · Z3 46,51% · Z1 1,02%.\nCODA 34,6″: 51,72 m in rallentamento.\nTotale 16.999,41 m in 1:38:30.571 @5:47.7/km · FC 129 max 144 (sessione Garmin) · 1.330 kcal · TE 3,2 aerobico.", "table": {"headers": ["Tratto", "Durata", "Metri", "Passo /km", "FC tw", "FC max"], "rows": [["Riscaldamento", "16:03", "1.998,84", "8:01.8", "102,78", "117"], ["Blocco", "81:53", "14.948,85", "5:28.7", "134,43", "144"], ["Coda", "0:34.6", "51,72", "-", "-", "-"]]}, "gps": null} },
   { date: '16 NOV', title: 'Forza · Casa · Upper 6 giri · curl + french press in piedi', kind: "strength", filone: "forza-upper", filoneLabel: "Upper body", m: {"lavoro": "6 giri", "dist": "-", "dur": "20:02", "fcMed": "93,97", "fcMax": "119", "src": "fit"}, dur: 20, load: "LIGHT", note: "6 giri: curl 12 ripetizioni @13,5 kg + french press in piedi 12 ripetizioni @10 kg (dichiarato da Federico) · a casa, 09:34-09:54\nPrescritti curl 12 @2×14 kg + french press su panca 12 @10 kg ogni 2′ · fatti ogni 3:34 · 3:05 · 3:57 · 3:29 · 4:43\nFC 93,97 di media, max 119", details: {"summary": "A casa, 09:34-09:54 · orari locali · 8′ dopo la fine dello SkiErg.\nPrescritto (Mattia, blocco B di lunedì): ogni 2′ curl bicipiti 12 @2×14 kg + french press su panca 12 @10 kg, 6 giri · nota del coach: stessi carichi, una ripetizione in più per esercizio.\nFatto (dichiarato da Federico): curl 12 ripetizioni @13,5 kg + french press in piedi 12 ripetizioni @10 kg, 6 giri.\nIl Garmin registra un solo esercizio per giro, come curl: 12 ripetizioni @13,5 kg nei giri 1-5, 13 ripetizioni senza peso nel giro 6.\nPartenze dei giri dal Garmin: 09:34:03 · 09:37:37 · 09:40:42 · 09:44:39 · 09:48:08 · 09:52:51 · intervalli 3:34 · 3:05 · 3:57 · 3:29 · 4:43.\nLavoro per giro registrato dal Garmin: 86,352 · 78,763 · 82,921 · 82,893 · 78,773 · 73,813 s.\nFC tw 93,97 max 119 · 139 kcal.", "table": {"headers": ["Giro", "Via", "Curl", "French press in piedi"], "rows": [["1", "09:34:03", "12 @13,5 kg", "12 @10 kg"], ["2", "09:37:37", "12 @13,5 kg", "12 @10 kg"], ["3", "09:40:42", "12 @13,5 kg", "12 @10 kg"], ["4", "09:44:39", "12 @13,5 kg", "12 @10 kg"], ["5", "09:48:08", "12 @13,5 kg", "12 @10 kg"], ["6", "09:52:51", "12 @13,5 kg", "12 @10 kg"]]}, "gps": null} },
@@ -12914,11 +12917,11 @@ const BADGES = {
     // ══════════════════════ NOVEMBRE - si apre DOM 01 · iscritto a tutte le sfide il 01/11 (dichiarato da Federico) ══════════════════════
     // ── CORSA
     { n: 'Novembre, mese di corse', en: 'November Rundown', cat: 'RUN', tipo: 'cumulativa',
-      req: '80,5 km (50 mi) di corsa nel mese · 1 pt', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '77,0 km / 80,5 km - 96% (garmin, 17/11)',
+      req: '80,5 km (50 mi) di corsa nel mese · 1 pt', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'done', prog: '80,5 km / 80,5 km - 100%, preso il 17/11 (garmin, 17/11)',
       why: 'Preso ogni mese: a ottobre chiuso il 16.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Corsa a novembre', en: 'November Time to Run', cat: 'RUN', tipo: 'cumulativa',
-      req: '10 ore di corsa nel mese · 1 pt', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '7h 15m / 10h - 73% (garmin, 17/11)',
+      req: '10 ore di corsa nel mese · 1 pt', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '8h 05m / 10h - 81% (garmin, 17/11)',
       why: 'Preso a settembre, chiuso il 28.',
       go: 'Nessuna azione: si accumula con le corse in programma.' },
     { n: 'Weekend 10K di novembre', en: 'November Weekend 10K', cat: 'RUN', tipo: 'singola',
@@ -12935,7 +12938,7 @@ const BADGES = {
       go: 'Alla prima corsa all\'aperto: strategia caricata sull\'orologio prima di partire e avviata con la corsa · occasioni: MAR 17 se fuori, GIO 19 e VEN 20 in pista.' },
     // ── PASSI / CAMMINATA
     { n: 'Novembre, mese dei passi', en: 'November Step Month', cat: 'STEP', tipo: 'cumulativa',
-      req: '300.000 passi nel mese · 2 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '252.873 / 300.000 - 84% (garmin, 17/11)',
+      req: '300.000 passi nel mese · 2 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '265.464 / 300.000 - 88% (garmin, 17/11)',
       why: 'Preso ogni mese del 2026: a ottobre chiuso il 22.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Podio per i passi di novembre', en: 'November Steps Podium', cat: 'STEP', tipo: 'singola',
@@ -12960,7 +12963,7 @@ const BADGES = {
       why: 'A ottobre chiuso a 43m su 4h. Contano le classi di mobilità avviate sull\'orologio come Yoga.',
       go: 'Avviare come Yoga ogni Postural e Flexability: con classi da 45′ ne servono 6 nel mese.' },
     { n: 'Attività a novembre', en: 'Active November', cat: 'FIT', tipo: 'cumulativa',
-      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '16 / 20 - 80% (garmin, 17/11)',
+      req: '20 attività di almeno 20 minuti nel mese · 2 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'auto', prog: '17 / 20 - 85% (garmin, 17/11)',
       why: 'A ottobre preso il 23.',
       go: 'Nessuna azione: si accumula.' },
     { n: 'Condivisione foto di novembre', en: 'November Photo Share', cat: 'SOC', tipo: 'cumulativa',
@@ -12977,11 +12980,11 @@ const BADGES = {
       go: 'Scaricare un quadrante o un\'app dal Connect IQ Store, una volta nel mese.' },
     // ── PERMANENTI E SPEDIZIONI (sempre attive) · in corso secondo Garmin al 17/11 (badge disponibili con progresso)
     { n: 'La bilancia del giorno', en: 'Daily Balance', cat: 'REC', tipo: 'streak',
-      req: 'Annota il peso ogni giorno per 30 giorni consecutivi · 2 punti', win: 'permanente', d1: null, d2: null, st: 'plan', prog: '2 / 30 giorni (garmin, 17/11)',
+      req: 'Annota il peso ogni giorno per 30 giorni consecutivi · 2 punti', win: 'permanente', d1: null, d2: null, st: 'plan', prog: '3 / 30 giorni (garmin, 17/11)',
       why: 'Con la Index S2 basta salire sulla bilancia ogni mattina.',
       go: 'Pesarsi tutti i giorni, anche in viaggio: un giorno saltato azzera la serie.' },
     { n: '10K: la sfida di un giorno', en: '10K a Day Challenge', cat: 'STEP', tipo: 'streak',
-      req: '10.000 passi al giorno per 30 giorni consecutivi · 4 punti', win: 'permanente', d1: null, d2: null, st: 'plan', prog: '1 / 30 giorni (garmin, 17/11)',
+      req: '10.000 passi al giorno per 30 giorni consecutivi · 4 punti', win: 'permanente', d1: null, d2: null, st: 'plan', prog: '2 / 30 giorni (garmin, 17/11)',
       why: 'Requisito dal catalogo Garmin del sito (steps_30day_10000).',
       go: 'Diecimila passi tutti i giorni: nei giorni senza corsa vanno fatti a parte, vedi la caccia «Passi: giorno a rischio».' },
     { n: '30 per 30', en: '30 for 30', cat: 'FIT', tipo: 'streak',
@@ -12989,7 +12992,7 @@ const BADGES = {
       why: 'Il programma copre sei giorni su sette: la domenica di riposo interrompe la serie.',
       go: 'Serve un\'attività di 30′ anche nei giorni di riposo, per esempio una camminata avviata sull\'orologio.' },
     { n: 'Corri come una saetta', en: 'Run Streak', cat: 'RUN', tipo: 'streak',
-      req: 'Una corsa di almeno 1 miglio (1,6 km) in una singola attività ogni giorno per 30 giorni consecutivi · 1 pt', win: 'permanente', d1: null, d2: null, st: 'plan', prog: '1 / 30 giorni (garmin, 17/11)',
+      req: 'Una corsa di almeno 1 miglio (1,6 km) in una singola attività ogni giorno per 30 giorni consecutivi · 1 pt', win: 'permanente', d1: null, d2: null, st: 'plan', prog: '2 / 30 giorni (garmin, 17/11)',
       why: 'Il programma prevede quattro corse a settimana.',
       go: 'Serve almeno 1,6 km di corsa anche nei giorni senza corsa in programma.' },
     { n: 'Cammina come un maratoneta', en: 'Walk Streak', cat: 'WALK', tipo: 'streak',
@@ -13045,7 +13048,7 @@ const BADGES = {
       why: 'Requisito ricavato dal codice del badge (pilates_200_times).',
       go: 'Come il 2.' },
     { n: 'Olimpo - Arrampicata', en: 'Mount Olympus', cat: 'STEP', tipo: 'cumulativa',
-      req: '2.917 m di salita cumulativa (spedizione Garmin, senza scadenza) · 2 punti', win: 'spedizione', d1: null, d2: null, st: 'auto', prog: '2.737,55 / 2.917,0 m - 93,8% (garmin, 17/11)',
+      req: '2.917 m di salita cumulativa (spedizione Garmin, senza scadenza) · 2 punti', win: 'spedizione', d1: null, d2: null, st: 'auto', prog: '2.748,42 / 2.917,0 m - 94,2% (garmin, 17/11)',
       why: 'Conta i piani saliti e il dislivello delle attività: avanza da sola.',
       go: 'Nessuna azione dedicata. Le sedute in pendenza al tapis non contano: il MyRun non trasmette il dislivello al Garmin.' },
   ],
@@ -13055,7 +13058,7 @@ const BADGES = {
     { n: 'Mezza maratona di canottaggio', cat: 'ROW', kinds: ['row','multierg'], codes: ['ROW','ERG'], req: '21,0975 km in una sola attivita\' di canottaggio REGISTRATA COL GARMIN (requisito dal nome del badge) · la mezza del 24/01 era solo sul PM5 e non conta', win: 'permanente \u00b7 2 pt', go: 'Vogatore normale preso il 28/10/2026. Restano la Mezza (2 pt) e la Maratona di canottaggio, 42,195 km in una sola attivita\' (4 pt): servono una seduta lunga sul RowErg con il Garmin avviato.' },
   ],
   stages: [
-    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '244,5 / 300,0 km - 81% (garmin, 17/11)',
+    { n: '2026 Running ─ Stage 4', req: '300 km di corsa · 2 punti', win: '01 OTT → 31 DIC', st: 'auto', prog: '253,4 / 300,0 km - 84% (garmin, 17/11)',
       why: 'Tre mesi per 300 km: con 80-90 km al mese si chiude con un mese di anticipo, come nello stage 3.' },
     { n: '2026 Walking ─ Stage 4', req: '148,1 km di camminata · 1 pt', win: '01 OTT → 31 DIC', st: 'plan', prog: '6,3 / 148,1 km - 4% (garmin, 17/11)',
       why: 'Lo stage 3 è finito all\'11%. Si alimenta solo con le attività Camminata avviate sull\'orologio: a ottobre 1h 52m in tutto il mese.' },
