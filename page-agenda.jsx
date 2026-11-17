@@ -1,6 +1,6 @@
 // AGENDA — Telemetry style + week archive navigation
 function AgendaPage() {
-  const { ATHLETE, WEEK, WEEK_ARCHIVE, NEXTWEEK, BADGES } = window.TRAINING;
+  const { ATHLETE, WEEK, WEEK_ARCHIVE, NEXTWEEK, BADGES, INTEGRATORI } = window.TRAINING;
   const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '16 → 22 NOV 2026', programWeek: ATHLETE.programWeek, days: WEEK }]).concat(NEXTWEEK && NEXTWEEK.length ? [{ id: 'S' + (ATHLETE.programWeek + 1), label: 'S' + (ATHLETE.programWeek + 1) + ' · DA DEFINIRE', range: '23 → 29 NOV 2026', programWeek: ATHLETE.programWeek + 1, days: NEXTWEEK }] : []);
   const curIdx = NEXTWEEK && NEXTWEEK.length ? allWeeks.length - 2 : allWeeks.length - 1;
   const [weekIdx, setWeekIdx] = React.useState(curIdx);
@@ -308,6 +308,37 @@ function AgendaPage() {
                   </div>
                 ))}
               </ModulePanel>
+
+              {(function () {
+                if ((!isCurrentWeek && !isNextWeek) || !INTEGRATORI) return null;
+                var d = isoForDay(day.date);
+                if (d < INTEGRATORI.dal) return null;
+                var its = INTEGRATORI.items.filter(function (it) { return !it.fino || d <= it.fino; });
+                if (!its.length) return null;
+                return (
+                  <ModulePanel code="MOD.INTEGRATORI">
+                    {its.map(function (it, ii) {
+                      return (
+                        <div key={ii} style={{ marginBottom: ii < its.length - 1 ? 14 : 0 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
+                            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', color: 'var(--fg)' }}>{it.n}</div>
+                            <div className="tabular" style={{ fontSize: 12, color: 'var(--accent)' }}>{it.tot}</div>
+                          </div>
+                          {it.righe.map(function (r, ri) {
+                            return (
+                              <div key={ri} style={{ display: 'flex', justifyContent: 'space-between', gap: 8, padding: '5px 0', borderBottom: '1px dashed var(--line-2)', fontSize: 11 }}>
+                                <span style={{ color: 'var(--fg-3)', minWidth: 0 }}>{r[0]}</span>
+                                <span className="tabular" style={{ color: 'var(--fg)', textAlign: 'right' }}>{r[1]}</span>
+                              </div>
+                            );
+                          })}
+                          <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 5, lineHeight: 1.4 }}>{it.nota}</div>
+                        </div>
+                      );
+                    })}
+                  </ModulePanel>
+                );
+              })()}
 
             </div>
           </div>
