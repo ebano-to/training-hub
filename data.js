@@ -13214,7 +13214,7 @@ const INTEGRATORI = {
   dal: '2026-11-18',
   items: [
     { n: 'BETA-ALANINA', tot: '6 g/giorno', fino: null,
-      righe: [['Colazione', '1,5 g'], ['Pranzo', '1,5 g'], ['Cena', '1,5 g'], ['Spuntino più grande', '1,5 g']],
+      righe: [['Pranzo', '3 g'], ['Cena', '3 g']],
       nota: 'Sempre col pasto · tutti i giorni · effetto da 4 settimane: 15/12/2026' },
     { n: 'L-ARGININA', tot: '10-12 g/giorno', fino: '2027-01-12',
       righe: [['Allenamento · dose 1', "5-6 g 60-90' prima"], ['Allenamento · dose 2', '5-6 g altro momento'], ['Riposo', '2 × 5-6 g distanziate']],
