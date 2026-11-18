@@ -309,7 +309,7 @@ function HomeTelemetry() {
       </div>
 
       {/* TERZA FILA — CORPO / HYDRATION / STORICO già sopra */}
-      <div className="r-grid r-grid-3" style={{ marginBottom: 16 }}>
+      <div style={{ marginBottom: 16, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 16 }}>
 
         <ModuleCard
           code="MOD.07"
