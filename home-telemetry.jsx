@@ -309,7 +309,7 @@ function HomeTelemetry() {
       </div>
 
       {/* TERZA FILA — CORPO / HYDRATION / STORICO già sopra */}
-      <div className="r-grid r-grid-3" style={{ marginBottom: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+      <div className="r-grid r-grid-3" style={{ marginBottom: 16 }}>
 
         <ModuleCard
           code="MOD.07"
@@ -361,6 +361,45 @@ function HomeTelemetry() {
             })}
           </div>
         </ModuleCard>
+
+        {(function () {
+          var HV = (window.TRAINING.HRV || []).filter(function (r) { return r.w != null && r.lo != null && r.hi != null; });
+          if (HV.length < 30) return null;
+          var u = HV[HV.length - 1];
+          var col = u.s === 'fascia' ? '#39E75F' : '#FF9F43';
+          var lb = u.s === 'fascia' ? 'IN FASCIA' : u.s === 'sotto' ? 'SOTTO FASCIA' : 'SOPRA FASCIA';
+          var rr = HV.filter(function (r) { return r.r7 != null; });
+          return (
+            <ModuleCard
+              code="MOD.09"
+              title="HRV"
+              sub="recupero notturno · fc riposo"
+              metric={u.w + 'ms'}
+              metricLabel={'FASCIA ' + u.lo + '–' + u.hi + ' · ' + lb}
+              href="corpo.html#hrv"
+            >
+              <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                    <span style={{ fontSize: 9, color: col, letterSpacing: '0.12em' }}>HRV 7 GG</span>
+                    <span className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)' }}>{u.w} ms</span>
+                  </div>
+                  <Sparkline data={HV.slice(-60).map(function (r) { return r.w; })} width={150} height={34} color={col} />
+                </div>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
+                    <span style={{ fontSize: 9, color: '#FF6B9D', letterSpacing: '0.12em' }}>FC RIPOSO 7 GG</span>
+                    <span className="tabular" style={{ fontSize: 10, color: 'var(--fg-3)' }}>{String(rr[rr.length - 1].r7).replace('.', ',')}</span>
+                  </div>
+                  <Sparkline data={rr.slice(-60).map(function (r) { return r.r7; })} width={150} height={34} color="#FF6B9D" />
+                </div>
+              </div>
+              <div style={{ fontSize: 9, color: 'var(--fg-3)', marginTop: 8, letterSpacing: '0.1em' }}>
+                ULTIMI 60 GIORNI · NOTTE {u.n != null ? u.n + ' MS' : ''}
+              </div>
+            </ModuleCard>
+          );
+        })()}
 
       </div>
 

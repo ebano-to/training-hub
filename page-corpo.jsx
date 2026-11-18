@@ -4,6 +4,7 @@ function CorpoPage() {
   return (
     <TelemetryChrome active="CORPO">
       <BodyComposition />
+      <HrvPanel />
       <Vo2maxChart />
     </TelemetryChrome>
   );
@@ -330,6 +331,115 @@ function Vo2maxChart() {
       <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10, whiteSpace: 'pre-line' }}>
         {'Stima di Garmin Connect, valore a un decimale (l\'app mostra l\'intero). Un punto per ogni giorno in cui Garmin l\'ha aggiornata.'}
         {VB.length ? '\nBICI (stima separata, solo uscite col misuratore di potenza): ' + VB.map(function (p) { return fd(p.d) + ' ' + c(p.v); }).join(' · ') + '.' : ''}
+      </div>
+    </div>
+  );
+}
+
+// HRV — recupero notturno: media a 7 giorni contro la fascia personale + FC a riposo (dal 18/11/2026).
+// Dati in window.TRAINING.HRV, generati da scripts/garmin_hrv.py.
+function HrvPanel() {
+  var ALL = window.TRAINING.HRV || [];
+  var H = ALL.filter(function (r) { return r.w != null && r.lo != null && r.hi != null; });
+  if (H.length < 30) return null;
+  var last = H[H.length - 1];
+  var DAY = 86400000;
+  var ms = function (d) { return new Date(d).getTime(); };
+  var t1 = ms(last.d), t0 = Math.max(ms(H[0].d), t1 - 365 * DAY);
+  var V = H.filter(function (r) { return ms(r.d) >= t0; });
+  var span = Math.max(1, t1 - t0);
+  var W = 1000, Hh = 220, PAD = 34;
+  var X = function (d) { return PAD + ((ms(d) - t0) / span) * (W - PAD * 2); };
+  var all = [];
+  V.forEach(function (r) { all.push(r.w, r.lo, r.hi); if (r.n != null) all.push(r.n); });
+  var lo = Math.floor(Math.min.apply(null, all) - 2), hi = Math.ceil(Math.max.apply(null, all) + 2);
+  var Y = function (v) { return Hh - ((v - lo) / (hi - lo)) * Hh; };
+  var band = 'M' + V.map(function (r) { return X(r.d) + ',' + Y(r.hi); }).join(' L') +
+    ' L' + V.slice().reverse().map(function (r) { return X(r.d) + ',' + Y(r.lo); }).join(' L') + ' Z';
+  var path = 'M' + V.map(function (r) { return X(r.d) + ',' + Y(r.w); }).join(' L');
+  var R = V.filter(function (r) { return r.r7 != null; });
+  var rs = R.map(function (r) { return r.r7; });
+  var rLo = Math.floor(Math.min.apply(null, rs) - 1), rHi = Math.ceil(Math.max.apply(null, rs) + 1);
+  var Hr = 120;
+  var Yr = function (v) { return Hr - ((v - rLo) / (rHi - rLo)) * Hr; };
+  var rPath = 'M' + R.map(function (r) { return X(r.d) + ',' + Yr(r.r7); }).join(' L');
+  var fd = function (d) { return d.split('-').reverse().join('/'); };
+  var c = function (v) { return String(v).replace('.', ','); };
+  var COL = { fascia: '#39E75F', sotto: '#FF9F43', sopra: '#FF9F43' };
+  var LAB = { fascia: 'IN FASCIA', sotto: 'SOTTO FASCIA', sopra: 'SOPRA FASCIA' };
+  var u30 = H.filter(function (r) { return ms(r.d) > t1 - 30 * DAY; });
+  var fuori = u30.filter(function (r) { return r.s !== 'fascia'; }).length;
+  var notte = ALL.filter(function (r) { return r.n != null; }).slice(-1)[0];
+  var prec = ALL.filter(function (r) { var t = ms(r.d); return r.rhr != null && t <= t1 - 7 * DAY && t > t1 - 97 * DAY; });
+  var rif = prec.length ? Math.round(prec.reduce(function (a, r) { return a + r.rhr; }, 0) / prec.length * 10) / 10 : null;
+  var MN = ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'];
+  var ticks = [];
+  var d0 = new Date(t0), cur = new Date(d0.getFullYear(), d0.getMonth() + 1, 1);
+  while (cur.getTime() <= t1) { ticks.push({ t: cur.getTime(), lab: MN[cur.getMonth()] + ' ' + String(cur.getFullYear()).slice(2) }); cur = new Date(cur.getFullYear(), cur.getMonth() + 2, 1); }
+  var box = { border: '1px solid var(--line)', padding: '12px 14px', background: 'var(--bg)' };
+  var lab = { fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.16em' };
+  var tile = function (titolo, valore, sotto, colore) {
+    return (
+      <div style={box}>
+        <div style={lab}>{titolo}</div>
+        <div className="display tabular" style={{ fontSize: 30, lineHeight: 1.1, color: colore || 'inherit' }}>{valore}</div>
+        <div className="tabular" style={{ fontSize: 11, color: 'var(--fg-3)', marginTop: 4 }}>{sotto}</div>
+      </div>
+    );
+  };
+  var asse = function () {
+    return (
+      <div style={{ position: 'relative', height: 16, marginTop: 4 }}>
+        {ticks.map(function (k, i) {
+          return <span key={i} style={{ position: 'absolute', left: ((PAD + ((k.t - t0) / span) * (W - PAD * 2)) / W * 100) + '%', transform: 'translateX(-50%)', fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}>{k.lab}</span>;
+        })}
+      </div>
+    );
+  };
+  return (
+    <div id="hrv" style={{ border: '1px solid var(--line)', padding: 16, marginBottom: 16, background: 'var(--bg-2)' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
+        <div>
+          <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.18em' }}>{'// HRV NOTTURNA · ' + ALL.length + ' giorni Garmin · media 7 gg contro la fascia'}</div>
+          <div className="display" style={{ fontSize: 26, lineHeight: 1, marginTop: 6 }}>HRV E FC A RIPOSO</div>
+        </div>
+        <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em', textAlign: 'right' }}>{fd(V[0].d) + ' → ' + fd(last.d)}</div>
+      </div>
+      <div className="r-grid r-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10, marginBottom: 16 }}>
+        {tile('HRV MEDIA 7 GG', last.w + ' ms', 'fascia ' + last.lo + '–' + last.hi + ' · ' + LAB[last.s], COL[last.s])}
+        {tile('ULTIMA NOTTE', notte.n + ' ms', fd(notte.d))}
+        {tile('FC RIPOSO 7 GG', last.r7 != null ? c(last.r7) : '·', rif != null ? 'media 90 gg precedenti ' + c(rif) : fd(last.d))}
+        {tile('FUORI FASCIA', fuori + ' / ' + u30.length, 'ultimi 30 giorni', fuori ? '#FF9F43' : '#39E75F')}
+      </div>
+      <div style={{ ...box, marginBottom: 10 }}>
+        <div style={{ ...lab, marginBottom: 8 }}>{'HRV · ms · linea = media 7 gg · area = fascia personale · punti = singole notti · scala ' + lo + '–' + hi}</div>
+        <svg viewBox={'0 0 ' + W + ' ' + Hh} style={{ width: '100%', height: 190, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
+          <path d={band} fill="#39E75F" opacity="0.12" stroke="none" />
+          {V.filter(function (r) { return r.n != null; }).map(function (r, i) {
+            return <circle key={'n' + i} cx={X(r.d)} cy={Y(r.n)} r="1.5" fill="var(--fg-3)" opacity="0.55" />;
+          })}
+          <path d={path} fill="none" stroke="#FFFFFF" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+          {V.filter(function (r) { return r.s !== 'fascia'; }).map(function (r, i) {
+            return <circle key={'f' + i} cx={X(r.d)} cy={Y(r.w)} r="3" fill="#FF9F43">
+              <title>{fd(r.d) + ' · media 7 gg ' + r.w + ' ms · fascia ' + r.lo + '–' + r.hi}</title>
+            </circle>;
+          })}
+          <circle cx={X(last.d)} cy={Y(last.w)} r="4" fill={COL[last.s]} />
+        </svg>
+        {asse()}
+      </div>
+      <div style={{ ...box, marginBottom: 10 }}>
+        <div style={{ ...lab, marginBottom: 8 }}>{'FC A RIPOSO · bpm · media 7 gg · scala ' + rLo + '–' + rHi}</div>
+        <svg viewBox={'0 0 ' + W + ' ' + Hr} style={{ width: '100%', height: 110, display: 'block', overflow: 'visible' }} preserveAspectRatio="none">
+          {[rLo, (rLo + rHi) / 2, rHi].map(function (g, i) {
+            return <line key={i} x1="0" y1={Yr(g)} x2={W} y2={Yr(g)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 5" />;
+          })}
+          <path d={rPath} fill="none" stroke="#FF6B9D" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+        </svg>
+        {asse()}
+      </div>
+      <div style={{ fontSize: 11, color: 'var(--fg-3)', lineHeight: 1.7, borderTop: '1px solid var(--line)', paddingTop: 10 }}>
+        {'Garmin misura l\'HRV durante il sonno, una lettura ogni 5 minuti. Si legge la media a 7 giorni contro la fascia personale, insieme alla FC a riposo: HRV sotto fascia e FC a riposo in salita per più giorni = recupero da guardare.'}
       </div>
     </div>
   );
