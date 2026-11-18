@@ -442,6 +442,7 @@ const ZAP_ANCORE = [
 // t = tempo ufficiale in secondi · st = tempi di stazione (DI COPPIA nei doubles) · stR = rank di stazione
 // rank = piazzamento nella giornata · rankO = piazzamento sull'evento completo (piu' giorni), dove esiste
 // VO2MAX = stima VO2max di Garmin (corsa), una riga per ogni giorno in cui Garmin la aggiorna.
+// Solo stime con sport RUNNING (quella dell'orologio). Le stime del vogatore stanno in VO2MAX_ROW (correzione del 18/11/2026).
 // Fonte: API Garmin Connect, campo vo2MaxPreciseValue (l'app mostra il valore intero). Si aggiorna con scripts/garmin_corpo.py.
 // Formato: { d: 'AAAA-MM-GG', v: 00.0 }
 const VO2MAX = [
@@ -498,7 +499,6 @@ const VO2MAX = [
   { d: '2024-07-28', v: 50.0 },
   { d: '2024-08-31', v: 49.7 },
   { d: '2024-09-03', v: 48.0 },
-  { d: '2024-11-16', v: 47.9 },
   { d: '2024-12-20', v: 48.4 },
   { d: '2024-12-27', v: 47.7 },
   { d: '2025-01-01', v: 48.7 },
@@ -604,14 +604,9 @@ const VO2MAX = [
   { d: '2026-08-18', v: 51.0 },
   { d: '2026-08-22', v: 50.9 },
   { d: '2026-08-28', v: 51.0 },
-  { d: '2026-08-29', v: 51.0 },
-  { d: '2026-08-31', v: 51.0 },
   { d: '2026-09-03', v: 51.1 },
   { d: '2026-09-06', v: 51.2 },
-  { d: '2026-09-07', v: 52.0 },
   { d: '2026-09-10', v: 51.3 },
-  { d: '2026-09-12', v: 51.0 },
-  { d: '2026-09-16', v: 52.0 },
   { d: '2026-09-20', v: 51.2 },
   { d: '2026-09-24', v: 51.4 },
   { d: '2026-10-01', v: 51.7 },
@@ -619,19 +614,12 @@ const VO2MAX = [
   { d: '2026-10-09', v: 52.6 },
   { d: '2026-10-12', v: 52.2 },
   { d: '2026-10-16', v: 52.2 },
-  { d: '2026-10-19', v: 52.0 },
   { d: '2026-10-21', v: 51.9 },
   { d: '2026-10-23', v: 51.6 },
-  { d: '2026-10-28', v: 53.0 },
-  { d: '2026-10-30', v: 52.0 },
   { d: '2026-10-31', v: 51.4 },
-  { d: '2026-11-04', v: 54.0 },
-  { d: '2026-11-06', v: 52.0 },
   { d: '2026-11-07', v: 51.3 },
   { d: '2026-11-08', v: 51.3 },
-  { d: '2026-11-09', v: 54.0 },
   { d: '2026-11-13', v: 51.4 },
-  { d: '2026-11-18', v: 53.0 },
 ];
 
 // VO2MAX_BICI = stima VO2max di Garmin sulla bici (solo uscite con misuratore di potenza). Stessa fonte e formato.
@@ -640,6 +628,23 @@ const VO2MAX_BICI = [
   { d: '2026-08-03', v: 51.2 },
   { d: '2026-08-19', v: 51.2 },
   { d: '2026-08-26', v: 50.1 },
+];
+
+// VO2MAX_ROW = stima VO2max che Garmin calcola dal vogatore (sport FITNESS_EQUIPMENT / INDOOR_ROWING), tenuta a parte
+// dalla corsa per scelta di Federico del 18/11/2026 ("per quel che vale"). Stessa fonte e formato. Non mostrata nelle pagine.
+const VO2MAX_ROW = [
+  { d: '2026-08-29', v: 51.0 },
+  { d: '2026-08-31', v: 51.0 },
+  { d: '2026-09-07', v: 52.0 },
+  { d: '2026-09-12', v: 51.0 },
+  { d: '2026-09-16', v: 52.0 },
+  { d: '2026-10-19', v: 52.0 },
+  { d: '2026-10-28', v: 53.0 },
+  { d: '2026-10-30', v: 52.0 },
+  { d: '2026-11-04', v: 54.0 },
+  { d: '2026-11-06', v: 52.0 },
+  { d: '2026-11-09', v: 54.0 },
+  { d: '2026-11-18', v: 53.0 },
 ];
 
 const RACES = [
@@ -13226,4 +13231,4 @@ const INTEGRATORI = {
 window.TRAINING = {
   NEXTWEEK,
   SETTIMANA_TIPO,
-  PROG, RACE, RACES, BODY, BODY_TREND, PLICO, ZAP_ANCORE, VO2MAX, VO2MAX_BICI, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, HISTORY, HYDRATION, BADGES, GARA_CEDAS_10K, INTEGRATORI };
+  PROG, RACE, RACES, BODY, BODY_TREND, PLICO, ZAP_ANCORE, VO2MAX, VO2MAX_BICI, VO2MAX_ROW, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, HISTORY, HYDRATION, BADGES, GARA_CEDAS_10K, INTEGRATORI };
