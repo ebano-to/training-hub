@@ -13282,7 +13282,7 @@ const SETTIMANA_TIPO = {
     { d: 'DOM', slot: [] },
   ],
   note: [
-    "Le classi del Virgin vanno PRENOTATE con anticipo: vanno spesso in lista d'attesa.",
+    "Le classi di Virgin vanno PRENOTATE con anticipo: vanno spesso in lista d'attesa.",
     'Lunedì, mercoledì e venerdì mattina i bimbi li porto io. Martedì e giovedì li porta Maura.',
     'Martedì, mercoledì e giovedì dalle 18 alle 19 sono coi bimbi: niente Virgin, ma a casa posso allenarmi.',
   ],
