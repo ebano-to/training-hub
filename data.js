@@ -625,6 +625,7 @@ const VO2MAX = [
   { d: '2026-11-08', v: 51.3 },
   { d: '2026-11-13', v: 51.4 },
   { d: '2026-11-19', v: 51.5 },
+  { d: '2026-11-20', v: 51.6 },
 ];
 
 // VO2MAX_BICI = stima VO2max di Garmin sulla bici (solo uscite con misuratore di potenza). Stessa fonte e formato.
@@ -14350,6 +14351,8 @@ const HRV = [
   { d: '2026-11-17', n: 66, w: 64, lo: 63, hi: 82, g: 'BALANCED', rhr: 47, r7: 48.3, s: 'fascia' },
   { d: '2026-11-18', n: 65, w: 64, lo: 63, hi: 82, g: 'BALANCED', rhr: 47, r7: 48.1, s: 'fascia' },
   { d: '2026-11-19', n: 54, w: 63, lo: 63, hi: 82, g: 'BALANCED', rhr: 50, r7: 48.6, s: 'fascia' },
+  { d: '2026-11-20', n: 58, w: 62, lo: 63, hi: 82, g: 'UNBALANCED', rhr: 47, r7: 48.0, s: 'sotto' },
+  { d: '2026-11-21', n: 65, w: 63, lo: 64, hi: 81, g: 'UNBALANCED', rhr: 46, r7: 47.4, s: 'sotto' },
 ];
 // HRV_END
 
