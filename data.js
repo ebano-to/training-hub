@@ -2146,7 +2146,7 @@ const WEEK_ARCHIVE = [
   { day: 'GIO', date: '01', title: 'PISTA PIRAMIDE + TEST RM SLITTA', sub: 'Piramide 600-500-400-300 con Gabriele · forza con Mattia: massimali di slitta', load: 'Z3-Z5 + HEAVY', duration: 123, kind: 'hyrox', done: true,
     blocks: [
       { code: 'RUN', t: 'Pista Ruffini · Piramide 600-500-400-300', d: 'Gabriele · struttura decisa in pista: 1×600 + 2×500 + 3×400 + 4×300, recupero 100 m di corsetta · riscaldamento alle 14:49 e lavoro alle 15:27, dentro la finestra chiesta da Gabriele', dur: '63\'', result: 'Lavoro 10 rep · 4.251 m in 16:55 @3:58.8/km · FC 150,8 max 164 · 600 @3:48.5 · 500 @4:10.6 · 400 @4:05.9 · 300 @3:47.3 · ultima la più veloce (3:42.1) · risc 1.775 m · totale 7,126 km' },
-      { code: 'PESI', t: 'Forza con Mattia · TEST 1RM Sled Push + Sled Pull', d: 'Slitta del Virgin · 1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) · i due massimali diventano la base dei carichi del prossimo ciclo', dur: '60\'', result: 'TEST: Sled Push 1RM 300 kg · Sled Pull 1RM 220 kg · slitta Virgin, 1 rip = andata+ritorno ~7,5 m · i 208 kg usati finora in allenamento sono il 69% del push' },
+      { code: 'PESI', t: 'Forza con Mattia · TEST 1RM Sled Push + Sled Pull', d: 'Slitta di Virgin · 1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) · i due massimali diventano la base dei carichi del prossimo ciclo', dur: '60\'', result: 'TEST: Sled Push 1RM 300 kg · Sled Pull 1RM 220 kg · slitta Virgin, 1 rip = andata+ritorno ~7,5 m · i 208 kg usati finora in allenamento sono il 69% del push' },
     ]
   },
   { day: 'VEN', date: '02', title: 'RIPOSO', sub: 'Nessuna indicazione dai coach', load: '—', duration: 0, kind: 'rest', done: true,
@@ -2541,8 +2541,8 @@ const PBS = [
   { station: 'Run 5 km', href: 'gara-cedas.html', value: '21:33.432', pace: '4:18.7/km', delta: 'TEST', date: '08 NOV', sub: '4:18.7/km · il miglior 5 km dentro la 10 km Cedas We Run, da 75,37 a 5.075,37 m, tempo del Garmin · FC 159,11' },
   { station: 'Row 2000m', value: '6:52.9', pace: '1:43.2/500m', delta: 'PR', date: '24 APR 2025', sub: '1:43.2/500m · 318W · 27 colpi/min · DF 108 · test di inizio ciclo del 19/10/2026: 7:03.9 @1:45.975/500m, 294W' },
   { station: 'Row 5000m', value: '17:52.0', pace: '1:47.2/500m', delta: '-33s', date: '10 MAG', sub: '1:47.2/500m · 284W' },
-  { station: 'Sled Push 1RM (Virgin)', value: '300kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
-  { station: 'Sled Pull 1RM (Virgin)', value: '220kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta del Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
+  { station: 'Sled Push 1RM (Virgin)', value: '300kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta di Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
+  { station: 'Sled Pull 1RM (Virgin)', value: '220kg', delta: 'test', date: '01 OTT', sub: '1 RM = andata e ritorno, ~7,5 m per tratta (15 m totali) \u00b7 slitta di Virgin, testato con Mattia \u00b7 base dei carichi del prossimo ciclo' },
   { station: 'Barbell Reverse Lunge (test 4 per lato)', value: '65kg', delta: 'test', date: '10 OTT', sub: 'RPE 8 con inizio di rallentamento · sesto tentativo di una rampa a salti da 2,5 kg · da rifare con una rampa di 4 tentativi' },
   { station: 'Back Squat 1RM', value: '105kg', delta: '', date: '20 MAR' },
   { station: 'Strict Press 1RM', value: '65kg', delta: '', date: '11 GIU' },
