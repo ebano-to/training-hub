@@ -2514,9 +2514,11 @@ const WEEK = [
       { code: "ROW", t: "Row · 56′ @Z2 · sabato sera a casa", d: "Mattia, blocco A di venerdì 20, fatto sabato 21 a casa · RowErg · 4 volte 11′ a 20-22 colpi al minuto + 3′ a 24-26, stessa FC · nota del coach: altri quattro minuti, un minuto in più a 20-22 colpi a ogni blocco; la FC non deve salire nei tratti veloci; ritmo da conversazione · riferimento 06/11 e 30/10: in Z2 fra 2:02.7 e 2:07.9/500", dur: "56′", result: "13.797 m in 56:00 @2:01.8/500 · 193,86 W · FC 125,84 max 134 · Z2 95,75% · DF 94 · 11′ a 20 colpi 217,71 → 192,55 → 186,21 → 182,27 W · 3′ a 25 colpi 186,00 · 195,34 · 193,76 · 192,98 W · a casa 19:10-20:07", table: {"h": ["Tratto", "Durata", "Colpi", "Zona"], "r": [["4 volte", "11′", "20-22 al minuto", "Z2"], ["", "3′", "24-26 al minuto", "Z2, stessa FC"]], "foot": "56′ · Z2 = 120-135 bpm"} },
     ]
   },
-  { day: "DOM", date: "22", title: "ALLENAMENTO IBRIDO A CASELLE", sub: "Programma di Gabri", load: "HYROX", duration: 0, kind: "hyrox", done: false,
+  { day: "DOM", date: "22", title: "HYROX WORKSHOP · NOMA SPORTNESS CLUB 9:00-12:30", sub: "Strada della Pronda 45/F, Torino · welcome coffee dalle 8:00, debriefing alle 12:30 · al posto dei due metcon di sabato", load: "HYROX", duration: 210, kind: "hyrox", done: false,
     blocks: [
-      { code: "HYROX", t: "Allenamento ibrido · Caselle", d: "Gabriele, domenica 22", dur: "-" },
+      { code: "HYROX", t: "Intro · 9:00-10:00 · NOMA Sportness Club", d: "Chi siamo · movimenti funzionali · il format HYROX · uno sguardo al 2027: proposte e opportunità", dur: "60′" },
+      { code: "HYROX", t: "Skill, tecnica e pratica · 10:00-11:45 · NOMA Sportness Club", d: "Sled push e pull · RowErg e SkiErg · consigli e piccoli trucchi per rendere meglio", dur: "105′" },
+      { code: "METCON", t: "Workout a coppie · 11:45-12:30 · NOMA Sportness Club", d: "Workout team of 2, poi debriefing: analisi del workout e feedback", dur: "45′" },
     ]
   },
 ];
