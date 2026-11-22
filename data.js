@@ -2564,9 +2564,8 @@ const WEEK = [
       {"code": "METCON", "t": "Metcon a coppie · slitte e sandbag lunges · in Virgin col compagno Hyrox", "d": "Mattia, blocco C · prima 15′ di tecnica: sled push con braccia distese, busto basso, passi corti e continui; sled pull con passo indietro corto, corda che scorre dietro, tira con le gambe; 3×12,5 m di push + 3×12,5 m di pull a testa, al carico gara, senza tempo · poi 5 giri, si parte quando il compagno ha finito, poi ci si scambia · da segnare: tempo totale e tempo di ogni slitta · nota del coach: prima la tecnica, poi il ritmo; guardatevi a vicenda nelle tirate; segnami chi è più veloce dove, ci serve per dividere le stazioni", "dur": "~45′", "table": {"h": ["Chi", "Esercizio", "Distanza", "Peso"], "r": [["A", "Sled push", "25 m", "208 kg (carico gara concordato)"], ["A", "Sled pull", "25 m", "carico gara"], ["B", "Sandbag lunges", "50 m", "20 kg"]], "foot": "5 giri · cambio quando il compagno ha finito"}},
     ]
   },
-  { day: "DOM", date: "29", title: "HYROX", sub: "Programma di Gabriele", load: "HYROX", duration: 0, kind: "hyrox", done: false,
+  { day: "DOM", date: "29", title: "REST", sub: "Riposo", load: "REST", duration: 0, kind: "rest", done: false,
     blocks: [
-      {"code": "HYROX", "t": "Hyrox", "d": "Gabriele, domenica 29", "dur": "-"},
     ]
   },
 ];
