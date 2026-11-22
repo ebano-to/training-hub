@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 97.40,
-  bodyFat: 23.80,
-  bodyDate: '19 NOV 2026',
+  weight: 97.43,
+  bodyFat: 23.86,
+  bodyDate: '21 NOV 2026',
   hrmax: 177,
   programWeek: 48,
 };
@@ -234,6 +234,7 @@ const BODY = [
   { d: '2026-11-17', h: '18:36', kg: 97.5, g: 97529, bf: 23.4, mm: 37.9, h2o: 55.9 },
   { d: '2026-11-18', h: '16:31', kg: 97.6, g: 97620, bf: 24.2, mm: 37.9, h2o: 55.3 },
   { d: '2026-11-19', h: '08:48', kg: 98.1, g: 98139, bf: 24.4, mm: 38.0, h2o: 55.2 },
+  { d: '2026-11-21', h: '20:26', kg: 97.6, g: 97589, bf: 24.2, mm: 37.9, h2o: 55.3 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -422,6 +423,7 @@ const BODY_TREND = {
     { d: '2026-11-17', kg7: 97.16, bf7: 23.55, n: 4, nbf: 4, dKg: 0.35, dBf: -0.01, sKg: 'salita', sBf: 'stabile', z7: 5.60, za: '2026-10-12' },
     { d: '2026-11-18', kg7: 97.25, bf7: 23.68, n: 5, nbf: 5, dKg: 0.49, dBf: 0.06, sKg: 'salita', sBf: 'stabile', z7: 5.63, za: '2026-10-12' },
     { d: '2026-11-19', kg7: 97.40, bf7: 23.80, n: 6, nbf: 6, dKg: 0.48, dBf: 0.02, sKg: 'salita', sBf: 'stabile', z7: 5.66, za: '2026-10-12' },
+    { d: '2026-11-21', kg7: 97.43, bf7: 23.86, n: 7, nbf: 7, dKg: 0.38, dBf: 0.18, sKg: 'salita', sBf: 'stabile', z7: 5.67, za: '2026-10-12' },
   ],
 };
 
@@ -651,6 +653,7 @@ const VO2MAX_ROW = [
   { d: '2026-11-06', v: 52.0 },
   { d: '2026-11-09', v: 54.0 },
   { d: '2026-11-18', v: 53.0 },
+  { d: '2026-11-21', v: 54.0 },
 ];
 
 const RACES = [
@@ -14425,6 +14428,7 @@ const HRV = [
   { d: '2026-11-19', n: 54, w: 63, lo: 63, hi: 82, g: 'BALANCED', rhr: 50, r7: 48.6, s: 'fascia' },
   { d: '2026-11-20', n: 58, w: 62, lo: 63, hi: 82, g: 'UNBALANCED', rhr: 47, r7: 48.0, s: 'sotto' },
   { d: '2026-11-21', n: 65, w: 63, lo: 64, hi: 81, g: 'UNBALANCED', rhr: 46, r7: 47.4, s: 'sotto' },
+  { d: '2026-11-22', n: 62, w: 62, lo: 63, hi: 81, g: 'UNBALANCED', rhr: 47, r7: 47.4, s: 'sotto' },
 ];
 // HRV_END
 
