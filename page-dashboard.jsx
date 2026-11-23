@@ -1,6 +1,6 @@
 // DASHBOARD — Telemetry style + responsive
 function DashboardPage() {
-  const { ATHLETE, STATIONS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, TOTALS, PBS } = window.TRAINING;
+  const { ATHLETE, STATIONS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, VOL_MIN, TOTALS, PBS } = window.TRAINING;
   const totalKm = TOTALS.total;
   const totalKmAnim = useCountUp(Math.round(totalKm), 1600);
 
@@ -114,6 +114,65 @@ function DashboardPage() {
         })()}
       </ModulePanel>
 
+
+      {/* Minutes breakdown: minuti per settimana e categoria (VOL_MIN da scripts/build_minuti.py) */}
+      <ModulePanel code="MOD.MINUTES_BREAKDOWN · row/ski/run/forza/hyrox/varie">
+        {(() => {
+          var cats = [
+            { k: 'row', l: 'ROWER', c: '#58ADF7' },
+            { k: 'ski', l: 'SKIERG', c: '#6C68D7' },
+            { k: 'run', l: 'RUN', c: '#39E75F' },
+            { k: 'forza', l: 'FORZA', c: '#FFB454' },
+            { k: 'hyrox', l: 'HYROX', c: '#FF6B9D' },
+            { k: 'varie', l: 'VARIE', c: '#8C8C99' },
+          ];
+          var weeks = VOL_MIN.row.length;
+          var hms = function (min) {
+            var t = Math.round(min * 60), h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), sec = t % 60;
+            return h + 'h ' + (m < 10 ? '0' : '') + m + '′ ' + (sec < 10 ? '0' : '') + sec + '″';
+          };
+          var tot = function (i) { return cats.reduce(function (a, c) { return a + VOL_MIN[c.k][i]; }, 0); };
+          var maxW = 0;
+          for (var wi = 0; wi < weeks; wi++) { if (tot(wi) > maxW) maxW = tot(wi); }
+          var sums = {};
+          cats.forEach(function (c) { sums[c.k] = VOL_MIN[c.k].reduce(function (a, v) { return a + v; }, 0); });
+          return (
+            <div>
+              <div style={{ display: 'flex', gap: 20, marginBottom: 14, fontSize: 11, color: 'var(--fg-3)', letterSpacing: '0.1em', flexWrap: 'wrap' }}>
+                {cats.map(function (c) {
+                  return (
+                    <div key={c.k} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <span style={{ width: 8, height: 8, background: c.c }} />
+                      <span>{c.l}</span>
+                      <span className="display tabular" style={{ color: 'var(--fg)', fontSize: 13 }}>{hms(sums[c.k])}</span>
+                    </div>
+                  );
+                })}
+              </div>
+              <div style={{ display: 'flex', gap: 3, alignItems: 'flex-end', height: 180, position: 'relative' }}>
+                {VOL_MIN.row.map(function (_, i) {
+                  var t = tot(i);
+                  var pct = maxW > 0 ? (t / maxW) * 100 : 0;
+                  var tip = 'S' + (i + 1) + ' · ' + hms(t) + '\n' + cats.filter(function (c) { return VOL_MIN[c.k][i] > 0; }).map(function (c) { return c.l + ' ' + hms(VOL_MIN[c.k][i]); }).join('\n');
+                  return (
+                    <div key={i} title={tip} style={{ flex: 1, height: pct + '%', display: 'flex', flexDirection: 'column', minWidth: 0, cursor: 'pointer' }}>
+                      {cats.slice().reverse().map(function (c) {
+                        var v = VOL_MIN[c.k][i];
+                        return <div key={c.k} style={{ height: (t > 0 ? (v / t) * 100 : 0) + '%', background: c.c, minHeight: v > 0 ? 2 : 0 }} />;
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+              <div style={{ display: 'flex', gap: 3, marginTop: 6, fontSize: 9, color: 'var(--fg-3)' }}>
+                {VOL_MIN.row.map(function (_, i) {
+                  return <div key={i} style={{ flex: 1, textAlign: 'center', letterSpacing: '0.05em' }}>{i === 0 ? 'S1' : i === weeks - 1 ? 'S' + weeks : ''}</div>;
+                })}
+              </div>
+            </div>
+          );
+        })()}
+      </ModulePanel>
 
       {/* Storico gare Hyrox */}
       <HyroxRaces />
