@@ -2528,10 +2528,9 @@ const WEEK_ARCHIVE = [
 
 // Current week - S48 (23 - 29 NOV 2026)
 const WEEK = [
-  { day: "LUN", date: "23", title: "SKI TEST DAMPER + Z2 50' · SERA: RUN 2 KM + 17 KM @5'30\"", sub: "A casa SkiErg · sera corsa, tapis o fuori", load: "TEST + Z2 + MEDIO", duration: 178, kind: "ski", done: false, runKm: 19,
+  { day: "LUN", date: "23", title: "SKI TEST DAMPER + Z2 50'", sub: "A casa SkiErg", load: "TEST + Z2", duration: 72, kind: "ski", done: true,
     blocks: [
       {"code": "SKI", "t": "Ski · test damper 3×500 m + 50′ @Z2 · a casa", "d": "Mattia, blocco A · prima il test damper, per capire quale usare in gara: 3×500 m a RPE 7, sempre lo stesso sforzo, damper 5, poi 3, poi 7, con 4′ di recupero facile fra le prove · da segnare per ogni prova: tempo, watt medi, colpi al minuto, FC media e a fine prova, DF · poi la Z2 · nota del coach: il damper che ti dà più watt a parità di FC è quello da gara; la Z2 si accorcia di poco per far spazio al test; i corti restano sotto i 45 colpi · riferimento 16/11: 56′ in Z2 a 2:09.6/500, 160,8 W, FC 122,59", "dur": "~72′", "result": "Test 500 m: 1:52.1 (damper 5, DF 83) · 1:51.9 (damper 7, DF 103) · 1:52.4 (damper 3, DF 63) · 248,5 · 249,8 · 246,5 W · FC 109,86 · 112,90 · 114,86, a fine prova 128 · 131 · 135 · Z2 50′: 11.758 m @2:07.6/500 · 168,6 W · lunghi 2.538 · 2.464 · 2.446 · 2.425 m, corti 482 · 481 · 458 · 471 m · FC 120,93 max 129 · Z2 74,76% · 16:52-18:05", "table": {"h": ["Tratto", "Durata", "Damper / colpi", "Zona"], "r": [["Prova 1", "500 m", "damper 5", "RPE 7"], ["Recupero", "4′", "facile", "-"], ["Prova 2", "500 m", "damper 3", "RPE 7"], ["Recupero", "4′", "facile", "-"], ["Prova 3", "500 m", "damper 7", "RPE 7"], ["Z2, 4 volte", "10′30″", "lunghi, 27-29 al minuto", "Z2"], ["", "2′", "corti, 42-45 al minuto", "Z2"]], "foot": "test circa 22′ + 50′ di Z2 · Z2 = 120-135 bpm"}},
-      {"code": "RUN", "t": "Run · 2 km risc + 17 km @5′30″/km · sera, tapis o fuori", "d": "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′30″/km · riferimento 16/11: 15 km a 5:28.7/km con FC 134,43", "dur": "~106′", "table": {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "2 km", "-", "12:43.8 al passo del 31/10 (6:21.9/km)"], ["Medio", "17 km", "5′30″/km · 10,91 km/h", "1:33:30"]], "foot": "19 km · stima 1:46:13.8"}, "result": "SALTATO", "skipped": true},
     ]
   },
   { day: "MAR", date: "24", title: "BACK SQUAT SHEIKO W1 + RDL 4×8 @77,5 · SERA: RUN COLLINARE 1H10' AL TAPIS", sub: "In Virgin con Mattia 11:30 · sera corsa al tapis", load: "HEAVY + Z2", duration: 110, kind: "strength", done: false,
@@ -2569,8 +2568,9 @@ const WEEK = [
       {"code": "METCON", "t": "Metcon a coppie · slitte e sandbag lunges · in Virgin col compagno Hyrox", "d": "Mattia, blocco C · prima 15′ di tecnica: sled push con braccia distese, busto basso, passi corti e continui; sled pull con passo indietro corto, corda che scorre dietro, tira con le gambe; 3×12,5 m di push + 3×12,5 m di pull a testa, al carico gara, senza tempo · poi 5 giri, si parte quando il compagno ha finito, poi ci si scambia · da segnare: tempo totale e tempo di ogni slitta · nota del coach: prima la tecnica, poi il ritmo; guardatevi a vicenda nelle tirate; segnami chi è più veloce dove, ci serve per dividere le stazioni", "dur": "~45′", "table": {"h": ["Chi", "Esercizio", "Distanza", "Peso"], "r": [["A", "Sled push", "25 m", "208 kg (carico gara concordato)"], ["A", "Sled pull", "25 m", "carico gara"], ["B", "Sandbag lunges", "50 m", "20 kg"]], "foot": "5 giri · cambio quando il compagno ha finito"}},
     ]
   },
-  { day: "DOM", date: "29", title: "REST", sub: "Riposo", load: "REST", duration: 0, kind: "rest", done: false,
+  { day: "DOM", date: "29", title: "RUN 2 KM + 17 KM @5'30\"", sub: "Spostata da lunedì 23 · sabato 28 o domenica 29", load: "MEDIO", duration: 106, kind: "run", done: false, runKm: 19,
     blocks: [
+      {"code": "RUN", "t": "Run · 2 km risc + 17 km @5′30″/km · sabato 28 o domenica 29, tapis o fuori", "d": "Gabriele · ⚠️ occasione PacePro se corri fuori: strategia a 5′30″/km · riferimento 16/11: 15 km a 5:28.7/km con FC 134,43 · spostato da lunedì 23", "dur": "~106′", "table": {"h": ["Fase", "Distanza", "Passo", "Tempo"], "r": [["Riscaldamento", "2 km", "-", "12:43.8 al passo del 31/10 (6:21.9/km)"], ["Medio", "17 km", "5′30″/km · 10,91 km/h", "1:33:30"]], "foot": "19 km · stima 1:46:13.8"}},
     ]
   },
 ];
