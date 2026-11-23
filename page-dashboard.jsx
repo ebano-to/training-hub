@@ -122,9 +122,9 @@ function DashboardPage() {
             { k: 'row', l: 'ROWER', c: '#58ADF7' },
             { k: 'ski', l: 'SKIERG', c: '#6C68D7' },
             { k: 'run', l: 'RUN', c: '#39E75F' },
-            { k: 'forza', l: 'FORZA', c: '#FFB454' },
-            { k: 'hyrox', l: 'HYROX', c: '#FF6B9D' },
-            { k: 'varie', l: 'VARIE', c: '#8C8C99' },
+            { k: 'forza', l: 'FORZA', c: 'oklch(80% 0.15 60)' },
+            { k: 'hyrox', l: 'HYROX', c: '#FCEE4F' },
+            { k: 'varie', l: 'VARIE', c: '#4ECDC4' },
           ];
           var weeks = VOL_MIN.row.length;
           var hms = function (min) {
