@@ -215,6 +215,7 @@ function BadgePage() {
                     fontSize: 9, letterSpacing: '0.14em', fontWeight: 700, padding: '2px 6px',
                     color: CAT[b.cat] || 'var(--fg-2)', border: '1px solid ' + (CAT[b.cat] || 'var(--fg-2)'),
                   }}>{b.cat}</span>
+                  {b.plus && <span style={{ fontSize: 9, letterSpacing: '0.14em', fontWeight: 700, padding: '2px 6px', color: 'var(--accent)', border: '1px solid var(--accent)' }}>CONNECT+</span>}
                   <div>
                     <span style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--sans)' }}>{b.n}</span>
                     <span style={{ fontSize: 10, color: 'var(--fg-3)', marginLeft: 8, fontFamily: 'var(--mono)' }}>{b.en}</span>
