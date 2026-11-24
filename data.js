@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 97.93,
-  bodyFat: 24.02,
-  bodyDate: '23 NOV 2026',
+  weight: 98.12,
+  bodyFat: 24.20,
+  bodyDate: '24 NOV 2026',
   hrmax: 177,
   programWeek: 48,
 };
@@ -236,6 +236,7 @@ const BODY = [
   { d: '2026-11-19', h: '08:48', kg: 98.1, g: 98139, bf: 24.4, mm: 38.0, h2o: 55.2 },
   { d: '2026-11-21', h: '20:26', kg: 97.6, g: 97589, bf: 24.2, mm: 37.9, h2o: 55.3 },
   { d: '2026-11-23', h: '18:44', kg: 98.8, g: 98760, bf: 23.9, mm: 38.2, h2o: 55.5 },
+  { d: '2026-11-24', h: '19:31', kg: 98.5, g: 98470, bf: 24.3, mm: 38.1, h2o: 55.3 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -426,6 +427,7 @@ const BODY_TREND = {
     { d: '2026-11-19', kg7: 97.40, bf7: 23.80, n: 6, nbf: 6, dKg: 0.48, dBf: 0.02, sKg: 'salita', sBf: 'stabile', z7: 5.66, za: '2026-10-12' },
     { d: '2026-11-21', kg7: 97.43, bf7: 23.86, n: 7, nbf: 7, dKg: 0.38, dBf: 0.18, sKg: 'salita', sBf: 'stabile', z7: 5.67, za: '2026-10-12' },
     { d: '2026-11-23', kg7: 97.93, bf7: 24.02, n: 5, nbf: 5, dKg: 0.89, dBf: 0.42, sKg: 'salita', sBf: 'salita', z7: 5.71, za: '2026-10-12' },
+    { d: '2026-11-24', kg7: 98.12, bf7: 24.20, n: 5, nbf: 5, dKg: 0.96, dBf: 0.65, sKg: 'salita', sBf: 'salita', z7: 5.76, za: '2026-10-12' },
   ],
 };
 
@@ -13159,6 +13161,15 @@ const BADGES = {
       req: 'Scarica un quadrante o un\'app dal Connect IQ Store · 1 pt', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'done', prog: 'preso il 03/11 (garmin, 19/11)',
       why: 'Preso a settembre.',
       go: 'Scaricare un quadrante o un\'app dal Connect IQ Store, una volta nel mese.' },
+    // ── A GIORNATA (badge senza iscrizione, comparsi fra i disponibili Garmin)
+    { n: 'Loy Krathong 2026', en: 'Loy Krathong 2026', cat: 'FIT', tipo: 'singola',
+      req: 'Registra un\'attività il giorno di Loy Krathong, 25 novembre 2026 · 1 pt', win: 'MER 25 NOV', d1: '2026-11-25', d2: '2026-11-25', st: 'plan', prog: '0 (garmin, 24/11)',
+      why: 'Requisito da BadgeHero, badge di novembre 2026. Badge a giornata, senza iscrizione: comparso fra i disponibili il 24/11.',
+      go: 'Basta una qualunque attività registrata mercoledì 25: in agenda Ski Z2 76\' in Virgin e la sera row + metcon + upper.' },
+    { n: 'Thanksgiving 2026', en: 'Thanksgiving 2026', cat: 'FIT', tipo: 'singola',
+      req: 'Registra un\'attività il giorno del Ringraziamento, 26 novembre 2026 · 1 pt', win: 'GIO 26 NOV', d1: '2026-11-26', d2: '2026-11-26', st: 'plan', prog: '0 (garmin, 24/11)',
+      why: 'Requisito da BadgeHero, badge di novembre 2026. Badge a giornata, senza iscrizione: comparso fra i disponibili il 24/11.',
+      go: 'Basta una qualunque attività registrata giovedì 26: in agenda la pista con Gabriele alle 15.' },
     // ── CONNECT+ (abbonamento annuale dal 24/11/2026, dichiarato da Federico) · sfide riservate agli abbonati, campo premium nell'API Garmin
     { n: 'Calorie bruciate a novembre', en: 'November Calorie Burn', cat: 'FIT', plus: true, tipo: 'cumulativa',
       req: '8.000 calorie attive nel mese · 4 punti', win: 'tutto novembre', d1: '2026-11-01', d2: '2026-11-30', st: 'done', prog: 'presa il 24/11 (garmin, 24/11)',
@@ -14560,6 +14571,7 @@ const HRV = [
   { d: '2026-11-21', n: 65, w: 63, lo: 64, hi: 81, g: 'UNBALANCED', rhr: 46, r7: 47.4, s: 'sotto' },
   { d: '2026-11-22', n: 62, w: 62, lo: 63, hi: 81, g: 'UNBALANCED', rhr: 47, r7: 47.4, s: 'sotto' },
   { d: '2026-11-23', n: 62, w: 61, lo: 62, hi: 80, g: 'UNBALANCED', rhr: 48, r7: 47.4, s: 'sotto' },
+  { d: '2026-11-24', n: 66, w: 62, lo: 63, hi: 80, g: 'UNBALANCED', rhr: 48, r7: 47.6, s: 'sotto' },
 ];
 // HRV_END
 
