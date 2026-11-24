@@ -1,6 +1,6 @@
 // AGENDA — Telemetry style + week archive navigation
 function AgendaPage() {
-  const { ATHLETE, WEEK, WEEK_ARCHIVE, NEXTWEEK, BADGES, INTEGRATORI } = window.TRAINING;
+  const { ATHLETE, WEEK, WEEK_ARCHIVE, NEXTWEEK, BADGES, INTEGRATORI, ERG_CUP } = window.TRAINING;
   const allWeeks = (WEEK_ARCHIVE || []).concat([{ id: 'S' + ATHLETE.programWeek, label: 'S' + ATHLETE.programWeek + ' · CORRENTE', range: '23 → 29 NOV 2026', programWeek: ATHLETE.programWeek, days: WEEK }]).concat(NEXTWEEK && NEXTWEEK.length ? [{ id: 'S' + (ATHLETE.programWeek + 1), label: 'S' + (ATHLETE.programWeek + 1) + ' · DA DEFINIRE', range: '30 NOV → 06 DIC 2026', programWeek: ATHLETE.programWeek + 1, days: NEXTWEEK }] : []);
   const curIdx = NEXTWEEK && NEXTWEEK.length ? allWeeks.length - 2 : allWeeks.length - 1;
   const [weekIdx, setWeekIdx] = React.useState(curIdx);
@@ -59,6 +59,21 @@ function AgendaPage() {
       return (h.kinds || []).indexOf(w.kind) >= 0 || (h.codes || []).some(function (c) { return codes.indexOf(c) >= 0; });
     });
     return wins.concat(hunts);
+  }
+
+  // ── Tappe Erg Cup aperte in un dato giorno e non ancora fatte ──
+  const ergName = { row: 'RowErg', ski: 'SkiErg' };
+  function ergCupForDay(w) {
+    if ((!isCurrentWeek && !isNextWeek) || !ERG_CUP) return [];
+    var d = isoForDay(w.date);
+    var out = [];
+    ERG_CUP.tappe.forEach(function (t) {
+      if (!(d >= t.d1 && d <= t.d2)) return;
+      Object.keys(t.erg).forEach(function (k) {
+        if (t.erg[k].st !== 'done') out.push({ t: t, k: k });
+      });
+    });
+    return out;
   }
 
   return (
@@ -366,6 +381,36 @@ function AgendaPage() {
                 </div>
                 <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 12, borderTop: '1px dashed var(--line-2)', paddingTop: 8 }}>
                   SOLO PROPOSTE &middot; IL PROGRAMMA RESTA QUELLO DEI COACH &middot; <a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE SFIDE &rarr;</a>
+                </div>
+              </ModulePanel>
+            );
+          })()}
+          {/* ERG CUP: tappa aperta oggi e non ancora fatta, stessa forma dei badge */}
+          {(function () {
+            var es = ergCupForDay(day);
+            if (!es.length) return null;
+            return (
+              <ModulePanel code={'MOD.ERG_CUP \u00b7 ' + es.length + ' da fare'}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10 }}>
+                  {es.map(function (e, ei) {
+                    var c = kindColor(e.k);
+                    return (
+                      <div key={ei} style={{
+                        border: '1px solid var(--line)', borderLeftWidth: 3, borderLeftColor: c,
+                        background: 'var(--bg-3)', padding: '10px 12px', minWidth: 0,
+                      }}>
+                        <div style={{ fontSize: 12, fontWeight: 700, fontFamily: 'var(--sans)', color: c, lineHeight: 1.25 }}>{e.t.nome} &middot; {ergName[e.k]}</div>
+                        <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.08em', marginTop: 2 }}>TAPPA {e.t.n} &middot; {e.t.win}</div>
+                        <div className="tabular" style={{ fontSize: 11, color: 'var(--fg)', marginTop: 5 }}>{e.t.prova}</div>
+                        {e.t.dato && <div style={{ fontSize: 11, color: 'var(--fg-2)', marginTop: 3 }}>{e.t.dato}</div>}
+                        {e.t.setup && <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 5, lineHeight: 1.4 }}>{e.t.setup}</div>}
+                        {e.t.chiude && <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 3 }}>CHIUDE {e.t.chiude}</div>}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div style={{ fontSize: 9, color: 'var(--fg-3)', letterSpacing: '0.1em', marginTop: 12, borderTop: '1px dashed var(--line-2)', paddingTop: 8 }}>
+                  FOTO DEL PM5 CON TOTALE METRI, INTERVALLI E CODICE DI VERIFICA &middot; <a href="badge.html" style={{ color: 'var(--accent)' }}>TUTTE LE TAPPE &rarr;</a>
                 </div>
               </ModulePanel>
             );

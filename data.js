@@ -13311,6 +13311,43 @@ const BADGES = {
   ],
 };
 
+// ── ERG CUP CONCEPT2 ITALIA 2026-2027 ────────────
+// Fonte unica: dati/ERG_CUP_2026_2027.md. Per ogni tappa e attrezzo st 'plan' finche' la prova
+// non e' registrata, poi 'done' con metri e data: l'agenda la propone dentro la finestra.
+const ERG_CUP = {
+  nome: 'ERG CUP CONCEPT2 ITALIA',
+  stagione: '2026-2027',
+  sito: 'https://ergcup-concept2.web.app',
+  updated: '24 NOV 2026',
+  fonte: 'regolamento e bando Christmas Cup (20/11/2026) · risposta dell\'organizzazione (23/11/2026)',
+  regole: [
+    'La prova si esegue e si carica dentro la finestra della tappa.',
+    'Un risultato per attrezzo: uno su RowErg e uno su SkiErg, classifiche separate.',
+    'Foto del monitor PM5 con totale metri, dettaglio intervalli e codice di verifica (anche dalla Memoria).',
+    'Dopo l\'invio 10 minuti per correggere, poi il risultato è definitivo.',
+    'Partenza libera · damper e drag factor liberi.',
+    'Punti per piazzamento: 25 · 20 · 16 · 13 · 11 · 10 · 9 · 8 · 7 · 6 · 5 · 4 · 3 · 2 · 1.',
+  ],
+  tappe: [
+    { n: 3, nome: 'CHRISTMAS CUP', prova: '6 × 25″ · rec 1:30', dato: 'metri totali dei 6 intervalli',
+      win: '14 → 21 DIC', d1: '2026-12-14', d2: '2026-12-21', apre: 'LUN 14/12 ore 00:01', chiude: 'LUN 21/12 ore 23:49',
+      setup: 'PM5 · Seleziona allenamento → Nuovo allenamento → Intervalli: Tempo · lavoro 0:25 · recupero 1:30',
+      erg: { row: { st: 'plan' }, ski: { st: 'plan' } } },
+    { n: 4, nome: 'NEW YEAR\'S REVOLUTION', prova: '4:00',
+      win: '18 → 25 GEN', d1: '2027-01-18', d2: '2027-01-25',
+      erg: { row: { st: 'plan' }, ski: { st: 'plan' } } },
+    { n: 5, nome: 'MEYOU&CONCEPT2', prova: '2:14 · team da 2',
+      win: '08 → 15 FEB', d1: '2027-02-08', d2: '2027-02-15',
+      erg: { row: { st: 'plan' }, ski: { st: 'plan' } } },
+    { n: 7, nome: 'SPRING CHALLENGE', prova: '500-250-100 m · rec 3′',
+      win: '12 → 19 APR', d1: '2027-04-12', d2: '2027-04-19',
+      erg: { row: { st: 'plan' }, ski: { st: 'plan' } } },
+    { n: 8, nome: 'SUMMER SPRINT', prova: '1:00',
+      win: '24 → 31 MAG', d1: '2027-05-24', d2: '2027-05-31',
+      erg: { row: { st: 'plan' }, ski: { st: 'plan' } } },
+  ],
+};
+
 // ── HYDRATION LOG ──────────────────────────────────────────
 // Sweat loss tracking — all fluid values in ml, sweatRate in ml/h
 const HYDRATION = [
@@ -14483,4 +14520,4 @@ const HRV = [
 window.TRAINING = {
   NEXTWEEK,
   SETTIMANA_TIPO,
-  PROG, RACE, RACES, BODY, BODY_TREND, PLICO, ZAP_ANCORE, VO2MAX, VO2MAX_BICI, VO2MAX_ROW, HRV, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, VOL_MIN, TOTALS, HISTORY, HYDRATION, BADGES, GARA_CEDAS_10K, INTEGRATORI };
+  PROG, RACE, RACES, BODY, BODY_TREND, PLICO, ZAP_ANCORE, VO2MAX, VO2MAX_BICI, VO2MAX_ROW, HRV, ATHLETE, STATIONS, WEEK, WEEK_ARCHIVE, PBS, VOLUME, VOL_ROWER, VOL_SKI, VOL_RUN, VOL_BIKE, VOL_SWIM, VOL_MIN, TOTALS, HISTORY, HYDRATION, BADGES, ERG_CUP, GARA_CEDAS_10K, INTEGRATORI };

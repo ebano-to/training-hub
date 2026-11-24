@@ -1,6 +1,6 @@
 // BADGE — Garmin challenge del mese + copertura rispetto al programma
 function BadgePage() {
-  const { BADGES } = window.TRAINING;
+  const { BADGES, ERG_CUP } = window.TRAINING;
   const [filter, setFilter] = React.useState('ALL');
   const [sez, setSez] = React.useState('MENSILI');
 
@@ -284,6 +284,38 @@ function BadgePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </ModulePanel>
+      )}
+
+      {ERG_CUP && (
+        <ModulePanel code={'MOD.ERG_CUP \u00b7 ' + ERG_CUP.tappe.length + ' tappe'} title={ERG_CUP.nome} sub={'Stagione ' + ERG_CUP.stagione + ' \u00b7 un risultato per attrezzo, dentro la finestra'}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10 }}>
+            {ERG_CUP.tappe.map(function (t) {
+              return (
+                <div key={t.n} style={{ border: '1px solid var(--line)', background: 'var(--bg-3)', padding: '10px 12px', minWidth: 0 }}>
+                  <div style={{ fontSize: 10, color: 'var(--fg-3)', letterSpacing: '0.12em' }}>TAPPA {t.n} &middot; {t.win}</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, fontFamily: 'var(--sans)', marginTop: 3 }}>{t.nome}</div>
+                  <div className="tabular" style={{ fontSize: 12, color: 'var(--fg)', marginTop: 5 }}>{t.prova}</div>
+                  {t.apre && <div style={{ fontSize: 10, color: 'var(--fg-3)', marginTop: 4 }}>APRE {t.apre} &middot; CHIUDE {t.chiude}</div>}
+                  <div style={{ display: 'flex', gap: 14, marginTop: 8, flexWrap: 'wrap' }}>
+                    {Object.keys(t.erg).map(function (k) {
+                      var r = t.erg[k]; var fatto = r.st === 'done';
+                      return (
+                        <div key={k} className="tabular" style={{ fontSize: 11, color: fatto ? 'oklch(72% 0.13 250)' : 'oklch(82% 0.16 85)' }}>
+                          {k === 'row' ? 'RowErg' : 'SkiErg'} &middot; {fatto ? (r.metri + ' m \u00b7 ' + r.data) : 'DA FARE'}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ marginTop: 12, borderTop: '1px dashed var(--line-2)', paddingTop: 8 }}>
+            {ERG_CUP.regole.map(function (r, ri) {
+              return <div key={ri} style={{ fontSize: 11, color: 'var(--fg-2)', lineHeight: 1.6 }}>{r}</div>;
+            })}
           </div>
         </ModulePanel>
       )}
