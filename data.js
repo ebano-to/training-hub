@@ -25,9 +25,9 @@ const ATHLETE = {
   name: 'Federico Simondi',
   category: 'Doubles Men Pro',
   height: 195,
-  weight: 98.07,
-  bodyFat: 24.30,
-  bodyDate: '25 NOV 2026',
+  weight: 97.78,
+  bodyFat: 24.20,
+  bodyDate: '26 NOV 2026',
   hrmax: 177,
   programWeek: 48,
 };
@@ -239,6 +239,8 @@ const BODY = [
   { d: '2026-11-24', h: '19:31', kg: 98.5, g: 98470, bf: 24.3, mm: 38.1, h2o: 55.3 },
   { d: '2026-11-25', h: '08:34', kg: 97.4, g: 97440, bf: 24.4, mm: 37.9, h2o: 55.2 },
   { d: '2026-11-25', h: '19:24', kg: 98.0, g: 98019, bf: 24.6, mm: 38.0, h2o: 55.0 },
+  { d: '2026-11-26', h: '07:20', kg: 97.2, g: 97169, bf: 23.8, mm: 37.8, h2o: 55.6 },
+  { d: '2026-11-26', h: '09:56', kg: 97.0, g: 97000, bf: 24.2, mm: 37.8, h2o: 55.3 },
 ];
 
 // PLICO = misurazioni del nutrizionista Zappitelli, PLICOMETRIA (pliche cutanee col calibro).
@@ -431,6 +433,7 @@ const BODY_TREND = {
     { d: '2026-11-23', kg7: 97.93, bf7: 24.02, n: 5, nbf: 5, dKg: 0.89, dBf: 0.42, sKg: 'salita', sBf: 'salita', z7: 5.71, za: '2026-10-12' },
     { d: '2026-11-24', kg7: 98.12, bf7: 24.20, n: 5, nbf: 5, dKg: 0.96, dBf: 0.65, sKg: 'salita', sBf: 'salita', z7: 5.76, za: '2026-10-12' },
     { d: '2026-11-25', kg7: 98.07, bf7: 24.30, n: 6, nbf: 6, dKg: 0.82, dBf: 0.62, sKg: 'salita', sBf: 'salita', z7: 5.78, za: '2026-10-12' },
+    { d: '2026-11-26', kg7: 97.78, bf7: 24.20, n: 7, nbf: 7, dKg: 0.38, dBf: 0.40, sKg: 'salita', sBf: 'salita', z7: 5.76, za: '2026-10-12' },
   ],
 };
 
@@ -635,6 +638,7 @@ const VO2MAX = [
   { d: '2026-11-13', v: 51.4 },
   { d: '2026-11-19', v: 51.5 },
   { d: '2026-11-20', v: 51.6 },
+  { d: '2026-11-26', v: 51.4 },
 ];
 
 // VO2MAX_BICI = stima VO2max di Garmin sulla bici (solo uscite con misuratore di potenza). Stessa fonte e formato.
@@ -14647,6 +14651,7 @@ const HRV = [
   { d: '2026-11-23', n: 62, w: 61, lo: 62, hi: 80, g: 'UNBALANCED', rhr: 48, r7: 47.4, s: 'sotto' },
   { d: '2026-11-24', n: 66, w: 62, lo: 63, hi: 80, g: 'UNBALANCED', rhr: 48, r7: 47.6, s: 'sotto' },
   { d: '2026-11-25', n: 73, w: 63, lo: 62, hi: 80, g: 'BALANCED', rhr: 46, r7: 47.4, s: 'fascia' },
+  { d: '2026-11-26', n: 74, w: 66, lo: 62, hi: 80, g: 'BALANCED', rhr: 43, r7: 46.4, s: 'fascia' },
 ];
 // HRV_END
 
